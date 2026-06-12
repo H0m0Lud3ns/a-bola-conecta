@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abolaconecta.com.br/sitemap.xml

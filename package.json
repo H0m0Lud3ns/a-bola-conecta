@@ -1,0 +1,12 @@
+{
+  "name": "a-bola-conecta-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Deploy isolado do site A Bola Conecta para Vercel.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "predeploy": "npm run build && npm run check"
+  },
+  "dependencies": {}
+}
