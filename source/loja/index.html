@@ -9,7 +9,7 @@
   <meta property="og:description" content="Uma camisa da Gondwana FC para celebrar Abya Yala, memória, território e futebol como educação." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://abolaconecta.com.br/loja" />
-  <meta property="og:image" content="https://abolaconecta.com.br/assets/a-bola-conecta-logo-v2-WdlHxh0O.png" />
+  <meta property="og:image" content="https://abolaconecta.com.br/assets/camisa-abya-yala.jpg" />
   <link rel="icon" href="/favicon.ico" />
   <link rel="stylesheet" href="/a-bola-conecta/assets/index--0QhvKt1.css?v=20260619-camisa-abya-yala" />
   <style>
@@ -122,9 +122,18 @@
       overflow: hidden;
     }
     .shirt-frame:after { content: ""; position: absolute; inset: 14px; border-radius: 26px; background: hsl(218 34% 12% / .58); border: 1px solid hsl(39 42% 92% / .14); }
-    .shirt-placeholder { position: relative; z-index: 2; display: grid; place-items: center; width: min(72%, 330px); aspect-ratio: 1 / 1; border-radius: 38px; background: linear-gradient(145deg, hsl(39 42% 92% / .18), hsl(39 42% 92% / .04)); text-align: center; padding: 34px; border: 1px dashed hsl(39 42% 92% / .34); }
-    .shirt-placeholder strong { display: block; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.1rem, 5vw, 4rem); line-height: .9; letter-spacing: -.06em; }
-    .shirt-placeholder span { display: block; margin-top: 16px; color: var(--muted); font-size: 12px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    .shirt-photo {
+      position: relative;
+      z-index: 2;
+      width: min(92%, 430px);
+      max-height: 390px;
+      object-fit: contain;
+      border-radius: 28px;
+      background: hsl(39 42% 92% / .94);
+      padding: clamp(10px, 2vw, 18px);
+      border: 1px solid hsl(39 42% 92% / .34);
+      box-shadow: 0 28px 72px hsl(0 0% 0% / .34);
+    }
     .product-notes { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
     .product-notes div { border: 1px solid var(--linha); border-radius: 18px; padding: 14px; background: hsl(218 34% 12% / .34); color: var(--muted); font-size: 12px; line-height: 1.35; }
     .product-notes b { display: block; color: var(--texto); margin-bottom: 4px; }
@@ -174,7 +183,7 @@
       .hero-actions .btn, .form-actions .btn { width: 100%; }
       .product-card { border-radius: 28px; padding: 16px; }
       .shirt-frame { min-height: 360px; border-radius: 22px; }
-      .shirt-placeholder { width: min(78%, 270px); border-radius: 28px; }
+      .shirt-photo { width: min(96%, 330px); max-height: 330px; border-radius: 22px; }
       .product-notes, .form-grid { grid-template-columns: 1fr; }
       .field.full { grid-column: auto; }
       .waitlist-form { border-radius: 26px; }
@@ -212,13 +221,7 @@
 
         <aside class="product-card" aria-label="Prévia editorial da camisa Abya Yala">
           <div class="shirt-frame">
-            <!-- TODO: substituir este bloco pela foto da camisa Abya Yala quando Sebastian enviar a imagem. -->
-            <div class="shirt-placeholder">
-              <div>
-                <strong>Foto em breve</strong>
-                <span>Camisa Abya Yala</span>
-              </div>
-            </div>
+            <img class="shirt-photo" src="/a-bola-conecta/assets/camisa-abya-yala.jpg" alt="Camisa Abya Yala da Gondwana FC com frente azul, mapa da América do Sul invertido e costas com número 12 em padrão wiphala" width="1244" height="816" loading="eager" decoding="async" />
           </div>
           <div class="product-notes">
             <div><b>Prioridade</b> Primeiro aviso quando a venda abrir.</div>
