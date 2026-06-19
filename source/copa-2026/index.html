@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Copa do Mundo 2026 | A Bola Conecta</title>
+  <meta name="description" content="Seção especial de A Bola Conecta para transformar a Copa do Mundo 2026 em experiência pedagógica com as fichas Gondwana na Copa.">
+  <link rel="canonical" href="https://sebas-ai.infraqualia.com/a-bola-conecta/copa-2026/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Copa do Mundo 2026 | A Bola Conecta">
+  <meta property="og:description" content="Fichas, perguntas e caminhos pedagógicos para ler a Copa pelo território, pela memória e pela bola.">
+  <meta property="og:url" content="https://sebas-ai.infraqualia.com/a-bola-conecta/copa-2026/">
+  <meta property="og:image" content="https://sebas-ai.infraqualia.com/gondwana-time-educacao/copa-de-gondwana/fichas-paises/assets/cards-prontos/01-selecoes-gondwana.jpg">
+  <meta property="og:image:alt" content="Seleções Gondwana - guia educativa da Copa 2026">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Copa do Mundo 2026 | A Bola Conecta">
+  <meta name="twitter:description" content="Fichas, perguntas e caminhos pedagógicos para ler a Copa pelo território, pela memória e pela bola.">
+  <meta name="twitter:image" content="https://sebas-ai.infraqualia.com/gondwana-time-educacao/copa-de-gondwana/fichas-paises/assets/cards-prontos/01-selecoes-gondwana.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Manrope:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --background: hsl(28 18% 7%);
+      --foreground: hsl(38 30% 94%);
+      --card: hsl(28 16% 10%);
+      --muted-foreground: hsl(38 18% 70%);
+      --border: hsl(28 14% 20%);
+      --primary: hsl(14 72% 52%);
+      --accent: hsl(45 96% 58%);
+      --accent-foreground: hsl(28 30% 10%);
+      --green: hsl(142 35% 18%);
+      --blue: hsl(210 50% 28%);
+      --shadow-warm: 0 24px 80px hsla(14, 72%, 45%, .18);
+      --shadow-glow: 0 0 34px hsla(45, 96%, 58%, .22);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--foreground);
+      background:
+        radial-gradient(circle at 16% 8%, hsla(45, 96%, 58%, .16), transparent 30rem),
+        radial-gradient(circle at 88% 20%, hsla(142, 35%, 28%, .24), transparent 30rem),
+        linear-gradient(180deg, hsl(28 18% 7%) 0%, hsl(28 20% 6%) 56%, hsl(28 18% 7%) 100%);
+      font-family: Manrope, sans-serif;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+    body:before {
+      content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .16;
+      background-image: linear-gradient(hsla(38,30%,94%,.045) 1px, transparent 1px), linear-gradient(90deg, hsla(38,30%,94%,.045) 1px, transparent 1px);
+      background-size: 72px 72px; mask-image: linear-gradient(to bottom, black, transparent 76%);
+    }
+    a { color: inherit; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { font-family: Fraunces, Georgia, serif; }
+    .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; padding: 12px 0; border-bottom: 1px solid hsla(14,72%,45%,.3); background: hsla(28,30%,10%,.95); backdrop-filter: blur(14px); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: flex; align-items: center; flex-shrink: 0; text-decoration: none; }
+    .brand img { width: 142px; max-width: 38vw; height: auto; display: block; }
+    .nav { display: none; align-items: center; gap: 4px; }
+    .nav a, .mobile-nav a { text-decoration: none; padding: 10px 12px; border-radius: 999px; color: hsla(38,30%,94%,.78); font-size: 14px; font-weight: 700; transition: color .2s ease, background .2s ease; }
+    .nav a:hover, .nav a.active, .mobile-nav a:hover, .mobile-nav a.active { color: var(--foreground); background: hsla(38,30%,94%,.08); }
+    .nav a.copa-nav-link, .mobile-nav a.copa-nav-link { order: 99; color: var(--accent-foreground); background: var(--accent); border: 1px solid hsla(45,96%,58%,.72); box-shadow: var(--shadow-glow); font-weight: 900; }
+    .nav a.copa-nav-link:hover, .nav a.copa-nav-link.active, .mobile-nav a.copa-nav-link:hover, .mobile-nav a.copa-nav-link.active { color: var(--accent-foreground); background: hsl(45 96% 70%); }
+    .header-actions { display: flex; align-items: center; gap: 8px; }
+    .menu-toggle { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border: 1px solid hsla(38,30%,94%,.14); border-radius: 999px; background: hsla(28,16%,10%,.62); color: var(--foreground); font: inherit; font-size: 13px; font-weight: 800; }
+    .mobile-nav { display: none; margin-top: 10px; padding: 10px; border: 1px solid hsla(38,30%,94%,.12); border-radius: 20px; background: hsla(28,16%,10%,.96); box-shadow: 0 18px 52px hsla(0,0%,0%,.24); }
+    .mobile-nav.is-open { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+    .mobile-nav a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; text-align: center; }
+    .support-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 999px; padding: 0 18px; background: var(--accent); color: var(--accent-foreground); text-decoration: none; font-size: 14px; font-weight: 800; box-shadow: var(--shadow-glow); white-space: nowrap; }
+    main { padding-top: 74px; }
+    .hero { position: relative; overflow: hidden; padding: clamp(64px, 10vw, 126px) 0 64px; }
+    .hero-grid { display: grid; gap: 36px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 18px; color: var(--accent); font-size: 13px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    .eyebrow:before { content: ""; width: 28px; height: 1px; background: var(--accent); }
+    h1 { max-width: 930px; font-size: clamp(2.7rem, 7.6vw, 6.4rem); line-height: .94; font-weight: 900; letter-spacing: -.04em; text-wrap: balance; }
+    .lead { max-width: 760px; margin-top: 24px; color: var(--muted-foreground); font-size: clamp(1.05rem, 2vw, 1.28rem); line-height: 1.72; }
+    .hero-actions, .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; padding: 0 20px; text-decoration: none; font-weight: 850; font-size: 15px; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-accent { background: var(--accent); color: var(--accent-foreground); box-shadow: var(--shadow-glow); }
+    .btn-primary { background: var(--primary); color: var(--foreground); box-shadow: var(--shadow-warm); }
+    .btn-ghost { border: 1px solid hsla(38,30%,94%,.22); color: var(--foreground); background: hsla(38,30%,94%,.04); }
+    .visual-card { position: relative; min-height: 420px; border: 1px solid hsla(38,30%,94%,.13); border-radius: 34px; overflow: hidden; background: linear-gradient(145deg, hsla(14,72%,38%,.86), hsla(210,50%,22%,.92) 52%, hsla(142,35%,18%,.9)); box-shadow: 0 30px 90px hsla(0,0%,0%,.28); }
+    .visual-card:before { content:""; position:absolute; inset:22px; border:1px solid hsla(38,30%,94%,.19); border-radius:26px; background: radial-gradient(circle at 50% 32%, hsla(45,96%,58%,.2), transparent 13rem); }
+    .visual-logo { position:absolute; left:50%; top:34%; width:min(80%, 240px); transform:translate(-50%,-50%); filter: drop-shadow(0 18px 30px rgba(0,0,0,.3)); }
+    .visual-logo img { width:100%; height:auto; display:block; }
+    .visual-text { position:absolute; left:34px; right:34px; bottom:34px; }
+    .visual-text strong { display:block; font-family: Fraunces, Georgia, serif; font-size: clamp(2.2rem, 5vw, 3.3rem); line-height:.96; letter-spacing:-.04em; }
+    .visual-text span { display:block; margin-top:12px; color:hsla(38,30%,94%,.72); font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:.76rem; }
+    .campaign-metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:28px; max-width:760px; }
+    .metric { border:1px solid hsla(38,30%,94%,.14); border-radius:20px; padding:14px; background:hsla(38,30%,94%,.055); }
+    .metric strong { display:block; font-family:Fraunces, Georgia, serif; color:var(--accent); font-size:clamp(1.9rem,4vw,3rem); line-height:.9; letter-spacing:-.045em; }
+    .metric span { display:block; margin-top:8px; color:hsla(38,30%,94%,.68); font-size:12px; font-weight:900; letter-spacing:.09em; text-transform:uppercase; }
+    .flow-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:28px; }
+    .flow-item { border:1px solid hsla(38,30%,94%,.13); border-radius:26px; padding:20px; background:linear-gradient(160deg,hsla(38,30%,94%,.08),hsla(38,30%,94%,.025)); }
+    .flow-item small { display:inline-flex; margin-bottom:12px; color:var(--accent); font-size:12px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
+    .flow-item h3 { font-size:1.45rem; line-height:1.05; }
+    .flow-item p { margin-top:10px; color:var(--muted-foreground); line-height:1.65; }
+    .experience-card { display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:stretch; margin-top:26px; }
+    .experience-panel { border:1px solid hsla(38,30%,94%,.15); border-radius:32px; padding:26px; background:hsla(38,30%,94%,.06); }
+    .experience-panel h3 { font-size:clamp(1.8rem,3.8vw,3.2rem); line-height:.98; letter-spacing:-.035em; }
+    .experience-panel p { margin-top:14px; color:var(--muted-foreground); line-height:1.72; }
+    .phone-frame { min-height:440px; border-radius:34px; border:1px solid hsla(38,30%,94%,.16); background:radial-gradient(circle at 50% 20%,hsla(45,96%,58%,.18),transparent 13rem),linear-gradient(180deg,hsl(210 50% 20%),hsl(28 18% 7%)); overflow:hidden; position:relative; box-shadow:0 26px 80px hsla(0,0%,0%,.25); }
+    .phone-frame:before { content:""; position:absolute; top:0; left:50%; width:min(72%,340px); height:7px; transform:translateX(-50%); border-radius:0 0 999px 999px; background:linear-gradient(90deg,var(--blue),var(--green),var(--accent)); }
+    .phone-inner { position:absolute; inset:24px; border:1px solid hsla(38,30%,94%,.12); border-radius:26px; padding:34px 32px; display:flex; flex-direction:column; justify-content:center; gap:24px; }
+    .phone-inner strong { max-width:9.2ch; font-family:Fraunces, Georgia, serif; font-size:clamp(2.45rem,4.7vw,4.25rem); line-height:.94; letter-spacing:-.05em; text-wrap:balance; }
+    .phone-inner span { width:max-content; max-width:100%; color:var(--accent); font-weight:900; letter-spacing:.14em; text-transform:uppercase; font-size:12px; line-height:1.4; }
+    section { scroll-margin-top: 90px; }
+    .section { padding: 76px 0; }
+    .paper { background: hsl(38 52% 95%); color: hsl(28 30% 10%); }
+    .section-head { display: grid; gap: 24px; margin-bottom: 30px; }
+    .kicker { color: var(--primary); font-size: 13px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    .section-head h2 { margin-top: 10px; font-size: clamp(2.2rem, 5vw, 4.4rem); line-height: .98; letter-spacing: -.035em; }
+    .section-copy { color: hsl(28 20% 34%); font-size: 1.05rem; line-height: 1.78; }
+    .dark .section-copy { color: var(--muted-foreground); }
+    .cards, .country-grid, .use-grid { display: grid; gap: 16px; }
+    .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .feature-card, .country-card, .use-card { border: 1px solid hsla(28,20%,10%,.12); background: white; border-radius: 28px; padding: 22px; box-shadow: 0 18px 50px hsla(28,20%,10%,.08); }
+    .feature-card h3, .country-card h3, .use-card h3 { font-size: 1.45rem; line-height: 1.1; color: #2b1f17; }
+    .feature-card p, .country-card p, .use-card p { margin-top: 10px; color: hsl(28 18% 38%); line-height: 1.68; }
+    .card-kicker, .country-card span { display: inline-flex; margin-bottom: 12px; color: var(--primary); font-size: 12px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    .country-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .country-card { min-height: 220px; }
+    .country-card p { font-size: .94rem; }
+    .dark-card { border: 1px solid hsla(38,30%,94%,.15); background: hsla(38,30%,94%,.07); border-radius: 30px; padding: 26px; }
+    .dark-card h3 { font-size: 1.7rem; }
+    .dark-card p { margin-top: 10px; color: var(--muted-foreground); line-height: 1.7; }
+    .guide-form { margin-top: 28px; border: 1px solid hsla(38,30%,94%,.16); border-radius: 32px; padding: clamp(20px, 4vw, 32px); background: linear-gradient(145deg, hsla(38,30%,94%,.1), hsla(38,30%,94%,.035)); box-shadow: 0 26px 80px hsla(0,0%,0%,.22); }
+    .guide-secondary-actions, .guide-cards { margin-top: 20px; }
+    .guide-form-head { display: grid; gap: 8px; margin-bottom: 22px; max-width: 760px; }
+    .guide-form-head h3 { font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1; letter-spacing: -.03em; }
+    .guide-form-head p, .guide-form-note { color: var(--muted-foreground); line-height: 1.68; }
+    .guide-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .guide-field { display: grid; gap: 7px; }
+    .guide-field.full { grid-column: 1 / -1; }
+    .guide-field label, .guide-consent { color: hsla(38,30%,94%,.82); font-size: 13px; font-weight: 850; letter-spacing: .02em; }
+    .guide-field input, .guide-field select, .guide-field textarea { width: 100%; min-height: 50px; border: 1px solid hsla(38,30%,94%,.18); border-radius: 18px; padding: 12px 14px; background: hsla(28,18%,7%,.72); color: var(--foreground); font: inherit; outline: none; }
+    .guide-field textarea { min-height: 104px; resize: vertical; }
+    .guide-field input:focus, .guide-field select:focus, .guide-field textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px hsla(45,96%,58%,.14); }
+    .guide-consent { display: flex; gap: 10px; align-items: flex-start; margin-top: 16px; line-height: 1.5; }
+    .guide-consent input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--accent); flex: 0 0 auto; }
+    .guide-consent a { color: var(--accent); font-weight: 900; }
+    .form-status { min-height: 22px; margin-top: 14px; color: var(--muted-foreground); font-size: 13px; line-height: 1.5; }
+    .form-status.ok { color: var(--accent); }
+    .form-status.error { color: hsl(14 72% 64%); }
+    .chips { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+    .chips span { border:1px solid hsla(28,20%,10%,.16); border-radius:999px; padding:9px 12px; color:hsl(28 20% 30%); background:hsla(28,20%,10%,.035); font-size:13px; font-weight:800; }
+    .fichas-catalogo { background: linear-gradient(180deg, hsl(38 52% 95%), hsl(41 55% 91%)); }
+    .catalogue-brief { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:26px 0 22px; }
+    .catalogue-brief article { border:1px solid hsla(28,20%,10%,.12); border-radius:26px; padding:20px; background:rgba(255,255,255,.72); box-shadow:0 14px 42px hsla(28,20%,10%,.07); }
+    .catalogue-brief b { display:block; color:var(--primary); font-size:12px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
+    .catalogue-brief p { margin-top:8px; color:hsl(28 18% 38%); line-height:1.65; }
+    .use-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); counter-reset: step; }
+    .use-card:before { counter-increment: step; content: "0" counter(step); display:inline-flex; margin-bottom:16px; width:42px; height:42px; align-items:center; justify-content:center; border-radius:50%; background:var(--accent); color:var(--accent-foreground); font-weight:900; }
+    .bridge { background: radial-gradient(circle at 18% 20%, hsla(45,96%,58%,.18), transparent 22rem), linear-gradient(135deg, hsl(28 18% 7%), hsl(210 50% 20%)); }
+    .bridge-box { display:grid; grid-template-columns:1.1fr .9fr; gap:22px; align-items:center; border:1px solid hsla(38,30%,94%,.14); border-radius:34px; padding:30px; background:hsla(38,30%,94%,.06); }
+    .bridge-box h2 { font-size:clamp(2.2rem, 5vw, 4.2rem); line-height:1; letter-spacing:-.035em; }
+    .bridge-box p { margin-top:16px; color:var(--muted-foreground); line-height:1.75; }
+    .footer { padding: 54px 0 64px; border-top: 1px solid var(--border); color: var(--muted-foreground); background:linear-gradient(180deg,hsl(28 18% 7%),hsl(28 22% 5%)); }
+    .footer-grid { display:grid; grid-template-columns:1.25fr .75fr .75fr; gap:28px; align-items:start; }
+    .footer-brand { display:flex; align-items:center; gap:14px; color:var(--foreground); text-decoration:none; font-weight:900; }
+    .footer-brand img { width:112px; height:auto; display:block; }
+    .footer p { max-width:620px; margin-top:14px; line-height:1.72; }
+    .footer h3 { color:var(--foreground); font-size:1.15rem; margin-bottom:12px; }
+    .footer-links { display:grid; gap:9px; }
+    .footer a { color: var(--accent); font-weight: 800; text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+    .footer-bottom { margin-top:30px; padding-top:18px; border-top:1px solid hsla(38,30%,94%,.12); font-size:13px; color:hsla(38,30%,94%,.58); }
+    @media (min-width: 760px) { .nav { display:flex; } .menu-toggle { display:none; } .hero-grid { grid-template-columns: minmax(0,1.05fr) minmax(330px,.95fr); } .section-head { grid-template-columns: .86fr 1.14fr; align-items:start; } }
+    @media (max-width: 980px) { .cards, .country-grid, .use-grid, .flow-strip, .catalogue-brief, .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .bridge-box, .experience-card { grid-template-columns:1fr; } .footer-grid > :first-child { grid-column:1/-1; } }
+    @media (max-width: 620px) { .container { width:min(100% - 28px, 1180px); } main { padding-top:72px; } .hero { padding-top:52px; } .hero-actions .btn, .actions .btn { width:100%; } .visual-card { min-height:340px; border-radius:26px; } .visual-logo { top:31%; width:min(72%, 200px); } .visual-text { left:24px; right:24px; bottom:24px; } .cards, .country-grid, .use-grid, .campaign-metrics, .flow-strip, .catalogue-brief, .footer-grid, .guide-form-grid { grid-template-columns:1fr; } .guide-field.full { grid-column:auto; } .guide-form { border-radius:24px; } .footer-grid > :first-child { grid-column:auto; } .mobile-nav.is-open { grid-template-columns:1fr; } .support-btn { padding:0 14px; } .phone-frame { min-height:390px; } .phone-inner { inset:18px; padding:30px 24px; gap:18px; } .phone-inner strong { max-width:8.4ch; font-size:clamp(2.4rem,13vw,3.55rem); line-height:.92; } .phone-inner span { font-size:10px; letter-spacing:.11em; } .experience-panel { padding:22px; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/a-bola-conecta/" aria-label="A Bola Conecta - Portal Gondwana">
+        <img src="/a-bola-conecta/assets/a-bola-conecta-logo-v2-WdlHxh0O.png" alt="A Bola Conecta">
+      </a>
+      <nav class="nav" aria-label="Menu principal">
+        <a href="/a-bola-conecta/">Início</a>
+        <a href="/a-bola-conecta/documentario">O Filme</a>
+        <a href="/a-bola-conecta/sobre">Sobre</a>
+        <a href="/a-bola-conecta/servicos">Serviços</a>
+        <a href="/a-bola-conecta/comunidade">Comunidade</a>
+        <a href="/a-bola-conecta/blog">Blog</a>
+        <a href="/a-bola-conecta/contato">Contato</a>
+        <a class="active copa-nav-link" href="/a-bola-conecta/copa-2026/">Copa 2026</a>
+      </nav>
+      <div class="header-actions">
+        <button class="menu-toggle" type="button" aria-controls="mobileMenu" aria-expanded="false">Menu</button>
+        <a class="support-btn" href="/a-bola-conecta/comunidade/#apoio">Apoie</a>
+      </div>
+    </div>
+    <nav class="container mobile-nav" id="mobileMenu" aria-label="Menu mobile">
+      <a href="/a-bola-conecta/">Início</a>
+      <a href="/a-bola-conecta/documentario">O Filme</a>
+      <a href="/a-bola-conecta/sobre">Sobre</a>
+      <a href="/a-bola-conecta/servicos">Serviços</a>
+      <a href="/a-bola-conecta/comunidade">Comunidade</a>
+      <a href="/a-bola-conecta/blog">Blog</a>
+      <a href="/a-bola-conecta/contato">Contato</a>
+      <a class="active copa-nav-link" href="/a-bola-conecta/copa-2026/">Copa 2026</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Copa do Mundo 2026</div>
+          <h1>Uma Copa para ler o mundo pela bola.</h1>
+          <p class="lead">A Copa vai mostrar 48 seleções. A gente mostra os mundos que entram em campo com elas: territórios, culturas, memórias, línguas, migrações e perguntas para sala de aula, oficina e mediação cultural.</p>
+          <div class="campaign-metrics" aria-label="Resumo da experiência educativa">
+            <div class="metric"><strong>48</strong><span>seleções</span></div>
+            <div class="metric"><strong>55</strong><span>cards</span></div>
+            <div class="metric"><strong>4</strong><span>eixos de leitura</span></div>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-accent" href="/a-bola-conecta/copa-2026/fichas/">Escolher uma seleção</a>
+            <a class="btn btn-primary" href="#baixar">Receber guia educativo</a>
+            <a class="btn btn-ghost" href="/a-bola-conecta/comunidade/#apoio">Apoiar a circulação</a>
+          </div>
+        </div>
+        <aside class="visual-card" aria-label="Síntese visual do especial Copa 2026">
+          <div class="visual-logo" aria-hidden="true"><img src="/gondwana-fc-logo/svg/oficiais/logo-gondwana-fc-fundo-escuro.svg" alt=""></div>
+          <div class="visual-text"><strong>Da bola ao território.</strong><span>Fichas, stories e materiais para escola e comunidade</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section dark" id="experiencia">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="kicker">Como começar</p><h2>Escolha uma ficha e abra uma conversa.</h2></div>
+          <p class="section-copy">Use em 10 minutos: escolha uma seleção, leia a pergunta do card e peça que o grupo conecte bola, mapa e memória. Depois a conversa pode virar pesquisa, mural, cartaz, áudio, vídeo ou roda.</p>
+        </div>
+        <div class="flow-strip" aria-label="Caminhos para usar Seleções Gondwana">
+          <article class="flow-item"><small>01</small><h3>Escolha uma seleção</h3><p>Comece por um país que o grupo conhece, torce, estranha ou quer localizar no mapa.</p></article>
+          <article class="flow-item"><small>02</small><h3>Abra uma pergunta</h3><p>Use o card como provocação. O objetivo não é entregar resposta pronta, é acender investigação.</p></article>
+          <article class="flow-item"><small>03</small><h3>Produza uma devolução</h3><p>Transforme a conversa em mapa, mural, mini podcast, cartaz, vídeo curto ou apresentação coletiva.</p></article>
+        </div>
+        <div class="experience-card">
+          <div class="phone-frame" aria-hidden="true">
+            <div class="phone-inner">
+              <span>Seleções Gondwana</span>
+              <strong>55 cards para atravessar o mapa</strong>
+              <span>território · cultura · memória · futebol</span>
+            </div>
+          </div>
+          <div class="experience-panel">
+            <h3>As fichas foram feitas para circular.</h3>
+            <p>No carrossel, cada card pode ser visto em tela cheia, compartilhado por link e usado como primeira pergunta de uma aula, oficina ou roda de conversa.</p>
+            <p>Comece por uma seleção. Depois aprofunde com o guia educativo e adapte a proposta ao tempo, ao território e ao grupo com quem você trabalha.</p>
+            <div class="actions">
+              <a class="btn btn-accent" href="/a-bola-conecta/copa-2026/fichas/">Abrir carrossel agora</a>
+              <a class="btn btn-ghost" href="#fichas">Ver exemplos de perguntas</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paper" id="valor">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="kicker">Valor pedagógico</p><h2>Fortalecer a proposta pela aprendizagem.</h2></div>
+          <p class="section-copy">A Copa de 2026 será vista por estudantes, famílias, professores e comunidades antes mesmo de entrar no currículo. Esta seção organiza esse interesse como metodologia: cada país vira uma porta para investigar território, memória, língua, migração, colonialismo, democracia, cultura popular e futebol.</p>
+        </div>
+        <div class="cards">
+          <article class="feature-card"><div class="card-kicker">Território</div><h3>Mapas que contam histórias</h3><p>As fichas ajudam a sair da bandeira e entrar no território: continentes, fronteiras, povos, deslocamentos e paisagens.</p></article>
+          <article class="feature-card"><div class="card-kicker">Memória</div><h3>Futebol com contexto</h3><p>O uniforme de uma seleção pode abrir conversas sobre diáspora africana, povos originários, independências e culturas populares.</p></article>
+          <article class="feature-card"><div class="card-kicker">Prática</div><h3>Material para ativar</h3><p>Professores podem usar as perguntas como disparadores de roda, pesquisa, cartografia afetiva, debate e produção audiovisual.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paper fichas-catalogo" id="fichas">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="kicker">Fichas Gondwana na Copa</p><h2>Catálogo vivo das seleções.</h2></div>
+          <div>
+            <p class="section-copy">O catálogo reúne as seleções desta versão e mostra como cada card pode abrir uma conversa concreta em aula, oficina ou mediação cultural: território, memória, cultura, migração, colonialismo, pertencimento e futebol.</p>
+            <div class="chips" aria-label="Eixos e regiões do acervo"><span>América do Sul</span><span>África</span><span>Oceania</span><span>Península Arábica</span><span>Levante / margem arábica</span><span>Mesopotâmia / margem arábica</span><span>América do Norte</span><span>Leste Asiático</span><span>Ásia Ocidental</span><span>Ásia Central</span><span>Europa</span><span>Caribe</span></div>
+          </div>
+        </div>
+        <div class="catalogue-brief" aria-label="Como ler o catálogo de fichas">
+          <article><b>48 seleções</b><p>Um mapa de entrada para pesquisar países, continentes, povos, línguas, fronteiras e histórias pela Copa 2026.</p></article>
+          <article><b>55 cards</b><p>A experiência combina fichas por seleção e cards especiais de contexto para usar em aula, oficina, mediação ou estudo.</p></article>
+          <article><b>Uso direto</b><p>Abra a experiência interativa, escolha uma ficha e transforme a pergunta em roda, mapa, mural, vídeo ou investigação coletiva.</p></article>
+        </div>
+        <div class="actions">
+          <a class="btn btn-accent" href="/a-bola-conecta/copa-2026/fichas/">Abrir experiência interativa</a>
+          <a class="btn btn-ghost" href="/gondwana-time-educacao/copa-de-gondwana/fichas-paises/">Ver acervo técnico</a>
+        </div>
+        <div class="country-grid">
+          <article class="country-card" data-region="América do Sul">
+            <span>América do Sul</span>
+            <h3>Brasil</h3>
+            <p>O que o futebol brasileiro ajuda a enxergar sobre alegria popular, desigualdade, povos indígenas e presença africana no país?</p>
+          </article>
+          <article class="country-card" data-region="América do Sul">
+            <span>América do Sul</span>
+            <h3>Argentina</h3>
+            <p>O que a camisa argentina pode revelar sobre território, migração, memória popular e povos que muitas vezes foram invisibilizados?</p>
+          </article>
+          <article class="country-card" data-region="América do Sul">
+            <span>América do Sul</span>
+            <h3>Uruguai</h3>
+            <p>Como o Uruguai ajuda a pensar que um país não se mede só por tamanho, mas por memória, vida pública e cultura compartilhada?</p>
+          </article>
+          <article class="country-card" data-region="América do Sul">
+            <span>América do Sul</span>
+            <h3>Colômbia</h3>
+            <p>Como a Colômbia mostra que um país pode ser Andes, Caribe, Amazônia, Pacífico e memória afro-indígena ao mesmo tempo?</p>
+          </article>
+          <article class="country-card" data-region="América do Sul">
+            <span>América do Sul</span>
+            <h3>Equador</h3>
+            <p>O que muda quando olhamos o Equador como costa, serra, Amazônia e Galápagos, e não como um território de uma história só?</p>
+          </article>
+          <article class="country-card" data-region="América do Sul">
+            <span>América do Sul</span>
+            <h3>Paraguai</h3>
+            <p>Como uma língua indígena viva muda o modo de imaginar uma nação, uma escola e uma seleção?</p>
+          </article>
+          <article class="country-card" data-region="África">
+            <span>África</span>
+            <h3>África do Sul</h3>
+            <p>Como falar de esporte na África do Sul sem separar bola, apartheid, resistência e democracia?</p>
+          </article>
+          <article class="country-card" data-region="África">
+            <span>África</span>
+            <h3>Gana</h3>
+            <p>Como Gana ajuda a transformar memória da diáspora africana em cultura viva, educação e pertencimento?</p>
+          </article>
+          <article class="country-card" data-region="África">
+            <span>África</span>
+            <h3>Senegal</h3>
+            <p>Como a ideia de teranga pode ensinar sobre hospitalidade, comunidade e pertencimento para além do futebol?</p>
+          </article>
+          <article class="country-card" data-region="África">
+            <span>África</span>
+            <h3>Egito</h3>
+            <p>Como o Egito ajuda a conversar sobre tempo antigo, mundo árabe, África e vida contemporânea no mesmo território?</p>
+          </article>
+          <article class="country-card" data-region="África">
+            <span>África</span>
+            <h3>Marrocos</h3>
+            <p>Como Marrocos revela pontes entre África, mundo árabe, Amazigh, Europa, diáspora e futebol global?</p>
+          </article>
+          <article class="country-card" data-region="África">
+            <span>África</span>
+            <h3>Argélia</h3>
+            <p>Como uma seleção pode carregar memória de guerra, diáspora, luta anticolonial e desejo de dignidade?</p>
+          </article>
+          <article class="country-card" data-region="África">
+            <span>África</span>
+            <h3>Tunísia</h3>
+            <p>Como a Tunísia ajuda a pensar África, Mediterrâneo, mundo árabe, liberdade e reformas sociais?</p>
+          </article>
+          <article class="country-card" data-region="África">
+            <span>África</span>
+            <h3>Costa do Marfim</h3>
+            <p>Como música, cidade, trabalho no campo e futebol contam diferentes histórias da Costa do Marfim?</p>
+          </article>
+          <article class="country-card" data-region="África">
+            <span>África</span>
+            <h3>República Democrática do Congo</h3>
+            <p>Como contar a história congolesa sem apagar a violência colonial e sem reduzir o país à dor?</p>
+          </article>
+          <article class="country-card" data-region="Oceania">
+            <span>Oceania</span>
+            <h3>Austrália</h3>
+            <p>O que significa jogar por um país construído sobre territórios indígenas muito mais antigos?</p>
+          </article>
+          <article class="country-card" data-region="Oceania">
+            <span>Oceania</span>
+            <h3>Nova Zelândia</h3>
+            <p>Como o esporte pode dialogar com soberania Maori, língua, território e identidade do Pacífico?</p>
+          </article>
+          <article class="country-card" data-region="Península Arábica">
+            <span>Península Arábica</span>
+            <h3>Arábia Saudita</h3>
+            <p>Como olhar para a Arábia Saudita sem reduzir o país a petróleo, riqueza ou deserto?</p>
+          </article>
+          <article class="country-card" data-region="Península Arábica">
+            <span>Península Arábica</span>
+            <h3>Catar</h3>
+            <p>O que o Catar nos faz perguntar sobre trabalho migrante, riqueza, território pequeno e imagem global?</p>
+          </article>
+          <article class="country-card" data-region="Levante / margem arábica">
+            <span>Levante / margem arábica</span>
+            <h3>Jordânia</h3>
+            <p>Como uma estreia em Copa pode abrir conversa sobre território, refúgio, arqueologia e fronteiras modernas?</p>
+          </article>
+          <article class="country-card" data-region="Mesopotâmia / margem arábica">
+            <span>Mesopotâmia / margem arábica</span>
+            <h3>Iraque</h3>
+            <p>Como o Iraque mostra que uma seleção pode carregar milhares de anos de história antes do Estado moderno?</p>
+          </article>
+          <article class="country-card" data-region="América do Norte">
+            <span>América do Norte</span>
+            <h3>Estados Unidos</h3>
+            <p>Como ler os Estados Unidos juntando povos originários, diáspora africana, migração, indústria cultural e desigualdade?</p>
+          </article>
+          <article class="country-card" data-region="América do Norte">
+            <span>América do Norte</span>
+            <h3>México</h3>
+            <p>Como o México mostra que Abya Yala é memória indígena, cidade, comida, arte e futebol ao mesmo tempo?</p>
+          </article>
+          <article class="country-card" data-region="América do Norte">
+            <span>América do Norte</span>
+            <h3>Canadá</h3>
+            <p>Como um país anfitrião pode mostrar as feridas e responsabilidades da colonização no norte de Abya Yala?</p>
+          </article>
+          <article class="country-card" data-region="Leste Asiático">
+            <span>Leste Asiático</span>
+            <h3>Japão</h3>
+            <p>Como o Japão ajuda a pensar tradição, memória, tecnologia, cultura pop e trabalho coletivo?</p>
+          </article>
+          <article class="country-card" data-region="Ásia Ocidental">
+            <span>Ásia Ocidental</span>
+            <h3>Irã</h3>
+            <p>Como o futebol iraniano carrega poesia, política, juventude e identidade nacional?</p>
+          </article>
+          <article class="country-card" data-region="Leste Asiático">
+            <span>Leste Asiático</span>
+            <h3>Coreia do Sul</h3>
+            <p>Como uma seleção pode carregar colonização, divisão, tecnologia e cultura pop global?</p>
+          </article>
+          <article class="country-card" data-region="Ásia Central">
+            <span>Ásia Central</span>
+            <h3>Uzbequistão</h3>
+            <p>O que muda quando a Copa abre espaço para a Ásia Central contar suas cidades, línguas e memórias?</p>
+          </article>
+          <article class="country-card" data-region="África Atlântica">
+            <span>África Atlântica</span>
+            <h3>Cabo Verde</h3>
+            <p>Como Cabo Verde transforma diáspora, música, crioulo e memória atlântica em pertencimento?</p>
+          </article>
+          <article class="country-card" data-region="Europa">
+            <span>Europa</span>
+            <h3>Inglaterra</h3>
+            <p>Como uma seleção de uma nação constitutiva do Reino Unido ajuda a pensar futebol moderno, classe, migração e memória imperial?</p>
+          </article>
+          <article class="country-card" data-region="Europa">
+            <span>Europa</span>
+            <h3>França</h3>
+            <p>Como a seleção francesa revela África, Caribe, Europa, periferia e república no mesmo uniforme?</p>
+          </article>
+          <article class="country-card" data-region="Europa">
+            <span>Europa</span>
+            <h3>Espanha</h3>
+            <p>Como falar da Espanha na Copa sem esquecer sua relação colonial com Abya Yala?</p>
+          </article>
+          <article class="country-card" data-region="Europa">
+            <span>Europa</span>
+            <h3>Alemanha</h3>
+            <p>Como uma camisa vencedora também pode carregar memória histórica, responsabilidade e reconstrução democrática?</p>
+          </article>
+          <article class="country-card" data-region="Europa Atlântica">
+            <span>Europa Atlântica</span>
+            <h3>Portugal</h3>
+            <p>Como Portugal aparece na Copa junto com Brasil, África, língua, colonização e diáspora?</p>
+          </article>
+          <article class="country-card" data-region="Europa">
+            <span>Europa</span>
+            <h3>Países Baixos</h3>
+            <p>Como o futebol dos Países Baixos se conecta a mar, colonialismo, Caribe, Suriname e criatividade coletiva?</p>
+          </article>
+          <article class="country-card" data-region="Europa">
+            <span>Europa</span>
+            <h3>Bélgica</h3>
+            <p>Como uma seleção diversa pode abrir conversa sobre Congo, Europa e memória colonial?</p>
+          </article>
+          <article class="country-card" data-region="Europa Balcânica">
+            <span>Europa Balcânica</span>
+            <h3>Croácia</h3>
+            <p>Como a Croácia ajuda a pensar guerra recente, diáspora, memória e reconstrução pelo esporte?</p>
+          </article>
+          <article class="country-card" data-region="Europa Alpina">
+            <span>Europa Alpina</span>
+            <h3>Suíça</h3>
+            <p>Como uma seleção suíça pode contar multilinguismo, migração e neutralidade sem apagar contradições?</p>
+          </article>
+          <article class="country-card" data-region="Europa Central">
+            <span>Europa Central</span>
+            <h3>Áustria</h3>
+            <p>Como a Áustria pode abrir conversa sobre memória imperial, Europa Central, cultura e responsabilidade histórica?</p>
+          </article>
+          <article class="country-card" data-region="Europa Atlântica">
+            <span>Europa Atlântica</span>
+            <h3>Escócia</h3>
+            <p>Como uma seleção de uma nação constitutiva do Reino Unido expressa identidade, língua, autonomia e memória popular?</p>
+          </article>
+          <article class="country-card" data-region="Europa Nórdica">
+            <span>Europa Nórdica</span>
+            <h3>Noruega</h3>
+            <p>Como um país rico em petróleo pode falar de clima, povos Sami e futebol global?</p>
+          </article>
+          <article class="country-card" data-region="Bálcãs">
+            <span>Bálcãs</span>
+            <h3>Bósnia e Herzegovina</h3>
+            <p>Como uma seleção pode carregar convivência, guerra, luto, diáspora e desejo de futuro?</p>
+          </article>
+          <article class="country-card" data-region="Europa Nórdica">
+            <span>Europa Nórdica</span>
+            <h3>Suécia</h3>
+            <p>Como a Suécia ajuda a discutir Estado social, povo Sami, igualdade e cultura popular?</p>
+          </article>
+          <article class="country-card" data-region="Anatólia / Europa-Ásia">
+            <span>Anatólia / Europa-Ásia</span>
+            <h3>Turquia</h3>
+            <p>Como a Turquia ajuda a pensar fronteiras entre Europa e Ásia, império, república, minorias e diáspora?</p>
+          </article>
+          <article class="country-card" data-region="Europa Central">
+            <span>Europa Central</span>
+            <h3>Tchéquia</h3>
+            <p>Como a Tchéquia ajuda a lembrar Boêmia, Tchecoslováquia, revolução democrática e memória centro-europeia?</p>
+          </article>
+          <article class="country-card" data-region="América Central">
+            <span>América Central</span>
+            <h3>Panamá</h3>
+            <p>Como o Panamá mostra que Abya Yala também é ponte, canal, Caribe, povos indígenas e diáspora africana?</p>
+          </article>
+          <article class="country-card" data-region="Caribe">
+            <span>Caribe</span>
+            <h3>Curaçao</h3>
+            <p>Como Curaçao mostra que uma ilha caribenha pode carregar língua própria, memória colonial, autonomia política e potência esportiva?</p>
+          </article>
+          <article class="country-card" data-region="Caribe">
+            <span>Caribe</span>
+            <h3>Haiti</h3>
+            <p>Como o Haiti muda a história do mundo quando a liberdade negra entra no centro da narrativa?</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paper" id="uso">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="kicker">Como usar</p><h2>Da curiosidade para a investigação.</h2></div>
+          <p class="section-copy">O material não precisa virar uma aula expositiva. Ele funciona melhor quando entra como provocação: uma pergunta, um mapa, uma camisa, uma música, uma memória de família, uma notícia ou uma partida.</p>
+        </div>
+        <div class="use-grid">
+          <article class="use-card"><h3>Abrir uma pergunta</h3><p>Escolha uma seleção e comece pela pergunta da ficha. O objetivo é ativar curiosidade, não entregar resposta pronta.</p></article>
+          <article class="use-card"><h3>Localizar no mapa</h3><p>Peça que estudantes conectem território, continente, línguas, vizinhos, deslocamentos e histórias de formação nacional.</p></article>
+          <article class="use-card"><h3>Conectar com a bola</h3><p>Use clube, seleção, jogador, música, torcida ou uniforme como ponte entre cultura popular e conhecimento escolar.</p></article>
+          <article class="use-card"><h3>Produzir devolução</h3><p>Finalize com mural, card, roda de conversa, mini podcast, cartaz, pesquisa de família ou apresentação coletiva.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="baixar">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="kicker">PDF para educadores</p><h2>Receba o guia e leve para seu grupo.</h2></div>
+          <p class="section-copy">O guia em PDF reúne fichas, perguntas e sugestões de uso para educadoras, educadores e instituições. Ao se cadastrar, você ajuda a Gondwana FC a conhecer onde o material está chegando e recebe caminhos para usar a proposta com seu grupo.</p>
+        </div>
+        <form class="guide-form" id="copaGuideForm" data-abc-lead data-form-id="copa-2026-ebook" data-campaign="copa-2026-selecoes-gondwana" data-success-message="Cadastro recebido. Enviaremos o guia e próximos caminhos por email." data-error-message="Não conseguimos enviar agora. O registro ficou salvo neste navegador.">
+          <div class="guide-form-head">
+            <p class="kicker">Receber guia educativo</p>
+            <h3>Deixe seus dados para receber o e-book.</h3>
+            <p>Use este cadastro para receber o PDF consolidado, acompanhar novas fichas e contar como pretende usar Seleções Gondwana no seu território.</p>
+          </div>
+          <div class="guide-form-grid">
+            <div class="guide-field">
+              <label for="guideNome">Nome</label>
+              <input id="guideNome" name="nome" type="text" autocomplete="name" required>
+            </div>
+            <div class="guide-field">
+              <label for="guideEmail">Email</label>
+              <input id="guideEmail" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="guide-field">
+              <label for="guidePerfil">Perfil</label>
+              <select id="guidePerfil" name="role">
+                <option value="educador">Educadora ou educador</option>
+                <option value="escola">Escola ou instituição educativa</option>
+                <option value="museu">Museu ou instituição cultural</option>
+                <option value="projeto-social">Projeto social ou coletivo</option>
+                <option value="familia">Família ou uso pessoal</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+            <div class="guide-field">
+              <label for="guideInstituicao">Instituição</label>
+              <input id="guideInstituicao" name="instituicao" type="text" autocomplete="organization">
+            </div>
+            <div class="guide-field">
+              <label for="guideCidade">Cidade</label>
+              <input id="guideCidade" name="cidade" type="text" autocomplete="address-level2">
+            </div>
+            <div class="guide-field">
+              <label for="guidePais">País</label>
+              <input id="guidePais" name="pais" type="text" autocomplete="country-name" value="Brasil">
+            </div>
+            <div class="guide-field full">
+              <label for="guideMensagem">Como pretende usar o guia?</label>
+              <textarea id="guideMensagem" name="mensagem" placeholder="Ex.: aula, roda de conversa, museu, clube, projeto social ou pesquisa."></textarea>
+            </div>
+          </div>
+          <input type="hidden" name="interesse" value="copa-2026-ebook">
+          <label class="guide-consent" for="guideConsent"><input id="guideConsent" name="consent" type="checkbox" value="sim" required><span>Autorizo a Gondwana FC a entrar em contato sobre este guia e atividades educativas. Li a <a href="/a-bola-conecta/privacidade">política de privacidade</a>.</span></label>
+          <div class="actions">
+            <button class="btn btn-accent" type="submit">Quero receber o e-book</button>
+            <p class="guide-form-note">Sem spam. O objetivo é entender onde o material está circulando e abrir próximos caminhos educativos.</p>
+          </div>
+          <div class="form-status" data-form-status role="status" aria-live="polite"></div>
+        </form>
+        <div class="actions guide-secondary-actions" aria-label="Outros caminhos para acessar Seleções Gondwana">
+          <a class="btn btn-primary" href="/a-bola-conecta/copa-2026/fichas/">Ver fichas online</a>
+          <a class="btn btn-ghost" href="/a-bola-conecta/comunidade/#apoio">Apoiar a circulação</a>
+        </div>
+        <div class="cards guide-cards">
+          <article class="dark-card"><h3>O que você informa</h3><p>Nome, email, cidade, instituição, profissão e como pretende usar o guia. Só o necessário para manter contato e apoiar a circulação educativa.</p></article>
+          <article class="dark-card"><h3>O que você recebe</h3><p>O PDF das fichas, o link da experiência interativa e convites para acompanhar novas atividades da comunidade Gondwana FC.</p></article>
+          <article class="dark-card"><h3>Como participar</h3><p>Use uma ficha, compartilhe com sua turma ou instituição e conte para a Gondwana FC que conversa o material abriu no seu território.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paper" id="levar-instituicao">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="kicker">Para instituições</p><h2>Levar Seleções Gondwana para sua instituição.</h2></div>
+          <p class="section-copy">O guia pode virar conversa, encontro formativo ou piloto educativo. O ponto de partida é simples: entender o contexto da escola, museu, clube, universidade, projeto social ou instituição cultural e adaptar a experiência para esse território.</p>
+        </div>
+        <div class="cards">
+          <article class="feature-card">
+            <div class="card-kicker">Primeiro contato</div>
+            <h3>Conversa de 30 min</h3>
+            <p>Um encontro breve para conhecer a instituição, mapear interesses e desenhar uma próxima etapa possível com a Copa 2026 como porta pedagógica.</p>
+            <div class="actions"><a class="btn btn-primary" href="/a-bola-conecta/contato?origem=copa-2026&interesse=conversa-30-min" aria-label="Agendar conversa sobre Seleções Gondwana">Agendar conversa</a></div>
+          </article>
+          <article class="feature-card">
+            <div class="card-kicker">Encontro guiado</div>
+            <h3>Cine-debate ou oficina</h3>
+            <p>Sessão de 90 minutos com fichas, guia educativa e metodologia ABC para abrir perguntas sobre futebol, território, memória, cultura e imagem.</p>
+            <div class="actions"><a class="btn btn-primary" href="/a-bola-conecta/contato?origem=copa-2026&interesse=oficina" aria-label="Solicitar oficina Seleções Gondwana">Solicitar oficina</a></div>
+          </article>
+          <article class="feature-card">
+            <div class="card-kicker">Programa educativo</div>
+            <h3>Piloto de 4 a 8 semanas</h3>
+            <p>Uma experiência acompanhada com atividades, mediação e devolução coletiva, construída junto da equipe educadora e da comunidade participante.</p>
+            <div class="actions"><a class="btn btn-primary" href="/a-bola-conecta/contato?origem=copa-2026&interesse=piloto-educativo" aria-label="Conversar sobre piloto educativo Seleções Gondwana">Quero piloto</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bridge" id="comunidade">
+      <div class="container bridge-box">
+        <div>
+          <p class="kicker">A Bola Conecta + Time da Educação</p>
+          <h2>Uma proposta mais forte quando circula.</h2>
+          <p>Ao trazer as fichas para A Bola Conecta, o projeto deixa de ser apenas um acervo e passa a funcionar como ferramenta de comunidade: professores usam, escolas adaptam, estudantes perguntam e apoiadores ajudam o material a chegar mais longe.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-accent" href="/a-bola-conecta/comunidade/#apoio">Apoiar o projeto</a>
+          <a class="btn btn-primary" href="#levar-instituicao">Levar para uma instituição</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="footer-brand" href="/a-bola-conecta/" aria-label="Voltar ao portal A Bola Conecta">
+            <img src="/a-bola-conecta/assets/a-bola-conecta-logo-v2-WdlHxh0O.png" alt="A Bola Conecta">
+            <span>Especial Copa 2026</span>
+          </a>
+          <p>Seleções Gondwana transforma a Copa do Mundo em experiência educativa: fichas, perguntas e caminhos para aprender pela bola, pelo território, pela memória e pela câmera.</p>
+        </div>
+        <div>
+          <h3>Explorar</h3>
+          <div class="footer-links">
+            <a href="#inicio">Início da página</a>
+            <a href="#fichas">Fichas e catálogo</a>
+            <a href="/a-bola-conecta/copa-2026/fichas/">Experiência interativa</a>
+            <a href="#baixar">Guia para educadores</a>
+          </div>
+        </div>
+        <div>
+          <h3>Conectar</h3>
+          <div class="footer-links">
+            <a href="/a-bola-conecta/comunidade/#apoio">Apoiar o projeto</a>
+            <a href="/a-bola-conecta/contato">Falar com Gondwana FC</a>
+            <a href="/a-bola-conecta/">Portal A Bola Conecta</a>
+            <a href="/a-bola-conecta/privacidade">Privacidade</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">Gondwana FC - Time da Educação. A Bola Conecta é o projeto de origem desta experiência.</div>
+    </div>
+  </footer>
+
+  <script>
+    window.GONDWANA_CONFIG = { leadsEndpoint: 'https://abolaconecta.com.br/api/leads' };
+  </script>
+  <script src="/a-bola-conecta/assets/forms.js" defer></script>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuToggle?.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    mobileMenu?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('is-open');
+        menuToggle?.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>

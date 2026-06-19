@@ -1,4 +1,4 @@
-import { cp, mkdir, rm, readFile, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readdir, rm, readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 
@@ -29,24 +29,78 @@ const routeCanonicals = new Map([
   ['faq/index.html', `${siteDomain}/faq`],
   ['mapa-do-site/index.html', `${siteDomain}/mapa-do-site`],
   ['privacidade/index.html', `${siteDomain}/privacidade`],
+  ['copa-2026/index.html', `${siteDomain}/copa-2026/`],
+  ['copa-2026/fichas/index.html', `${siteDomain}/copa-2026/fichas/`],
+  ['copa-2026/baixar/index.html', `${siteDomain}/copa-2026/baixar/`],
+  ['copa-2026/ebook-consolidado/index.html', `${siteDomain}/copa-2026/ebook-consolidado/`],
+  ['copa-2026/ebook-educadores-v1/index.html', `${siteDomain}/copa-2026/ebook-educadores-v1/`],
 ]);
 
-for (const [relativePath, canonical] of routeCanonicals) {
+const referencedAssets = new Set();
+const htmlFiles = [];
+
+async function collectHtmlFiles(dir) {
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    const absolutePath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      await collectHtmlFiles(absolutePath);
+    } else if (entry.isFile() && entry.name.endsWith('.html')) {
+      htmlFiles.push(path.relative(distDir, absolutePath));
+    }
+  }
+}
+
+function canonicalFor(relativePath) {
+  if (routeCanonicals.has(relativePath)) return routeCanonicals.get(relativePath);
+  if (relativePath === 'index.html') return `${siteDomain}/`;
+  if (!relativePath.endsWith('/index.html')) return null;
+  return `${siteDomain}/${relativePath.replace(/\/index\.html$/, '/')}`;
+}
+
+function trackReferencedAssets(html) {
+  for (const match of html.matchAll(/(?:src|href)="\/?(assets\/[^"?#]+)(?:[?#][^"]*)?"/g)) {
+    referencedAssets.add(match[1]);
+  }
+}
+
+await collectHtmlFiles(distDir);
+
+for (const relativePath of htmlFiles) {
+  const canonical = canonicalFor(relativePath);
   const file = path.join(distDir, relativePath);
-  if (!existsSync(file)) continue;
   let html = await readFile(file, 'utf8');
   html = html.replaceAll('/a-bola-conecta/assets/', '/assets/');
   html = html.replaceAll('/a-bola-conecta/__l5e/', '/__l5e/');
   html = html.replaceAll('/a-bola-conecta/~flock.js', '/~flock.js');
-  html = html.replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${canonical}" />`);
+  html = html.replaceAll('https://sebas-ai.infraqualia.com/a-bola-conecta', siteDomain);
+  if (canonical) {
+    if (html.includes('rel="canonical"')) {
+      html = html.replace(/<link rel="canonical" href="[^"]*" ?\/?>/, `<link rel="canonical" href="${canonical}" />`);
+    } else {
+      html = html.replace('</head>', `    <link rel="canonical" href="${canonical}" />\n  </head>`);
+    }
+  }
+
+  trackReferencedAssets(html);
 
   if (allowIndex) {
-    html = html.replace(/\n\s*<meta name="robots" content="noindex,nofollow" \/>/, '');
+    html = html.replace(/\n\s*<meta name="robots" content="noindex,nofollow" ?\/?>/, '');
   } else if (!html.includes('name="robots"')) {
     html = html.replace('</head>', '    <meta name="robots" content="noindex,nofollow" />\n  </head>');
   }
 
   await writeFile(file, html);
+}
+
+const assetsDir = path.join(distDir, 'assets');
+if (existsSync(assetsDir)) {
+  for (const asset of await readdir(assetsDir)) {
+    const relativeAsset = `assets/${asset}`;
+    const isGeneratedJs = asset.endsWith('.js') && asset.startsWith('index-');
+    if (isGeneratedJs && !referencedAssets.has(relativeAsset)) {
+      await rm(path.join(assetsDir, asset), { force: true });
+    }
+  }
 }
 
 const robotsPath = path.join(distDir, 'robots.txt');
