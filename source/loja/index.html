@@ -279,7 +279,7 @@
             </div>
             <div class="field full">
               <label for="mensagem">Observação opcional</label>
-              <textarea id="mensagem" name="mensagem" placeholder="Exemplo: quero saber quando sair preço, prazo, tamanhos infantis ou compra para grupo."></textarea>
+              <textarea id="mensagem" name="observacao" placeholder="Exemplo: quero saber quando sair preço, prazo, tamanhos infantis ou compra para grupo."></textarea>
             </div>
           </div>
 
@@ -289,6 +289,7 @@
           </div>
           <input type="hidden" name="interesse" value="camisa-abya-yala" />
           <input type="hidden" name="produto" value="camisa-abya-yala" />
+          <input type="hidden" id="leadMessageHidden" name="message" value="" />
 
           <label class="consent">
             <input type="checkbox" name="consentimento" value="sim" required />
@@ -314,12 +315,25 @@
   <script>
     window.GONDWANA_CONFIG = window.GONDWANA_CONFIG || {};
     document.getElementById('camisaAbyaYalaWaitlist')?.addEventListener('submit', (event) => {
-      const botField = event.currentTarget.querySelector('[name="website"]');
+      const form = event.currentTarget;
+      const botField = form.querySelector('[name="website"]');
       if (botField?.value) {
         event.preventDefault();
-        const status = event.currentTarget.querySelector('[data-form-status]');
+        const status = form.querySelector('[data-form-status]');
         if (status) status.textContent = 'Registro recebido.';
+        return;
       }
+
+      const tamanho = form.querySelector('[name="tamanho"]')?.value || 'nao informado';
+      const observacao = form.querySelector('[name="observacao"]')?.value.trim();
+      const cidade = form.querySelector('[name="cidade"]')?.value.trim();
+      const message = [
+        `Tamanho provavel: ${tamanho}`,
+        cidade ? `Cidade informada: ${cidade}` : '',
+        observacao ? `Observacao: ${observacao}` : '',
+      ].filter(Boolean).join(' | ');
+      const hiddenMessage = form.querySelector('#leadMessageHidden');
+      if (hiddenMessage) hiddenMessage.value = message;
     }, true);
   </script>
   <script src="/a-bola-conecta/assets/forms.js?v=20260619-camisa-abya-yala" defer></script>
