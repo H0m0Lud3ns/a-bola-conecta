@@ -158,8 +158,10 @@ function renderCountry(slide){
   var conf=confederations[c.name]||[];
   var html='<div class="content">'+
     '<div class="country-header">'+
-      '<img class="country-flag" src="https://flagcdn.com/w320/'+c.code+'.png" alt="'+esc(c.name)+'" loading="lazy">'+
-      '<img class="country-gondwana-logo" src="/gondwana-fc-logo/svg/oficiais/logo-gondwana-fc-fundo-escuro.svg" alt="Gondwana FC">'+
+      '<div class="country-emblems">'+
+        '<img class="country-flag" src="https://flagcdn.com/w320/'+c.code+'.png" alt="'+esc(c.name)+'" loading="lazy">'+
+        '<img class="country-gondwana-logo" src="/gondwana-fc-logo/svg/oficiais/logo-gondwana-fc-fundo-escuro.svg" alt="Gondwana FC">'+
+      '</div>'+
       '<div class="country-header-text">'+
         '<div class="country-name">'+esc(c.name)+'</div>'+
         '<div class="country-tags">'+
