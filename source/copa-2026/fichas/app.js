@@ -80,7 +80,7 @@ function specialReferences(s){
 
 var specialCards=[
   {id:'01-capa',type:'cover',title:'SELEÇÕES GONDWANA',lede:'Um carrossel para olhar a Copa pelo mapa profundo da Terra, dos povos, das culturas e do futebol.'},
-  {id:'02-mapa-gondwana',type:'special',tag:'Mapa antigo',title:'MAPA DO GONDWANA',lede:'Um mapa geológico para ver Gondwana antes das fronteiras modernas.',mapImg:'/gondwana-time-educacao/copa-de-gondwana/fichas-paises/assets/mapa-gondwana-gdcg-ufrj-184ma-5200-full.jpg',mapAlt:'Mapa geológico do Gondwana reconstruído para 184 Ma',mapCaption:'Mapa geológico do Gondwana reconstruído para 184 Ma, produzido no Centro Digital de Geoprocessamento do Gondwana (GDCG) da UFRJ, Brasil.',labLogo:'/gondwana-time-educacao/copa-de-gondwana/fichas-paises/assets/gondwana-lab-ufrj-logo.png',sections:[{t:'Como ler',p:'Os países atuais não existiam naquele tempo. O mapa mostra blocos continentais e memória geológica.'},{t:'Crédito',p:'GDCG/UFRJ, Brasil.'}]},
+  {id:'02-mapa-gondwana',type:'special',tag:'Mapa antigo',title:'MAPA DO GONDWANA',lede:'Um mapa geológico para ver Gondwana antes das fronteiras modernas.',mapImg:'/gondwana-time-educacao/copa-de-gondwana/fichas-paises/assets/mapa-gondwana-gdcg-ufrj-184ma-5200-full.jpg',mapAlt:'Mapa geológico do Gondwana reconstruído para 184 Ma',mapCaption:'Mapa geológico do Gondwana reconstruído para 184 Ma, produzido no Centro Digital de Geoprocessamento do Gondwana (GDCG) da UFRJ, Brasil.',sections:[{t:'Como ler',p:'Os países atuais não existiam naquele tempo. O mapa mostra blocos continentais e memória geológica.'},{t:'Crédito',p:'GDCG/UFRJ, Brasil.'}]},
   {id:'03-mapa-atual',type:'special',tag:'Mapa atual',title:'MAPA-MÚNDI ATUAL',lede:'O mundo atual como contraponto visual ao supercontinente antigo.',mapImg:'/gondwana-time-educacao/copa-de-gondwana/fichas-paises/assets/mapa-mundi-atual-ibge-proporcoes-reais.jpg',mapAlt:'Mapa-múndi atual do IBGE com continentes em proporções reais',mapCaption:'Fonte: IBGE - mapa-múndi com continentes em proporções reais.',sections:[{t:'Leitura',p:'O mapa atual ajuda a ver onde estão os países que disputam a Copa.'},{t:'Fonte',p:'IBGE - mapa-múndi com continentes em proporções reais.'}]},
   {id:'04-gondwana',type:'special',tag:'Recorte',title:'RECORTE GONDWANA',lede:'Gondwana foi o supercontinente que reuniu, há mais de 180 milhões de anos, terras hoje espalhadas pelo Sul.',pills:countries.slice(0,21).map(function(c){return c.name}),sections:[{t:'Significado',p:'O recorte Gondwana propõe ler o mapa pela memória do supercontinente.'},{t:'Critério',p:'Entra quem tem vínculo forte por território gondwânico.'},{t:'Pedagogia',p:'Deslocar a Copa para o Sul ajuda estudantes a perguntar quem narra o mundo.'}]},
   {id:'05-abya-yala',type:'special',tag:'Nome originário',title:'ABYA YALA',lede:'Nome de origem Guna/Dule usado por movimentos indígenas para afirmar as Américas como terra viva, madura e habitada por muitos povos, antes e além da colonização.',pills:countries.filter(function(c){return c.abyaYala}).map(function(c){return c.name}),sections:[{t:'Origem',p:'A expressão vem de povos Guna/Dule, da região hoje entre Panamá e Colômbia, e costuma ser traduzida como terra madura, terra viva ou terra em florescimento.'},{t:'Sentido político',p:'Movimentos indígenas passaram a usar Abya Yala como alternativa a América, nome ligado à história colonial europeia.'},{t:'Pedagogia',p:'Na Copa, o termo ajuda a perguntar quais povos, línguas, territórios e memórias aparecem quando olhamos as seleções do continente.'},{t:'Fontes',p:'Aiban Wagua, Takir Mamani, Ailton Krenak, Daniel Munduruku, Davi Kopenawa, Eliane Potiguara, Célia Xakriabá, Sônia Guajajara e Rigoberta Menchú Tum.'}]},
@@ -137,8 +137,8 @@ function renderSpecial(s){
   if(s.mapImg){
     html+='<figure class="special-map"><img src="'+esc(s.mapImg)+'" alt="'+esc(s.mapAlt||'')+'" loading="lazy">'+(s.mapCaption?'<figcaption>'+esc(s.mapCaption)+'</figcaption>':'')+'</figure>';
   }
-  if(s.labLogo){
-    html+='<div class="lab-credit"><img src="'+esc(s.labLogo)+'" alt="GondwanaLab UFRJ" class="lab-logo"><span>Centro Digital de Geoprocessamento do Gondwana · UFRJ</span></div>';
+  if(s.id==='02-mapa-gondwana'){
+    html+='<div class="lab-credit"><span class="lab-logo lab-logo-text">GDCG</span><span>Centro Digital de Geoprocessamento do Gondwana · UFRJ</span></div>';
   }
   if(s.pills&&s.pills.length){
     html+='<div class="special-pills">'+s.pills.map(function(p){return'<span>'+esc(p)+'</span>'}).join('')+'</div>';
@@ -158,8 +158,10 @@ function renderCountry(slide){
   var conf=confederations[c.name]||[];
   var html='<div class="content">'+
     '<div class="country-header">'+
-      '<img class="country-flag" src="https://flagcdn.com/w320/'+c.code+'.png" alt="'+esc(c.name)+'" loading="lazy">'+
-      '<img class="country-gondwana-logo" src="/gondwana-fc-logo/svg/oficiais/logo-gondwana-fc-fundo-escuro.svg" alt="Gondwana FC">'+
+      '<div class="country-emblems">'+
+        '<img class="country-flag" src="https://flagcdn.com/w320/'+c.code+'.png" alt="'+esc(c.name)+'" loading="lazy">'+
+        '<img class="country-gondwana-logo" src="/gondwana-fc-logo/svg/oficiais/logo-gondwana-fc-fundo-escuro.svg" alt="Gondwana FC">'+
+      '</div>'+
       '<div class="country-header-text">'+
         '<div class="country-name">'+esc(c.name)+'</div>'+
         '<div class="country-tags">'+
