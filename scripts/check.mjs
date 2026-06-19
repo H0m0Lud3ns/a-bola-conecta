@@ -66,6 +66,12 @@ if (activeBundle.includes('script.google.com')) htmlErrors.push('bundle ativo: r
 if (!activeBundle.includes('comunidade/#apoio')) htmlErrors.push('bundle ativo: comunidade/#apoio ausente');
 if (activeBundle.includes('/a-bola-conecta/')) htmlErrors.push('bundle ativo: link ainda aponta para subpasta /a-bola-conecta/');
 
+for (const file of ['copa-2026/index.html', 'index.html']) {
+  const html = readFileSync(path.join(distDir, file), 'utf8');
+  if (html.includes('/assets/-logo')) htmlErrors.push(`${file}: logo quebrado por rewrite agressivo`);
+}
+
+
 if (htmlErrors.length) {
   console.error('Erros de HTML/bundle:');
   for (const error of htmlErrors) console.error(`- ${error}`);

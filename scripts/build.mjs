@@ -73,7 +73,9 @@ function rewriteForRoot(content) {
   return content
     .replaceAll('https://sebas-ai.infraqualia.com/a-bola-conecta', siteDomain)
     .replaceAll('/a-bola-conecta/', '/')
-    .replaceAll('/a-bola-conecta', '/');
+    .replaceAll('/a-bola-conecta?', '/?')
+    .replaceAll('/a-bola-conecta#', '/#')
+    .replace(/\/a-bola-conecta(?=["'`<\s])/g, '/');
 }
 
 for (const relativePath of textFiles) {
