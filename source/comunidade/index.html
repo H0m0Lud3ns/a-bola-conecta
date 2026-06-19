@@ -1,30 +1,808 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A Bola Conecta | Documentário sobre futebol, África e Brasil</title>
-    <meta name="description" content="Documentário e metodologia educativa que conectam futebol, ancestralidade africana, cultura afro-brasileira e Lei 10.639." />
-    <meta name="author" content="Mônica Saraiva & Sebastián Acevedo" />
-    <meta name="robots" content="noindex,nofollow" />
-    <link rel="canonical" href="https://abolaconecta.com.br/comunidade" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Bola Conecta | Comunidade</title>
+  <meta name="description" content="Comunidade apoiadora de A Bola Conecta. Contribuição voluntária, agradecimentos autorizados e circulação do documentário.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="/agencia-gondwana-gestao/config.js"></script>
+  <style>
+    :root {
+      --background: hsl(28 18% 7%);
+      --foreground: hsl(38 30% 94%);
+      --card: hsl(28 16% 10%);
+      --card-soft: hsla(28, 16%, 10%, .72);
+      --muted: hsl(28 12% 16%);
+      --muted-foreground: hsl(38 18% 70%);
+      --border: hsl(28 14% 20%);
+      --primary: hsl(14 72% 52%);
+      --primary-dark: hsl(14 72% 45%);
+      --accent: hsl(45 96% 58%);
+      --accent-foreground: hsl(28 30% 10%);
+      --green: hsl(142 35% 18%);
+      --shadow-warm: 0 24px 80px hsla(14, 72%, 45%, .18);
+      --shadow-glow: 0 0 34px hsla(45, 96%, 58%, .22);
+    }
 
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="A Bola Conecta" />
-    <meta property="og:locale" content="pt_BR" />
-    <meta property="og:title" content="A Bola Conecta | Documentário sobre futebol, África e Brasil" />
-    <meta property="og:description" content="Documentário e metodologia educativa que conectam futebol, ancestralidade africana, cultura afro-brasileira e Lei 10.639." />
-    <meta property="og:url" content="https://abolaconecta.com.br/" />
-    <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/1PdPgLTTUFT08bk21xhACalES2w1/social-images/social-1779331776447-Home.webp" />
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--foreground);
+      background:
+        radial-gradient(circle at 18% 8%, hsla(14, 72%, 45%, .18), transparent 32rem),
+        radial-gradient(circle at 88% 12%, hsla(45, 96%, 58%, .13), transparent 26rem),
+        linear-gradient(180deg, hsl(28 18% 7%) 0%, hsl(28 20% 6%) 54%, hsl(28 18% 7%) 100%);
+      font-family: Inter, system-ui, sans-serif;
+      line-height: 1.5;
+    }
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="A Bola Conecta | Documentário sobre futebol, África e Brasil" />
-    <meta name="twitter:description" content="Documentário e metodologia educativa que conectam futebol, ancestralidade africana, cultura afro-brasileira e Lei 10.639." />
-    <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/1PdPgLTTUFT08bk21xhACalES2w1/social-images/social-1779331776447-Home.webp" />
-    <script type="module" crossorigin src="/a-bola-conecta/assets/index-Bc6DgKrQ-crm.js"></script>
-    <link rel="stylesheet" crossorigin href="/a-bola-conecta/assets/index--0QhvKt1.css"></head>
+    body:before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .18;
+      background-image:
+        linear-gradient(hsla(38, 30%, 94%, .045) 1px, transparent 1px),
+        linear-gradient(90deg, hsla(38, 30%, 94%, .045) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, black, transparent 74%);
+    }
 
-  <body>
-    <div id="root"></div>
-  </body>
+    a { color: inherit; }
+    .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      padding: 12px 0;
+      border-bottom: 1px solid hsla(14, 72%, 45%, .3);
+      background: hsla(28, 30%, 10%, .95);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: flex; align-items: center; flex-shrink: 0; text-decoration: none; }
+    .brand img { width: 142px; max-width: 38vw; height: auto; display: block; }
+    .header-actions { display: flex; align-items: center; gap: 8px; }
+    .nav { display: none; align-items: center; gap: 4px; }
+    .nav a,
+    .mobile-nav a {
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 999px;
+      color: hsla(38, 30%, 94%, .78);
+      font-size: 14px;
+      font-weight: 600;
+      transition: color .2s ease, background .2s ease;
+    }
+    .nav a:hover, .nav a.active,
+    .mobile-nav a:hover, .mobile-nav a.active { color: var(--foreground); background: hsla(38, 30%, 94%, .08); }
+    .nav a.copa-nav-link, .mobile-nav a.copa-nav-link {
+      order: 99;
+      color: hsl(28 30% 10%) !important;
+      background: hsl(45 96% 58%) !important;
+      border: 1px solid hsla(45, 96%, 58%, .72);
+      box-shadow: 0 0 22px hsla(45, 96%, 58%, .22);
+      font-weight: 900;
+    }
+    .nav a.copa-nav-link:hover, .mobile-nav a.copa-nav-link:hover {
+      background: hsl(45 96% 70%) !important;
+    }
+    .menu-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+      border: 1px solid hsla(38, 30%, 94%, .14);
+      border-radius: 999px;
+      background: hsla(28, 16%, 10%, .62);
+      color: var(--foreground);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+    .mobile-nav {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid hsla(38, 30%, 94%, .12);
+      border-radius: 20px;
+      background: hsla(28, 16%, 10%, .96);
+      box-shadow: 0 18px 52px hsla(0, 0%, 0%, .24);
+    }
+    .mobile-nav.is-open { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+    .mobile-nav a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; text-align: center; }
+    .support-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      border-radius: 999px;
+      padding: 0 18px;
+      background: var(--accent);
+      color: var(--accent-foreground);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: var(--shadow-glow);
+      white-space: nowrap;
+    }
+
+    main { padding-top: 74px; }
+    .hero { position: relative; overflow: hidden; padding: clamp(64px, 10vw, 128px) 0 72px; }
+    .hero-grid { display: grid; gap: 36px; align-items: center; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .eyebrow:before { content: ""; width: 28px; height: 1px; background: var(--accent); }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { font-family: Fraunces, Georgia, serif; }
+    h1 {
+      max-width: 820px;
+      color: var(--foreground);
+      font-size: clamp(2.6rem, 8vw, 5rem);
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -.035em;
+      text-wrap: balance;
+    }
+    .lead {
+      max-width: 720px;
+      margin-top: 24px;
+      color: var(--muted-foreground);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      line-height: 1.72;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      border-radius: 999px;
+      padding: 0 20px;
+      text-decoration: none;
+      font-weight: 750;
+      font-size: 15px;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--primary); color: var(--foreground); box-shadow: var(--shadow-warm); }
+    .btn-accent { background: var(--accent); color: var(--accent-foreground); box-shadow: var(--shadow-glow); }
+    .btn-ghost { border: 1px solid var(--border); color: var(--foreground); background: hsla(28, 16%, 10%, .5); }
+    .hero-media {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid hsla(38, 30%, 94%, .12);
+      background: var(--card);
+      box-shadow: 0 30px 90px hsla(0, 0%, 0%, .34);
+    }
+    .hero-media img { width: 100%; display: block; aspect-ratio: 4 / 5; object-fit: cover; }
+    .caption {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: hsla(28, 18%, 7%, .72);
+      border: 1px solid hsla(38, 30%, 94%, .12);
+      color: hsla(38, 30%, 94%, .78);
+      font-size: 13px;
+      backdrop-filter: blur(10px);
+    }
+    .poster-stamp {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 86px;
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, hsla(28, 30%, 10%, .88), hsla(14, 72%, 35%, .78));
+      border: 1px solid hsla(45, 96%, 58%, .4);
+      color: var(--foreground);
+      box-shadow: 0 18px 48px hsla(0, 0%, 0%, .28);
+      backdrop-filter: blur(10px);
+    }
+    .poster-stamp small { display: block; color: var(--accent); font-size: 11px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    .poster-stamp strong { display: block; margin-top: 3px; font-family: Fraunces, Georgia, serif; font-size: 1.05rem; line-height: 1.1; }
+    .poster-stamp span { display: block; margin-top: 5px; color: hsla(38, 30%, 94%, .76); font-size: 12px; line-height: 1.35; }
+
+    section { padding: 72px 0; border-top: 1px solid hsla(28, 14%, 20%, .68); }
+    .section-head { max-width: 780px; margin-bottom: 34px; }
+    .section-kicker { color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px; }
+    h2 { font-size: clamp(2rem, 5vw, 3.75rem); line-height: 1.05; font-weight: 700; letter-spacing: -.025em; text-wrap: balance; }
+    .section-copy { margin-top: 18px; color: var(--muted-foreground); font-size: 1.06rem; line-height: 1.72; }
+
+    .cards { display: grid; gap: 18px; }
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      border: 1px solid hsla(28, 14%, 20%, .9);
+      border-radius: 22px;
+      background: var(--card-soft);
+      padding: 26px;
+      box-shadow: 0 18px 52px hsla(0, 0%, 0%, .18);
+    }
+    .card-number { color: var(--primary); font-size: 13px; font-weight: 900; letter-spacing: .12em; margin-bottom: 16px; }
+    .card h3 { font-size: 1.55rem; line-height: 1.08; font-weight: 700; }
+    .card p, .card li { color: var(--muted-foreground); line-height: 1.7; }
+    .card p { margin-top: 12px; }
+    .card ul { margin: 16px 0 0; padding-left: 18px; }
+    .card strong { color: var(--foreground); }
+
+    .split { display: grid; gap: 18px; align-items: stretch; }
+    .amounts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+    .amount { border-radius: 18px; background: hsla(45, 96%, 58%, .1); border: 1px solid hsla(45, 96%, 58%, .24); padding: 16px; }
+    .amount strong { display: block; color: var(--accent); font-size: 1.3rem; }
+    .amount span { display: block; margin-top: 4px; color: var(--muted-foreground); font-size: 13px; font-weight: 700; }
+    .pix-box { display: grid; gap: 12px; margin-top: 18px; }
+    .pix-key { overflow-wrap: anywhere; border-radius: 18px; padding: 15px; background: var(--muted); border: 1px solid var(--border); color: var(--foreground); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92rem; }
+    .note { margin-top: 14px; color: var(--muted-foreground); font-size: .94rem; line-height: 1.65; }
+
+    .amount.chip {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+      min-height: 72px;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .amount.chip:hover { transform: translateY(-1px); border-color: hsla(45, 96%, 58%, .55); background: hsla(45, 96%, 58%, .16); }
+    .card-divider { height: 1px; margin: 26px 0 22px; background: linear-gradient(90deg, transparent, hsla(28, 14%, 30%, .9), transparent); }
+    .card-subkicker { color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px; }
+    .next-steps { list-style: none; padding: 0; margin: 4px 0 0; display: grid; gap: 16px; }
+    .next-step { display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: flex-start; }
+    .next-step .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: hsla(14, 72%, 45%, .16);
+      border: 1px solid hsla(14, 72%, 45%, .42);
+      color: var(--foreground);
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .next-step strong { display: block; color: var(--foreground); font-size: .98rem; line-height: 1.35; }
+    .next-step span { display: block; margin-top: 4px; color: var(--muted-foreground); font-size: .92rem; line-height: 1.6; }
+    .card-closing { margin-top: 22px; padding-top: 16px; border-top: 1px dashed hsla(28, 14%, 22%, .8); color: var(--muted-foreground); font-size: .92rem; line-height: 1.65; }
+    .form-group { display: grid; gap: 12px; }
+    .form-group + .form-group { margin-top: 22px; padding-top: 22px; border-top: 1px dashed hsla(28, 14%, 22%, .8); }
+    .form-group-head { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+    .form-group-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--accent-foreground);
+      font-family: Fraunces, Georgia, serif;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .form-group-title { color: var(--foreground); font-size: .95rem; font-weight: 800; letter-spacing: .02em; }
+    .form-hint { color: var(--muted-foreground); font-size: 12.5px; line-height: 1.6; margin-top: 2px; }
+    .field-full { grid-column: 1 / -1; }
+    .form-submit { display: flex; flex-direction: column; gap: 12px; margin-top: 22px; align-items: stretch; }
+    .form-submit .btn { min-height: 54px; font-size: 1rem; padding: 0 28px; box-shadow: var(--shadow-glow); }
+    .form-reassure { color: var(--muted-foreground); font-size: 12.5px; line-height: 1.6; }
+
+    .mural-tools { display: grid; gap: 12px; margin-bottom: 18px; }
+    input[type="search"] {
+      width: 100%;
+      min-height: 48px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--muted);
+      color: var(--foreground);
+      padding: 0 18px;
+      font-size: 16px;
+      outline: none;
+    }
+    input[type="search"]:focus { border-color: var(--accent); box-shadow: 0 0 0 4px hsla(45, 96%, 58%, .12); }
+    .support-form { display: grid; gap: 12px; margin-top: 18px; }
+    .field-grid { display: grid; gap: 12px; }
+    .field { display: grid; gap: 7px; }
+    .field label { color: var(--muted-foreground); font-size: 13px; font-weight: 800; }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      min-height: 46px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--muted);
+      color: var(--foreground);
+      padding: 0 14px;
+      font-size: 16px;
+      outline: none;
+    }
+    .field textarea { min-height: 86px; padding: 12px 14px; resize: vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 4px hsla(45, 96%, 58%, .12); }
+    .form-status { min-height: 22px; color: var(--muted-foreground); font-size: 13px; line-height: 1.5; }
+    .form-status.ok { color: var(--accent); }
+    .form-status.error { color: hsl(14 72% 64%); }
+    .names { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .name { border: 1px solid var(--border); border-radius: 16px; padding: 14px; background: hsla(28, 16%, 10%, .55); }
+    .name strong { display: block; color: var(--foreground); }
+    .name span { display: block; margin-top: 4px; color: var(--muted-foreground); font-size: 13px; }
+
+    details { border: 1px solid var(--border); border-radius: 18px; background: hsla(28, 16%, 10%, .55); padding: 18px; }
+    details + details { margin-top: 12px; }
+    summary { cursor: pointer; color: var(--foreground); font-weight: 800; }
+    details p { margin-top: 12px; color: var(--muted-foreground); line-height: 1.7; }
+
+    .footer { padding: 42px 0 54px; border-top: 1px solid var(--border); color: var(--muted-foreground); }
+    .footer a { color: var(--accent); font-weight: 800; text-decoration: none; }
+
+    @media (min-width: 760px) {
+      .field-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-grid { grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr); }
+      .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .split { grid-template-columns: minmax(280px, .85fr) minmax(0, 1.15fr); }
+      .amounts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .names { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .mural-tools { grid-template-columns: 1fr auto; align-items: center; }
+      .form-submit { flex-direction: row; align-items: center; gap: 18px; }
+      .form-submit .btn { flex: 0 0 auto; }
+      .form-reassure { flex: 1; }
+    }
+
+    @media (min-width: 1024px) {
+      .nav { display: flex; }
+      .menu-toggle { display: none; }
+      .mobile-nav { display: none !important; }
+      .brand img { width: 156px; }
+    }
+
+    @media (max-width: 520px) {
+      .site-header { padding: 10px 0; }
+      .header-inner { gap: 10px; }
+      .brand img { max-width: 42vw; }
+      .support-btn { min-height: 44px; padding: 0 14px; font-size: 13px; }
+      .hero { padding-top: 50px; }
+      .hero-actions .btn { width: 100%; }
+      .poster-stamp { left: 12px; right: 12px; bottom: 72px; padding: 10px 12px; }
+      .poster-stamp strong { font-size: .98rem; }
+      .poster-stamp span { font-size: 11px; }
+      .caption { left: 12px; right: 12px; bottom: 12px; padding: 9px 11px; font-size: 12px; }
+      section { padding: 56px 0; }
+      .names { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/a-bola-conecta/" aria-label="A Bola Conecta - Portal Gondwana">
+        <img src="/a-bola-conecta/assets/a-bola-conecta-logo-v2-WdlHxh0O.png" alt="A Bola Conecta">
+      </a>
+      <nav class="nav" aria-label="Menu principal">
+        <a href="/a-bola-conecta/">Início</a>
+        <a href="/a-bola-conecta/documentario">O Filme</a>
+        <a href="/a-bola-conecta/sobre">Sobre</a>
+        <a href="/a-bola-conecta/servicos">Serviços</a>
+        <a class="active" href="/a-bola-conecta/comunidade">Comunidade</a>
+        <a href="/a-bola-conecta/blog">Blog</a>
+        <a href="/a-bola-conecta/contato">Contato</a>
+        <a class="copa-nav-link" href="/a-bola-conecta/copa-2026/">Copa 2026</a>
+      </nav>
+      <div class="header-actions">
+        <button class="menu-toggle" type="button" aria-controls="mobileMenu" aria-expanded="false">Menu</button>
+        <a class="support-btn" href="#apoio">Apoie</a>
+      </div>
+    </div>
+    <nav class="container mobile-nav" id="mobileMenu" aria-label="Menu mobile">
+      <a href="/a-bola-conecta/">Início</a>
+      <a href="/a-bola-conecta/documentario">O Filme</a>
+      <a href="/a-bola-conecta/sobre">Sobre</a>
+      <a href="/a-bola-conecta/servicos">Serviços</a>
+      <a class="active" href="/a-bola-conecta/comunidade">Comunidade</a>
+      <a href="/a-bola-conecta/blog">Blog</a>
+      <a href="/a-bola-conecta/contato">Contato</a>
+      <a class="copa-nav-link" href="/a-bola-conecta/copa-2026/">Copa 2026</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Comunidade Gondwana</div>
+          <h1>A Bola Conecta continua aberto.</h1>
+          <p class="lead">Você pode apoiar sua circulação e receber uma versão digital do cartaz com mensagem de agradecimento assinada pela Gondwana FC - Time da Educação.</p>
+          <div class="hero-actions">
+            <a class="btn btn-accent" href="#apoio">Apoiar como pessoa</a>
+            <a class="btn btn-primary" href="/a-bola-conecta/documentario">Ver o documentário</a>
+            <a class="btn btn-ghost" href="#institucional">Levar para uma instituição</a>
+          </div>
+        </div>
+        <figure class="hero-media">
+          <img src="/a-bola-conecta/assets/cartaz-digital-agradecimento-gondwana-fc-time-educacao.jpg" alt="Cartaz digital Gondwana - A Bola Conecta, com crianças em quadra e mapas da África e América do Sul">
+          <figcaption class="caption">Prévia da versão digital de agradecimento enviada para quem apoia a circulação de A Bola Conecta.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="apoio">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Bloco 1 - Apoiar como pessoa</div>
+          <h2>Contribua com a circulação do filme.</h2>
+          <p class="section-copy">A contribuição é voluntária. Quem apoia recebe um agradecimento cultural e escolhe se quer aparecer publicamente no mural.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-number">01</div>
+            <h3>Contribuição voluntária</h3>
+            <p>Você apoia a continuidade de A Bola Conecta sem comprar acesso ao documentário. O filme segue aberto.</p>
+          </article>
+          <article class="card">
+            <div class="card-number">02</div>
+            <h3>Cartaz digital assinado</h3>
+            <p>Ao contribuir, você recebe uma versão digital do cartaz com uma mensagem de agradecimento assinada pela Gondwana FC - Time da Educação.</p>
+          </article>
+          <article class="card">
+            <div class="card-number">03</div>
+            <h3>Mural e gratidão</h3>
+            <p>Seu nome pode aparecer no mural, se você autorizar. O Certificado de Gratidão é opcional.</p>
+          </article>
+        </div>
+        <div class="split" style="margin-top:18px">
+          <article class="card support-summary-card">
+            <div class="section-kicker">Valores sugeridos</div>
+            <h2>Escolha quanto apoiar.</h2>
+            <p class="section-copy">Os valores são apenas referências. O importante é que o apoio seja possível para você.</p>
+            <div class="amounts" aria-label="Valores sugeridos para contribuição">
+              <div class="amount chip"><strong>R$ 10</strong><span>Faz circular</span></div>
+              <div class="amount chip"><strong>R$ 25</strong><span>Mantém vivo</span></div>
+              <div class="amount chip"><strong>R$ 50</strong><span>Fortalece o material</span></div>
+              <div class="amount chip"><strong>Livre</strong><span>Do seu jeito</span></div>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-subkicker">Depois do apoio</div>
+            <ul class="next-steps">
+              <li class="next-step"><span class="num">1</span><span><strong>Você faz o Pix</strong><span>Usa a chave CNPJ e escolhe o valor que faz sentido.</span></span></li>
+              <li class="next-step"><span class="num">2</span><span><strong>Confirma no formulário</strong><span>Assim conseguimos localizar o apoio e enviar o cartaz digital.</span></span></li>
+              <li class="next-step"><span class="num">3</span><span><strong>Escolhe como participar</strong><span>Você decide sobre mural, nome público e comunidade do Time da Educação.</span></span></li>
+            </ul>
+            <p class="card-closing">A Bola Conecta segue aberto. O apoio fortalece a circulação e a memória do projeto.</p>
+          </article>
+          <article class="card support-action-card">
+            <div class="section-kicker">Pix e formulário</div>
+            <h2>Faça o Pix. Depois confirme aqui.</h2>
+            <p class="section-copy">São duas etapas simples: copiar a chave, fazer o Pix no seu banco e registrar seus dados para receber o cartaz.</p>
+            <div class="pix-box">
+              <span class="pix-key" id="pixKey">62.085.700/0001-83</span>
+              <button class="btn btn-accent" type="button" id="copyPix">Copiar chave Pix</button>
+            </div>
+            <p class="note">Chave Pix CNPJ da responsável: DA SILVA & VASQUEZ FORMAÇÃO E CONSULTORIA LTDA.</p>
+            <form class="support-form" id="supportForm" data-form-id="comunidade-apoio-pix" data-campaign="abc-comunidade">
+              <div class="form-group">
+                <div class="form-group-head"><span class="form-group-num">1</span><span class="form-group-title">Seu apoio</span></div>
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="valor">Valor do Pix</label>
+                    <input id="valor" name="valor" placeholder="Ex.: R$ 25">
+                  </div>
+                  <div class="field">
+                    <label for="dataPix">Data do Pix</label>
+                    <input id="dataPix" name="dataPix" type="date">
+                  </div>
+                </div>
+                <p class="form-hint">Esses dados ajudam a localizar a contribuição. Não serão publicados.</p>
+              </div>
+              <div class="form-group">
+                <div class="form-group-head"><span class="form-group-num">2</span><span class="form-group-title">Para enviar o cartaz</span></div>
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="nome">Nome completo</label>
+                    <input id="nome" name="nome" autocomplete="name" required>
+                  </div>
+                  <div class="field">
+                    <label for="email">Email para receber o cartaz</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-group-head"><span class="form-group-num">3</span><span class="form-group-title">Mural e comunidade</span></div>
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="publicacao">Como quer aparecer no mural?</label>
+                    <select id="publicacao" name="publicacao" required>
+                      <option value="nome">Publicar meu nome</option>
+                      <option value="coletivo">Publicar coletivo/instituição</option>
+                      <option value="anonimo">Aparecer como contribuição anônima</option>
+                      <option value="nao">Não quero aparecer</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="nomePublico">Nome público, se aplicável</label>
+                    <input id="nomePublico" name="nomePublico" placeholder="Como deve aparecer no mural">
+                  </div>
+                  <div class="field field-full">
+                    <label for="comunidadeTime">Quer fazer parte da comunidade?</label>
+                    <select id="comunidadeTime" name="comunidadeTime" required>
+                      <option value="">Escolha uma opção</option>
+                      <option value="sim">Sim, quero receber informações sobre o Time da Educação Gondwana FC</option>
+                      <option value="nao">Não, quero apenas registrar este apoio</option>
+                    </select>
+                  </div>
+                  <div class="field field-full">
+                    <label for="mensagem">Observação opcional</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Ex.: fiz o Pix em nome de outra pessoa ou instituição"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="form-submit">
+                <button class="btn btn-accent" type="submit">Registrar apoio</button>
+                <p class="form-reassure">Nome público, mural e comunidade só seguem a sua escolha.</p>
+              </div>
+              <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+            </form>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="institucional">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Bloco 2 - Levar para uma instituição</div>
+          <h2>Para escolas, universidades, empresas, coletivos e eventos.</h2>
+          <p class="section-copy">Quando uma organização quer usar A Bola Conecta, o caminho é construção de uma experiência educativa, licenciamento ou contratação. Entra em contato conosco e vamos construir a próxima jogada.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-number">Exibição</div>
+            <h3>Ver o filme em grupo</h3>
+            <p>Sessões presenciais ou online para escolas, universidades, cineclubes, coletivos e eventos.</p>
+          </article>
+          <article class="card">
+            <div class="card-number">Mediação</div>
+            <h3>Roda de conversa</h3>
+            <p>Encontro para abrir diálogo sobre futebol, ancestralidade, cultura afro-brasileira e educação.</p>
+          </article>
+          <article class="card">
+            <div class="card-number">Formação</div>
+            <h3>Oficina, formação ou licença</h3>
+            <p>Atividades com metodologia ABC, formação para equipes e licenciamento de uso do conteúdo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="transparencia">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Bloco 3 - Cuidado</div>
+          <h2>Seu apoio entra com nome, escolha e cuidado.</h2>
+          <p class="section-copy">A contribuição ajuda a circulação de A Bola Conecta. Você escolhe se quer aparecer no mural, receber o cartaz digital e seguir perto das próximas jogadas.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-number">Confirmação</div>
+            <h3>Depois do Pix</h3>
+            <p>O formulário ajuda a localizar seu apoio e enviar o cartaz digital de agradecimento.</p>
+          </article>
+          <article class="card">
+            <div class="card-number">Escolha</div>
+            <h3>Nome só com consentimento</h3>
+            <p>Você decide como quer aparecer: com nome, como coletivo/instituição, de forma anônima ou sem aparecer.</p>
+          </article>
+          <article class="card">
+            <div class="card-number">Clareza</div>
+            <h3>Agradecimento simbólico</h3>
+            <p>Este apoio não promete benefício fiscal. É uma contribuição cultural com cartaz digital de agradecimento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="agradecimentos">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Mural de agradecimentos</div>
+          <h2>Quem ajuda a bola a seguir rolando aparece aqui, se quiser.</h2>
+          <p class="section-copy">Os nomes abaixo são exemplos para testar a experiência. Na versão real, só entram nomes com autorização explícita.</p>
+        </div>
+        <div class="mural-tools">
+          <input id="search" type="search" placeholder="Buscar nome, coletivo ou instituição" aria-label="Buscar nos agradecimentos">
+          <a class="btn btn-ghost" href="#transparencia">Como funciona</a>
+        </div>
+        <div class="names" id="names">
+          <div class="name" data-name="Apoiadora anônima"><strong>Apoiadora anônima</strong><span>Comunidade - 2026</span></div>
+          <div class="name" data-name="Coletivo Bola e Memória"><strong>Coletivo Bola e Memória</strong><span>Coletivo - 2026</span></div>
+          <div class="name" data-name="Maria Oliveira"><strong>Maria Oliveira</strong><span>Apoiadora - 2026</span></div>
+          <div class="name" data-name="Instituição parceira"><strong>Instituição parceira</strong><span>Institucional - 2026</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Perguntas rápidas</div>
+          <h2>O essencial para apoiar com clareza.</h2>
+        </div>
+        <details>
+          <summary>O filme continua aberto?</summary>
+          <p>Sim. A contribuição não compra acesso ao documentário. Ela apoia sua circulação.</p>
+        </details>
+        <details>
+          <summary>O que recebo ao apoiar?</summary>
+          <p>Você recebe uma versão digital do cartaz com mensagem de agradecimento assinada pela Gondwana FC - Time da Educação. Também pode aparecer no mural e solicitar Certificado de Gratidão, se quiser.</p>
+        </details>
+        <details>
+          <summary>Meu nome aparece automaticamente?</summary>
+          <p>Não. O nome só aparece com autorização. Você pode escolher o nome público ou apoiar de forma anônima.</p>
+        </details>
+        <details>
+          <summary>Isso é doação?</summary>
+          <p>Tratamos como contribuição ou apoio à circulação do projeto, com contrapartida cultural de agradecimento. Não há benefício fiscal nem doação incentivada nesta modalidade.</p>
+        </details>
+        <details>
+          <summary>Instituições devem apoiar por Pix?</summary>
+          <p>Não necessariamente. Instituições devem falar com a equipe para contratar exibição, roda de conversa, oficina, formação ou licenciamento.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>A Bola Conecta - Portal Gondwana. Página de comunidade, apoio e circulação cultural.</p>
+      <p><a href="/a-bola-conecta/">Voltar ao site</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuToggle?.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    mobileMenu?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('is-open');
+        menuToggle?.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const copyButton = document.getElementById('copyPix');
+    const pixKey = document.getElementById('pixKey');
+    copyButton?.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(pixKey.textContent.trim());
+        copyButton.textContent = 'Chave copiada';
+        setTimeout(() => copyButton.textContent = 'Copiar chave Pix', 1800);
+      } catch (error) {
+        copyButton.textContent = 'Copie manualmente';
+      }
+    });
+
+    const search = document.getElementById('search');
+    const names = Array.from(document.querySelectorAll('.name'));
+    search?.addEventListener('input', () => {
+      const query = search.value.trim().toLowerCase();
+      names.forEach((item) => {
+        const show = item.dataset.name.toLowerCase().includes(query) || item.textContent.toLowerCase().includes(query);
+        item.style.display = show ? '' : 'none';
+      });
+    });
+
+    const supportForm = document.getElementById('supportForm');
+    const formStatus = document.getElementById('formStatus');
+    const params = new URLSearchParams(window.location.search);
+    const endpoint = window.GONDWANA_CONFIG?.leadsEndpoint || (window.location.hostname.endsWith('abolaconecta.com.br') ? '/api/leads' : '');
+    const apiToken = window.GONDWANA_CONFIG?.apiToken || '';
+
+    function saveLocalLead(payload) {
+      const key = 'abc_comunidade_leads_fallback';
+      const current = JSON.parse(localStorage.getItem(key) || '[]');
+      current.push(payload);
+      localStorage.setItem(key, JSON.stringify(current));
+    }
+
+    supportForm?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const data = new FormData(supportForm);
+      const nome = String(data.get('nome') || '').trim();
+      const email = String(data.get('email') || '').trim();
+      const publicacao = String(data.get('publicacao') || '').trim();
+      const nomePublico = String(data.get('nomePublico') || '').trim();
+      const valor = String(data.get('valor') || '').trim();
+      const dataPix = String(data.get('dataPix') || '').trim();
+      const comunidadeTime = String(data.get('comunidadeTime') || '').trim();
+      const observacao = String(data.get('mensagem') || '').trim();
+
+      const payload = {
+        token: apiToken,
+        source: 'a-bola-conecta',
+        form_id: supportForm.dataset.formId || 'comunidade-apoio-pix',
+        campaign: supportForm.dataset.campaign || 'abc-comunidade',
+        page: window.location.href,
+        timestamp: new Date().toISOString(),
+        origem_landing: 'a-bola-conecta-comunidade',
+        nome,
+        email,
+        telefone: '',
+        instituicao: publicacao === 'coletivo' ? nomePublico : '',
+        cidade: '',
+        pais: 'Brasil',
+        interesse: 'Apoio individual - cartaz digital de agradecimento',
+        mensagem: [
+          `valor_pix=${valor || 'nao_informado'}`,
+          `data_pix=${dataPix || 'nao_informada'}`,
+          `publicacao=${publicacao}`,
+          `nome_publico=${nomePublico || 'nao_informado'}`,
+          `comunidade_time_educacao=${comunidadeTime || 'nao_informado'}`,
+          `certificado=opcional`,
+          `responsavel=DA SILVA & VASQUEZ FORMAÇÃO E CONSULTORIA LTDA`,
+          `cnpj=62.085.700/0001-83`,
+          observacao ? `observacao=${observacao}` : ''
+        ].filter(Boolean).join(' | '),
+        utm_source: params.get('utm_source') || 'direct',
+        utm_medium: params.get('utm_medium') || 'site',
+        utm_campaign: params.get('utm_campaign') || 'abc-comunidade',
+        utm_content: params.get('utm_content') || '',
+        status: 'Apoio pendente de verificacao'
+      };
+
+      formStatus.className = 'form-status';
+      formStatus.textContent = 'Registrando apoio...';
+
+      try {
+        if (!endpoint) throw new Error('endpoint_nao_configurado');
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json();
+        if (!result.ok) throw new Error(result.error || 'erro_crm');
+        formStatus.className = 'form-status ok';
+        formStatus.textContent = 'Apoio registrado. Vamos conferir o Pix e enviar o cartaz digital.';
+        supportForm.reset();
+      } catch (error) {
+        saveLocalLead(payload);
+        formStatus.className = 'form-status error';
+        formStatus.textContent = 'Não conseguimos concluir o envio agora. Seu registro ficou salvo neste navegador para uma nova tentativa.';
+      }
+    });
+  </script>
+</body>
 </html>

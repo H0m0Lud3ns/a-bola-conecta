@@ -8,8 +8,8 @@
 - Rate limit: >= 1.05s entre requests
 - robots.txt encontrado: si
 - sitemap.xml encontrado: si
-- Archivos en disco: 18
-- Tamano total: 709390 bytes
+- Archivos en disco: 17
+- Tamano total: 706689 bytes
 - SHA256 index.html: ab61f5604c3bd88c99de9ce09e7d70df0f16af6b85ecab576d11c7bb248ee884
 
 ## URLs descargadas
@@ -29,7 +29,6 @@
 | 200 | 2701 | `faq/index.html` | https://abolaconecta.com.br/faq |
 | 200 | 2701 | `mapa-do-site/index.html` | https://abolaconecta.com.br/mapa-do-site |
 | 200 | 2701 | `privacidade/index.html` | https://abolaconecta.com.br/privacidade |
-| 200 | 2701 | `loja/index.html` | https://abolaconecta.com.br/loja |
 | 200 | 531054 | `assets/index-Bc6DgKrQ.js` | https://abolaconecta.com.br/assets/index-Bc6DgKrQ.js |
 | 200 | 82284 | `assets/index--0QhvKt1.css` | https://abolaconecta.com.br/assets/index--0QhvKt1.css |
 | 200 | 21296 | `~flock.js` | https://abolaconecta.com.br/~flock.js |
