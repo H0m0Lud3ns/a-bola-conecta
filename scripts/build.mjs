@@ -38,14 +38,18 @@ const routeCanonicals = new Map([
 
 const referencedAssets = new Set();
 const htmlFiles = [];
+const textFiles = [];
+const textExtensions = new Set(['.html', '.js', '.css', '.xml', '.txt', '.json', '.webmanifest']);
 
-async function collectHtmlFiles(dir) {
+async function collectTextFiles(dir) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {
     const absolutePath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
-      await collectHtmlFiles(absolutePath);
-    } else if (entry.isFile() && entry.name.endsWith('.html')) {
-      htmlFiles.push(path.relative(distDir, absolutePath));
+      await collectTextFiles(absolutePath);
+    } else if (entry.isFile() && textExtensions.has(path.extname(entry.name))) {
+      const relativePath = path.relative(distDir, absolutePath);
+      textFiles.push(relativePath);
+      if (entry.name.endsWith('.html')) htmlFiles.push(relativePath);
     }
   }
 }
@@ -63,21 +67,32 @@ function trackReferencedAssets(html) {
   }
 }
 
-await collectHtmlFiles(distDir);
+await collectTextFiles(distDir);
+
+function rewriteForRoot(content) {
+  return content
+    .replaceAll('https://sebas-ai.infraqualia.com/a-bola-conecta', siteDomain)
+    .replaceAll('/a-bola-conecta/', '/')
+    .replaceAll('/a-bola-conecta', '/');
+}
+
+for (const relativePath of textFiles) {
+  const file = path.join(distDir, relativePath);
+  let content = await readFile(file, 'utf8');
+  content = rewriteForRoot(content);
+  await writeFile(file, content);
+}
 
 for (const relativePath of htmlFiles) {
   const canonical = canonicalFor(relativePath);
   const file = path.join(distDir, relativePath);
   let html = await readFile(file, 'utf8');
-  html = html.replaceAll('/a-bola-conecta/assets/', '/assets/');
-  html = html.replaceAll('/a-bola-conecta/__l5e/', '/__l5e/');
-  html = html.replaceAll('/a-bola-conecta/~flock.js', '/~flock.js');
-  html = html.replaceAll('https://sebas-ai.infraqualia.com/a-bola-conecta', siteDomain);
   if (canonical) {
     if (html.includes('rel="canonical"')) {
       html = html.replace(/<link rel="canonical" href="[^"]*" ?\/?>/, `<link rel="canonical" href="${canonical}" />`);
     } else {
-      html = html.replace('</head>', `    <link rel="canonical" href="${canonical}" />\n  </head>`);
+      html = html.replace('</head>', `    <link rel="canonical" href="${canonical}" />
+  </head>`);
     }
   }
 

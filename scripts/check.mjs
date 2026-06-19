@@ -25,6 +25,7 @@ const requiredFiles = [
   'gondwana-time-educacao/assets/confianca/revista-cpf-sesc.jpg',
   'gondwana-time-educacao/copa-de-gondwana/fichas-paises/assets/mapa-gondwana-gdcg-ufrj-184ma-5200-full.jpg',
   'gondwana-time-educacao/copa-de-gondwana/fichas-paises/assets/mapa-mundi-atual-ibge-proporcoes-reais.jpg',
+  'gondwana-fc-logo/svg/oficiais/logo-gondwana-fc-fundo-escuro.svg',
   'assets/index--0QhvKt1.css',
   'assets/index-Bc6DgKrQ-crm-api-leads1.js',
   'robots.txt',
@@ -42,6 +43,7 @@ const htmlFiles = requiredFiles.filter((file) => file.endsWith('.html'));
 const htmlErrors = [];
 for (const file of htmlFiles) {
   const html = readFileSync(path.join(distDir, file), 'utf8');
+  if (html.includes('/a-bola-conecta/')) htmlErrors.push(`${file}: link ainda aponta para subpasta /a-bola-conecta/`);
   if (html.includes('/a-bola-conecta/assets/')) htmlErrors.push(`${file}: asset ainda aponta para subpasta`);
   if (html.includes('sebas-ai.infraqualia.com/a-bola-conecta')) htmlErrors.push(`${file}: referencia absoluta ao staging`);
   if (!html.includes('rel="canonical"')) htmlErrors.push(`${file}: canonical ausente`);
@@ -55,6 +57,7 @@ const activeBundle = readFileSync(activeBundlePath, 'utf8');
 if (!activeBundle.includes('/api/leads')) htmlErrors.push('bundle ativo: /api/leads ausente');
 if (activeBundle.includes('script.google.com')) htmlErrors.push('bundle ativo: referencia antiga a script.google.com');
 if (!activeBundle.includes('comunidade/#apoio')) htmlErrors.push('bundle ativo: comunidade/#apoio ausente');
+if (activeBundle.includes('/a-bola-conecta/')) htmlErrors.push('bundle ativo: link ainda aponta para subpasta /a-bola-conecta/');
 
 if (htmlErrors.length) {
   console.error('Erros de HTML/bundle:');
