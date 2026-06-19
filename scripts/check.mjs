@@ -25,6 +25,7 @@ const requiredFiles = [
   'gondwana-time-educacao/assets/confianca/revista-cpf-sesc.jpg',
   'gondwana-time-educacao/copa-de-gondwana/fichas-paises/assets/mapa-gondwana-gdcg-ufrj-184ma-5200-full.jpg',
   'gondwana-time-educacao/copa-de-gondwana/fichas-paises/assets/mapa-mundi-atual-ibge-proporcoes-reais.jpg',
+  'gondwana-time-educacao/copa-de-gondwana/fichas-paises/research-data.js',
   'gondwana-fc-logo/svg/oficiais/logo-gondwana-fc-fundo-escuro.svg',
   'assets/index--0QhvKt1.css',
   'assets/index-Bc6DgKrQ-crm-api-leads1.js',
@@ -69,6 +70,17 @@ if (activeBundle.includes('/a-bola-conecta/')) htmlErrors.push('bundle ativo: li
 for (const file of ['copa-2026/index.html', 'index.html']) {
   const html = readFileSync(path.join(distDir, file), 'utf8');
   if (html.includes('/assets/-logo')) htmlErrors.push(`${file}: logo quebrado por rewrite agressivo`);
+
+const fichasHtml = readFileSync(path.join(distDir, 'copa-2026/fichas/index.html'), 'utf8');
+for (const requiredRef of [
+  '/copa-2026/fichas/styles.css',
+  '/copa-2026/fichas/story-data.js',
+  '/copa-2026/fichas/app.js',
+  '/gondwana-time-educacao/copa-de-gondwana/fichas-paises/research-data.js',
+]) {
+  if (!fichasHtml.includes(requiredRef)) htmlErrors.push(`fichas/index.html: referencia absoluta ausente ${requiredRef}`);
+}
+
 }
 
 
