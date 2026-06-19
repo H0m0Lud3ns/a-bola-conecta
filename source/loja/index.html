@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de espera Camisa Abya Yala | A Bola Conecta</title>
+  <meta name="description" content="Entre na lista de espera da camisa Abya Yala da Gondwana FC. Uma peça para vestir território, memória e futebol como educação." />
+  <meta property="og:title" content="Lista de espera Camisa Abya Yala | A Bola Conecta" />
+  <meta property="og:description" content="Uma camisa da Gondwana FC para celebrar Abya Yala, memória, território e futebol como educação." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://abolaconecta.com.br/loja" />
+  <meta property="og:image" content="https://abolaconecta.com.br/assets/a-bola-conecta-logo-v2-WdlHxh0O.png" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/a-bola-conecta/assets/index--0QhvKt1.css?v=20260619-camisa-abya-yala" />
+  <style>
+    :root {
+      --terra: hsl(14 72% 42%);
+      --urucum: hsl(28 92% 54%);
+      --milho: hsl(45 96% 58%);
+      --mata: hsl(138 42% 32%);
+      --noite: hsl(218 34% 12%);
+      --barro: hsl(24 48% 20%);
+      --papel: hsl(39 42% 91%);
+      --linha: hsl(39 30% 91% / .16);
+      --texto: hsl(39 42% 92%);
+      --muted: hsl(39 22% 78% / .74);
+      --shadow: 0 28px 90px hsl(0 0% 0% / .34);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 10% 6%, hsl(45 96% 58% / .22), transparent 30%),
+        radial-gradient(circle at 90% 10%, hsl(138 42% 32% / .24), transparent 28%),
+        linear-gradient(135deg, var(--noite) 0%, hsl(211 42% 17%) 42%, hsl(18 54% 17%) 100%);
+      color: var(--texto);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
+    body:before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .34;
+      background-image:
+        linear-gradient(90deg, hsl(39 42% 92% / .05) 1px, transparent 1px),
+        linear-gradient(hsl(39 42% 92% / .04) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: radial-gradient(circle at 50% 30%, black, transparent 72%);
+    }
+    a { color: inherit; }
+    .container { width: min(100% - 40px, 1180px); margin: 0 auto; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(20px);
+      background: hsl(218 34% 12% / .72);
+      border-bottom: 1px solid var(--linha);
+    }
+    .topbar-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 900; letter-spacing: -.02em; }
+    .brand img { width: 42px; height: 42px; object-fit: contain; border-radius: 12px; background: hsl(39 42% 92% / .08); padding: 5px; }
+    .brand span { display: grid; line-height: 1.05; }
+    .brand small { color: var(--muted); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+    .nav { display: flex; align-items: center; gap: 18px; color: var(--muted); font-size: 14px; font-weight: 750; }
+    .nav a { text-decoration: none; }
+    .nav a:hover { color: var(--milho); }
+    .hero { position: relative; padding: clamp(72px, 10vw, 132px) 0 70px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(320px, .82fr); gap: clamp(34px, 6vw, 74px); align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--milho); font-weight: 950; letter-spacing: .16em; text-transform: uppercase; font-size: 12px; }
+    .eyebrow:before { content: ""; width: 34px; height: 2px; background: linear-gradient(90deg, var(--milho), var(--terra)); border-radius: 999px; }
+    h1 { margin: 22px 0 18px; max-width: 9.6ch; font-family: Georgia, "Times New Roman", serif; font-size: clamp(4rem, 12vw, 10rem); line-height: .82; letter-spacing: -.075em; text-wrap: balance; }
+    .lead { max-width: 660px; color: var(--muted); font-size: clamp(1.1rem, 2.2vw, 1.45rem); line-height: 1.58; }
+    .lead strong { color: var(--texto); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .btn { display: inline-flex; min-height: 52px; align-items: center; justify-content: center; border-radius: 999px; padding: 0 22px; border: 1px solid transparent; text-decoration: none; font-weight: 900; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--milho); color: hsl(26 62% 16%); box-shadow: 0 18px 40px hsl(45 96% 58% / .22); }
+    .btn-ghost { border-color: var(--linha); color: var(--texto); background: hsl(39 42% 92% / .05); }
+    .product-card {
+      position: relative;
+      border: 1px solid var(--linha);
+      border-radius: 42px;
+      padding: clamp(20px, 4vw, 34px);
+      min-height: 640px;
+      background:
+        linear-gradient(145deg, hsl(39 42% 92% / .11), hsl(39 42% 92% / .035)),
+        radial-gradient(circle at 50% 28%, hsl(45 96% 58% / .18), transparent 40%);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .product-card:before {
+      content: "ABYA YALA";
+      position: absolute;
+      left: 50%;
+      top: 42%;
+      transform: translate(-50%, -50%) rotate(-9deg);
+      width: min-content;
+      color: hsl(39 42% 92% / .055);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(5rem, 11vw, 10rem);
+      font-weight: 900;
+      line-height: .75;
+      text-align: center;
+      letter-spacing: -.08em;
+    }
+    .shirt-frame {
+      position: relative;
+      z-index: 1;
+      min-height: 430px;
+      display: grid;
+      place-items: center;
+      border-radius: 32px;
+      border: 1px solid hsl(39 42% 92% / .13);
+      background:
+        conic-gradient(from 220deg at 50% 42%, var(--mata), var(--milho), var(--terra), hsl(213 58% 38%), var(--mata));
+      isolation: isolate;
+      overflow: hidden;
+    }
+    .shirt-frame:after { content: ""; position: absolute; inset: 14px; border-radius: 26px; background: hsl(218 34% 12% / .58); border: 1px solid hsl(39 42% 92% / .14); }
+    .shirt-placeholder { position: relative; z-index: 2; display: grid; place-items: center; width: min(72%, 330px); aspect-ratio: 1 / 1; border-radius: 38px; background: linear-gradient(145deg, hsl(39 42% 92% / .18), hsl(39 42% 92% / .04)); text-align: center; padding: 34px; border: 1px dashed hsl(39 42% 92% / .34); }
+    .shirt-placeholder strong { display: block; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.1rem, 5vw, 4rem); line-height: .9; letter-spacing: -.06em; }
+    .shirt-placeholder span { display: block; margin-top: 16px; color: var(--muted); font-size: 12px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    .product-notes { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
+    .product-notes div { border: 1px solid var(--linha); border-radius: 18px; padding: 14px; background: hsl(218 34% 12% / .34); color: var(--muted); font-size: 12px; line-height: 1.35; }
+    .product-notes b { display: block; color: var(--texto); margin-bottom: 4px; }
+    .section { padding: 76px 0; }
+    .waitlist-panel { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(28px, 5vw, 58px); align-items: start; border-top: 1px solid var(--linha); padding-top: 58px; }
+    .panel-copy h2 { margin: 0 0 16px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.6rem, 6vw, 5.6rem); line-height: .9; letter-spacing: -.06em; }
+    .panel-copy p { color: var(--muted); line-height: 1.7; font-size: 1.04rem; }
+    .proof-list { display: grid; gap: 12px; margin-top: 24px; padding: 0; list-style: none; }
+    .proof-list li { display: flex; gap: 12px; align-items: flex-start; color: var(--muted); line-height: 1.55; }
+    .proof-list li:before { content: ""; width: 10px; height: 10px; margin-top: 8px; flex: 0 0 auto; border-radius: 50%; background: var(--milho); box-shadow: 0 0 0 6px hsl(45 96% 58% / .12); }
+    .waitlist-form { border: 1px solid var(--linha); border-radius: 34px; padding: clamp(22px, 4vw, 36px); background: hsl(39 42% 92% / .075); box-shadow: var(--shadow); }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .field { display: grid; gap: 8px; }
+    .field.full { grid-column: 1 / -1; }
+    label { color: hsl(39 42% 92% / .86); font-size: 12px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    input, select, textarea {
+      width: 100%;
+      min-height: 50px;
+      border: 1px solid hsl(39 42% 92% / .18);
+      border-radius: 16px;
+      background: hsl(218 34% 9% / .58);
+      color: var(--texto);
+      padding: 0 14px;
+      font: inherit;
+      outline: none;
+    }
+    textarea { min-height: 112px; padding-top: 14px; resize: vertical; }
+    input:focus, select:focus, textarea:focus { border-color: var(--milho); box-shadow: 0 0 0 4px hsl(45 96% 58% / .12); }
+    .consent { display: flex; gap: 12px; align-items: flex-start; margin-top: 16px; color: var(--muted); line-height: 1.5; font-size: 14px; }
+    .consent input { width: 18px; min-height: 18px; margin-top: 3px; accent-color: var(--milho); }
+    .form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 22px; }
+    .form-status { min-height: 22px; color: var(--muted); font-size: 14px; line-height: 1.45; }
+    .form-status.ok { color: var(--milho); }
+    .form-status.error { color: hsl(14 72% 68%); }
+    .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+    .footer { padding: 38px 0 56px; color: var(--muted); border-top: 1px solid var(--linha); }
+    .footer-inner { display: flex; justify-content: space-between; gap: 22px; flex-wrap: wrap; }
+    @media (max-width: 880px) {
+      .hero-grid, .waitlist-panel { grid-template-columns: 1fr; }
+      .product-card { min-height: auto; }
+      .nav { display: none; }
+      h1 { max-width: 8.8ch; }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .hero { padding-top: 48px; }
+      .hero-actions .btn, .form-actions .btn { width: 100%; }
+      .product-card { border-radius: 28px; padding: 16px; }
+      .shirt-frame { min-height: 360px; border-radius: 22px; }
+      .shirt-placeholder { width: min(78%, 270px); border-radius: 28px; }
+      .product-notes, .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .waitlist-form { border-radius: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="/a-bola-conecta/" aria-label="Voltar para A Bola Conecta">
+        <img src="/a-bola-conecta/assets/a-bola-conecta-logo-v2-WdlHxh0O.png" alt="A Bola Conecta" />
+        <span>A Bola Conecta <small>Gondwana FC</small></span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="/a-bola-conecta/copa-2026/">Copa 2026</a>
+        <a href="/a-bola-conecta/servicos/">Serviços</a>
+        <a href="/a-bola-conecta/comunidade/">Comunidade</a>
+        <a href="#lista">Lista de espera</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Camisa Abya Yala</div>
+          <h1>Vestir território.</h1>
+          <p class="lead"><strong>A primeira lista de espera da camisa Abya Yala da Gondwana FC.</strong> Uma peça para circular memória, futebol, educação e pertencimento antes da abertura oficial de vendas.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#lista">Entrar na lista</a>
+            <a class="btn btn-ghost" href="/a-bola-conecta/copa-2026/">Ver projeto Copa 2026</a>
+          </div>
+        </div>
+
+        <aside class="product-card" aria-label="Prévia editorial da camisa Abya Yala">
+          <div class="shirt-frame">
+            <!-- TODO: substituir este bloco pela foto da camisa Abya Yala quando Sebastian enviar a imagem. -->
+            <div class="shirt-placeholder">
+              <div>
+                <strong>Foto em breve</strong>
+                <span>Camisa Abya Yala</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-notes">
+            <div><b>Prioridade</b> Primeiro aviso quando a venda abrir.</div>
+            <div><b>Sem compromisso</b> Entrar na lista não obriga compra.</div>
+            <div><b>Produção consciente</b> Ajuda a medir tamanhos e demanda real.</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="lista">
+      <div class="container waitlist-panel">
+        <div class="panel-copy">
+          <div class="eyebrow">Lista séria, sem ruído</div>
+          <h2>Antes de vender, medir desejo.</h2>
+          <p>A lista serve para entender demanda, tamanhos, cidades e interesse real. Quando abrirmos as vendas, quem estiver aqui recebe primeiro o aviso, as condições de compra e a janela de reserva.</p>
+          <ul class="proof-list">
+            <li>Você informa o tamanho de interesse para orientar a produção.</li>
+            <li>Você recebe prioridade de comunicação, não spam.</li>
+            <li>A camisa será apresentada com foto real, preço, prazo e política de entrega antes de qualquer pagamento.</li>
+          </ul>
+        </div>
+
+        <form class="waitlist-form" id="camisaAbyaYalaWaitlist" data-abc-lead data-form-id="camisa-abya-yala-waitlist" data-campaign="camisa-abya-yala" data-success-message="Você está na lista. Avisaremos quando abrirmos as vendas da camisa Abya Yala." data-error-message="Não conseguimos enviar agora. O registro ficou salvo neste navegador.">
+          <div class="form-grid">
+            <div class="field">
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="telefone">WhatsApp opcional</label>
+              <input id="telefone" name="telefone" type="tel" autocomplete="tel" />
+            </div>
+            <div class="field">
+              <label for="tamanho">Tamanho provável</label>
+              <select id="tamanho" name="tamanho" required>
+                <option value="">Escolher</option>
+                <option value="P">P</option>
+                <option value="M">M</option>
+                <option value="G">G</option>
+                <option value="GG">GG</option>
+                <option value="XGG">XGG</option>
+                <option value="infantil">Infantil</option>
+                <option value="nao-sei">Ainda não sei</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="cidade">Cidade</label>
+              <input id="cidade" name="cidade" autocomplete="address-level2" />
+            </div>
+            <div class="field">
+              <label for="pais">País</label>
+              <input id="pais" name="pais" autocomplete="country-name" value="Brasil" />
+            </div>
+            <div class="field full">
+              <label for="mensagem">Observação opcional</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Exemplo: quero saber quando sair preço, prazo, tamanhos infantis ou compra para grupo."></textarea>
+            </div>
+          </div>
+
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+          <input type="hidden" name="interesse" value="camisa-abya-yala" />
+          <input type="hidden" name="produto" value="camisa-abya-yala" />
+
+          <label class="consent">
+            <input type="checkbox" name="consentimento" value="sim" required />
+            <span>Autorizo A Bola Conecta e Gondwana FC a usar estes dados para comunicar a abertura da lista de vendas da camisa Abya Yala. Sem spam.</span>
+          </label>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Quero prioridade</button>
+            <div class="form-status" data-form-status role="status" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>Gondwana FC - A Bola Conecta</span>
+      <a href="/a-bola-conecta/privacidade/">Privacidade</a>
+    </div>
+  </footer>
+
+  <script>
+    window.GONDWANA_CONFIG = window.GONDWANA_CONFIG || {};
+    document.getElementById('camisaAbyaYalaWaitlist')?.addEventListener('submit', (event) => {
+      const botField = event.currentTarget.querySelector('[name="website"]');
+      if (botField?.value) {
+        event.preventDefault();
+        const status = event.currentTarget.querySelector('[data-form-status]');
+        if (status) status.textContent = 'Registro recebido.';
+      }
+    }, true);
+  </script>
+  <script src="/a-bola-conecta/assets/forms.js?v=20260619-camisa-abya-yala" defer></script>
+</body>
+</html>
