@@ -52,6 +52,13 @@ for (const file of htmlFiles) {
   }
 }
 
+const robots = readFileSync(path.join(distDir, 'robots.txt'), 'utf8');
+if (robots.includes('Disallow: /')) htmlErrors.push('robots.txt: indexacao bloqueada em producao');
+for (const file of htmlFiles) {
+  const html = readFileSync(path.join(distDir, file), 'utf8');
+  if (html.includes('noindex')) htmlErrors.push(`${file}: noindex presente em producao`);
+}
+
 const activeBundlePath = path.join(distDir, 'assets/index-Bc6DgKrQ-crm-api-leads1.js');
 const activeBundle = readFileSync(activeBundlePath, 'utf8');
 if (!activeBundle.includes('/api/leads')) htmlErrors.push('bundle ativo: /api/leads ausente');
