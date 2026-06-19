@@ -6,7 +6,7 @@ const projectRoot = process.cwd();
 const sourceDir = path.join(projectRoot, 'source');
 const distDir = path.join(projectRoot, 'dist');
 const siteDomain = process.env.ABOLA_SITE_DOMAIN || 'https://abolaconecta.com.br';
-const allowIndex = process.env.ABOLA_ALLOW_INDEX === '1';
+const allowIndex = process.env.ABOLA_ALLOW_INDEX !== '0';
 
 if (!existsSync(sourceDir)) {
   throw new Error(`Fonte nao encontrada: ${sourceDir}`);
