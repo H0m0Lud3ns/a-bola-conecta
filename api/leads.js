@@ -1,4 +1,5 @@
 const DEFAULT_NOTIFY_EMAIL = 'contato.gondwana@gmail.com';
+const DESTINATION_TIMEOUT_MS = 5000;
 const ALLOWED_ORIGINS = new Set([
   'https://abolaconecta.com.br',
   'https://www.abolaconecta.com.br',
@@ -12,6 +13,7 @@ const json = (res, status, payload) => {
 };
 
 const clean = (value, max = 500) => String(value || '').trim().slice(0, max);
+const env = (name, max = 1000) => clean(process.env[name], max);
 
 const readBody = async (req) => {
   const chunks = [];
@@ -65,7 +67,7 @@ const normalizeLead = (body, req) => {
     owner: 'Gondwana FC',
     priority: formId.includes('contato') || formId.includes('institu') ? 'alta' : 'normal',
     consent: Boolean(fields.consent || fields.consentimento || fields.comunidadeTime || fields.email),
-    internal_notify_email: clean(process.env.INTERNAL_NOTIFY_EMAIL || DEFAULT_NOTIFY_EMAIL, 220),
+    internal_notify_email: env('INTERNAL_NOTIFY_EMAIL', 220) || DEFAULT_NOTIFY_EMAIL,
     user_agent: clean(req.headers['user-agent'], 500),
     created_at: new Date().toISOString(),
   };
@@ -79,24 +81,166 @@ const validateLead = (lead) => {
   return errors;
 };
 
-const dryRunEnabled = () => String(process.env.DRY_RUN || 'true').toLowerCase() !== 'false';
+const destinationConfig = () => ({
+  crmEndpoint: env('CRM_ENDPOINT', 800),
+  crmApiKey: env('CRM_API_KEY', 500),
+  leadsWebhookUrl: env('LEADS_WEBHOOK_URL', 800),
+  leadsWebhookSecret: env('LEADS_WEBHOOK_SECRET', 500),
+  sheetsWebhookUrl: env('LEADS_SHEETS_WEBHOOK_URL', 800),
+  resendApiKey: env('RESEND_API_KEY', 500),
+  emailTo: env('LEADS_EMAIL_TO', 500) || env('INTERNAL_NOTIFY_EMAIL', 220) || DEFAULT_NOTIFY_EMAIL,
+  emailFrom: env('LEADS_EMAIL_FROM', 500),
+});
 
-const forwardToCrm = async (lead) => {
-  const endpoint = clean(process.env.CRM_ENDPOINT, 800);
-  if (!endpoint) return { skipped: true, reason: 'missing_crm_endpoint' };
+const activeDestinations = (config = destinationConfig()) => {
+  const destinations = [];
+  if (config.crmEndpoint) destinations.push('crm');
+  if (config.leadsWebhookUrl) destinations.push('webhook');
+  if (config.sheetsWebhookUrl) destinations.push('sheets');
+  if (config.resendApiKey && config.emailTo && config.emailFrom) destinations.push('email');
+  return destinations;
+};
 
-  const headers = { 'Content-Type': 'application/json' };
-  const apiKey = clean(process.env.CRM_API_KEY, 500);
-  if (apiKey) headers.Authorization = `Bearer ${apiKey}`;
+const dryRunEnabled = () => {
+  const explicit = env('LEADS_DRY_RUN', 20) || env('DRY_RUN', 20);
+  if (explicit) return explicit.toLowerCase() !== 'false';
+  return activeDestinations().length === 0;
+};
 
-  const response = await fetch(endpoint, {
+const withTimeout = async (run, label) => {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(new Error(`${label}_timeout`)), DESTINATION_TIMEOUT_MS);
+  try {
+    return await run(controller.signal);
+  } finally {
+    clearTimeout(timer);
+  }
+};
+
+const postJson = async (url, payload, headers = {}, label = 'destination') => withTimeout(async (signal) => {
+  const response = await fetch(url, {
     method: 'POST',
-    headers,
-    body: JSON.stringify({ source: 'a-bola-conecta', formId: lead.form_id, fields: lead }),
+    headers: { 'Content-Type': 'application/json', ...headers },
+    body: JSON.stringify(payload),
+    signal,
   });
   const text = await response.text();
-  if (!response.ok) throw new Error(`crm_forward_failed:${response.status}:${text.slice(0, 500)}`);
-  return text ? JSON.parse(text) : { ok: true };
+  if (!response.ok) throw new Error(`${label}_failed:${response.status}:${text.slice(0, 500)}`);
+  if (!text) return { ok: true };
+  try {
+    return JSON.parse(text);
+  } catch (_) {
+    return { ok: true, response: text.slice(0, 500) };
+  }
+}, label);
+
+const forwardToCrm = async (lead, config = destinationConfig()) => {
+  if (!config.crmEndpoint) return { skipped: true, reason: 'missing_crm_endpoint' };
+  const headers = config.crmApiKey ? { Authorization: `Bearer ${config.crmApiKey}` } : {};
+  return postJson(config.crmEndpoint, { source: 'a-bola-conecta', formId: lead.form_id, fields: lead }, headers, 'crm');
+};
+
+const forwardToWebhook = async (lead, config = destinationConfig()) => {
+  if (!config.leadsWebhookUrl) return { skipped: true, reason: 'missing_leads_webhook_url' };
+  const headers = config.leadsWebhookSecret ? { 'X-Webhook-Secret': config.leadsWebhookSecret } : {};
+  return postJson(config.leadsWebhookUrl, lead, headers, 'webhook');
+};
+
+const forwardToSheets = async (lead, config = destinationConfig()) => {
+  if (!config.sheetsWebhookUrl) return { skipped: true, reason: 'missing_leads_sheets_webhook_url' };
+  return postJson(config.sheetsWebhookUrl, lead, {}, 'sheets');
+};
+
+const escapeHtml = (value) => String(value || '')
+  .replaceAll('&', '&amp;')
+  .replaceAll('<', '&lt;')
+  .replaceAll('>', '&gt;')
+  .replaceAll('"', '&quot;')
+  .replaceAll("'", '&#39;');
+
+const leadEmailText = (lead) => [
+  'Novo lead A Bola Conecta',
+  '',
+  `Nome: ${lead.contact_name}`,
+  `Email: ${lead.email}`,
+  `Telefone: ${lead.phone || '-'}`,
+  `Organizacao: ${lead.organization || '-'}`,
+  `Cargo/perfil: ${lead.role || '-'}`,
+  `Cidade: ${lead.city || '-'}`,
+  `Pais: ${lead.country || '-'}`,
+  `Interesse: ${lead.interest}`,
+  `Formulario: ${lead.form_id}`,
+  `Campanha: ${lead.campaign}`,
+  `Pagina: ${lead.page}`,
+  `UTM source: ${lead.utm_source || '-'}`,
+  `UTM medium: ${lead.utm_medium || '-'}`,
+  `UTM campaign: ${lead.utm_campaign || '-'}`,
+  `Mensagem: ${lead.message || '-'}`,
+  `Data: ${lead.created_at}`,
+].join('\n');
+
+const leadEmailHtml = (lead) => `
+  <h2>Novo lead A Bola Conecta</h2>
+  <p><strong>Nome:</strong> ${escapeHtml(lead.contact_name)}</p>
+  <p><strong>Email:</strong> ${escapeHtml(lead.email)}</p>
+  <p><strong>Telefone:</strong> ${escapeHtml(lead.phone || '-')}</p>
+  <p><strong>Organizacao:</strong> ${escapeHtml(lead.organization || '-')}</p>
+  <p><strong>Cargo/perfil:</strong> ${escapeHtml(lead.role || '-')}</p>
+  <p><strong>Cidade:</strong> ${escapeHtml(lead.city || '-')}</p>
+  <p><strong>Pais:</strong> ${escapeHtml(lead.country || '-')}</p>
+  <p><strong>Interesse:</strong> ${escapeHtml(lead.interest)}</p>
+  <p><strong>Formulario:</strong> ${escapeHtml(lead.form_id)}</p>
+  <p><strong>Campanha:</strong> ${escapeHtml(lead.campaign)}</p>
+  <p><strong>Pagina:</strong> ${escapeHtml(lead.page)}</p>
+  <p><strong>Mensagem:</strong><br>${escapeHtml(lead.message || '-')}</p>
+  <p><strong>Data:</strong> ${escapeHtml(lead.created_at)}</p>
+`;
+
+const sendLeadEmail = async (lead, config = destinationConfig()) => {
+  if (!config.resendApiKey || !config.emailTo || !config.emailFrom) {
+    return { skipped: true, reason: 'missing_email_config' };
+  }
+
+  return withTimeout(async (signal) => {
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${config.resendApiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: config.emailFrom,
+        to: config.emailTo.split(',').map((item) => item.trim()).filter(Boolean),
+        reply_to: lead.email,
+        subject: `[A Bola Conecta] ${lead.contact_name} - ${lead.interest}`,
+        text: leadEmailText(lead),
+        html: leadEmailHtml(lead),
+      }),
+      signal,
+    });
+    const text = await response.text();
+    if (!response.ok) throw new Error(`resend_failed:${response.status}:${text.slice(0, 500)}`);
+    return text ? JSON.parse(text) : { ok: true };
+  }, 'email');
+};
+
+const runDestinations = async (lead) => {
+  const config = destinationConfig();
+  const enabled = activeDestinations(config);
+  const jobs = [
+    ['crm', () => forwardToCrm(lead, config)],
+    ['webhook', () => forwardToWebhook(lead, config)],
+    ['sheets', () => forwardToSheets(lead, config)],
+    ['email', () => sendLeadEmail(lead, config)],
+  ].filter(([name]) => enabled.includes(name));
+
+  const settled = await Promise.allSettled(jobs.map(([, run]) => run()));
+  return settled.map((result, index) => {
+    const name = jobs[index][0];
+    if (result.status === 'fulfilled') return { name, ok: true, result: result.value };
+    console.error(`[a-bola-conecta leads] destination_failed:${name}`, result.reason);
+    return { name, ok: false, error: String(result.reason?.message || result.reason).slice(0, 700) };
+  });
 };
 
 module.exports = async (req, res) => {
@@ -123,12 +267,13 @@ module.exports = async (req, res) => {
         ok: true,
         dry_run: true,
         lead,
-        notification: { skipped: true, reason: 'dry_run_no_real_email', to: lead.internal_notify_email },
+        destinations: activeDestinations(),
+        notification: { skipped: true, reason: 'dry_run_or_no_destinations', to: lead.internal_notify_email },
       });
     }
 
-    const crm = await forwardToCrm(lead);
-    return json(res, 201, { ok: true, dry_run: false, lead, crm });
+    const destinations = await runDestinations(lead);
+    return json(res, 200, { ok: true, dry_run: false, lead, destinations });
   } catch (error) {
     return json(res, 500, { ok: false, error: 'lead_handler_failed', detail: String(error.message || error).slice(0, 700) });
   }
