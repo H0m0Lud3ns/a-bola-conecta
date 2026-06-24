@@ -63,10 +63,10 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-.04em;margin:0}
 @media(min-width:1024px) and (orientation:landscape){
   .stage{max-width:1120px}
   .content{padding:32px 40px 70px!important;display:flex;flex-direction:column;justify-content:flex-start}
-  .country-header{align-items:flex-start;gap:24px;margin-bottom:28px}
-  .country-flag{width:112px;height:80px;border-radius:7px;margin-top:0}
-  .country-gondwana-logo{width:160px;height:160px;margin-top:0}
-  .country-header-text{display:flex;flex-direction:column;justify-content:flex-start;padding-top:0}
+  .country-header{align-items:center;gap:24px;margin-bottom:28px}
+  .country-flag{width:96px;height:96px;border-radius:10px;margin-top:0;object-fit:cover}
+  .country-gondwana-logo{width:96px;height:96px;border-radius:10px;margin-top:0;padding:6px}
+  .country-header-text{display:flex;flex-direction:column;justify-content:center;padding-top:0}
   .country-name{font-size:clamp(40px,5vw,60px);line-height:.88;margin-bottom:14px}
   .country-tags{gap:8px 10px}
   .tag{padding:6px 16px;font-size:17px;line-height:1.05}
@@ -150,9 +150,9 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-.04em;margin:0}
   background:radial-gradient(circle at 84% 8%,rgba(242,194,48,.12),transparent 28%),linear-gradient(150deg,var(--azul),var(--grafite) 62%);
 }
 
-.country-header{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px}
+.country-header{display:flex;align-items:center;gap:14px;margin-bottom:16px}
 .country-flag{
-  width:56px;height:40px;object-fit:cover;border-radius:3px;
+  width:56px;height:56px;object-fit:cover;border-radius:6px;
   border:1px solid rgba(246,237,215,.1);flex-shrink:0;
   background:#fff;
 }
@@ -492,7 +492,7 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-.04em;margin:0}
 .special-logo{width:48px;height:48px;object-fit:contain;flex-shrink:0}
 
 /* Logo Gondwana FC en fichas de pais */
-.country-gondwana-logo{width:80px;height:80px;object-fit:contain;flex-shrink:0;opacity:.85}
+.country-gondwana-logo{width:56px;height:56px;object-fit:contain;flex-shrink:0;background:rgba(246,237,215,.08);border:1px solid rgba(246,237,215,.12);border-radius:8px;padding:4px;opacity:.92}
 
 /* Lab credit (GondwanaLab UFRJ) */
 .lab-credit{display:flex;align-items:center;gap:12px;margin:12px 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(17,19,15,.4);backdrop-filter:blur(5px)}
@@ -518,10 +518,10 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-.04em;margin:0}
 /* Desktop: ampliar e alinhar a identificacao de paises sem afetar mobile. */
 @media(min-width:1024px) and (orientation:landscape){
   .stage{max-width:1120px}
-  .country-header{align-items:flex-start;gap:24px;margin-bottom:28px}
-  .country-flag{width:112px;height:80px;border-radius:7px;margin-top:0}
-  .country-gondwana-logo{width:160px;height:160px;margin-top:0}
-  .country-header-text{display:flex;flex-direction:column;justify-content:flex-start;padding-top:0}
+  .country-header{align-items:center;gap:24px;margin-bottom:28px}
+  .country-flag{width:96px;height:96px;border-radius:10px;margin-top:0;object-fit:cover}
+  .country-gondwana-logo{width:96px;height:96px;border-radius:10px;margin-top:0;padding:6px}
+  .country-header-text{display:flex;flex-direction:column;justify-content:center;padding-top:0}
   .country-name{font-size:clamp(40px,5vw,60px);line-height:.88;margin-bottom:14px}
   .country-tags{gap:8px 10px}
   .tag{padding:6px 16px;font-size:17px;line-height:1.05}
