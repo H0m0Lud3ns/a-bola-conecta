@@ -63,9 +63,9 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-.04em;margin:0}
 @media(min-width:1024px) and (orientation:landscape){
   .stage{max-width:1120px}
   .content{padding:32px 40px 70px!important;display:flex;flex-direction:column;justify-content:flex-start}
-  .country-header{align-items:center;gap:24px;margin-bottom:28px}
-  .country-flag{width:96px;height:96px;border-radius:10px;margin-top:0;object-fit:cover}
-  .country-gondwana-logo{width:96px;height:96px;border-radius:10px;margin-top:0;padding:6px}
+  .country-header{align-items:center;gap:28px;margin-bottom:28px}
+  .country-flag{height:64px;width:auto;max-width:96px;object-fit:contain;margin-top:0;padding:3px}
+  .country-gondwana-logo{height:128px;width:auto;margin-top:0;padding:0}
   .country-header-text{display:flex;flex-direction:column;justify-content:center;padding-top:0}
   .country-name{font-size:clamp(40px,5vw,60px);line-height:.88;margin-bottom:14px}
   .country-tags{gap:8px 10px}
@@ -150,11 +150,11 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-.04em;margin:0}
   background:radial-gradient(circle at 84% 8%,rgba(242,194,48,.12),transparent 28%),linear-gradient(150deg,var(--azul),var(--grafite) 62%);
 }
 
-.country-header{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.country-header{display:flex;align-items:center;gap:16px;margin-bottom:16px}
 .country-flag{
-  width:56px;height:56px;object-fit:cover;border-radius:6px;
-  border:1px solid rgba(246,237,215,.1);flex-shrink:0;
-  background:#fff;
+  width:auto;height:40px;max-width:64px;object-fit:contain;border-radius:3px;
+  border:1px solid rgba(246,237,215,.18);flex-shrink:0;
+  background:#fff;padding:2px;
 }
 .country-header-text{flex:1;min-width:0}
 .country-name{
@@ -491,8 +491,8 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-.04em;margin:0}
 .special-header-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
 .special-logo{width:48px;height:48px;object-fit:contain;flex-shrink:0}
 
-/* Logo Gondwana FC en fichas de pais */
-.country-gondwana-logo{width:56px;height:56px;object-fit:contain;flex-shrink:0;background:rgba(246,237,215,.08);border:1px solid rgba(246,237,215,.12);border-radius:8px;padding:4px;opacity:.92}
+/* Logo Gondwana FC en fichas de pais - limpio, sin caja ni fondo, respeta manual de marca */
+.country-gondwana-logo{height:88px;width:auto;object-fit:contain;flex-shrink:0;background:transparent;border:none;padding:0;border-radius:0;opacity:1;filter:drop-shadow(0 1px 2px rgba(0,0,0,.3))}
 
 /* Lab credit (GondwanaLab UFRJ) */
 .lab-credit{display:flex;align-items:center;gap:12px;margin:12px 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(17,19,15,.4);backdrop-filter:blur(5px)}
@@ -503,7 +503,7 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-.04em;margin:0}
 @media(max-width:480px){
   .special-map img{max-height:38vh}
   .special-map figcaption{font-size:10px}
-  .country-gondwana-logo{width:68px;height:68px}
+  .country-gondwana-logo{height:72px;width:auto}
   .special-logo{width:42px;height:42px}
 }
 @media(min-width:768px){
@@ -512,15 +512,15 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-.04em;margin:0}
 }
 @media(min-width:1024px){
   .special-map img{max-height:60vh}
-  .country-gondwana-logo{width:88px;height:88px}
+  .country-gondwana-logo{height:128px;width:auto}
 }
 
 /* Desktop: ampliar e alinhar a identificacao de paises sem afetar mobile. */
 @media(min-width:1024px) and (orientation:landscape){
   .stage{max-width:1120px}
-  .country-header{align-items:center;gap:24px;margin-bottom:28px}
-  .country-flag{width:96px;height:96px;border-radius:10px;margin-top:0;object-fit:cover}
-  .country-gondwana-logo{width:96px;height:96px;border-radius:10px;margin-top:0;padding:6px}
+  .country-header{align-items:center;gap:28px;margin-bottom:28px}
+  .country-flag{height:64px;width:auto;max-width:96px;object-fit:contain;margin-top:0;padding:3px}
+  .country-gondwana-logo{height:128px;width:auto;margin-top:0;padding:0}
   .country-header-text{display:flex;flex-direction:column;justify-content:center;padding-top:0}
   .country-name{font-size:clamp(40px,5vw,60px);line-height:.88;margin-bottom:14px}
   .country-tags{gap:8px 10px}
