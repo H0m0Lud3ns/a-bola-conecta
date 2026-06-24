@@ -86,6 +86,11 @@
     .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; padding: 0 20px; text-decoration: none; font-weight: 850; font-size: 15px; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
     .btn:hover { transform: translateY(-1px); }
     .btn-accent { background: var(--accent); color: var(--accent-foreground); box-shadow: var(--shadow-glow); }
+    .btn-large { padding: 22px 44px; font-size: 1.18rem; border-radius: 999px; }
+    .catalogo-invite { display: flex; flex-direction: column; align-items: center; gap: 36px; padding: 60px 24px; text-align: center; }
+    .catalogo-invite-quote { font-family: Georgia, serif; font-size: clamp(1.5rem, 2.6vw, 2.1rem); line-height: 1.35; color: #2b1f17; max-width: 920px; margin: 0; font-style: italic; }
+    .catalogo-invite-cta { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .catalogo-invite-hint { font-size: 1rem; color: hsl(28 18% 38%); letter-spacing: 0.02em; margin: 0; }
     .btn-primary { background: var(--primary); color: var(--foreground); box-shadow: var(--shadow-warm); }
     .btn-ghost { border: 1px solid hsla(38,30%,94%,.22); color: var(--foreground); background: hsla(38,30%,94%,.04); }
     .visual-card { position: relative; min-height: 420px; border: 1px solid hsla(38,30%,94%,.13); border-radius: 34px; overflow: hidden; background: linear-gradient(145deg, hsla(14,72%,38%,.86), hsla(210,50%,22%,.92) 52%, hsla(142,35%,18%,.9)); box-shadow: 0 30px 90px hsla(0,0%,0%,.28); }
@@ -376,250 +381,14 @@
           <article><b>Uso direto</b><p>Abra a experiência interativa, escolha uma ficha e transforme a pergunta em roda, mapa, mural, vídeo ou investigação coletiva.</p></article>
         </div>
         <div class="actions">
-          <a class="btn btn-accent" href="/a-bola-conecta/copa-2026/fichas/">Abrir experiência interativa</a>
-          <a class="btn btn-ghost" href="/gondwana-time-educacao/copa-de-gondwana/fichas-paises/">Ver acervo técnico</a>
+          <a class="btn btn-ghost" href="/gondwana-time-educacao/copa-de-gondwana/fichas-paises/">Ver acervo tecnico</a>
         </div>
-        <div class="country-grid">
-          <article class="country-card" data-region="América do Sul">
-            <span>América do Sul</span>
-            <h3>Brasil</h3>
-            <p>O que o futebol brasileiro ajuda a enxergar sobre alegria popular, desigualdade, povos indígenas e presença africana no país?</p>
-          </article>
-          <article class="country-card" data-region="América do Sul">
-            <span>América do Sul</span>
-            <h3>Argentina</h3>
-            <p>O que a camisa argentina pode revelar sobre território, migração, memória popular e povos que muitas vezes foram invisibilizados?</p>
-          </article>
-          <article class="country-card" data-region="América do Sul">
-            <span>América do Sul</span>
-            <h3>Uruguai</h3>
-            <p>Como o Uruguai ajuda a pensar que um país não se mede só por tamanho, mas por memória, vida pública e cultura compartilhada?</p>
-          </article>
-          <article class="country-card" data-region="América do Sul">
-            <span>América do Sul</span>
-            <h3>Colômbia</h3>
-            <p>Como a Colômbia mostra que um país pode ser Andes, Caribe, Amazônia, Pacífico e memória afro-indígena ao mesmo tempo?</p>
-          </article>
-          <article class="country-card" data-region="América do Sul">
-            <span>América do Sul</span>
-            <h3>Equador</h3>
-            <p>O que muda quando olhamos o Equador como costa, serra, Amazônia e Galápagos, e não como um território de uma história só?</p>
-          </article>
-          <article class="country-card" data-region="América do Sul">
-            <span>América do Sul</span>
-            <h3>Paraguai</h3>
-            <p>Como uma língua indígena viva muda o modo de imaginar uma nação, uma escola e uma seleção?</p>
-          </article>
-          <article class="country-card" data-region="África">
-            <span>África</span>
-            <h3>África do Sul</h3>
-            <p>Como falar de esporte na África do Sul sem separar bola, apartheid, resistência e democracia?</p>
-          </article>
-          <article class="country-card" data-region="África">
-            <span>África</span>
-            <h3>Gana</h3>
-            <p>Como Gana ajuda a transformar memória da diáspora africana em cultura viva, educação e pertencimento?</p>
-          </article>
-          <article class="country-card" data-region="África">
-            <span>África</span>
-            <h3>Senegal</h3>
-            <p>Como a ideia de teranga pode ensinar sobre hospitalidade, comunidade e pertencimento para além do futebol?</p>
-          </article>
-          <article class="country-card" data-region="África">
-            <span>África</span>
-            <h3>Egito</h3>
-            <p>Como o Egito ajuda a conversar sobre tempo antigo, mundo árabe, África e vida contemporânea no mesmo território?</p>
-          </article>
-          <article class="country-card" data-region="África">
-            <span>África</span>
-            <h3>Marrocos</h3>
-            <p>Como Marrocos revela pontes entre África, mundo árabe, Amazigh, Europa, diáspora e futebol global?</p>
-          </article>
-          <article class="country-card" data-region="África">
-            <span>África</span>
-            <h3>Argélia</h3>
-            <p>Como uma seleção pode carregar memória de guerra, diáspora, luta anticolonial e desejo de dignidade?</p>
-          </article>
-          <article class="country-card" data-region="África">
-            <span>África</span>
-            <h3>Tunísia</h3>
-            <p>Como a Tunísia ajuda a pensar África, Mediterrâneo, mundo árabe, liberdade e reformas sociais?</p>
-          </article>
-          <article class="country-card" data-region="África">
-            <span>África</span>
-            <h3>Costa do Marfim</h3>
-            <p>Como música, cidade, trabalho no campo e futebol contam diferentes histórias da Costa do Marfim?</p>
-          </article>
-          <article class="country-card" data-region="África">
-            <span>África</span>
-            <h3>República Democrática do Congo</h3>
-            <p>Como contar a história congolesa sem apagar a violência colonial e sem reduzir o país à dor?</p>
-          </article>
-          <article class="country-card" data-region="Oceania">
-            <span>Oceania</span>
-            <h3>Austrália</h3>
-            <p>O que significa jogar por um país construído sobre territórios indígenas muito mais antigos?</p>
-          </article>
-          <article class="country-card" data-region="Oceania">
-            <span>Oceania</span>
-            <h3>Nova Zelândia</h3>
-            <p>Como o esporte pode dialogar com soberania Maori, língua, território e identidade do Pacífico?</p>
-          </article>
-          <article class="country-card" data-region="Península Arábica">
-            <span>Península Arábica</span>
-            <h3>Arábia Saudita</h3>
-            <p>Como olhar para a Arábia Saudita sem reduzir o país a petróleo, riqueza ou deserto?</p>
-          </article>
-          <article class="country-card" data-region="Península Arábica">
-            <span>Península Arábica</span>
-            <h3>Catar</h3>
-            <p>O que o Catar nos faz perguntar sobre trabalho migrante, riqueza, território pequeno e imagem global?</p>
-          </article>
-          <article class="country-card" data-region="Levante / margem arábica">
-            <span>Levante / margem arábica</span>
-            <h3>Jordânia</h3>
-            <p>Como uma estreia em Copa pode abrir conversa sobre território, refúgio, arqueologia e fronteiras modernas?</p>
-          </article>
-          <article class="country-card" data-region="Mesopotâmia / margem arábica">
-            <span>Mesopotâmia / margem arábica</span>
-            <h3>Iraque</h3>
-            <p>Como o Iraque mostra que uma seleção pode carregar milhares de anos de história antes do Estado moderno?</p>
-          </article>
-          <article class="country-card" data-region="América do Norte">
-            <span>América do Norte</span>
-            <h3>Estados Unidos</h3>
-            <p>Como ler os Estados Unidos juntando povos originários, diáspora africana, migração, indústria cultural e desigualdade?</p>
-          </article>
-          <article class="country-card" data-region="América do Norte">
-            <span>América do Norte</span>
-            <h3>México</h3>
-            <p>Como o México mostra que Abya Yala é memória indígena, cidade, comida, arte e futebol ao mesmo tempo?</p>
-          </article>
-          <article class="country-card" data-region="América do Norte">
-            <span>América do Norte</span>
-            <h3>Canadá</h3>
-            <p>Como um país anfitrião pode mostrar as feridas e responsabilidades da colonização no norte de Abya Yala?</p>
-          </article>
-          <article class="country-card" data-region="Leste Asiático">
-            <span>Leste Asiático</span>
-            <h3>Japão</h3>
-            <p>Como o Japão ajuda a pensar tradição, memória, tecnologia, cultura pop e trabalho coletivo?</p>
-          </article>
-          <article class="country-card" data-region="Ásia Ocidental">
-            <span>Ásia Ocidental</span>
-            <h3>Irã</h3>
-            <p>Como o futebol iraniano carrega poesia, política, juventude e identidade nacional?</p>
-          </article>
-          <article class="country-card" data-region="Leste Asiático">
-            <span>Leste Asiático</span>
-            <h3>Coreia do Sul</h3>
-            <p>Como uma seleção pode carregar colonização, divisão, tecnologia e cultura pop global?</p>
-          </article>
-          <article class="country-card" data-region="Ásia Central">
-            <span>Ásia Central</span>
-            <h3>Uzbequistão</h3>
-            <p>O que muda quando a Copa abre espaço para a Ásia Central contar suas cidades, línguas e memórias?</p>
-          </article>
-          <article class="country-card" data-region="África Atlântica">
-            <span>África Atlântica</span>
-            <h3>Cabo Verde</h3>
-            <p>Como Cabo Verde transforma diáspora, música, crioulo e memória atlântica em pertencimento?</p>
-          </article>
-          <article class="country-card" data-region="Europa">
-            <span>Europa</span>
-            <h3>Inglaterra</h3>
-            <p>Como uma seleção de uma nação constitutiva do Reino Unido ajuda a pensar futebol moderno, classe, migração e memória imperial?</p>
-          </article>
-          <article class="country-card" data-region="Europa">
-            <span>Europa</span>
-            <h3>França</h3>
-            <p>Como a seleção francesa revela África, Caribe, Europa, periferia e república no mesmo uniforme?</p>
-          </article>
-          <article class="country-card" data-region="Europa">
-            <span>Europa</span>
-            <h3>Espanha</h3>
-            <p>Como falar da Espanha na Copa sem esquecer sua relação colonial com Abya Yala?</p>
-          </article>
-          <article class="country-card" data-region="Europa">
-            <span>Europa</span>
-            <h3>Alemanha</h3>
-            <p>Como uma camisa vencedora também pode carregar memória histórica, responsabilidade e reconstrução democrática?</p>
-          </article>
-          <article class="country-card" data-region="Europa Atlântica">
-            <span>Europa Atlântica</span>
-            <h3>Portugal</h3>
-            <p>Como Portugal aparece na Copa junto com Brasil, África, língua, colonização e diáspora?</p>
-          </article>
-          <article class="country-card" data-region="Europa">
-            <span>Europa</span>
-            <h3>Países Baixos</h3>
-            <p>Como o futebol dos Países Baixos se conecta a mar, colonialismo, Caribe, Suriname e criatividade coletiva?</p>
-          </article>
-          <article class="country-card" data-region="Europa">
-            <span>Europa</span>
-            <h3>Bélgica</h3>
-            <p>Como uma seleção diversa pode abrir conversa sobre Congo, Europa e memória colonial?</p>
-          </article>
-          <article class="country-card" data-region="Europa Balcânica">
-            <span>Europa Balcânica</span>
-            <h3>Croácia</h3>
-            <p>Como a Croácia ajuda a pensar guerra recente, diáspora, memória e reconstrução pelo esporte?</p>
-          </article>
-          <article class="country-card" data-region="Europa Alpina">
-            <span>Europa Alpina</span>
-            <h3>Suíça</h3>
-            <p>Como uma seleção suíça pode contar multilinguismo, migração e neutralidade sem apagar contradições?</p>
-          </article>
-          <article class="country-card" data-region="Europa Central">
-            <span>Europa Central</span>
-            <h3>Áustria</h3>
-            <p>Como a Áustria pode abrir conversa sobre memória imperial, Europa Central, cultura e responsabilidade histórica?</p>
-          </article>
-          <article class="country-card" data-region="Europa Atlântica">
-            <span>Europa Atlântica</span>
-            <h3>Escócia</h3>
-            <p>Como uma seleção de uma nação constitutiva do Reino Unido expressa identidade, língua, autonomia e memória popular?</p>
-          </article>
-          <article class="country-card" data-region="Europa Nórdica">
-            <span>Europa Nórdica</span>
-            <h3>Noruega</h3>
-            <p>Como um país rico em petróleo pode falar de clima, povos Sami e futebol global?</p>
-          </article>
-          <article class="country-card" data-region="Bálcãs">
-            <span>Bálcãs</span>
-            <h3>Bósnia e Herzegovina</h3>
-            <p>Como uma seleção pode carregar convivência, guerra, luto, diáspora e desejo de futuro?</p>
-          </article>
-          <article class="country-card" data-region="Europa Nórdica">
-            <span>Europa Nórdica</span>
-            <h3>Suécia</h3>
-            <p>Como a Suécia ajuda a discutir Estado social, povo Sami, igualdade e cultura popular?</p>
-          </article>
-          <article class="country-card" data-region="Anatólia / Europa-Ásia">
-            <span>Anatólia / Europa-Ásia</span>
-            <h3>Turquia</h3>
-            <p>Como a Turquia ajuda a pensar fronteiras entre Europa e Ásia, império, república, minorias e diáspora?</p>
-          </article>
-          <article class="country-card" data-region="Europa Central">
-            <span>Europa Central</span>
-            <h3>Tchéquia</h3>
-            <p>Como a Tchéquia ajuda a lembrar Boêmia, Tchecoslováquia, revolução democrática e memória centro-europeia?</p>
-          </article>
-          <article class="country-card" data-region="América Central">
-            <span>América Central</span>
-            <h3>Panamá</h3>
-            <p>Como o Panamá mostra que Abya Yala também é ponte, canal, Caribe, povos indígenas e diáspora africana?</p>
-          </article>
-          <article class="country-card" data-region="Caribe">
-            <span>Caribe</span>
-            <h3>Curaçao</h3>
-            <p>Como Curaçao mostra que uma ilha caribenha pode carregar língua própria, memória colonial, autonomia política e potência esportiva?</p>
-          </article>
-          <article class="country-card" data-region="Caribe">
-            <span>Caribe</span>
-            <h3>Haiti</h3>
-            <p>Como o Haiti muda a história do mundo quando a liberdade negra entra no centro da narrativa?</p>
-          </article>
+        <div class="catalogo-invite">
+          <p class="catalogo-invite-quote">"A Copa mostra 48 seleções em campo. A gente mostra os 48 mundos que entram com elas: territorio, povos, cultura, memoria e futebol como leitura do Sul."</p>
+          <div class="catalogo-invite-cta">
+            <a class="btn btn-accent btn-large" href="/a-bola-conecta/copa-2026/fichas/">Abrir a experiencia interativa</a>
+            <p class="catalogo-invite-hint">55 cards. 48 paises. 7 fichas especiais. Uma viagem pelo mapa profundo da Terra.</p>
+          </div>
         </div>
       </div>
     </section>
