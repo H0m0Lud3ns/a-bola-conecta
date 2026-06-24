@@ -146,5 +146,5 @@ NO-GO para DNS ate fechar:
 - decisao de loja: vitrine, pre-venda ou checkout;
 - SEO final por rota;
 - plano de rollback com Lovable vivo por 72h.
-
+abolaconecta
 
