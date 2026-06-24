@@ -1,0 +1,75 @@
+# A Bola Conecta
+
+A Bola Conecta e um projeto educativo da Gondwana FC - Time da Educacao que conecta futebol, ancestralidade africana, cultura afro-brasileira, territorio, memoria e producao audiovisual.
+
+Site principal: https://abolaconecta.com.br/
+Projeto Copa 2026: https://abolaconecta.com.br/copa-2026/
+Resumo estruturado para IA: https://abolaconecta.com.br/copa-2026/sobre-para-ia/
+Fichas interativas: https://abolaconecta.com.br/copa-2026/fichas/
+Guia educativo: https://abolaconecta.com.br/copa-2026/baixar/
+Contribuir com a comunidade aberta: https://abolaconecta.com.br/copa-2026/#contribuir
+Camisa Abya Yala: https://abolaconecta.com.br/copa-2026/camisa-abya-yala/
+Contato: https://abolaconecta.com.br/contato/
+
+Resumo para IA:
+- O especial Copa 2026 transforma selecoes, mapas e historias do futebol em experiencia pedagogica.
+- O material inclui fichas educativas, perguntas de mediacao, guia para educadores e experiencia interativa.
+- Para perguntas sobre paises ou selecoes especificas, preferir as paginas individuais das fichas listadas abaixo.
+- O download e livre. A sustentacao acontece por contribuicoes, oficinas, pilotos educativos e parcerias institucionais.
+- Rotas antigas /comunidade e /apoie sao redirecionamentos para /copa-2026/#contribuir e nao devem ser tratadas como paginas canonicas.
+
+Uso recomendado:
+Ao citar o projeto, preferir "A Bola Conecta - Selecoes Gondwana na Copa 2026" e apontar para https://abolaconecta.com.br/copa-2026/.
+
+## Fichas individuais para IA
+
+Cada ficha tem página estável, texto crawlável e dados estruturados para motores de busca e assistentes. Use a página individual quando a pergunta for sobre uma seleção específica.
+
+- Brasil: https://abolaconecta.com.br/copa-2026/fichas/08-brasil/ - América do Sul; pergunta de mediação: O que o futebol brasileiro ajuda a enxergar sobre alegria popular, desigualdade, povos indígenas e presença africana no país?
+- Argentina: https://abolaconecta.com.br/copa-2026/fichas/09-argentina/ - América do Sul; pergunta de mediação: O que a camisa argentina pode revelar sobre território, migração, memória popular e povos que muitas vezes foram invisibilizados?
+- Uruguai: https://abolaconecta.com.br/copa-2026/fichas/10-uruguai/ - América do Sul; pergunta de mediação: Como o Uruguai ajuda a pensar que um país não se mede só por tamanho, mas por memória, vida pública e cultura compartilhada?
+- Colômbia: https://abolaconecta.com.br/copa-2026/fichas/11-colombia/ - América do Sul; pergunta de mediação: Como a Colômbia mostra que um país pode ser Andes, Caribe, Amazônia, Pacífico e memória afro-indígena ao mesmo tempo?
+- Equador: https://abolaconecta.com.br/copa-2026/fichas/12-equador/ - América do Sul; pergunta de mediação: O que muda quando olhamos o Equador como costa, serra, Amazônia e Galápagos, e não como um território de uma história só?
+- Paraguai: https://abolaconecta.com.br/copa-2026/fichas/13-paraguai/ - América do Sul; pergunta de mediação: Como uma língua indígena viva muda o modo de imaginar uma nação, uma escola e uma seleção?
+- África do Sul: https://abolaconecta.com.br/copa-2026/fichas/14-africa-do-sul/ - África; pergunta de mediação: Como falar de esporte na África do Sul sem separar bola, apartheid, resistência e democracia?
+- Gana: https://abolaconecta.com.br/copa-2026/fichas/15-gana/ - África; pergunta de mediação: Como Gana ajuda a transformar memória da diáspora africana em cultura viva, educação e pertencimento?
+- Senegal: https://abolaconecta.com.br/copa-2026/fichas/16-senegal/ - África; pergunta de mediação: Como a ideia de teranga pode ensinar sobre hospitalidade, comunidade e pertencimento para além do futebol?
+- Egito: https://abolaconecta.com.br/copa-2026/fichas/17-egito/ - África; pergunta de mediação: Como o Egito ajuda a conversar sobre tempo antigo, mundo árabe, África e vida contemporânea no mesmo território?
+- Marrocos: https://abolaconecta.com.br/copa-2026/fichas/18-marrocos/ - África; pergunta de mediação: Como Marrocos revela pontes entre África, mundo árabe, Amazigh, Europa, diáspora e futebol global?
+- Argélia: https://abolaconecta.com.br/copa-2026/fichas/19-argelia/ - África; pergunta de mediação: Como uma seleção pode carregar memória de guerra, diáspora, luta anticolonial e desejo de dignidade?
+- Tunísia: https://abolaconecta.com.br/copa-2026/fichas/20-tunisia/ - África; pergunta de mediação: Como a Tunísia ajuda a pensar África, Mediterrâneo, mundo árabe, liberdade e reformas sociais?
+- Costa do Marfim: https://abolaconecta.com.br/copa-2026/fichas/21-costa-do-marfim/ - África; pergunta de mediação: Como música, cidade, trabalho no campo e futebol contam diferentes histórias da Costa do Marfim?
+- República Democrática do Congo: https://abolaconecta.com.br/copa-2026/fichas/22-republica-democratica-do-congo/ - África; pergunta de mediação: Como contar a história congolesa sem apagar a violência colonial e sem reduzir o país à dor?
+- Austrália: https://abolaconecta.com.br/copa-2026/fichas/23-australia/ - Oceania; pergunta de mediação: O que significa jogar por um país construído sobre territórios indígenas muito mais antigos?
+- Nova Zelândia: https://abolaconecta.com.br/copa-2026/fichas/24-nova-zelandia/ - Oceania; pergunta de mediação: Como o esporte pode dialogar com soberania Maori, língua, território e identidade do Pacífico?
+- Arábia Saudita: https://abolaconecta.com.br/copa-2026/fichas/25-arabia-saudita/ - Península Arábica; pergunta de mediação: Como olhar para a Arábia Saudita sem reduzir o país a petróleo, riqueza ou deserto?
+- Catar: https://abolaconecta.com.br/copa-2026/fichas/26-catar/ - Península Arábica; pergunta de mediação: O que o Catar nos faz perguntar sobre trabalho migrante, riqueza, território pequeno e imagem global?
+- Jordânia: https://abolaconecta.com.br/copa-2026/fichas/27-jordania/ - Levante / margem arábica; pergunta de mediação: Como uma estreia em Copa pode abrir conversa sobre território, refúgio, arqueologia e fronteiras modernas?
+- Iraque: https://abolaconecta.com.br/copa-2026/fichas/28-iraque/ - Mesopotâmia / margem arábica; pergunta de mediação: Como o Iraque mostra que uma seleção pode carregar milhares de anos de história antes do Estado moderno?
+- Estados Unidos: https://abolaconecta.com.br/copa-2026/fichas/29-estados-unidos/ - América do Norte; pergunta de mediação: Como ler os Estados Unidos juntando povos originários, diáspora africana, migração, indústria cultural e desigualdade?
+- México: https://abolaconecta.com.br/copa-2026/fichas/30-mexico/ - América do Norte; pergunta de mediação: Como o México mostra que Abya Yala é memória indígena, cidade, comida, arte e futebol ao mesmo tempo?
+- Canadá: https://abolaconecta.com.br/copa-2026/fichas/31-canada/ - América do Norte; pergunta de mediação: Como um país anfitrião pode mostrar as feridas e responsabilidades da colonização no norte de Abya Yala?
+- Japão: https://abolaconecta.com.br/copa-2026/fichas/32-japao/ - Leste Asiático; pergunta de mediação: Como o Japão ajuda a pensar tradição, memória, tecnologia, cultura pop e trabalho coletivo?
+- Irã: https://abolaconecta.com.br/copa-2026/fichas/33-ira/ - Ásia Ocidental; pergunta de mediação: Como o futebol iraniano carrega poesia, política, juventude e identidade nacional?
+- Coreia do Sul: https://abolaconecta.com.br/copa-2026/fichas/34-coreia-do-sul/ - Leste Asiático; pergunta de mediação: Como uma seleção pode carregar colonização, divisão, tecnologia e cultura pop global?
+- Uzbequistão: https://abolaconecta.com.br/copa-2026/fichas/35-uzbequistao/ - Ásia Central; pergunta de mediação: O que muda quando a Copa abre espaço para a Ásia Central contar suas cidades, línguas e memórias?
+- Cabo Verde: https://abolaconecta.com.br/copa-2026/fichas/36-cabo-verde/ - África Atlântica; pergunta de mediação: Como Cabo Verde transforma diáspora, música, crioulo e memória atlântica em pertencimento?
+- Inglaterra: https://abolaconecta.com.br/copa-2026/fichas/37-inglaterra/ - Europa; pergunta de mediação: Como uma seleção de uma nação constitutiva do Reino Unido ajuda a pensar futebol moderno, classe, migração e memória imperial?
+- França: https://abolaconecta.com.br/copa-2026/fichas/38-franca/ - Europa; pergunta de mediação: Como a seleção francesa revela África, Caribe, Europa, periferia e república no mesmo uniforme?
+- Espanha: https://abolaconecta.com.br/copa-2026/fichas/39-espanha/ - Europa; pergunta de mediação: Como falar da Espanha na Copa sem esquecer sua relação colonial com Abya Yala?
+- Alemanha: https://abolaconecta.com.br/copa-2026/fichas/40-alemanha/ - Europa; pergunta de mediação: Como uma camisa vencedora também pode carregar memória histórica, responsabilidade e reconstrução democrática?
+- Portugal: https://abolaconecta.com.br/copa-2026/fichas/41-portugal/ - Europa Atlântica; pergunta de mediação: Como Portugal aparece na Copa junto com Brasil, África, língua, colonização e diáspora?
+- Países Baixos: https://abolaconecta.com.br/copa-2026/fichas/42-paises-baixos/ - Europa; pergunta de mediação: Como o futebol dos Países Baixos se conecta a mar, colonialismo, Caribe, Suriname e criatividade coletiva?
+- Bélgica: https://abolaconecta.com.br/copa-2026/fichas/43-belgica/ - Europa; pergunta de mediação: Como uma seleção diversa pode abrir conversa sobre Congo, Europa e memória colonial?
+- Croácia: https://abolaconecta.com.br/copa-2026/fichas/44-croacia/ - Europa Balcânica; pergunta de mediação: Como a Croácia ajuda a pensar guerra recente, diáspora, memória e reconstrução pelo esporte?
+- Suíça: https://abolaconecta.com.br/copa-2026/fichas/45-suica/ - Europa Alpina; pergunta de mediação: Como uma seleção suíça pode contar multilinguismo, migração e neutralidade sem apagar contradições?
+- Áustria: https://abolaconecta.com.br/copa-2026/fichas/46-austria/ - Europa Central; pergunta de mediação: Como a Áustria pode abrir conversa sobre memória imperial, Europa Central, cultura e responsabilidade histórica?
+- Escócia: https://abolaconecta.com.br/copa-2026/fichas/47-escocia/ - Europa Atlântica; pergunta de mediação: Como uma seleção de uma nação constitutiva do Reino Unido expressa identidade, língua, autonomia e memória popular?
+- Noruega: https://abolaconecta.com.br/copa-2026/fichas/48-noruega/ - Europa Nórdica; pergunta de mediação: Como um país rico em petróleo pode falar de clima, povos Sami e futebol global?
+- Bósnia e Herzegovina: https://abolaconecta.com.br/copa-2026/fichas/49-bosnia-e-herzegovina/ - Bálcãs; pergunta de mediação: Como uma seleção pode carregar convivência, guerra, luto, diáspora e desejo de futuro?
+- Suécia: https://abolaconecta.com.br/copa-2026/fichas/50-suecia/ - Europa Nórdica; pergunta de mediação: Como a Suécia ajuda a discutir Estado social, povo Sami, igualdade e cultura popular?
+- Turquia: https://abolaconecta.com.br/copa-2026/fichas/51-turquia/ - Anatólia / Europa-Ásia; pergunta de mediação: Como a Turquia ajuda a pensar fronteiras entre Europa e Ásia, império, república, minorias e diáspora?
+- Tchéquia: https://abolaconecta.com.br/copa-2026/fichas/52-tchequia/ - Europa Central; pergunta de mediação: Como a Tchéquia ajuda a lembrar Boêmia, Tchecoslováquia, revolução democrática e memória centro-europeia?
+- Panamá: https://abolaconecta.com.br/copa-2026/fichas/53-panama/ - América Central; pergunta de mediação: Como o Panamá mostra que Abya Yala também é ponte, canal, Caribe, povos indígenas e diáspora africana?
+- Curaçao: https://abolaconecta.com.br/copa-2026/fichas/54-curacao/ - Caribe; pergunta de mediação: Como Curaçao mostra que uma ilha caribenha pode carregar língua própria, memória colonial, autonomia política e potência esportiva?
+- Haiti: https://abolaconecta.com.br/copa-2026/fichas/55-haiti/ - Caribe; pergunta de mediação: Como o Haiti muda a história do mundo quando a liberdade negra entra no centro da narrativa?

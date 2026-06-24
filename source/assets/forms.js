@@ -56,10 +56,12 @@
         const result = await response.json();
         if (!result.ok) throw new Error(result.error || 'erro_crm');
         setStatus(form, 'ok', form.dataset.successMessage || 'Registro enviado.');
+        form.dispatchEvent(new CustomEvent('abc:lead:success', { bubbles: true, detail: { payload, result } }));
         form.reset();
       } catch (error) {
         saveFallback(payload);
-        setStatus(form, 'error', form.dataset.errorMessage || 'Não conseguimos enviar agora. O registro ficou salvo neste navegador.');
+        form.dispatchEvent(new CustomEvent('abc:lead:success', { bubbles: true, detail: { payload, fallback: true, error: String(error?.message || error) } }));
+        setStatus(form, 'ok', form.dataset.fallbackSuccessMessage || 'Registro salvo. Seu acesso foi liberado abaixo.');
       }
     });
   });

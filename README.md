@@ -51,25 +51,81 @@ Durante o build, caminhos de assets saem de `/a-bola-conecta/assets/...` para `/
 
 ## Leads / CRM
 
-Fase segura preparada em `api/leads.js`.
+A entrada canonica de leads e `api/leads.js`. Os formularios publicos em `abolaconecta.com.br` enviam para `/api/leads`.
 
-- Email interno confirmado: `contato.gondwana@gmail.com`.
-- `DRY_RUN=true` por padrao. Nesse modo a function valida e registra o payload no log, mas nao envia email real nem grava CRM real.
-- `CRM_ENDPOINT` e `CRM_API_KEY` ficam vazios ate existir um destino de CRM confirmado.
-- O formulario publico atual de comunidade/apoio Pix usa `form_id=comunidade-apoio-pix` e, no dominio final `abolaconecta.com.br`, tentara enviar para `/api/leads`.
-- No dominio estatico `sebas-ai.infraqualia.com`, sem endpoint API, o formulario preserva o fallback local no navegador.
+A function valida `contact_name`, `email` e `form_id`, normaliza os campos e pode encaminhar o mesmo lead para destinos reais por variaveis de ambiente. Todos os destinos sao opcionais: se uma variavel nao existir, aquele destino e ignorado.
 
-### Pendiente: Supabase
+### Destinos suportados
 
-Sebastian ainda nao confirmou se A Bola Conecta usara Supabase novo ou existente. Recomendacao operacional: usar Supabase novo/proprio para A Bola Conecta, separado de SportsCoLab e de outros CRMs, para evitar mistura de dados, permissoes e historico comercial.
+- Email via Resend:
+  - `RESEND_API_KEY`
+  - `LEADS_EMAIL_FROM`
+  - `LEADS_EMAIL_TO`
+- Webhook generico:
+  - `LEADS_WEBHOOK_URL`
+  - `LEADS_WEBHOOK_SECRET` opcional, enviado como header `X-Webhook-Secret`
+- Google Sheet via Apps Script ou outro receptor de planilha:
+  - `LEADS_SHEETS_WEBHOOK_URL`
+- CRM/backend futuro:
+  - `CRM_ENDPOINT`
+  - `CRM_API_KEY` opcional, enviado como `Authorization: Bearer ...`
+- Controle de teste:
+  - `LEADS_DRY_RUN=true|false`
+  - `DRY_RUN=true|false` continua aceito por compatibilidade
+  - Se nenhuma saida real estiver configurada, a function fica em dry-run automaticamente
 
-Antes de producao, falta definir:
+Email interno padrao: `contato.gondwana@gmail.com`.
 
-- projeto Supabase de A Bola Conecta;
-- tabela canonica de leads;
-- politicas de acesso;
-- responsavel por operar o CRM;
-- se o endpoint final sera Supabase direto, um CRM Gondwana existente ou outro backend.
+### Payload normalizado
+
+A function preserva campos planos antigos para compatibilidade, mas agora tambem entrega blocos separados para operacao responsavel:
+
+- `lead_type`: `download`, `support_pix`, `community`, `partnership` ou `contact`;
+- `contact`: dados da pessoa/instituicao;
+- `download`: material e intencao de uso quando o formulario for de PDF/guia;
+- `support_pix`: valor informado, data Pix e status de conciliacao quando o formulario for de apoio;
+- `community`: preferencias de participacao;
+- `compliance`: consentimento, aceite de privacidade e alerta de conciliacao financeira;
+- `raw_fields`: campos originais enviados pelo formulario.
+
+```json
+{
+  "source": "a-bola-conecta",
+  "lead_type": "download",
+  "form_id": "copa-2026-ebook",
+  "campaign": "copa-2026-selecoes-gondwana",
+  "page": "https://www.abolaconecta.com.br/copa-2026",
+  "contact_name": "Nome",
+  "email": "nome@example.com",
+  "phone": "",
+  "organization": "Escola ou instituicao",
+  "role": "educador",
+  "city": "Sao Paulo",
+  "country": "Brasil",
+  "interest": "copa-2026-ebook",
+  "message": "Como pretende usar o guia",
+  "utm_source": "direct",
+  "utm_medium": "site",
+  "utm_campaign": "copa-2026-selecoes-gondwana",
+  "utm_content": "",
+  "stage": "novo",
+  "owner": "Gondwana FC",
+  "priority": "normal",
+  "consent": true,
+  "contact": { "name": "Nome", "email": "nome@example.com" },
+  "download": { "material": "gondwana-na-copa-pdf", "intended_use": "aula", "release_policy": "immediate_after_form_submit" },
+  "support_pix": null,
+  "community": null,
+  "compliance": {
+    "consent_communication": true,
+    "privacy_policy_accepted": true,
+    "legal_basis": "consentimento",
+    "financial_reconciliation_required": false
+  },
+  "internal_notify_email": "contato.gondwana@gmail.com",
+  "created_at": "2026-06-19T20:00:00.000Z"
+}
+```
 
 ### Teste dry-run
 
@@ -81,11 +137,10 @@ curl -s -X POST http://127.0.0.1:30300/api/leads \
 
 Checklist para producao:
 
-- confirmar destino real do CRM;
-- configurar `CRM_ENDPOINT` e, se necessario, `CRM_API_KEY`;
-- decidir Supabase novo/proprio ou backend existente;
-- manter primeiro envio real supervisionado;
-- somente depois trocar `DRY_RUN=false`.
+- configurar ao menos um destino real, idealmente `RESEND_API_KEY`, `LEADS_EMAIL_FROM`, `LEADS_EMAIL_TO` e `LEADS_SHEETS_WEBHOOK_URL`;
+- fazer primeiro envio real supervisionado;
+- usar `LEADS_DRY_RUN=false` somente quando o destino responder corretamente;
+- manter `CRM_ENDPOINT` reservado para CRM futuro, se necessario.
 
 ## Estado atual
 

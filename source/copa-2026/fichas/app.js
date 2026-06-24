@@ -149,6 +149,7 @@ function renderSpecial(s){
     html+='</div>';
   }
   html+=renderReferences(specialReferences(s),s.id==='06-bola-conecta'?'Notícias sobre o documentário':null);
+  html+='<div class="support-note"><span>Este material é aberto. Se puder, contribua para manter a circulação.</span><a href="/a-bola-conecta/copa-2026/#contribuir">Contribuir</a></div>';
   html+='<div class="card-footer"><span>Gondwana FC | Copa 2026</span><span>'+esc(s.num)+'/'+s.totalNum+'</span></div></div>';
   return html;
 }
@@ -202,7 +203,7 @@ function renderCountry(slide){
 
     renderReferences(countryReferences(c,r))+
 
-    '<div class="card-footer"><span>Gondwana FC | '+esc(c.name)+'</span><span>'+esc(slide.num)+'/'+slide.totalNum+'</span></div>'+
+    '<div class="support-note"><span>Este material é aberto. Se puder, contribua para manter a circulação.</span><a href="/a-bola-conecta/copa-2026/#contribuir">Contribuir</a></div>'+    '<div class="card-footer"><span>Gondwana FC | '+esc(c.name)+'</span><span>'+esc(slide.num)+'/'+slide.totalNum+'</span></div>'+
 
     '</div>';
   return html;
@@ -529,7 +530,10 @@ function setupFilters(){
 }
 
 function getSearchHaystack(c){
-  return normText([c.name,c.region,c.group,(confederations[c.name]||[])[0],c.relation==='forte'?'Gondwana':'Outras seleções',c.abyaYala?'Abya Yala':'fora de Abya Yala'].filter(Boolean).join(' '));
+  var aliases={
+    'Curaçao':'Curacao Curazao Curaçao Caribbean Caribe Antilhas Antilhas Neerlandesas Papiamentu'
+  };
+  return normText([c.name,aliases[c.name],c.region,c.group,(confederations[c.name]||[])[0],c.relation==='forte'?'Gondwana':'Outras seleções',c.abyaYala?'Abya Yala':'fora de Abya Yala'].filter(Boolean).join(' '));
 }
 
 function renderSuggestions(raw){
@@ -564,11 +568,11 @@ function renderFilterFeedback(countrySlides){
   if(!list)return;
   if(!labels.length){list.innerHTML='';return;}
   if(!countrySlides.length){list.innerHTML='<div class="fp-empty"><strong>Nada encontrado.</strong><p>Tente remover um filtro ou buscar por país, região, grupo ou confederação.</p></div>';return;}
-  list.innerHTML=countrySlides.slice(0,8).map(function(slide){
+  list.innerHTML=countrySlides.map(function(slide){
     var c=slide.country;
     var meta=[displayRegionName(c.region),(confederations[c.name]||[])[0],c.group?'Grupo '+c.group:''].filter(Boolean).join(' · ');
     return '<button type="button" class="fp-result-item" data-slide="'+esc(slide.id)+'"><strong>'+esc(c.name)+'</strong><span>'+esc(meta)+'</span></button>';
-  }).join('')+(countrySlides.length>8?'<div class="fp-result-more">+'+(countrySlides.length-8)+' seleções no filtro</div>':'');
+  }).join('');
   list.querySelectorAll('.fp-result-item').forEach(function(btn){
     btn.addEventListener('click',function(){var idx=filtered.findIndex(function(s){return s.id===btn.dataset.slide});if(idx>=0){fp.classList.remove('open');resumeAutoplay();showSlide(idx,true);}});
   });
@@ -627,6 +631,8 @@ function setupShare(){
   sb.innerHTML='<button class="share-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>Compartilhar</button>';
   sb.querySelector('button').addEventListener('click',openShareMenu);
   document.querySelector('.viewport').appendChild(sb);
+  var dockShare=document.getElementById('dock-share');
+  if(dockShare){dockShare.addEventListener('click',openShareMenu);}
 
   document.getElementById('sh-wa').addEventListener('click',function(e){shareTo('wa',e)});
   document.getElementById('sh-tg').addEventListener('click',function(e){shareTo('tg',e)});
@@ -836,9 +842,12 @@ function shareToInstagram(){
   ctx.fillStyle='rgba(246,237,215,0.5)';
   ctx.font='700 22px Manrope,sans-serif';
   ctx.fillText('Copa 2026 · @gondwana.fc',W/2,H-215);
-  ctx.fillStyle='rgba(242,194,48,0.6)';
-  ctx.font='700 18px Manrope,sans-serif';
-  ctx.fillText('sebas-ai.infraqualia.com/a-bola-conecta/copa-2026/',W/2,H-180);
+  ctx.fillStyle='rgba(242,194,48,0.72)';
+  ctx.font='900 19px Manrope,sans-serif';
+  ctx.fillText('Baixar é livre. Sustentar é coletivo.',W/2,H-184);
+  ctx.fillStyle='rgba(246,237,215,0.45)';
+  ctx.font='700 17px Manrope,sans-serif';
+  ctx.fillText('sebas-ai.infraqualia.com/a-bola-conecta/copa-2026/',W/2,H-154);
 
   // Convert to image
   canvas.toBlob(function(blob){

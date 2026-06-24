@@ -17,6 +17,7 @@
   <meta name="twitter:title" content="Copa do Mundo 2026 | A Bola Conecta">
   <meta name="twitter:description" content="Fichas, perguntas e caminhos pedagógicos para ler a Copa pelo território, pela memória e pela bola.">
   <meta name="twitter:image" content="https://sebas-ai.infraqualia.com/gondwana-time-educacao/copa-de-gondwana/fichas-paises/assets/cards-prontos/01-selecoes-gondwana.jpg">
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="Resumo para IA e assistentes">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Manrope:wght@500;600;700;800;900&display=swap" rel="stylesheet">
@@ -73,6 +74,7 @@
     .mobile-nav.is-open { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
     .mobile-nav a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; text-align: center; }
     .support-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 999px; padding: 0 18px; background: var(--accent); color: var(--accent-foreground); text-decoration: none; font-size: 14px; font-weight: 800; box-shadow: var(--shadow-glow); white-space: nowrap; }
+    .shirt-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 999px; padding: 0 18px; background: hsla(38,30%,94%,.1); border: 1px solid hsla(38,30%,94%,.2); color: var(--foreground); text-decoration: none; font-size: 14px; font-weight: 800; white-space: nowrap; }
     main { padding-top: 74px; }
     .hero { position: relative; overflow: hidden; padding: clamp(64px, 10vw, 126px) 0 64px; }
     .hero-grid { display: grid; gap: 36px; align-items: center; }
@@ -102,6 +104,10 @@
     .flow-item small { display:inline-flex; margin-bottom:12px; color:var(--accent); font-size:12px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
     .flow-item h3 { font-size:1.45rem; line-height:1.05; }
     .flow-item p { margin-top:10px; color:var(--muted-foreground); line-height:1.65; }
+    .shirt-callout { display:grid; grid-template-columns:minmax(0,.92fr) minmax(280px,.48fr); gap:18px; align-items:center; margin-top:28px; border:1px solid hsla(45,96%,58%,.28); border-radius:34px; padding:clamp(20px,4vw,30px); background:radial-gradient(circle at 84% 18%, hsla(45,96%,58%,.18), transparent 16rem), linear-gradient(135deg, hsla(14,72%,42%,.26), hsla(38,30%,94%,.06)); box-shadow:var(--shadow-glow); }
+    .shirt-callout h2 { margin-top:10px; max-width:760px; font-size:clamp(2rem,4.8vw,4rem); line-height:.98; letter-spacing:-.04em; }
+    .shirt-callout p { margin-top:14px; max-width:720px; color:var(--muted-foreground); line-height:1.72; }
+    .shirt-callout img { width:100%; border-radius:26px; filter:drop-shadow(0 24px 40px hsla(0,0%,0%,.34)); }
     .experience-card { display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:stretch; margin-top:26px; }
     .experience-panel { border:1px solid hsla(38,30%,94%,.15); border-radius:32px; padding:26px; background:hsla(38,30%,94%,.06); }
     .experience-panel h3 { font-size:clamp(1.8rem,3.8vw,3.2rem); line-height:.98; letter-spacing:-.035em; }
@@ -133,6 +139,10 @@
     .dark-card p { margin-top: 10px; color: var(--muted-foreground); line-height: 1.7; }
     .guide-form { margin-top: 28px; border: 1px solid hsla(38,30%,94%,.16); border-radius: 32px; padding: clamp(20px, 4vw, 32px); background: linear-gradient(145deg, hsla(38,30%,94%,.1), hsla(38,30%,94%,.035)); box-shadow: 0 26px 80px hsla(0,0%,0%,.22); }
     .guide-secondary-actions, .guide-cards { margin-top: 20px; }
+    .download-unlocked { margin-top: 18px; border: 1px solid hsla(45,96%,58%,.42); border-radius: 30px; padding: clamp(20px, 4vw, 28px); background: linear-gradient(135deg, hsla(45,96%,58%,.17), hsla(142,35%,28%,.16)); box-shadow: var(--shadow-glow); }
+    .download-unlocked[hidden] { display: none; }
+    .download-unlocked h3 { font-size: clamp(1.7rem, 3vw, 2.55rem); line-height: 1; }
+    .download-unlocked p:not(.kicker) { margin-top: 10px; color: var(--muted-foreground); line-height: 1.68; }
     .guide-form-head { display: grid; gap: 8px; margin-bottom: 22px; max-width: 760px; }
     .guide-form-head h3 { font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1; letter-spacing: -.03em; }
     .guide-form-head p, .guide-form-note { color: var(--muted-foreground); line-height: 1.68; }
@@ -156,6 +166,37 @@
     .catalogue-brief article { border:1px solid hsla(28,20%,10%,.12); border-radius:26px; padding:20px; background:rgba(255,255,255,.72); box-shadow:0 14px 42px hsla(28,20%,10%,.07); }
     .catalogue-brief b { display:block; color:var(--primary); font-size:12px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
     .catalogue-brief p { margin-top:8px; color:hsl(28 18% 38%); line-height:1.65; }
+    .support-section { background: radial-gradient(circle at 12% 4%, hsla(45,96%,58%,.13), transparent 23rem), radial-gradient(circle at 88% 92%, hsla(16,54%,40%,.10), transparent 25rem), linear-gradient(135deg, hsl(38 52% 96%), hsl(39 48% 91%)); }
+    .support-section .section-head h2 { color:hsl(28 22% 12%); text-shadow:0 1px 0 hsla(38,52%,98%,.65); }
+    .support-section .section-copy { color:hsl(28 18% 28%); }
+    .support-panel { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr); gap:22px; align-items:stretch; margin-top:26px; }
+    .support-copy, .support-proof { border:1px solid hsla(28,20%,10%,.13); border-radius:34px; background:rgba(255,255,255,.84); box-shadow:0 22px 70px hsla(28,20%,10%,.10); padding:clamp(22px,4vw,34px); }
+    .support-copy { background:linear-gradient(145deg, rgba(255,255,255,.9), hsla(38,52%,96%,.84)); }
+    .support-copy h3 { font-size:clamp(2rem,4vw,3.4rem); line-height:.96; letter-spacing:-.045em; color:hsl(16 54% 38%); }
+    .support-copy p, .support-proof p { margin-top:14px; color:hsl(28 18% 29%); line-height:1.72; }
+    .support-proof { display:grid; gap:14px; background:rgba(255,255,255,.78); }
+    .support-proof article { border-left:5px solid hsl(16 54% 40%); padding:14px 0 14px 16px; background:linear-gradient(90deg, hsla(16,54%,40%,.06), transparent 72%); border-radius:0 18px 18px 0; }
+    .support-proof article:nth-child(2) { border-left-color:var(--accent); background:linear-gradient(90deg, hsla(45,96%,58%,.10), transparent 72%); }
+    .support-proof article:nth-child(3) { border-left-color:var(--secondary); background:linear-gradient(90deg, hsla(142,35%,28%,.08), transparent 72%); }
+    .support-proof b { display:block; color:hsl(28 22% 14%); font-weight:950; }
+    .pix-card { margin-top:22px; border:2px dashed hsla(45,96%,42%,.5); border-radius:28px; padding:22px; background:linear-gradient(145deg, hsla(45,96%,58%,.18), hsla(38,52%,96%,.78)); }
+    .pix-card small { display:block; color:hsl(16 54% 34%); font-weight:950; letter-spacing:.12em; text-transform:uppercase; }
+    .pix-key { display:block; margin-top:8px; color:hsl(28 22% 14%); font-size:clamp(1.65rem,4vw,3rem); line-height:1; font-weight:950; letter-spacing:.02em; overflow-wrap:anywhere; }
+    .pix-note { margin-top:10px; color:hsl(28 18% 29%); font-size:.94rem; line-height:1.55; }
+    .amount-row { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-top:18px; }
+    .amount-chip { border:1px solid hsla(28,20%,10%,.13); border-radius:18px; padding:12px; background:rgba(255,255,255,.72); color:hsl(28 22% 14%); font-weight:900; text-align:center; }
+    .support-form { margin-top:22px; display:grid; gap:14px; }
+    .support-form-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .support-form label { display:grid; gap:7px; color:hsl(28 22% 14%); font-size:.86rem; font-weight:900; }
+    .support-form input, .support-form select, .support-form textarea { width:100%; min-height:48px; border:1px solid hsla(28,20%,10%,.16); border-radius:16px; background:rgba(255,255,255,.72); color:hsl(28 22% 14%); font:inherit; padding:11px 13px; }
+    .support-form textarea { min-height:86px; resize:vertical; }
+    .support-form .full { grid-column:1/-1; }
+    .support-flow { margin-top:18px; display:grid; gap:10px; }
+    .support-flow li { list-style:none; display:flex; gap:10px; align-items:flex-start; color:hsl(28 18% 29%); line-height:1.55; }
+    .support-flow b { color:hsl(16 54% 34%); }
+    .support-flow span:first-child { display:inline-flex; align-items:center; justify-content:center; flex:0 0 28px; height:28px; border-radius:50%; background:hsl(16 54% 40%); color:white; font-weight:950; }
+    .support-status { min-height:20px; color:hsl(16 54% 34%); font-size:.9rem; font-weight:850; }
+
     .use-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); counter-reset: step; }
     .use-card:before { counter-increment: step; content: "0" counter(step); display:inline-flex; margin-bottom:16px; width:42px; height:42px; align-items:center; justify-content:center; border-radius:50%; background:var(--accent); color:var(--accent-foreground); font-weight:900; }
     .bridge { background: radial-gradient(circle at 18% 20%, hsla(45,96%,58%,.18), transparent 22rem), linear-gradient(135deg, hsl(28 18% 7%), hsl(210 50% 20%)); }
@@ -173,9 +214,48 @@
     .footer a:hover { text-decoration: underline; }
     .footer-bottom { margin-top:30px; padding-top:18px; border-top:1px solid hsla(38,30%,94%,.12); font-size:13px; color:hsla(38,30%,94%,.58); }
     @media (min-width: 760px) { .nav { display:flex; } .menu-toggle { display:none; } .hero-grid { grid-template-columns: minmax(0,1.05fr) minmax(330px,.95fr); } .section-head { grid-template-columns: .86fr 1.14fr; align-items:start; } }
-    @media (max-width: 980px) { .cards, .country-grid, .use-grid, .flow-strip, .catalogue-brief, .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .bridge-box, .experience-card { grid-template-columns:1fr; } .footer-grid > :first-child { grid-column:1/-1; } }
-    @media (max-width: 620px) { .container { width:min(100% - 28px, 1180px); } main { padding-top:72px; } .hero { padding-top:52px; } .hero-actions .btn, .actions .btn { width:100%; } .visual-card { min-height:340px; border-radius:26px; } .visual-logo { top:31%; width:min(72%, 200px); } .visual-text { left:24px; right:24px; bottom:24px; } .cards, .country-grid, .use-grid, .campaign-metrics, .flow-strip, .catalogue-brief, .footer-grid, .guide-form-grid { grid-template-columns:1fr; } .guide-field.full { grid-column:auto; } .guide-form { border-radius:24px; } .footer-grid > :first-child { grid-column:auto; } .mobile-nav.is-open { grid-template-columns:1fr; } .support-btn { padding:0 14px; } .phone-frame { min-height:390px; } .phone-inner { inset:18px; padding:30px 24px; gap:18px; } .phone-inner strong { max-width:8.4ch; font-size:clamp(2.4rem,13vw,3.55rem); line-height:.92; } .phone-inner span { font-size:10px; letter-spacing:.11em; } .experience-panel { padding:22px; } }
+    @media (max-width: 980px) { .cards, .country-grid, .use-grid, .flow-strip, .catalogue-brief, .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .bridge-box, .experience-card, .shirt-callout, .support-panel { grid-template-columns:1fr; } .footer-grid > :first-child { grid-column:1/-1; } }
+    @media (max-width: 620px) { .container { width:min(100% - 28px, 1180px); } main { padding-top:72px; } .hero { padding-top:52px; } .hero-actions .btn, .actions .btn { width:100%; } .visual-card { min-height:340px; border-radius:26px; } .visual-logo { top:31%; width:min(72%, 200px); } .visual-text { left:24px; right:24px; bottom:24px; } .cards, .country-grid, .use-grid, .campaign-metrics, .flow-strip, .catalogue-brief, .footer-grid, .guide-form-grid { grid-template-columns:1fr; } .guide-field.full { grid-column:auto; } .guide-form { border-radius:24px; } .footer-grid > :first-child { grid-column:auto; } .mobile-nav.is-open { grid-template-columns:1fr; } .support-btn { padding:0 14px; } .phone-frame { min-height:390px; } .phone-inner { inset:18px; padding:30px 24px; gap:18px; } .phone-inner strong { max-width:8.4ch; font-size:clamp(2.4rem,13vw,3.55rem); line-height:.92; } .phone-inner span { font-size:10px; letter-spacing:.11em; } .experience-panel, .support-copy, .support-proof { padding:22px; } }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "EducationalOrganization",
+        "@id": "https://abolaconecta.com.br/#organization",
+        "name": "Gondwana FC - Time da Educação",
+        "url": "https://abolaconecta.com.br/",
+        "sameAs": ["https://www.instagram.com/abolaconecta/"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://abolaconecta.com.br/#website",
+        "name": "A Bola Conecta",
+        "url": "https://abolaconecta.com.br/",
+        "inLanguage": "pt-BR",
+        "publisher": { "@id": "https://abolaconecta.com.br/#organization" }
+      },
+      {
+        "@type": "LearningResource",
+        "@id": "https://abolaconecta.com.br/copa-2026/#learning-resource",
+        "name": "Seleções Gondwana - Copa do Mundo 2026",
+        "description": "Fichas, perguntas e guia educativo para trabalhar a Copa do Mundo 2026 a partir de futebol, território, memória, cultura e imagem.",
+        "url": "https://abolaconecta.com.br/copa-2026/",
+        "inLanguage": "pt-BR",
+        "learningResourceType": ["Guia educativo", "Fichas pedagógicas", "Experiência interativa"],
+        "audience": [
+          { "@type": "EducationalAudience", "educationalRole": "teacher" },
+          { "@type": "EducationalAudience", "educationalRole": "student" }
+        ],
+        "isAccessibleForFree": true,
+        "publisher": { "@id": "https://abolaconecta.com.br/#organization" },
+        "about": ["Copa do Mundo 2026", "futebol", "educação", "território", "memória", "cultura afro-brasileira"]
+      }
+    ]
+  }
+  </script>
+  <script defer src="/assets/abc-analytics.js?v=20260621-ga4"></script>
 </head>
 <body>
   <header class="site-header">
@@ -188,14 +268,14 @@
         <a href="/a-bola-conecta/documentario">O Filme</a>
         <a href="/a-bola-conecta/sobre">Sobre</a>
         <a href="/a-bola-conecta/servicos">Serviços</a>
-        <a href="/a-bola-conecta/comunidade">Comunidade</a>
         <a href="/a-bola-conecta/blog">Blog</a>
         <a href="/a-bola-conecta/contato">Contato</a>
         <a class="active copa-nav-link" href="/a-bola-conecta/copa-2026/">Copa 2026</a>
       </nav>
       <div class="header-actions">
         <button class="menu-toggle" type="button" aria-controls="mobileMenu" aria-expanded="false">Menu</button>
-        <a class="support-btn" href="/a-bola-conecta/comunidade/#apoio">Apoie</a>
+        <a class="shirt-btn" href="/a-bola-conecta/copa-2026/camisa-abya-yala/">Camisa</a>
+        <a class="support-btn" href="#contribuir">Contribuir</a>
       </div>
     </div>
     <nav class="container mobile-nav" id="mobileMenu" aria-label="Menu mobile">
@@ -203,10 +283,10 @@
       <a href="/a-bola-conecta/documentario">O Filme</a>
       <a href="/a-bola-conecta/sobre">Sobre</a>
       <a href="/a-bola-conecta/servicos">Serviços</a>
-      <a href="/a-bola-conecta/comunidade">Comunidade</a>
       <a href="/a-bola-conecta/blog">Blog</a>
       <a href="/a-bola-conecta/contato">Contato</a>
       <a class="active copa-nav-link" href="/a-bola-conecta/copa-2026/">Copa 2026</a>
+      <a href="/a-bola-conecta/copa-2026/camisa-abya-yala/">Camisa Abya Yala</a>
     </nav>
   </header>
 
@@ -223,9 +303,9 @@
             <div class="metric"><strong>4</strong><span>eixos de leitura</span></div>
           </div>
           <div class="hero-actions">
-            <a class="btn btn-accent" href="/a-bola-conecta/copa-2026/fichas/">Escolher uma seleção</a>
-            <a class="btn btn-primary" href="#baixar">Receber guia educativo</a>
-            <a class="btn btn-ghost" href="/a-bola-conecta/comunidade/#apoio">Apoiar a circulação</a>
+            <a class="btn btn-accent" href="/a-bola-conecta/copa-2026/fichas/">Explorar fichas</a>
+            <a class="btn btn-primary" href="#baixar">Baixar guia educativo</a>
+            <a class="btn btn-ghost" href="/a-bola-conecta/copa-2026/camisa-abya-yala/">Ver camisa Abya Yala</a>
           </div>
         </div>
         <aside class="visual-card" aria-label="Síntese visual do especial Copa 2026">
@@ -565,11 +645,11 @@
           <div><p class="kicker">PDF para educadores</p><h2>Receba o guia e leve para seu grupo.</h2></div>
           <p class="section-copy">O guia em PDF reúne fichas, perguntas e sugestões de uso para educadoras, educadores e instituições. Ao se cadastrar, você ajuda a Gondwana FC a conhecer onde o material está chegando e recebe caminhos para usar a proposta com seu grupo.</p>
         </div>
-        <form class="guide-form" id="copaGuideForm" data-abc-lead data-form-id="copa-2026-ebook" data-campaign="copa-2026-selecoes-gondwana" data-success-message="Cadastro recebido. Enviaremos o guia e próximos caminhos por email." data-error-message="Não conseguimos enviar agora. O registro ficou salvo neste navegador.">
+        <form class="guide-form" id="copaGuideForm" data-abc-lead data-form-id="copa-2026-ebook" data-campaign="copa-2026-selecoes-gondwana" data-success-message="Cadastro recebido. Seu PDF foi liberado abaixo." data-fallback-success-message="Registro salvo. Seu PDF foi liberado abaixo." data-error-message="Não conseguimos enviar agora. O registro ficou salvo neste navegador.">
           <div class="guide-form-head">
             <p class="kicker">Receber guia educativo</p>
-            <h3>Deixe seus dados para receber o e-book.</h3>
-            <p>Use este cadastro para receber o PDF consolidado, acompanhar novas fichas e contar como pretende usar Seleções Gondwana no seu território.</p>
+            <h3>Preencha seus dados para baixar o PDF.</h3>
+            <p>O guia é de acesso aberto. O cadastro ajuda a entender onde o material está chegando e abre caminho para novas fichas, usos educativos e ações em diferentes territórios.</p>
           </div>
           <div class="guide-form-grid">
             <div class="guide-field">
@@ -581,12 +661,19 @@
               <input id="guideEmail" name="email" type="email" autocomplete="email" required>
             </div>
             <div class="guide-field">
+              <label for="guideWhatsapp">WhatsApp <span>(opcional)</span></label>
+              <input id="guideWhatsapp" name="whatsapp" type="tel" autocomplete="tel" placeholder="Com DDD">
+            </div>
+            <div class="guide-field">
               <label for="guidePerfil">Perfil</label>
-              <select id="guidePerfil" name="role">
+              <select id="guidePerfil" name="role" required>
                 <option value="educador">Educadora ou educador</option>
                 <option value="escola">Escola ou instituição educativa</option>
-                <option value="museu">Museu ou instituição cultural</option>
                 <option value="projeto-social">Projeto social ou coletivo</option>
+                <option value="clube">Clube ou projeto esportivo</option>
+                <option value="museu">Museu ou instituição cultural</option>
+                <option value="universidade">Universidade ou pesquisa</option>
+                <option value="estudante">Estudante</option>
                 <option value="familia">Família ou uso pessoal</option>
                 <option value="outro">Outro</option>
               </select>
@@ -609,22 +696,102 @@
             </div>
           </div>
           <input type="hidden" name="interesse" value="copa-2026-ebook">
-          <label class="guide-consent" for="guideConsent"><input id="guideConsent" name="consent" type="checkbox" value="sim" required><span>Autorizo a Gondwana FC a entrar em contato sobre este guia e atividades educativas. Li a <a href="/a-bola-conecta/privacidade">política de privacidade</a>.</span></label>
+          <input type="hidden" name="material" value="gondwana-na-copa-pdf">
+          <label class="guide-consent" for="guideConsent"><input id="guideConsent" name="consent" type="checkbox" value="sim" required><span>Autorizo a Gondwana FC - Time da Educação e A Bola Conecta a entrar em contato sobre este guia, novas fichas e atividades educativas. Li a <a href="/a-bola-conecta/privacidade">política de privacidade</a>.</span></label>
           <div class="actions">
-            <button class="btn btn-accent" type="submit">Quero receber o e-book</button>
+            <button class="btn btn-accent" type="submit">Preencher e liberar PDF</button>
             <p class="guide-form-note">Sem spam. O objetivo é entender onde o material está circulando e abrir próximos caminhos educativos.</p>
           </div>
           <div class="form-status" data-form-status role="status" aria-live="polite"></div>
         </form>
-        <div class="actions guide-secondary-actions" aria-label="Outros caminhos para acessar Seleções Gondwana">
-          <a class="btn btn-primary" href="/a-bola-conecta/copa-2026/fichas/">Ver fichas online</a>
-          <a class="btn btn-ghost" href="/a-bola-conecta/comunidade/#apoio">Apoiar a circulação</a>
+        <div class="download-unlocked" id="downloadLiberado" hidden aria-live="polite">
+          <div>
+            <p class="kicker">Guia liberado</p>
+            <h3>Baixe o PDF completo e continue a circulação.</h3>
+            <p>Obrigado por registrar seus dados. Agora você pode baixar o guia, explorar as fichas online e, se o material fizer sentido para você, contribuir para manter a circulação educativa aberta.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-accent" href="/a-bola-conecta/copa-2026/assets/gondwana-na-copa.pdf" download="gondwana-na-copa.pdf">Baixar PDF agora</a>
+            <a class="btn btn-primary" href="/a-bola-conecta/copa-2026/fichas/">Ver fichas online</a>
+            <a class="btn btn-ghost" href="#contribuir">Contribuir para manter aberto</a>
+          </div>
         </div>
         <div class="cards guide-cards">
           <article class="dark-card"><h3>O que você informa</h3><p>Nome, email, cidade, instituição, profissão e como pretende usar o guia. Só o necessário para manter contato e apoiar a circulação educativa.</p></article>
-          <article class="dark-card"><h3>O que você recebe</h3><p>O PDF das fichas, o link da experiência interativa e convites para acompanhar novas atividades da comunidade Gondwana FC.</p></article>
+          <article class="dark-card"><h3>O que você recebe</h3><p>O PDF das fichas, o link da experiência interativa e convites para acompanhar novas atividades do Time da Educação.</p></article>
           <article class="dark-card"><h3>Como participar</h3><p>Use uma ficha, compartilhe com sua turma ou instituição e conte para a Gondwana FC que conversa o material abriu no seu território.</p></article>
         </div>
+      </div>
+    </section>
+
+    <section class="section support-section" id="contribuir">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="kicker">Por que contribuir?</p><h2>Baixar é livre. Sustentar é coletivo.</h2></div>
+          <p class="section-copy">Gondwana na Copa é aberto por princípio: as fichas e o guia foram feitos para circular em escolas, clubes, projetos sociais, museus, bibliotecas, famílias e comunidades.</p>
+        </div>
+        <div class="support-panel">
+          <article class="support-copy">
+            <h3>Contribuir é simples: faça o Pix e registre o apoio.</h3>
+            <p>O guia, as fichas e a experiência online seguem abertos. A contribuição ajuda a sustentar pesquisa, design, revisão, tecnologia, circulação e novas devolutivas para educadores, escolas, clubes, projetos sociais, museus e comunidades.</p>
+            <p>Apoie com o valor que fizer sentido. Depois do Pix, preencha o registro para identificarmos o pagamento, emitirmos a nota fiscal de serviço e mantermos você perto da comunidade do Time da Educação.</p>
+            <p>Como a contribuição entra em conta PJ, ela é tratada como receita tributável da operação. CPF ou CNPJ ajuda na emissão da nota; se você não informar, a nota pode ser emitida como cliente/tomador não informado. O acesso ao material segue aberto.</p>
+            <div class="pix-card" aria-label="Dados para contribuição por Pix">
+              <small>Chave Pix CNPJ</small>
+              <span class="pix-key" id="pixKey">62.085.700/0001-83</span>
+              <p class="pix-note">Responsável: DA SILVA & VASQUEZ FORMAÇÃO E CONSULTORIA LTDA. Finalidade sugerida: contribuição para circulação educativa de A Bola Conecta - Gondwana na Copa. Use a chave PJ da campanha para facilitar conciliação fiscal.</p>
+              <div class="actions"><button class="btn btn-accent" type="button" id="copyPix">Copiar chave Pix</button></div>
+            </div>
+            <div class="amount-row" aria-label="Valores sugeridos">
+              <span class="amount-chip">R$ 10</span>
+              <span class="amount-chip">R$ 25</span>
+              <span class="amount-chip">R$ 50</span>
+              <span class="amount-chip">Outro valor</span>
+            </div>
+            <form class="support-form" id="supportForm" data-abc-lead data-form-id="copa-2026-contribuicao-pix" data-campaign="gondwana-na-copa-contribuir" data-success-message="Apoio registrado. Vamos conferir o Pix e seguir o contato indicado." data-fallback-success-message="Registro salvo neste navegador. Vamos usar os dados para conferir o apoio.">
+              <div class="support-form-grid">
+                <label>Nome<input name="nome" required autocomplete="name"></label>
+                <label>Email<input name="email" type="email" required autocomplete="email"></label>
+                <label>WhatsApp<input name="whatsapp" autocomplete="tel"></label>
+                <label>Valor do Pix<input name="valor_pix" placeholder="Ex.: R$ 25" required></label>
+                <label>Nome que aparece no Pix<input name="nome_pix" required></label>
+                <label>Data do Pix<input name="data_pix" type="date"></label>
+                <label>CPF/CNPJ para nota fiscal<input name="cpf_cnpj" placeholder="Opcional - ajuda na emissão"></label>
+                <label class="full">Como você quer participar?<select name="participacao" required><option value="">Escolha uma opção</option><option value="apenas_contribuir">Só contribuir agora</option><option value="comunidade">Entrar na comunidade</option><option value="agradecimento_publico">Autorizar agradecimento público</option><option value="instituicao">Conversar como instituição</option></select></label>
+                <label class="full">Observação opcional<textarea name="mensagem" placeholder="Ex.: Pix feito por outra pessoa ou instituição."></textarea></label>
+              </div>
+              <input type="hidden" name="tipo_registro" value="contribuicao-copa-2026-pix">
+              <input type="hidden" name="origem" value="copa-2026-contribuir">
+              <input type="hidden" name="modelo_contribuicao" value="valor_livre_acesso_aberto">
+              <input type="hidden" name="nota_fiscal" value="sim">
+              <input type="hidden" name="politica_fiscal" value="pix_pj_receita_tributavel_nfse_obrigatoria">
+              <div class="actions"><button class="btn btn-accent" type="submit">Registrar contribuição</button><a class="btn btn-primary" href="/a-bola-conecta/copa-2026/fichas/">Compartilhar as fichas</a></div>
+              <div class="support-status" aria-live="polite"></div>
+            </form>
+          </article>
+          <aside class="support-proof" aria-label="Como comunidade, apoio e contribuição se conectam">
+            <article><b>1. Contribuir</b><p>Você faz o Pix com a chave CNPJ e escolhe o valor possível. O acesso ao material continua livre.</p></article>
+            <article><b>2. Registre</b><p>Informe valor, nome no Pix e data aproximada. CPF/CNPJ ajuda na nota, mas não bloqueia o registro.</p></article>
+            <article><b>3. Concilie</b><p>A equipe confere formulário e extrato Pix da conta PJ para declarar a receita e manter a rotina contábil correta.</p></article>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="camisa-abya-yala">
+      <div class="container">
+        <article class="shirt-callout">
+          <div>
+            <p class="kicker">Loja do Time da Educação</p>
+            <h2>Vista o primeiro manto do Time da Educação.</h2>
+            <p>A loja apresenta a Camisa Gondwana Abya Yala em manga curta, criada por Gondwana FC em colaboração com a LWGA. A camisa segue como peça própria da campanha: identidade, território e memória para escola, rua, quadra e comunidade.</p>
+            <div class="actions">
+              <a class="btn btn-accent" href="/a-bola-conecta/copa-2026/camisa-abya-yala/">Ver camisa na loja</a>
+              <a class="btn btn-ghost" href="/a-bola-conecta/copa-2026/camisa-abya-yala/#simbolos">Ver símbolos da camisa</a>
+            </div>
+          </div>
+          <img src="/a-bola-conecta/assets/loja/camisa-gondwana-abya-yala.png" alt="Camisa Gondwana Abya Yala">
+        </article>
       </div>
     </section>
 
@@ -650,26 +817,13 @@
           <article class="feature-card">
             <div class="card-kicker">Programa educativo</div>
             <h3>Piloto de 4 a 8 semanas</h3>
-            <p>Uma experiência acompanhada com atividades, mediação e devolução coletiva, construída junto da equipe educadora e da comunidade participante.</p>
+            <p>Uma experiência acompanhada com atividades, mediação e devolução coletiva, construída junto da equipe educadora e do território participante.</p>
             <div class="actions"><a class="btn btn-primary" href="/a-bola-conecta/contato?origem=copa-2026&interesse=piloto-educativo" aria-label="Conversar sobre piloto educativo Seleções Gondwana">Quero piloto</a></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section bridge" id="comunidade">
-      <div class="container bridge-box">
-        <div>
-          <p class="kicker">A Bola Conecta + Time da Educação</p>
-          <h2>Uma proposta mais forte quando circula.</h2>
-          <p>Ao trazer as fichas para A Bola Conecta, o projeto deixa de ser apenas um acervo e passa a funcionar como ferramenta de comunidade: professores usam, escolas adaptam, estudantes perguntam e apoiadores ajudam o material a chegar mais longe.</p>
-        </div>
-        <div class="actions">
-          <a class="btn btn-accent" href="/a-bola-conecta/comunidade/#apoio">Apoiar o projeto</a>
-          <a class="btn btn-primary" href="#levar-instituicao">Levar para uma instituição</a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
@@ -686,6 +840,7 @@
           <h3>Explorar</h3>
           <div class="footer-links">
             <a href="#inicio">Início da página</a>
+            <a href="#experiencia">Como usar</a>
             <a href="#fichas">Fichas e catálogo</a>
             <a href="/a-bola-conecta/copa-2026/fichas/">Experiência interativa</a>
             <a href="#baixar">Guia para educadores</a>
@@ -694,7 +849,8 @@
         <div>
           <h3>Conectar</h3>
           <div class="footer-links">
-            <a href="/a-bola-conecta/comunidade/#apoio">Apoiar o projeto</a>
+            <a href="#contribuir">Contribuir com a comunidade aberta</a>
+            <a href="/a-bola-conecta/copa-2026/camisa-abya-yala/">Camisa Abya Yala</a>
             <a href="/a-bola-conecta/contato">Falar com Gondwana FC</a>
             <a href="/a-bola-conecta/">Portal A Bola Conecta</a>
             <a href="/a-bola-conecta/privacidade">Privacidade</a>
@@ -722,6 +878,27 @@
         mobileMenu.classList.remove('is-open');
         menuToggle?.setAttribute('aria-expanded', 'false');
       });
+    });
+
+    const copyPix = document.getElementById('copyPix');
+    const pixKey = document.getElementById('pixKey');
+    copyPix?.addEventListener('click', async () => {
+      const key = pixKey?.textContent.trim() || '';
+      try {
+        await navigator.clipboard.writeText(key);
+        copyPix.textContent = 'Chave Pix copiada';
+        setTimeout(() => { copyPix.textContent = 'Copiar chave Pix'; }, 1800);
+      } catch (error) {
+        window.prompt('Copie a chave Pix:', key);
+      }
+    });
+
+    const guideForm = document.getElementById('copaGuideForm');
+    const downloadLiberado = document.getElementById('downloadLiberado');
+    guideForm?.addEventListener('abc:lead:success', () => {
+      if (!downloadLiberado) return;
+      downloadLiberado.hidden = false;
+      downloadLiberado.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
   </script>
 </body>
