@@ -173,33 +173,43 @@ function renderCountry(slide){
       '</div>'+
     '</div>'+
 
-    '<div class="block"><div class="block-label">Territorio gondwânico</div><p class="block-text">'+esc(c.gondwana)+'</p></div>'+
-
-    '<div class="stats-grid">'+
-      '<div class="stat-cell"><div class="block-label">Populacao</div><div class="stat-val">'+esc(r.pop||'—')+'</div></div>'+
-      '<div class="stat-cell"><div class="block-label">Linguas</div><div class="stat-val">'+esc(r.languages||'—')+'</div></div>'+
-      '<div class="stat-cell"><div class="block-label">Alfabetizacao</div><div class="stat-val">'+esc(r.lit||'—')+'</div></div>'+
-      '<div class="stat-cell"><div class="block-label">Instituto</div><div class="stat-val">'+esc(r.institute||'—')+'</div></div>'+
+    '<div class="country-narrative">'+
+      '<div class="narrative-block narrative-peoples"><div class="narrative-label">Povos</div><p class="narrative-text">'+esc(c.peoples)+'</p></div>'+
+      '<div class="narrative-block narrative-formation"><div class="narrative-label">Formacao</div><p class="narrative-text">'+esc(c.formation)+'</p></div>'+
+      '<div class="narrative-block narrative-culture"><div class="narrative-label">Cultura viva</div><p class="narrative-text">'+esc(c.culture)+'</p></div>'+
+      '<div class="narrative-block narrative-football"><div class="narrative-label">Futebol</div><p class="narrative-text">'+esc(c.cups)+'</p></div>'+
     '</div>'+
 
-    '<div class="block"><div class="block-label">Primeiros habitantes</div><p class="block-text">'+esc(r.first||'—')+'</p></div>'+
-    '<div class="block"><div class="block-label">Povos e território</div><p class="block-text">'+esc(c.peoples)+'</p></div>'+
+    '<button type="button" class="question-toggle" aria-expanded="false" aria-controls="q-'+esc(slide.id)+'">'+
+      '<svg class="question-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.1 9a3 3 0 015.8 1c0 2-3 3-3 3M12 17h.01"/><circle cx="12" cy="12" r="10"/></svg>'+
+      '<span class="question-toggle-label">Por que este pais?</span>'+
+      '<svg class="question-toggle-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>'+
+    '</button>'+
+    '<div class="country-question" id="q-'+esc(slide.id)+'" aria-hidden="true">'+
+      '<div class="question-box"><p class="question-text">"'+esc(c.question)+'"</p></div>'+
+    '</div>'+
 
-    '<div class="block formation-block"><div class="block-label">Formacao nacional</div><p class="block-text">'+esc(c.formation)+'</p></div>'+
-
-    '<div class="block freedom-block"><div class="block-label">Liberdade e memória</div><p class="block-text">'+esc(c.abolition)+'</p></div>'+
-
-    '<div class="block"><div class="block-label">Cultura viva</div><p class="block-text">'+esc(c.culture)+'</p></div>'+
-    (r.curiosity?'<div class="block"><div class="block-label">Curiosidade</div><p class="block-text">'+esc(r.curiosity)+'</p></div>':'')+
-    (r.nobel?'<div class="block"><div class="block-label">Saberes, artes e ciencia</div><p class="block-text">'+esc(r.nobel)+'</p></div>':'')+
-
-    '<div class="wc-box"><div class="block-label" style="margin-bottom:4px">Copa do Mundo</div><div class="wc-val">'+esc(c.cups)+'</div></div>'+
-
-    (r.geology?'<div class="block"><div class="block-label">Geologia</div><p class="block-text">'+esc(r.geology)+'</p></div>':'')+
-
-    (r.brazil?'<div class="block brazil-block"><img class="brazil-logo" src="/gondwana-fc-logo/svg/oficiais/logo-gondwana-fc-fundo-escuro.svg" alt=""><div><div class="block-label">Conexao com o Brasil</div><p class="block-text">'+esc(r.brazil)+'</p></div></div>':'')+
-
-    '<div class="question-box"><div class="block-label" style="color:var(--ouro);margin-bottom:6px">Pergunta educativa</div><p class="question-text">'+esc(c.question)+'</p></div>'+
+    '<details class="country-detail" data-detail="more">'+
+      '<summary class="country-detail-toggle">'+
+        '<span class="country-detail-label">Mais informacoes</span>'+
+        '<svg class="country-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>'+
+      '</summary>'+
+      '<div class="country-detail-body">'+
+        '<div class="block"><div class="block-label">Territorio gondwanico</div><p class="block-text">'+esc(c.gondwana)+'</p></div>'+
+        '<div class="stats-grid">'+
+          '<div class="stat-cell"><div class="block-label">Populacao</div><div class="stat-val">'+esc(r.pop||'—')+'</div></div>'+
+          '<div class="stat-cell"><div class="block-label">Linguas</div><div class="stat-val">'+esc(r.languages||'—')+'</div></div>'+
+          '<div class="stat-cell"><div class="block-label">Alfabetizacao</div><div class="stat-val">'+esc(r.lit||'—')+'</div></div>'+
+          '<div class="stat-cell"><div class="block-label">Instituto</div><div class="stat-val">'+esc(r.institute||'—')+'</div></div>'+
+        '</div>'+
+        (r.first?'<div class="block"><div class="block-label">Primeiros habitantes</div><p class="block-text">'+esc(r.first)+'</p></div>':'')+
+        '<div class="block freedom-block"><div class="block-label">Liberdade e memoria</div><p class="block-text">'+esc(c.abolition)+'</p></div>'+
+        (r.curiosity?'<div class="block"><div class="block-label">Curiosidade</div><p class="block-text">'+esc(r.curiosity)+'</p></div>':'')+
+        (r.nobel?'<div class="block"><div class="block-label">Saberes, artes e ciencia</div><p class="block-text">'+esc(r.nobel)+'</p></div>':'')+
+        (r.geology?'<div class="block"><div class="block-label">Geologia</div><p class="block-text">'+esc(r.geology)+'</p></div>':'')+
+        (r.brazil?'<div class="block brazil-block"><img class="brazil-logo" src="/gondwana-fc-logo/svg/oficiais/logo-gondwana-fc-fundo-escuro.svg" alt=""><div><div class="block-label">Conexao com o Brasil</div><p class="block-text">'+esc(r.brazil)+'</p></div></div>':'')+
+      '</div>'+
+    '</details>'+
 
     renderReferences(countryReferences(c,r))+
 
@@ -227,8 +237,12 @@ var stage=document.getElementById('stage');
 var pbars=document.getElementById('pbars');
 var counter=document.getElementById('counter');
 var loading=document.getElementById('loading');
-var btnPlay=document.getElementById('btn-play');
+var btnPlay=document.getElementById('more-play');
+var btnPlayIcon=document.getElementById('more-play-icon');
+var btnPlayState=document.getElementById('more-play-state');
 var btnFilter=document.getElementById('btn-filter');
+var btnShare=document.getElementById('btn-share');
+var btnMenu=document.getElementById('btn-menu');
 var navLeft=document.getElementById('nav-left');
 var navRight=document.getElementById('nav-right');
 var arrowPrev=document.getElementById('arrow-prev');
@@ -244,6 +258,9 @@ var shMenu=document.getElementById('sh-menu');
 var shCancel=document.getElementById('sh-cancel');
 var shCopy=document.getElementById('sh-copy');
 var shNative=document.getElementById('sh-native');
+var moreMenu=document.getElementById('more-menu');
+var moreOverlay=document.getElementById('more-overlay');
+var moreClose=document.getElementById('more-close');
 
 function getRequestedSlideId(){
   var hash=(window.location.hash||'').replace(/^#/,'').replace(/\/$/,'');
@@ -401,7 +418,11 @@ function tickProgress(){
 function stopAutoTimer(){if(progressRAF)cancelAnimationFrame(progressRAF);progressRAF=null;}
 function toggleAutoplay(){
   autoActive=!autoActive;
-  btnPlay.classList.toggle('playing',autoActive);
+  if(btnPlay)btnPlay.classList.toggle('playing',autoActive);
+  if(btnPlayIcon)btnPlayIcon.innerHTML=autoActive
+    ?'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>'
+    :'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+  if(btnPlayState)btnPlayState.textContent=autoActive?'ligado':'desligado';
   if(autoActive)startAutoTimer();else stopAutoTimer();
 }
 function pauseAutoplay(){
@@ -418,7 +439,9 @@ function resumeAutoplay(){
 }
 function stopAutoplay(){
   autoActive=false;
-  btnPlay.classList.remove('playing');
+  if(btnPlay)btnPlay.classList.remove('playing');
+  if(btnPlayIcon)btnPlayIcon.innerHTML='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+  if(btnPlayState)btnPlayState.textContent='desligado';
   stopAutoTimer();
 }
 
@@ -428,7 +451,7 @@ function setupInteractions(){
   navRight.addEventListener('click',next);
   arrowPrev.addEventListener('click',prev);
   arrowNext.addEventListener('click',next);
-  btnPlay.addEventListener('click',toggleAutoplay);
+  if(btnPlay)btnPlay.addEventListener('click',toggleAutoplay);
 
   var tx=0,ty=0,sx=0,sy=0;
   stage.addEventListener('touchstart',function(e){
@@ -447,11 +470,38 @@ function setupInteractions(){
   document.addEventListener('keydown',function(e){
     if(e.key==='ArrowLeft'||e.key==='ArrowUp'){prev();}
     if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '){e.preventDefault();next();}
-    if(e.key==='Escape'){fp.classList.remove('open');closeShareMenu();}
+    if(e.key==='Escape'){fp.classList.remove('open');closeShareMenu();closeMoreMenu();}
   });
 
   btnFilter.addEventListener('click',function(){fp.classList.add('open');pauseAutoplay();});
   fpClose.addEventListener('click',function(){fp.classList.remove('open');resumeAutoplay();});
+
+  if(btnShare)btnShare.addEventListener('click',function(){openShareMenu();});
+  if(btnMenu)btnMenu.addEventListener('click',function(){openMoreMenu();});
+  if(moreClose)moreClose.addEventListener('click',closeMoreMenu);
+  if(moreOverlay)moreOverlay.addEventListener('click',closeMoreMenu);
+
+  // Delegated listener for question accordions (rendered each slide).
+  stage.addEventListener('click',function(e){
+    var btn=e.target.closest&&e.target.closest('.question-toggle');
+    if(btn){
+      var slideEl=btn.closest('.slide');
+      var panel=slideEl&&slideEl.querySelector('.country-question');
+      if(!panel)return;
+      var open=btn.getAttribute('aria-expanded')==='true';
+      if(open){
+        btn.setAttribute('aria-expanded','false');
+        panel.classList.remove('open');
+        panel.setAttribute('aria-hidden','true');
+        btn.classList.remove('expanded');
+      }else{
+        btn.setAttribute('aria-expanded','true');
+        panel.classList.add('open');
+        panel.setAttribute('aria-hidden','false');
+        btn.classList.add('expanded');
+      }
+    }
+  });
 
   document.addEventListener('visibilitychange',function(){
     if(document.hidden)pauseAutoplay();else resumeAutoplay();
@@ -463,6 +513,19 @@ function setupInteractions(){
     var idx=filtered.findIndex(function(s){return s.id===id});
     if(idx>=0&&idx!==curIdx)showSlide(idx,true);
   });
+}
+
+function openMoreMenu(){
+  if(!moreMenu)return;
+  moreMenu.classList.add('open');
+  if(moreOverlay)moreOverlay.classList.add('open');
+  pauseAutoplay();
+}
+function closeMoreMenu(){
+  if(!moreMenu)return;
+  moreMenu.classList.remove('open');
+  if(moreOverlay)moreOverlay.classList.remove('open');
+  resumeAutoplay();
 }
 
 // Filters

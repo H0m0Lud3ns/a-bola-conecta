@@ -8,5 +8,7 @@
     "check": "node scripts/check.mjs",
     "predeploy": "npm run build && npm run check"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@vercel/og": "^0.11.1"
+  }
 }
