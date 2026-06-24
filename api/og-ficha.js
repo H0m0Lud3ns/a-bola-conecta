@@ -66,6 +66,19 @@ function truncate(text, max) {
   return (lastSpace > 0 ? cut.slice(0, lastSpace) : cut).trimEnd() + '...';
 }
 
+// Emoji bandera por codigo de pais
+const FLAGS = {
+  br: '🇧🇷', ar: '🇦🇷', uy: '🇺🇾', co: '🇨🇴', ec: '🇪🇨', py: '🇵🇾',
+  za: '🇿🇦', gh: '🇬🇭', sn: '🇸🇳', eg: '🇪🇬', ma: '🇲🇦', dz: '🇩🇿',
+  tn: '🇹🇳', ci: '🇨🇮', cd: '🇨🇩', au: '🇦🇺', nz: '🇳🇿', sa: '🇸🇦',
+  qa: '🇶🇦', jo: '🇯🇴', iq: '🇮🇶', us: '🇺🇸', mx: '🇲🇽', ca: '🇨🇦',
+  jp: '🇯🇵', ir: '🇮🇷', kr: '🇰🇷', uz: '🇺🇿', cv: '🇨🇻',
+  'gb-eng': '🏴󠁧󠁢󠁥󠁮󠁧󠁿', fr: '🇫🇷', es: '🇪🇸', de: '🇩🇪', pt: '🇵🇹',
+  nl: '🇳🇱', be: '🇧🇪', hr: '🇭🇷', ch: '🇨🇭', at: '🇦🇹',
+  'gb-sct': '🏴󠁧󠁢󠁳󠁣󠁴󠁿', no: '🇳🇴', ba: '🇧🇦', se: '🇸🇪', tr: '🇹🇷',
+  cz: '🇨🇿', pa: '🇵🇦', cw: '🇨🇼', ht: '🇭🇹',
+};
+
 export default async function handler(req) {
   try {
     const { ImageResponse } = await import('@vercel/og');
@@ -78,6 +91,7 @@ export default async function handler(req) {
     const question = country
       ? truncate(country.question, 200)
       : '48 paises. Um planeta. Futebol como leitura de territorio, povos, memoria e educacao.';
+    const flag = country ? (FLAGS[paisParam] || '🌍') : '🌎';
 
     // Paleta oficial del manual de marca Gondwana FC v2
     const COLORS = {
@@ -104,7 +118,7 @@ export default async function handler(req) {
             fontFamily: 'sans-serif',
           },
           children: [
-            // Header: marca + badge Copa 2026
+            // Header: bandera grande + marca estilizada
             {
               type: 'div',
               props: {
@@ -116,29 +130,53 @@ export default async function handler(req) {
                   marginBottom: '50px',
                 },
                 children: [
+                  // Bandera grande a la izquierda
                   {
                     type: 'div',
                     props: {
                       style: {
-                        fontSize: 28,
-                        fontWeight: 900,
-                        color: COLORS.areiaEscola,
-                        letterSpacing: '4px',
+                        fontSize: 120,
+                        lineHeight: 1,
                       },
-                      children: 'GONDWANA FC',
+                      children: flag,
                     },
                   },
+                  // Marca estilizada a la derecha (logo en texto)
                   {
                     type: 'div',
                     props: {
                       style: {
-                        fontSize: 18,
-                        color: COLORS.ouroBola,
-                        letterSpacing: '3px',
-                        textTransform: 'uppercase',
-                        fontWeight: 700,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'flex-end',
                       },
-                      children: 'COPA 2026',
+                      children: [
+                        {
+                          type: 'div',
+                          props: {
+                            style: {
+                              fontSize: 32,
+                              fontWeight: 900,
+                              color: COLORS.areiaEscola,
+                              letterSpacing: '4px',
+                              lineHeight: 1,
+                            },
+                            children: 'GONDWANA FC',
+                          },
+                        },
+                        {
+                          type: 'div',
+                          props: {
+                            style: {
+                              fontSize: 14,
+                              color: COLORS.ouroBola,
+                              letterSpacing: '4px',
+                              marginTop: 8,
+                            },
+                            children: 'TIME DA EDUCAÇÃO',
+                          },
+                        },
+                      ],
                     },
                   },
                 ],
