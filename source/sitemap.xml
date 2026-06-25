@@ -372,4 +372,7 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url><loc>https://www.abolaconecta.com.br/imprensa</loc></url>
+  <url><loc>https://www.abolaconecta.com.br/metodologia</loc></url>
+  <url><loc>https://www.abolaconecta.com.br/equipe</loc></url>
 </urlset>
