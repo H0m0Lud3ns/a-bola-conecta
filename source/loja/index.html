@@ -1,345 +1,318 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lista de espera Camisa Abya Yala | A Bola Conecta</title>
-  <meta name="description" content="Entre na lista de espera da camisa Abya Yala da Gondwana FC. Uma peça para vestir território, memória e futebol como educação." />
-  <meta property="og:title" content="Lista de espera Camisa Abya Yala | A Bola Conecta" />
-  <meta property="og:description" content="Uma camisa da Gondwana FC para celebrar Abya Yala, memória, território e futebol como educação." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.abolaconecta.com.br/loja/loja" />
-  <meta property="og:image" content="https://abolaconecta.com.br/assets/camisa-abya-yala.jpg" />
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="/a-bola-conecta/assets/index--0QhvKt1.css" />
-  <style>
-    :root {
-      --terra: hsl(14 72% 42%);
-      --urucum: hsl(28 92% 54%);
-      --milho: hsl(45 96% 58%);
-      --mata: hsl(138 42% 32%);
-      --noite: hsl(218 34% 12%);
-      --barro: hsl(24 48% 20%);
-      --papel: hsl(39 42% 91%);
-      --linha: hsl(39 30% 91% / .16);
-      --texto: hsl(39 42% 92%);
-      --muted: hsl(39 22% 78% / .74);
-      --shadow: 0 28px 90px hsl(0 0% 0% / .34);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at 10% 6%, hsl(45 96% 58% / .22), transparent 30%),
-        radial-gradient(circle at 90% 10%, hsl(138 42% 32% / .24), transparent 28%),
-        linear-gradient(135deg, var(--noite) 0%, hsl(211 42% 17%) 42%, hsl(18 54% 17%) 100%);
-      color: var(--texto);
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      overflow-x: hidden;
-    }
-    body:before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: .34;
-      background-image:
-        linear-gradient(90deg, hsl(39 42% 92% / .05) 1px, transparent 1px),
-        linear-gradient(hsl(39 42% 92% / .04) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: radial-gradient(circle at 50% 30%, black, transparent 72%);
-    }
-    a { color: inherit; }
-    .container { width: min(100% - 40px, 1180px); margin: 0 auto; }
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(20px);
-      background: hsl(218 34% 12% / .72);
-      border-bottom: 1px solid var(--linha);
-    }
-    .topbar-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
-    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 900; letter-spacing: -.02em; }
-    .brand img { width: 42px; height: 42px; object-fit: contain; border-radius: 12px; background: hsl(39 42% 92% / .08); padding: 5px; }
-    .brand span { display: grid; line-height: 1.05; }
-    .brand small { color: var(--muted); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
-    .nav { display: flex; align-items: center; gap: 18px; color: var(--muted); font-size: 14px; font-weight: 750; }
-    .nav a { text-decoration: none; }
-    .nav a:hover { color: var(--milho); }
-    .hero { position: relative; padding: clamp(72px, 10vw, 132px) 0 70px; }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(320px, .82fr); gap: clamp(34px, 6vw, 74px); align-items: center; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--milho); font-weight: 950; letter-spacing: .16em; text-transform: uppercase; font-size: 12px; }
-    .eyebrow:before { content: ""; width: 34px; height: 2px; background: linear-gradient(90deg, var(--milho), var(--terra)); border-radius: 999px; }
-    h1 { margin: 22px 0 18px; max-width: 9.6ch; font-family: Georgia, "Times New Roman", serif; font-size: clamp(4rem, 12vw, 10rem); line-height: .82; letter-spacing: -.075em; text-wrap: balance; }
-    .lead { max-width: 660px; color: var(--muted); font-size: clamp(1.1rem, 2.2vw, 1.45rem); line-height: 1.58; }
-    .lead strong { color: var(--texto); }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
-    .btn { display: inline-flex; min-height: 52px; align-items: center; justify-content: center; border-radius: 999px; padding: 0 22px; border: 1px solid transparent; text-decoration: none; font-weight: 900; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
-    .btn:hover { transform: translateY(-1px); }
-    .btn-primary { background: var(--milho); color: hsl(26 62% 16%); box-shadow: 0 18px 40px hsl(45 96% 58% / .22); }
-    .btn-ghost { border-color: var(--linha); color: var(--texto); background: hsl(39 42% 92% / .05); }
-    .product-card {
-      position: relative;
-      border: 1px solid var(--linha);
-      border-radius: 42px;
-      padding: clamp(20px, 4vw, 34px);
-      min-height: 640px;
-      background:
-        linear-gradient(145deg, hsl(39 42% 92% / .11), hsl(39 42% 92% / .035)),
-        radial-gradient(circle at 50% 28%, hsl(45 96% 58% / .18), transparent 40%);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .product-card:before {
-      content: "ABYA YALA";
-      position: absolute;
-      left: 50%;
-      top: 42%;
-      transform: translate(-50%, -50%) rotate(-9deg);
-      width: min-content;
-      color: hsl(39 42% 92% / .055);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(5rem, 11vw, 10rem);
-      font-weight: 900;
-      line-height: .75;
-      text-align: center;
-      letter-spacing: -.08em;
-    }
-    .shirt-frame {
-      position: relative;
-      z-index: 1;
-      min-height: 430px;
-      display: grid;
-      place-items: center;
-      border-radius: 32px;
-      border: 1px solid hsl(39 42% 92% / .13);
-      background:
-        conic-gradient(from 220deg at 50% 42%, var(--mata), var(--milho), var(--terra), hsl(213 58% 38%), var(--mata));
-      isolation: isolate;
-      overflow: hidden;
-    }
-    .shirt-frame:after { content: ""; position: absolute; inset: 14px; border-radius: 26px; background: hsl(218 34% 12% / .58); border: 1px solid hsl(39 42% 92% / .14); }
-    .shirt-photo {
-      position: relative;
-      z-index: 2;
-      width: min(92%, 430px);
-      max-height: 390px;
-      object-fit: contain;
-      border-radius: 28px;
-      background: hsl(39 42% 92% / .94);
-      padding: clamp(10px, 2vw, 18px);
-      border: 1px solid hsl(39 42% 92% / .34);
-      box-shadow: 0 28px 72px hsl(0 0% 0% / .34);
-    }
-    .product-notes { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
-    .product-notes div { border: 1px solid var(--linha); border-radius: 18px; padding: 14px; background: hsl(218 34% 12% / .34); color: var(--muted); font-size: 12px; line-height: 1.35; }
-    .product-notes b { display: block; color: var(--texto); margin-bottom: 4px; }
-    .section { padding: 76px 0; }
-    .waitlist-panel { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(28px, 5vw, 58px); align-items: start; border-top: 1px solid var(--linha); padding-top: 58px; }
-    .panel-copy h2 { margin: 0 0 16px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.6rem, 6vw, 5.6rem); line-height: .9; letter-spacing: -.06em; }
-    .panel-copy p { color: var(--muted); line-height: 1.7; font-size: 1.04rem; }
-    .proof-list { display: grid; gap: 12px; margin-top: 24px; padding: 0; list-style: none; }
-    .proof-list li { display: flex; gap: 12px; align-items: flex-start; color: var(--muted); line-height: 1.55; }
-    .proof-list li:before { content: ""; width: 10px; height: 10px; margin-top: 8px; flex: 0 0 auto; border-radius: 50%; background: var(--milho); box-shadow: 0 0 0 6px hsl(45 96% 58% / .12); }
-    .waitlist-form { border: 1px solid var(--linha); border-radius: 34px; padding: clamp(22px, 4vw, 36px); background: hsl(39 42% 92% / .075); box-shadow: var(--shadow); }
-    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-    .field { display: grid; gap: 8px; }
-    .field.full { grid-column: 1 / -1; }
-    label { color: hsl(39 42% 92% / .86); font-size: 12px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
-    input, select, textarea {
-      width: 100%;
-      min-height: 50px;
-      border: 1px solid hsl(39 42% 92% / .18);
-      border-radius: 16px;
-      background: hsl(218 34% 9% / .58);
-      color: var(--texto);
-      padding: 0 14px;
-      font: inherit;
-      outline: none;
-    }
-    textarea { min-height: 112px; padding-top: 14px; resize: vertical; }
-    input:focus, select:focus, textarea:focus { border-color: var(--milho); box-shadow: 0 0 0 4px hsl(45 96% 58% / .12); }
-    .consent { display: flex; gap: 12px; align-items: flex-start; margin-top: 16px; color: var(--muted); line-height: 1.5; font-size: 14px; }
-    .consent input { width: 18px; min-height: 18px; margin-top: 3px; accent-color: var(--milho); }
-    .form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 22px; }
-    .form-status { min-height: 22px; color: var(--muted); font-size: 14px; line-height: 1.45; }
-    .form-status.ok { color: var(--milho); }
-    .form-status.error { color: hsl(14 72% 68%); }
-    .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
-    .footer { padding: 38px 0 56px; color: var(--muted); border-top: 1px solid var(--linha); }
-    .footer-inner { display: flex; justify-content: space-between; gap: 22px; flex-wrap: wrap; }
-    @media (max-width: 880px) {
-      .hero-grid, .waitlist-panel { grid-template-columns: 1fr; }
-      .product-card { min-height: auto; }
-      .nav { display: none; }
-      h1 { max-width: 8.8ch; }
-    }
-    @media (max-width: 620px) {
-      .container { width: min(100% - 28px, 1180px); }
-      .hero { padding-top: 48px; }
-      .hero-actions .btn, .form-actions .btn { width: 100%; }
-      .product-card { border-radius: 28px; padding: 16px; }
-      .shirt-frame { min-height: 360px; border-radius: 22px; }
-      .shirt-photo { width: min(96%, 330px); max-height: 330px; border-radius: 22px; }
-      .product-notes, .form-grid { grid-template-columns: 1fr; }
-      .field.full { grid-column: auto; }
-      .waitlist-form { border-radius: 26px; }
-    }
-  </style>
-    <link rel="canonical" href="https://www.abolaconecta.com.br/loja/" />
-  </head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Loja Gondwana FC | Camisa do Time da Educacao</title>
+<meta name="description" content="Camisa oficial Gondwana FC - Time da Educacao. Azul royal, gola vermelha, numero 12. Apoia a Metodologia ABC e o documentario A Bola Conecta." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Loja Gondwana FC | Camisa do Time da Educacao" />
+<meta property="og:description" content="Camisa oficial Gondwana FC. Apoia a Metodologia ABC." />
+<meta property="og:url" content="https://www.abolaconecta.com.br/loja" />
+<meta property="og:image" content="https://www.abolaconecta.com.br/a-bola-conecta/assets/camisa-abya-yala.jpg" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:type" content="product" />
+<link rel="canonical" href="https://www.abolaconecta.com.br/loja" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root { --bg: hsl(28 18% 7%); --fg: hsl(38 30% 94%); --muted: hsl(38 18% 70%); --primary: hsl(14 72% 52%); --accent: hsl(45 96% 58%); --azul: hsl(220 78% 38%); --vermelho: hsl(0 72% 45%); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif; line-height: 1.6; padding: 40px 20px; }
+.container { max-width: 1100px; margin: 0 auto; }
+.back-link { display: inline-block; margin-bottom: 24px; color: var(--accent); text-decoration: none; font-size: 14px; }
+.back-link:hover { text-decoration: underline; }
+.tag { display: inline-block; padding: 4px 12px; background: rgba(245,158,11,0.15); color: var(--accent); border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 16px; }
+
+.hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; margin-bottom: 60px; }
+@media (max-width: 760px) { .hero { grid-template-columns: 1fr; gap: 32px; } }
+.hero-image { width: 100%; border-radius: 18px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); aspect-ratio: 16/10; object-fit: cover; background: linear-gradient(135deg, var(--azul), var(--vermelho)); }
+
+h1 { font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 900; margin-bottom: 16px; line-height: 1.05; }
+.hero h1 span { color: var(--accent); }
+.lead { font-size: 1.15rem; color: var(--muted); margin-bottom: 24px; }
+
+.price-box { background: linear-gradient(135deg, rgba(245,158,11,0.12), rgba(245,158,11,0.04)); padding: 24px; border-radius: 14px; border: 1px solid rgba(245,158,11,0.3); margin: 24px 0; }
+.price { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 900; color: var(--accent); line-height: 1; }
+.price-detail { color: var(--muted); font-size: 0.95rem; margin-top: 8px; }
+.sizes { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+.size { padding: 10px 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.2s; }
+.size:hover, .size.selected { background: var(--primary); border-color: var(--primary); }
+
+.cta { display: inline-block; padding: 14px 32px; background: var(--primary); color: var(--fg); text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 1.05rem; margin-top: 12px; transition: opacity 0.2s; }
+.cta:hover { opacity: 0.85; }
+.cta.outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+
+h2 { font-family: 'Fraunces', serif; font-size: 1.8rem; margin: 60px 0 20px; color: var(--accent); }
+.spec { background: rgba(255,255,255,0.04); padding: 20px; border-radius: 12px; margin: 16px 0; }
+.spec h3 { color: var(--accent); margin-bottom: 8px; font-size: 1.05rem; }
+.spec ul { list-style: none; padding: 0; }
+.spec li { padding: 6px 0; color: var(--muted); border-bottom: 1px solid rgba(255,255,255,0.05); }
+.spec li:last-child { border-bottom: none; }
+.spec li strong { color: var(--fg); }
+
+.how-it-works { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 24px 0; }
+.step { background: rgba(255,255,255,0.04); padding: 20px; border-radius: 12px; }
+.step .num { font-family: 'Fraunces', serif; font-size: 2.5rem; color: var(--accent); font-weight: 900; line-height: 1; margin-bottom: 8px; }
+.step h4 { color: var(--fg); margin-bottom: 6px; }
+.step p { font-size: 0.9rem; color: var(--muted); margin: 0; }
+
+form { background: rgba(255,255,255,0.04); padding: 24px; border-radius: 12px; margin: 24px 0; }
+label { display: block; margin-bottom: 4px; color: var(--fg); font-weight: 500; font-size: 0.9rem; }
+input, select, textarea { width: 100%; padding: 10px; margin-bottom: 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: var(--fg); font-family: inherit; font-size: 14px; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
+button { background: var(--primary); color: var(--fg); padding: 12px 24px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 14px; }
+button:hover { opacity: 0.85; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 600px) { .row { grid-template-columns: 1fr; } body { padding: 20px 16px; } }
+
+.transparency { background: rgba(245,158,11,0.06); padding: 16px 20px; border-radius: 10px; border-left: 3px solid var(--accent); margin: 24px 0; }
+.transparency p { margin: 0; color: var(--fg); font-size: 0.95rem; }
+</style>
+</head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="/a-bola-conecta/" aria-label="Voltar para A Bola Conecta">
-        <img src="/a-bola-conecta/assets/a-bola-conecta-logo-v2-WdlHxh0O.png" alt="A Bola Conecta" />
-        <span>A Bola Conecta <small>Gondwana FC</small></span>
-      </a>
-      <nav class="nav" aria-label="Navegação principal">
-        <a href="/a-bola-conecta/copa-2026/">Copa 2026</a>
-        <a href="/a-bola-conecta/servicos/">Serviços</a>
-        <a href="/a-bola-conecta/comunidade/">Comunidade</a>
-        <a href="#lista">Lista de espera</a>
-      </nav>
-    </div>
-  </header>
+<div class="container">
+<a href="/" class="back-link">&larr; Voltar para A Bola Conecta</a>
+<span class="tag">LOJA GONDWANA FC &middot; TIME DA EDUCACAO</span>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Camisa Abya Yala</div>
-          <h1>Vestir território.</h1>
-          <p class="lead"><strong>A primeira lista de espera da camisa Abya Yala da Gondwana FC.</strong> Uma peça para circular memória, futebol, educação e pertencimento antes da abertura oficial de vendas.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#lista">Entrar na lista</a>
-            <a class="btn btn-ghost" href="/a-bola-conecta/copa-2026/">Ver projeto Copa 2026</a>
-          </div>
-        </div>
+<div class="hero">
+  <img src="/a-bola-conecta/assets/camisa-abya-yala.jpg" alt="Camisa oficial Gondwana FC - azul royal com gola vermelha, numero 12 nas costas" class="hero-image" />
+  <div>
+    <h1>Camisa oficial <span>Gondwana FC</span></h1>
+    <p class="lead">A camisa do Time da Educacao. Cada unidade adquirida apoia diretamente a circulacao da Metodologia ABC em escolas publicas via Lei 10.639.</p>
 
-        <aside class="product-card" aria-label="Prévia editorial da camisa Abya Yala">
-          <div class="shirt-frame">
-            <img class="shirt-photo" src="/a-bola-conecta/assets/camisa-abya-yala.jpg" alt="Camisa Abya Yala da Gondwana FC com frente azul, mapa da América do Sul invertido e costas com número 12 em padrão wiphala" width="1244" height="816" loading="eager" decoding="async" />
-          </div>
-          <div class="product-notes">
-            <div><b>Prioridade</b> Primeiro aviso quando a venda abrir.</div>
-            <div><b>Sem compromisso</b> Entrar na lista não obriga compra.</div>
-            <div><b>Produção consciente</b> Ajuda a medir tamanhos e demanda real.</div>
-          </div>
-        </aside>
+    <div class="price-box">
+      <div class="price">R$ 149</div>
+      <div class="price-detail">por unidade &middot; frete calculado no formulario de pedido</div>
+      <div class="sizes" id="size-selector" aria-label="Selecione o tamanho">
+        <div class="size" data-size="P">P</div>
+        <div class="size" data-size="M">M</div>
+        <div class="size" data-size="G">G</div>
+        <div class="size" data-size="GG">GG</div>
+        <div class="size" data-size="XGG">XGG</div>
       </div>
-    </section>
-
-    <section class="section" id="lista">
-      <div class="container waitlist-panel">
-        <div class="panel-copy">
-          <div class="eyebrow">Lista séria, sem ruído</div>
-          <h2>Antes de vender, medir desejo.</h2>
-          <p>A lista serve para entender demanda, tamanhos, cidades e interesse real. Quando abrirmos as vendas, quem estiver aqui recebe primeiro o aviso, as condições de compra e a janela de reserva.</p>
-          <ul class="proof-list">
-            <li>Você informa o tamanho de interesse para orientar a produção.</li>
-            <li>Você recebe prioridade de comunicação, não spam.</li>
-            <li>A camisa será apresentada com foto real, preço, prazo e política de entrega antes de qualquer pagamento.</li>
-          </ul>
-        </div>
-
-        <form class="waitlist-form" id="camisaAbyaYalaWaitlist" data-abc-lead data-form-id="camisa-abya-yala-waitlist" data-campaign="camisa-abya-yala" data-success-message="Você está na lista. Avisaremos quando abrirmos as vendas da camisa Abya Yala." data-error-message="Não conseguimos enviar agora. O registro ficou salvo neste navegador.">
-          <div class="form-grid">
-            <div class="field">
-              <label for="nome">Nome</label>
-              <input id="nome" name="nome" autocomplete="name" required />
-            </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" required />
-            </div>
-            <div class="field">
-              <label for="telefone">WhatsApp opcional</label>
-              <input id="telefone" name="telefone" type="tel" autocomplete="tel" />
-            </div>
-            <div class="field">
-              <label for="tamanho">Tamanho provável</label>
-              <select id="tamanho" name="tamanho" required>
-                <option value="">Escolher</option>
-                <option value="P">P</option>
-                <option value="M">M</option>
-                <option value="G">G</option>
-                <option value="GG">GG</option>
-                <option value="XGG">XGG</option>
-                <option value="infantil">Infantil</option>
-                <option value="nao-sei">Ainda não sei</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="cidade">Cidade</label>
-              <input id="cidade" name="cidade" autocomplete="address-level2" />
-            </div>
-            <div class="field">
-              <label for="pais">País</label>
-              <input id="pais" name="pais" autocomplete="country-name" value="Brasil" />
-            </div>
-            <div class="field full">
-              <label for="mensagem">Observação opcional</label>
-              <textarea id="mensagem" name="observacao" placeholder="Exemplo: quero saber quando sair preço, prazo, tamanhos infantis ou compra para grupo."></textarea>
-            </div>
-          </div>
-
-          <div class="hp-field" aria-hidden="true">
-            <label for="website">Website</label>
-            <input id="website" name="website" tabindex="-1" autocomplete="off" />
-          </div>
-          <input type="hidden" name="interesse" value="camisa-abya-yala" />
-          <input type="hidden" name="produto" value="camisa-abya-yala" />
-          <input type="hidden" id="leadMessageHidden" name="message" value="" />
-
-          <label class="consent">
-            <input type="checkbox" name="consentimento" value="sim" required />
-            <span>Autorizo A Bola Conecta e Gondwana FC a usar estes dados para comunicar a abertura da lista de vendas da camisa Abya Yala. Sem spam.</span>
-          </label>
-
-          <div class="form-actions">
-            <button class="btn btn-primary" type="submit">Quero prioridade</button>
-            <div class="form-status" data-form-status role="status" aria-live="polite"></div>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span>Gondwana FC - A Bola Conecta</span>
-      <a href="/a-bola-conecta/privacidade/">Privacidade</a>
+      <a href="#pedido" class="cta">Fazer pedido</a>
+      <a href="#espec" class="cta outline" style="margin-left: 8px;">Ver especificacoes</a>
     </div>
-  </footer>
+  </div>
+</div>
 
-  <script>
-    window.GONDWANA_CONFIG = window.GONDWANA_CONFIG || {};
-    document.getElementById('camisaAbyaYalaWaitlist')?.addEventListener('submit', (event) => {
-      const form = event.currentTarget;
-      const botField = form.querySelector('[name="website"]');
-      if (botField?.value) {
-        event.preventDefault();
-        const status = form.querySelector('[data-form-status]');
-        if (status) status.textContent = 'Registro recebido.';
-        return;
-      }
+<h2>O que voce esta levando</h2>
+<div class="how-it-works">
+  <div class="step">
+    <div class="num">1</div>
+    <h4>Camisa oficial</h4>
+    <p>Azul royal, gola e punhos vermelhos, mapa da America do Sul invertido no peito, escudo redondo, numero 12 nas costas em padrao Wiphala.</p>
+  </div>
+  <div class="step">
+    <div class="num">2</div>
+    <h4>Material educativo</h4>
+    <p>Acesso as fichas pedagogicas Copa 2026 (54 selecoes) e a Metodologia ABC.</p>
+  </div>
+  <div class="step">
+    <div class="num">3</div>
+    <h4>Impacto real</h4>
+    <p>Parte do valor vai para a circulacao da Metodologia ABC em escolas publicas parceiras.</p>
+  </div>
+  <div class="step">
+    <div class="num">4</div>
+    <h4>Comunidade</h4>
+    <p>Entrada no Time da Educacao, mural de apoiadores e acesso a conteudo exclusivo.</p>
+  </div>
+</div>
 
-      const tamanho = form.querySelector('[name="tamanho"]')?.value || 'nao informado';
-      const observacao = form.querySelector('[name="observacao"]')?.value.trim();
-      const cidade = form.querySelector('[name="cidade"]')?.value.trim();
-      const message = [
-        `Tamanho provavel: ${tamanho}`,
-        cidade ? `Cidade informada: ${cidade}` : '',
-        observacao ? `Observacao: ${observacao}` : '',
-      ].filter(Boolean).join(' | ');
-      const hiddenMessage = form.querySelector('#leadMessageHidden');
-      if (hiddenMessage) hiddenMessage.value = message;
-    }, true);
-  </script>
-  <script src="/a-bola-conecta/assets/forms.js" defer></script>
+<h2 id="espec">Especificacoes da camisa</h2>
+
+<div class="spec">
+<h3>Materiais e acabamento</h3>
+<ul>
+<li><strong>Tecido:</strong> Dry-fit poliester 100%</li>
+<li><strong>Gramatura:</strong> 150g/m2 (leve, fresca, indicada para clima tropical)</li>
+<li><strong>Modelagem:</strong> Regular fit (sem aperto, sem folga excessiva)</li>
+<li><strong>Gola:</strong> Redonda com ribana vermelha</li>
+<li><strong>Punhos:</strong> Ribana vermelha</li>
+<li><strong>Cor base:</strong> Azul royal (#1E3A8A aproximado)</li>
+</ul>
+</div>
+
+<div class="spec">
+<h3>Grafica</h3>
+<ul>
+<li><strong>Frente:</strong> Mapa da America do Sul invertido em vermelho</li>
+<li><strong>Peito esquerdo:</strong> Escudo redondo simplificado Gondwana FC</li>
+<li><strong>Costas:</strong> Numero 12 grande em padrao Wiphala xadrez multicolorido</li>
+<li><strong>Tipo de estampa:</strong> Sublimacao total (nao desbota com lavagens)</li>
+</ul>
+</div>
+
+<div class="spec">
+<h3>Tamanhos (medidas em cm)</h3>
+<ul>
+<li><strong>P:</strong> largura 48 &middot; altura 68</li>
+<li><strong>M:</strong> largura 52 &middot; altura 71</li>
+<li><strong>G:</strong> largura 56 &middot; altura 74</li>
+<li><strong>GG:</strong> largura 60 &middot; altura 77</li>
+<li><strong>XGG:</strong> largura 64 &middot; altura 80</li>
+</ul>
+<p style="font-size: 0.85rem; color: var(--muted); margin-top: 12px;">* Medidas aproximadas. Em caso de duvida, prefira o tamanho maior (modelagem regular).</p>
+</div>
+
+<div class="transparency">
+<p><strong>Transparencia:</strong> R$ 60 de cada unidade vao para a Associacao Cultural e Desportiva Gondwana (CNPJ 56.225.225/0001-09) para circulacao pedagogica da Metodologia ABC. Os demais cobrem custo de producao, logistica e operacao.</p>
+</div>
+
+<h2 id="pedido">Como comprar</h2>
+
+<p>O processo funciona em 4 etapas simples:</p>
+<div class="how-it-works">
+  <div class="step">
+    <div class="num">1</div>
+    <h4>Preencha o formulario</h4>
+    <p>Abaixo, com tamanho, quantidade e endereco de entrega.</p>
+  </div>
+  <div class="step">
+    <div class="num">2</div>
+    <h4>Pagamento via Pix</h4>
+    <p>Recebemos os dados e enviamos o Pix com o valor total (camisa + frete).</p>
+  </div>
+  <div class="step">
+    <div class="num">3</div>
+    <h4>Producao</h4>
+    <p>5 a 10 dias uteis para produzir + embalar.</p>
+  </div>
+  <div class="step">
+    <div class="num">4</div>
+    <h4>Envio</h4>
+    <p>PAC ou SEDEX a sua escolha. Codigo de rastreio enviado por email.</p>
+  </div>
+</div>
+
+<form action="https://www.abolaconecta.com.br/api/leads" method="POST" id="pedido-form">
+<input type="hidden" name="source" value="a-bola-conecta" />
+<input type="hidden" name="lead_type" value="support_pix" />
+<input type="hidden" name="form_id" value="loja-pedido-camisa" />
+<input type="hidden" name="campaign" value="a-bola-conecta-loja" />
+<input type="hidden" name="page" value="https://www.abolaconecta.com.br/loja" />
+<input type="hidden" name="interest" value="Pedido de camisa Gondwana FC - Time da Educacao" />
+<input type="hidden" name="stage" value="novo" />
+
+<div class="row">
+  <div>
+    <label for="contact_name">Nome completo *</label>
+    <input type="text" id="contact_name" name="contact_name" required />
+  </div>
+  <div>
+    <label for="email">Email *</label>
+    <input type="email" id="email" name="email" required />
+  </div>
+</div>
+
+<div class="row">
+  <div>
+    <label for="phone">WhatsApp / Telefone *</label>
+    <input type="tel" id="phone" name="phone" required placeholder="(11) 99999-9999" />
+  </div>
+  <div>
+    <label for="cpf">CPF (para nota fiscal)</label>
+    <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" />
+  </div>
+</div>
+
+<div class="row">
+  <div>
+    <label for="shirt_size">Tamanho *</label>
+    <select id="shirt_size" name="shirt_size" required>
+      <option value="">Selecione</option>
+      <option value="P">P</option>
+      <option value="M">M</option>
+      <option value="G">G</option>
+      <option value="GG">GG</option>
+      <option value="XGG">XGG</option>
+    </select>
+  </div>
+  <div>
+    <label for="quantity">Quantidade *</label>
+    <select id="quantity" name="quantity" required>
+      <option value="1">1 camisa</option>
+      <option value="2">2 camisas</option>
+      <option value="3">3 camisas</option>
+      <option value="4">4 camisas</option>
+      <option value="5">5 camisas</option>
+      <option value="6+">6 ou mais</option>
+    </select>
+  </div>
+</div>
+
+<h3 style="margin-top: 24px; color: var(--accent);">Endereco de entrega</h3>
+
+<div>
+  <label for="cep">CEP *</label>
+  <input type="text" id="cep" name="cep" required placeholder="00000-000" />
+</div>
+
+<div class="row">
+  <div>
+    <label for="street">Rua e numero *</label>
+    <input type="text" id="street" name="street" required />
+  </div>
+  <div>
+    <label for="complement">Complemento</label>
+    <input type="text" id="complement" name="complement" />
+  </div>
+</div>
+
+<div class="row">
+  <div>
+    <label for="city">Cidade *</label>
+    <input type="text" id="city" name="city" required />
+  </div>
+  <div>
+    <label for="state">Estado *</label>
+    <input type="text" id="state" name="state" required maxlength="2" />
+  </div>
+</div>
+
+<div>
+  <label for="observations">Observacoes (ponto de referencia, tipo de frete preferido)</label>
+  <textarea id="observations" name="observations" placeholder="Ex: Predio azul, porteiro 24h. Prefiro SEDEX."></textarea>
+</div>
+
+<input type="hidden" name="consent" value="true" />
+<button type="submit">Enviar pedido</button>
+</form>
+
+<p style="margin-top: 16px; color: var(--muted); font-size: 0.9rem;">Apos o envio, voce recebera um email com o valor total (camisa + frete) e os dados para pagamento via Pix. Producao so inicia apos confirmacao do pagamento.</p>
+
+<h2>Politica de troca e devolucao</h2>
+<p>Trocas por tamanho sao gratuitas em ate 30 dias apos o recebimento, desde que a camisa nao tenha sido usada. Devolucoes com reembolso integral em ate 7 dias, conforme Codigo de Defesa do Consumidor.</p>
+<p>Para acionar troca ou devolucao, envie email para <code style="background:rgba(255,255,255,0.1); padding:2px 6px; border-radius:4px;">loja@gondwana.fc</code> com numero do pedido.</p>
+
+<h2>Outros produtos em breve</h2>
+<p>A loja Gondwana FC vai crescer com o tempo. Proximos lancamentos:</p>
+<ul style="margin: 8px 0 16px 20px; color: var(--muted);">
+<li>Camiseta feminina (mesma arte, modelagem diferenciada)</li>
+<li>Camiseta infantil (numeracao 4 a 14 anos)</li>
+<li>Caneca com o mapa da America do Sul</li>
+<li>Livro sobre a Metodologia ABC (quando lancado)</li>
+<li>Adesivos e chaveiros</li>
+</ul>
+
+<p style="margin-top: 32px;">Duvidas? <a href="/contato" style="color: var(--accent);">Fale com a equipe</a>.</p>
+
+</div>
+
+<script>
+// Seletor visual de tamanho
+document.querySelectorAll('#size-selector .size').forEach(el => {
+  el.addEventListener('click', function() {
+    document.querySelectorAll('#size-selector .size').forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+    const size = this.getAttribute('data-size');
+    const select = document.getElementById('shirt_size');
+    if (select) select.value = size;
+  });
+});
+</script>
 </body>
 </html>
