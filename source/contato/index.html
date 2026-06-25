@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contato e Parcerias | A Bola Conecta</title>
-<meta name="description" content="Fale com a equipe A Bola Conecta. Parcerias com marcas, escolas, instituicoes e midia." />
+<title>Contato | A Bola Conecta</title>
+<meta name="description" content="Fale com a equipe A Bola Conecta. Monica e Sebastian respondem em ate 48h uteis." />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Contato e Parcerias | A Bola Conecta" />
-<meta property="og:description" content="Fale com a equipe A Bola Conecta." />
+<meta property="og:title" content="Contato | A Bola Conecta" />
+<meta property="og:description" content="Fale com a equipe A Bola Conecta. Monica e Sebastian respondem em ate 48h uteis." />
 <meta property="og:url" content="https://www.abolaconecta.com.br/contato" />
-<meta property="og:image" content="https://www.abolaconecta.com.br/gondwana-time-educacao/copa-de-gondwana/fichas-paises/assets/cards-prontos/01-selecoes-gondwana.jpg" />
+<meta property="og:image" content="https://www.abolaconecta.com.br/assets/camisa-abya-yala.jpg" />
 <link rel="canonical" href="https://www.abolaconecta.com.br/contato" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,18 +17,25 @@
 <style>
 :root { --bg: hsl(28 18% 7%); --fg: hsl(38 30% 94%); --muted: hsl(38 18% 70%); --primary: hsl(14 72% 52%); --accent: hsl(45 96% 58%); }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif; line-height: 1.6; padding: 40px 20px; }
+body { background: var(--bg); color: var(--fg); font-family: "Inter", sans-serif; line-height: 1.6; padding: 40px 20px; }
 .container { max-width: 900px; margin: 0 auto; }
-h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 16px; line-height: 1.1; }
-h2 { font-family: 'Fraunces', serif; font-size: 1.8rem; margin: 48px 0 16px; color: var(--accent); }
+h1 { font-family: "Fraunces", serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 16px; line-height: 1.1; }
+h2 { font-family: "Fraunces", serif; font-size: 1.8rem; margin: 48px 0 16px; color: var(--accent); }
+h3 { font-size: 1.2rem; margin: 24px 0 8px; }
 p { margin-bottom: 16px; color: var(--muted); }
 .lead { font-size: 1.2rem; color: var(--fg); margin-bottom: 32px; }
 .tag { display: inline-block; padding: 4px 12px; background: rgba(245,158,11,0.15); color: var(--accent); border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 16px; }
 .back-link { display: inline-block; margin-bottom: 24px; color: var(--accent); text-decoration: none; font-size: 14px; }
 .back-link:hover { text-decoration: underline; }
-.contact-block { background: rgba(255,255,255,0.04); padding: 20px; border-radius: 12px; margin: 16px 0; }
-.contact-block h3 { color: var(--accent); margin-bottom: 8px; font-size: 1.1rem; }
-.contact-block code { background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; font-family: monospace; color: var(--accent); font-size: 0.9rem; }
+.email-box { background: linear-gradient(135deg, rgba(245,158,11,0.18), rgba(245,158,11,0.06)); padding: 32px 28px; border-radius: 16px; border-left: 4px solid var(--accent); margin: 24px 0; text-align: center; }
+.email-box .label { color: var(--muted); font-size: 0.95rem; margin-bottom: 8px; }
+.email-box .email { font-family: "Fraunces", serif; font-size: clamp(1.4rem, 4vw, 2rem); color: var(--accent); font-weight: 700; user-select: all; word-break: break-all; }
+.email-box .note { font-size: 0.9rem; color: var(--muted); margin-top: 12px; }
+.team { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+.person-card { background: rgba(255,255,255,0.04); padding: 20px; border-radius: 12px; border-left: 3px solid var(--accent); }
+.person-card h3 { color: var(--accent); margin: 0 0 4px; font-family: "Fraunces", serif; font-size: 1.3rem; }
+.person-card .role { color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; }
+.person-card .focus { color: var(--fg); font-size: 0.95rem; margin: 0; }
 form { background: rgba(255,255,255,0.04); padding: 24px; border-radius: 12px; margin: 24px 0; }
 label { display: block; margin-bottom: 4px; color: var(--fg); font-weight: 500; font-size: 0.9rem; }
 input, textarea, select { width: 100%; padding: 10px; margin-bottom: 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: var(--fg); font-family: inherit; font-size: 14px; }
@@ -37,7 +44,10 @@ textarea { min-height: 100px; resize: vertical; }
 button { background: var(--primary); color: var(--fg); padding: 12px 24px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; }
 button:hover { opacity: 0.85; }
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-@media (max-width: 600px) { .row { grid-template-columns: 1fr; } body { padding: 20px 16px; } }
+.honest-note { background: rgba(255,255,255,0.04); padding: 20px; border-radius: 12px; margin: 24px 0; font-size: 0.95rem; }
+.honest-note p { margin: 0; color: var(--muted); }
+.honest-note strong { color: var(--fg); }
+@media (max-width: 600px) { .team { grid-template-columns: 1fr; } .row { grid-template-columns: 1fr; } body { padding: 20px 16px; } }
 </style>
 </head>
 <body>
@@ -45,47 +55,42 @@ button:hover { opacity: 0.85; }
 <a href="/" class="back-link">&larr; Voltar para A Bola Conecta</a>
 <span class="tag">CONTATO</span>
 <h1>Fale com a gente</h1>
-<p class="lead">Parcerias, escolas, marcas, midia, pesquisadores, eventos. Escolha o canal certo para sua demanda.</p>
+<p class="lead">Somos uma equipe pequena. Monica e Sebastian leem tudo e respondem em ate 48h uteis.</p>
 
-<h2>Canais diretos</h2>
-
-<div class="contact-block">
-<h3>Parcerias com escolas e educadores</h3>
-<p>Para cine-debates, oficinas Metodologia ABC, pilotos institucionais e formacao docente.</p>
-<p><code>educadores@gondwana.fc</code></p>
+<div class="email-box">
+  <p class="label">Email unico para tudo</p>
+  <p class="email">contato.gondwana@gmail.com</p>
+  <p class="note">Resposta em ate 48h uteis. Sem filtro automatico, sem fila de espera.</p>
 </div>
 
-<div class="contact-block">
-<h3>Marcas e patrocinio</h3>
-<p>Para acoes de patrocinio cultural, team building vivencial, licenciamento de conteudo.</p>
-<p><code>parcerias@gondwana.fc</code></p>
+<h2>Quem responde</h2>
+<div class="team">
+  <div class="person-card">
+    <h3>Monica Saraiva da Silva</h3>
+    <p class="role">Diretora &middot; Conteudo &middot; Comunicacao</p>
+    <p class="focus">Direcao do documentario, gestao editorial, materiais pedagogicos, midia e redes sociais.</p>
+  </div>
+  <div class="person-card">
+    <h3>Sebastian Acevedo Vasquez</h3>
+    <p class="role">Estrategia &middot; Metodologia &middot; Parcerias</p>
+    <p class="focus">Metodologia ABC, relacoes institucionais, escolas, universidades e marcas.</p>
+  </div>
 </div>
 
-<div class="contact-block">
-<h3>Imprensa e midia</h3>
-<p>Para entrevistas, press kit, solicitacao de imagens e materiais editoriais.</p>
-<p><code>imprensa@gondwana.fc</code></p>
+<div class="honest-note">
+<p><strong>Sobre a infraestrutura:</strong> somos dois, comorcamento limitado e sem equipe de apoio. Por isso, <strong>temos um unico canal de email</strong> e <strong>um formulario no site</strong>. Toda mensagem chega, mas a resposta pode levar ate 48h uteis. Agradecemos a paciencia.</p>
 </div>
 
-<div class="contact-block">
-<h3>Eventos, festivais e exibicoes</h3>
-<p>Para agendar exibicao do documentario, palestras ou mesas-redondas.</p>
-<p><code>eventos@gondwana.fc</code></p>
-</div>
+<h2>O que escrever no email ou formulario</h2>
+<p>Para acelerar a resposta, inclua:</p>
+<ul style="margin: 8px 0 16px 20px; color: var(--muted);">
+  <li><strong>Quem e voce:</strong> escola, marca, pesquisador, imprensa, apoiador, etc.</li>
+  <li><strong>O que precisa:</strong> cine-debate, oficina, patrocinio, entrevista, ficha tecnica, etc.</li>
+  <li><strong>Contexto:</strong> cidade, pais, data aproximada, escala.</li>
+  <li><strong>Prazo:</strong> se tem data limite ou urgencia.</li>
+</ul>
 
-<div class="contact-block">
-<h3>Pesquisadores e universidades</h3>
-<p>Para colaboracao academica, pesquisa, publicacao ou uso institucional do material.</p>
-<p><code>pesquisa@gondwana.fc</code></p>
-</div>
-
-<div class="contact-block">
-<h3>Email geral</h3>
-<p>Para qualquer outra demanda. Resposta em ate 48h uteis.</p>
-<p><code>contato.gondwana@gmail.com</code></p>
-</div>
-
-<h2>Formulario rapido</h2>
+<h2>Formulario direto</h2>
 <form action="https://www.abolaconecta.com.br/api/leads" method="POST" id="contact-form">
 <input type="hidden" name="source" value="a-bola-conecta" />
 <input type="hidden" name="lead_type" value="contact" />
@@ -99,14 +104,14 @@ button:hover { opacity: 0.85; }
     <input type="text" id="contact_name" name="contact_name" required />
   </div>
   <div>
-    <label for="email">Email *</label>
+    <label for="email">Seu email *</label>
     <input type="email" id="email" name="email" required />
   </div>
 </div>
 
 <div class="row">
   <div>
-    <label for="phone">Telefone</label>
+    <label for="phone">Telefone (opcional)</label>
     <input type="tel" id="phone" name="phone" />
   </div>
   <div>
@@ -133,21 +138,25 @@ button:hover { opacity: 0.85; }
     <option value="educator">Educador(a) / Pesquisador(a)</option>
     <option value="company">Empresa / Marca</option>
     <option value="supporter">Apoiador(a) / Comunidade</option>
+    <option value="press">Imprensa / Midia</option>
     <option value="other">Outro</option>
   </select>
 </div>
 
 <div>
   <label for="interest">Assunto / Mensagem *</label>
-  <textarea id="interest" name="interest" required placeholder="Conta rapidamente o que voce precisa. Resposta em ate 48h uteis."></textarea>
+  <textarea id="interest" name="interest" required placeholder="Conte o que voce precisa. Inclua cidade, pais e prazo se possivel."></textarea>
 </div>
 
 <input type="hidden" name="consent" value="true" />
 <button type="submit">Enviar mensagem</button>
 </form>
 
+<p style="margin-top: 16px; color: var(--muted); font-size: 0.9rem;">Sua mensagem chega direto na nossa caixa de entrada do Gmail e vira um lead registrado no CRM. Resposta pessoal em ate 48h uteis.</p>
+
 <h2>Onde estamos</h2>
-<p>A Bola Conecta e um projeto de Gondwana FC, com sede operacional em Sao Paulo, Brasil, e atuacao em rede pela America Latina. Mantemos parcerias com escolas, universidades e coletivos em Brasil, Chile, Colombia, Argentina e outros paises.</p>
+<p>Base operacional em Sao Paulo, Brasil. Atuacao em rede pela America Latina, com parcerias em Brasil, Chile, Colombia, Argentina e outros paises.</p>
+<p><strong>Pessoa juridica:</strong> Associacao Cultural e Desportiva Gondwana (CNPJ 56.225.225/0001-09) &mdash; entidade sem fins lucrativos que sustenta juridicamente o projeto.</p>
 
 </div>
 </body>
