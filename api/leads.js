@@ -63,10 +63,12 @@ const normalizeLead = (body, req) => {
     email: clean(fields.email || (contactIsEmail ? contact : ''), 220).toLowerCase(),
     phone: clean(fields.telefone || fields.whatsapp || fields.phone || (!contactIsEmail ? contact : ''), 120),
     organization: clean(fields.instituicao || fields.institucion || fields.organization || fields.empresa || fields.nomePublico, 220),
-    role: clean(fields.profissao || fields.cargo || fields.role || fields.perfil, 180),
+    role: clean(fields.profissao || fields.cargo || fields.role || fields.perfil_legado, 180),
     city: clean(fields.cidade || fields.city || fields.comuna, 180),
     country: clean(fields.pais || fields.country || 'Brasil', 120),
   };
+  const profile = clean(fields.profile || fields.perfil || fields.sou || fields.tipo_publico, 60).toLowerCase();
+  const orgSize = clean(fields.organization_size || fields.porte || fields.tamanho_organizacao, 60);
   const tracking = {
     page: clean(body.page || body.url || fields.page || req.headers.referer, 800),
     utm_source: clean(body.utm_source || fields.utm_source, 120),
@@ -131,6 +133,8 @@ const normalizeLead = (body, req) => {
     raw_fields: fields,
     internal_notify_email: clean(process.env.INTERNAL_NOTIFY_EMAIL || DEFAULT_NOTIFY_EMAIL, 220),
     user_agent: tracking.user_agent,
+    profile,
+    organization_size: orgSize,
     created_at: new Date().toISOString(),
   };
 };
@@ -157,6 +161,8 @@ const destinationConfig = () => ({
   resendApiKey: env('RESEND_API_KEY', 500),
   emailTo: env('LEADS_EMAIL_TO', 500) || env('INTERNAL_NOTIFY_EMAIL', 220) || DEFAULT_NOTIFY_EMAIL,
   emailFrom: env('LEADS_EMAIL_FROM', 500),
+  telegramBotToken: env('TELEGRAM_BOT_TOKEN', 200),
+  telegramChatId: env('TELEGRAM_CHAT_ID', 200),
 });
 
 const googleSheetsReady = (config = destinationConfig()) => Boolean(
@@ -173,6 +179,7 @@ const activeDestinations = (config = destinationConfig()) => {
   if (config.sheetsWebhookUrl) destinations.push('sheets');
   if (googleSheetsReady(config)) destinations.push('google_sheets');
   if (config.resendApiKey && config.emailTo && config.emailFrom) destinations.push('email');
+  if (config.telegramBotToken && config.telegramChatId) destinations.push('telegram');
   return destinations;
 };
 
@@ -241,9 +248,13 @@ const leadToSheetRow = (lead) => [[
   lead.email,
   lead.phone,
   lead.organization,
+  lead.role,
+  lead.profile,
+  lead.organization_size,
   lead.city,
   lead.country,
   lead.interest,
+  lead.lead_type,
   lead.message,
   lead.utm_source,
   lead.utm_medium,
@@ -344,6 +355,53 @@ const sendLeadEmail = async (lead, config = destinationConfig()) => {
   return text ? JSON.parse(text) : { ok: true };
 };
 
+const telegramReady = (config = destinationConfig()) => Boolean(config.telegramBotToken && config.telegramChatId);
+
+const leadToTelegramMessage = (lead) => {
+  const perfilMap = {
+    educator: 'Educador(a)',
+    company: 'Empresa/Marca',
+    supporter: 'Apoiador(a)',
+    other: 'Outro'
+  };
+  const perfil = perfilMap[lead.profile] || lead.profile || 'nao-informado';
+  const porte = lead.organization_size ? ' (porte: ' + lead.organization_size + ')' : '';
+  const linhas = [
+    '[NOVO LEAD] A Bola Conecta',
+    '',
+    'Nome: ' + (lead.contact_name || '-'),
+    'Email: ' + (lead.email || '-'),
+    'Telefone: ' + (lead.phone || '-'),
+    'Perfil: ' + perfil + porte,
+    'Organizacao: ' + (lead.organization || '-'),
+    'Cargo: ' + (lead.role || '-'),
+    'Cidade: ' + (lead.city || '-'),
+    'Pais: ' + (lead.country || '-'),
+    'Interesse: ' + (lead.interest || '-'),
+    'Tipo: ' + (lead.lead_type || '-'),
+    'Formulario: ' + (lead.form_id || '-'),
+    '',
+    'Pagina: ' + (lead.page || '-').slice(0, 200),
+    'UTM source: ' + (lead.utm_source || '-'),
+    'UTM campaign: ' + (lead.utm_campaign || '-'),
+    '',
+    'Mensagem: ' + (lead.message || '-').slice(0, 500),
+    '',
+    lead.created_at
+  ];
+  return linhas.join('\n');
+};
+
+const forwardToTelegram = async (lead, config = destinationConfig()) => {
+  if (!telegramReady(config)) return { skipped: true, reason: 'missing_telegram_config' };
+  const url = 'https://api.telegram.org/bot' + config.telegramBotToken + '/sendMessage';
+  return postJson(url, {
+    chat_id: config.telegramChatId,
+    text: leadToTelegramMessage(lead),
+    disable_web_page_preview: true,
+  });
+};
+
 const runDestinations = async (lead) => {
   const config = destinationConfig();
   const jobs = [
@@ -352,6 +410,7 @@ const runDestinations = async (lead) => {
     ['sheets', () => forwardToSheets(lead, config)],
     ['google_sheets', () => appendToGoogleSheets(lead, config)],
     ['email', () => sendLeadEmail(lead, config)],
+    ['telegram', () => forwardToTelegram(lead, config)],
   ].filter(([name]) => activeDestinations(config).includes(name));
 
   const settled = await Promise.allSettled(jobs.map(([, run]) => run()));
