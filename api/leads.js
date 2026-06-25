@@ -161,8 +161,10 @@ const destinationConfig = () => ({
   resendApiKey: env('RESEND_API_KEY', 500),
   emailTo: env('LEADS_EMAIL_TO', 500) || env('INTERNAL_NOTIFY_EMAIL', 220) || DEFAULT_NOTIFY_EMAIL,
   emailFrom: env('LEADS_EMAIL_FROM', 500),
-  telegramBotToken: env('TELEGRAM_BOT_TOKEN', 200),
-  telegramChatId: env('TELEGRAM_CHAT_ID', 200),
+  // Telegram removido em 2026-06-25 a pedido de Sebastian.
+  // Leads agora vao apenas para Google Sheets + Email + CRM.
+  // Se um dia precisar reativar notificacoes em tempo real no celular,
+  // avaliar Resend + email-to-SMS ou webhook proprio do CRM.
 });
 
 const googleSheetsReady = (config = destinationConfig()) => Boolean(
@@ -179,7 +181,6 @@ const activeDestinations = (config = destinationConfig()) => {
   if (config.sheetsWebhookUrl) destinations.push('sheets');
   if (googleSheetsReady(config)) destinations.push('google_sheets');
   if (config.resendApiKey && config.emailTo && config.emailFrom) destinations.push('email');
-  if (config.telegramBotToken && config.telegramChatId) destinations.push('telegram');
   return destinations;
 };
 
@@ -355,53 +356,6 @@ const sendLeadEmail = async (lead, config = destinationConfig()) => {
   return text ? JSON.parse(text) : { ok: true };
 };
 
-const telegramReady = (config = destinationConfig()) => Boolean(config.telegramBotToken && config.telegramChatId);
-
-const leadToTelegramMessage = (lead) => {
-  const perfilMap = {
-    educator: 'Educador(a)',
-    company: 'Empresa/Marca',
-    supporter: 'Apoiador(a)',
-    other: 'Outro'
-  };
-  const perfil = perfilMap[lead.profile] || lead.profile || 'nao-informado';
-  const porte = lead.organization_size ? ' (porte: ' + lead.organization_size + ')' : '';
-  const linhas = [
-    '[NOVO LEAD] A Bola Conecta',
-    '',
-    'Nome: ' + (lead.contact_name || '-'),
-    'Email: ' + (lead.email || '-'),
-    'Telefone: ' + (lead.phone || '-'),
-    'Perfil: ' + perfil + porte,
-    'Organizacao: ' + (lead.organization || '-'),
-    'Cargo: ' + (lead.role || '-'),
-    'Cidade: ' + (lead.city || '-'),
-    'Pais: ' + (lead.country || '-'),
-    'Interesse: ' + (lead.interest || '-'),
-    'Tipo: ' + (lead.lead_type || '-'),
-    'Formulario: ' + (lead.form_id || '-'),
-    '',
-    'Pagina: ' + (lead.page || '-').slice(0, 200),
-    'UTM source: ' + (lead.utm_source || '-'),
-    'UTM campaign: ' + (lead.utm_campaign || '-'),
-    '',
-    'Mensagem: ' + (lead.message || '-').slice(0, 500),
-    '',
-    lead.created_at
-  ];
-  return linhas.join('\n');
-};
-
-const forwardToTelegram = async (lead, config = destinationConfig()) => {
-  if (!telegramReady(config)) return { skipped: true, reason: 'missing_telegram_config' };
-  const url = 'https://api.telegram.org/bot' + config.telegramBotToken + '/sendMessage';
-  return postJson(url, {
-    chat_id: config.telegramChatId,
-    text: leadToTelegramMessage(lead),
-    disable_web_page_preview: true,
-  });
-};
-
 const runDestinations = async (lead) => {
   const config = destinationConfig();
   const jobs = [
@@ -410,7 +364,6 @@ const runDestinations = async (lead) => {
     ['sheets', () => forwardToSheets(lead, config)],
     ['google_sheets', () => appendToGoogleSheets(lead, config)],
     ['email', () => sendLeadEmail(lead, config)],
-    ['telegram', () => forwardToTelegram(lead, config)],
   ].filter(([name]) => activeDestinations(config).includes(name));
 
   const settled = await Promise.allSettled(jobs.map(([, run]) => run()));
