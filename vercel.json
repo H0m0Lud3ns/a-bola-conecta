@@ -3,62 +3,116 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "trailingSlash": false,
+  "trailingSlash": true,
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "X-Frame-Options", "value": "DENY" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        }
       ]
     },
     {
       "source": "/((?!assets/).*)",
       "headers": [
-        { "key": "Cache-Control", "value": "no-store, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0, must-revalidate"
+        }
       ]
     },
     {
       "source": "/assets/:file*",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=60, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=60, must-revalidate"
+        }
       ]
     },
     {
       "source": "/assets/index-Bc6DgKrQ-crm-api-leads1.js",
       "headers": [
-        { "key": "Cache-Control", "value": "no-store, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0, must-revalidate"
+        }
       ]
     },
     {
       "source": "/assets/abc-analytics.js",
       "headers": [
-        { "key": "Cache-Control", "value": "no-store, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0, must-revalidate"
+        }
       ]
     },
     {
       "source": "/assets/cache-button-guard.js",
       "headers": [
-        { "key": "Cache-Control", "value": "no-store, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0, must-revalidate"
+        }
       ]
     },
     {
       "source": "/assets/copa-nav-inject.js",
       "headers": [
-        { "key": "Cache-Control", "value": "no-store, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0, must-revalidate"
+        }
       ]
     }
   ],
   "redirects": [
-    { "source": "/comunidade", "destination": "/copa-2026/#contribuir", "permanent": false },
-    { "source": "/comunidade/", "destination": "/copa-2026/#contribuir", "permanent": false },
-    { "source": "/apoie", "destination": "/copa-2026/#contribuir", "permanent": false },
-    { "source": "/apoie/", "destination": "/copa-2026/#contribuir", "permanent": false },
-    { "source": "/documental", "destination": "/documentario", "permanent": true },
-    { "source": "/documental/", "destination": "/documentario", "permanent": true }
+    {
+      "source": "/comunidade",
+      "destination": "/copa-2026/#contribuir",
+      "permanent": false
+    },
+    {
+      "source": "/comunidade/",
+      "destination": "/copa-2026/#contribuir",
+      "permanent": false
+    },
+    {
+      "source": "/apoie",
+      "destination": "/copa-2026/#contribuir",
+      "permanent": false
+    },
+    {
+      "source": "/apoie/",
+      "destination": "/copa-2026/#contribuir",
+      "permanent": false
+    },
+    {
+      "source": "/documental",
+      "destination": "/documentario/",
+      "permanent": true
+    },
+    {
+      "source": "/documental/",
+      "destination": "/documentario/",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/((?!api/|assets/|__l5e/|robots.txt|sitemap.xml|~flock.js).*)", "destination": "/index.html" }
+    {
+      "source": "/((?!api/|assets/|__l5e/|robots.txt|sitemap.xml|~flock.js|documentario/?).*)",
+      "destination": "/index.html"
+    }
   ]
 }

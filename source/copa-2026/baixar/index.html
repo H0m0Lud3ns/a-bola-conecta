@@ -9,13 +9,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,700;0,900;1,500&family=Manrope:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
+  <style>.topbar{position:sticky;top:0;z-index:50;background:rgba(17,19,15,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(242,194,48,.14)}.topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1200px;margin:0 auto;gap:16px}.topbar-logo img{height:38px;width:auto;display:block}.topbar-nav{display:flex;gap:18px;align-items:center;font-family:Manrope,Arial,sans-serif;font-weight:600;font-size:14px;letter-spacing:.02em;flex-wrap:wrap}.topbar-nav a{color:var(--areia);text-decoration:none;padding:6px 2px;position:relative;transition:color .2s}.topbar-nav a:hover{color:var(--ouro)}.topbar-nav a.cta-nav{background:var(--ouro);color:var(--grafite);padding:8px 16px;border-radius:6px;font-weight:800;white-space:nowrap}.topbar-nav a.cta-nav:hover{color:var(--grafite);background:#ffce3d}@media(max-width:760px){.topbar-inner{padding:12px 16px;flex-wrap:wrap}.topbar-logo img{height:32px}.topbar-nav{gap:12px;font-size:13px;width:100%;justify-content:flex-start}.topbar-nav a.cta-nav{padding:6px 12px}}
+
     :root{--bg:#16110d;--paper:#f7ecd7;--ink:#241b14;--muted:#786755;--red:#c55232;--gold:#f4c542;--green:#2d6b45;--blue:#17243a;--line:rgba(36,27,20,.15)}
     *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 18% 8%,rgba(244,197,66,.18),transparent 28rem),radial-gradient(circle at 84% 18%,rgba(45,107,69,.24),transparent 30rem),linear-gradient(140deg,#16110d,#17243a 68%,#0f1410);color:var(--paper);font-family:Manrope,sans-serif;line-height:1.5}a{color:inherit}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:Fraunces,Georgia,serif}.wrap{width:min(1120px,calc(100% - 32px));margin:0 auto}.nav{padding:22px 0;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:900;text-transform:uppercase;letter-spacing:.1em;font-size:12px}.brand img{width:112px}.navlinks{display:flex;gap:8px;flex-wrap:wrap}.navlinks a{padding:10px 13px;border:1px solid rgba(247,236,215,.16);border-radius:999px;text-decoration:none;font-size:13px;font-weight:800;color:rgba(247,236,215,.82)}.hero{padding:54px 0 78px}.grid{display:grid;grid-template-columns:1.02fr .98fr;gap:28px;align-items:start}.eyebrow{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.title{margin-top:16px;font-size:clamp(3.2rem,8vw,6.9rem);line-height:.86;letter-spacing:-.055em;max-width:8ch}.lead{margin-top:22px;max-width:650px;color:rgba(247,236,215,.78);font-size:clamp(1.05rem,2.1vw,1.35rem);line-height:1.72}.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}.chip{border:1px solid rgba(247,236,215,.2);border-radius:999px;padding:8px 11px;font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}.panel{border:1px solid rgba(247,236,215,.16);border-radius:34px;background:linear-gradient(145deg,rgba(247,236,215,.12),rgba(247,236,215,.045));padding:clamp(22px,4vw,34px);box-shadow:0 30px 90px rgba(0,0,0,.28)}.panel h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1}.panel p{margin-top:10px;color:rgba(247,236,215,.72);line-height:1.68}.form{display:grid;gap:14px;margin-top:22px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}label{font-size:13px;font-weight:850;color:rgba(247,236,215,.84)}input,select,textarea{width:100%;min-height:50px;border:1px solid rgba(247,236,215,.18);border-radius:17px;background:rgba(10,12,10,.58);color:var(--paper);font:inherit;padding:12px 14px;outline:none}textarea{min-height:104px;resize:vertical}input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(244,197,66,.14)}.consent{display:flex;gap:10px;align-items:flex-start;color:rgba(247,236,215,.78);font-size:13px;line-height:1.5}.consent input{width:18px;height:18px;min-height:18px;margin-top:2px;accent-color:var(--gold)}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;border:0;border-radius:999px;padding:0 18px;text-decoration:none;font:inherit;font-size:14px;font-weight:900;cursor:pointer}.primary{background:var(--gold);color:#20160d}.secondary{background:rgba(247,236,215,.1);color:var(--paper);border:1px solid rgba(247,236,215,.18)}.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.status{min-height:22px;color:var(--gold);font-size:13px}.unlocked{margin-top:18px;border:1px solid rgba(244,197,66,.45);border-radius:28px;padding:22px;background:linear-gradient(135deg,rgba(244,197,66,.16),rgba(45,107,69,.18))}.unlocked[hidden]{display:none}.unlocked h3{font-size:2rem;line-height:1}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}.step{background:var(--paper);color:var(--ink);border-radius:26px;padding:20px;box-shadow:0 18px 58px rgba(0,0,0,.18)}.step b{display:block;color:var(--red);font-size:12px;letter-spacing:.13em;text-transform:uppercase}.step p{margin-top:8px;color:var(--muted);line-height:1.62}.foot{padding:34px 0 48px;color:rgba(247,236,215,.62);font-size:13px}@media(max-width:850px){.grid,.steps{grid-template-columns:1fr}.title{max-width:10ch}.nav{align-items:flex-start;flex-direction:column}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.actions .btn{width:100%}}
   </style>
   <script defer src="/assets/abc-analytics.js?v=20260621-ga4"></script>
 </head>
 <body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="topbar-logo" aria-label="A Bola Conecta — início">
+      <img src="/gondwana-fc-logo/svg/oficiais/logo-gondwana-fc-fundo-claro.svg" alt="Gondwana FC — Time da Educação" />
+    </a>
+    <nav class="topbar-nav" aria-label="Navegação principal">
+      <a href="/">Início</a>
+      <a href="/documentario/">Documentário</a>
+      <a href="/metodologia/">Metodologia ABC</a>
+      <a href="/copa-2026/">Copa 2026</a>
+      <a href="/copa-2026/fichas/">Fichas</a>
+      <a href="/sobre/">Sobre</a>
+      <a href="/contato/">Contato</a>
+      <a href="/copa-2026/#contribuir" class="cta-nav">Apoiar</a>
+    </nav>
+  </div>
+</header>
+
+
   <nav class="wrap nav">
     <a class="brand" href="/a-bola-conecta/"><img src="/gondwana-fc-logo/svg/oficiais/logo-gondwana-fc-fundo-escuro.svg" alt="Gondwana FC"><span>A Bola Conecta</span></a>
     <div class="navlinks"><a href="/a-bola-conecta/copa-2026/">Copa 2026</a><a href="/a-bola-conecta/copa-2026/fichas/">Fichas online</a><a href="/a-bola-conecta/apoie/">Apoiar a circulação</a></div>

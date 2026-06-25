@@ -13,7 +13,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=Manrope:wght@500;700;800;900&display=swap" rel="stylesheet">
-  <style>
+  <style>.topbar{position:sticky;top:0;z-index:50;background:rgba(17,19,15,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(242,194,48,.14)}.topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1200px;margin:0 auto;gap:16px}.topbar-logo img{height:38px;width:auto;display:block}.topbar-nav{display:flex;gap:18px;align-items:center;font-family:Manrope,Arial,sans-serif;font-weight:600;font-size:14px;letter-spacing:.02em;flex-wrap:wrap}.topbar-nav a{color:var(--areia);text-decoration:none;padding:6px 2px;position:relative;transition:color .2s}.topbar-nav a:hover{color:var(--ouro)}.topbar-nav a.cta-nav{background:var(--ouro);color:var(--grafite);padding:8px 16px;border-radius:6px;font-weight:800;white-space:nowrap}.topbar-nav a.cta-nav:hover{color:var(--grafite);background:#ffce3d}@media(max-width:760px){.topbar-inner{padding:12px 16px;flex-wrap:wrap}.topbar-logo img{height:32px}.topbar-nav{gap:12px;font-size:13px;width:100%;justify-content:flex-start}.topbar-nav a.cta-nav{padding:6px 12px}}
+
     :root{
       --grafite:#11130F;
       --areia:#F6EDD7;
@@ -66,6 +67,25 @@
   <script defer src="/assets/abc-analytics.js?v=20260621-ga4"></script>
 </head>
 <body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="topbar-logo" aria-label="A Bola Conecta — início">
+      <img src="/gondwana-fc-logo/svg/oficiais/logo-gondwana-fc-fundo-claro.svg" alt="Gondwana FC — Time da Educação" />
+    </a>
+    <nav class="topbar-nav" aria-label="Navegação principal">
+      <a href="/">Início</a>
+      <a href="/documentario/">Documentário</a>
+      <a href="/metodologia/">Metodologia ABC</a>
+      <a href="/copa-2026/">Copa 2026</a>
+      <a href="/copa-2026/fichas/">Fichas</a>
+      <a href="/sobre/">Sobre</a>
+      <a href="/contato/">Contato</a>
+      <a href="/copa-2026/#contribuir" class="cta-nav">Apoiar</a>
+    </nav>
+  </div>
+</header>
+
+
   <div class="web-progress" aria-hidden="true"></div>
   <header class="toolbar web-only"><div class="toolbar-inner"><div class="toolbar-title"><span>Seleções Gondwana</span><small>Guia educativa da Copa 2026</small></div><nav class="toolbar-actions" aria-label="Ações principais"><a class="btn ghost" href="#como-usar">Como usar</a></nav></div></header>
 

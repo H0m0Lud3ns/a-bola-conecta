@@ -1,32 +1,986 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A Bola Conecta | Documentário sobre futebol, África e Brasil</title>
-    <meta name="description" content="Documentário e metodologia educativa que conectam futebol, ancestralidade africana, cultura afro-brasileira e Lei 10.639." />
-    <meta name="author" content="Mônica Saraiva & Sebastián Acevedo" />
-    <meta name="robots" content="noindex,nofollow" />
-    <link rel="canonical" href="https://abolaconecta.com.br/documentario" />
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Documentário · A Bola Conecta · 23 minutos · Mônica Saraiva da Silva</title>
+<meta name="description" content="Documentário socioeducativo A Bola Conecta. 23 minutos que atravessam Bahia, Pernambuco e a cultura afro-brasileira pela brincadeira com a bola. Direção: Mônica Saraiva da Silva. Pesquisa pedagógica: Sebastián Acevedo Vásquez." />
+<meta name="author" content="Mônica Saraiva da Silva · Sebastián Acevedo Vásquez" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="A Bola Conecta" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:title" content="Documentário A Bola Conecta · 23 minutos · Mônica Saraiva da Silva" />
+<meta property="og:description" content="23 minutos que atravessam Bahia, Pernambuco e a cultura afro-brasileira pela brincadeira com a bola. Direção: Mônica Saraiva da Silva. Pesquisa pedagógica: Sebastián Acevedo Vásquez." />
+<meta property="og:url" content="https://www.abolaconecta.com.br/documentario" />
+<meta property="og:image" content="https://www.abolaconecta.com.br/assets/cartaz-gondwana-rdk47cU1.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Cartaz oficial do documentário A Bola Conecta — colagem de Shirley Espejo / Espejismo, cartaz de Wallace Paulo, fotografia de Mônica Saraiva da Silva." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Documentário A Bola Conecta · 23 minutos" />
+<meta name="twitter:description" content="23 minutos pela cultura afro-brasileira pela brincadeira com a bola." />
+<meta name="twitter:image" content="https://www.abolaconecta.com.br/assets/cartaz-gondwana-rdk47cU1.png" />
+<link rel="canonical" href="https://www.abolaconecta.com.br/documentario" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script defer src="/assets/abc-analytics.js?v=20260621-ga4"></script>
+<style>
+:root {
+  --grafite: #11130F;
+  --areia: #F6EDD7;
+  --ouro: #F2C230;
+  --verde: #2E6F46;
+  --barro: #9E4A2F;
+  --azul: #17243A;
+  --areia-quente: #ECE0C2;
+  --papel: #FAF3E2;
+  --shadow-cinema: 0 24px 60px -20px rgba(0,0,0,0.55), 0 8px 24px -8px rgba(17,19,15,0.45);
+  --shadow-glow: 0 0 0 1px rgba(242,194,48,0.18), 0 12px 32px -8px rgba(242,194,48,0.22);
+  --grain-opacity: 0.06;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--grafite);
+  color: var(--areia);
+  font-family: 'Manrope', system-ui, sans-serif;
+  line-height: 1.55;
+  font-size: 16px;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.95 0 0 0 0 0.85 0 0 0 0 0.45 0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: var(--grain-opacity);
+  mix-blend-mode: overlay;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
 
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="A Bola Conecta" />
-    <meta property="og:locale" content="pt_BR" />
-    <meta property="og:title" content="A Bola Conecta | Documentário sobre futebol, África e Brasil" />
-    <meta property="og:description" content="Documentário e metodologia educativa que conectam futebol, ancestralidade africana, cultura afro-brasileira e Lei 10.639." />
-    <meta property="og:url" content="https://abolaconecta.com.br/" />
-    <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/1PdPgLTTUFT08bk21xhACalES2w1/social-images/social-1779331776447-Home.webp" />
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(17,19,15,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(242,194,48,0.14);
+}
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.topbar-logo img { height: 38px; width: auto; display: block; }
+.topbar-nav {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+.topbar-nav a {
+  color: var(--areia);
+  text-decoration: none;
+  padding: 6px 2px;
+  position: relative;
+  transition: color 0.2s;
+}
+.topbar-nav a:hover { color: var(--ouro); }
+.topbar-nav a.cta-nav {
+  background: var(--ouro);
+  color: var(--grafite);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 800;
+}
+.topbar-nav a.cta-nav:hover { color: var(--grafite); background: #ffce3d; }
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="A Bola Conecta | Documentário sobre futebol, África e Brasil" />
-    <meta name="twitter:description" content="Documentário e metodologia educativa que conectam futebol, ancestralidade africana, cultura afro-brasileira e Lei 10.639." />
-    <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/1PdPgLTTUFT08bk21xhACalES2w1/social-images/social-1779331776447-Home.webp" />
-    <script type="module" crossorigin src="/a-bola-conecta/assets/index-Bc6DgKrQ-crm-api-leads1.js?v=20260619-copa-direita"></script>
-    <link rel="stylesheet" crossorigin href="/a-bola-conecta/assets/index--0QhvKt1.css">  <script defer src="/assets/abc-analytics.js?v=20260621-ga4"></script>
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 0 60px;
+  background: var(--grafite);
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 20%, rgba(158,74,47,0.25), transparent 60%),
+              radial-gradient(ellipse at 20% 80%, rgba(23,36,58,0.6), transparent 50%),
+              linear-gradient(180deg, var(--grafite) 0%, #0a0c08 100%);
+  z-index: 0;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.hero-text { position: relative; }
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ouro);
+  margin-bottom: 24px;
+}
+.hero-kicker::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--ouro);
+}
+.hero h1 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(3.2rem, 7vw, 5.6rem);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: var(--areia);
+  margin-bottom: 24px;
+  text-wrap: balance;
+}
+.hero h1 .accent { color: var(--ouro); }
+.hero-tagline {
+  font-family: 'IBM Plex Serif', serif;
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  color: var(--areia);
+  line-height: 1.45;
+  margin-bottom: 32px;
+  max-width: 540px;
+  text-wrap: balance;
+}
+.hero-claim {
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 600;
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  line-height: 1.2;
+  color: var(--barro);
+  margin-bottom: 40px;
+  max-width: 560px;
+  text-wrap: balance;
+  border-left: 3px solid var(--barro);
+  padding-left: 20px;
+}
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 28px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 6px;
+  letter-spacing: 0.01em;
+  transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary { background: var(--ouro); color: var(--grafite); box-shadow: var(--shadow-glow); }
+.btn-primary:hover { background: #ffce3d; transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--areia); border: 1.5px solid rgba(246,237,215,0.4); }
+.btn-outline:hover { border-color: var(--ouro); color: var(--ouro); }
+.btn-barro { background: var(--barro); color: var(--areia); }
+.btn-barro:hover { background: #b25838; transform: translateY(-1px); }
+
+.hero-cartel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-cartel::before {
+  content: "";
+  position: absolute;
+  inset: -32px;
+  background: linear-gradient(135deg, rgba(242,194,48,0.08), rgba(158,74,47,0.12), transparent 60%);
+  z-index: 0;
+  filter: blur(40px);
+}
+.hero-cartel-frame {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  box-shadow: var(--shadow-cinema);
+  clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 28px 100%, 0 calc(100% - 28px));
+  background: var(--areia);
+}
+.hero-cartel-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.05) saturate(1.08);
+}
+.hero-cartel-tag {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--ouro);
+  color: var(--grafite);
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 12px;
+  padding: 8px 14px;
+  z-index: 3;
+  letter-spacing: 0.1em;
+  box-shadow: var(--shadow-cinema);
+}
+.hero-cartel-credit {
+  position: absolute;
+  bottom: -28px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'IBM Plex Serif', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--areia-quente);
+  letter-spacing: 0.04em;
+  z-index: 3;
+}
+
+.section { padding: 100px 0; position: relative; }
+.section-paper { background: var(--areia); color: var(--grafite); }
+.section-title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--grafite);
+  margin-bottom: 16px;
+}
+.section-title-light { color: var(--areia); }
+.section-title + .section-lead { margin-top: 28px; }
+.section-kicker {
+  display: inline-block;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--barro);
+  margin-bottom: 14px;
+}
+.section-kicker-light { color: var(--ouro); }
+.section-lead {
+  font-family: 'IBM Plex Serif', serif;
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+  line-height: 1.75;
+  color: var(--grafite);
+  max-width: 640px;
+  margin-bottom: 48px;
+  text-wrap: balance;
+}
+.section-lead-light { color: var(--areia-quente); }
+
+.manifiesto { background: var(--grafite); position: relative; }
+.manifiesto::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(242,194,48,0.4), transparent);
+}
+.manifesto-body {
+  max-width: 880px;
+  margin: 0 auto;
+  font-family: 'IBM Plex Serif', serif;
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  line-height: 1.65;
+  color: var(--areia);
+  text-align: left;
+}
+.manifesto-body p { margin-bottom: 22px; }
+.manifesto-body p:first-child::first-letter {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 4.2rem;
+  line-height: 0.85;
+  float: left;
+  color: var(--ouro);
+  margin: 6px 12px 0 0;
+}
+.manifesto-body em { color: var(--ouro); font-style: italic; font-weight: 500; }
+
+.temas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+.tema-card {
+  background: rgba(246,237,215,0.04);
+  border: 1px solid rgba(242,194,48,0.18);
+  border-radius: 4px;
+  padding: 28px 24px;
+  transition: transform 0.2s, border-color 0.2s, background 0.2s;
+}
+.tema-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--ouro);
+  background: rgba(242,194,48,0.06);
+}
+.tema-num {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 14px;
+  color: var(--ouro);
+  margin-bottom: 14px;
+  letter-spacing: 0.1em;
+}
+.tema-title {
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  color: var(--areia);
+  margin-bottom: 8px;
+}
+.tema-desc { font-size: 14px; color: var(--areia-quente); line-height: 1.5; }
+
+.ficha-section { background: var(--azul); }
+.ficha-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(242,194,48,0.18);
+  border: 1px solid rgba(242,194,48,0.18);
+  margin-top: 40px;
+}
+.ficha-cell {
+  background: var(--azul);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ficha-key {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ouro);
+}
+.ficha-value {
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 1.05rem;
+  color: var(--areia);
+  line-height: 1.4;
+}
+.ficha-cell-wide {
+  grid-column: 1 / -1;
+}
+
+.sala-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.sala-card {
+  background: var(--papel);
+  border: 1px solid rgba(17,19,15,0.08);
+  padding: 32px 28px;
+  position: relative;
+  border-top: 4px solid var(--barro);
+}
+.sala-card:nth-child(2) { border-top-color: var(--verde); }
+.sala-card:nth-child(3) { border-top-color: var(--azul); }
+.sala-num {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 3rem;
+  line-height: 0.8;
+  color: var(--barro);
+  margin-bottom: 12px;
+}
+.sala-card:nth-child(2) .sala-num { color: var(--verde); }
+.sala-card:nth-child(3) .sala-num { color: var(--azul); }
+.sala-title {
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--grafite);
+  margin-bottom: 6px;
+}
+.sala-meta {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--barro);
+  margin-bottom: 14px;
+}
+.sala-card:nth-child(2) .sala-meta { color: var(--verde); }
+.sala-card:nth-child(3) .sala-meta { color: var(--azul); }
+.sala-desc { font-size: 14.5px; line-height: 1.55; color: rgba(17,19,15,0.78); }
+
+.creditos-section { background: var(--grafite); }
+
+.apoie-section {
+  background: linear-gradient(135deg, var(--barro) 0%, #7a3a25 100%);
+  color: var(--areia);
+  position: relative;
+  overflow: hidden;
+}
+.apoie-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(242,194,48,0.18), transparent 60%);
+  z-index: 0;
+}
+.apoie-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.apoie-claim {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height: 1;
+  color: var(--areia);
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+.apoie-desc {
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: var(--areia);
+  margin-bottom: 28px;
+  max-width: 540px;
+}
+.assistir-section { background: linear-gradient(180deg, var(--azul-noite) 0%, #0d1218 100%); padding: 96px 0 80px; }
+.assistir-inner { max-width: 980px; margin: 0 auto; }
+.assistir-header { text-align: center; margin-bottom: 40px; }
+.assistir-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(242,194,48,0.18);
+  cursor: pointer;
+}
+.assistir-frame iframe {
+  position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+}
+.assistir-thumb { position: absolute; inset: 0; width: 100%; height: 100%; }
+.assistir-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.assistir-thumb::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,12,8,0.18) 0%, rgba(10,12,8,0.55) 100%);
+}
+.assistir-play {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  z-index: 2; transition: transform 220ms ease, opacity 220ms ease;
+  filter: drop-shadow(0 6px 22px rgba(0,0,0,0.55));
+}
+.assistir-frame:hover .assistir-play { transform: translate(-50%, -50%) scale(1.08); }
+.assistir-duration {
+  position: absolute; top: 18px; right: 18px; z-index: 2;
+  font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 12px;
+  letter-spacing: 0.22em; color: var(--areia); background: rgba(10,12,8,0.7);
+  padding: 6px 12px; border-radius: 999px; backdrop-filter: blur(4px);
+}
+.assistir-caption {
+  position: absolute; left: 24px; bottom: 22px; right: 24px; z-index: 2;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.assistir-caption-eyebrow {
+  font-family: 'Manrope', sans-serif; font-size: 10px; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--ouro); font-weight: 700;
+}
+.assistir-caption-title {
+  font-family: 'IBM Plex Serif', serif; font-size: 1.25rem; font-weight: 600;
+  color: var(--areia); line-height: 1.2;
+}
+.assistir-footer {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+  gap: 14px; margin-top: 24px;
+}
+.assistir-yt-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 13px;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ouro);
+  text-decoration: none; transition: gap 180ms ease, color 180ms ease;
+}
+.assistir-yt-link:hover { gap: 12px; color: var(--areia); }
+.assistir-license {
+  font-family: 'IBM Plex Serif', serif; font-style: italic; font-size: 0.88rem;
+  color: var(--areia-quente); opacity: 0.85;
+}
+@media (max-width: 640px) {
+  .assistir-section { padding: 64px 0 56px; }
+  .assistir-caption-title { font-size: 1rem; }
+  .assistir-caption { left: 16px; bottom: 16px; right: 16px; }
+  .assistir-duration { top: 12px; right: 12px; }
+  .assistir-footer { flex-direction: column; align-items: flex-start; }
+}
+
+.apoie-info {
+  background: rgba(17,19,15,0.25);
+  border: 1px solid rgba(246,237,215,0.2);
+  padding: 28px;
+  border-radius: 4px;
+}
+.apoie-info-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ouro);
+  margin-bottom: 14px;
+}
+.apoie-info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(246,237,215,0.15);
+  font-size: 14px;
+  color: var(--areia);
+}
+.apoie-info-row:last-child { border-bottom: none; }
+.apoie-info-row span {
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ouro);
+  opacity: 0.75;
+}
+.apoie-info-row strong { font-family: 'IBM Plex Serif', serif; font-weight: 600; }
+
+.footer {
+  background: #0a0c08;
+  padding: 48px 0 28px;
+  border-top: 1px solid rgba(242,194,48,0.18);
+  position: relative;
+  z-index: 2;
+}
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+.footer-logo img { height: 32px; }
+.footer-nav { display: flex; gap: 24px; font-size: 13px; }
+.footer-nav a { color: var(--areia-quente); text-decoration: none; font-weight: 600; }
+.footer-nav a:hover { color: var(--ouro); }
+.footer-meta {
+  font-size: 12px;
+  color: rgba(246,237,215,0.5);
+  text-align: center;
+  padding-top: 24px;
+  border-top: 1px solid rgba(246,237,215,0.08);
+}
+.footer-meta strong { color: var(--ouro); font-weight: 700; }
+
+@media (max-width: 960px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+  .hero { min-height: auto; padding: 60px 0 40px; }
+  .hero-cartel-frame { max-width: 360px; }
+  .temas-grid, .sala-grid { grid-template-columns: 1fr; }
+  .creditos-grid { grid-template-columns: repeat(2, 1fr); }
+  .ficha-grid { grid-template-columns: 1fr; }
+  .apoie-inner { grid-template-columns: 1fr; }
+  .topbar-nav { display: none; }
+  .section { padding: 64px 0; }
+  .footer-grid { flex-direction: column; text-align: center; }
+  .footer-nav { flex-wrap: wrap; justify-content: center; }
+}
+@media (max-width: 720px) {
+  [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: repeat(2"] { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 560px) {
+  .hero-claim { font-size: 1.2rem; padding-left: 14px; }
+  .hero-ctas { flex-direction: column; align-items: stretch; }
+  .btn { justify-content: center; }
+  .creditos-grid { grid-template-columns: 1fr; }
+}
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+.hero-text, .hero-cartel, .section-title, .section-lead, .tema-card, .sala-card, .ficha-cell, .apoie-inner {
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-cartel { animation-delay: 0.15s; }
+.tema-card:nth-child(2) { animation-delay: 0.08s; }
+.tema-card:nth-child(3) { animation-delay: 0.16s; }
+.tema-card:nth-child(4) { animation-delay: 0.24s; }
+.tema-card:nth-child(5) { animation-delay: 0.32s; }
+.tema-card:nth-child(6) { animation-delay: 0.4s; }
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+</style>
 </head>
+<body>
 
-  <body>
-    <div id="root"></div>
-  <script src="/a-bola-conecta/assets/copa-nav-inject.js?v=20260617a"></script>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="topbar-logo" aria-label="A Bola Conecta — início">
+      <img src="/gondwana-fc-logo/svg/oficiais/logo-gondwana-fc-fundo-claro.svg" alt="Gondwana FC — Time da Educação" />
+    </a>
+    <nav class="topbar-nav" aria-label="Navegação principal">
+      <a href="/">Início</a>
+      <a href="/metodologia">Metodologia ABC</a>
+      <a href="/copa-2026/fichas">Fichas Copa 2026</a>
+      <a href="/contato">Contato</a>
+      <a href="/apoie" class="cta-nav">Apoiar</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <span class="hero-kicker">Documentário · 2020 – 2021</span>
+        <h1>Gondwana,<br/>A Bola<br/><span class="accent">Conecta.</span></h1>
+        <p class="hero-tagline">23 minutos. Brasil. 2020 – 2021. Direção: Mônica Saraiva da Silva.</p>
+        <p class="hero-claim">Há mais de 200 milhões de anos, América do Sul e África compartilhavam o supercontinente Gondwana. Hoje, voltam a se encontrar.</p>
+        <div class="hero-ctas">
+          <a href="#assistir" class="btn btn-primary">Assistir agora</a>
+          <a href="#como-usar" class="btn btn-outline">Como usar em sala</a>
+          <a href="/metodologia" class="btn btn-barro">Material pedagógico</a>
+        </div>
+      </div>
+
+      <div class="hero-cartel">
+        <div class="hero-cartel-tag">23 MIN</div>
+        <div class="hero-cartel-frame">
+          <img src="/assets/cartaz-gondwana-rdk47cU1.png" alt="Cartaz oficial do documentário Gondwana, A Bola Conecta" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section manifiesto">
+  <div class="container">
+    <span class="section-kicker">Manifesto</span>
+    <h2 class="section-title section-title-light">Uma travessia pela cultura que a bola cria.</h2>
+    <p class="section-lead section-lead-light">Documentário socioeducativo de Mônica Saraiva da Silva. Dois anos de pesquisa, uma pergunta: <em style="color: var(--ouro);">como podemos entender o mundo e a relação entre Brasil e o continente africano pela brincadeira com a bola?</em></p>
+
+    <div class="manifesto-body">
+      <p>Há mais de 200 milhões de anos, América do Sul e África compartilhavam o supercontinente <em>Gondwana</em>. Hoje, esses continentes voltam a se encontrar no documentário <em>Gondwana, A Bola Conecta</em>. A bola, como língua universal, é a tinta que escreve este primeiro capítulo para conhecer o Brasil-Afro.</p>
+      <p>Por lugares de <em>Salvador (Bahia)</em> e <em>Olinda (Pernambuco)</em>, mostramos relatos de vida, arte, música, dança, gastronomia e o futebol como manifestação cultural popular.</p>
+      <p>O filme atravessa diferentes territórios do Brasil para mostrar como o futebol carrega consigo memórias, línguas, religiões e histórias que raramente aparecem nas narrativas oficiais do esporte. Da quebrada ao terreiro, <em>Gondwana, A Bola Conecta</em> revela o futebol como prática cultural, educativa e política.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: linear-gradient(180deg, var(--grafite) 0%, #0d1009 100%);">
+  <div class="container">
+    <span class="section-kicker section-kicker-light">Temas</span>
+    <h2 class="section-title section-title-light">Seis conversas que a bola abre.</h2>
+    <p class="section-lead section-lead-light">O documentário abre conversas que raramente chegam à sala de aula — e que são essenciais para ler o Brasil que joga.</p>
+
+    <div class="temas-grid">
+      <div class="tema-card">
+        <div class="tema-num">01</div>
+        <div class="tema-title">Futebol de quebrada e cultura popular</div>
+        <div class="tema-desc">Onde a bola nasce, antes de virar produto.</div>
+      </div>
+      <div class="tema-card">
+        <div class="tema-num">02</div>
+        <div class="tema-title">Ancestralidade africana e diáspora</div>
+        <div class="tema-desc">O Atlântico que une, não o mapa que separa.</div>
+      </div>
+      <div class="tema-card">
+        <div class="tema-num">03</div>
+        <div class="tema-title">Cultura afro-brasileira e religiosidades</div>
+        <div class="tema-desc">Candomblé, samba, capoeira: o futebol como terreiro.</div>
+      </div>
+      <div class="tema-card">
+        <div class="tema-num">04</div>
+        <div class="tema-title">Lei 10.639 e educação</div>
+        <div class="tema-desc">A sala de aula que a lei obriga e a bola provoca.</div>
+      </div>
+      <div class="tema-card">
+        <div class="tema-num">05</div>
+        <div class="tema-title">Juventude, território e pertencimento</div>
+        <div class="tema-desc">Quem joga, onde joga, por que joga.</div>
+      </div>
+      <div class="tema-card">
+        <div class="tema-num">06</div>
+        <div class="tema-title">Memória e identidade cultural</div>
+        <div class="tema-desc">O que o gol guarda que o tempo não apaga.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section ficha-section">
+  <div class="container">
+    <span class="section-kicker" style="color: var(--ouro);">Ficha técnica</span>
+    <h2 class="section-title" style="color: var(--areia);">Vinte e três minutos. Brasil inteiro.</h2>
+    <p class="section-lead" style="color: var(--areia-quente);">Créditos e condições de exibição. Para licenças institucionais, escreva para <a href="/contato" style="color: var(--ouro);">contato.gondwana@gmail.com</a>.</p>
+
+    <div class="ficha-grid">
+      <div class="ficha-cell"><div class="ficha-key">Título</div><div class="ficha-value">Gondwana, A Bola Conecta</div></div>
+      <div class="ficha-cell"><div class="ficha-key">Duração</div><div class="ficha-value">23 minutos</div></div>
+      <div class="ficha-cell"><div class="ficha-key">Ano</div><div class="ficha-value">2020 – 2021</div></div>
+      <div class="ficha-cell"><div class="ficha-key">País</div><div class="ficha-value">Brasil</div></div>
+      <div class="ficha-cell"><div class="ficha-key">Idioma</div><div class="ficha-value">Português BR, Português Guiné-Bissau, Espanhol Chileno (legendado)</div></div>
+      <div class="ficha-cell"><div class="ficha-key">Direção</div><div class="ficha-value">Mônica Saraiva da Silva</div></div>
+      <div class="ficha-cell"><div class="ficha-key">Roteiro</div><div class="ficha-value">Mônica Saraiva da Silva e Sebastián Acevedo Vásquez</div></div>
+      <div class="ficha-cell"><div class="ficha-key">Produção</div><div class="ficha-value">Cristiano Fukuyama, Mônica Saraiva da Silva e Sebastián Acevedo Vásquez</div></div>
+      <div class="ficha-cell"><div class="ficha-key">Edição e Montagem</div><div class="ficha-value">Cristiano Fukuyama</div></div>
+      <div class="ficha-cell"><div class="ficha-key">Colaborador audiovisual</div><div class="ficha-value">Diógenes Miranda</div></div>
+      <div class="ficha-cell"><div class="ficha-key">Colagem</div><div class="ficha-value">Shirley Espejo / Espejismo</div></div>
+      <div class="ficha-cell"><div class="ficha-key">Cartaz</div><div class="ficha-value">Wallace Paulo</div></div>
+      <div class="ficha-cell ficha-cell-wide"><div class="ficha-key">Locações</div><div class="ficha-value">Salvador (Bahia) e Olinda (Pernambuco)</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-paper" id="como-usar">
+  <div class="container">
+    <span class="section-kicker">Como usar em sala</span>
+    <h2 class="section-title">Três formatos pedagógicos.</h2>
+    <p class="section-lead">O documentário foi pensado como ferramenta pedagógica. Funciona em três formatos principais — do cine-debate pontual ao piloto institucional integrado ao currículo.</p>
+
+    <div class="sala-grid">
+      <div class="sala-card">
+        <div class="sala-num">01</div>
+        <div class="sala-title">Cine-debate</div>
+        <div class="sala-meta">1 aula · 90 minutos</div>
+        <p class="sala-desc">Exibição seguida de mediação. Ideal para introduzir o tema com turmas do ensino fundamental II, médio ou EJA. Combina com roda de conversa e produção escrita curta.</p>
+      </div>
+      <div class="sala-card">
+        <div class="sala-num">02</div>
+        <div class="sala-title">Oficina</div>
+        <div class="sala-meta">4 a 8 encontros</div>
+        <p class="sala-desc">Combinado com as Fichas Copa 2026 para aprofundamento territorial de cada seleção. Cada ficha é uma janela para o país e para a leitura de Gondwana.</p>
+      </div>
+      <div class="sala-card">
+        <div class="sala-num">03</div>
+        <div class="sala-title">Piloto institucional</div>
+        <div class="sala-meta">4 a 8 semanas</div>
+        <p class="sala-desc">Integrado ao currículo, com produção autoral dos alunos em diferentes linguagens — documentário curto, podcast, jornal de quebrada, mapeamento comunitário.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--areia); color: var(--grafite);">
+  <div class="container">
+    <span class="section-kicker">Imprensa</span>
+    <h2 class="section-title">O que se move no portal.</h2>
+    <p class="section-lead">Matérias, podcasts e referências sobre <em style="color: var(--barro);">Gondwana, A Bola Conecta</em> em veículos nacionais e internacionais.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 32px;">
+      <a href="https://www.youtube.com/watch?v=HkBlFH8cpP8" target="_blank" rel="noopener" style="background: var(--papel); border: 1px solid rgba(17,19,15,0.08); border-left: 4px solid var(--barro); padding: 22px 24px; text-decoration: none; display: block; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderLeftColor='var(--ouro)'" onmouseout="this.style.transform='';this.style.borderLeftColor='var(--barro)'">
+        <div style="font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--barro); margin-bottom: 8px;">TV Brasil · Stadium</div>
+        <div style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.15rem; color: var(--grafite); margin-bottom: 8px;">O Stadium começa com uma história nota 10</div>
+        <div style="font-size: 14px; color: rgba(17,19,15,0.7); line-height: 1.5;">Reportagem em vídeo sobre como o documentário revela a relação histórica entre Brasil e África no futebol.</div>
+      </a>
+
+      <a href="https://www.uol.com.br/esporte/futebol/ultimas-noticias/2021/11/19/gondwana-curta-metragem-reconecta-futebol-a-cultura-afro-brasileira.htm" target="_blank" rel="noopener" style="background: var(--papel); border: 1px solid rgba(17,19,15,0.08); border-left: 4px solid var(--verde); padding: 22px 24px; text-decoration: none; display: block; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderLeftColor='var(--ouro)'" onmouseout="this.style.transform='';this.style.borderLeftColor='var(--verde)'">
+        <div style="font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--verde); margin-bottom: 8px;">UOL Esporte · Nov 2021</div>
+        <div style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.15rem; color: var(--grafite); margin-bottom: 8px;">Curta-metragem Gondwana reconecta o futebol à cultura afro-brasileira</div>
+        <div style="font-size: 14px; color: rgba(17,19,15,0.7); line-height: 1.5;">Reportagem da UOL Esporte sobre o documentário e sua proposta de revelar as raízes afro do futebol no Brasil.</div>
+      </a>
+
+      <a href="https://aventurasnahistoria.com.br/noticias/podcast-ah/gondwana-o-supercontinente-extinto-que-liga-brasil-africa-e-o-futebol.phtml" target="_blank" rel="noopener" style="background: var(--papel); border: 1px solid rgba(17,19,15,0.08); border-left: 4px solid var(--azul); padding: 22px 24px; text-decoration: none; display: block; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderLeftColor='var(--ouro)'" onmouseout="this.style.transform='';this.style.borderLeftColor='var(--azul)'">
+        <div style="font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--azul); margin-bottom: 8px;">Aventuras na História</div>
+        <div style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.15rem; color: var(--grafite); margin-bottom: 8px;">Gondwana: o supercontinente extinto que liga Brasil, África e o futebol</div>
+        <div style="font-size: 14px; color: rgba(17,19,15,0.7); line-height: 1.5;">Aventuras na História conta como o supercontinente Gondwana inspira o projeto que conecta Brasil, África e o futebol.</div>
+      </a>
+
+      <a href="https://www.sescsp.org.br/editorial/metodologia-abc-audiovisual-bola-e-camera-ferramentas-alfabetizadoras-em-habilidades-sociais/" target="_blank" rel="noopener" style="background: var(--papel); border: 1px solid rgba(17,19,15,0.08); border-left: 4px solid var(--ouro); padding: 22px 24px; text-decoration: none; display: block; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderLeftColor='var(--barro)'" onmouseout="this.style.transform='';this.style.borderLeftColor='var(--ouro)'">
+        <div style="font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ouro); margin-bottom: 8px;">Sesc SP · Ago 2012</div>
+        <div style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.15rem; color: var(--grafite); margin-bottom: 8px;">Metodologia ABC: Audiovisual, Bola e Câmera</div>
+        <div style="font-size: 14px; color: rgba(17,19,15,0.7); line-height: 1.5;">Sesc SP publica artigo sobre nossa metodologia como ferramenta alfabetizadora em habilidades sociais.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: linear-gradient(180deg, var(--grafite) 0%, #0d1009 100%);">
+  <div class="container">
+    <span class="section-kicker section-kicker-light">Depoimentos</span>
+    <h2 class="section-title section-title-light">O que dizem sobre o filme.</h2>
+    <p class="section-lead section-lead-light">Vozes que assistiram, debateram e levaram Gondwana para suas comunidades, escolas e pesquisas.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px;">
+      <article style="background: rgba(246,237,215,0.04); border: 1px solid rgba(242,194,48,0.18); padding: 28px 24px; border-radius: 4px;">
+        <div style="font-family: 'IBM Plex Serif', serif; font-style: italic; font-size: 0.95rem; line-height: 1.55; color: var(--areia); margin-bottom: 20px;">“Excelente documentário! Educativo, comovente e muito leve! Neste momento, em que estamos observando com enorme preocupação o aumento de manifestações racistas em diversas áreas, inclusive no futebol, este documentário chega como uma resposta contundente, firme e íntegra, demonstrando que o futebol também pode promover a educação, reforçar o respeito à diversidade e contribuir para aprofundar o conhecimento sobre a própria identidade.”</div>
+        <div style="border-top: 1px solid rgba(242,194,48,0.2); padding-top: 14px;">
+          <div style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 0.95rem; color: var(--areia);">Antonia Quintão</div>
+          <div style="font-size: 12px; color: var(--areia-quente); margin-top: 4px;">Pós-Doutoranda FEA/USP · Pesquisadora University of Minnesota · Docente Universidade Mackenzie · Presidenta do Géledes</div>
+        </div>
+      </article>
+
+      <article style="background: rgba(246,237,215,0.04); border: 1px solid rgba(242,194,48,0.18); padding: 28px 24px; border-radius: 4px;">
+        <div style="font-family: 'IBM Plex Serif', serif; font-style: italic; font-size: 0.95rem; line-height: 1.55; color: var(--areia); margin-bottom: 20px;">“É um projeto que provoca, instiga e traz uma visão diferente sobre esportes. É um projeto de confortar o coração e dizer: <em style="color: var(--ouro);">É isso que a gente quer com a criançada!</em>”</div>
+        <div style="border-top: 1px solid rgba(242,194,48,0.2); padding-top: 14px;">
+          <div style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 0.95rem; color: var(--areia);">Juliano Brogna</div>
+          <div style="font-size: 12px; color: var(--areia-quente); margin-top: 4px;">Supervisor de Esportes Sesc Catanduva, São Paulo</div>
+        </div>
+      </article>
+
+      <article style="background: rgba(246,237,215,0.04); border: 1px solid rgba(242,194,48,0.18); padding: 28px 24px; border-radius: 4px;">
+        <div style="font-family: 'IBM Plex Serif', serif; font-style: italic; font-size: 0.95rem; line-height: 1.55; color: var(--areia); margin-bottom: 20px;">“Revelador, havia coisas que não passariam pela minha cabeça vendo historicamente tudo que já foi passado sobre o futebol brasileiro ter matrizes africanas, dos movimentos em si significarem algo maior que técnica — mas sim uma dança, uma cultura que foi ocultada por anos de história. Muito bom comentário, parabéns aos envolvidos.”</div>
+        <div style="border-top: 1px solid rgba(242,194,48,0.2); padding-top: 14px;">
+          <div style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 0.95rem; color: var(--areia);">Estudante de Educação Física</div>
+          <div style="font-size: 12px; color: var(--areia-quente); margin-top: 4px;">UNIFIPA — Centro Universitário Padre Albino</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section assistir-section" id="assistir">
+  <div class="container">
+    <div class="assistir-inner">
+      <div class="assistir-header">
+        <span class="section-kicker" style="color: var(--ouro);">Assistir</span>
+        <h2 class="section-title section-title-light">Gondwana, A Bola Conecta</h2>
+        <p class="section-lead section-lead-light" style="margin-bottom: 28px;">Documentário socioeducativo de Mônica Saraiva da Silva. Dois anos de pesquisa, uma pergunta: <em style="color: var(--ouro);">como podemos entender o mundo e a relação entre Brasil e o continente africano pela brincadeira com a bola?</em></p>
+      </div>
+
+      <div class="assistir-frame" id="assistir-frame">
+        <div class="assistir-thumb" id="assistir-thumb" data-video-id="2fPbZkVS-NY" role="button" tabindex="0" aria-label="Reproduzir documentário Gondwana, A Bola Conecta">
+          <img src="https://img.youtube.com/vi/2fPbZkVS-NY/hqdefault.jpg" alt="Cartaz de Gondwana, A Bola Conecta com colagem de Shirley Espejo / Espejismo e cartaz de Wallace Paulo" />
+          <div class="assistir-play" aria-hidden="true">
+            <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="40" r="38" fill="rgba(10,12,8,0.65)" stroke="rgba(242,194,48,0.85)" stroke-width="2"/>
+              <path d="M32 26 L56 40 L32 54 Z" fill="#f2c230"/>
+            </svg>
+          </div>
+          <div class="assistir-duration">23 MIN</div>
+          <div class="assistir-caption">
+            <span class="assistir-caption-eyebrow">Documentário</span>
+            <span class="assistir-caption-title">Gondwana, A Bola Conecta</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="assistir-footer">
+        <a href="https://www.youtube.com/watch?v=2fPbZkVS-NY" target="_blank" rel="noopener" class="assistir-yt-link">
+          Assistir no YouTube
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <span class="assistir-license">Licença de exibição aberta · Circulação livre não comercial</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section apoie-section" id="apoie">
+  <div class="container">
+    <div class="apoie-inner">
+      <div>
+        <span class="section-kicker" style="color: var(--ouro);">Apoie</span>
+        <h2 class="apoie-claim">A livre circulação<br/>começa com você.</h2>
+        <p class="apoie-desc">Ajude o documentário, a Metodologia ABC e as fichas da Copa a chegarem em mais pessoas, familias, escolas e comunidades. Toda contribuição via Pix é transparente e fortalece o trabalho de pesquisa, produção científica e cultural da Da Silva e Vasquez Formação e Consultoria LTDA, permitindo a circulação aberta dos conteúdos e a democratização do acesso ao conhecimento.</p>
+        <a href="/apoie" class="btn btn-primary">Apoiar com Pix</a>
+      </div>
+
+      <div class="apoie-info">
+        <div class="apoie-info-title">Dados para contribuição</div>
+        <div class="apoie-info-row"><span>Chave Pix CNPJ</span><strong>62.085.700/0001-83</strong></div>
+        <div class="apoie-info-row"><span>Operadora</span><strong>Da Silva e Vasquez Formação e Consultoria LTDA</strong></div>
+        <div class="apoie-info-row"><span>Destinação</span><strong>Circulação aberta Documentário Gondwana, A Bola Conecta, Fichas Gondwana na Copa</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <img src="/gondwana-fc-logo/svg/oficiais/logo-gondwana-fc-fundo-claro.svg" alt="Gondwana FC — Time da Educação" />
+      </div>
+      <nav class="footer-nav" aria-label="Rodapé">
+        <a href="/">Início</a>
+        <a href="/metodologia">Metodologia ABC</a>
+        <a href="/copa-2026/fichas">Fichas Copa 2026</a>
+        <a href="/contato">Contato</a>
+        <a href="/privacidade">Privacidade</a>
+      </nav>
+    </div>
+    <p class="footer-meta">
+      <strong>Gondwana FC — Time da Educação</strong> · Documentário socioeducativo produzido por Da Silva e Vasquez Formação e Consultoria LTDA · Brasil, 2020 – 2021
+    </p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var frame = document.getElementById('assistir-frame');
+  var thumb = document.getElementById('assistir-thumb');
+  if(!frame || !thumb) return;
+  var videoId = thumb.getAttribute('data-video-id');
+  function loadEmbed(){
+    if(frame.querySelector('iframe')) return;
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1';
+    iframe.title = 'Gondwana, A Bola Conecta — Documentário de Mônica Saraiva da Silva';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    frame.appendChild(iframe);
+  }
+  thumb.addEventListener('click', loadEmbed);
+  thumb.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); loadEmbed(); }
+  });
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          thumb.classList.add('is-visible');
+          io.disconnect();
+        }
+      });
+    }, { rootMargin: '200px' });
+    io.observe(frame);
+  }
+})();
+</script>
 </body>
 </html>
