@@ -20,22 +20,22 @@
 body { background: var(--bg); color: var(--fg); font-family: "Inter", sans-serif; line-height: 1.6; padding: 40px 20px; }
 .container { max-width: 900px; margin: 0 auto; }
 h1 { font-family: "Fraunces", serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 16px; line-height: 1.1; }
-h2 { font-family: "Fraunces", serif; font-size: 1.8rem; margin: 48px 0 16px; color: var(--accent); }
-h3 { font-size: 1.2rem; margin: 24px 0 8px; }
+h2 { font-family: "Fraunces", serif; font-size: 1.6rem; margin: 40px 0 16px; color: var(--accent); }
 p { margin-bottom: 16px; color: var(--muted); }
-.lead { font-size: 1.2rem; color: var(--fg); margin-bottom: 32px; }
+.lead { font-size: 1.15rem; color: var(--fg); margin-bottom: 28px; }
 .tag { display: inline-block; padding: 4px 12px; background: rgba(245,158,11,0.15); color: var(--accent); border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 16px; }
 .back-link { display: inline-block; margin-bottom: 24px; color: var(--accent); text-decoration: none; font-size: 14px; }
 .back-link:hover { text-decoration: underline; }
-.email-box { background: linear-gradient(135deg, rgba(245,158,11,0.18), rgba(245,158,11,0.06)); padding: 32px 28px; border-radius: 16px; border-left: 4px solid var(--accent); margin: 24px 0; text-align: center; }
+.email-box { background: linear-gradient(135deg, rgba(245,158,11,0.18), rgba(245,158,11,0.06)); padding: 28px; border-radius: 14px; border-left: 4px solid var(--accent); margin: 24px 0; text-align: center; }
 .email-box .label { color: var(--muted); font-size: 0.95rem; margin-bottom: 8px; }
-.email-box .email { font-family: "Fraunces", serif; font-size: clamp(1.4rem, 4vw, 2rem); color: var(--accent); font-weight: 700; user-select: all; word-break: break-all; }
+.email-box .email { font-family: "Fraunces", serif; font-size: clamp(1.4rem, 4vw, 1.9rem); color: var(--accent); font-weight: 700; user-select: all; word-break: break-all; }
 .email-box .note { font-size: 0.9rem; color: var(--muted); margin-top: 12px; }
 .team { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
 .person-card { background: rgba(255,255,255,0.04); padding: 20px; border-radius: 12px; border-left: 3px solid var(--accent); }
-.person-card h3 { color: var(--accent); margin: 0 0 4px; font-family: "Fraunces", serif; font-size: 1.3rem; }
-.person-card .role { color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; }
-.person-card .focus { color: var(--fg); font-size: 0.95rem; margin: 0; }
+.person-card h3 { color: var(--accent); margin: 0 0 4px; font-family: "Fraunces", serif; font-size: 1.25rem; }
+.person-card p { margin: 0; font-size: 0.95rem; }
+.person-card .role { color: var(--muted); margin-bottom: 8px; font-size: 0.9rem; }
+.person-card .focus { color: var(--fg); }
 form { background: rgba(255,255,255,0.04); padding: 24px; border-radius: 12px; margin: 24px 0; }
 label { display: block; margin-bottom: 4px; color: var(--fg); font-weight: 500; font-size: 0.9rem; }
 input, textarea, select { width: 100%; padding: 10px; margin-bottom: 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: var(--fg); font-family: inherit; font-size: 14px; }
@@ -44,9 +44,7 @@ textarea { min-height: 100px; resize: vertical; }
 button { background: var(--primary); color: var(--fg); padding: 12px 24px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; }
 button:hover { opacity: 0.85; }
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.honest-note { background: rgba(255,255,255,0.04); padding: 20px; border-radius: 12px; margin: 24px 0; font-size: 0.95rem; }
-.honest-note p { margin: 0; color: var(--muted); }
-.honest-note strong { color: var(--fg); }
+.local { color: var(--muted); font-size: 0.95rem; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); }
 @media (max-width: 600px) { .team { grid-template-columns: 1fr; } .row { grid-template-columns: 1fr; } body { padding: 20px 16px; } }
 </style>
 </head>
@@ -55,20 +53,19 @@ button:hover { opacity: 0.85; }
 <a href="/" class="back-link">&larr; Voltar para A Bola Conecta</a>
 <span class="tag">CONTATO</span>
 <h1>Fale com a gente</h1>
-<p class="lead">Somos uma equipe pequena. Monica e Sebastian leem tudo e respondem em até 48h úteis.</p>
+<p class="lead">Monica e Sebastian respondem em até 48h úteis.</p>
 
 <div class="email-box">
-  <p class="label">Email único para tudo</p>
+  <p class="label">Email</p>
   <p class="email">contato.gondwana@gmail.com</p>
-  <p class="note">Resposta em até 48h úteis. Sem filtro automatico, sem fila de espera.</p>
 </div>
 
 <h2>Quem responde</h2>
 <div class="team">
   <div class="person-card">
     <h3>Monica Saraiva da Silva</h3>
-    <p class="role">Diretora &middot; Conteúdo &middot; Comúnicacao</p>
-    <p class="focus">Direção do documentario, gestao editorial, materiais pedagógicos, mídia e redes sociais.</p>
+    <p class="role">Diretora &middot; Conteúdo &middot; Comunicação</p>
+    <p class="focus">Direção do documentario, gestão editorial, materiais pedagógicos, mídia e redes sociais.</p>
   </div>
   <div class="person-card">
     <h3>Sebastian Acevedo Vasquez</h3>
@@ -77,20 +74,7 @@ button:hover { opacity: 0.85; }
   </div>
 </div>
 
-<div class="honest-note">
-<p><strong>Sobre a infraestrutura:</strong> somos dois, com orçamento limitado e sem equipe de apoio. Por issó, <strong>temos um único canal de email</strong> e <strong>um formulário no site</strong>. Toda mensagem chega, mas a resposta pode levar até 48h úteis. Agradecemos a paciencia.</p>
-</div>
-
-<h2>O que escrever no email ou formulario</h2>
-<p>Para acelerar a resposta, inclua:</p>
-<ul style="margin: 8px 0 16px 20px; color: var(--muted);">
-  <li><strong>Quem e você:</strong> escola, marca, pesquisador, imprensa, apoiador, etc.</li>
-  <li><strong>O que precisa:</strong> cine-debaté, oficina, patrocinio, entrevista, ficha técnica, etc.</li>
-  <li><strong>Contexto:</strong> cidade, país, data aproximada, escala.</li>
-  <li><strong>Prazo:</strong> se tem data limite ou urgencia.</li>
-</ul>
-
-<h2>Formulario direto</h2>
+<h2>Formulário</h2>
 <form action="https://www.abolaconecta.com.br/api/leads" method="POST" id="contact-form">
 <input type="hidden" name="source" value="a-bola-conecta" />
 <input type="hidden" name="lead_type" value="contact" />
@@ -111,7 +95,7 @@ button:hover { opacity: 0.85; }
 
 <div class="row">
   <div>
-    <label for="phone">Telefone (opcional)</label>
+    <label for="phone">Telefone</label>
     <input type="tel" id="phone" name="phone" />
   </div>
   <div>
@@ -126,19 +110,19 @@ button:hover { opacity: 0.85; }
     <input type="text" id="city" name="city" />
   </div>
   <div>
-    <label for="country">Pais</label>
+    <label for="country">País</label>
     <input type="text" id="country" name="country" />
   </div>
 </div>
 
 <div>
-  <label for="profile">Você e...</label>
+  <label for="profile">Você é...</label>
   <select id="profile" name="profile">
     <option value="">Selecione</option>
     <option value="educator">Educador(a) / Pesquisador(a)</option>
     <option value="company">Empresa / Marca</option>
     <option value="supporter">Apoiador(a) / Comunidade</option>
-    <option value="press">Imprensa / Midia</option>
+    <option value="press">Imprensa / Mídia</option>
     <option value="other">Outro</option>
   </select>
 </div>
@@ -152,11 +136,7 @@ button:hover { opacity: 0.85; }
 <button type="submit">Enviar mensagem</button>
 </form>
 
-<p style="margin-top: 16px; color: var(--muted); font-size: 0.9rem;">Sua mensagem chega direto na nossa caixa de entrada do Gmail e vira um lead registrado no CRM. Resposta pessoal em até 48h úteis.</p>
-
-<h2>Onde estamos</h2>
-<p>Base operacional em São Paulo, Brasil. Atuacao em rede pela America Latina, com parcerias em Brasil, Chile, Colombia, Argentina e outros países.</p>
-<p><strong>Pessoa juridica:</strong> Associacao Cultural e Desportiva Gondwana (CNPJ 56.225.225/0001-09) &mdash; entidade sem fins lucrativos que sustenta juridicamente o projeto.</p>
+<p class="local">Base operacional em São Paulo, Brasil. Atuação em rede pela América Latina.</p>
 
 </div>
 </body>
