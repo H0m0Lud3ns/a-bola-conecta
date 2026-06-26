@@ -594,8 +594,11 @@ function syncSocialMeta(html, relativePath, canonical) {
 }
 
 function injectNavGuard(html) {
-  if (html.includes('/assets/nav-guard.js')) return html;
-  return html.replace('</head>', `    <script defer src="/assets/nav-guard.js?v=${cacheVersion}"></script>\n  </head>`);
+  if (html.includes('window.__navGuardInstalled')) return html;
+  const guardPath = path.join(sourceDir, 'assets', 'nav-guard.js');
+  if (!existsSync(guardPath)) return html;
+  const guardSource = readFileSync(guardPath, 'utf8');
+  return html.replace('</head>', `    <script>window.__navGuardInstalled=true;${guardSource}</script>\n  </head>`);
 }
 
 await collectTextFiles(distDir);

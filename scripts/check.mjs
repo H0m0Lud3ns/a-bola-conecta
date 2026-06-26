@@ -3,6 +3,7 @@ import path from 'node:path';
 
 const projectRoot = process.cwd();
 const distDir = path.join(projectRoot, 'dist');
+const sourceDir = path.join(projectRoot, 'source');
 const requiredFiles = [
   'index.html',
   'documentario/index.html',
@@ -21,7 +22,7 @@ const requiredFiles = [
   'copa-2026/fichas/story-data.js',
   'copa-2026/fichas/styles.css',
   'copa-2026/baixar/index.html',
-  'copa-2026/camisa-abya-yala/index.html',
+  'camisa-abya-yala/index.html',
   'copa-2026/assets/selecoes-gondwana-consolidado.pdf',
   'gondwana-time-educacao/assets/confianca/revista-cpf-sesc.jpg',
   'gondwana-time-educacao/copa-de-gondwana/fichas-paises/assets/mapa-gondwana-gdcg-ufrj-184ma-5200-full.jpg',
@@ -58,8 +59,8 @@ for (const file of htmlFiles) {
   if (html.includes('id="root"') && !html.includes('index-Bc6DgKrQ-crm-api-leads1.js')) {
     htmlErrors.push(`${file}: bundle de leads atual nao carregado`);
   }
-  if (!['comunidade/index.html', 'apoie/index.html'].includes(file) && !html.includes('/assets/nav-guard.js?v=20260623-social-previews')) {
-    htmlErrors.push(`${file}: nav-guard ausente ou sem versao atual`);
+  if (!['comunidade/index.html', 'apoie/index.html'].includes(file) && !html.includes('window.__navGuardInstalled')) {
+    htmlErrors.push(`${file}: nav-guard inline ausente`);
   }
 }
 
@@ -88,7 +89,7 @@ if (!activeBundle.includes('copa-2026/camisa-abya-yala/')) htmlErrors.push('bund
 if (activeBundle.includes('abolaconecta.com.br/comunidade')) htmlErrors.push('bundle ativo: link absoluto antigo para comunidade');
 if (activeBundle.includes('/a-bola-conecta/')) htmlErrors.push('bundle ativo: link ainda aponta para subpasta /a-bola-conecta/');
 
-const navGuard = readFileSync(path.join(distDir, 'assets/nav-guard.js'), 'utf8');
+const navGuard = readFileSync(path.join(sourceDir, 'assets/nav-guard.js'), 'utf8');
 if (!navGuard.includes("/copa-2026/#contribuir")) htmlErrors.push('nav-guard: destino atual ausente');
 if (!navGuard.includes('MutationObserver')) htmlErrors.push('nav-guard: observer anti-cache ausente');
 
