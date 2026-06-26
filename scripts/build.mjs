@@ -35,6 +35,8 @@ const routeCanonicals = new Map([
   ['copa-2026/fichas/index.html', `${siteDomain}/copa-2026/fichas/`],
   ['copa-2026/baixar/index.html', `${siteDomain}/copa-2026/baixar/`],
   ['copa-2026/camisa-abya-yala/index.html', `${siteDomain}/copa-2026/camisa-abya-yala/`],
+  ['camisa-abya-yala/index.html', `${siteDomain}/camisa-abya-yala/`],
+  ['loja/index.html', `${siteDomain}/loja/`],
   ['copa-2026/ebook-consolidado/index.html', `${siteDomain}/copa-2026/ebook-consolidado/`],
   ['copa-2026/ebook-educadores-v1/index.html', `${siteDomain}/copa-2026/ebook-educadores-v1/`],
 ]);
@@ -129,6 +131,18 @@ const routeSocial = new Map([
     description: 'Vista a campanha Gondwana na Copa e ajude a circular uma leitura educativa da Copa 2026.',
     image: '/assets/social-preview/og-camisa-abya-yala.jpg',
     imageAlt: 'Camisa Abya Yala da campanha Gondwana na Copa',
+  }],
+  ['camisa-abya-yala/index.html', {
+    title: 'Viste o Manto Gondwana FC · Camisa Abya Yala | A Bola Conecta',
+    description: 'Camiseta pedagógica Gondwana FC + LWGA. Manual pedagógico, carta de compromisso simbólica e contraparte visível para abrir la cancha del conocimiento en los territorios.',
+    image: '/assets/social-preview/og-camisa-abya-yala.jpg',
+    imageAlt: 'Camisa Abya Yala - camiseta pedagógica do Time da Educação',
+  }],
+  ['loja/index.html', {
+    title: 'Loja | A Bola Conecta',
+    description: 'Pecas pedagogicas e culturais do Time da Educação: camiseta Abya Yala, guias, materiais e livros.',
+    image: '/assets/social-preview/og-a-bola-conecta.jpg',
+    imageAlt: 'Loja A Bola Conecta',
   }],
   ['copa-2026/sobre-para-ia/index.html', {
     title: 'Resumo para imprensa e IA | Gondwana na Copa',

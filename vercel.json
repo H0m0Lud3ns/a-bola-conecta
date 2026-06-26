@@ -107,6 +107,16 @@
       "source": "/documental/",
       "destination": "/documentario/",
       "permanent": true
+    },
+    {
+      "source": "/copa-2026/camisa-abya-yala",
+      "destination": "/camisa-abya-yala/",
+      "permanent": true
+    },
+    {
+      "source": "/copa-2026/camisa-abya-yala/",
+      "destination": "/camisa-abya-yala/",
+      "permanent": true
     }
   ],
   "rewrites": [
