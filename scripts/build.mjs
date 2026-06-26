@@ -115,11 +115,11 @@ const routeSocial = new Map([
     imageAlt: 'Gondwana na Copa 2026 - campanha educativa',
   }],
   ['copa-2026/fichas/index.html', {
-    title: 'Fichas Gondwana na Copa | A Bola Conecta',
+    title: 'Fichas Gondwana na Copa 2026 - 48 selecoes | A Bola Conecta',
     description: '48 selecoes como portas de entrada para territorio, memoria, cultura popular, migracoes, povos e futebol.',
-    image: '/api/og-ficha?pais=br',
-    imageAlt: 'Fichas educativas Gondwana na Copa',
-    imageType: 'image/png',
+    image: '/assets/social-preview/og-fichas-copa.jpg',
+    imageAlt: 'Fichas educativas Gondwana na Copa 2026 - 48 selecoes',
+    imageType: 'image/jpeg',
   }],
   ['copa-2026/baixar/index.html', {
     title: 'Baixar Guia Gondwana na Copa | A Bola Conecta',
