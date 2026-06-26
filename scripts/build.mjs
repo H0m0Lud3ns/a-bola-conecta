@@ -1,6 +1,7 @@
 import { cp, mkdir, readdir, rm, readFile, writeFile } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
+import vm from 'node:vm';
 
 const projectRoot = process.cwd();
 const sourceDir = path.join(projectRoot, 'source');
@@ -509,8 +510,48 @@ function upsertTag(html, matcher, tag) {
   return html.replace('</head>', `  ${tag}\n</head>`);
 }
 
+// Mapa slug -> codigo ISO do pais para fichas individuais
+// Lido de source/copa-2026/fichas/story-data.js para garantir consistencia
+let fichaCountryMapCache = null;
+function getFichaCountryMap() {
+  if (fichaCountryMapCache) return fichaCountryMapCache;
+  const storyDataPath = path.join(sourceDir, 'copa-2026', 'fichas', 'story-data.js');
+  if (!existsSync(storyDataPath)) return new Map();
+  const source = readFileSync(storyDataPath, 'utf8');
+  const sandbox = {};
+  vm.createContext(sandbox);
+  vm.runInContext(`${source}\n;globalThis.__countries = countries;`, sandbox);
+  const countries = sandbox.__countries || [];
+  const map = new Map();
+  countries.forEach((country, index) => {
+    const num = String(index + 8).padStart(2, '0');
+    const slug = `${num}-${country.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
+    map.set(slug, { code: country.code, name: country.name });
+  });
+  fichaCountryMapCache = map;
+  return map;
+}
+
+function fichaImageFor(relativePath) {
+  const match = relativePath.match(/^copa-2026\/fichas\/([^/]+)\/index\.html$/);
+  if (!match) return null;
+  const slug = match[1];
+  const countryInfo = getFichaCountryMap().get(slug);
+  if (!countryInfo) return null;
+  return {
+    image: `/api/og-ficha/?pais=${countryInfo.code}`,
+    imageAlt: `Ficha educativa ${countryInfo.name} - Copa 2026 - A Bola Conecta`,
+  };
+}
+
 function syncSocialMeta(html, relativePath, canonical) {
+  const fichaMeta = fichaImageFor(relativePath);
   const meta = { ...socialDefaults, ...(routeSocial.get(relativePath) || {}) };
+  // Para fichas individuais, sempre sobrescreve image e imageAlt com o endpoint dinamico
+  if (fichaMeta) {
+    meta.image = fichaMeta.image;
+    meta.imageAlt = fichaMeta.imageAlt;
+  }
   const url = canonical || canonicalFor(relativePath) || `${siteDomain}/`;
   const image = absoluteUrl(meta.image);
   const title = escapeHtml(meta.title);
