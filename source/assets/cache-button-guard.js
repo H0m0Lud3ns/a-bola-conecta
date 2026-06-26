@@ -13,7 +13,7 @@
 
   function normalizeHref(link) {
     var href = link.getAttribute('href') || link.href;
-    if (isNavigationLink(link) || !isLegacyUrl(href)) return href;
+    if (!isLegacyUrl(href)) return href;
     return target;
   }
 
@@ -28,7 +28,7 @@
 
   document.addEventListener('click', function (event) {
     var link = event.target && event.target.closest ? event.target.closest('a[href]') : null;
-    if (!link || isNavigationLink(link) || !isLegacyUrl(link.getAttribute('href') || link.href)) return;
+    if (!link || !isLegacyUrl(link.getAttribute('href') || link.href)) return;
     event.preventDefault();
     window.location.assign(target);
   }, true);
@@ -43,6 +43,20 @@
       });
     });
     observer.observe(document.documentElement, { childList: true, subtree: true });
+    // React re-renderiza após boot; rodar varreduras extras em janelas críticas
+    [400, 800, 1500, 2500, 4000, 6000, 9000, 12000].forEach(function (delay) {
+      setTimeout(function () { rewriteLegacyLinks(document); }, delay);
+    });
+    // Quando o header aparecer, escutar especificamente
+    var checkHeader = setInterval(function () {
+      var h = document.querySelector('header');
+      if (h) {
+        rewriteLegacyLinks(h);
+      } else if (document.readyState === 'complete' && performance.now() > 15000) {
+        clearInterval(checkHeader);
+      }
+    }, 500);
+    setTimeout(function () { clearInterval(checkHeader); }, 20000);
   }
 
   if (document.readyState === 'loading') {

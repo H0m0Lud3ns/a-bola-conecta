@@ -6,7 +6,7 @@
       if (nav.querySelector('a[href*="copa-2026"]')) return;
       var cont = nav.querySelector('a[href*="/contato"]');
       var a = document.createElement('a');
-      a.href = '/a-bola-conecta/copa-2026/';
+      a.href = '/copa-2026/';
       a.textContent = 'Copa 2026';
       a.style.cssText =
         'order:99!important;color:#121611!important;background:#d9ff6f!important;' +

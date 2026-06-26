@@ -221,6 +221,40 @@
     @media (min-width: 760px) { .nav { display:flex; } .menu-toggle { display:none; } .hero-grid { grid-template-columns: minmax(0,1.05fr) minmax(330px,.95fr); } .section-head { grid-template-columns: .86fr 1.14fr; align-items:start; } }
     @media (max-width: 980px) { .cards, .country-grid, .use-grid, .flow-strip, .catalogue-brief, .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .bridge-box, .experience-card, .shirt-callout, .support-panel { grid-template-columns:1fr; } .footer-grid > :first-child { grid-column:1/-1; } }
     @media (max-width: 620px) { .container { width:min(100% - 28px, 1180px); } main { padding-top:72px; } .hero { padding-top:52px; } .hero-actions .btn, .actions .btn { width:100%; } .visual-card { min-height:340px; border-radius:26px; } .visual-logo { top:31%; width:min(72%, 200px); } .visual-text { left:24px; right:24px; bottom:24px; } .cards, .country-grid, .use-grid, .campaign-metrics, .flow-strip, .catalogue-brief, .footer-grid, .guide-form-grid { grid-template-columns:1fr; } .guide-field.full { grid-column:auto; } .guide-form { border-radius:24px; } .footer-grid > :first-child { grid-column:auto; } .mobile-nav.is-open { grid-template-columns:1fr; } .support-btn { padding:0 14px; } .phone-frame { min-height:390px; } .phone-inner { inset:18px; padding:30px 24px; gap:18px; } .phone-inner strong { max-width:8.4ch; font-size:clamp(2.4rem,13vw,3.55rem); line-height:.92; } .phone-inner span { font-size:10px; letter-spacing:.11em; } .experience-panel, .support-copy, .support-proof { padding:22px; } }
+
+    /* === Barra de ação rápida + breadcrumb + voltar ao topo === */
+    .breadcrumb { max-width:1180px; margin:84px auto 0; padding:14px 28px 0; display:flex; align-items:center; gap:10px; font-size:13px; color:var(--muted-foreground); }
+    .breadcrumb a { color:var(--accent); text-decoration:none; font-weight:700; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .breadcrumb-sep { color:hsla(38,30%,94%,.4); }
+    .breadcrumb-back { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border:1px solid hsla(38,30%,94%,.18); border-radius:999px; color:var(--foreground); font-weight:700; font-size:12px; text-decoration:none; margin-right:auto; }
+    .breadcrumb-back:hover { background:hsla(38,30%,94%,.06); }
+
+    .pix-summary { background: radial-gradient(circle at 12% 4%, hsla(45,96%,58%,.13), transparent 23rem), radial-gradient(circle at 88% 92%, hsla(16,54%,40%,.10), transparent 25rem), linear-gradient(135deg, hsl(38 52% 96%), hsl(39 48% 91%)); padding:48px 0; border-top:1px solid hsla(38,30%,94%,.08); }
+    .pix-summary .pix-summary-card { background:#fff; border:2px dashed hsla(45,96%,42%,.5); border-radius:28px; padding:26px; display:grid; gap:18px; }
+    .pix-summary small { display:block; color:hsl(16 54% 34%); font-weight:950; letter-spacing:.12em; text-transform:uppercase; font-size:12px; }
+    .pix-summary-key { display:block; color:hsl(28 22% 14%); font-size:clamp(1.4rem,3.4vw,2.2rem); line-height:1; font-weight:950; letter-spacing:.02em; overflow-wrap:anywhere; }
+    .pix-summary-grid { display:grid; gap:18px; grid-template-columns:1fr; }
+    @media (min-width:760px){ .pix-summary-grid { grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); align-items:center; } }
+    .pix-summary-info h3 { color:hsl(28 22% 12%); font-size:clamp(1.4rem,3vw,1.9rem); margin-bottom:8px; }
+    .pix-summary-info p { color:hsl(28 18% 28%); font-size:.98rem; line-height:1.6; }
+    .pix-summary-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+
+    .sticky-cta { position:fixed; left:0; right:0; bottom:0; z-index:90; background:hsla(28,18%,7%,.94); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-top:1px solid hsla(38,30%,94%,.12); padding:10px 16px; display:flex; align-items:center; gap:8px; justify-content:space-between; transform:translateY(100%); transition:transform .3s ease; box-shadow:0 -10px 40px rgba(0,0,0,.4); }
+    .sticky-cta.is-visible { transform:translateY(0); }
+    .sticky-cta-progress { position:absolute; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--accent),var(--primary)); width:0%; transition:width .1s linear; }
+    .sticky-cta-inner { display:flex; align-items:center; gap:8px; width:100%; justify-content:space-between; }
+    .sticky-cta-pill { font-size:10px; color:var(--accent); font-weight:950; letter-spacing:.16em; text-transform:uppercase; display:none; }
+    @media(min-width:760px){ .sticky-cta-pill { display:inline; } }
+    .sticky-cta-btns { display:flex; gap:8px; flex-wrap:nowrap; overflow-x:auto; -ms-overflow-style:none; scrollbar-width:none; }
+    .sticky-cta-btns::-webkit-scrollbar { display:none; }
+    .sticky-cta .btn { padding:10px 14px !important; font-size:13px !important; margin-top:0 !important; white-space:nowrap; }
+    .sticky-cta .btn-top { background:hsla(38,30%,94%,.08); border:1px solid hsla(38,30%,94%,.18); color:var(--foreground); width:42px; height:42px; padding:0 !important; display:inline-grid; place-items:center; flex:0 0 auto; }
+    .sticky-cta .btn-top:hover { background:hsla(38,30%,94%,.14); }
+    .sticky-cta-spacer { flex:1; }
+    body.has-sticky-cta { padding-bottom:84px; }
+
+    .section-anchor { scroll-margin-top:90px; }
   </style>
   <script type="application/ld+json">
   {
@@ -303,12 +337,18 @@
   </header>
 
   <main>
-    <section class="hero" id="inicio">
+    <nav class="breadcrumb" aria-label="Trilha de navegação">
+      <a class="breadcrumb-back" href="/" aria-label="Voltar para o portal A Bola Conecta">← Portal</a>
+      <a href="/">Início</a>
+      <span class="breadcrumb-sep">/</span>
+      <span aria-current="page">Copa 2026</span>
+    </nav>
+    <section class="hero section-anchor" id="inicio">
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Copa do Mundo 2026</div>
           <h1>Uma Copa para ler o mundo pela bola.</h1>
-          <p class="lead">A Copa vai mostrar 48 seleções. A gente mostra os mundos que entram em campo com elas: territórios, culturas, memórias, línguas, migrações e perguntas para sala de aula, oficina e mediação cultural.</p>
+          <p class="lead">A Copa vai mostrar 48 seleções. A gente mostra os mundos que entram em campo com elas: territórios, culturas, memórias, línguas e migrações. Cada ficha traz perguntas prontas para você usar em sala de aula, oficina ou mediação cultural.</p>
           <div class="campaign-metrics" aria-label="Resumo da experiência educativa">
             <div class="metric"><strong>48</strong><span>seleções</span></div>
             <div class="metric"><strong>55</strong><span>cards</span></div>
@@ -327,7 +367,7 @@
       </div>
     </section>
 
-    <section class="section dark" id="experiencia">
+    <section class="section dark section-anchor" id="experiencia">
       <div class="container">
         <div class="section-head">
           <div><p class="kicker">Como começar</p><h2>Escolha uma ficha e abra uma conversa.</h2></div>
@@ -359,7 +399,31 @@
       </div>
     </section>
 
-    <section class="section paper" id="valor">
+    <section class="pix-summary" id="pix-rapido">
+      <div class="container">
+        <div class="pix-summary-card">
+          <div class="pix-summary-grid">
+            <div class="pix-summary-info">
+              <small>Sustentar a circulação</small>
+              <h3>Contribua com a campanha em 30 segundos.</h3>
+              <p>O guia e as fichas seguem abertos. A contribuição via Pix mantém a pesquisa, a revisão pedagógica, a tecnologia e a devolutiva para escolas, clubes e comunidades acontecendo.</p>
+              <div class="pix-summary-actions">
+                <a class="btn btn-accent" href="#contribuir">Ver detalhes e contribuir</a>
+                <a class="btn btn-ghost" href="#fichas">Explorar as 55 fichas</a>
+              </div>
+            </div>
+            <div>
+              <small style="color:hsl(16 54% 34%);font-weight:950;letter-spacing:.12em;text-transform:uppercase;font-size:12px;display:block;margin-bottom:8px;">Chave Pix CNPJ</small>
+              <span class="pix-summary-key" id="pixKeySummary">62.085.700/0001-83</span>
+              <p class="pix-note" style="color:hsl(28 18% 28%);font-size:13px;line-height:1.5;margin-top:10px;">Da Silva & Vasquez Formação e Consultoria LTDA. Copie a chave, faça o Pix pelo valor que fizer sentido e registre o apoio na seção completa.</p>
+              <div class="actions" style="margin-top:14px;"><button class="btn btn-accent" type="button" id="copyPixSummary">Copiar chave Pix</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paper section-anchor" id="valor">
       <div class="container">
         <div class="section-head">
           <div><p class="kicker">Valor pedagógico</p><h2>Fortalecer a proposta pela aprendizagem.</h2></div>
@@ -373,7 +437,7 @@
       </div>
     </section>
 
-    <section class="section paper fichas-catalogo" id="fichas">
+    <section class="section paper fichas-catalogo section-anchor" id="fichas">
       <div class="container">
         <div class="section-head">
           <div><p class="kicker">Fichas Gondwana na Copa</p><h2>Catálogo vivo das seleções.</h2></div>
@@ -400,7 +464,7 @@
       </div>
     </section>
 
-    <section class="section paper" id="uso">
+    <section class="section paper section-anchor" id="uso">
       <div class="container">
         <div class="section-head">
           <div><p class="kicker">Como usar</p><h2>Da curiosidade para a investigação.</h2></div>
@@ -415,7 +479,7 @@
       </div>
     </section>
 
-    <section class="section dark" id="baixar">
+    <section class="section dark section-anchor" id="baixar">
       <div class="container">
         <div class="section-head">
           <div><p class="kicker">PDF para educadores</p><h2>Receba o guia e leve para seu grupo.</h2></div>
@@ -500,7 +564,7 @@
       </div>
     </section>
 
-    <section class="section support-section" id="contribuir">
+    <section class="section support-section section-anchor" id="contribuir">
       <div class="container">
         <div class="section-head">
           <div><p class="kicker">Por que contribuir?</p><h2>Baixar é livre. Sustentar é coletivo.</h2></div>
@@ -554,7 +618,7 @@
       </div>
     </section>
 
-    <section class="section dark" id="camisa-abya-yala">
+    <section class="section dark section-anchor" id="camisa-abya-yala">
       <div class="container">
         <article class="shirt-callout">
           <div>
@@ -571,7 +635,7 @@
       </div>
     </section>
 
-    <section class="section paper" id="levar-instituicao">
+    <section class="section paper section-anchor" id="levar-instituicao">
       <div class="container">
         <div class="section-head">
           <div><p class="kicker">Para instituições</p><h2>Levar Seleções Gondwana para sua instituição.</h2></div>
@@ -642,6 +706,21 @@
   </script>
   <script src="/assets/forms.js" defer></script>
 
+  <div class="sticky-cta" id="stickyCta" role="region" aria-label="Ações rápidas da Copa 2026">
+    <div class="sticky-cta-progress" id="stickyProgress"></div>
+    <div class="sticky-cta-inner">
+      <span class="sticky-cta-pill">Copa 2026</span>
+      <div class="sticky-cta-btns">
+        <a class="btn btn-accent" href="#contribuir">Contribuir com Pix</a>
+        <a class="btn btn-primary" href="#fichas">Ver fichas</a>
+        <a class="btn btn-ghost" href="#baixar">Baixar guia</a>
+        <a class="btn btn-ghost" href="/camisa-abya-yala/">Camiseta</a>
+        <a class="btn btn-ghost" href="#contribuir">↳ Pix</a>
+      </div>
+      <button class="btn btn-top" id="stickyBtnTop" type="button" aria-label="Voltar ao topo da página">↑</button>
+    </div>
+  </div>
+
   <script>
     const menuToggle = document.querySelector('.menu-toggle');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -676,6 +755,46 @@
       downloadLiberado.hidden = false;
       downloadLiberado.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
+
+    // Copy Pix (versão compacta no topo da página)
+    const copyPixSummary = document.getElementById('copyPixSummary');
+    copyPixSummary?.addEventListener('click', async () => {
+      const key = '62.085.700/0001-83';
+      try {
+        await navigator.clipboard.writeText(key);
+        copyPixSummary.textContent = 'Chave Pix copiada';
+        setTimeout(() => { copyPixSummary.textContent = 'Copiar chave Pix'; }, 1800);
+      } catch (error) {
+        window.prompt('Copie a chave Pix:', key);
+      }
+    });
+
+    // Sticky CTA: aparece após rolar 1 tela, mostra progresso, tem voltar ao topo
+    (function() {
+      const sticky = document.getElementById('stickyCta');
+      const progress = document.getElementById('stickyProgress');
+      const btnTop = document.getElementById('stickyBtnTop');
+      if (!sticky) return;
+      document.body.classList.add('has-sticky-cta');
+      let lastShown = false;
+      function update() {
+        const scrolled = window.scrollY;
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = max > 0 ? Math.min(100, (scrolled / max) * 100) : 0;
+        if (progress) progress.style.width = pct + '%';
+        const shouldShow = scrolled > window.innerHeight * 0.6;
+        if (shouldShow !== lastShown) {
+          sticky.classList.toggle('is-visible', shouldShow);
+          lastShown = shouldShow;
+        }
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+      btnTop?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
   </script>
 </body>
 </html>
