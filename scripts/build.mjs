@@ -488,7 +488,7 @@ function trackReferencedAssets(html) {
 }
 
 function versionLocalAssets(html) {
-  return html.replace(/\/(assets\/(?:index-Bc6DgKrQ-crm-api-leads1\.js|abc-analytics\.js|cache-button-guard\.js|copa-nav-inject\.js))(?:\?v=[^"']*)?/g, `/$1?v=${cacheVersion}`);
+  return html.replace(/\/(assets\/(?:index-Bc6DgKrQ-crm-api-leads1\.js|abc-analytics\.js|nav-guard\.js|copa-nav-inject\.js))(?:\?v=[^"']*)?/g, `/$1?v=${cacheVersion}`);
 }
 
 function escapeHtml(value) {
@@ -593,9 +593,9 @@ function syncSocialMeta(html, relativePath, canonical) {
   return html;
 }
 
-function injectCacheButtonGuard(html) {
-  if (html.includes('/assets/cache-button-guard.js')) return html;
-  return html.replace('</head>', `    <script defer src="/assets/cache-button-guard.js?v=${cacheVersion}"></script>\n  </head>`);
+function injectNavGuard(html) {
+  if (html.includes('/assets/nav-guard.js')) return html;
+  return html.replace('</head>', `    <script defer src="/assets/nav-guard.js?v=${cacheVersion}"></script>\n  </head>`);
 }
 
 await collectTextFiles(distDir);
@@ -630,7 +630,7 @@ for (const relativePath of htmlFiles) {
   }
 
   html = syncSocialMeta(html, relativePath, canonical);
-  html = injectCacheButtonGuard(html);
+  html = injectNavGuard(html);
   html = versionLocalAssets(html);
   trackReferencedAssets(html);
 

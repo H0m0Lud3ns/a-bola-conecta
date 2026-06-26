@@ -30,7 +30,7 @@ const requiredFiles = [
   'gondwana-fc-logo/svg/oficiais/logo-gondwana-fc-fundo-escuro.svg',
   'assets/index--0QhvKt1.css',
   'assets/index-Bc6DgKrQ-crm-api-leads1.js',
-  'assets/cache-button-guard.js',
+  'assets/nav-guard.js',
   'robots.txt',
   'sitemap.xml',
   'llms.txt',
@@ -58,8 +58,8 @@ for (const file of htmlFiles) {
   if (html.includes('id="root"') && !html.includes('index-Bc6DgKrQ-crm-api-leads1.js')) {
     htmlErrors.push(`${file}: bundle de leads atual nao carregado`);
   }
-  if (!['comunidade/index.html', 'apoie/index.html'].includes(file) && !html.includes('/assets/cache-button-guard.js?v=20260623-social-previews')) {
-    htmlErrors.push(`${file}: cache-button-guard ausente ou sem versao atual`);
+  if (!['comunidade/index.html', 'apoie/index.html'].includes(file) && !html.includes('/assets/nav-guard.js?v=20260623-social-previews')) {
+    htmlErrors.push(`${file}: nav-guard ausente ou sem versao atual`);
   }
 }
 
@@ -88,9 +88,9 @@ if (!activeBundle.includes('copa-2026/camisa-abya-yala/')) htmlErrors.push('bund
 if (activeBundle.includes('abolaconecta.com.br/comunidade')) htmlErrors.push('bundle ativo: link absoluto antigo para comunidade');
 if (activeBundle.includes('/a-bola-conecta/')) htmlErrors.push('bundle ativo: link ainda aponta para subpasta /a-bola-conecta/');
 
-const cacheGuard = readFileSync(path.join(distDir, 'assets/cache-button-guard.js'), 'utf8');
-if (!cacheGuard.includes("/copa-2026/#contribuir")) htmlErrors.push('cache-button-guard: destino atual ausente');
-if (!cacheGuard.includes('MutationObserver')) htmlErrors.push('cache-button-guard: observer anti-cache ausente');
+const navGuard = readFileSync(path.join(distDir, 'assets/nav-guard.js'), 'utf8');
+if (!navGuard.includes("/copa-2026/#contribuir")) htmlErrors.push('nav-guard: destino atual ausente');
+if (!navGuard.includes('MutationObserver')) htmlErrors.push('nav-guard: observer anti-cache ausente');
 
 const vercelConfig = readFileSync(path.join(projectRoot, 'vercel.json'), 'utf8');
 for (const requiredSnippet of [
