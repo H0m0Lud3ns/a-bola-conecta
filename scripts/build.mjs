@@ -598,7 +598,8 @@ function injectNavGuard(html) {
   const guardPath = path.join(sourceDir, 'assets', 'nav-guard.js');
   if (!existsSync(guardPath)) return html;
   const guardSource = readFileSync(guardPath, 'utf8');
-  return html.replace('</head>', `    <script>window.__navGuardInstalled=true;${guardSource}</script>\n  </head>`);
+  const buildStamp = `<!-- build:${cacheVersion}-${Date.now()} -->`;
+  return html.replace('</head>', `    ${buildStamp}\n    <script>window.__navGuardInstalled=true;${guardSource}</script>\n  </head>`);
 }
 
 await collectTextFiles(distDir);
