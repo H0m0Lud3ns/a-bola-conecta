@@ -75,6 +75,29 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
 .transparency li strong { color: var(--fg); font-weight: 600; }
 
 .negociar { background: linear-gradient(135deg, rgba(245,158,11,0.08), rgba(245,158,11,0.02)); padding: 24px; border-radius: 14px; border: 1px solid rgba(245,158,11,0.25); margin: 24px 0; }
+.circulacao-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0 32px; }
+.circulacao-card { background: rgba(246,237,215,0.03); border: 1px solid var(--line); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 10px; position: relative; }
+.circulacao-card .cta { align-self: flex-start; margin-top: auto; }
+.circulacao-card.destaque { background: linear-gradient(135deg, rgba(245,158,11,0.12), rgba(245,158,11,0.03)); border-color: rgba(245,158,11,0.5); position: relative; transform: scale(1.03); }
+.circulacao-card.destaque::before { content: ""; position: absolute; top: -1px; left: -1px; right: -1px; height: 4px; background: linear-gradient(90deg, var(--accent), var(--primary), var(--accent)); border-radius: 14px 14px 0 0; }
+.circulacao-badge { position: absolute; top: -12px; left: 24px; background: var(--accent); color: var(--bg); font-size: 10px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; padding: 5px 10px; border-radius: 6px; }
+.circulacao-nivel { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 800; }
+.circulacao-titulo { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; color: var(--fg); }
+.circulacao-sub { font-size: 0.85rem; color: var(--muted); margin-top: -4px; }
+.circulacao-lista { list-style: none; padding: 0; margin: 8px 0; }
+.circulacao-lista li { padding: 6px 0 6px 18px; border-top: 1px solid var(--line); font-size: 0.92rem; color: var(--fg); position: relative; }
+.circulacao-lista li:first-child { border-top: none; }
+.circulacao-lista li::before { content: ""; position: absolute; left: 0; top: 14px; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; opacity: 0.7; }
+.circulacao-como { font-size: 0.88rem; color: var(--muted); margin-top: auto; padding-top: 8px; }
+.circulacao-card .cta { margin-top: 8px; align-self: flex-start; }
+.pix-circulacao { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; background: rgba(246,237,215,0.04); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin: 24px 0; }
+.pix-circulacao-texto h3 { font-family: 'Fraunces', serif; color: var(--accent); margin-bottom: 8px; font-size: 1.25rem; }
+.pix-circulacao-texto p { font-size: 0.92rem; color: var(--muted); margin-bottom: 12px; }
+.pix-circulacao-chave { background: rgba(0,0,0,0.25); border-radius: 10px; padding: 18px; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+.pix-label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 6px; }
+.pix-valor { font-family: monospace; color: var(--accent); font-size: 1rem; font-weight: 600; word-break: break-all; user-select: all; }
+.pix-info { font-size: 0.78rem; color: var(--muted); margin-top: 8px; }
+@media (max-width: 720px) { .pix-circulacao { grid-template-columns: 1fr; } .circulacao-grid { grid-template-columns: 1fr; } }
 .negociar h3 { font-family: 'Fraunces', serif; color: var(--accent); margin-bottom: 8px; font-size: 1.2rem; }
 .negociar p { font-size: 0.96rem; color: var(--fg); }
 .negociar p + p { margin-top: 8px; }
@@ -248,6 +271,67 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
     </div>
   </article>
 
+</div>
+
+<h2 id="circulacao">Modelo aberto de contribuições <span class="count">3 níveis &middot; 1 ciclo</span></h2>
+
+<p class="lead" style="margin-bottom: 32px;">O Time da Educação não cobra pelo acesso ao material pedagógico. As fichas Copa 2026, o documentário e a Metodologia circulam em escolas públicas, universidades e projetos sociais sem custo de entrada. Quem contribui mantém o ciclo vivo: camiseta financia material aberto, material aberto financia próxima camiseta, conversa 1x1 financia a estrutura pedagógica que orienta tudo.</p>
+
+<div class="circulacao-grid">
+
+  <div class="circulacao-card">
+    <div class="circulacao-nivel">Nível 1</div>
+    <h3 class="circulacao-titulo">Material aberto</h3>
+    <p class="circulacao-sub">Acesso livre &middot; contribuição sugerida</p>
+    <ul class="circulacao-lista">
+      <li>Fichas Copa 2026 (55 seleções)</li>
+      <li>Cards especiais (Abya Yala, A Bola Conecta, Mapa)</li>
+      <li>Guia do educador (versão digital)</li>
+    </ul>
+    <p class="circulacao-como">Você baixa sem pagar. Quem pode, contribui via Pix. Quem não pode, também recebe. Todo material sai com licença de uso pedagógico não comercial.</p>
+    <a href="/copa-2026/baixar/" class="cta outline">Baixar materiais</a>
+  </div>
+
+  <div class="circulacao-card">
+    <div class="circulacao-nivel">Nível 2</div>
+    <h3 class="circulacao-titulo">Camiseta pedagógica</h3>
+    <p class="circulacao-sub">Compra direta &middot; R$ 149 + frete</p>
+    <ul class="circulacao-lista">
+      <li>Camisa oficial com símbolos explicados</li>
+      <li>Manual pedagógico incluído</li>
+      <li>Entrada na comunidade do Time</li>
+    </ul>
+    <p class="circulacao-como">Cada camiseta financia a impressão e distribuição de materiais abertos para escolas parceiras. Quem veste também abre conversa: o manual que vem junto transforma o torcedor em educador informal.</p>
+    <a href="#pedido-camisa" class="cta outline">Fazer pedido</a>
+  </div>
+
+  <div class="circulacao-card destaque">
+    <div class="circulacao-badge">DESTAQUE &middot; nível máximo</div>
+    <div class="circulacao-nivel">Nível 3</div>
+    <h3 class="circulacao-titulo">Conversa 1x1</h3>
+    <p class="circulacao-sub">Sob medida &middot; investir em conversa, não em preço</p>
+    <ul class="circulacao-lista">
+      <li>Licenciamento do documentário</li>
+      <li>Implementação da Metodologia ABC</li>
+      <li>Formação docente e team building</li>
+    </ul>
+    <p class="circulacao-como">Escolas, festivais e empresas conversam 20–30 min com a equipe pedagógica. Cada formato vira proposta sob medida. O investimento volta para o Nível 1: financia a impressão das próximas fichas e mantém a circulação aberta. <a href="#modelo" style="color: var(--accent);">Ver modelo detalhado</a>.</p>
+    <a href="/contato/?assunto=circulacao" class="cta">Iniciar conversa</a>
+  </div>
+
+</div>
+
+<div class="pix-circulacao">
+  <div class="pix-circulacao-texto">
+    <h3>Contribuição via Pix &middot; mantém o ciclo</h3>
+    <p>Toda contribuição via Pix é registrada formalmente e vira recibo. Os recursos são divididos entre Educação (60%), Circulação cultural (25%) e Operação (15%). Relatório de prestação de contas publicado anualmente.</p>
+    <a href="/apoie/" class="cta">Ver detalhes completos da prestação de contas</a>
+  </div>
+  <div class="pix-circulacao-chave">
+    <p class="pix-label">Chave Pix (e-mail)</p>
+    <p class="pix-valor" onclick="navigator.clipboard.writeText('contato.gondwana@gmail.com'); this.style.color='var(--verde)'; setTimeout(()=>this.style.color='var(--accent)', 1500);" title="Clique para copiar" style="cursor: pointer;">contato.gondwana@gmail.com</p>
+    <p class="pix-info">QR Code disponível mediante solicitação</p>
+  </div>
 </div>
 
 <h2 id="modelo">Por que negociamos 1x1</h2>
