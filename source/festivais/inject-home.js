@@ -62,6 +62,10 @@
     }
   ];
 
+  var injected = false;
+  var observer = null;
+  var backupInterval = null;
+
   function buildSnip() {
     var section = document.createElement('section');
     section.className = 'home-festivais-strip';
@@ -76,7 +80,7 @@
         '       href="/a-bola-conecta/festivais/#' + f.id + '"',
         '       data-idx="' + idx + '"',
         '       title="' + f.nome + ' · ' + f.meta + '">',
-        '      <img src="' + f.logo + '" alt="' + f.nome + ' - ' + f.meta + '" loading="lazy" draggable="false" />',
+        '      <img src="' + f.logo + '" alt="' + f.nome + ' - ' + f.meta + '" loading="lazy" draggable="false" onerror="this.closest(\'.home-festivais-card\').style.display=\'none\'" />',
         '    </a>'
       ].join('\n');
     }).join('\n');
@@ -302,50 +306,86 @@
     document.head.appendChild(style);
   }
 
-  function tryIntegrate() {
-    var root = document.getElementById('root');
-    if (!root) return false;
-
-    // Estrategia: insertar ANTES de la seccion que contiene
-    // "Manifesto Gondwana". En el bundle actual, ese texto
-    // vive en un eyebrow (no en h2), asi que buscamos en
-    // cualquier nodo hoja con la palabra 'manifesto'.
-    var manifestoSection = null;
-    var candidates = root.querySelectorAll('main *');
-    for (var i = 0; i < candidates.length; i++) {
-      var el = candidates[i];
-      // Solo elementos con texto directo corto (eyebrow/label)
+  function findManifestoSection(root) {
+    // Busca cualquier nodo hoja con la palabra "manifesto".
+    // En el bundle actual vive en un eyebrow DIV dentro del <section>
+    // del Manifiesto, no en h2/h3.
+    var all = root.querySelectorAll('*');
+    for (var i = 0; i < all.length; i++) {
+      var el = all[i];
       if (el.children.length > 0) continue;
       var txt = (el.textContent || '').toLowerCase().trim();
       if (txt.length === 0 || txt.length > 80) continue;
       if (txt.indexOf('manifesto') !== -1) {
-        manifestoSection = el.closest('section') || el.parentElement;
-        break;
+        var section = el.closest('section');
+        if (section) return section;
+        // Si no hay <section>, subimos al padre directo
+        return el.parentElement;
       }
     }
+    return null;
+  }
 
-    // Fallback: buscar en h2/h3 por si en otra version
-    // el texto vive ahi
-    if (!manifestoSection) {
-      var headings = root.querySelectorAll('h2, h3');
-      for (var j = 0; j < headings.length; j++) {
-        var h = headings[j];
-        var htxt = (h.textContent || '').toLowerCase();
-        if (htxt.indexOf('manifesto') !== -1) {
-          manifestoSection = h.closest('section') || h.parentElement;
-          break;
-        }
-      }
-    }
+  function tryInject() {
+    if (injected) return true;
+    var root = document.getElementById('root');
+    if (!root || root.children.length === 0) return false;
 
-    if (manifestoSection && manifestoSection.parentNode) {
-      var snip = buildSnip();
-      // Insertar ANTES del Manifiesto, no despues
-      manifestoSection.parentNode.insertBefore(snip, manifestoSection);
+    // Si ya existe nuestro strip, no inyectar de nuevo
+    if (root.querySelector('.home-festivais-strip')) {
+      injected = true;
       return true;
     }
 
-    return false;
+    var manifestoSection = findManifestoSection(root);
+    if (!manifestoSection || !manifestoSection.parentNode) return false;
+
+    var snip = buildSnip();
+    // Insertar ANTES del Manifiesto
+    manifestoSection.parentNode.insertBefore(snip, manifestoSection);
+    injected = true;
+    wireInteractions(snip);
+
+    // Cleanup observer y backup interval
+    if (observer) {
+      observer.disconnect();
+      observer = null;
+    }
+    if (backupInterval) {
+      clearInterval(backupInterval);
+      backupInterval = null;
+    }
+    return true;
+  }
+
+  function watchAndInject() {
+    // Intento inmediato por si React ya renderizó
+    if (tryInject()) return;
+
+    var root = document.getElementById('root');
+    if (!root) return;
+
+    // MutationObserver: detecta cuando React añade el Manifiesto
+    observer = new MutationObserver(function() {
+      tryInject();
+    });
+    observer.observe(root, { childList: true, subtree: true });
+
+    // Backup: intentar cada 500ms hasta 20 intentos (10s)
+    var attempts = 0;
+    backupInterval = setInterval(function() {
+      attempts++;
+      if (tryInject() || attempts > 20) {
+        if (backupInterval) {
+          clearInterval(backupInterval);
+          backupInterval = null;
+        }
+        if (observer) {
+          observer.disconnect();
+          observer = null;
+        }
+      }
+    }, 500);
   }
 
   function wireInteractions(snip) {
@@ -443,53 +483,14 @@
     }
   }
 
-  function fallbackInject() {
-    var root = document.getElementById('root');
-    if (!root || root.children.length === 0) {
-      injectCSS();
-      var snip = buildSnip();
-      document.body.appendChild(snip);
-      wireInteractions(snip);
-    }
-  }
-
   function init() {
     injectCSS();
-
-    if (tryIntegrate()) {
-      var snip = document.querySelector('.home-festivais-strip');
-      if (snip) wireInteractions(snip);
-      return;
-    }
-
-    fallbackInject();
+    watchAndInject();
   }
 
-  // Esperar a React renderizar antes de buscar el Manifiesto
-  function ready(fn) {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', fn);
-    } else {
-      setTimeout(fn, 0);
-    }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
-
-  // Tentar varias veces por si React renderiza tarde
-  ready(function() {
-    var attempts = 0;
-    function attempt() {
-      attempts++;
-      if (tryIntegrate()) {
-        var snip = document.querySelector('.home-festivais-strip');
-        if (snip) wireInteractions(snip);
-        return;
-      }
-      if (attempts < 8) {
-        setTimeout(attempt, 600);
-      } else {
-        fallbackInject();
-      }
-    }
-    attempt();
-  });
 })();
