@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lojá Gondwana FC | Camisa do Time da Educação</title>
+<meta name="description" content="Camisa oficial Gondwana FC - Time da Educação. Azul royal, gola vermelha, número 12. Apoia a Metodologia ABC e o documentario A Bola Conecta." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Lojá Gondwana FC | Camisa do Time da Educação" />
+<meta property="og:description" content="Camisa oficial Gondwana FC. Apoia a Metodologia ABC." />
+<meta property="og:url" content="https://www.abolaconecta.com.br/loja" />
+<meta property="og:image" content="https://www.abolaconecta.com.br/assets/camisa-abya-yala.jpg" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:type" content="product" />
+<link rel="canonical" href="https://www.abolaconecta.com.br/loja" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root { --bg: hsl(28 18% 7%); --fg: hsl(38 30% 94%); --muted: hsl(38 18% 70%); --primary: hsl(14 72% 52%); --accent: hsl(45 96% 58%); --azul: hsl(220 78% 38%); --vermelho: hsl(0 72% 45%); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif; line-height: 1.6; padding: 40px 20px; }
+.container { max-width: 1100px; margin: 0 auto; }
+.back-link { display: inline-block; margin-bottom: 24px; color: var(--accent); text-decoration: none; font-size: 14px; }
+.back-link:hover { text-decoration: underline; }
+.tag { display: inline-block; padding: 4px 12px; background: rgba(245,158,11,0.15); color: var(--accent); border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 16px; }
+
+.hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; margin-bottom: 60px; }
+@media (max-width: 760px) { .hero { grid-template-columns: 1fr; gap: 32px; } }
+.hero-image { width: 100%; border-radius: 18px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); aspect-ratio: 16/10; object-fit: cover; background: linear-gradient(135deg, var(--azul), var(--vermelho)); }
+
+h1 { font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 900; margin-bottom: 16px; line-height: 1.05; }
+.hero h1 span { color: var(--accent); }
+.lead { font-size: 1.15rem; color: var(--muted); margin-bottom: 24px; }
+
+.price-box { background: linear-gradient(135deg, rgba(245,158,11,0.12), rgba(245,158,11,0.04)); padding: 24px; border-radius: 14px; border: 1px solid rgba(245,158,11,0.3); margin: 24px 0; }
+.price { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 900; color: var(--accent); line-height: 1; }
+.price-detail { color: var(--muted); font-size: 0.95rem; margin-top: 8px; }
+.sizes { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+.size { padding: 10px 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.2s; }
+.size:hover, .size.selected { background: var(--primary); border-color: var(--primary); }
+
+.cta { display: inline-block; padding: 14px 32px; background: var(--primary); color: var(--fg); text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 1.05rem; margin-top: 12px; transition: opacity 0.2s; }
+.cta:hover { opacity: 0.85; }
+.cta.outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+
+h2 { font-family: 'Fraunces', serif; font-size: 1.8rem; margin: 60px 0 20px; color: var(--accent); }
+.spec { background: rgba(255,255,255,0.04); padding: 20px; border-radius: 12px; margin: 16px 0; }
+.spec h3 { color: var(--accent); margin-bottom: 8px; font-size: 1.05rem; }
+.spec ul { list-style: none; padding: 0; }
+.spec li { padding: 6px 0; color: var(--muted); border-bottom: 1px solid rgba(255,255,255,0.05); }
+.spec li:last-child { border-bottom: none; }
+.spec li strong { color: var(--fg); }
+
+.how-it-works { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 24px 0; }
+.step { background: rgba(255,255,255,0.04); padding: 20px; border-radius: 12px; }
+.step .num { font-family: 'Fraunces', serif; font-size: 2.5rem; color: var(--accent); font-weight: 900; line-height: 1; margin-bottom: 8px; }
+.step h4 { color: var(--fg); margin-bottom: 6px; }
+.step p { font-size: 0.9rem; color: var(--muted); margin: 0; }
+
+form { background: rgba(255,255,255,0.04); padding: 24px; border-radius: 12px; margin: 24px 0; }
+label { display: block; margin-bottom: 4px; color: var(--fg); font-weight: 500; font-size: 0.9rem; }
+input, select, textarea { width: 100%; padding: 10px; margin-bottom: 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: var(--fg); font-family: inherit; font-size: 14px; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
+button { background: var(--primary); color: var(--fg); padding: 12px 24px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 14px; }
+button:hover { opacity: 0.85; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 600px) { .row { grid-template-columns: 1fr; } body { padding: 20px 16px; } }
+
+.transparency { background: rgba(245,158,11,0.06); padding: 16px 20px; border-radius: 10px; border-left: 3px solid var(--accent); margin: 24px 0; }
+.transparency p { margin: 0; color: var(--fg); font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="/" class="back-link">&larr; Voltar para A Bola Conecta</a>
+<span class="tag">LOJA GONDWANA FC &middot; TIME DA EDUCACAO</span>
+
+<div class="hero">
+  <img src="/assets/camisa-abya-yala.jpg" alt="Camisa oficial Gondwana FC - azul royal com gola vermelha, número 12 nas costas" class="hero-image" />
+  <div>
+    <h1>Camisa oficial <span>Gondwana FC</span></h1>
+    <p class="lead">A camisa do Time da Educação. Cada unidade adquirida apoia diretamente a circulação da Metodologia ABC em escolas públicas via Lei 10.639.</p>
+
+    <div class="price-box">
+      <div class="price">R$ 149</div>
+      <div class="price-detail">por unidade &middot; frete calculado no formulário de pedido</div>
+      <div class="sizes" id="size-selector" aria-label="Selecione o tamanho">
+        <div class="size" data-size="P">P</div>
+        <div class="size" data-size="M">M</div>
+        <div class="size" data-size="G">G</div>
+        <div class="size" data-size="GG">GG</div>
+        <div class="size" data-size="XGG">XGG</div>
+      </div>
+      <a href="#pedido" class="cta">Fazer pedido</a>
+      <a href="#espec" class="cta outline" style="margin-left: 8px;">Ver especificações</a>
+    </div>
+  </div>
+</div>
+
+<h2>O que você esta levando</h2>
+<div class="how-it-works">
+  <div class="step">
+    <div class="num">1</div>
+    <h4>Camisa oficial</h4>
+    <p>Azul royal, gola e punhos vermelhos, mapa da America do Sul invertido no peito, escudo redondo, número 12 nas costas em padrao Wiphala.</p>
+  </div>
+  <div class="step">
+    <div class="num">2</div>
+    <h4>Material educativo</h4>
+    <p>Acessó as fichas pedagógicas Copa 2026 (54 selecoes) e a Metodologia ABC.</p>
+  </div>
+  <div class="step">
+    <div class="num">3</div>
+    <h4>Impacto real</h4>
+    <p>Parte do valor vai para a circulação da Metodologia ABC em escolas públicas parceiras.</p>
+  </div>
+  <div class="step">
+    <div class="num">4</div>
+    <h4>Comunidade</h4>
+    <p>Entrada no Time da Educação, mural de apoiadores e acessó a conteúdo exclusivo.</p>
+  </div>
+</div>
+
+<h2 id="espec">Especificações da camisa</h2>
+
+<div class="spec">
+<h3>Materiais e acabamento</h3>
+<ul>
+<li><strong>Tecido:</strong> Dry-fit poliester 100%</li>
+<li><strong>Gramatura:</strong> 150g/m2 (leve, fresca, indicada para clima tropical)</li>
+<li><strong>Modelagem:</strong> Regular fit (sem aperto, sem folga excessiva)</li>
+<li><strong>Gola:</strong> Redonda com ribana vermelha</li>
+<li><strong>Punhos:</strong> Ribana vermelha</li>
+<li><strong>Cor base:</strong> Azul royal (#1E3A8A aproximado)</li>
+</ul>
+</div>
+
+<div class="spec">
+<h3>Grafica</h3>
+<ul>
+<li><strong>Frente:</strong> Mapa da America do Sul invertido em vermelho</li>
+<li><strong>Peito esquerdo:</strong> Escudo redondo simplificado Gondwana FC</li>
+<li><strong>Costas:</strong> Número 12 grande em padrao Wiphala xadrez multicolorido</li>
+<li><strong>Tipo de estampa:</strong> Sublimacao total (não desbota com lavagens)</li>
+</ul>
+</div>
+
+<div class="spec">
+<h3>Tamanhos (medidas em cm)</h3>
+<ul>
+<li><strong>P:</strong> largura 48 &middot; altura 68</li>
+<li><strong>M:</strong> largura 52 &middot; altura 71</li>
+<li><strong>G:</strong> largura 56 &middot; altura 74</li>
+<li><strong>GG:</strong> largura 60 &middot; altura 77</li>
+<li><strong>XGG:</strong> largura 64 &middot; altura 80</li>
+</ul>
+<p style="font-size: 0.85rem; color: var(--muted); margin-top: 12px;">* Medidas aproximadas. Em casó de duvida, prefira o tamanho maior (modelagem regular).</p>
+</div>
+
+<div class="transparency">
+<p><strong>Transparência:</strong> A camisa e um produto da <strong>Agencia Gondwana FC - Gondwana Formação e Consultoria</strong> (operadora comercial do Time da Educação), mesma entidade por tras do documentario e da campanha da Gondwana na Copa 2026. Parte do valor de cada unidade e reinvestida na circulação pedagógica da Metodologia ABC em escolas e comunidades. Os demais cobrem custo de produção, logística e operação.</p>
+</div>
+
+<h2 id="pedido">Como comprar</h2>
+
+<p>O processó funciona em 4 etapas simples:</p>
+<div class="how-it-works">
+  <div class="step">
+    <div class="num">1</div>
+    <h4>Preencha o formulario</h4>
+    <p>Abaixo, com tamanho, quantidade e endereco de entrega.</p>
+  </div>
+  <div class="step">
+    <div class="num">2</div>
+    <h4>Pagamento via Pix</h4>
+    <p>Recebemos os dados e enviamos o Pix com o valor total (camisa + frete).</p>
+  </div>
+  <div class="step">
+    <div class="num">3</div>
+    <h4>Produção</h4>
+    <p>5 a 10 dias úteis para produzir + embalar.</p>
+  </div>
+  <div class="step">
+    <div class="num">4</div>
+    <h4>Envio</h4>
+    <p>PAC ou SEDEX a sua escolha. Código de rastreio enviado por email.</p>
+  </div>
+</div>
+
+<form action="https://www.abolaconecta.com.br/api/leads" method="POST" id="pedido-form">
+<input type="hidden" name="source" value="a-bola-conecta" />
+<input type="hidden" name="lead_type" value="support_pix" />
+<input type="hidden" name="form_id" value="loja-pedido-camisa" />
+<input type="hidden" name="campaign" value="a-bola-conecta-loja" />
+<input type="hidden" name="page" value="https://www.abolaconecta.com.br/loja" />
+<input type="hidden" name="interest" value="Pedido de camisa Gondwana FC - Time da Educação" />
+<input type="hidden" name="stage" value="novo" />
+
+<div class="row">
+  <div>
+    <label for="contact_name">Nome completo *</label>
+    <input type="text" id="contact_name" name="contact_name" required />
+  </div>
+  <div>
+    <label for="email">Email *</label>
+    <input type="email" id="email" name="email" required />
+  </div>
+</div>
+
+<div class="row">
+  <div>
+    <label for="phone">WhatsApp / Telefone *</label>
+    <input type="tel" id="phone" name="phone" required placeholder="(11) 99999-9999" />
+  </div>
+  <div>
+    <label for="cpf">CPF (para nota fiscal)</label>
+    <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" />
+  </div>
+</div>
+
+<div class="row">
+  <div>
+    <label for="shirt_size">Tamanho *</label>
+    <select id="shirt_size" name="shirt_size" required>
+      <option value="">Selecione</option>
+      <option value="P">P</option>
+      <option value="M">M</option>
+      <option value="G">G</option>
+      <option value="GG">GG</option>
+      <option value="XGG">XGG</option>
+    </select>
+  </div>
+  <div>
+    <label for="quantity">Quantidade *</label>
+    <select id="quantity" name="quantity" required>
+      <option value="1">1 camisa</option>
+      <option value="2">2 camisas</option>
+      <option value="3">3 camisas</option>
+      <option value="4">4 camisas</option>
+      <option value="5">5 camisas</option>
+      <option value="6+">6 ou mais</option>
+    </select>
+  </div>
+</div>
+
+<h3 style="margin-top: 24px; color: var(--accent);">Endereco de entrega</h3>
+
+<div>
+  <label for="cep">CEP *</label>
+  <input type="text" id="cep" name="cep" required placeholder="00000-000" />
+</div>
+
+<div class="row">
+  <div>
+    <label for="street">Rua e número *</label>
+    <input type="text" id="street" name="street" required />
+  </div>
+  <div>
+    <label for="complement">Complemento</label>
+    <input type="text" id="complement" name="complement" />
+  </div>
+</div>
+
+<div class="row">
+  <div>
+    <label for="city">Cidade *</label>
+    <input type="text" id="city" name="city" required />
+  </div>
+  <div>
+    <label for="state">Estado *</label>
+    <input type="text" id="state" name="state" required maxlength="2" />
+  </div>
+</div>
+
+<div>
+  <label for="observations">Observações (ponto de referencia, tipo de frete preferido)</label>
+  <textarea id="observations" name="observations" placeholder="Ex: Predio azul, porteiro 24h. Prefiro SEDEX."></textarea>
+</div>
+
+<input type="hidden" name="consent" value="true" />
+<button type="submit">Enviar pedido</button>
+</form>
+
+<p style="margin-top: 16px; color: var(--muted); font-size: 0.9rem;">Após o envio, você receberá um email com o valor total (camisa + frete) e os dados para pagamento via Pix. Produção só inicia após confirmacao do pagamento.</p>
+
+<h2>Politica de troca e devolucao</h2>
+<p>Trocas por tamanho são gratuitas em até 30 dias após o recebimento, desde que a camisa não tenha sido usada. Devolucoes com reembolsó integral em até 7 dias, conforme Código de Defesa do Consumidor.</p>
+<p>Para acionar troca ou devolucao, envie email para <code style="background:rgba(255,255,255,0.1); padding:2px 6px; border-radius:4px;">contato.gondwana@gmail.com</code> com número do pedido.</p>
+
+<h2>Outros produtos em breve</h2>
+<p>A lojá Gondwana FC vai crescer com o tempo. Proximos lancamentos:</p>
+<ul style="margin: 8px 0 16px 20px; color: var(--muted);">
+<li>Camiseta feminina (mesma arte, modelagem diferenciada)</li>
+<li>Camiseta infantil (numeracao 4 a 14 anos)</li>
+<li>Caneca com o mapa da America do Sul</li>
+<li>Livro sobre a Metodologia ABC (quando lancado)</li>
+<li>Adesivos e chaveiros</li>
+</ul>
+
+<p style="margin-top: 32px;">Duvidas? <a href="/contato" style="color: var(--accent);">Fale com a equipe</a>.</p>
+
+</div>
+
+<script>
+// Seletor visual de tamanho
+document.querySelectorAll('#size-selector .size').forEach(el => {
+  el.addEventListener('click', function() {
+    document.querySelectorAll('#size-selector .size').forEach(s => s.classList.remove('selected'));
+    this.classList.add('selected');
+    const size = this.getAttribute('data-size');
+    const select = document.getElementById('shirt_size');
+    if (select) select.value = size;
+  });
+});
+</script>
+</body>
+</html>
