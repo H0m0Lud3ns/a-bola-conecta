@@ -356,9 +356,11 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
     <a href="/apoie/" class="cta">Ver detalhes da prestação de contas</a>
   </div>
   <div class="pix-circulacao-chave">
-    <p class="pix-label">Chave Pix (e-mail)</p>
-    <p class="pix-valor" onclick="navigator.clipboard.writeText('contato.gondwana@gmail.com'); this.style.color='var(--verde)'; setTimeout(()=>this.style.color='var(--accent)', 1500);" title="Clique para copiar" style="cursor: pointer;">contato.gondwana@gmail.com</p>
-    <p class="pix-info">QR Code disponível mediante solicitação</p>
+    <p class="pix-label">Chave Pix (CNPJ)</p>
+    <img src="/loja/assets/pix-qrcode.png" alt="QR Code Pix para CNPJ 62.085.700/0001-83" style="width: 180px; height: 180px; margin: 8px auto; display: block; border-radius: 8px;" />
+    <p class="pix-valor" onclick="navigator.clipboard.writeText('62.085.700/0001-83'); this.style.color='var(--verde)'; setTimeout(()=>this.style.color='var(--accent)', 1500);" title="Clique para copiar" style="cursor: pointer;">62.085.700/0001-83</p>
+    <p style="font-size: 0.78rem; color: var(--muted); margin-top: 4px; text-align: center;">da Silva e Vásquez Formação e Consultoria</p>
+    <p class="pix-info">Abra o app do seu banco → Pix → "Pagar com QR Code" → aponte para o código acima. Ou copie o CNPJ e cole como chave Pix.</p>
   </div>
 </div>
 
