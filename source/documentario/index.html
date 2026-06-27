@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Documentario A Bola Conecta | 23 minutos de Brasil</title>
-<meta name="description" content="O documentário que conecta futebol, ancestralidade africana e cultura afro-brasileira. Direção: Monica Saraiva da Silva." />
+<title>Documentário A Bola Conecta | 23 minutos de Brasil</title>
+<meta name="description" content="O documentário que conecta futebol, ancestralidade africana e cultura afro-brasileira. Direção: Mônica Saraiva da Silva." />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Documentario A Bola Conecta | 23 minutos de Brasil" />
+<meta property="og:title" content="Documentário A Bola Conecta | 23 minutos de Brasil" />
 <meta property="og:description" content="O documentário que conecta futebol, ancestralidade africana e cultura afro-brasileira." />
-<meta property="og:url" content="https://www.abolaconecta.com.br/documentário" />
-<meta property="og:image" content="https://www.abolaconecta.com.br/gondwana-time-educação/copa-de-gondwana/fichas-países/assets/cards-prontos/01-seleções-gondwana.jpg" />
-<link rel="canonical" href="https://www.abolaconecta.com.br/documentário" />
+<meta property="og:url" content="https://www.abolaconecta.com.br/documentario" />
+<meta property="og:image" content="https://www.abolaconecta.com.br/gondwana-time-educacao/copa-de-gondwana/fichas-paises/assets/cards-prontos/01-selecoes-gondwana.jpg" />
+<link rel="canonical" href="https://www.abolaconecta.com.br/documentario" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -34,19 +34,96 @@ p { margin-bottom: 16px; color: var(--muted); }
 .cta:hover { opacity: 0.85; }
 .cta.outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
 .synopsis { background: rgba(255,255,255,0.04); padding: 24px; border-radius: 12px; border-left: 4px solid var(--accent); margin: 24px 0; }
-@media (max-width: 600px) { body { padding: 20px 16px; } }
+
+/* Galeria de festivais */
+.festivais-section { margin: 32px 0 48px; }
+.festivais-section > p { margin-bottom: 24px; }
+.festivais-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+.festivais-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid rgba(245,158,11,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.festivais-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  border-color: var(--accent);
+}
+.festivais-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 10px;
+}
+.festivais-card .festival-nome {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--fg);
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+.festivais-card .festival-meta {
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.3;
+}
+.festivais-card .festival-categoria {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 2px 8px;
+  background: rgba(245,158,11,0.15);
+  color: var(--accent);
+  border-radius: 999px;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.festivais-card.premio {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, rgba(245,158,11,0.06), rgba(245,158,11,0.02));
+}
+.festivais-card.premio::after {
+  content: "★";
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+@media (max-width: 600px) {
+  body { padding: 20px 16px; }
+  .festivais-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .festivais-card { padding: 8px; }
+  .festivais-card .festival-nome { font-size: 0.74rem; }
+  .festivais-card .festival-meta { font-size: 0.66rem; }
+}
 </style>
 </head>
 <body>
 <div class="container">
 <a href="/" class="back-link">&larr; Voltar para A Bola Conecta</a>
-<span class="tag">DOCUMENTARIO</span>
+<span class="tag">DOCUMENTÁRIO</span>
 <h1>A Bola Conecta</h1>
 <p class="lead">23 minutos de Brasil. Futebol, ancestralidade africana e cultura afro-brasileira. Uma travessia pela quebrada, pelo terreiro, pela quadra de futsal e pela escola pública.</p>
 
 <div class="synopsis">
-<p>Em 2020, Monica Saraiva da Silva e Sebastian Acevedo Vasquez começarám uma travessia pela cultura que o futebol cria quando a bola para nas quebradas, quadras de terra e campos de varzea. Dois anos depois, o documentário A Bola Conecta estreava como obra socioeducativa: não apenas um filme para assistir, mas uma ferramenta pedagógica para construir.</p>
-<p>O documentário atravessa diferentes territórios do Brasil para mostrar como o futebol carrega consigo memorias, linguas, religiões e historias que raramente aparecem nas narrativas oficiais do esporte. Da Bahia a Pernambuco, da quebrada ao terreiro, A Bola Conecta revela o futebol como prática cultural, educativa e politica.</p>
+<p>Em 2020, Mônica Saraiva da Silva e Sebastián Acevedo Vásquez começaram uma travessia pela cultura que o futebol cria quando a bola para nas quebradas, quadras de terra e campos de várzea. Dois anos depois, o documentário A Bola Conecta estreava como obra socioeducativa: não apenas um filme para assistir, mas uma ferramenta pedagógica para construir.</p>
+<p>O documentário atravessa diferentes territórios do Brasil para mostrar como o futebol carrega consigo memórias, línguas, religiões e histórias que raramente aparecem nas narrativas oficiais do esporte. Da Bahia a Pernambuco, da quebrada ao terreiro, A Bola Conecta revela o futebol como prática cultural, educativa e política.</p>
 </div>
 
 <a href="#assistir" class="cta">Assistir agora</a>
@@ -54,45 +131,101 @@ p { margin-bottom: 16px; color: var(--muted); }
 
 <h2>Ficha técnica</h2>
 <dl class="tech-spec">
-<dt>Titulo</dt><dd>A Bola Conecta</dd>
+<dt>Título</dt><dd>A Bola Conecta</dd>
 <dt>Duração</dt><dd>23 minutos</dd>
-<dt>Direção</dt><dd>Monica Saraiva da Silva</dd>
-<dt>Pesquisa de roteiro e condução pedagógica</dt><dd>Sebastian Acevedo Vasquez</dd>
+<dt>Direção</dt><dd>Mônica Saraiva da Silva</dd>
+<dt>Pesquisa de roteiro e condução pedagógica</dt><dd>Sebastián Acevedo Vásquez</dd>
 <dt>Produção</dt><dd>Gondwana FC</dd>
 <dt>Ano de produção</dt><dd>2020 a 2021</dd>
 <dt>País de produção</dt><dd>Brasil</dd>
-<dt>Idioma original</dt><dd>Portugues brasileiro</dd>
+<dt>Idioma original</dt><dd>Português brasileiro</dd>
 <dt>Formato</dt><dd>Digital, full HD</dd>
-<dt>Genero</dt><dd>Documentario socioeducativo</dd>
+<dt>Gênero</dt><dd>Documentário socioeducativo</dd>
 </dl>
 
 <h2>Temas</h2>
 <p>O documentário abre conversas sobre:</p>
 <ul style="margin: 8px 0 16px 20px; color: var(--muted);">
 <li>Futebol de quebrada e cultura popular</li>
-<li>Ancestralidade africana e diaspora</li>
+<li>Ancestralidade africana e diáspora</li>
 <li>Cultura afro-brasileira e religiosidades</li>
 <li>Lei 10.639 e educação</li>
-<li>Juventude, territorio e pertencimento</li>
-<li>Memoria e identidade cultural</li>
+<li>Juventude, território e pertencimento</li>
+<li>Memória e identidade cultural</li>
 </ul>
 
 <h2>Como usar em sala de aula</h2>
-<p>O documentário foi pensado como ferramenta pedagógica. Funciona em três formatos principaís:</p>
-<p><strong>1. Cine-debaté (1 aula, 90 minutos):</strong> Exibição seguida de mediação. Ideal para introduzir o tema.</p>
+<p>O documentário foi pensado como ferramenta pedagógica. Funciona em três formatos principais:</p>
+<p><strong>1. Cine-debate (1 aula, 90 minutos):</strong> Exibição seguida de mediação. Ideal para introduzir o tema.</p>
 <p><strong>2. Oficina (4 a 8 encontros):</strong> Combinado com as fichas Copa 2026 para aprofundamento.</p>
 <p><strong>3. Piloto institucional (4 a 8 semanas):</strong> Integrado ao currículo, com produção autoral dos alunos.</p>
 
 <a href="/metodologia" class="cta">Ver Metodologia ABC completa</a>
 
 <h2 id="assistir">Assistir</h2>
-<p>O documentário pode ser assistido online mediante inscrição. Para exibições institucionais (escolas, universidades, eventos), entre em contato para licença de usó.</p>
+<p>O documentário pode ser assistido online mediante inscrição. Para exibições institucionais (escolas, universidades, eventos), entre em contato para licença de uso.</p>
 <p><strong>Exibição online:</strong> em breve via formulário de inscrição.</p>
 <p><strong>Exibição institucional:</strong> <a href="/contato" style="color: var(--accent);">contato.gondwana@gmail.com</a></p>
 
+<div class="festivais-section">
 <h2>Premiações e exibições</h2>
-<p>Sim. Foi selecionado para mostras e festivais no Brasil e também circulou em espaços acadêmicos e culturais fora do país. A lista completa está em atualização no press kit.</p>
-<p>Para emissoras, programadoras e mostras no Brasil: <a href="/imprensa" style="color: var(--accent);">/imprensa</a></p>
+<p>O documentário circulou em mostras, festivais e espaços acadêmicos no Brasil e fora do país. Esta é a galeria dos reconhecimentos oficiais recebidos até agora. Lista em atualização no press kit.</p>
+
+<div class="festivais-grid">
+
+  <div class="festivais-card premio" title="Curta-se - Festival Iberoamericano de Cinema de Sergipe · Prêmio de Melhor Trailer · Júri Oficial">
+    <img src="assets/festivais/web/23-curta-se-festival-sergipe-premio-melhor-trailer.jpg" alt="Curta-se - Festival Iberoamericano de Cinema de Sergipe · Prêmio de Melhor Trailer" />
+    <div class="festival-nome">Curta-se</div>
+    <div class="festival-meta">23ª edição · Sergipe, Brasil</div>
+    <div class="festival-categoria">Prêmio · Melhor Trailer</div>
+  </div>
+
+  <div class="festivais-card" title="CINEFOOT - Festival Internacional de Cinema de Futebol · Seleção Oficial">
+    <img src="assets/festivais/web/cinefoot-2021.jpg" alt="CINEFOOT - Festival Internacional de Cinema de Futebol · Seleção Oficial 2021" />
+    <div class="festival-nome">CINEFOOT</div>
+    <div class="festival-meta">2021 · Rio de Janeiro, Brasil</div>
+    <div class="festival-categoria">Seleção Oficial</div>
+  </div>
+
+  <div class="festivais-card" title="FIA CINE - Festival Ibero Americano de Cinema · Seleção Oficial">
+    <img src="assets/festivais/web/9-fiacine-festival-ibero-americano.jpg" alt="FIA CINE - Festival Ibero Americano de Cinema · 9ª edição · Seleção Oficial" />
+    <div class="festival-nome">FIA CINE</div>
+    <div class="festival-meta">9ª edição · Brasil</div>
+    <div class="festival-categoria">Seleção Oficial</div>
+  </div>
+
+  <div class="festivais-card" title="Lisbon Sport Film Festival · 4ª edição · Seleção Oficial">
+    <img src="assets/festivais/web/4-lisbon-sport-film-festival-2022.jpg" alt="Lisbon Sport Film Festival · 4ª edição · 2022 · Seleção Oficial" />
+    <div class="festival-nome">Lisbon Sport Film Festival</div>
+    <div class="festival-meta">4ª edição · 2022 · Lisboa, Portugal</div>
+    <div class="festival-categoria">Seleção Oficial</div>
+  </div>
+
+  <div class="festivais-card" title="Festival Ubuntu · 3ª edição · 2022 · Seleção Oficial">
+    <img src="assets/festivais/web/3-festival-ubuntu-2022.jpg" alt="Festival Ubuntu · 3ª edição · 2022 · Seleção Oficial" />
+    <div class="festival-nome">Festival Ubuntu</div>
+    <div class="festival-meta">3ª edição · 2022 · Brasil</div>
+    <div class="festival-categoria">Seleção Oficial</div>
+  </div>
+
+  <div class="festivais-card" title="Festival Cinema Negro em Ação · 3ª edição · 2022 · Seleção Oficial">
+    <img src="assets/festivais/web/3-cinema-negro-em-acao-2022.jpg" alt="Festival Cinema Negro em Ação · 3ª edição · 2022 · Seleção Oficial" />
+    <div class="festival-nome">Cinema Negro em Ação</div>
+    <div class="festival-meta">3ª edição · 2022 · Rio de Janeiro, Brasil</div>
+    <div class="festival-categoria">Seleção Oficial</div>
+  </div>
+
+  <div class="festivais-card" title="Festival Elas nas Telas · 2025 · Belém, Pará, Brasil">
+    <img src="assets/festivais/web/festival-elas-nas-telas-belem-2025.jpg" alt="Festival Elas nas Telas · 2025 · Belém, Pará, Brasil" />
+    <div class="festival-nome">Elas nas Telas</div>
+    <div class="festival-meta">2025 · Belém, Pará, Brasil</div>
+    <div class="festival-categoria">Seleção Oficial</div>
+  </div>
+
+</div>
+
+<p style="font-size: 0.85rem;">Para emissoras, programadoras e mostras no Brasil: <a href="/imprensa" style="color: var(--accent);">/imprensa</a></p>
+</div>
 
 <h2>Material pedagógico relacionado</h2>
 <p>Para usar o documentário como ferramenta pedagógica, recomendamos:</p>
@@ -108,7 +241,7 @@ p { margin-bottom: 16px; color: var(--muted); }
   <a href="/apoie/?produto=documentario" class="cta" style="font-size: 1.1rem; padding: 14px 28px;">Apoiar a circulação aberta via Pix</a>
   <p style="color: var(--muted); font-size: 0.85rem; margin-top: 16px; margin-bottom: 4px;">Chave Pix (CNPJ): 62.085.700/0001-83</p>
   <p style="color: var(--muted); font-size: 0.78rem; margin-bottom: 12px;">da Silva e Vásquez Formação e Consultoria</p>
-  <img src="/documentário/assets/pix-qrcode.png" alt="QR Code Pix para CNPJ 62.085.700/0001-83" style="width: 160px; height: 160px; margin: 0 auto; display: block; border-radius: 10px;" />
+  <img src="assets/pix-qrcode.png" alt="QR Code Pix para CNPJ 62.085.700/0001-83" style="width: 160px; height: 160px; margin: 0 auto; display: block; border-radius: 10px;" />
 </div>
 
 </div>

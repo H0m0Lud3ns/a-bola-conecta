@@ -1,0 +1,76 @@
+{
+  "documentario": "Gondwana, A Bola Conecta",
+  "direcao": "Monica Saraiva da Silva",
+  "exibicoes": [
+    {
+      "id": "fiacine",
+      "nome": "FIA CINE - Festival Ibero Americano de Cinema",
+      "edicao": "9a edicao",
+      "ano": null,
+      "cidade": null,
+      "pais": "Brasil",
+      "categoria": "Selecao Oficial",
+      "logo": "9-fiacine-festival-ibero-americano.jpg"
+    },
+    {
+      "id": "lisbon-sport",
+      "nome": "Lisbon Sport Film Festival",
+      "edicao": "4a edicao",
+      "ano": 2022,
+      "cidade": "Lisboa",
+      "pais": "Portugal",
+      "categoria": "Selecao Oficial",
+      "logo": "4-lisbon-sport-film-festival-2022.jpg"
+    },
+    {
+      "id": "cinefoot",
+      "nome": "CINEFOOT - Festival Internacional de Cinema de Futebol",
+      "edicao": null,
+      "ano": 2021,
+      "cidade": "Rio de Janeiro",
+      "pais": "Brasil",
+      "categoria": "Selecao Oficial",
+      "logo": "cinefoot-2021.jpg"
+    },
+    {
+      "id": "ubuntu",
+      "nome": "Festival Ubuntu",
+      "edicao": "3a edicao",
+      "ano": 2022,
+      "cidade": null,
+      "pais": "Brasil",
+      "categoria": "Selecao Oficial",
+      "logo": "3-festival-ubuntu-2022.jpg"
+    },
+    {
+      "id": "curta-se",
+      "nome": "Curta-se - Festival Iberoamericano de Cinema de Sergipe",
+      "edicao": "23a edicao",
+      "ano": null,
+      "cidade": "Aracaju",
+      "pais": "Brasil",
+      "categoria": "Premio de Melhor Trailer - Juri Oficial",
+      "logo": "23-curta-se-festival-sergipe-premio-melhor-trailer.jpg"
+    },
+    {
+      "id": "elas-nas-telas",
+      "nome": "Festival Elas nas Telas",
+      "edicao": null,
+      "ano": 2025,
+      "cidade": "Belem",
+      "pais": "Brasil",
+      "categoria": "Selecao Oficial",
+      "logo": "festival-elas-nas-telas-belem-2025.jpg"
+    },
+    {
+      "id": "cinema-negro-em-acao",
+      "nome": "Festival Cinema Negro em Acao",
+      "edicao": "3a edicao",
+      "ano": 2022,
+      "cidade": "Rio de Janeiro",
+      "pais": "Brasil",
+      "categoria": "Selecao Oficial",
+      "logo": "3-cinema-negro-em-acao-2022.jpg"
+    }
+  ]
+}
