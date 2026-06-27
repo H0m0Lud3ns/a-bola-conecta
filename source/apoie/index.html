@@ -113,5 +113,41 @@ p { margin-bottom: 16px; color: var(--muted); }
 <a href="/contato" class="cta">Falar com a equipe</a>
 
 </div>
+
+<script>
+// Personaliza a pagina conforme o produto de origem
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const produto = params.get('produto');
+  if (!produto) return;
+
+  const nomes = {
+    'camiseta': 'a camiseta pedagógica',
+    'documentario': 'o documentário Gondwana, A Bola Conecta',
+    'metodologia': 'a Metodologia ABC',
+    'guia-copa-2026': 'o Guia Copa 2026 com 55 fichas',
+    'material-aberto': 'os materiais pedagógicos abertos',
+    'conversa-1x1': 'a conversa 1x1 e a equipe pedagógica'
+  };
+  const nomeAmigavel = nomes[produto] || 'este projeto';
+
+  // Adiciona banner de contexto no topo
+  const container = document.querySelector('.container');
+  const banner = document.createElement('div');
+  banner.style.cssText = 'background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(245,158,11,0.04)); border: 1px solid rgba(245,158,11,0.35); border-left: 4px solid hsl(45, 96%, 58%); padding: 14px 18px; border-radius: 10px; margin: 0 0 24px; font-size: 0.95rem;';
+  banner.innerHTML = '<strong style="color: hsl(45, 96%, 58%);">Você veio apoiar ' + nomeAmigavel + '.</strong> Sua contribuição via Pix vira recibo formal e ajuda a manter a circulação aberta.';
+  container.insertBefore(banner, container.firstChild);
+
+  // Atualiza titulo e subtitulo
+  const h1 = document.querySelector('h1');
+  if (h1) h1.textContent = 'Apoiar ' + nomeAmigavel;
+  const lead = document.querySelector('.lead');
+  if (lead) lead.textContent = 'Sua contribuição entra direto no ciclo de circulação aberta: 60% para escolas parceiras, 25% para circulação cultural, 15% para operação do Time da Educação.';
+
+  // Atualiza titulo da pagina
+  document.title = 'Apoiar ' + nomeAmigavel + ' | A Bola Conecta';
+})();
+</script>
+
 </body>
 </html>
