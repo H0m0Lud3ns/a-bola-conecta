@@ -71,6 +71,8 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
 .cta:hover { background: var(--accent); color: var(--bg); }
 .cta.outline { background: transparent; border: 1.5px solid var(--line); color: var(--fg); }
 .cta.outline:hover { border-color: var(--accent); color: var(--accent); background: transparent; }
+.cta.contrib { background: rgba(150, 200, 100, 0.08); border: 1px solid rgba(150, 200, 100, 0.35); color: #b8d8a8; font-weight: 600; font-size: 0.88rem; padding: 11px 18px; }
+.cta.contrib:hover { background: rgba(150, 200, 100, 0.18); border-color: var(--verde); color: #d4ecc4; }
 .cta.verde { background: var(--verde); }
 .cta.verde:hover { background: var(--accent); }
 
@@ -167,6 +169,7 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
     <div class="product-actions">
       <a href="#pedido-camisa" class="cta">Fazer pedido</a>
       <a href="/camisa-abya-yala/" class="cta outline">Ver detalhes</a>
+      <a href="/apoie/?produto=camiseta" class="cta contrib">Contribuir livre via Pix</a>
     </div>
   </div>
 </article>
@@ -205,6 +208,7 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
       <div class="product-actions">
         <a href="/documentario/" class="cta">Assistir trailer</a>
         <a href="/contato/?assunto=documentario" class="cta outline">Marcar conversa</a>
+        <a href="/apoie/?produto=documentario" class="cta contrib">Contribuir livre via Pix</a>
       </div>
     </div>
   </article>
@@ -241,6 +245,7 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
       <div class="product-actions">
         <a href="/metodologia/" class="cta">Ver metodologia</a>
         <a href="/contato/?assunto=metodologia" class="cta outline">Marcar conversa</a>
+        <a href="/apoie/?produto=metodologia" class="cta contrib">Contribuir livre via Pix</a>
       </div>
     </div>
   </article>
@@ -277,6 +282,7 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
       <div class="product-actions">
         <a href="/copa-2026/baixar/" class="cta verde">Baixar guia completo</a>
         <a href="/copa-2026/fichas/" class="cta outline">Ver fichas interativas</a>
+        <a href="/apoie/?produto=guia-copa-2026" class="cta contrib">Contribuir livre via Pix</a>
       </div>
     </div>
   </article>
@@ -304,7 +310,10 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
       <li>Guia do educador (versão digital)</li>
     </ul>
     <p class="circulacao-como">Você baixa sem pagar. Quem pode, contribui via Pix. Quem não pode, também recebe. Todo material sai com licença de uso pedagógico não comercial.</p>
-    <a href="/copa-2026/baixar/" class="cta outline">Baixar materiais</a>
+    <div class="circulacao-actions">
+      <a href="/copa-2026/baixar/" class="cta">Baixar materiais</a>
+      <a href="/apoie/?produto=material-aberto" class="cta contrib">Contribuir livre via Pix</a>
+    </div>
   </div>
 
   <div class="circulacao-card">
@@ -334,6 +343,7 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
     <div class="circulacao-actions">
       <a href="/contato/?assunto=circulacao" class="cta">Conversar 20 min</a>
       <a href="https://wa.me/5511999999999?text=Olá%20Time%20da%20Educação" class="cta outline">Tirar dúvidas por WhatsApp</a>
+      <a href="/apoie/?produto=conversa-1x1" class="cta contrib">Contribuir livre via Pix</a>
     </div>
   </div>
 
