@@ -56,8 +56,9 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
 .product-block { padding-top: 8px; border-top: 1px solid var(--line); }
 .product-block-label { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 4px; }
 .product-block p { font-size: 0.92rem; color: var(--muted); }
-.product-price { font-family: 'Fraunces', serif; font-size: 2.2rem; color: var(--accent); font-weight: 900; line-height: 1; margin-top: 4px; }
-.product-price-detail { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+.product-price { font-family: 'Fraunces', serif; font-size: 2.2rem; color: var(--accent); font-weight: 900; line-height: 1; margin-top: 4px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.product-price .price-unit { font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 500; color: var(--muted); letter-spacing: 0.01em; }
+.product-price-detail { font-size: 0.88rem; color: var(--muted); margin-top: 6px; }
 
 .cta { display: inline-flex; align-items: center; gap: 6px; padding: 12px 22px; background: var(--primary); color: var(--fg); text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 0.95rem; transition: opacity 0.2s, background 0.2s; border: none; cursor: pointer; }
 .cta:hover { background: var(--accent); color: var(--bg); }
@@ -127,8 +128,8 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
       <p>Parte do valor é reinvestido na circulação da Metodologia ABC em escolas públicas parceiras. O restante cobre produção, logística e operação.</p>
     </div>
 
-    <div class="product-price">R$ 149</div>
-    <p class="product-price-detail">por unidade &middot; frete calculado no formulário &middot; pagamento via Pix</p>
+    <div class="product-price"><span class="price-amount">R$ 149</span><span class="price-unit">/ unidade</span></div>
+    <p class="product-price-detail">+ frete calculado pelo CEP no formulário</p>
 
     <div class="product-actions">
       <a href="#pedido-camisa" class="cta">Fazer pedido</a>
@@ -267,7 +268,7 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
 </div>
 
 <h2 id="pedido-camisa">Pedido da Camisa Abya Yala</h2>
-<p>A camiseta é o único produto com compra direta. Preencha o formulário abaixo, enviamos o Pix com o valor total (camisa + frete), produção inicia após confirmação.</p>
+<p>A camiseta é o único produto com compra direta. <strong>R$ 149 a unidade + frete</strong> calculado pelo CEP. Preencha o formulário abaixo, enviamos o Pix com o valor total, produção inicia após confirmação do pagamento.</p>
 
 <form action="https://www.abolaconecta.com.br/api/leads" method="POST" id="pedido-form">
 <input type="hidden" name="source" value="a-bola-conecta" />
@@ -311,7 +312,7 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
 <button type="submit" class="cta" style="font-size:1rem;padding:14px 28px;">Enviar pedido</button>
 </form>
 
-<p style="margin-top: 16px; color: var(--muted); font-size: 0.9rem;">Após o envio, você receberá um email com o valor total (camisa + frete) e os dados para pagamento via Pix. Produção só inicia após confirmação do pagamento.</p>
+<p style="margin-top: 16px; color: var(--muted); font-size: 0.9rem;">Após o envio, você receberá um email com o valor total (camisa R$ 149 + frete pelo CEP) e os dados para pagamento via Pix. Produção só inicia após confirmação do pagamento.</p>
 
 <h2>Trocas e devoluções</h2>
 <p>Trocas por tamanho são gratuitas em até 30 dias após o recebimento, desde que a camisa não tenha sido usada. Devoluções com reembolso integral em até 7 dias, conforme Código de Defesa do Consumidor.</p>
