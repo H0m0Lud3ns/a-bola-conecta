@@ -309,7 +309,7 @@
     // Estrategia: insertar ANTES de la seccion que contiene
     // "Manifesto Gondwana". En el bundle actual, ese texto
     // vive en un eyebrow (no en h2), asi que buscamos en
-    // cualquier nodo que contenga la palabra 'manifesto'.
+    // cualquier nodo hoja con la palabra 'manifesto'.
     var manifestoSection = null;
     var candidates = root.querySelectorAll('main *');
     for (var i = 0; i < candidates.length; i++) {
@@ -317,7 +317,8 @@
       // Solo elementos con texto directo corto (eyebrow/label)
       if (el.children.length > 0) continue;
       var txt = (el.textContent || '').toLowerCase().trim();
-      if (txt === 'manifesto gondwana' || txt.indexOf('manifesto') === 0) {
+      if (txt.length === 0 || txt.length > 80) continue;
+      if (txt.indexOf('manifesto') !== -1) {
         manifestoSection = el.closest('section') || el.parentElement;
         break;
       }
