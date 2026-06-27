@@ -26,7 +26,14 @@ body { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif
 h1 { font-family: 'Fraunces', serif; font-size: clamp(2.4rem, 5.5vw, 4rem); font-weight: 900; margin: 16px 0 12px; line-height: 1.02; letter-spacing: -0.02em; }
 h1 span { color: var(--accent); }
 .lead { font-size: 1.2rem; color: var(--muted); max-width: 760px; margin-bottom: 16px; }
-.intro-note { background: rgba(246,237,215,0.04); border-left: 3px solid var(--accent); padding: 16px 20px; margin: 24px 0 48px; max-width: 880px; font-size: 0.96rem; color: var(--fg); }
+.intro-note { background: rgba(246,237,215,0.04); border-left: 3px solid var(--accent); padding: 20px 24px; margin: 24px 0 48px; max-width: 880px; font-size: 0.96rem; color: var(--fg); }
+.tese-banner { background: linear-gradient(135deg, rgba(245,158,11,0.18), rgba(245,158,11,0.04)); border: 1px solid rgba(245,158,11,0.4); border-left: 4px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 4px; }
+.tese-frase { font-size: 1.06rem; color: var(--fg); font-weight: 500; }
+.tese-banner strong { color: var(--accent); letter-spacing: 0.04em; font-weight: 800; }
+.tese-mapa { margin-top: 14px; font-size: 0.95rem; color: var(--fg); font-weight: 600; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.tese-num { display: inline-grid; place-items: center; width: 24px; height: 24px; background: rgba(246,237,215,0.08); border: 1px solid var(--line); border-radius: 50%; font-size: 0.75rem; font-weight: 700; color: var(--muted); }
+.tese-num-destaque { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.tese-seta { color: var(--accent); margin: 0 4px; font-weight: 700; font-size: 1.1rem; }
 .intro-note strong { color: var(--accent); }
 
 h2 { font-family: 'Fraunces', serif; font-size: 1.85rem; margin: 56px 0 24px; color: var(--accent); font-weight: 700; }
@@ -121,7 +128,8 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
 <p class="lead">Aqui estão os materiais que fazem circular a Metodologia ABC. Cada produto abre uma conversa: sobre território, ancestralidade, pedagogia e o futebol como linguagem comum.</p>
 
 <div class="intro-note">
-<strong>Como funciona:</strong> este catálogo reúne propriedade intelectual do Time da Educação — não é uma loja com checkout. Produtos tangíveis (camiseta) têm preço e compra direta via Pix. Produtos intelectuais (documentário, Metodologia, fichas) seguem o modelo de <strong>conversa 1x1 de 20 min</strong> antes da proposta, conforme a Estratégia 360 do projeto. <a href="#modelo" style="color: var(--accent);">Ver modelo de contratação</a>.
+<p style="margin: 0 0 12px; font-size: 1.05rem; color: var(--fg);"><strong>Produtos IP seguem o modelo de contribuição aberta.</strong> Se quiser aprofundar, segue uma conversa 1x1 de 20 min antes da proposta.</p>
+<p style="margin: 0; font-size: 0.92rem; color: var(--muted);">Camiseta é o único produto tangível, com compra direta via Pix. <a href="#modelo" style="color: var(--accent);">Ver modelo de contratação</a>.</p>
 </div>
 
 <h2>Catálogo <span class="count">4 produtos &middot; 1 causa</span></h2>
@@ -130,7 +138,7 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
 <article class="product product-hero">
   <div class="product-img-hero">
     <img src="/assets/camisa-abya-yala.jpg" alt="Camisa oficial Gondwana FC - azul royal com gola vermelha, número 12 nas costas em padrão Wiphala" loading="lazy" onerror="this.style.display='none'" />
-    <span class="product-badge">Produto tangível &middot; destaque</span>
+    <span class="product-badge">Produto tangível &middot; destaque &middot; financia o ciclo</span>
   </div>
   <div class="product-body">
     <h3 class="product-title">Camisa Abya Yala</h3>
@@ -166,7 +174,7 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
   <!-- 2. DOCUMENTAL -->
   <article class="product">
     <div class="product-img grafite">
-      <span class="product-badge">Audiovisual &middot; 23 min</span>
+      <span class="product-badge">Contribuição aberta &middot; Audiovisual 23 min</span>
     </div>
     <div class="product-body">
       <h3 class="product-title">Gondwana, A Bola Conecta</h3>
@@ -202,7 +210,7 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
   <!-- 3. METODOLOGIA ABC -->
   <article class="product">
     <div class="product-img verde">
-      <span class="product-badge">Pacote educacional &middot; B2B</span>
+      <span class="product-badge">Contribuição aberta &middot; Pacote educacional B2B</span>
     </div>
     <div class="product-body">
       <h3 class="product-title">Metodologia ABC</h3>
@@ -238,7 +246,7 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
   <!-- 4. FICHAS COPA 2026 -->
   <article class="product">
     <div class="product-img amarelo">
-      <span class="product-badge">Descarga aberta &middot; PDF</span>
+      <span class="product-badge">Contribuição aberta &middot; Descarga livre PDF</span>
     </div>
     <div class="product-body">
       <h3 class="product-title">Guia Copa 2026 &middot; 55 fichas</h3>
@@ -275,7 +283,12 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
 
 <h2 id="circulacao">Modelo aberto de contribuições <span class="count">3 níveis &middot; 1 ciclo</span></h2>
 
-<p class="lead" style="margin-bottom: 32px;">O Time da Educação não cobra pelo acesso ao material pedagógico. As fichas Copa 2026, o documentário e a Metodologia circulam em escolas públicas, universidades e projetos sociais sem custo de entrada. Quem contribui mantém o ciclo vivo: camiseta financia material aberto, material aberto financia próxima camiseta, conversa 1x1 financia a estrutura pedagógica que orienta tudo.</p>
+<div class="tese-banner">
+<div class="tese-frase"><strong>Tese:</strong> Produtos IP seguem o modelo de contribuição aberta &mdash; se quiser aprofundar, segue uma conversa 1x1.</div>
+<div class="tese-mapa"><span class="tese-num">1</span> Material aberto <span class="tese-seta">&rarr;</span> <span class="tese-num">2</span> Camiseta pedagógica <span class="tese-seta">&rarr;</span> <span class="tese-num tese-num-destaque">3</span> Conversa 1x1</div>
+</div>
+
+<p style="margin: 24px 0 32px; color: var(--muted); font-size: 0.96rem;">O Time da Educação não cobra pelo acesso ao material pedagógico. As fichas Copa 2026, o documentário e a Metodologia circulam em escolas públicas, universidades e projetos sociais sem custo de entrada. Quem contribui mantém o ciclo vivo: camiseta financia material aberto, material aberto financia próxima camiseta, conversa 1x1 financia a estrutura pedagógica que orienta tudo.</p>
 
 <div class="circulacao-grid">
 
