@@ -1,0 +1,225 @@
+/* FestivalGallery CSS - companion de FestivalGallery.react.tsx */
+/* Colar no bundle CSS do home (ou importar como modulo) */
+
+/* === VARIANTE STRIP (banda fina sob o hero) === */
+
+.festival-strip {
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(245, 158, 11, 0.25);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.25);
+  padding: 24px 0;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+}
+
+.festival-strip-label {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(248, 237, 210, 0.7);
+  margin-bottom: 16px;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+}
+
+.festival-strip-track {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  animation: marquee 35s linear infinite;
+  padding: 8px 20px;
+  width: max-content;
+}
+
+.festival-strip:hover .festival-strip-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.festival-card.variant-strip {
+  background: transparent;
+  border: none;
+  flex-shrink: 0;
+  width: 90px;
+  height: 90px;
+  padding: 4px;
+  filter: grayscale(1) brightness(1.4) sepia(0.3);
+  opacity: 0.75;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.festival-card.variant-strip:hover {
+  opacity: 1;
+  filter: grayscale(0) brightness(1) sepia(0);
+}
+
+.festival-card.variant-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.festival-card.variant-strip.premio {
+  position: relative;
+}
+
+.festival-card.variant-strip.premio::after {
+  content: "★";
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  color: hsl(45, 96%, 58%);
+  font-size: 14px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* === VARIANTE GRID (secao dedicada) === */
+
+.festival-grid-section {
+  padding: 64px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.festival-grid-section h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 12px;
+  color: hsl(45, 96%, 58%);
+}
+
+.festival-grid-section > p {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 40px;
+  font-size: 1rem;
+  color: rgba(248, 237, 210, 0.75);
+  line-height: 1.6;
+}
+
+.festival-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.festival-card.variant-grid {
+  position: relative;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.festival-card.variant-grid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border-color: hsl(45, 96%, 58%);
+}
+
+.festival-card.variant-grid img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.festival-card.variant-grid .festival-nome {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: hsl(28, 18%, 10%);
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.festival-card.variant-grid .festival-meta {
+  font-size: 0.72rem;
+  color: hsl(28, 12%, 35%);
+  line-height: 1.3;
+}
+
+.festival-card.variant-grid .festival-categoria {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 2px 8px;
+  background: rgba(245, 158, 11, 0.18);
+  color: hsl(28, 70%, 30%);
+  border-radius: 999px;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.festival-card.variant-grid.premio {
+  border-color: hsl(45, 96%, 58%);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(245, 158, 11, 0.02));
+}
+
+.festival-card.variant-grid.premio::after {
+  content: "★";
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: hsl(45, 96%, 58%);
+  font-size: 1.1rem;
+}
+
+/* === RESPONSIVO === */
+
+@media (max-width: 600px) {
+  .festival-strip-track {
+    gap: 28px;
+    animation-duration: 25s;
+  }
+
+  .festival-card.variant-strip {
+    width: 70px;
+    height: 70px;
+  }
+
+  .festival-grid-section {
+    padding: 48px 16px;
+  }
+
+  .festival-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .festival-card.variant-grid {
+    padding: 8px;
+  }
+
+  .festival-card.variant-grid .festival-nome {
+    font-size: 0.74rem;
+  }
+
+  .festival-card.variant-grid .festival-meta {
+    font-size: 0.66rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .festival-strip-track {
+    animation: none;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+}
