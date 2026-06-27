@@ -31,44 +31,44 @@
       id: 'curta-se',
       nome: 'Curta-se',
       meta: '23ª edição · Prêmio Melhor Trailer · Sergipe',
-      logo: '/a-bola-conecta/documentario/assets/festivais/web/23-curta-se-festival-sergipe-premio-melhor-trailer.jpg',
+      logo: '/a-bola-conecta/documentario/assets/festivais/web/23-curta-se-festival-sergipe-premio-melhor-trailer.png',
       isPremio: true
     },
     {
       id: 'cinefoot',
       nome: 'CINEFOOT',
       meta: '2021 · Seleção Oficial · Rio de Janeiro',
-      logo: '/a-bola-conecta/documentario/assets/festivais/web/cinefoot-2021.jpg'
+      logo: '/a-bola-conecta/documentario/assets/festivais/web/cinefoot-2021.png'
     },
     {
       id: 'fiacine',
       nome: 'FIA CINE',
       meta: '9ª edição · Seleção Oficial · Brasil',
-      logo: '/a-bola-conecta/documentario/assets/festivais/web/9-fiacine-festival-ibero-americano.jpg'
+      logo: '/a-bola-conecta/documentario/assets/festivais/web/9-fiacine-festival-ibero-americano.png'
     },
     {
       id: 'lisbon',
       nome: 'Lisbon Sport Film Festival',
       meta: '4ª edição · 2022 · Seleção Oficial · Lisboa',
-      logo: '/a-bola-conecta/documentario/assets/festivais/web/4-lisbon-sport-film-festival-2022.jpg'
+      logo: '/a-bola-conecta/documentario/assets/festivais/web/4-lisbon-sport-film-festival-2022.png'
     },
     {
       id: 'ubuntu',
       nome: 'Festival Ubuntu',
       meta: '3ª edição · 2022 · Seleção Oficial · Brasil',
-      logo: '/a-bola-conecta/documentario/assets/festivais/web/3-festival-ubuntu-2022.jpg'
+      logo: '/a-bola-conecta/documentario/assets/festivais/web/3-festival-ubuntu-2022.png'
     },
     {
       id: 'cinema-negro',
       nome: 'Cinema Negro em Ação',
       meta: '3ª edição · 2022 · Seleção Oficial · Rio de Janeiro',
-      logo: '/a-bola-conecta/documentario/assets/festivais/web/3-cinema-negro-em-acao-2022.jpg'
+      logo: '/a-bola-conecta/documentario/assets/festivais/web/3-cinema-negro-em-acao-2022.png'
     },
     {
       id: 'elas',
       nome: 'Elas nas Telas',
       meta: '2025 · Seleção Oficial · Belém, Pará',
-      logo: '/a-bola-conecta/documentario/assets/festivais/web/festival-elas-nas-telas-belem-2025.jpg'
+      logo: '/a-bola-conecta/documentario/assets/festivais/web/festival-elas-nas-telas-belem-2025.png'
     }
   ];
 
