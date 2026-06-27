@@ -307,16 +307,35 @@
     if (!root) return false;
 
     // Estrategia: insertar ANTES de la seccion que contiene
-    // el "Manifesto Gondwana".
-    var headings = root.querySelectorAll('h2, h3');
+    // "Manifesto Gondwana". En el bundle actual, ese texto
+    // vive en un eyebrow (no en h2), asi que buscamos en
+    // cualquier nodo que contenga la palabra 'manifesto'.
     var manifestoSection = null;
-    headings.forEach(function(h) {
-      if (manifestoSection) return;
-      var txt = (h.textContent || '').toLowerCase();
-      if (txt.indexOf('manifesto') !== -1) {
-        manifestoSection = h.closest('section') || h.parentElement;
+    var candidates = root.querySelectorAll('main *');
+    for (var i = 0; i < candidates.length; i++) {
+      var el = candidates[i];
+      // Solo elementos con texto directo corto (eyebrow/label)
+      if (el.children.length > 0) continue;
+      var txt = (el.textContent || '').toLowerCase().trim();
+      if (txt === 'manifesto gondwana' || txt.indexOf('manifesto') === 0) {
+        manifestoSection = el.closest('section') || el.parentElement;
+        break;
       }
-    });
+    }
+
+    // Fallback: buscar en h2/h3 por si en otra version
+    // el texto vive ahi
+    if (!manifestoSection) {
+      var headings = root.querySelectorAll('h2, h3');
+      for (var j = 0; j < headings.length; j++) {
+        var h = headings[j];
+        var htxt = (h.textContent || '').toLowerCase();
+        if (htxt.indexOf('manifesto') !== -1) {
+          manifestoSection = h.closest('section') || h.parentElement;
+          break;
+        }
+      }
+    }
 
     if (manifestoSection && manifestoSection.parentNode) {
       var snip = buildSnip();
