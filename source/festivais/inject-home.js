@@ -1,31 +1,21 @@
 /* inject-home.js
- * Snippet de festivais para o home de abolaconecta.com.br
+ * Carrusel de festivais para o home de abolaconecta.com.br
  *
- * Funciona em dois modos:
+ * Funciona como faixa de credenciales justo ANTES del
+ * "Manifesto Gondwana". Formato carrusel horizontal
+ * (scroll-snap CSS) con:
+ * - 7 cards blancos (Curta-se destacado)
+ * - Tap/click → /festivais/
+ * - Scroll horizontal con snap en mobile
+ * - Indicador de dot pagination abajo
+ * - Autoplay sutil cada 5s (pausa en hover o focus)
+ * - Respeta prefers-reduced-motion
  *
- * 1) INTEGRADO: o script tenta inserir a galeria de festivais
- *    imediatamente apos o hero / manifesto do React.
- *    Se o React monta normalmente, este snippet aparece
- *    visualmente como uma "banda de credibilidade" entre o
- *    manifesto e os "Caminhos para conectar".
- *
- * 2) FALLBACK: se o React nao carregar (JS desabilitado,
- *    bundle quebrado, slow network), o mesmo snippet aparece
- *    ao final do <body>, antes dos scripts de servico.
- *    Garante que pelo menos a prova social basica
- *    fique visivel.
- *
- * O React, quando estiver ativo, vai inserir <main> dentro de
- * <div id="root">. Quando o React termina de montar,
- * identificamos o final do bloco Manifesto / Hero e injetamos
- * o snippet logo apos.
+ * Si React no monta (JS deshabilitado / bundle roto),
+ * el snippet aparece al final del body como fallback.
  */
 
 (function() {
-  // Configuracao: lista de festivais com paths das imagens
-  // Path base: relativo a raiz do site. Como o site serve de
-  // /a-bola-conecta/, ajustamos os caminhos para funcionarem
-  // tanto na home quanto em subpastas.
   var FESTIVAIS = [
     {
       id: 'curta-se',
@@ -76,27 +66,43 @@
     var section = document.createElement('section');
     section.className = 'home-festivais-strip';
     section.setAttribute('aria-label', 'Premiações e exibições do documentário');
+    section.setAttribute('role', 'region');
+
+    var cards = FESTIVAIS.map(function(f, idx) {
+      var cardClass = 'home-festivais-card';
+      if (f.isPremio) cardClass += ' is-premio';
+      return [
+        '    <a class="' + cardClass + '"',
+        '       href="/a-bola-conecta/festivais/#' + f.id + '"',
+        '       data-idx="' + idx + '"',
+        '       title="' + f.nome + ' · ' + f.meta + '">',
+        '      <img src="' + f.logo + '" alt="' + f.nome + ' - ' + f.meta + '" loading="lazy" draggable="false" />',
+        '    </a>'
+      ].join('\n');
+    }).join('\n');
+
+    var dots = FESTIVAIS.map(function(_, idx) {
+      return '<button class="home-festivais-dot" data-idx="' + idx + '" aria-label="Ir para card ' + (idx + 1) + '"></button>';
+    }).join('');
+
     section.innerHTML = [
       '<div class="home-festivais-inner">',
       '  <p class="home-festivais-label">Exibido e premiado em festivais no Brasil e no exterior</p>',
-      '  <div class="home-festivais-track">',
-      FESTIVAIS.map(function(f) {
-        return [
-          '    <a class="home-festivais-card' + (f.isPremio ? ' is-premio' : '') + '"',
-          '       href="/a-bola-conecta/festivais/"',
-          '       title="' + f.nome + ' · ' + f.meta + '">',
-          '      <img src="' + f.logo + '" alt="' + f.nome + ' - ' + f.meta + '" loading="lazy" />',
-          '      ' + (f.isPremio ? '<span class="home-festivais-estrela" aria-hidden="true">★</span>' : ''),
-          '    </a>'
-        ].join('\n');
-      }).join('\n'),
+      '  <div class="home-festivais-viewport">',
+      '    <button class="home-festivais-arrow home-festivais-arrow-prev" aria-label="Anterior">‹</button>',
+      '    <div class="home-festivais-track" tabindex="0">',
+      cards,
+      '    </div>',
+      '    <button class="home-festivais-arrow home-festivais-arrow-next" aria-label="Próximo">›</button>',
       '  </div>',
+      '  <div class="home-festivais-dots">' + dots + '</div>',
       '  <a class="home-festivais-cta" href="/a-bola-conecta/festivais/">',
       '    Ver trajetória completa',
       '    <span aria-hidden="true">→</span>',
       '  </a>',
       '</div>'
     ].join('\n');
+
     return section;
   }
 
@@ -109,7 +115,7 @@
       '  background:#ffffff;',
       '  border-top:1px solid rgba(245,158,11,.35);',
       '  border-bottom:1px solid rgba(245,158,11,.35);',
-      '  padding:40px 0 36px;',
+      '  padding:32px 0 28px;',
       '  margin:0;',
       '  position:relative;',
       '  overflow:hidden;',
@@ -118,8 +124,9 @@
       '.home-festivais-inner{',
       '  max-width:1280px;',
       '  margin:0 auto;',
-      '  padding:0 24px;',
-      '  text-align:center',
+      '  padding:0 56px;',
+      '  text-align:center;',
+      '  position:relative',
       '}',
       '.home-festivais-label{',
       '  font-size:11px;',
@@ -127,55 +134,110 @@
       '  letter-spacing:.18em;',
       '  text-transform:uppercase;',
       '  color:hsl(28,18%,15%);',
-      '  margin:0 0 24px',
+      '  margin:0 0 20px',
+      '}',
+      '.home-festivais-viewport{',
+      '  position:relative;',
+      '  overflow:visible',
       '}',
       '.home-festivais-track{',
       '  display:flex;',
-      '  flex-wrap:wrap;',
-      '  justify-content:center;',
+      '  flex-wrap:nowrap;',
+      '  justify-content:flex-start;',
       '  align-items:center;',
-      '  gap:28px;',
-      '  margin-bottom:18px',
+      '  gap:20px;',
+      '  margin-bottom:18px;',
+      '  overflow-x:auto;',
+      '  overflow-y:hidden;',
+      '  scroll-snap-type:x mandatory;',
+      '  scroll-behavior:smooth;',
+      '  -webkit-overflow-scrolling:touch;',
+      '  scrollbar-width:none;',
+      '  padding:8px 4px',
+      '}',
+      '.home-festivais-track::-webkit-scrollbar{',
+      '  display:none',
       '}',
       '.home-festivais-card{',
       '  position:relative;',
-      '  width:84px;',
-      '  height:84px;',
+      '  flex:0 0 auto;',
+      '  width:96px;',
+      '  height:96px;',
       '  background:#ffffff;',
-      '  border-radius:10px;',
+      '  border-radius:12px;',
       '  padding:8px;',
       '  text-decoration:none;',
-      '  box-shadow:0 2px 8px rgba(0,0,0,.08);',
-      '  transition:transform .2s ease,box-shadow .2s ease',
+      '  box-shadow:0 2px 10px rgba(0,0,0,.1);',
+      '  scroll-snap-align:center;',
+      '  transition:transform .25s ease,box-shadow .25s ease;',
+      '  cursor:pointer',
       '}',
-      '.home-festivais-card:hover{',
-      '  transform:translateY(-3px) scale(1.04);',
-      '  box-shadow:0 8px 20px rgba(245,158,11,.25)',
+      '.home-festivais-card:hover,.home-festivais-card:focus-visible{',
+      '  transform:translateY(-4px) scale(1.06);',
+      '  box-shadow:0 10px 24px rgba(245,158,11,.3);',
+      '  outline:none',
       '}',
       '.home-festivais-card img{',
       '  width:100%;',
       '  height:100%;',
       '  object-fit:contain;',
-      '  display:block',
+      '  display:block;',
+      '  pointer-events:none',
       '}',
       '.home-festivais-card.is-premio{',
-      '  width:96px;',
-      '  height:96px;',
+      '  width:112px;',
+      '  height:112px;',
       '  border:2px solid hsl(45,96%,58%);',
-      '  box-shadow:0 4px 14px rgba(245,158,11,.35),0 0 0 4px rgba(245,158,11,.12)',
+      '  box-shadow:0 4px 16px rgba(245,158,11,.4),0 0 0 4px rgba(245,158,11,.15)',
       '}',
-      '.home-festivais-estrela{',
+      '.home-festivais-arrow{',
       '  position:absolute;',
-      '  top:-4px;',
-      '  right:-4px;',
-      '  color:hsl(45,96%,58%);',
-      '  font-size:14px;',
-      '  text-shadow:0 1px 4px rgba(0,0,0,.5)',
+      '  top:50%;',
+      '  transform:translateY(-50%);',
+      '  width:36px;',
+      '  height:36px;',
+      '  border-radius:50%;',
+      '  border:1px solid rgba(245,158,11,.4);',
+      '  background:#ffffff;',
+      '  color:hsl(28,18%,15%);',
+      '  font-size:20px;',
+      '  font-weight:700;',
+      '  line-height:1;',
+      '  cursor:pointer;',
+      '  z-index:2;',
+      '  box-shadow:0 2px 8px rgba(0,0,0,.1);',
+      '  transition:background .2s ease,transform .2s ease',
+      '}',
+      '.home-festivais-arrow:hover{',
+      '  background:hsl(45,96%,58%);',
+      '  color:hsl(28,18%,10%)',
+      '}',
+      '.home-festivais-arrow-prev{ left:8px }',
+      '.home-festivais-arrow-next{ right:8px }',
+      '.home-festivais-dots{',
+      '  display:flex;',
+      '  justify-content:center;',
+      '  gap:6px;',
+      '  margin-bottom:14px',
+      '}',
+      '.home-festivais-dot{',
+      '  width:7px;',
+      '  height:7px;',
+      '  border-radius:50%;',
+      '  border:0;',
+      '  padding:0;',
+      '  background:rgba(28,18,15,.2);',
+      '  cursor:pointer;',
+      '  transition:background .2s ease,transform .2s ease',
+      '}',
+      '.home-festivais-dot.is-active{',
+      '  background:hsl(45,96%,58%);',
+      '  transform:scale(1.3)',
       '}',
       '.home-festivais-cta{',
       '  display:inline-block;',
-      '  margin-top:12px;',
-      '  padding:12px 24px;',
+      '  margin-top:6px;',
+      '  padding:11px 22px;',
       '  background:hsl(45,96%,58%);',
       '  color:hsl(28,18%,10%);',
       '  border-radius:999px;',
@@ -183,24 +245,57 @@
       '  font-size:13px;',
       '  text-decoration:none;',
       '  letter-spacing:.02em;',
-      '  transition:transform .2s ease,box-shadow .2s ease',
+      '  transition:transform .2s ease,box-shadow .2s ease;',
       '  box-shadow:0 4px 12px rgba(245,158,11,.3)',
       '}',
       '.home-festivais-cta:hover{',
       '  transform:translateY(-2px);',
       '  box-shadow:0 8px 22px rgba(245,158,11,.45)',
       '}',
-      '@media(max-width:640px){',
+      '@media(max-width:768px){',
+      '  .home-festivais-strip{',
+      '    padding:24px 0 22px',
+      '  }',
+      '  .home-festivais-inner{',
+      '    padding:0 16px',
+      '  }',
       '  .home-festivais-track{',
-      '    gap:14px',
+      '    gap:14px;',
+      '    padding:6px 4px',
       '  }',
       '  .home-festivais-card{',
-      '    width:58px;',
-      '    height:58px',
+      '    width:80px;',
+      '    height:80px;',
+      '    padding:6px',
+      '  }',
+      '  .home-festivais-card.is-premio{',
+      '    width:92px;',
+      '    height:92px',
+      '  }',
+      '  .home-festivais-arrow{',
+      '    display:none',
       '  }',
       '  .home-festivais-cta{',
       '    font-size:12px;',
-      '    padding:8px 16px',
+      '    padding:10px 18px',
+      '  }',
+      '  .home-festivais-dots{',
+      '    gap:5px',
+      '  }',
+      '  .home-festivais-dot{',
+      '    width:6px;',
+      '    height:6px',
+      '  }',
+      '}',
+      '@media(prefers-reduced-motion:reduce){',
+      '  .home-festivais-card,.home-festivais-cta,.home-festivais-dot,.home-festivais-track{',
+      '    transition:none',
+      '  }',
+      '  .home-festivais-track{',
+      '    scroll-behavior:auto',
+      '  }',
+      '  .home-festivais-card:hover{',
+      '    transform:none',
       '  }',
       '}'
     ].join('');
@@ -208,115 +303,173 @@
   }
 
   function tryIntegrate() {
-    // Procura o final do hero/manifesto do React.
-    // O React normalmente envolve o conteudo em <main> dentro de #root.
-    // Vamos tentar identificar o final do bloco "Manifesto Gondwana"
-    // e inserir a faixa de festivais logo apos.
-
     var root = document.getElementById('root');
     if (!root) return false;
 
-    // Estrategia 1: procurar por um h2 com texto Manifesto ou similar
+    // Estrategia: insertar ANTES de la seccion que contiene
+    // el "Manifesto Gondwana".
     var headings = root.querySelectorAll('h2, h3');
-    var targetAfter = null;
+    var manifestoSection = null;
     headings.forEach(function(h) {
+      if (manifestoSection) return;
       var txt = (h.textContent || '').toLowerCase();
-      if (txt.indexOf('manifesto') !== -1 || txt.indexOf('jornada ancestral') !== -1) {
-        // Pega o pai do heading e sobe ate achar uma section ou o pai direto
-        var parent = h.closest('section') || h.parentElement;
-        if (parent) targetAfter = parent;
+      if (txt.indexOf('manifesto') !== -1) {
+        manifestoSection = h.closest('section') || h.parentElement;
       }
     });
 
-    // Estrategia 2: pegar o ultimo elemento filho de <main>
-    if (!targetAfter) {
-      var main = root.querySelector('main') || root;
-      if (main && main.children.length > 0) {
-        // Pegar o primeiro filho como referencia (provavelmente o hero)
-        targetAfter = main.children[0];
-      }
-    }
-
-    if (targetAfter && targetAfter.parentNode) {
+    if (manifestoSection && manifestoSection.parentNode) {
       var snip = buildSnip();
-      targetAfter.parentNode.insertBefore(snip, targetAfter.nextSibling);
+      // Insertar ANTES del Manifiesto, no despues
+      manifestoSection.parentNode.insertBefore(snip, manifestoSection);
       return true;
     }
 
     return false;
   }
 
+  function wireInteractions(snip) {
+    var track = snip.querySelector('.home-festivais-track');
+    var prevBtn = snip.querySelector('.home-festivais-arrow-prev');
+    var nextBtn = snip.querySelector('.home-festivais-arrow-next');
+    var dots = snip.querySelectorAll('.home-festivais-dot');
+    var cards = snip.querySelectorAll('.home-festivais-card');
+
+    function getCardStep() {
+      if (!cards.length) return 120;
+      var first = cards[0];
+      var second = cards[1] || first;
+      return second.offsetLeft - first.offsetLeft || first.offsetWidth + 20;
+    }
+
+    function scrollByCards(dir) {
+      var step = getCardStep();
+      track.scrollBy({ left: dir * step, behavior: 'smooth' });
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function() { scrollByCards(-1); });
+    if (nextBtn) nextBtn.addEventListener('click', function() { scrollByCards(1); });
+
+    function updateActiveDot() {
+      if (!track || !dots.length) return;
+      var scrollLeft = track.scrollLeft;
+      var trackWidth = track.clientWidth;
+      var center = scrollLeft + trackWidth / 2;
+      var activeIdx = 0;
+      var minDist = Infinity;
+      cards.forEach(function(c, i) {
+        var cardCenter = c.offsetLeft + c.offsetWidth / 2;
+        var dist = Math.abs(cardCenter - center);
+        if (dist < minDist) {
+          minDist = dist;
+          activeIdx = i;
+        }
+      });
+      dots.forEach(function(d, i) {
+        d.classList.toggle('is-active', i === activeIdx);
+      });
+    }
+
+    if (track) {
+      var scrollRaf = null;
+      track.addEventListener('scroll', function() {
+        if (scrollRaf) return;
+        scrollRaf = requestAnimationFrame(function() {
+          updateActiveDot();
+          scrollRaf = null;
+        });
+      });
+      updateActiveDot();
+    }
+
+    dots.forEach(function(dot, idx) {
+      dot.addEventListener('click', function() {
+        var target = cards[idx];
+        if (target) {
+          track.scrollTo({
+            left: target.offsetLeft - (track.clientWidth - target.offsetWidth) / 2,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Autoplay sutil: avanza 1 card cada 5s, pausa en hover/focus
+    var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReduced) {
+      var autoplayInterval = null;
+      function startAutoplay() {
+        if (autoplayInterval) return;
+        autoplayInterval = setInterval(function() {
+          var maxScroll = track.scrollWidth - track.clientWidth;
+          if (track.scrollLeft >= maxScroll - 5) {
+            track.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            scrollByCards(1);
+          }
+        }, 5000);
+      }
+      function stopAutoplay() {
+        if (autoplayInterval) {
+          clearInterval(autoplayInterval);
+          autoplayInterval = null;
+        }
+      }
+      snip.addEventListener('mouseenter', stopAutoplay);
+      snip.addEventListener('mouseleave', startAutoplay);
+      snip.addEventListener('focusin', stopAutoplay);
+      snip.addEventListener('focusout', startAutoplay);
+      startAutoplay();
+    }
+  }
+
   function fallbackInject() {
-    // Insere no final do body se React nao estiver presente
     var root = document.getElementById('root');
     if (!root || root.children.length === 0) {
       injectCSS();
-      document.body.appendChild(buildSnip());
+      var snip = buildSnip();
+      document.body.appendChild(snip);
+      wireInteractions(snip);
     }
   }
 
   function init() {
     injectCSS();
 
-    // Tentar integrar logo de cara (algumas secoes do React podem
-    // ja estar renderizadas no SSR ou em carregamento rapido)
-    if (!tryIntegrate()) {
-      // Se nao rolou, garantir fallback visivel
-      fallbackInject();
+    if (tryIntegrate()) {
+      var snip = document.querySelector('.home-festivais-strip');
+      if (snip) wireInteractions(snip);
+      return;
     }
 
-    // Tentar integrar apos delays diferentes (React renderiza
-    // progressivamente em SPAs)
-    var attempts = [500, 1200, 2500, 4000];
-    attempts.forEach(function(delay) {
-      setTimeout(function() {
-        // So tenta se ainda nao foi integrado
-        if (!document.querySelector('.home-festivais-strip[data-mode="integrated"]')) {
-          var snip = buildSnip();
-          snip.setAttribute('data-mode', 'integrated');
-          if (tryIntegrateWith(snip)) {
-            // Remove o fallback se existir
-            var fallback = document.querySelector('.home-festivais-strip:not([data-mode])');
-            if (fallback) fallback.remove();
-          }
-        }
-      }, delay);
-    });
+    fallbackInject();
   }
 
-  function tryIntegrateWith(snip) {
-    var root = document.getElementById('root');
-    if (!root) return false;
+  // Esperar a React renderizar antes de buscar el Manifiesto
+  function ready(fn) {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', fn);
+    } else {
+      setTimeout(fn, 0);
+    }
+  }
 
-    var headings = root.querySelectorAll('h2, h3');
-    var targetAfter = null;
-    headings.forEach(function(h) {
-      var txt = (h.textContent || '').toLowerCase();
-      if (txt.indexOf('manifesto') !== -1 || txt.indexOf('jornada ancestral') !== -1) {
-        var parent = h.closest('section') || h.parentElement;
-        if (parent && parent.parentNode) targetAfter = parent;
+  // Tentar varias veces por si React renderiza tarde
+  ready(function() {
+    var attempts = 0;
+    function attempt() {
+      attempts++;
+      if (tryIntegrate()) {
+        var snip = document.querySelector('.home-festivais-strip');
+        if (snip) wireInteractions(snip);
+        return;
       }
-    });
-
-    if (!targetAfter) {
-      var main = root.querySelector('main') || root;
-      if (main && main.children.length > 0) {
-        targetAfter = main.children[0];
+      if (attempts < 8) {
+        setTimeout(attempt, 600);
+      } else {
+        fallbackInject();
       }
     }
-
-    if (targetAfter && targetAfter.parentNode) {
-      targetAfter.parentNode.insertBefore(snip, targetAfter.nextSibling);
-      return true;
-    }
-
-    return false;
-  }
-
-  // Iniciar
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+    attempt();
+  });
 })();
