@@ -55,6 +55,20 @@ strong { color: var(--fg); font-weight: 600; }
 .video-frame { width: 100%; aspect-ratio: 16 / 9; border-radius: 10px; border: none; display: block; }
 .video-fallback { font-size: 0.85rem; color: var(--muted); margin-top: 12px; text-align: center; }
 .video-fallback a { color: var(--accent); }
+.ficha-time { display: grid; grid-template-columns: 220px 1fr; gap: 28px; align-items: center; background: linear-gradient(135deg, rgba(245, 158, 11, 0.06), rgba(245, 158, 11, 0.02)); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 14px; padding: 24px; margin: 24px 0; }
+.ficha-time-crest img { width: 100%; max-width: 220px; height: auto; display: block; }
+.ficha-time-nome { font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.6rem; color: var(--fg); letter-spacing: -0.01em; line-height: 1; margin-bottom: 4px; }
+.ficha-time-sub { font-family: 'Fraunces', serif; font-style: italic; color: var(--accent); font-size: 1rem; margin-bottom: 16px; }
+.ficha-time-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; margin: 0; }
+.ficha-time-meta > div { display: flex; flex-direction: column; gap: 2px; }
+.ficha-time-meta dt { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin: 0; }
+.ficha-time-meta dd { font-size: 13px; color: var(--fg); margin: 0; line-height: 1.5; }
+@media (max-width: 640px) {
+  .ficha-time { grid-template-columns: 1fr; gap: 18px; padding: 20px; }
+  .ficha-time-crest { text-align: center; }
+  .ficha-time-crest img { max-width: 160px; margin: 0 auto; }
+  .ficha-time-meta { grid-template-columns: 1fr; }
+}
 .back-link { display: inline-block; margin-bottom: 24px; color: var(--accent); text-decoration: none; font-size: 14px; }
 .back-link:hover { text-decoration: underline; }
 
@@ -199,6 +213,24 @@ strong { color: var(--fg); font-weight: 600; }
   <h2>O time de craques</h2>
 
   <p>A Metodologia ABC mobiliza um time de pensadores que entram em quadra para resolver problemas pedagógicos específicos. Cada um ocupa uma posição e tem uma função clara no jogo.</p>
+
+  <!-- FICHA TÉCNICA DO TIME -->
+  <div class="ficha-time">
+    <div class="ficha-time-crest">
+      <img src="/assets/logo-gondwana-fc-time-educacao.svg" alt="Escudo Gondwana FC — Time da Educação" />
+    </div>
+    <div class="ficha-time-dados">
+      <div class="ficha-time-nome">Gondwana FC</div>
+      <div class="ficha-time-sub">Time da Educação</div>
+      <dl class="ficha-time-meta">
+        <div><dt>Fundação</dt><dd>2020</dd></div>
+        <div><dt>Origem</dt><dd>Brasil + América Latina</dd></div>
+        <div><dt>Proposta</dt><dd>Metodologia ABC aplicada a escolas, marcas e eventos</dd></div>
+        <div><dt>Comandante</dt><dd>Mônica Saraiva da Silva e Sebastián Acevedo Vásquez</dd></div>
+        <div><dt>Escalação</dt><dd>8 pensadores da educação e cultura afro-brasileira</dd></div>
+      </dl>
+    </div>
+  </div>
 
   <figure style="margin: 24px 0; background: var(--bg-card); padding: 16px; border-radius: 14px; border: 1px solid var(--line);">
     <img src="/assets/time-craques-gondwana-fc.webp" alt="Convoção para a Copa do Mundo da Educação: escalação da Seleção Brasileira de pensadores da Metodologia ABC — Ailton Krenak, Paulo Freire, Antonieta de Barros, Djamila Ribeiro e Lélia González em campo; comissão técnica com Edgar Morin, João Batista Freire e Carolina Maria de Jesus." loading="lazy" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
