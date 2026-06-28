@@ -87,6 +87,21 @@
       "source": "/equipe/",
       "destination": "/sobre",
       "permanent": true
+    },
+    {
+      "source": "/a-bola-conecta/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/servi%C3%A7os",
+      "destination": "/servicos",
+      "permanent": true
+    },
+    {
+      "source": "/servi%C3%A7os/",
+      "destination": "/servicos",
+      "permanent": true
     }
   ],
   "rewrites": [
