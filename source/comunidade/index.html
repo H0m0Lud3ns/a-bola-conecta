@@ -235,7 +235,19 @@
 
     section { padding: 72px 0; border-top: 1px solid hsla(28, 14%, 20%, .68); }
     .section-head { max-width: 780px; margin-bottom: 34px; }
-    .section-kicker { color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px; }
+    .section-kicker { color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px; display: inline-flex; align-items: center; gap: 10px; }
+    .section-kicker .phase-num {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: hsla(14, 72%, 52%, .14);
+      color: var(--primary);
+      font-size: 11px;
+      letter-spacing: .12em;
+    }
+    .section-kicker .phase-sep { opacity: .45; font-weight: 600; }
+    .section-kicker .phase-name { color: var(--accent); }
     h2 { font-size: clamp(2rem, 5vw, 3.75rem); line-height: 1.05; font-weight: 700; letter-spacing: -.025em; text-wrap: balance; }
     .section-copy { margin-top: 18px; color: var(--muted-foreground); font-size: 1.06rem; line-height: 1.72; }
 
@@ -251,7 +263,9 @@
       padding: 26px;
       box-shadow: 0 18px 52px hsla(0, 0%, 0%, .18);
     }
-    .card-number { color: var(--primary); font-size: 13px; font-weight: 900; letter-spacing: .12em; margin-bottom: 16px; }
+    .card-number { color: var(--primary); font-size: 13px; font-weight: 900; letter-spacing: .12em; margin-bottom: 18px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+    .card-number .card-num { font-family: Fraunces, Georgia, serif; font-size: 2rem; line-height: 1; font-weight: 700; letter-spacing: -.02em; color: var(--primary); }
+    .card-number .card-label { font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
     .card h3 { font-size: 1.55rem; line-height: 1.08; font-weight: 700; }
     .card p, .card li { color: var(--muted-foreground); line-height: 1.7; }
     .card p { margin-top: 12px; }
@@ -467,23 +481,23 @@
     <section id="apoio">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker">Bloco 1 - Apoiar como pessoa</div>
+          <div class="section-kicker"><span class="phase-num">Fase 01</span><span class="phase-sep">·</span><span class="phase-name">Apoio pessoa</span></div>
           <h2>Contribua com a circulação do filme.</h2>
           <p class="section-copy">A contribuição é voluntária. Quem apoia recebe um agradecimento cultural e escolhe se quer aparecer publicamente no mural.</p>
         </div>
         <div class="cards">
           <article class="card">
-            <div class="card-number">01</div>
+            <div class="card-number"><span class="card-num">01</span><span class="card-label">Voluntário</span></div>
             <h3>Contribuição voluntária</h3>
             <p>Você apoia a continuidade de A Bola Conecta sem comprar acesso ao documentário. O filme segue aberto.</p>
           </article>
           <article class="card">
-            <div class="card-number">02</div>
+            <div class="card-number"><span class="card-num">02</span><span class="card-label">Cartaz</span></div>
             <h3>Cartaz digital assinado</h3>
             <p>Ao contribuir, você recebe uma versão digital do cartaz com uma mensagem de agradecimento assinada pela Gondwana FC - Time da Educação.</p>
           </article>
           <article class="card">
-            <div class="card-number">03</div>
+            <div class="card-number"><span class="card-num">03</span><span class="card-label">Mural</span></div>
             <h3>Mural e gratidão</h3>
             <p>Seu nome pode aparecer no mural, se você autorizar. O Certificado de Gratidão é opcional.</p>
           </article>
@@ -589,23 +603,23 @@
     <section id="institucional">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker">Bloco 2 - Levar para uma instituição</div>
+          <div class="section-kicker"><span class="phase-num">Fase 02</span><span class="phase-sep">·</span><span class="phase-name">Apoio instituição</span></div>
           <h2>Para escolas, universidades, empresas, coletivos e eventos.</h2>
           <p class="section-copy">Quando uma organização quer usar A Bola Conecta, o caminho é construção de uma experiência educativa, licenciamento ou contratação. Entra em contato conosco e vamos construir a próxima jogada.</p>
         </div>
         <div class="cards">
           <article class="card">
-            <div class="card-number">Exibição</div>
+            <div class="card-number"><span class="card-num">01</span><span class="card-label">Exibição</span></div>
             <h3>Ver o filme em grupo</h3>
             <p>Sessões presenciais ou online para escolas, universidades, cineclubes, coletivos e eventos.</p>
           </article>
           <article class="card">
-            <div class="card-number">Mediação</div>
+            <div class="card-number"><span class="card-num">02</span><span class="card-label">Mediação</span></div>
             <h3>Roda de conversa</h3>
             <p>Encontro para abrir diálogo sobre futebol, ancestralidade, cultura afro-brasileira e educação.</p>
           </article>
           <article class="card">
-            <div class="card-number">Formação</div>
+            <div class="card-number"><span class="card-num">03</span><span class="card-label">Formação</span></div>
             <h3>Oficina, formação ou licença</h3>
             <p>Atividades com metodologia ABC, formação para equipes e licenciamento de uso do conteúdo.</p>
           </article>
@@ -616,23 +630,23 @@
     <section id="transparencia">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker">Bloco 3 - Cuidado</div>
+          <div class="section-kicker"><span class="phase-num">Fase 03</span><span class="phase-sep">·</span><span class="phase-name">Confiança</span></div>
           <h2>Seu apoio entra com nome, escolha e cuidado.</h2>
           <p class="section-copy">A contribuição ajuda a circulação de A Bola Conecta. Você escolhe se quer aparecer no mural, receber o cartaz digital e seguir perto das próximas jogadas.</p>
         </div>
         <div class="cards">
           <article class="card">
-            <div class="card-number">Confirmação</div>
+            <div class="card-number"><span class="card-num">01</span><span class="card-label">Confirmação</span></div>
             <h3>Depois do Pix</h3>
             <p>O formulário ajuda a localizar seu apoio e enviar o cartaz digital de agradecimento.</p>
           </article>
           <article class="card">
-            <div class="card-number">Escolha</div>
+            <div class="card-number"><span class="card-num">02</span><span class="card-label">Escolha</span></div>
             <h3>Nome só com consentimento</h3>
             <p>Você decide como quer aparecer: com nome, como coletivo/instituição, de forma anônima ou sem aparecer.</p>
           </article>
           <article class="card">
-            <div class="card-number">Clareza</div>
+            <div class="card-number"><span class="card-num">03</span><span class="card-label">Clareza</span></div>
             <h3>Agradecimento simbólico</h3>
             <p>Este apoio não promete benefício fiscal. É uma contribuição cultural com cartaz digital de agradecimento.</p>
           </article>
@@ -643,23 +657,23 @@
     <section id="onde-vai">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker">Bloco 4 - Onde vai o apoio</div>
+          <div class="section-kicker"><span class="phase-num">Fase 04</span><span class="phase-sep">·</span><span class="phase-name">Aplicação</span></div>
           <h2>Para onde vai cada contribuição.</h2>
           <p class="section-copy">A Da Silva e Vásquez Formação e Consultoria (CNPJ 62.085.700/0001-83), operando como Agência Gondwana FC, sustenta juridicamente o projeto. Toda contribuição é registrada formalmente e entra neste rateio:</p>
         </div>
         <div class="cards">
           <article class="card">
-            <div class="card-number">60% Educação e Pesquisas</div>
+            <div class="card-number"><span class="card-num">60%</span><span class="card-label">Educação</span></div>
             <h3>Aplicação direta da Metodologia ABC</h3>
             <p>Aplicação direta da Metodologia ABC em escolas públicas, formação docente, produção de fichas pedagógicas e materiais de apoio.</p>
           </article>
           <article class="card">
-            <div class="card-number">25% Circulação cultural</div>
+            <div class="card-number"><span class="card-num">25%</span><span class="card-label">Circulação cultural</span></div>
             <h3>Exibições e materiais abertos</h3>
             <p>Exibições do documentário em festivais, escolas, universidades e eventos comunitários. Tradução de materiais. Acessibilidade.</p>
           </article>
           <article class="card">
-            <div class="card-number">15% Operação</div>
+            <div class="card-number"><span class="card-num">15%</span><span class="card-label">Operação</span></div>
             <h3>Time da Educação funcionando</h3>
             <p>Manutenção da plataforma, infraestrutura tecnológica, gestão administrativa e jurídica da Da Silva e Vásquez Formação e Consultoria (Agência Gondwana FC).</p>
           </article>
@@ -671,7 +685,7 @@
     <section id="agradecimentos">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker">Mural de agradecimentos</div>
+          <div class="section-kicker">Reconhecimento</div>
           <h2>Quem ajuda a bola a seguir rolando aparece aqui, se quiser.</h2>
           <p class="section-copy">Os nomes abaixo são exemplos para testar a experiência. Na versão real, só entram nomes com autorização explícita.</p>
         </div>
@@ -691,7 +705,7 @@
     <section id="faq">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker">Perguntas rápidas</div>
+          <div class="section-kicker">Dúvidas</div>
           <h2>O essencial para apoiar com clareza.</h2>
         </div>
         <details>
