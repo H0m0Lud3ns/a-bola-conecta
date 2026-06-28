@@ -5,7 +5,6 @@ const projectRoot = process.cwd();
 const distDir = path.join(projectRoot, 'dist');
 const sourceDir = path.join(projectRoot, 'source');
 const requiredFiles = [
-  'middleware.js',
   'index.html',
   'documentario/index.html',
   'sobre/index.html',
@@ -64,11 +63,16 @@ if (!navGuardSource.includes('/documentario')) htmlErrors.push('nav-guard.js: ro
 if (!navGuardSource.includes('MutationObserver')) htmlErrors.push('nav-guard.js: observer anti-cache ausente');
 if (!navGuardSource.includes('window.location.assign')) htmlErrors.push('nav-guard.js: location.assign ausente');
 
-const middlewareSource = readFileSync(path.join(projectRoot, 'middleware.js'), 'utf8');
-if (!middlewareSource.includes('ACCENT_NORMALIZATIONS')) htmlErrors.push('middleware.js: mapa de normalizacoes ausente');
-if (!middlewareSource.includes('documentário')) htmlErrors.push('middleware.js: /documentário nao normalizado');
-if (!middlewareSource.includes('decodeURIComponent')) htmlErrors.push('middleware.js: decodeURIComponent ausente');
-if (!middlewareSource.includes('export const config')) htmlErrors.push('middleware.js: export config ausente');
+const middlewarePath = path.join(projectRoot, 'middleware.js');
+if (!existsSync(middlewarePath)) {
+  htmlErrors.push('middleware.js: ausente na raiz do repo');
+} else {
+  const middlewareSource = readFileSync(middlewarePath, 'utf8');
+  if (!middlewareSource.includes('ACCENT_NORMALIZATIONS')) htmlErrors.push('middleware.js: mapa de normalizacoes ausente');
+  if (!middlewareSource.includes('documentário')) htmlErrors.push('middleware.js: /documentário nao normalizado');
+  if (!middlewareSource.includes('decodeURIComponent')) htmlErrors.push('middleware.js: decodeURIComponent ausente');
+  if (!middlewareSource.includes('export const config')) htmlErrors.push('middleware.js: export config ausente');
+}
 
 const robots = readFileSync(path.join(distDir, 'robots.txt'), 'utf8');
 if (robots.includes('Disallow: /')) htmlErrors.push('robots.txt: indexacao bloqueada em producao');
