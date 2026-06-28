@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Apoie a Bola Conecta | Pix e Contribuição</title>
-<meta name="description" content="Apoie a circulação educativa de A Bola Conecta. Contribuição via Pix com transparência total." />
+<title>Contribua pelo valor gerado | A Bola Conecta</title>
+<meta name="description" content="Contribuição voluntária pelo valor gerado em pesquisa, produção científica e cultural. Sustenta a livre circulação do documentário, da metodologia e das fichas pedagógicas. Da Silva e Vásquez Formação e Consultoria LTDA, CNPJ 62.085.700/0001-83." />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Apoie a Bola Conecta | Pix e Contribuição" />
+<meta property="og:title" content="Contribua pelo valor gerado | A Bola Conecta</title>
 <meta property="og:description" content="Apoie a circulação educativa de A Bola Conecta." />
 <meta property="og:url" content="https://www.abolaconecta.com.br/apoie" />
 <meta property="og:image" content="https://www.abolaconecta.com.br/gondwana-time-educação/copa-de-gondwana/fichas-países/assets/cards-prontos/01-seleções-gondwana.jpg" />
@@ -43,9 +43,9 @@ p { margin-bottom: 16px; color: var(--muted); }
 <body>
 <div class="container">
 <a href="/" class="back-link">&larr; Voltar para A Bola Conecta</a>
-<span class="tag">APOIE</span>
-<h1>Entre no Time da Educação</h1>
-<p class="lead">Sua contribuição mantem o documentário, a metodologia e as fichas pedagógicas circulando em escolas, comunidades e eventos.</p>
+<span class="tag">CONTRIBUA</span>
+<h1>Contribua pelo valor gerado</h1>
+<p class="lead">Cada contribuição reconhece o valor da pesquisa, produção científica e cultural da Metodologia ABC, e sustenta a livre circulação do documentário, da metodologia e das fichas pedagógicas em escolas, comunidades e eventos. A da Silva e Vásquez Formação e Consultoria (CNPJ 62.085.700/0001-83) emite nota fiscal e recibo formal de contribuição, com tributação regular de empresa.</p>
 
 <div class="pix-box">
 <p style="color: var(--fg); font-weight: 600; margin-bottom: 8px;">Contribuição via Pix</p>
@@ -54,7 +54,7 @@ p { margin-bottom: 16px; color: var(--muted); }
 <p style="font-size: 0.8rem; color: var(--muted); margin: 6px 0 16px; text-align: center;">da Silva e Vásquez Formação e Consultoria</p>
 <img src="/apoie/assets/pix-qrcode.png" alt="QR Code Pix para CNPJ 62.085.700/0001-83" style="width: 200px; height: 200px; margin: 16px auto; display: block; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);" />
 <p style="font-size: 0.85rem; color: var(--muted); margin-top: 12px; text-align: center;">Abra o app do seu banco → Pix → "Pagar com QR Code" → aponte para o código acima. Ou copie o CNPJ e cole como chave Pix.</p>
-<p style="font-size: 0.9rem;">QR Code disponível mediante solicitação. Toda contribuição gera recibo e agradecimento.</p>
+<p style="font-size: 0.9rem;">QR Code disponível mediante solicitação. Toda contribuição gera nota fiscal e recibo formal, com tributação regular da empresa.</p>
 </div>
 
 <h2>Onde vai sua contribuição</h2>
@@ -95,7 +95,7 @@ p { margin-bottom: 16px; color: var(--muted); }
 <div class="amount">R$</div>
 <div>
 <h4>Voluntariado</h4>
-<p>Tradução, design, produção audiovisual, pesquisa, gestão de mídia social. Sua habilidade vira contribuição.</p>
+<p>Tradução, design, produção audiovisual, pesquisa, gestão de mídia social. Sua habilidade vira reconhecimento do valor gerado.</p>
 </div>
 <a href="/contato" class="cta">Falar</a>
 </div>
@@ -110,8 +110,8 @@ p { margin-bottom: 16px; color: var(--muted); }
 </div>
 
 <h2>Transparência</h2>
-<p>A da Silva e Vásquez Formação e Consultoria (CNPJ 62.085.700/0001-83), operando como Agência Gondwana FC, sustenta jurídicamente o projeto. Toda contribuição e registrada formalmente. Relatorios de prestação de contas publicados anualmente.</p>
-<p>Para doações internacionais ou via transferência bancaria, entre em contato.</p>
+<p>A da Silva e Vásquez Formação e Consultoria (CNPJ 62.085.700/0001-83), operando como Agência Gondwana FC, sustenta jurídicamente o projeto. Toda contribuição é registrada formalmente com nota fiscal e recibo. Relatórios de prestação de contas publicados anualmente.</p>
+<p>Para contribuições internacionais ou via transferência bancaria, entre em contato.</p>
 
 <a href="/contato" class="cta">Falar com a equipe</a>
 
@@ -138,14 +138,14 @@ p { margin-bottom: 16px; color: var(--muted); }
   const container = document.querySelector('.container');
   const banner = document.createElement('div');
   banner.style.cssText = 'background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(245,158,11,0.04)); border: 1px solid rgba(245,158,11,0.35); border-left: 4px solid hsl(45, 96%, 58%); padding: 14px 18px; border-radius: 10px; margin: 0 0 24px; font-size: 0.95rem;';
-  banner.innerHTML = '<strong style="color: hsl(45, 96%, 58%);">Você veio apoiar ' + nomeAmigavel + '.</strong> Sua contribuição via Pix vira recibo formal e ajuda a manter a circulação aberta.';
+  banner.innerHTML = '<strong style="color: hsl(45, 96%, 58%);">Você veio contribuir pelo valor gerado.</strong> Sua contribuição via Pix vira nota fiscal e recibo formal, sustentando a livre circulação do conhecimento.';
   container.insertBefore(banner, container.firstChild);
 
   // Atualiza titulo e subtitulo
   const h1 = document.querySelector('h1');
-  if (h1) h1.textContent = 'Apoiar ' + nomeAmigavel;
+  if (h1) h1.textContent = 'Contribuir pelo valor gerado';
   const lead = document.querySelector('.lead');
-  if (lead) lead.textContent = 'Sua contribuição entra direto no ciclo de circulação aberta: 60% para escolas parceiras, 25% para circulação cultural, 15% para operação do Time da Educação.';
+  if (lead) lead.textContent = 'Sua contribuição reconhece o valor da pesquisa, produção científica e cultural, e sustenta a livre circulação: 60% para escolas parceiras, 25% para circulação cultural, 15% para operação do Time da Educação.';
 
   // Atualiza titulo da pagina
   document.title = 'Apoiar ' + nomeAmigavel + ' | A Bola Conecta';
