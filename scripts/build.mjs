@@ -31,7 +31,6 @@ const routeCanonicals = new Map([
   ['privacidade/index.html', `${siteDomain}/privacidade`],
   ['imprensa/index.html', `${siteDomain}/imprensa`],
   ['metodologia/index.html', `${siteDomain}/metodologia`],
-  ['equipe/index.html', `${siteDomain}/equipe`],
   ['copa-2026/index.html', `${siteDomain}/copa-2026/`],
   ['copa-2026/fichas/index.html', `${siteDomain}/copa-2026/fichas/`],
   ['copa-2026/baixar/index.html', `${siteDomain}/copa-2026/baixar/`],

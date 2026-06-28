@@ -29,7 +29,6 @@
     loja: /^\/loja\/?$/,
     metodologia: /^\/metodologia\/?$/,
     imprensa: /^\/imprensa\/?$/,
-    equipe: /^\/equipe\/?$/,
     sobre: /^\/sobre\/?$/,
     apoie: /^\/apoie\/?$/,
     blog: /^\/blog\/?$/,
