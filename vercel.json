@@ -74,8 +74,8 @@
       "permanent": true
     },
     {
-      "source": "/document%C3%A1rio/",
-      "destination": "/documentario",
+      "source": "/document%C3%A1rio/(.*)",
+      "destination": "/documentario/:splat",
       "permanent": true
     },
     {
@@ -84,8 +84,8 @@
       "permanent": true
     },
     {
-      "source": "/documentário/",
-      "destination": "/documentario",
+      "source": "/documentário/(.*)",
+      "destination": "/documentario/:splat",
       "permanent": true
     }
   ],
