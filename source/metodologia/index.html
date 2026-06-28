@@ -4,74 +4,327 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Metodologia ABC | A Bola Conecta</title>
-<meta name="description" content="Metodologia ABC (Audiovisual-Bola-Camera) de Gondwana FC: tecnologia social para educação via Lei 10.639." />
+<meta name="description" content="Metodologia ABC (Audiovisual-Bola-Camera) de Gondwana FC: tecnologia social que alfabetiza habilidades sociais em escolas, marcas e eventos." />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Metodologia ABC | A Bola Conecta" />
-<meta property="og:description" content="Audiovisual, Bola e Camera: a tecnologia social de Gondwana FC para educação atraves do futebol." />
+<meta property="og:description" content="Audiovisual, Bola e Camera: tres ferramentas universais para alfabetizar habilidades sociais." />
 <meta property="og:url" content="https://www.abolaconecta.com.br/metodologia" />
-<meta property="og:image" content="https://www.abolaconecta.com.br/gondwana-time-educação/copa-de-gondwana/fichas-países/assets/cards-prontos/01-seleções-gondwana.jpg" />
+<meta property="og:image" content="https://www.abolaconecta.com.br/gondwana-time-educacao/copa-de-gondwana/fichas-paises/assets/cards-prontos/01-selecoes-gondwana.jpg" />
 <link rel="canonical" href="https://www.abolaconecta.com.br/metodologia" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root { --bg: hsl(28 18% 7%); --fg: hsl(38 30% 94%); --muted: hsl(38 18% 70%); --primary: hsl(14 72% 52%); --accent: hsl(45 96% 58%); }
+:root {
+  --bg: hsl(28 18% 7%);
+  --bg-card: hsl(28 18% 10%);
+  --fg: hsl(38 30% 94%);
+  --muted: hsl(38 18% 70%);
+  --primary: hsl(14 72% 52%);
+  --accent: hsl(45 96% 58%);
+  --verde: hsl(142 35% 42%);
+  --line: rgba(245, 230, 200, 0.08);
+}
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif; line-height: 1.6; padding: 40px 20px; }
-.container { max-width: 900px; margin: 0 auto; }
-h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 16px; line-height: 1.1; }
-h2 { font-family: 'Fraunces', serif; font-size: 1.8rem; margin: 48px 0 16px; color: var(--accent); }
-h3 { font-size: 1.2rem; margin: 24px 0 8px; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif; line-height: 1.65; padding: 40px 20px 80px; }
+.container { max-width: 980px; margin: 0 auto; }
+h1, h2, h3, h4 { font-family: 'Fraunces', serif; line-height: 1.15; color: var(--fg); }
+h1 { font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 900; margin-bottom: 20px; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); margin: 72px 0 20px; color: var(--accent); font-weight: 700; letter-spacing: -0.01em; }
+h3 { font-size: 1.25rem; margin: 32px 0 10px; font-weight: 700; color: var(--fg); }
+h4 { font-size: 1.05rem; margin: 18px 0 6px; font-weight: 600; color: var(--accent); font-style: italic; }
 p { margin-bottom: 16px; color: var(--muted); }
-.lead { font-size: 1.2rem; color: var(--fg); margin-bottom: 32px; }
-.tag { display: inline-block; padding: 4px 12px; background: rgba(245,158,11,0.15); color: var(--accent); border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 16px; }
-.pillar { background: rgba(255,255,255,0.04); padding: 24px; border-radius: 12px; margin: 16px 0; border-left: 4px solid var(--accent); }
-.pillar h3 { color: var(--accent); margin-bottom: 12px; font-family: 'Fraunces', serif; font-size: 1.5rem; }
-.lei { background: rgba(14,72,52,0.2); padding: 20px; border-radius: 12px; margin: 24px 0; border-left: 4px solid hsl(142 35% 18%); }
+.lead { font-size: 1.2rem; color: var(--fg); margin-bottom: 32px; font-family: 'Fraunces', serif; font-style: italic; line-height: 1.5; }
+.epigrafe { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.05rem; color: var(--muted); border-left: 3px solid var(--accent); padding: 8px 0 8px 20px; margin: 24px 0; line-height: 1.55; }
+.epigrafe strong { color: var(--accent); font-weight: 600; }
+strong { color: var(--fg); font-weight: 600; }
+.tag { display: inline-block; padding: 5px 14px; background: rgba(245, 158, 11, 0.15); color: var(--accent); border-radius: 999px; font-size: 11px; font-weight: 700; margin-bottom: 20px; letter-spacing: 0.08em; }
 .back-link { display: inline-block; margin-bottom: 24px; color: var(--accent); text-decoration: none; font-size: 14px; }
 .back-link:hover { text-decoration: underline; }
-@media (max-width: 600px) { body { padding: 20px 16px; } }
+
+/* EIXOS A · B · C */
+.eixos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
+@media (max-width: 760px) { .eixos { grid-template-columns: 1fr; } }
+.eixo { background: var(--bg-card); padding: 28px 24px; border-radius: 14px; border-top: 4px solid var(--accent); position: relative; }
+.eixo .letra { font-family: 'Fraunces', serif; font-size: 3.5rem; font-weight: 900; color: var(--accent); line-height: 1; margin-bottom: 8px; opacity: 0.85; }
+.eixo h3 { color: var(--accent); font-family: 'Fraunces', serif; font-size: 1.4rem; margin-bottom: 10px; }
+.eixo .que-alfabetiza { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 12px; font-weight: 600; }
+.eixo p { font-size: 0.96rem; margin-bottom: 12px; }
+.eixo .pratica { background: rgba(245, 158, 11, 0.06); padding: 12px 14px; border-radius: 8px; font-size: 0.9rem; margin-top: 12px; border-left: 2px solid var(--accent); }
+.eixo .pratica strong { color: var(--accent); }
+
+/* TIME DE CRAQUES */
+.time { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 28px 0; }
+.craque { background: var(--bg-card); padding: 18px 18px 18px 22px; border-radius: 10px; border-left: 3px solid var(--accent); }
+.craque .nome { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 700; color: var(--fg); margin-bottom: 2px; }
+.craque .vida { font-size: 0.78rem; color: var(--muted); margin-bottom: 8px; font-style: italic; }
+.craque .posicao { font-size: 0.85rem; color: var(--accent); margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.craque .funcao { font-size: 0.92rem; color: var(--fg); line-height: 1.5; }
+
+/* LEI */
+.lei { background: linear-gradient(135deg, rgba(14, 72, 52, 0.25), rgba(14, 72, 52, 0.1)); padding: 24px 28px; border-radius: 12px; margin: 32px 0; border-left: 4px solid var(--verde); }
+.lei h3 { color: var(--verde); margin-bottom: 10px; font-family: 'Fraunces', serif; font-size: 1.5rem; }
+
+/* TREINO */
+.treino-box { background: var(--bg-card); padding: 24px 28px; border-radius: 12px; margin: 24px 0; border: 1px solid var(--line); }
+.treino-box .conceito { font-family: 'Fraunces', serif; font-size: 1.1rem; font-style: italic; color: var(--accent); margin-bottom: 12px; }
+
+/* DEPOIMENTOS */
+.depoimentos { display: grid; gap: 16px; margin: 28px 0; }
+.depoimento { background: var(--bg-card); padding: 22px 24px; border-radius: 12px; border-left: 3px solid var(--primary); position: relative; }
+.depoimento blockquote { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.05rem; color: var(--fg); line-height: 1.5; margin-bottom: 12px; padding-left: 0; }
+.depoimento blockquote::before { content: '"'; font-size: 2.5rem; color: var(--primary); line-height: 0; vertical-align: -0.4em; margin-right: 4px; }
+.depoimento .autor { font-size: 0.88rem; color: var(--muted); }
+.depoimento .autor strong { color: var(--accent); }
+
+/* DO FILME */
+.do-filme { background: rgba(245, 158, 11, 0.04); padding: 24px 28px; border-radius: 12px; margin: 32px 0; border: 1px dashed var(--accent); }
+.do-filme .label { display: inline-block; padding: 3px 10px; background: rgba(245, 158, 11, 0.18); color: var(--accent); border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 14px; }
+.do-filme p { font-family: 'Fraunces', serif; font-style: italic; color: var(--fg); margin-bottom: 10px; }
+
+/* FORMATOS */
+.formatos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 24px 0; }
+.formato { background: var(--bg-card); padding: 22px; border-radius: 10px; border-top: 3px solid var(--accent); }
+.formato .numero { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 900; color: var(--accent); margin-bottom: 6px; }
+.formato .titulo { font-family: 'Fraunces', serif; font-size: 1.05rem; color: var(--fg); margin-bottom: 8px; font-weight: 600; }
+.formato p { font-size: 0.92rem; margin-bottom: 0; }
+
+/* CTA */
+.cta-box { background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(14, 72, 52, 0.12)); padding: 32px 28px; border-radius: 14px; margin: 40px 0 24px; text-align: center; border: 1px solid var(--line); }
+.cta-box h3 { color: var(--accent); margin-bottom: 12px; font-family: 'Fraunces', serif; font-size: 1.6rem; }
+.cta-box p { color: var(--fg); margin-bottom: 20px; }
+.cta-box a { display: inline-block; padding: 12px 28px; background: var(--accent); color: var(--bg); border-radius: 8px; text-decoration: none; font-weight: 700; margin: 6px; transition: transform 0.2s; }
+.cta-box a:hover { transform: translateY(-2px); }
+.cta-box a.secundario { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.cta-box .email { font-family: 'Fraunces', serif; font-style: italic; color: var(--muted); margin-top: 16px; font-size: 0.95rem; }
+
+/* NAV INFERIOR */
+.nav-inferior { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center; }
+.nav-inferior a { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+.nav-inferior a:hover { text-decoration: underline; }
+
+@media (max-width: 600px) { body { padding: 24px 16px 60px; } h2 { margin-top: 56px; } .eixo { padding: 22px 20px; } .do-filme, .lei, .treino-box { padding: 20px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 </style>
 </head>
 <body>
 <div class="container">
 <a href="/" class="back-link">← Voltar para A Bola Conecta</a>
-<span class="tag">METODOLOGIA ABC</span>
-<h1>Audiovisual · Bola · Câmera</h1>
-<p class="lead">A Metodologia ABC é a tecnologia social da Gondwana FC - Time da Educação. Usa três linguagens para transformar a sala de aula, a quadra e a comunidade em espaço de aprendizagem.</p>
 
-<h2>O que é</h2>
-<p>ABC é uma metodologia pedagógica estruturada em três pilares, testada em escolas públicas do Brasil desde 2018, e formalizada em 2021 com o documentário A Bola Conecta como material disparador.</p>
+<!-- 1. HERO -->
+<header>
+  <span class="tag">METODOLOGIA ABC</span>
+  <h1>Audiovisual · Bola · Câmera</h1>
+  <p class="lead">Três ferramentas universais para alfabetizar habilidades sociais em crianças, adolescentes e adultos — em escolas, marcas e territórios.</p>
 
-<div class="pillar">
-<h3>A — Audiovisual</h3>
-<p>O documentário A Bola Conecta funciona como ponto de partida. 23 minutos que conectam ancestralidade africana, cultura afro-brasileira e futebol de quebrada. Cada cena vira gatilho para leitura crítica, produção textual e debaté.</p>
+  <p class="epigrafe">"Há 200 milhões de anos, existiam dois supercontinentes: <strong>Laurásia</strong> ao norte, <strong>Gondwana</strong> ao sul. E deste último faziam parte o que hoje são a África e a América do Sul."<br><span style="font-size: 0.85rem; font-style: normal; display: block; margin-top: 8px;">— Abertura do documentário <em>Gondwana, A Bola Conecta</em> (2021)</span></p>
+</header>
+
+<!-- 2. A TESE -->
+<section>
+  <h2>Alfabetizar habilidades sociais, não conteúdo</h2>
+
+  <p>A Metodologia ABC não foi desenhada para ensinar futebol, fotografia ou cinema. Foi desenhada para desenvolver <strong>habilidades para a vida</strong>: olhares críticos e criativos, capacidade de decisão em situação de incerteza, protagonismo narrativo.</p>
+
+  <p>As três ferramentas — <strong>Audiovisual, Bola, Câmera</strong> — são de acesso universal. Qualquer pessoa tem um celular com câmera. Qualquer pessoa já chutou uma bola. Qualquer pessoa já assistiu um filme. A Metodologia ABC usa essa universalidade para entrar em ambientes onde outros métodos pedagógicos não conseguem chegar: a sala de aula da rede pública, a comunidade, o time de base, o evento corporativo.</p>
+
+  <p>É uma posição ética clara: <strong>oferecer uma perspectiva inovadora, lúdica, pedagógica e baseada no não-enfrentamento</strong>. A bola convida. O filme provoca. A câmera empodera. O diálogo vem depois — em roda, com mediação, sem imposição.</p>
+</section>
+
+<!-- 3. OS 3 EIXOS -->
+<section>
+  <h2>Os três eixos</h2>
+
+  <div class="eixos">
+    <div class="eixo">
+      <div class="letra">A</div>
+      <h3>Audiovisual</h3>
+      <div class="que-alfabetiza">O que alfabetiza</div>
+      <p><strong>Olhares críticos e criativos.</strong> Capacidade de ler narrativas, decodificar contextos, identificar pontos de vista, fazer análises. É alfabetização contra a alienação.</p>
+      <div class="pratica"><strong>Na prática:</strong> roda de diálogo após exibição do documentário. Cada cena vira gatilho para leitura crítica e produção textual.</div>
+    </div>
+
+    <div class="eixo">
+      <div class="letra">B</div>
+      <h3>Bola</h3>
+      <div class="que-alfabetiza">O que alfabetiza</div>
+      <p><strong>Decisão em liberdade.</strong> Treino com erro consciente, equilíbrio, concentração, contato visual, decisão rápida sob incerteza. A bola não é sobre futebol — é sobre decidir em situação real.</p>
+      <div class="pratica"><strong>Na prática:</strong> três movimentos de freestyle (equilíbrio no joelho, na cabeça, embaixadinhas). O foco é mente + corpo + respiração.</div>
+    </div>
+
+    <div class="eixo">
+      <div class="letra">C</div>
+      <h3>Câmera</h3>
+      <div class="que-alfabetiza">O que alfabetiza</div>
+      <p><strong>Protagonismo narrativo.</strong> Quem filma vê de outro jeito. Quem é filmado se reconhece. O estudante vira autor do próprio olhar, interpreta imagens, identifica perspectivas.</p>
+      <div class="pratica"><strong>Na prática:</strong> câmera de celular na mão. Os alunos registram, selecionam, expõem. A fotografia vira autoria.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. ENSINO-TREINO-APRENDIZAGEM -->
+<section>
+  <h2>Ensino–treino–aprendizagem</h2>
+
+  <div class="treino-box">
+    <div class="conceito">"O treino não é só repetir; é o trabalho da tomada de decisões de forma consciente."</div>
+    <p>A Metodologia ABC adapta o conceito de <strong>ensino-aprendizagem</strong> de Paulo Freire — somando o <strong>treino</strong> entre os dois. Isso muda o que se espera de uma oficina: não é palestra, não é curso, é <strong>prática deliberada com reflexão incorporada</strong>.</p>
+    <p>O processo pedagógico parte da vivência corporal, passa pela prática repetida com intenção e chega à consciência. A cada sessão, o participante pratica, erra, ajusta, e o educador media — nunca impõe. É o que Paulo Freire chamava de <em>círculos de cultura</em>, mediados por um coordenador cuja tarefa essencial é o diálogo.</p>
+  </div>
+</section>
+
+<!-- 5. O TIME DE CRAQUES -->
+<section>
+  <h2>O time de craques</h2>
+
+  <p>A Metodologia ABC mobiliza um time de pensadores que entram em quadra para resolver problemas pedagógicos específicos. Cada um ocupa uma posição e tem uma função clara no jogo.</p>
+
+  <div class="time">
+    <div class="craque">
+      <div class="nome">Ailton Krenak</div>
+      <div class="vida">Itabirinha de Mantena, MG · 1953</div>
+      <div class="posicao">Goleiro</div>
+      <div class="funcao">Defende a sabedoria ancestral indígena. Lembra que sustentabilidade e respeito às culturas originárias são fundamentais.</div>
+    </div>
+
+    <div class="craque">
+      <div class="nome">Antonieta de Barros</div>
+      <div class="vida">Florianópolis, SC · 1901–1952</div>
+      <div class="posicao">Craque da educação</div>
+      <div class="funcao">Pioneira na luta pelo direito à educação para todas as pessoas — especialmente mulheres negras. Educação como chave da emancipação.</div>
+    </div>
+
+    <div class="craque">
+      <div class="nome">Paulo Freire</div>
+      <div class="vida">Recife, PE · 1921–1997</div>
+      <div class="posicao">Capitão</div>
+      <div class="funcao">Dribla a opressão com a pedagogia libertadora. Educação como ato político e de amor. Diálogo como condição essencial.</div>
+    </div>
+
+    <div class="craque">
+      <div class="nome">Djamila Ribeiro</div>
+      <div class="vida">Santos, SP · 1980</div>
+      <div class="posicao">Conexão defesa-ataque</div>
+      <div class="funcao">Intersecciona diferentes questões sociais. Dribla o racismo e o patriarcado criando oportunidades para todas as jogadoras brilharem.</div>
+    </div>
+
+    <div class="craque">
+      <div class="nome">Lélia Gonzalez</div>
+      <div class="vida">Belo Horizonte, MG · 1935–1994</div>
+      <div class="posicao">Atacante</div>
+      <div class="funcao">Visão afro-latino-americana. Não deixa passar oportunidade de denunciar injustiças e visibilizar a luta das mulheres negras e indígenas.</div>
+    </div>
+
+    <div class="craque">
+      <div class="nome">Edgar Morin</div>
+      <div class="vida">Paris, França · 1921</div>
+      <div class="posicao">Estrategista (comissão técnica)</div>
+      <div class="funcao">Complexidade e transdisciplinaridade. Educação que integra diferentes saberes e promove visão holística do mundo.</div>
+    </div>
+
+    <div class="craque">
+      <div class="nome">Carolina Maria de Jesus</div>
+      <div class="vida">Sacramento, MG · 1914–1977</div>
+      <div class="posicao">Motivadora (comissão técnica)</div>
+      <div class="funcao">Luta e resistência. Mostra que poesia, música e arte são instrumentos de liberdade e visibilidade das reivindicações sociais.</div>
+    </div>
+
+    <div class="craque">
+      <div class="nome">João Batista Freire</div>
+      <div class="vida">Santos, SP · 1948</div>
+      <div class="posicao">Pedagogo do corpo (comissão técnica)</div>
+      <div class="funcao">Integra o corpo nos processos de alfabetização. Filosofia do futebol de rua como metodologia de ensino — o "sotaque corporal e intelectual".</div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. LEI 10.639 -->
+<section>
+  <div class="lei">
+    <h3>Lei 10.639/2003 — caminho didático testado</h3>
+    <p>A Metodologia ABC é aplicação direta da Lei 10.639, que torna obrigatório o ensino de História e Cultura Afro-Brasileira em todas as escolas do Brasil. A diferença é que a metodologia entrega ao educador um <strong>caminho didático testado em rede pública</strong>, com material concreto (documentário + guia do educador + fichas pedagógicas) e formação docente — não panfleto, não data comemorativa, mas prática pedagógica contínua.</p>
+    <p style="margin-bottom: 0;">Aplicada desde 2018 em escolas municipais de São Paulo, Bahia, Pernambuco, Paraíba e Rio de Janeiro, e em parceria com SESC, SENAC, CEUs e Museu do Futebol.</p>
+  </div>
+</section>
+
+<!-- 7. DO FILME -->
+<section>
+  <div class="do-filme">
+    <span class="label">DO FILME — GONDWANA, A BOLA CONECTA (2021)</span>
+    <p>"Se o filme consegue deixar alguma experiência que para eles seja inesquecível, a gente coloca uma sementinha na base do conhecimento. Depois disso é como o futebol: treinar."</p>
+    <p style="margin-bottom: 0; font-size: 0.92rem; color: var(--muted);">— Sebastián Acevedo Vásquez, encerramento do documentário</p>
+  </div>
+</section>
+
+<!-- 8. DEPOIMENTOS -->
+<section>
+  <h2>Quem passou por isso, diz</h2>
+
+  <div class="depoimentos">
+    <div class="depoimento">
+      <blockquote>Embora curto, o documentário é muito amplo nas reflexões e questionamentos a que se propõe. Cativa a atenção dos adolescentes e leva-os a (re)pensar sobre o que a bola ou um registro fotográfico têm de relevância em suas vidas.</blockquote>
+      <div class="autor"><strong>Michel Macedo</strong> — Professor de Linguagens, Senac Lapa Scipião (2022)</div>
+    </div>
+
+    <div class="depoimento">
+      <blockquote>Uma coisa tão simples, tão no nosso dia a dia, e não sabemos de onde vem essa história. E a gente entende que tem várias palavras no futebol que vêm de matriz africana e vai trazer a nossa alma para jogar ali dentro.</blockquote>
+      <div class="autor"><strong>Marina, 16 anos</strong> — aluna do Senac Lapa Scipião (2022)</div>
+    </div>
+
+    <div class="depoimento">
+      <blockquote>Excelente documentário! Educativo, comovente e muito leve. Neste momento, em que estamos observando com enorme preocupação o aumento de manifestações racistas em diversas áreas, inclusive no futebol, este documentário chega como uma resposta contundente, firme e íntegra.</blockquote>
+      <div class="autor"><strong>Antonia Quintão</strong> — pesquisadora FEA/USP, presidenta do Geledés Instituto da Mulher Negra</div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. COMO APLICAR -->
+<section>
+  <h2>Como aplicar</h2>
+
+  <p>A Metodologia ABC funciona em três formatos escaláveis, do mais pontual ao mais profundo.</p>
+
+  <div class="formatos">
+    <div class="formato">
+      <div class="numero">01</div>
+      <div class="titulo">Cine-debate</div>
+      <p>1 encontro · 90 minutos. Exibição do documentário seguida de mediação pedagógica. Funciona como introdução ao tema com qualquer turma do Fundamental II ao Médio.</p>
+    </div>
+
+    <div class="formato">
+      <div class="numero">02</div>
+      <div class="titulo">Oficina ABC</div>
+      <p>4 a 8 encontros. Sessões estruturadas com ficha pedagógica por tema. Inclui prática corporal, produção audiovisual autoral dos alunos e exposição final.</p>
+    </div>
+
+    <div class="formato">
+      <div class="numero">03</div>
+      <div class="titulo">Piloto institucional</div>
+      <p>4 a 8 semanas. Projeto integrado ao currículo, com formação docente, produção de material pelos alunos e evento de compartilhamento com a comunidade escolar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10. CTA -->
+<div class="cta-box">
+  <h3>Quer aplicar na sua escola, marca ou evento?</h3>
+  <p>Atendemos escolas públicas e particulares, marcas, fundações, eventos corporativos e projetos culturais.</p>
+  <a href="/servicos">Ver serviços</a>
+  <a href="/contato" class="secundario">Falar conosco</a>
+  <div class="email">contato.gondwana@gmail.com</div>
 </div>
 
-<div class="pillar">
-<h3>B — Bola</h3>
-<p>A bola é o elemento concreto, simbólico e pedagógico. Em sala de aula, vira metáfora para território, corpo, ancestralidade. Na quadra, vira prática corporal e educativa. Na comunidade, vira encontro.</p>
-</div>
-
-<div class="pillar">
-<h3>C — Câmera</h3>
-<p>A câmera é a ferramenta de protagonismo do estudante. Quem filma vê de outro jeito. Quem é filmado se reconhece. O resultado é produção audiovisual autoral dos próprios alunos, conectada à Lei 10.639.</p>
-</div>
-
-<div class="lei">
-<h3 style="color: hsl(45 96% 58%);">Lei 10.639/2003</h3>
-<p>A Metodologia ABC é aplicação direta da Lei 10.639, que torna obrigatório o ensino de História e Cultura Afro-Brasileira e Africana em todas as escolas do Brasil. A metodologia entrega ao educador um caminho didático testado, com material concreto (documentário + guia do professor + fichas pedagógicas) e formação docente.</p>
-</div>
-
-<h2>Como aplicar em sala de aula</h2>
-<p>A metodologia foi desenhada para funcionar em três formatos:</p>
-<p><strong>1. Cine-debaté (1 aula, 90 minutos):</strong> Exibição do documentário seguida de mediação pedagógica. Funciona para introduzir o tema com qualquer turma do Ensino Fundamental II ao Ensino Médio.</p>
-<p><strong>2. Oficina (4 a 8 encontros):</strong> Sessões estruturadas com ficha pedagógica por tema. Usa as 48 fichas de seleções + 7 cards especiais da Copa do Mundo 2026 como material de apoio. Inclui produção audiovisual autoral dos alunos.</p>
-<p><strong>3. Piloto institucional (4 a 8 semanas):</strong> Projeto completo integrado ao currículo, com formação docente, produção de material pelos alunos e evento final de compartilhamento com a comunidade escolar.</p>
-
-<h2>Para escolas e educadores</h2>
-<p>Se você é educador, escola, secretaria de educação ou universidade interessada em aplicar a Metodologia ABC, entre em contato. Temos material pedagógico estruturado, formação docente e acompanhamento.</p>
-<p>Email: <code style="background:rgba(255,255,255,0.1); padding:4px 8px; border-radius:4px;">contato.gondwana@gmail.com</code></p>
+<!-- NAV INFERIOR -->
+<nav class="nav-inferior">
+  <a href="/">← Voltar para A Bola Conecta</a>
+  <div style="display:flex; gap:18px; flex-wrap:wrap;">
+    <a href="/servicos">Serviços</a>
+    <a href="/documentario">Documentário</a>
+    <a href="/copa-2026">Copa 2026</a>
+    <a href="/comunidade">Comunidade</a>
+  </div>
+</nav>
 
 </div>
 </body>
