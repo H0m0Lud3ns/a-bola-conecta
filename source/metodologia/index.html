@@ -84,6 +84,12 @@ strong { color: var(--fg); font-weight: 600; }
 .eixo .pratica { background: rgba(245, 158, 11, 0.06); padding: 12px 14px; border-radius: 8px; font-size: 0.9rem; margin-top: 12px; border-left: 2px solid var(--accent); }
 .eixo .pratica strong { color: var(--accent); }
 
+/* TESE — lista de 3 habilidades */
+.habilidades { list-style: none; padding: 0; margin: 24px 0 28px; display: grid; gap: 14px; }
+.habilidades li { background: rgba(245, 158, 11, 0.06); border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; padding: 16px 20px; font-size: 1rem; line-height: 1.55; color: var(--fg); }
+.habilidades li strong { color: var(--accent); display: block; margin-bottom: 4px; font-family: 'Fraunces', serif; font-size: 1.1rem; }
+@media (max-width: 600px) { .habilidades li { padding: 14px 16px; } }
+
 /* TIME DE CRAQUES */
 .time { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 28px 0; }
 .craque { background: var(--bg-card); padding: 18px 18px 18px 22px; border-radius: 10px; border-left: 3px solid var(--accent); }
@@ -158,13 +164,19 @@ strong { color: var(--fg); font-weight: 600; }
 
 <!-- 2. A TESE -->
 <section>
-  <h2>Alfabetizar habilidades sociais, não conteúdo</h2>
+  <h2>Três habilidades para a vida</h2>
 
-  <p>A Metodologia ABC foi desenhada para desenvolver <strong>habilidades para a vida</strong>: olhares críticos e criativos, capacidade de decisão em situação de incerteza, protagonismo narrativo. Futebol, fotografia e cinema entram como linguagens, não como conteúdo.</p>
+  <p>A Metodologia ABC trabalha três habilidades que a escola raramente tem tempo de ensinar — e que crianças, adolescentes e adultos usam pelo resto da vida.</p>
 
-  <p>As três ferramentas — <strong>Audiovisual, Bola, Câmera</strong> — são de acesso universal. Qualquer pessoa tem um celular com câmera. Qualquer pessoa já chutou uma bola. Qualquer pessoa já assistiu um filme. A Metodologia ABC usa essa universalidade para entrar em ambientes onde outros métodos pedagógicos não conseguem chegar: a sala de aula da rede pública, a comunidade, o time de base, o evento corporativo.</p>
+  <ul class="habilidades">
+    <li><strong>Olhares críticos e criativos.</strong> Ler o que está à frente, identificar o que ficou de fora, escolher em quem confiar.</li>
+    <li><strong>Decisão em liberdade.</strong> Experimentar, errar com cuidado, ajustar e tentar de novo — em situação real, não em prova.</li>
+    <li><strong>Protagonismo narrativo.</strong> Falar por si, contar a própria história, reconhecer a do outro.</li>
+  </ul>
 
-  <p>É uma posição ética clara: <strong>oferecer uma perspectiva inovadora, lúdica, pedagógica e baseada no não-enfrentamento</strong>. A bola convida. O filme provoca. A câmera empodera. O diálogo vem depois — em roda, com mediação, sem imposição.</p>
+  <p>Futebol, fotografia e cinema viram as três portas de entrada. Todo mundo já chutou uma bola. Todo mundo tem um celular com câmera. Todo mundo já assistiu um filme. A Metodologia ABC entra onde a escola pública, a comunidade, o time de base e o evento corporativo já estão acontecendo — e transforma o encontro em roda de aprendizagem.</p>
+
+  <p>A bola convida. O filme provoca. A câmera empodera. O diálogo vem depois — em roda, mediado, com tempo para cada voz chegar.</p>
 </section>
 
 <!-- 3. OS 3 EIXOS -->
