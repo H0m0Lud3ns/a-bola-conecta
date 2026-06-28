@@ -44,17 +44,6 @@ strong { color: var(--fg); font-weight: 600; }
 .logo-link { display: inline-block; line-height: 0; transition: opacity 0.2s; }
 .logo-link:hover { opacity: 0.75; }
 .site-logo { height: 44px; width: auto; display: block; }
-.video-card { background: var(--bg-card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; margin: 32px 0; }
-.video-card h3 { margin-top: 0; color: var(--accent); }
-.video-poster { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; cursor: pointer; background: #000; }
-.video-poster img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.92; transition: opacity 0.2s; }
-.video-poster:hover img { opacity: 1; }
-.video-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 78px; height: 78px; border-radius: 50%; background: rgba(245, 158, 11, 0.95); border: none; cursor: pointer; display: grid; place-items: center; box-shadow: 0 6px 24px rgba(0,0,0,0.4); transition: transform 0.2s, background 0.2s; }
-.video-poster:hover .video-play { transform: translate(-50%, -50%) scale(1.08); background: rgba(245, 158, 11, 1); }
-.video-play svg { fill: #1a1207; width: 32px; height: 32px; margin-left: 4px; }
-.video-frame { width: 100%; aspect-ratio: 16 / 9; border-radius: 10px; border: none; display: block; }
-.video-fallback { font-size: 0.85rem; color: var(--muted); margin-top: 12px; text-align: center; }
-.video-fallback a { color: var(--accent); }
 .back-link { display: inline-block; margin-bottom: 24px; color: var(--accent); text-decoration: none; font-size: 14px; }
 .back-link:hover { text-decoration: underline; }
 
@@ -300,21 +289,6 @@ strong { color: var(--fg); font-weight: 600; }
 
 </section>
 
-<!-- 8.5 VIDEO DO METODO -->
-<section class="video-card">
-  <span class="tag">VÍDEO DO MÉTODO</span>
-  <h3>Veja a Metodologia ABC em ação</h3>
-  <p>Trinta segundos do método acontecendo: a bola como convite, o corpo como didática, o diálogo como desfecho.</p>
-
-  <div class="video-poster" data-video-id="Zn9RFh7Dwb0" role="button" tabindex="0" aria-label="Reproduzir vídeo do método">
-    <img src="/assets/video-poster-metodologia-abc.jpg" alt="Capa do vídeo: Metodologia ABC em ação." />
-    <button class="video-play" aria-label="Reproduzir">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-    </button>
-  </div>
-  <p class="video-fallback"><a href="https://youtube.com/shorts/Zn9RFh7Dwb0" target="_blank" rel="noopener">Assistir no YouTube</a></p>
-</section>
-
 <!-- 9. PUBLICACAO ACADEMICA -->
 <section style="background: var(--bg-card); padding: 28px; border-radius: 14px; margin: 32px 0; border-left: 4px solid var(--verde);">
   <span class="tag" style="background: rgba(34, 197, 94, 0.15); color: var(--verde);">PUBLICAÇÃO ACADÊMICA</span>
@@ -346,27 +320,5 @@ strong { color: var(--fg); font-weight: 600; }
 </nav>
 
 </div>
-
-<script>
-  // Lazy embed YouTube: so carrega o iframe quando o usuario clica no poster.
-  document.querySelectorAll('.video-poster').forEach(function(poster) {
-    function activate() {
-      var videoId = poster.getAttribute('data-video-id');
-      if (!videoId) return;
-      var iframe = document.createElement('iframe');
-      iframe.className = 'video-frame';
-      iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
-      iframe.title = 'Metodologia ABC em ação';
-      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-      iframe.allowFullscreen = true;
-      poster.replaceWith(iframe);
-    }
-    poster.addEventListener('click', activate);
-    poster.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
-    });
-  });
-</script>
-
 </body>
 </html>
