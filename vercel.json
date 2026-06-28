@@ -67,6 +67,16 @@
       "source": "/documental/",
       "destination": "/documentario",
       "permanent": true
+    },
+    {
+      "source": "/apoie",
+      "destination": "/comunidade",
+      "permanent": true
+    },
+    {
+      "source": "/apoie/",
+      "destination": "/comunidade",
+      "permanent": true
     }
   ],
   "rewrites": [
