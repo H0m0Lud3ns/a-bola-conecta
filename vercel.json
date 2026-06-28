@@ -67,26 +67,6 @@
       "source": "/documental/",
       "destination": "/documentario",
       "permanent": true
-    },
-    {
-      "source": "/document%C3%A1rio",
-      "destination": "/documentario",
-      "permanent": true
-    },
-    {
-      "source": "/document%C3%A1rio/(.*)",
-      "destination": "/documentario/:splat",
-      "permanent": true
-    },
-    {
-      "source": "/documentário",
-      "destination": "/documentario",
-      "permanent": true
-    },
-    {
-      "source": "/documentário/(.*)",
-      "destination": "/documentario/:splat",
-      "permanent": true
     }
   ],
   "rewrites": [
