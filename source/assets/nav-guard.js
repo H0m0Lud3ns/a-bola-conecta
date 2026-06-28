@@ -7,7 +7,11 @@
 // e outras rotas HTML estatico.
 (function () {
   var legacyTarget = '/copa-2026/#contribuir';
-  var legacyPattern = /\/(a-bola-conecta\/)?(comunidade|apoie)(\/|#|\?|$)/;
+  // Apenas /apoie/ continua legacy (rota legacy que ainda nao migrou).
+  // /comunidade/ saiu daqui em 2026-06-28 porque agora tem HTML estatico
+  // proprio em dist/comunidade/index.html, com anchor #chave-pix para a
+  // chave Pix CNPJ.
+  var legacyPattern = /\/(a-bola-conecta\/)?(apoie)(\/|#|\?|$)/;
 
   // Rutas que existem como HTML estatico servido pela Vercel, mas NAO estao
   // registradas no React Router. Quando o usuario clica num link do menu, o
