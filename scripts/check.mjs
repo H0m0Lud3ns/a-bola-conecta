@@ -3,6 +3,7 @@ import path from 'node:path';
 
 const projectRoot = process.cwd();
 const distDir = path.join(projectRoot, 'dist');
+const sourceDir = path.join(projectRoot, 'source');
 const requiredFiles = [
   'index.html',
   'documentario/index.html',
@@ -51,7 +52,16 @@ for (const file of htmlFiles) {
   if (html.includes('id="root"') && !html.includes('index-Bc6DgKrQ-crm-api-leads1.js')) {
     htmlErrors.push(`${file}: bundle de leads atual nao carregado`);
   }
+  // Validar nav-guard inline inyectado pelo build.mjs
+  if (!['comunidade/index.html', 'apoie/index.html'].includes(file) && !html.includes('window.__navGuardInstalled')) {
+    htmlErrors.push(`${file}: nav-guard inline ausente`);
+  }
 }
+
+const navGuardSource = readFileSync(path.join(sourceDir, 'assets', 'nav-guard.js'), 'utf8');
+if (!navGuardSource.includes('/documentario')) htmlErrors.push('nav-guard.js: rota /documentario ausente');
+if (!navGuardSource.includes('MutationObserver')) htmlErrors.push('nav-guard.js: observer anti-cache ausente');
+if (!navGuardSource.includes('window.location.assign')) htmlErrors.push('nav-guard.js: location.assign ausente');
 
 const robots = readFileSync(path.join(distDir, 'robots.txt'), 'utf8');
 if (robots.includes('Disallow: /')) htmlErrors.push('robots.txt: indexacao bloqueada em producao');

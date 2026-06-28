@@ -1,7 +1,7 @@
 // Service Worker do A Bola Conecta
 // Versao sincronizada com build hash. Quando o build muda, forca limpeza do cache antigo.
 
-const SW_VERSION = 'abolaconecta-v1';
+const SW_VERSION = 'abolaconecta-v2';
 const STATIC_CACHE = `static-${SW_VERSION}`;
 const HTML_CACHE = `html-${SW_VERSION}`;
 

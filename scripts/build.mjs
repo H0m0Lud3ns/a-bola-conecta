@@ -103,6 +103,21 @@ for (const relativePath of htmlFiles) {
 
   trackReferencedAssets(html);
 
+  // Inyectar nav-guard como script INLINE antes de </head> para garantizar
+  // ejecucion. El bundle React del SPA intercepta clicks via React Router
+  // y renderiza 404 para rutas HTML estatico (/documentario, /festivais,
+  // /copa-2026/*, etc). El listener inline corre antes que React monte.
+  const navGuardPath = path.join(sourceDir, 'assets', 'nav-guard.js');
+  if (existsSync(navGuardPath)) {
+    if (!html.includes('window.__navGuardInstalled')) {
+      const navGuardSource = await readFile(navGuardPath, 'utf8');
+      html = html.replace(
+        '</head>',
+        `    <script>window.__navGuardInstalled=true;${navGuardSource}</script>\n  </head>`
+      );
+    }
+  }
+
   if (allowIndex) {
     html = html.replace(/\n\s*<meta name="robots" content="noindex,nofollow" ?\/?>/, '');
   } else if (!html.includes('name="robots"')) {
