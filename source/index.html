@@ -33,7 +33,7 @@
       A Bola Conecta — documentário, futebol, África e Brasil. Metodologia educativa que conecta ancestralidade africana, cultura afro-brasileira e Lei 10.639.
     </h1>
     <div id="root"></div>
-    <a class="copa-gondwana-shortcut" href="/a-bola-conecta/copa-2026/" aria-label="Abrir Copa de Gondwana 2026">
+    <a class="copa-gondwana-shortcut" href="/copa-2026" aria-label="Abrir Copa de Gondwana 2026">
       <span><small>Copa 2026</small><strong>Fichas Seleções Gondwana</strong></span><b>IR</b>
     </a>
     <script>
@@ -61,7 +61,7 @@
             if(nav.querySelector('a[href*="copa-2026"]')) return; // already injected
             var cont=nav.querySelector('a[href*="/contato"]');
             var a=document.createElement('a');
-            a.href='/a-bola-conecta/copa-2026/';
+            a.href='/copa-2026';
             a.textContent='Copa 2026';
             a.style.cssText='order:99!important;color:#121611!important;background:#d9ff6f!important;border:1px solid rgba(217,255,111,.75)!important;box-shadow:0 0 22px rgba(217,255,111,.28)!important;font-weight:900!important;border-radius:999px;padding:8px 14px!important;text-decoration:none!important;font-size:14px!important;display:inline-flex!important;align-items:center!important';
             if(cont){cont.parentNode.insertBefore(a,cont.nextSibling);}
