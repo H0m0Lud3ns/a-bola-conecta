@@ -21,12 +21,14 @@ PRIORITY = {
     "/imprensa/": "0.92",
     "/festivais/": "0.88",
     "/time-da-educacao/": "0.88",
-    "/comunidade/": "0.85",
-    "/apoie/": "0.85",
     "/la-pelota-conecta/": "0.85",
 }
 DEFAULT_PRIORITY = "0.80"
 DEFAULT_CHANGEFREQ = "monthly"
+
+# URLs que existem em source/ mas nao devem estar no sitemap
+# (sao redirecionadas via vercel.json para outra rota)
+SKIP_URLS = {"/comunidade/", "/apoie/"}
 
 # 1) Coletar todas as URLs que existem em source/
 existing_urls = set()
@@ -77,6 +79,8 @@ for url in sorted(existing_urls):
     if url in existing_in_sitemap:
         continue
     path = url.replace(DOMAIN, "")
+    if path in SKIP_URLS:
+        continue
     prio = PRIORITY.get(path, DEFAULT_PRIORITY)
     freq = "weekly" if path in ("/",) else DEFAULT_CHANGEFREQ
     new_blocks.append(
