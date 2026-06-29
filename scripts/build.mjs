@@ -20,9 +20,9 @@ await cp(sourceDir, distDir, { recursive: true });
 
 const routeCanonicals = new Map([
   ['index.html', `${siteDomain}/`],
-  ['documentario/index.html', `${siteDomain}/documentario/`],
+  ['documentário/index.html', `${siteDomain}/documentário/`],
   ['sobre/index.html', `${siteDomain}/sobre/`],
-  ['servicos/index.html', `${siteDomain}/servicos/`],
+  ['serviços/index.html', `${siteDomain}/serviços/`],
   ['comunidade/index.html', `${siteDomain}/comunidade/`],
   ['loja/index.html', `${siteDomain}/loja/`],
   ['blog/index.html', `${siteDomain}/blog/`],
@@ -46,79 +46,88 @@ const socialDefaults = {
   siteName: 'A Bola Conecta',
   locale: 'pt_BR',
   type: 'website',
-  title: 'A Bola Conecta | Documentario, futebol e educacao',
-  description: 'Documentario, metodologia ABC e experiencias educativas que conectam futebol, cultura, territorio, Africa e Brasil.',
+  title: 'A Bola Conecta | Documentário, futebol e educação',
+  description: 'Documentário + Metodologia ABC para implementar a Lei 10.639 em escolas. Educação antirracista com futebol, ancestralidade africana e capacitação docente.',
   image: '/assets/social-preview/og-a-bola-conecta.jpg',
-  imageAlt: 'A Bola Conecta - documentario, futebol e educacao',
+  imageAlt: 'A Bola Conecta - documentário, futebol e educação',
 };
 
 const routeSocial = new Map([
   ['index.html', {
-    title: 'A Bola Conecta | Documentario, futebol e educacao',
-    description: 'Documentario, metodologia ABC e experiencias educativas que conectam futebol, cultura, territorio, Africa e Brasil.',
-    image: '/assets/social-preview/og-a-bola-conecta.jpg',
-    imageAlt: 'A Bola Conecta - documentario, futebol e educacao',
+    title: 'A Bola Conecta | Documentário, futebol e educação',
+    description: 'Documentário + Metodologia ABC para implementar a Lei 10.639 em escolas. Educação antirracista com futebol, ancestralidade africana e capacitação docente.',
+    image: '/assets/og-card-metodologia.png',
+    imageAlt: 'A Bola Conecta - documentário, futebol e educação',
+    imageType: 'image/png',
   }],
   ['metodologia/index.html', {
     title: 'Metodologia ABC | Audiovisual, Bola e Câmera - A Bola Conecta',
     description: 'Ferramentas alfabetizadoras em habilidades sociais para educação, esporte, cultura, ambientes corporativos e projetos sociais. Por Mônica Saraiva da Silva e Sebastián Acevedo Vásquez.',
-    image: '/assets/social-preview/og-a-bola-conecta.jpg',
+    image: '/assets/og-card-metodologia.png',
     imageAlt: 'Metodologia ABC - Audiovisual, Bola e Câmera',
+    imageType: 'image/png',
   }],
   ['documentario/index.html', {
-    title: 'Documentario A Bola Conecta | Futebol, Africa e Brasil',
-    description: 'Conheca o documentario A Bola Conecta e sua proposta educativa entre futebol, ancestralidade africana, cultura afro-brasileira e Lei 10.639.',
-    image: '/assets/social-preview/og-a-bola-conecta.jpg',
-    imageAlt: 'Preview do documentario A Bola Conecta',
+    title: 'Documentário A Bola Conecta | Futebol, África e Brasil',
+    description: 'Conheca o documentário A Bola Conecta e sua proposta educativa entre futebol, ancestralidade africana, cultura afro-brasileira e Lei 10.639.',
+    image: '/assets/og-card-documentario.png',
+    imageAlt: 'Preview do documentário A Bola Conecta',
+    imageType: 'image/png',
   }],
   ['sobre/index.html', {
     title: 'Sobre A Bola Conecta | Metodologia ABC',
-    description: 'Conheca a proposta que une audiovisual, bola e camera para transformar futebol em linguagem educativa, cultural e territorial.',
-    image: '/assets/social-preview/og-a-bola-conecta.jpg',
+    description: 'Conheca a proposta que une áudiovisual, bola e camera para transformar futebol em línguagem educativa, cultural e territorial.',
+    image: '/assets/og-card-metodologia.png',
     imageAlt: 'Sobre A Bola Conecta e a Metodologia ABC',
+    imageType: 'image/png',
   }],
   ['servicos/index.html', {
-    title: 'Servicos educativos | A Bola Conecta',
-    description: 'Oficinas, formacoes, mediacao cultural e experiencias educativas com futebol, audiovisual, territorio e cultura popular.',
-    image: '/assets/social-preview/og-servicos.jpg',
-    imageAlt: 'Servicos educativos A Bola Conecta',
+    title: 'Serviços educativos | A Bola Conecta',
+    description: 'Oficinas, formações, mediação cultural e experiências educativas com futebol, áudiovisual, território e cultura popular.',
+    image: '/assets/og-card-servicos.png',
+    imageAlt: 'Serviços educativos A Bola Conecta',
+    imageType: 'image/png',
   }],
   ['comunidade/index.html', {
     title: 'Comunidade | A Bola Conecta',
-    description: 'Entre no Time da Educacao e acompanhe a circulacao de materiais, encontros e experiencias com futebol, cultura e territorio.',
-    image: '/assets/social-preview/og-comunidade.jpg',
+    description: 'Entre no Time da Educação e acompanhe a circulação de materiais, encontros e experiências com futebol, cultura e território.',
+    image: '/assets/og-card-metodologia.png',
     imageAlt: 'Comunidade A Bola Conecta',
+    imageType: 'image/png',
   }],
   ['blog/index.html', {
     title: 'Blog | A Bola Conecta',
-    description: 'Textos, campanhas e materiais sobre futebol, educacao, cultura, territorio e metodologia ABC.',
-    image: '/assets/social-preview/og-a-bola-conecta.jpg',
+    description: 'Textos, campanhas e materiais sobre futebol, educação, cultura, território e metodologia ABC.',
+    image: '/assets/og-card-metodologia.png',
     imageAlt: 'Blog A Bola Conecta',
+    imageType: 'image/png',
   }],
   ['apoie/index.html', {
-    title: 'Contribuir para a circulacao | A Bola Conecta',
-    description: 'Contribua com valor livre para sustentar pesquisa, producao, tecnologia e circulacao educativa, com registro pela agencia.',
-    image: '/assets/social-preview/og-contribuir.jpg',
-    imageAlt: 'Contribuir para a circulacao educativa A Bola Conecta',
+    title: 'Contribuir para a circulação | A Bola Conecta',
+    description: 'Contribua com valor livre para sustentar pesquisa, produção, tecnologia e circulação educativa, com registro pela agência.',
+    image: '/assets/og-card-metodologia.png',
+    imageAlt: 'Contribuir para a circulação educativa A Bola Conecta',
+    imageType: 'image/png',
   }],
   ['la-pelota-conecta/index.html', {
     title: 'La Pelota Conecta | Documental, fútbol y educación latinoamericana',
-    description: 'Versión en español latinoamericano para ver el documental, explorar fichas de la Copa 2026 y usar el fútbol como lectura de territorio, memoria y cultura.',
+    description: 'Versión en español latinoamericano para ver el documental, explorar fichas de la Copa 2026 y usar el fútbol como lectura de território, memória y cultura.',
     image: '/assets/social-preview/og-a-bola-conecta.jpg',
     imageAlt: 'La Pelota Conecta - documental, fútbol y educación latinoamericana',
     locale: 'es_419',
   }],
   ['copa-2026/index.html', {
     title: 'Gondwana na Copa 2026 | A Bola Conecta',
-    description: 'Fichas, guia e perguntas para ler a Copa pela Terra, pelos povos, pela memoria e pela bola.',
-    image: '/assets/social-preview/og-gondwana-na-copa.jpg',
+    description: 'Fichas, guia e perguntas para ler a Copa pela Terra, pelos povos, pela memória e pela bola.',
+    image: '/assets/og-card-copa-2026.png',
     imageAlt: 'Gondwana na Copa 2026 - campanha educativa',
+    imageType: 'image/png',
   }],
   ['copa-2026/fichas/index.html', {
-    title: 'Fichas Gondwana na Copa 2026 - 48 selecoes | A Bola Conecta',
-    description: '48 selecoes como portas de entrada para territorio, memoria, cultura popular, migracoes, povos e futebol.',
+    title: 'Fichas Gondwana na Copa 2026 - 48 seleções | A Bola Conecta',
+    description: '48 seleções como portas de entrada para território, memória, cultura popular, migrações, povos e futebol.',
     image: '/assets/social-preview/og-fichas-copa.jpg',
-    imageAlt: 'Fichas educativas Gondwana na Copa 2026 - 48 selecoes',
+    imageAlt: 'Fichas educativas Gondwana na Copa 2026 - 48 seleções',
     imageType: 'image/jpeg',
   }],
   ['copa-2026/baixar/index.html', {
@@ -135,15 +144,23 @@ const routeSocial = new Map([
   }],
   ['camisa-abya-yala/index.html', {
     title: 'Viste o Manto Gondwana FC · Camisa Abya Yala | A Bola Conecta',
-    description: 'Camiseta pedagógica Gondwana FC + LWGA. Manual pedagógico, carta de compromisso simbólica e contraparte visível para abrir la cancha del conocimiento en los territorios.',
+    description: 'Camiseta pedagógica Gondwana FC + LWGA. Manual pedagógico, carta de compromisso simbólica e contraparte visível para abrir la cancha del conocimiento en los territórios.',
     image: '/assets/social-preview/og-camisa-abya-yala.jpg',
     imageAlt: 'Camisa Abya Yala - camiseta pedagógica do Time da Educação',
   }],
   ['loja/index.html', {
     title: 'Loja | A Bola Conecta',
-    description: 'Pecas pedagogicas e culturais do Time da Educação: camiseta Abya Yala, guias, materiais e livros.',
-    image: '/assets/social-preview/og-a-bola-conecta.jpg',
+    description: 'Peças pedagógicas e culturais do Time da Educação: camiseta Abya Yala, guias, materiais e livros.',
+    image: '/assets/og-card-metodologia.png',
     imageAlt: 'Loja A Bola Conecta',
+    imageType: 'image/png',
+  }],
+  ['contato/index.html', {
+    title: 'Contato | A Bola Conecta',
+    description: 'Fale com a equipe do A Bola Conecta e do Gondwana FC - Time da Educacao. Imprensa, parcerias, escolas, federacoes e projetos sociais.',
+    image: '/assets/og-card-metodologia.png',
+    imageAlt: 'Contato A Bola Conecta',
+    imageType: 'image/png',
   }],
   ['copa-2026/sobre-para-ia/index.html', {
     title: 'Resumo para imprensa e IA | Gondwana na Copa',
@@ -161,295 +178,295 @@ const routeSocial = new Map([
   ['blog/faq-gondwana-na-copa-copa-2026/index.html', {
     type: 'article',
     title: 'FAQ Gondwana na Copa | A Bola Conecta',
-    description: 'Perguntas e respostas sobre a campanha Gondwana na Copa, fichas educativas, guia e usos pedagogicos.',
+    description: 'Perguntas e respostas sobre a campanha Gondwana na Copa, fichas educativas, guia e usos pedagógicos.',
     image: '/assets/social-preview/og-gondwana-na-copa.jpg',
     imageAlt: 'FAQ Gondwana na Copa',
   }],
 
   ['copa-2026/fichas/08-brasil/index.html', {
-    title: 'Brasil na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Brasil na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Brasil: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Brasil - A Bola Conecta',
   }],
   ['copa-2026/fichas/09-argentina/index.html', {
-    title: 'Argentina na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Argentina na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Argentina: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Argentina - A Bola Conecta',
   }],
   ['copa-2026/fichas/10-uruguai/index.html', {
-    title: 'Uruguai na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Uruguai na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Uruguai: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Uruguai - A Bola Conecta',
   }],
   ['copa-2026/fichas/11-colombia/index.html', {
-    title: 'Colômbia na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Colômbia na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Colômbia: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Colombia - A Bola Conecta',
   }],
   ['copa-2026/fichas/12-equador/index.html', {
-    title: 'Equador na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Equador na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Equador: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Equador - A Bola Conecta',
   }],
   ['copa-2026/fichas/13-paraguai/index.html', {
-    title: 'Paraguai na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Paraguai na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Paraguai: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Paraguai - A Bola Conecta',
   }],
   ['copa-2026/fichas/14-africa-do-sul/index.html', {
-    title: 'África do Sul na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'África do Sul na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de África do Sul: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
-    imageAlt: 'Ficha educativa Africa do sul - A Bola Conecta',
+    imageAlt: 'Ficha educativa África do sul - A Bola Conecta',
   }],
   ['copa-2026/fichas/15-gana/index.html', {
-    title: 'Gana na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Gana na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Gana: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Gana - A Bola Conecta',
   }],
   ['copa-2026/fichas/16-senegal/index.html', {
-    title: 'Senegal na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Senegal na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Senegal: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Senegal - A Bola Conecta',
   }],
   ['copa-2026/fichas/17-egito/index.html', {
-    title: 'Egito na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Egito na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Egito: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Egito - A Bola Conecta',
   }],
   ['copa-2026/fichas/18-marrocos/index.html', {
-    title: 'Marrocos na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Marrocos na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Marrocos: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Marrocos - A Bola Conecta',
   }],
   ['copa-2026/fichas/19-argelia/index.html', {
-    title: 'Argélia na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Argélia na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Argélia: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Argelia - A Bola Conecta',
   }],
   ['copa-2026/fichas/20-tunisia/index.html', {
-    title: 'Tunísia na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Tunísia na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Tunísia: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Tunisia - A Bola Conecta',
   }],
   ['copa-2026/fichas/21-costa-do-marfim/index.html', {
-    title: 'Costa do Marfim na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Costa do Marfim na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Costa do Marfim: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Costa do marfim - A Bola Conecta',
   }],
-  ['copa-2026/fichas/22-republica-democratica-do-congo/index.html', {
-    title: 'República Democrática do Congo na Copa 2026 | Ficha educativa A Bola Conecta',
+  ['copa-2026/fichas/22-república-democratica-do-congo/index.html', {
+    title: 'República Democrática do Congo na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de República Democrática do Congo: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
-    imageAlt: 'Ficha educativa Republica democratica do congo - A Bola Conecta',
+    imageAlt: 'Ficha educativa República democratica do congo - A Bola Conecta',
   }],
   ['copa-2026/fichas/23-australia/index.html', {
-    title: 'Austrália na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Austrália na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Austrália: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Australia - A Bola Conecta',
   }],
   ['copa-2026/fichas/24-nova-zelandia/index.html', {
-    title: 'Nova Zelândia na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Nova Zelândia na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Nova Zelândia: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Nova zelandia - A Bola Conecta',
   }],
   ['copa-2026/fichas/25-arabia-saudita/index.html', {
-    title: 'Arábia Saudita na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Arábia Saudita na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Arábia Saudita: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Arabia saudita - A Bola Conecta',
   }],
   ['copa-2026/fichas/26-catar/index.html', {
-    title: 'Catar na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Catar na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Catar: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Catar - A Bola Conecta',
   }],
   ['copa-2026/fichas/27-jordania/index.html', {
-    title: 'Jordânia na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Jordânia na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Jordânia: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Jordania - A Bola Conecta',
   }],
   ['copa-2026/fichas/28-iraque/index.html', {
-    title: 'Iraque na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Iraque na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Iraque: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Iraque - A Bola Conecta',
   }],
   ['copa-2026/fichas/29-estados-unidos/index.html', {
-    title: 'Estados Unidos na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Estados Unidos na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Estados Unidos: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Estados unidos - A Bola Conecta',
   }],
   ['copa-2026/fichas/30-mexico/index.html', {
-    title: 'México na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'México na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de México: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Mexico - A Bola Conecta',
   }],
   ['copa-2026/fichas/31-canada/index.html', {
-    title: 'Canadá na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Canadá na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Canadá: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Canada - A Bola Conecta',
   }],
   ['copa-2026/fichas/32-japao/index.html', {
-    title: 'Japão na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Japão na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Japão: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Japao - A Bola Conecta',
   }],
   ['copa-2026/fichas/33-ira/index.html', {
-    title: 'Irã na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Irã na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Irã: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Ira - A Bola Conecta',
   }],
   ['copa-2026/fichas/34-coreia-do-sul/index.html', {
-    title: 'Coreia do Sul na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Coreia do Sul na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Coreia do Sul: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Coreia do sul - A Bola Conecta',
   }],
   ['copa-2026/fichas/35-uzbequistao/index.html', {
-    title: 'Uzbequistão na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Uzbequistão na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Uzbequistão: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Uzbequistao - A Bola Conecta',
   }],
   ['copa-2026/fichas/36-cabo-verde/index.html', {
-    title: 'Cabo Verde na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Cabo Verde na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Cabo Verde: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Cabo verde - A Bola Conecta',
   }],
   ['copa-2026/fichas/37-inglaterra/index.html', {
-    title: 'Inglaterra na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Inglaterra na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Inglaterra: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Inglaterra - A Bola Conecta',
   }],
   ['copa-2026/fichas/38-franca/index.html', {
-    title: 'França na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'França na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de França: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Franca - A Bola Conecta',
   }],
   ['copa-2026/fichas/39-espanha/index.html', {
-    title: 'Espanha na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Espanha na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Espanha: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Espanha - A Bola Conecta',
   }],
   ['copa-2026/fichas/40-alemanha/index.html', {
-    title: 'Alemanha na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Alemanha na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Alemanha: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Alemanha - A Bola Conecta',
   }],
   ['copa-2026/fichas/41-portugal/index.html', {
-    title: 'Portugal na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Portugal na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Portugal: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Portugal - A Bola Conecta',
   }],
-  ['copa-2026/fichas/42-paises-baixos/index.html', {
-    title: 'Países Baixos na Copa 2026 | Ficha educativa A Bola Conecta',
+  ['copa-2026/fichas/42-países-baixos/index.html', {
+    title: 'Países Baixos na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Países Baixos: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
-    imageAlt: 'Ficha educativa Paises baixos - A Bola Conecta',
+    imageAlt: 'Ficha educativa Países baixos - A Bola Conecta',
   }],
   ['copa-2026/fichas/43-belgica/index.html', {
-    title: 'Bélgica na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Bélgica na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Bélgica: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Belgica - A Bola Conecta',
   }],
   ['copa-2026/fichas/44-croacia/index.html', {
-    title: 'Croácia na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Croácia na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Croácia: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Croacia - A Bola Conecta',
   }],
   ['copa-2026/fichas/45-suica/index.html', {
-    title: 'Suíça na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Suíça na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Suíça: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Suica - A Bola Conecta',
   }],
   ['copa-2026/fichas/46-austria/index.html', {
-    title: 'Áustria na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Áustria na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Áustria: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Austria - A Bola Conecta',
   }],
   ['copa-2026/fichas/47-escocia/index.html', {
-    title: 'Escócia na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Escócia na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Escócia: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Escocia - A Bola Conecta',
   }],
   ['copa-2026/fichas/48-noruega/index.html', {
-    title: 'Noruega na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Noruega na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Noruega: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Noruega - A Bola Conecta',
   }],
   ['copa-2026/fichas/49-bosnia-e-herzegovina/index.html', {
-    title: 'Bósnia e Herzegovina na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Bósnia e Herzegovina na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Bósnia e Herzegovina: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Bosnia e herzegovina - A Bola Conecta',
   }],
   ['copa-2026/fichas/50-suecia/index.html', {
-    title: 'Suécia na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Suécia na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Suécia: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Suecia - A Bola Conecta',
   }],
   ['copa-2026/fichas/51-turquia/index.html', {
-    title: 'Turquia na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Turquia na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Turquia: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Turquia - A Bola Conecta',
   }],
   ['copa-2026/fichas/52-tchequia/index.html', {
-    title: 'Tchéquia na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Tchéquia na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Tchéquia: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Tchequia - A Bola Conecta',
   }],
   ['copa-2026/fichas/53-panama/index.html', {
-    title: 'Panamá na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Panamá na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Panamá: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Panama - A Bola Conecta',
   }],
-  ['copa-2026/fichas/54-curacao/index.html', {
-    title: 'Curaçao na Copa 2026 | Ficha educativa A Bola Conecta',
+  ['copa-2026/fichas/54-curação/index.html', {
+    title: 'Curaçao na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Curaçao: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
-    imageAlt: 'Ficha educativa Curacao - A Bola Conecta',
+    imageAlt: 'Ficha educativa Curação - A Bola Conecta',
   }],
   ['copa-2026/fichas/55-haiti/index.html', {
-    title: 'Haiti na Copa 2026 | Ficha educativa A Bola Conecta',
+    title: 'Haiti na Copa 2026 | Ficha educativa Gondwana FC',
     description: 'Ficha educativa de Haiti: território, povos, memória, cultura popular e futebol para ler a Copa 2026 em sala de aula e mediação cultural.',
     image: '/assets/social-preview/og-copa-2026-fichas.jpg',
     imageAlt: 'Ficha educativa Haiti - A Bola Conecta',
@@ -539,9 +556,37 @@ function fichaImageFor(relativePath) {
   const countryInfo = getFichaCountryMap().get(slug);
   if (!countryInfo) return null;
   return {
-    image: `/api/og-ficha/?pais=${countryInfo.code}`,
-    imageAlt: `Ficha educativa ${countryInfo.name} - Copa 2026 - A Bola Conecta`,
+    image: `/api/og-ficha/?pais=${countryInfo.code}&style=c`,
+    imageType: 'image/png',
+    imageAlt: `Ficha educativa ${countryInfo.name} - Copa 2026 - Gondwana FC`,
   };
+}
+
+// Converte código ISO-3166 alpha-2 (ex: 'br', 'co') em emoji de bandeira.
+// 'br' -> '🇧🇷', 'co' -> '🇨🇴', etc.
+// Funciona no og:title (texto Unicode), renderizado nativamente por WhatsApp/Telegram/iOS/Android.
+function countryCodeToEmoji(code) {
+  if (!code || code.length !== 2) return '';
+  const codePoints = [...code.toUpperCase()].map(c => 0x1F1E6 + (c.charCodeAt(0) - 65));
+  return String.fromCodePoint(...codePoints);
+}
+
+// Retorna og:title com emoji de bandeira para fichas individuais.
+// O title original é mantido como fallback se o scraper não suportar emoji.
+function fichaTitleFor(relativePath, baseTitle) {
+  const match = relativePath.match(/^copa-2026\/fichas\/([^/]+)\/index\.html$/);
+  if (!match) return baseTitle;
+  const countryInfo = getFichaCountryMap().get(match[1]);
+  if (!countryInfo) return baseTitle;
+  const emoji = countryCodeToEmoji(countryInfo.code);
+  if (!emoji) return baseTitle;
+  // Insere emoji depois do primeiro " | " ou no início se não houver
+  const sep = ' | ';
+  if (baseTitle.includes(sep)) {
+    const [first, ...rest] = baseTitle.split(sep);
+    return `${first} ${emoji}${sep}${rest.join(sep)}`;
+  }
+  return `${emoji} ${baseTitle}`;
 }
 
 function syncSocialMeta(html, relativePath, canonical) {
@@ -551,10 +596,12 @@ function syncSocialMeta(html, relativePath, canonical) {
   if (fichaMeta) {
     meta.image = fichaMeta.image;
     meta.imageAlt = fichaMeta.imageAlt;
+    if (fichaMeta.imageType) meta.imageType = fichaMeta.imageType;
   }
   const url = canonical || canonicalFor(relativePath) || `${siteDomain}/`;
   const image = absoluteUrl(meta.image);
-  const title = escapeHtml(meta.title);
+  const titleRaw = fichaMeta ? fichaTitleFor(relativePath, meta.title) : meta.title;
+  const title = escapeHtml(titleRaw);
   const description = escapeHtml(meta.description);
   const imageAlt = escapeHtml(meta.imageAlt || meta.title);
   const siteName = escapeHtml(meta.siteName || socialDefaults.siteName);
@@ -672,4 +719,4 @@ if (existsSync(sitemapPath)) {
 }
 
 console.log(`Build pronto em ${distDir}`);
-console.log(`Indexacao: ${allowIndex ? 'permitida' : 'bloqueada por seguranca'}`);
+console.log(`Indexação: ${allowIndex ? 'permitida' : 'bloqueada por seguranca'}`);
