@@ -25,559 +25,558 @@
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <style>
 :root {
-  --bg: hsl(28 18% 7%);
-  --bg-soft: hsl(28 14% 11%);
-  --fg: hsl(38 30% 94%);
-  --muted: hsl(38 18% 70%);
-  --muted-2: hsl(38 12% 55%);
-  --primary: hsl(14 72% 52%);
-  --accent: hsl(45 96% 58%);
-  --border: hsl(38 10% 20%);
+ --bg: hsl(28 18% 7%);
+ --bg-soft: hsl(28 14% 11%);
+ --fg: hsl(38 30% 94%);
+ --muted: hsl(38 18% 70%);
+ --muted-2: hsl(38 12% 55%);
+ --primary: hsl(14 72% 52%);
+ --accent: hsl(45 96% 58%);
+ --border: hsl(38 10% 20%);
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--bg);
-  color: var(--fg);
-  font-family: 'Inter', sans-serif;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+ background: var(--bg);
+ color: var(--fg);
+ font-family: 'Inter', sans-serif;
+ line-height: 1.65;
+ -webkit-font-smoothing: antialiased;
+ text-rendering: optimizeLegibility;
 }
 
 /* Typography */
 .display {
-  font-family: 'Fraunces', serif;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  line-height: 0.95;
+ font-family: 'Fraunces', serif;
+ font-weight: 900;
+ letter-spacing: -0.02em;
+ line-height: 0.95;
 }
 .serif { font-family: 'Fraunces', serif; }
 
 /* Nav */
 .nav {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(28, 18, 7%, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+ position: sticky;
+ top: 0;
+ z-index: 50;
+ background: rgba(28, 18, 7%, 0.85);
+ backdrop-filter: blur(12px);
+ -webkit-backdrop-filter: blur(12px);
+ border-bottom: 1px solid var(--border);
 }
 .nav-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 18px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+ max-width: 1280px;
+ margin: 0 auto;
+ padding: 18px 28px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 24px;
 }
 .nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: var(--fg);
-  font-family: 'Fraunces', serif;
-  font-weight: 900;
-  font-size: 18px;
-  letter-spacing: -0.01em;
+ display: flex;
+ align-items: center;
+ gap: 12px;
+ text-decoration: none;
+ color: var(--fg);
+ font-family: 'Fraunces', serif;
+ font-weight: 900;
+ font-size: 18px;
+ letter-spacing: -0.01em;
 }
 .nav-logo img { width: 36px; height: 36px; border-radius: 6px; }
 .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  list-style: none;
+ display: flex;
+ align-items: center;
+ gap: 28px;
+ list-style: none;
 }
 .nav-links a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: color 160ms;
+ color: var(--muted);
+ text-decoration: none;
+ font-size: 14px;
+ font-weight: 500;
+ transition: color 160ms;
 }
 .nav-links a:hover { color: var(--accent); }
 .nav-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: var(--accent);
-  color: hsl(28 18% 7%);
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 13px;
-  text-decoration: none;
-  transition: transform 160ms;
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ padding: 8px 16px;
+ background: var(--accent);
+ color: hsl(28 18% 7%);
+ border-radius: 999px;
+ font-weight: 700;
+ font-size: 13px;
+ text-decoration: none;
+ transition: transform 160ms;
 }
 .nav-cta:hover { transform: translateY(-1px); }
 
 /* Container */
 .container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 28px;
+ max-width: 1280px;
+ margin: 0 auto;
+ padding: 0 28px;
 }
 .section { padding: 80px 0; }
 .section-tight { padding: 56px 0; }
 
 /* Eyebrow / Badge */
 .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  color: var(--accent);
-  text-transform: uppercase;
-  margin-bottom: 24px;
+ display: inline-flex;
+ align-items: center;
+ gap: 12px;
+ font-size: 13px;
+ font-weight: 700;
+ letter-spacing: 0.18em;
+ color: var(--accent);
+ text-transform: uppercase;
+ margin-bottom: 24px;
 }
 .eyebrow::before {
-  content: "";
-  width: 28px;
-  height: 1px;
-  background: var(--accent);
+ content: "";
+ width: 28px;
+ height: 1px;
+ background: var(--accent);
 }
 
 /* Hero */
 .hero {
-  padding: 100px 0 80px;
-  border-bottom: 1px solid var(--border);
+ padding: 100px 0 80px;
+ border-bottom: 1px solid var(--border);
 }
 .hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 64px;
-  align-items: center;
+ display: grid;
+ grid-template-columns: 1.1fr 0.9fr;
+ gap: 64px;
+ align-items: center;
 }
 .hero-title {
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  color: var(--fg);
-  margin-bottom: 16px;
+ font-size: clamp(3rem, 7vw, 5.5rem);
+ color: var(--fg);
+ margin-bottom: 16px;
 }
 .hero-subtitle {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
-  color: var(--accent);
-  margin-bottom: 40px;
-  line-height: 1.3;
+ font-family: 'Fraunces', serif;
+ font-style: italic;
+ font-weight: 400;
+ font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+ color: var(--accent);
+ margin-bottom: 40px;
+ line-height: 1.3;
 }
 .hero-photo {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+ position: relative;
+ border-radius: 16px;
+ overflow: hidden;
+ background: var(--bg-soft);
+ border: 1px solid var(--border);
+ box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
 }
 .hero-photo img {
-  display: block;
-  width: 100%;
-  height: auto;
+ display: block;
+ width: 100%;
+ height: auto;
 }
 .hero-photo figcaption {
-  position: absolute;
-  left: 16px;
-  bottom: 16px;
-  right: 16px;
-  padding: 12px 16px;
-  background: rgba(28, 18, 7%, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 8px;
-  color: var(--fg);
-  font-size: 13px;
-  line-height: 1.5;
+ position: absolute;
+ left: 16px;
+ bottom: 16px;
+ right: 16px;
+ padding: 12px 16px;
+ background: rgba(28, 18, 7%, 0.85);
+ backdrop-filter: blur(8px);
+ -webkit-backdrop-filter: blur(8px);
+ border-radius: 8px;
+ color: var(--fg);
+ font-size: 13px;
+ line-height: 1.5;
 }
 
 /* Intro text */
 .intro {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
-  line-height: 1.7;
-  color: var(--fg);
+ font-family: 'Fraunces', serif;
+ font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+ line-height: 1.7;
+ color: var(--fg);
 }
 .intro p { margin-bottom: 18px; }
 .intro p:last-child { margin-bottom: 0; }
 
 /* Section heading */
 .section-heading {
-  margin-bottom: 56px;
+ margin-bottom: 56px;
 }
 .section-title {
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  color: var(--accent);
-  margin-bottom: 8px;
+ font-size: clamp(2.2rem, 4vw, 3.2rem);
+ color: var(--accent);
+ margin-bottom: 8px;
 }
 .section-subtitle {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.1rem;
-  color: var(--muted);
-  max-width: 720px;
+ font-family: 'Fraunces', serif;
+ font-style: italic;
+ font-weight: 400;
+ font-size: 1.1rem;
+ color: var(--muted);
+ max-width: 720px;
 }
 
 /* Founders */
 .founders-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 32px;
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+ gap: 32px;
 }
 .founder {
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: border-color 200ms, transform 200ms;
+ background: var(--bg-soft);
+ border: 1px solid var(--border);
+ border-radius: 16px;
+ overflow: hidden;
+ transition: border-color 200ms, transform 200ms;
 }
 .founder:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
+ border-color: var(--accent);
+ transform: translateY(-2px);
 }
 .founder-photo {
-  aspect-ratio: 4 / 5;
-  background: var(--bg);
-  overflow: hidden;
+ aspect-ratio: 4 / 5;
+ background: var(--bg);
+ overflow: hidden;
 }
 .founder-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ display: block;
 }
 .founder-body {
-  padding: 32px;
+ padding: 32px;
 }
 .founder-meta {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: var(--accent);
-  text-transform: uppercase;
-  margin-bottom: 12px;
+ font-size: 12px;
+ font-weight: 700;
+ letter-spacing: 0.16em;
+ color: var(--accent);
+ text-transform: uppercase;
+ margin-bottom: 12px;
 }
 .founder-name {
-  font-family: 'Fraunces', serif;
-  font-weight: 700;
-  font-size: 1.8rem;
-  color: var(--fg);
-  margin-bottom: 8px;
-  line-height: 1.1;
+ font-family: 'Fraunces', serif;
+ font-weight: 700;
+ font-size: 1.8rem;
+ color: var(--fg);
+ margin-bottom: 8px;
+ line-height: 1.1;
 }
 .founder-role {
-  font-size: 15px;
-  color: var(--muted);
-  margin-bottom: 24px;
+ font-size: 15px;
+ color: var(--muted);
+ margin-bottom: 24px;
 }
 .founder-bio {
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.7;
+ color: var(--muted);
+ font-size: 15px;
+ line-height: 1.7;
 }
 .founder-bio p { margin-bottom: 14px; }
 .founder-bio p:last-child { margin-bottom: 0; }
 
 /* Values */
 .values-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+ gap: 20px;
 }
 .value {
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 28px 24px;
-  transition: border-color 200ms;
+ background: var(--bg-soft);
+ border: 1px solid var(--border);
+ border-radius: 14px;
+ padding: 28px 24px;
+ transition: border-color 200ms;
 }
 .value:hover { border-color: var(--accent); }
 .value-icon {
-  width: 44px;
-  height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(245, 158, 11, 0.12);
-  color: var(--accent);
-  border-radius: 10px;
-  margin-bottom: 18px;
+ width: 44px;
+ height: 44px;
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ background: rgba(245, 158, 11, 0.12);
+ color: var(--accent);
+ border-radius: 10px;
+ margin-bottom: 18px;
 }
 .value-icon svg { width: 24px; height: 24px; }
 .value-title {
-  font-family: 'Fraunces', serif;
-  font-weight: 700;
-  font-size: 1.4rem;
-  color: var(--fg);
-  margin-bottom: 8px;
+ font-family: 'Fraunces', serif;
+ font-weight: 700;
+ font-size: 1.4rem;
+ color: var(--fg);
+ margin-bottom: 8px;
 }
 .value-desc {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.6;
+ font-size: 14px;
+ color: var(--muted);
+ line-height: 1.6;
 }
-
 
 .cta-buttons {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
+ display: flex;
+ gap: 12px;
+ justify-content: center;
+ flex-wrap: wrap;
 }
 .btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 24px;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 14px;
-  text-decoration: none;
-  transition: transform 160ms, background 160ms;
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ padding: 14px 24px;
+ border-radius: 999px;
+ font-weight: 700;
+ font-size: 14px;
+ text-decoration: none;
+ transition: transform 160ms, background 160ms;
 }
 .btn-primary {
-  background: var(--accent);
-  color: hsl(28 18% 7%);
+ background: var(--accent);
+ color: hsl(28 18% 7%);
 }
 .btn-primary:hover { transform: translateY(-1px); background: hsl(45 96% 64%); }
 .btn-secondary {
-  background: transparent;
-  color: var(--fg);
-  border: 1px solid var(--border);
+ background: transparent;
+ color: var(--fg);
+ border: 1px solid var(--border);
 }
 .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
 /* Footer */
 .footer {
-  border-top: 1px solid var(--border);
-  padding: 40px 0;
-  color: var(--muted-2);
-  font-size: 13px;
-  text-align: center;
+ border-top: 1px solid var(--border);
+ padding: 40px 0;
+ color: var(--muted-2);
+ font-size: 13px;
+ text-align: center;
 }
 .footer a { color: var(--muted); text-decoration: none; }
 .footer a:hover { color: var(--accent); }
 
 /* Mobile */
 @media (max-width: 900px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-  .hero { padding: 64px 0 56px; }
-  .section { padding: 56px 0; }
-  .nav-links { display: none; }
-  .founders-grid { grid-template-columns: 1fr; }
+ .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+ .hero { padding: 64px 0 56px; }
+ .section { padding: 56px 0; }
+ .nav-links { display: none; }
+ .founders-grid { grid-template-columns: 1fr; }
 }
 </style>
-  <link rel="stylesheet" href="/assets/cta.css">
-  <link rel="stylesheet" href="/assets/footer.css">
-  <link rel="stylesheet" href="/assets/a11y.css">
+ <link rel="stylesheet" href="/assets/cta.css">
+ <link rel="stylesheet" href="/assets/footer.css">
+ <link rel="stylesheet" href="/assets/a11y.css">
 </head>
 <body>
 
 <a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
 
 <nav class="nav" aria-label="Menu principal">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">
-      <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
-      <span>A Bola Conecta</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="/">Início</a></li>
-      <li><a href="/documentario">O Filme</a></li>
-      <li><a href="/sobre" style="color: var(--accent);">Sobre</a></li>
-      <li><a href="/servicos">Serviços</a></li>
-      <li><a href="/copa-2026">Copa 2026</a></li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="/contato">Contato</a></li>
-    </ul>
-    <a href="/copa-2026/#contribuir" class="nav-cta">
-      Apoie <i data-lucide="arrow-right"></i>
-    </a>
-  </div>
+ <div class="nav-inner">
+ <a href="/" class="nav-logo">
+ <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
+ <span>A Bola Conecta</span>
+ </a>
+ <ul class="nav-links">
+ <li><a href="/">Início</a></li>
+ <li><a href="/documentario">O Filme</a></li>
+ <li><a href="/sobre" style="color: var(--accent);">Sobre</a></li>
+ <li><a href="/servicos">Serviços</a></li>
+ <li><a href="/copa-2026">Copa 2026</a></li>
+ <li><a href="/blog">Blog</a></li>
+ <li><a href="/contato">Contato</a></li>
+ </ul>
+ <a href="/copa-2026/#contribuir" class="nav-cta">
+ Apoie <i data-lucide="arrow-right"></i>
+ </a>
+ </div>
 </nav>
 
 <!-- HERO -->
 <header class="hero">
-  <main id="conteudo">
+ <main id="conteudo">
 <div class="container">
-    <div class="hero-grid">
-      <div>
-        <span class="eyebrow">Gondwana</span>
-        <h1 class="display hero-title">Sobre Nós</h1>
-        <p class="hero-subtitle">Quem tece a Gondwana.</p>
-      </div>
-      <figure class="hero-photo">
-        <img src="/assets/dupla-gondwana-unesco-D2Q4kg04.jpg" alt="Mônica Saraiva e Sebastián Acevedo na sede da UNESCO" />
-        <figcaption>
-          Mônica Saraiva e Sebastián Acevedo no Encontro de Organizações pelo Esporte para o Desenvolvimento e a Paz · UNESCO 2026 · Santiago de Chile
-        </figcaption>
-      </figure>
-    </div>
+ <div class="hero-grid">
+ <div>
+ <span class="eyebrow">Gondwana</span>
+ <h1 class="display hero-title">Sobre Nós</h1>
+ <p class="hero-subtitle">Quem tece a Gondwana.</p>
+ </div>
+ <figure class="hero-photo">
+ <img src="/assets/dupla-gondwana-unesco-D2Q4kg04.jpg" alt="Mônica Saraiva e Sebastián Acevedo na sede da UNESCO" />
+ <figcaption>
+ Mônica Saraiva e Sebastián Acevedo no Encontro de Organizações pelo Esporte para o Desenvolvimento e a Paz · UNESCO 2026 · Santiago de Chile
+ </figcaption>
+ </figure>
+ </div>
 
-    <div class="intro" style="margin-top: 64px; max-width: 880px;">
-      <p>O Gondwana FC - O <a href="/time-da-educacao" style="color: var(--accent);">Time da Educação</a> nasce do encontro entre Mônica Saraiva e Sebastián Acevedo.</p>
-      <p>Em 2019 eles se conheceram no Museu do Futebol de São Paulo e compartilharam uma visão: usar o poder transformador do futebol e a magia da câmera para conhecer, integrar e empoderar culturas da América Latina e da África.</p>
-      <p>O projeto Gondwana nasceu em 2020 com uma missão: oferecer experiências imersivas que conectam arte, cidadania, cultura, educação e esporte.</p>
-      <p>Voltado para crianças, adolescentes, adultos, pessoas idosas e com deficiência intelectual, o projeto promove atividades participativas, criando oportunidades para que todas as pessoas vivenciem e aprendam de forma lúdica e fácil, estimulando a liberdade de criar, a tomada de consciência nas decisões e fortalecendo as relações humanas.</p>
-    </div>
-  </div>
+ <div class="intro" style="margin-top: 64px; max-width: 880px;">
+ <p>O Gondwana FC - O <a href="/time-da-educacao" style="color: var(--accent);">Time da Educação</a> nasce do encontro entre Mônica Saraiva e Sebastián Acevedo.</p>
+ <p>Em 2019 eles se conheceram no Museu do Futebol de São Paulo e compartilharam uma visão: usar o poder transformador do futebol e a magia da câmera para conhecer, integrar e empoderar culturas da América Latina e da África.</p>
+ <p>O projeto Gondwana nasceu em 2020 com uma missão: oferecer experiências imersivas que conectam arte, cidadania, cultura, educação e esporte.</p>
+ <p>Voltado para crianças, adolescentes, adultos, pessoas idosas e com deficiência intelectual, o projeto promove atividades participativas, criando oportunidades para que todas as pessoas vivenciem e aprendam de forma lúdica e fácil, estimulando a liberdade de criar, a tomada de consciência nas decisões e fortalecendo as relações humanas.</p>
+ </div>
+ </div>
 </header>
 
 <!-- FUNDADORES -->
 <section class="section" id="quem-somos">
-  <div class="container">
-    <div class="section-heading">
-      <span class="eyebrow">Quem somos</span>
-      <h2 class="display section-title">Fundadores</h2>
-      <p class="section-subtitle">As pessoas que fundaram a Agência Gondwana FC e assinaram o documentário "A Bola Conecta".</p>
-    </div>
+ <div class="container">
+ <div class="section-heading">
+ <span class="eyebrow">Quem somos</span>
+ <h2 class="display section-title">Fundadores</h2>
+ <p class="section-subtitle">As pessoas que fundaram a Agência Gondwana FC e assinaram o documentário "A Bola Conecta".</p>
+ </div>
 
-    <div class="founders-grid">
-      <!-- Mônica -->
-      <article class="founder">
-        <div class="founder-photo">
-          <img src="/assets/monica-saraiva.jpg" alt="Retrato de Mônica Saraiva da Silva" />
-        </div>
-        <div class="founder-body">
-          <div class="founder-meta">01 · Fundadora</div>
-          <h3 class="founder-name">Mônica Saraiva da Silva</h3>
-          <p class="founder-role">Diretora Executiva — Agência Gondwana</p>
-          <div class="founder-bio">
-            <p>Mônica Saraiva da Silva é jornalista, documentarista, fotógrafa e gestora de comunicação com mais de 15 anos de experiência em projetos culturais, educacionais, esportivos e sociais no Brasil e na América Latina. Atua no desenvolvimento de estratégias de comunicação, produção audiovisual, assessoria de imprensa e criação de conteúdos multimídia voltados ao impacto social e à valorização da cultura popular.</p>
-            <p>Ao longo de sua trajetória, integrou equipes de importantes instituições culturais como o Museu do Futebol no Estádio do Pacaembú, Museu da Língua Portuguesa e Memorial da América Latina. Atualmente, atua como Diretora Executiva da Agência Gondwana, liderando iniciativas nas áreas de esporte, educação, cultura e estratégias de comunicação corporativa.</p>
-            <p>Mônica também palestra, mentora e facilita projetos internacionais ligados a esporte para o desenvolvimento, educomunicação e liderança.</p>
-            <p>Em 2020, pesquisou, roteirizou, dirigiu e produziu o documentário "Gondwana: A Bola Conecta", obra selecionada para festivais nacionais e internacionais e utilizada como ferramenta pedagógica em ações educativas, corporativas e culturais.</p>
-            <p>O trabalho dela cruza comunicação, memória, território e esporte — e ajuda a fortalecer redes colaborativas em toda a América Latina.</p>
-          </div>
-        </div>
-      </article>
+ <div class="founders-grid">
+ <!-- Mônica -->
+ <article class="founder">
+ <div class="founder-photo">
+ <img src="/assets/monica-saraiva.jpg" alt="Retrato de Mônica Saraiva da Silva" />
+ </div>
+ <div class="founder-body">
+ <div class="founder-meta">01 · Fundadora</div>
+ <h3 class="founder-name">Mônica Saraiva da Silva</h3>
+ <p class="founder-role">Diretora Executiva — Agência Gondwana</p>
+ <div class="founder-bio">
+ <p>Mônica Saraiva da Silva é jornalista, documentarista, fotógrafa e gestora de comunicação com mais de 15 anos de experiência em projetos culturais, educacionais, esportivos e sociais no Brasil e na América Latina. Atua no desenvolvimento de estratégias de comunicação, produção audiovisual, assessoria de imprensa e criação de conteúdos multimídia voltados ao impacto social e à valorização da cultura popular.</p>
+ <p>Ao longo de sua trajetória, integrou equipes de importantes instituições culturais como o Museu do Futebol no Estádio do Pacaembú, Museu da Língua Portuguesa e Memorial da América Latina. Atualmente, atua como Diretora Executiva da Agência Gondwana, liderando iniciativas nas áreas de esporte, educação, cultura e estratégias de comunicação corporativa.</p>
+ <p>Mônica também palestra, mentora e facilita projetos internacionais ligados a esporte para o desenvolvimento, educomunicação e liderança.</p>
+ <p>Em 2020, pesquisou, roteirizou, dirigiu e produziu o documentário "Gondwana: A Bola Conecta", obra selecionada para festivais nacionais e internacionais e utilizada como ferramenta pedagógica em ações educativas, corporativas e culturais.</p>
+ <p>O trabalho dela cruza comunicação, memória, território e esporte — e ajuda a fortalecer redes colaborativas em toda a América Latina.</p>
+ </div>
+ </div>
+ </article>
 
-      <!-- Sebastián -->
-      <article class="founder">
-        <div class="founder-photo">
-          <img src="/assets/sebastian-acevedo.jpg" alt="Retrato de Sebastián Acevedo Vásquez" />
-        </div>
-        <div class="founder-body">
-          <div class="founder-meta">02 · Fundador</div>
-          <h3 class="founder-name">Sebastián Acevedo Vásquez</h3>
-          <p class="founder-role">Diretor de Inovação e Tecnologia — Agência Gondwana</p>
-          <div class="founder-bio">
-            <p>Sebastián Acevedo Vásquez é educador, empreendedor social, pesquisador e ex-atleta chileno, com atuação internacional em inovação, esporte, educação e desenvolvimento humano. Formado em Ciências Jurídicas e Sociais pela Universidad de Chile, foi integrando esporte, tecnologia, pensamento crítico e metodologias colaborativas na trajetória que construiu pela América Latina.</p>
-            <p>Atualmente é cofundador e Diretor de Ecossistemas e Cultura de Inovação do SportsCoLab, laboratório de inovação esportiva que conecta universidades, startups, organizações sociais e instituições públicas em projetos de impacto social e econômico. Também atua como Diretor de Inovação e Tecnologia da Agência Gondwana, desenvolvendo metodologias educacionais e plataformas de democratização do conhecimento a partir do esporte, do audiovisual e da cultura.</p>
-            <p>Sua experiência inclui atuação como professor universitário na Universidad de Santiago de Chile e na Universidad de Chile, mentor em inovação e empreendedorismo, consultor internacional em programas ligados ao esporte para o desenvolvimento e pesquisador independente em temas como filosofia do esporte, direitos humanos, educação popular e inovação social.</p>
-            <p>Como documentarista participou no roteiro e a produção do documentário "Gondwana: A Bola Conecta", projeto que utiliza o futebol como ferramenta pedagógica para explicar conexões culturais, históricas e sociais entre Brasil e África. Também participa da criação da Metodologia Gondwana ABC, tecnologia social baseada no uso pedagógico do audiovisual, da bola e da câmera para o desenvolvimento de habilidades humanas e alfabetização socioeducativa.</p>
-            <p>Ex-atleta de futebol e futsal, Sebastián segue jogando — em campo, em sala de aula e em projeto. Hoje atua em iniciativas de inovação esportiva, inclusão social, economia do esporte e desenvolvimento de habilidades para o século XXI.</p>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
+ <!-- Sebastián -->
+ <article class="founder">
+ <div class="founder-photo">
+ <img src="/assets/sebastian-acevedo.jpg" alt="Retrato de Sebastián Acevedo Vásquez" />
+ </div>
+ <div class="founder-body">
+ <div class="founder-meta">02 · Fundador</div>
+ <h3 class="founder-name">Sebastián Acevedo Vásquez</h3>
+ <p class="founder-role">Diretor de Inovação e Tecnologia — Agência Gondwana</p>
+ <div class="founder-bio">
+ <p>Sebastián Acevedo Vásquez é educador, empreendedor social, pesquisador e ex-atleta chileno, com atuação internacional em inovação, esporte, educação e desenvolvimento humano. Formado em Ciências Jurídicas e Sociais pela Universidad de Chile, foi integrando esporte, tecnologia, pensamento crítico e metodologias colaborativas na trajetória que construiu pela América Latina.</p>
+ <p>Atualmente é cofundador e Diretor de Ecossistemas e Cultura de Inovação do SportsCoLab, laboratório de inovação esportiva que conecta universidades, startups, organizações sociais e instituições públicas em projetos de impacto social e econômico. Também atua como Diretor de Inovação e Tecnologia da Agência Gondwana, desenvolvendo metodologias educacionais e plataformas de democratização do conhecimento a partir do esporte, do audiovisual e da cultura.</p>
+ <p>Sua experiência inclui atuação como professor universitário na Universidad de Santiago de Chile e na Universidad de Chile, mentor em inovação e empreendedorismo, consultor internacional em programas ligados ao esporte para o desenvolvimento e pesquisador independente em temas como filosofia do esporte, direitos humanos, educação popular e inovação social.</p>
+ <p>Como documentarista participou no roteiro e a produção do documentário "Gondwana: A Bola Conecta", projeto que utiliza o futebol como ferramenta pedagógica para explicar conexões culturais, históricas e sociais entre Brasil e África. Também participa da criação da Metodologia Gondwana ABC, tecnologia social baseada no uso pedagógico do audiovisual, da bola e da câmera para o desenvolvimento de habilidades humanas e alfabetização socioeducativa.</p>
+ <p>Ex-atleta de futebol e futsal, Sebastián segue jogando — em campo, em sala de aula e em projeto. Hoje atua em iniciativas de inovação esportiva, inclusão social, economia do esporte e desenvolvimento de habilidades para o século XXI.</p>
+ </div>
+ </div>
+ </article>
+ </div>
+ </div>
 </section>
 
 <!-- VALORES -->
 <section class="section" id="principios" style="background: var(--bg-soft);">
-  <div class="container">
-    <div class="section-heading">
-      <span class="eyebrow">Princípios</span>
-      <h2 class="display section-title">O que nos move</h2>
-      <p class="section-subtitle">Os valores que guiam cada projeto, parceria e narrativa do time Gondwana FC.</p>
-    </div>
+ <div class="container">
+ <div class="section-heading">
+ <span class="eyebrow">Princípios</span>
+ <h2 class="display section-title">O que nos move</h2>
+ <p class="section-subtitle">Os valores que guiam cada projeto, parceria e narrativa do time Gondwana FC.</p>
+ </div>
 
-    <div class="values-grid">
-      <div class="value">
-        <span class="value-icon"><i data-lucide="search"></i></span>
-        <h3 class="value-title">Crítico</h3>
-        <p class="value-desc">Reescrevemos as histórias a partir das vivências silenciadas.</p>
-      </div>
-      <div class="value">
-        <span class="value-icon"><i data-lucide="handshake"></i></span>
-        <h3 class="value-title">Inclusivo</h3>
-        <p class="value-desc">Toda identidade tem lugar nesta narrativa coletiva.</p>
-      </div>
-      <div class="value">
-        <span class="value-icon"><i data-lucide="sprout"></i></span>
-        <h3 class="value-title">Resiliente</h3>
-        <p class="value-desc">Celebramos a força e a alegria ancestral das comunidades.</p>
-      </div>
-      <div class="value">
-        <span class="value-icon"><i data-lucide="globe"></i></span>
-        <h3 class="value-title">Sistêmico</h3>
-        <p class="value-desc">Tudo está conectado: cultura, esporte, terra e povo.</p>
-      </div>
-    </div>
-  </div>
+ <div class="values-grid">
+ <div class="value">
+ <span class="value-icon"><i data-lucide="search"></i></span>
+ <h3 class="value-title">Crítico</h3>
+ <p class="value-desc">Reescrevemos as histórias a partir das vivências silenciadas.</p>
+ </div>
+ <div class="value">
+ <span class="value-icon"><i data-lucide="handshake"></i></span>
+ <h3 class="value-title">Inclusivo</h3>
+ <p class="value-desc">Toda identidade tem lugar nesta narrativa coletiva.</p>
+ </div>
+ <div class="value">
+ <span class="value-icon"><i data-lucide="sprout"></i></span>
+ <h3 class="value-title">Resiliente</h3>
+ <p class="value-desc">Celebramos a força e a alegria ancestral das comunidades.</p>
+ </div>
+ <div class="value">
+ <span class="value-icon"><i data-lucide="globe"></i></span>
+ <h3 class="value-title">Sistêmico</h3>
+ <p class="value-desc">Tudo está conectado: cultura, esporte, terra e povo.</p>
+ </div>
+ </div>
+ </div>
 </section>
 
 <!-- CTA -->
 <section class="section cta-section">
-  <div class="container">
-    <h2 class="display cta-title">Quer conhecer mais ou colaborar?</h2>
-    <p class="cta-subtitle">O documentário, a Metodologia ABC e os materiais pedagógicos ficam disponíveis para escolas, educadores, marcas e comunidades que quiserem levar isso pra frente.</p>
-    <div class="cta-buttons">
-      <a href="/documentario" class="btn btn-primary">
-        Ver documentário <i data-lucide="play"></i>
-      </a>
-      <a href="/contato" class="btn btn-secondary">
-        Falar com a equipe <i data-lucide="arrow-right"></i>
-      </a>
-    </div>
-  </div>
+ <div class="container">
+ <h2 class="display cta-title">Quer conhecer mais ou colaborar?</h2>
+ <p class="cta-subtitle">O documentário, a Metodologia ABC e os materiais pedagógicos ficam disponíveis para escolas, educadores, marcas e comunidades que quiserem levar isso pra frente.</p>
+ <div class="cta-buttons">
+ <a href="/documentario" class="btn btn-primary">
+ Ver documentário <i data-lucide="play"></i>
+ </a>
+ <a href="/contato" class="btn btn-secondary">
+ Falar com a equipe <i data-lucide="arrow-right"></i>
+ </a>
+ </div>
+ </div>
 </section>
 
 <footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-grid">
+ <div class="footer-container">
+ <div class="footer-grid">
 
-      <div class="footer-brand">
-        <a href="/" aria-label="A Bola Conecta - página inicial">
-          <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
-        </a>
-        <p class="footer-tagline">Documentário, Metodologia ABC e Fichas Copa 2026.<br/>Livre circulação do conhecimento.</p>
-      </div>
+ <div class="footer-brand">
+ <a href="/" aria-label="A Bola Conecta - página inicial">
+ <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
+ </a>
+ <p class="footer-tagline">Documentário, Metodologia ABC e Fichas Copa 2026.<br/>Livre circulação do conhecimento.</p>
+ </div>
 
-      <div class="footer-col">
-        <h3><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg> Navegação</h3>
-        <ul>
-          <li><a href="/metodologia">Metodologia ABC</a></li>
-          <li><a href="/servicos">Serviços</a></li>
-          <li><a href="/sobre">Sobre</a></li>
-          <li><a href="/contato">Contato</a></li>
-        </ul>
-      </div>
+ <div class="footer-col">
+ <h3> Navegação</h3>
+ <ul>
+ <li><a href="/metodologia">Metodologia ABC</a></li>
+ <li><a href="/servicos">Serviços</a></li>
+ <li><a href="/sobre">Sobre</a></li>
+ <li><a href="/contato">Contato</a></li>
+ </ul>
+ </div>
 
-      <div class="footer-col">
-        <h3><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></svg> Projeto</h3>
-        <ul>
-          <li><a href="/documentario">Documentário</a></li>
-          <li><a href="/copa-2026">Copa 2026</a></li>
-          <li><a href="/sobre">Equipe</a></li>
-          <li><a href="/imprensa">Imprensa</a></li>
-        </ul>
-      </div>
+ <div class="footer-col">
+ <h3> Projeto</h3>
+ <ul>
+ <li><a href="/documentario">Documentário</a></li>
+ <li><a href="/copa-2026">Copa 2026</a></li>
+ <li><a href="/sobre">Equipe</a></li>
+ <li><a href="/imprensa">Imprensa</a></li>
+ </ul>
+ </div>
 
-      <div class="footer-col">
-        <h3><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg> Operador</h3>
-        <p>Da Silva e Vásquez<br/>Formação e Consultoria LTDA</p>
-        <p class="footer-cnpj">CNPJ 62.085.700/0001-83</p>
-        <p class="footer-email"><a href="mailto:contato.gondwana@gmail.com">contato.gondwana@gmail.com</a></p>
-      </div>
+ <div class="footer-col">
+ <h3> Operador</h3>
+ <p>Da Silva e Vásquez<br/>Formação e Consultoria LTDA</p>
+ <p class="footer-cnpj">CNPJ 62.085.700/0001-83</p>
+ <p class="footer-email"><a href="mailto:contato.gondwana@gmail.com">contato.gondwana@gmail.com</a></p>
+ </div>
 
-    </div>
+ </div>
 
-    <div class="footer-bottom">
-      <p class="footer-copy">© 2026 Agência Gondwana FC — Time da Educação</p>
-      <p class="footer-claim">A bola conecta.</p>
-    </div>
-  </div>
+ <div class="footer-bottom">
+ <p class="footer-copy">© 2026 Agência Gondwana FC — Time da Educação</p>
+ <p class="footer-claim">A bola conecta.</p>
+ </div>
+ </div>
 </footer>
 
 <script>
-  if (window.lucide) { window.lucide.createIcons(); }
+ if (window.lucide) { window.lucide.createIcons(); }
 </script>
 </main>
 </body>

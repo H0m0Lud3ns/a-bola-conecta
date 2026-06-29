@@ -17,14 +17,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: hsl(28 18% 7%);
-  --bg-card: hsl(28 18% 10%);
-  --fg: hsl(38 30% 94%);
-  --muted: hsl(38 18% 70%);
-  --primary: hsl(14 72% 52%);
-  --accent: hsl(45 96% 58%);
-  --verde: hsl(142 35% 42%);
-  --line: rgba(245, 230, 200, 0.08);
+ --bg: hsl(28 18% 7%);
+ --bg-card: hsl(28 18% 10%);
+ --fg: hsl(38 30% 94%);
+ --muted: hsl(38 18% 70%);
+ --primary: hsl(14 72% 52%);
+ --accent: hsl(45 96% 58%);
+ --verde: hsl(142 35% 42%);
+ --line: rgba(245, 230, 200, 0.08);
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -48,8 +48,8 @@ strong { color: var(--fg); font-weight: 600; }
 .page-header-brand-text { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
 .page-header-section { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; padding: 4px 10px; background: var(--bg-soft); border-radius: 999px; border: 1px solid var(--line); }
 @media (max-width: 480px) {
-  .page-header-brand-text { font-size: 0.9rem; }
-  .page-header-section { font-size: 0.7rem; }
+ .page-header-brand-text { font-size: 0.9rem; }
+ .page-header-section { font-size: 0.7rem; }
 }
 
 /* CATEGORIAS */
@@ -97,62 +97,62 @@ strong { color: var(--fg); font-weight: 600; }
 .depoimentos-eyebrow { font-size: 0.85rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 32px; }
 .depoimentos-grid { display: grid; gap: 24px; grid-template-columns: 1fr; }
 .depoimento {
-  position: relative;
-  background: var(--bg-soft);
-  border: 1px solid var(--line);
-  border-left: 4px solid var(--accent);
-  border-radius: 12px;
-  padding: 32px 32px 28px;
-  transition: all 0.22s ease;
-  overflow: hidden;
+ position: relative;
+ background: var(--bg-soft);
+ border: 1px solid var(--line);
+ border-left: 4px solid var(--accent);
+ border-radius: 12px;
+ padding: 32px 32px 28px;
+ transition: all 0.22s ease;
+ overflow: hidden;
 }
 .depoimento:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(245, 158, 11, 0.08); }
 .depoimento::before {
-  content: '"';
-  position: absolute;
-  top: -28px;
-  left: 18px;
-  font-family: 'Fraunces', serif;
-  font-size: 7rem;
-  font-weight: 700;
-  color: var(--accent);
-  opacity: 0.18;
-  line-height: 1;
-  pointer-events: none;
+ content: '"';
+ position: absolute;
+ top: -28px;
+ left: 18px;
+ font-family: 'Fraunces', serif;
+ font-size: 7rem;
+ font-weight: 700;
+ color: var(--accent);
+ opacity: 0.18;
+ line-height: 1;
+ pointer-events: none;
 }
 .depoimento blockquote {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-size: 1.18rem;
-  line-height: 1.55;
-  color: var(--fg);
-  margin: 0 0 20px;
-  padding: 0;
-  border: 0;
-  quotes: none;
+ font-family: 'Fraunces', serif;
+ font-style: italic;
+ font-size: 1.18rem;
+ line-height: 1.55;
+ color: var(--fg);
+ margin: 0 0 20px;
+ padding: 0;
+ border: 0;
+ quotes: none;
 }
 .depoimento blockquote::before, .depoimento blockquote::after { content: none; }
 .depoimento-meta {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
+ display: flex;
+ align-items: center;
+ gap: 14px;
+ padding-top: 16px;
+ border-top: 1px solid var(--line);
 }
 .depoimento-avatar {
-  flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, hsl(45 96% 58% / 0.22), hsl(140 50% 38% / 0.22));
-  border: 1px solid var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Fraunces', serif;
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--accent);
+ flex-shrink: 0;
+ width: 44px;
+ height: 44px;
+ border-radius: 50%;
+ background: linear-gradient(135deg, hsl(45 96% 58% / 0.22), hsl(140 50% 38% / 0.22));
+ border: 1px solid var(--accent);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-family: 'Fraunces', serif;
+ font-weight: 700;
+ font-size: 0.95rem;
+ color: var(--accent);
 }
 .depoimento-info { flex: 1; min-width: 0; }
 .depoimento-nome { font-weight: 700; color: var(--accent); font-size: 0.95rem; }
@@ -162,9 +162,9 @@ strong { color: var(--fg); font-weight: 600; }
 
 /* Variantes por peso */
 .depoimento-destaque {
-  background: linear-gradient(135deg, var(--bg-soft), hsl(28 18% 9%));
-  border-left-width: 6px;
-  padding: 36px 36px 32px;
+ background: linear-gradient(135deg, var(--bg-soft), hsl(28 18% 9%));
+ border-left-width: 6px;
+ padding: 36px 36px 32px;
 }
 .depoimento-destaque::before { font-size: 8rem; opacity: 0.22; top: -32px; }
 .depoimento-destaque blockquote { font-size: 1.32rem; line-height: 1.5; }
@@ -172,30 +172,30 @@ strong { color: var(--fg); font-weight: 600; }
 .depoimento-jovem blockquote { color: hsl(38 30% 96%); }
 
 @media (min-width: 880px) {
-  .depoimentos-grid-dupla {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 24px;
-    align-items: stretch;
-  }
+ .depoimentos-grid-dupla {
+ display: grid;
+ grid-template-columns: 1.4fr 1fr;
+ gap: 24px;
+ align-items: stretch;
+ }
 }
 
 @media (max-width: 600px) {
-  body { padding: 24px 16px 60px; }
-  h2 { margin-top: 48px; }
-  .servico { padding: 18px 20px; }
-  .base, .cta-box { padding: 22px; }
-  .depoimento { padding: 24px 22px; }
-  .depoimento::before { font-size: 5rem; top: -20px; }
-  .depoimento blockquote { font-size: 1.05rem; }
-  .depoimento-destaque { padding: 26px 22px; }
-  .depoimento-destaque blockquote { font-size: 1.12rem; }
-  .depoimento-avatar { width: 38px; height: 38px; font-size: 0.85rem; }
+ body { padding: 24px 16px 60px; }
+ h2 { margin-top: 48px; }
+ .servico { padding: 18px 20px; }
+ .base, .cta-box { padding: 22px; }
+ .depoimento { padding: 24px 22px; }
+ .depoimento::before { font-size: 5rem; top: -20px; }
+ .depoimento blockquote { font-size: 1.05rem; }
+ .depoimento-destaque { padding: 26px 22px; }
+ .depoimento-destaque blockquote { font-size: 1.12rem; }
+ .depoimento-avatar { width: 38px; height: 38px; font-size: 0.85rem; }
 }
 </style>
-  <link rel="stylesheet" href="/assets/cta.css">
-  <link rel="stylesheet" href="/assets/footer.css">
-  <link rel="stylesheet" href="/assets/a11y.css">
+ <link rel="stylesheet" href="/assets/cta.css">
+ <link rel="stylesheet" href="/assets/footer.css">
+ <link rel="stylesheet" href="/assets/a11y.css">
 </head>
 <body>
 
@@ -203,327 +203,325 @@ strong { color: var(--fg); font-weight: 600; }
 <main id="conteudo">
 <div class="container">
 <header class="page-header">
-  <a href="/" class="page-header-brand" aria-label="A Bola Conecta - página inicial">
-    <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
-    <span class="page-header-brand-text">A Bola Conecta</span>
-  </a>
-  <span class="page-header-section">Serviços</span>
+ <a href="/" class="page-header-brand" aria-label="A Bola Conecta - página inicial">
+ <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
+ <span class="page-header-brand-text">A Bola Conecta</span>
+ </a>
+ <span class="page-header-section">Serviços</span>
 </header>
 
 <header>
-  <span class="tag">SERVIÇOS EDUCATIVOS</span>
-  <h1>O que oferecemos</h1>
-  <p class="lead">Soluções pedagógicas, culturais e corporativas construídas a partir de 9 anos de trabalho em escolas, comunidades e eventos.</p>
+ <span class="tag">SERVIÇOS EDUCATIVOS</span>
+ <h1>O que oferecemos</h1>
+ <p class="lead">Soluções pedagógicas, culturais e corporativas construídas a partir de 9 anos de trabalho em escolas, comunidades e eventos.</p>
 </header>
 
 <!-- METODOLOGIA ÂNCORA -->
 <section style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(14, 72, 52, 0.08)); padding: 28px; border-radius: 14px; margin: 32px 0; border: 1px solid var(--line);">
-  <span class="tag">METODOLOGIA ABC</span>
-  <h3 style="color: var(--accent); margin-top: 8px; font-size: 1.4rem;">Tudo passa pela Metodologia ABC</h3>
-  <p style="color: var(--fg); margin-top: 12px;">Cada serviço abaixo aplica, em formato diferente, a Metodologia ABC — Audiovisual, Bola, Câmera — testada em rede pública desde 2021 e publicada oficialmente pelo <strong>SESC São Paulo</strong> em 2025.</p>
-  <a href="/metodologia" class="metodologia-link" style="margin-top: 16px; display: inline-block;">Conhecer a Metodologia ABC completa</a>
+ <span class="tag">METODOLOGIA ABC</span>
+ <h3 style="color: var(--accent); margin-top: 8px; font-size: 1.4rem;">Tudo passa pela Metodologia ABC</h3>
+ <p style="color: var(--fg); margin-top: 12px;">Cada serviço abaixo aplica, em formato diferente, a Metodologia ABC — Audiovisual, Bola, Câmera — testada em rede pública desde 2021 e publicada oficialmente pelo <strong>SESC São Paulo</strong> em 2025.</p>
+ <a href="/metodologia" class="metodologia-link" style="margin-top: 16px; display: inline-block;">Conhecer a Metodologia ABC completa</a>
 </section>
 
 <!-- ESCOLAS E EDUCADORES -->
 <section class="categoria">
-  <span class="label">PARA ESCOLAS E EDUCADORES</span>
-  <h2>Levar a Metodologia ABC para dentro da escola</h2>
-  <p class="intro">Três formatos escaláveis, do mais pontual ao mais profundo. Todos cumprem a Lei 10.639/2003 e 11.645/2008 com caminho didático testado em rede pública.</p>
+ <span class="label">PARA ESCOLAS E EDUCADORES</span>
+ <h2>Levar a Metodologia ABC para dentro da escola</h2>
+ <p class="intro">Três formatos escaláveis, do mais pontual ao mais profundo. Todos cumprem a Lei 10.639/2003 e 11.645/2008 com caminho didático testado em rede pública.</p>
 
-  <div class="servico">
-    <div class="titulo">
-      <h3>Cine-debate A Bola Conecta</h3>
-      <span class="duracao">90 min</span>
-    </div>
-    <p class="promessa">A turma sai falando sobre ancestralidade africana no futebol — sem precisar de panfleto.</p>
-    <p class="descricao">Exibição do documentário de 23 minutos seguida de mediação pedagógica. Funciona para introduzir o tema com qualquer turma do Fundamental II ao Médio, como atividade única ou porta de entrada para projetos mais longos.</p>
-  </div>
+ <div class="servico">
+ <div class="titulo">
+ <h3>Cine-debate A Bola Conecta</h3>
+ <span class="duracao">90 min</span>
+ </div>
+ <p class="promessa">A turma sai falando sobre ancestralidade africana no futebol — sem precisar de panfleto.</p>
+ <p class="descricao">Exibição do documentário de 23 minutos seguida de mediação pedagógica. Funciona para introduzir o tema com qualquer turma do Fundamental II ao Médio, como atividade única ou porta de entrada para projetos mais longos.</p>
+ </div>
 
-  <div class="servico">
-    <div class="titulo">
-      <h3>Oficina Metodologia ABC</h3>
-      <span class="duracao">4 a 8 encontros</span>
-    </div>
-    <p class="promessa">O aluno sai autor da própria narrativa — com filme, fotos e decisão corporal feitas por ele.</p>
-    <p class="descricao">Sessões estruturadas com prática corporal (bola/freestyle), roda de diálogo, produção audiovisual autoral (câmera de celular) e exposição final. Usa as fichas pedagógicas da Copa 2026 como material de apoio opcional.</p>
-    <a href="/metodologia" class="metodologia-link">Ver como funciona a Metodologia ABC</a>
-  </div>
+ <div class="servico">
+ <div class="titulo">
+ <h3>Oficina Metodologia ABC</h3>
+ <span class="duracao">4 a 8 encontros</span>
+ </div>
+ <p class="promessa">O aluno sai autor da própria narrativa — com filme, fotos e decisão corporal feitas por ele.</p>
+ <p class="descricao">Sessões estruturadas com prática corporal (bola/freestyle), roda de diálogo, produção audiovisual autoral (câmera de celular) e exposição final. Usa as fichas pedagógicas da Copa 2026 como material de apoio opcional.</p>
+ <a href="/metodologia" class="metodologia-link">Ver como funciona a Metodologia ABC</a>
+ </div>
 
-  <div class="servico">
-    <div class="titulo">
-      <h3>Piloto institucional</h3>
-      <span class="duracao">4 a 8 semanas</span>
-    </div>
-    <p class="promessa">A escola integra a Metodologia ABC ao currículo e termina com evento de compartilhamento com a comunidade.</p>
-    <p class="descricao">Projeto completo com formação docente, planejamento curricular conjunto, acompanhamento semanal e evento final de apresentação dos trabalhos dos alunos para famílias e comunidade escolar.</p>
-  </div>
+ <div class="servico">
+ <div class="titulo">
+ <h3>Piloto institucional</h3>
+ <span class="duracao">4 a 8 semanas</span>
+ </div>
+ <p class="promessa">A escola integra a Metodologia ABC ao currículo e termina com evento de compartilhamento com a comunidade.</p>
+ <p class="descricao">Projeto completo com formação docente, planejamento curricular conjunto, acompanhamento semanal e evento final de apresentação dos trabalhos dos alunos para famílias e comunidade escolar.</p>
+ </div>
 
-  <div class="servico">
-    <div class="titulo">
-      <h3>Formação docente</h3>
-      <span class="duracao">8 a 40 horas</span>
-    </div>
-    <p class="promessa">O professor sai autônomo pra continuar aplicando a metodologia sozinho, com material concreto em mãos.</p>
-    <p class="descricao">Capacitação de educadores para aplicação autônoma da Metodologia ABC. Inclui guia do educador, fichas pedagógicas, exemplar do documentário e mentoria pós-formação. Atende professores individuais, equipes pedagógicas ou secretarias de educação.</p>
-  </div>
+ <div class="servico">
+ <div class="titulo">
+ <h3>Formação docente</h3>
+ <span class="duracao">8 a 40 horas</span>
+ </div>
+ <p class="promessa">O professor sai autônomo pra continuar aplicando a metodologia sozinho, com material concreto em mãos.</p>
+ <p class="descricao">Capacitação de educadores para aplicação autônoma da Metodologia ABC. Inclui guia do educador, fichas pedagógicas, exemplar do documentário e mentoria pós-formação. Atende professores individuais, equipes pedagógicas ou secretarias de educação.</p>
+ </div>
 </section>
 
 <!-- MARCAS E INSTITUIÇÕES -->
 <section class="categoria">
-  <span class="label">PARA MARCAS E INSTITUIÇÕES</span>
-  <h2>Usar futebol e educação como estratégia cultural</h2>
-  <p class="intro">Três caminhos pra empresas, fundações e instituições que querem ir além do patrocínio esportivo tradicional e gerar conexão real com território, educação e Leis 10.639/2003 e 11.645/2008.</p>
+ <span class="label">PARA MARCAS E INSTITUIÇÕES</span>
+ <h2>Usar futebol e educação como estratégia cultural</h2>
+ <p class="intro">Três caminhos pra empresas, fundações e instituições que querem ir além do patrocínio esportivo tradicional e gerar conexão real com território, educação e Leis 10.639/2003 e 11.645/2008.</p>
 
-  <div class="servico">
-    <div class="titulo">
-      <h3>Patrocínio e coprodução</h3>
-      <span class="duracao">projeto</span>
-    </div>
-    <p class="promessa">A marca entra como produtora cultural — não como logomarca em camisa.</p>
-    <p class="descricao">Apoio financeiro ou operacional a projetos como a Copa de Gondwana, exibição do documentário em circuito cultural, ou produção de novas edições da Metodologia ABC. Retorno de marca via narrativa editorial (não mídia tradicional).</p>
-  </div>
+ <div class="servico">
+ <div class="titulo">
+ <h3>Patrocínio e coprodução</h3>
+ <span class="duracao">projeto</span>
+ </div>
+ <p class="promessa">A marca entra como produtora cultural — não como logomarca em camisa.</p>
+ <p class="descricao">Apoio financeiro ou operacional a projetos como a Copa de Gondwana, exibição do documentário em circuito cultural, ou produção de novas edições da Metodologia ABC. Retorno de marca via narrativa editorial (não mídia tradicional).</p>
+ </div>
 
-  <div class="servico">
-    <div class="titulo">
-      <h3>Team building educativo</h3>
-      <span class="duracao">1 dia</span>
-    </div>
-    <p class="promessa">O time sai sabendo decidir em situação de incerteza — e entendendo o porquê.</p>
-    <p class="descricao">Vivência corporativa de meio período usando Bola, Câmera e Audiovisual como ferramentas de integração. Não é "dinâmica de grupo" — é a Metodologia ABC adaptada pra times que querem trabalhar decisão, escuta e protagonismo.</p>
-  </div>
+ <div class="servico">
+ <div class="titulo">
+ <h3>Team building educativo</h3>
+ <span class="duracao">1 dia</span>
+ </div>
+ <p class="promessa">O time sai sabendo decidir em situação de incerteza — e entendendo o porquê.</p>
+ <p class="descricao">Vivência corporativa de meio período usando Bola, Câmera e Audiovisual como ferramentas de integração. Não é "dinâmica de grupo" — é a Metodologia ABC adaptada pra times que querem trabalhar decisão, escuta e protagonismo.</p>
+ </div>
 
-  <div class="servico">
-    <div class="titulo">
-      <h3>Licenciamento de material</h3>
-      <span class="duracao">anual</span>
-    </div>
-    <p class="promessa">A instituição aplica a Metodologia ABC com marca própria, suporte pedagógico e material testado.</p>
-    <p class="descricao">Licenciamento do documentário, fichas pedagógicas e guia do educador para uso institucional. Inclui mentoria de implementação e adaptação ao contexto da organização. Modelo para fundações educacionais, secretarias e ONGs.</p>
-  </div>
+ <div class="servico">
+ <div class="titulo">
+ <h3>Licenciamento de material</h3>
+ <span class="duracao">anual</span>
+ </div>
+ <p class="promessa">A instituição aplica a Metodologia ABC com marca própria, suporte pedagógico e material testado.</p>
+ <p class="descricao">Licenciamento do documentário, fichas pedagógicas e guia do educador para uso institucional. Inclui mentoria de implementação e adaptação ao contexto da organização. Modelo para fundações educacionais, secretarias e ONGs.</p>
+ </div>
 </section>
 
 <!-- EVENTOS E MÍDIA -->
 <section class="categoria">
-  <span class="label">PARA EVENTOS E MÍDIA</span>
-  <h2>Levar a narrativa para palcos, telas e mídia</h2>
-  <p class="intro">Três formatos pra festivais, eventos corporativos, programas de TV e mídia cultural.</p>
+ <span class="label">PARA EVENTOS E MÍDIA</span>
+ <h2>Levar a narrativa para palcos, telas e mídia</h2>
+ <p class="intro">Três formatos pra festivais, eventos corporativos, programas de TV e mídia cultural.</p>
 
-  <div class="servico">
-    <div class="titulo">
-      <h3>Palestras e mesas</h3>
-      <span class="duracao">30 a 90 min</span>
-    </div>
-    <p class="promessa">A audiência sai entendendo que futebol, educação e ancestralidade são o mesmo campo — não três temas separados.</p>
-    <p class="descricao">Apresentações sobre Metodologia ABC, educação via Leis 10.639 e 11.645, futebol como tecnologia social, ou documentário Gondwana A Bola Conecta. Mônica Saraiva e Sebastián Acevedo Vásquez ministram em dupla ou separados.</p>
-  </div>
+ <div class="servico">
+ <div class="titulo">
+ <h3>Palestras e mesas</h3>
+ <span class="duracao">30 a 90 min</span>
+ </div>
+ <p class="promessa">A audiência sai entendendo que futebol, educação e ancestralidade são o mesmo campo — não três temas separados.</p>
+ <p class="descricao">Apresentações sobre Metodologia ABC, educação via Leis 10.639 e 11.645, futebol como tecnologia social, ou documentário Gondwana A Bola Conecta. Mônica Saraiva e Sebastián Acevedo Vásquez ministram em dupla ou separados.</p>
+ </div>
 
-  <div class="servico">
-    <div class="titulo">
-      <h3>Exibição + debate</h3>
-      <span class="duracao">90 a 120 min</span>
-    </div>
-    <p class="promessa">A sala sai em roda de conversa sobre cor da pele, jeito do cabelo e território — começando pelo futebol.</p>
-    <p class="descricao">Exibição do documentário seguida de mediação ao vivo por Mônica ou Sebastián. Inclui material de apoio opcional (fichas pedagógicas da Copa 2026). Diferente de uma sessão comum: o documentário funciona como disparador, não como produto.</p>
-  </div>
+ <div class="servico">
+ <div class="titulo">
+ <h3>Exibição + debate</h3>
+ <span class="duracao">90 a 120 min</span>
+ </div>
+ <p class="promessa">A sala sai em roda de conversa sobre cor da pele, jeito do cabelo e território — começando pelo futebol.</p>
+ <p class="descricao">Exibição do documentário seguida de mediação ao vivo por Mônica ou Sebastián. Inclui material de apoio opcional (fichas pedagógicas da Copa 2026). Diferente de uma sessão comum: o documentário funciona como disparador, não como produto.</p>
+ </div>
 
-  <div class="servico">
-    <div class="titulo">
-      <h3>Assessoria de imprensa e conteúdo</h3>
-      <span class="duracao">projeto</span>
-    </div>
-    <p class="promessa">Quem cobre futebol entende que existe um campo invisível que ninguém está olhando.</p>
-    <p class="descricao">Consultoria editorial para veículos de comunicação, produtoras de conteúdo e marcas que querem abordar futebol, educação, raça e território com profundidade editorial e responsabilidade histórica.</p>
-  </div>
+ <div class="servico">
+ <div class="titulo">
+ <h3>Assessoria de imprensa e conteúdo</h3>
+ <span class="duracao">projeto</span>
+ </div>
+ <p class="promessa">Quem cobre futebol entende que existe um campo invisível que ninguém está olhando.</p>
+ <p class="descricao">Consultoria editorial para veículos de comunicação, produtoras de conteúdo e marcas que querem abordar futebol, educação, raça e território com profundidade editorial e responsabilidade histórica.</p>
+ </div>
 </section>
 
 </div>
 
 <!-- BASE TEÓRICA -->
 <section class="base">
-  <h2>Base teórica</h2>
-  <p style="color: var(--muted); margin-bottom: 20px;">Os serviços acima são sustentados por uma base teórico-metodológica explicitamente declarada, mobilizada como "time de craques" da educação. Cinco referências centrais:</p>
+ <h2>Base teórica</h2>
+ <p style="color: var(--muted); margin-bottom: 20px;">Os serviços acima são sustentados por uma base teórico-metodológica explicitamente declarada, mobilizada como "time de craques" da educação. Cinco referências centrais:</p>
 
-  <figure style="margin: 20px 0; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 10px;">
-    <img src="/assets/time-craques-gondwana-fc.webp" alt="Escalação da Seleção Brasileira de pensadores da Metodologia ABC — Time da Educação Gondwana FC." loading="lazy" style="width: 100%; height: auto; border-radius: 6px; display: block;" />
-  </figure>
+ <figure style="margin: 20px 0; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 10px;">
+ <img src="/assets/time-craques-gondwana-fc.webp" alt="Escalação da Seleção Brasileira de pensadores da Metodologia ABC — Time da Educação Gondwana FC." loading="lazy" style="width: 100%; height: auto; border-radius: 6px; display: block;" />
+ </figure>
 
-  <div class="time">
-    <div class="craque">
-      <div class="nome">Ailton Krenak</div>
-      <div class="vida">Itabirinha de Mantena, MG · 1953</div>
-      <div class="posicao">Goleiro</div>
-      <div class="funcao">Defende a sabedoria ancestral indígena. Lembra que sustentabilidade e respeito às culturas originárias são fundamentais.</div>
-    </div>
+ <div class="time">
+ <div class="craque">
+ <div class="nome">Ailton Krenak</div>
+ <div class="vida">Itabirinha de Mantena, MG · 1953</div>
+ <div class="posicao">Goleiro</div>
+ <div class="funcao">Defende a sabedoria ancestral indígena. Lembra que sustentabilidade e respeito às culturas originárias são fundamentais.</div>
+ </div>
 
-    <div class="craque">
-      <div class="nome">Antonieta de Barros</div>
-      <div class="vida">Florianópolis, SC · 1901–1952</div>
-      <div class="posicao">Craque da educação</div>
-      <div class="funcao">Pioneira na luta pelo direito à educação para todas as pessoas — especialmente mulheres negras. Educação como chave da emancipação.</div>
-    </div>
+ <div class="craque">
+ <div class="nome">Antonieta de Barros</div>
+ <div class="vida">Florianópolis, SC · 1901–1952</div>
+ <div class="posicao">Craque da educação</div>
+ <div class="funcao">Pioneira na luta pelo direito à educação para todas as pessoas — especialmente mulheres negras. Educação como chave da emancipação.</div>
+ </div>
 
-    <div class="craque">
-      <div class="nome">Paulo Freire</div>
-      <div class="vida">Recife, PE · 1921–1997</div>
-      <div class="posicao">Capitão</div>
-      <div class="funcao">Dribla a opressão com a pedagogia libertadora. Educação como ato político e de amor. Diálogo como condição essencial.</div>
-    </div>
+ <div class="craque">
+ <div class="nome">Paulo Freire</div>
+ <div class="vida">Recife, PE · 1921–1997</div>
+ <div class="posicao">Capitão</div>
+ <div class="funcao">Dribla a opressão com a pedagogia libertadora. Educação como ato político e de amor. Diálogo como condição essencial.</div>
+ </div>
 
-    <div class="craque">
-      <div class="nome">Djamila Ribeiro</div>
-      <div class="vida">Santos, SP · 1980</div>
-      <div class="posicao">Conexão defesa-ataque</div>
-      <div class="funcao">Intersecciona diferentes questões sociais. Dribla o racismo e o patriarcado criando oportunidades para todas as jogadoras brilharem.</div>
-    </div>
+ <div class="craque">
+ <div class="nome">Djamila Ribeiro</div>
+ <div class="vida">Santos, SP · 1980</div>
+ <div class="posicao">Conexão defesa-ataque</div>
+ <div class="funcao">Intersecciona diferentes questões sociais. Dribla o racismo e o patriarcado criando oportunidades para todas as jogadoras brilharem.</div>
+ </div>
 
-    <div class="craque">
-      <div class="nome">Lélia Gonzalez</div>
-      <div class="vida">Belo Horizonte, MG · 1935–1994</div>
-      <div class="posicao">Atacante</div>
-      <div class="funcao">Visão afro-latino-americana. Não deixa passar oportunidade de denunciar injustiças e visibilizar a luta das mulheres negras e indígenas.</div>
-    </div>
+ <div class="craque">
+ <div class="nome">Lélia Gonzalez</div>
+ <div class="vida">Belo Horizonte, MG · 1935–1994</div>
+ <div class="posicao">Atacante</div>
+ <div class="funcao">Visão afro-latino-americana. Não deixa passar oportunidade de denunciar injustiças e visibilizar a luta das mulheres negras e indígenas.</div>
+ </div>
 
-    <div class="craque">
-      <div class="nome">Edgar Morin</div>
-      <div class="vida">Paris, França · 1921</div>
-      <div class="posicao">Estrategista (comissão técnica)</div>
-      <div class="funcao">Complexidade e transdisciplinaridade. Educação que integra diferentes saberes e promove visão holística do mundo.</div>
-    </div>
+ <div class="craque">
+ <div class="nome">Edgar Morin</div>
+ <div class="vida">Paris, França · 1921</div>
+ <div class="posicao">Estrategista (comissão técnica)</div>
+ <div class="funcao">Complexidade e transdisciplinaridade. Educação que integra diferentes saberes e promove visão holística do mundo.</div>
+ </div>
 
-    <div class="craque">
-      <div class="nome">Carolina Maria de Jesus</div>
-      <div class="vida">Sacramento, MG · 1914–1977</div>
-      <div class="posicao">Motivadora (comissão técnica)</div>
-      <div class="funcao">Luta e resistência. Mostra que poesia, música e arte são instrumentos de liberdade e visibilidade das reivindicações sociais.</div>
-    </div>
+ <div class="craque">
+ <div class="nome">Carolina Maria de Jesus</div>
+ <div class="vida">Sacramento, MG · 1914–1977</div>
+ <div class="posicao">Motivadora (comissão técnica)</div>
+ <div class="funcao">Luta e resistência. Mostra que poesia, música e arte são instrumentos de liberdade e visibilidade das reivindicações sociais.</div>
+ </div>
 
-    <div class="craque">
-      <div class="nome">João Batista Freire</div>
-      <div class="vida">Santos, SP · 1948</div>
-      <div class="posicao">Pedagogo do corpo (comissão técnica)</div>
-      <div class="funcao">Integra o corpo nos processos de alfabetização. Filosofia do futebol de rua como metodologia de ensino — o "sotaque corporal e intelectual".</div>
-    </div>
-  </div>
+ <div class="craque">
+ <div class="nome">João Batista Freire</div>
+ <div class="vida">Santos, SP · 1948</div>
+ <div class="posicao">Pedagogo do corpo (comissão técnica)</div>
+ <div class="funcao">Integra o corpo nos processos de alfabetização. Filosofia do futebol de rua como metodologia de ensino — o "sotaque corporal e intelectual".</div>
+ </div>
+ </div>
 </section>
-
 
 <!-- DEPOIMENTOS -->
 <section class="depoimentos-section">
-  <h2>Quem passou por isso, diz</h2>
-  <p class="depoimentos-eyebrow">3 vozes · Educadores, jovens e pesquisadoras · 2022–2026</p>
+ <h2>Quem passou por isso, diz</h2>
+ <p class="depoimentos-eyebrow">3 vozes · Educadores, jovens e pesquisadoras · 2022–2026</p>
 
-  <div class="depoimentos-grid">
+ <div class="depoimentos-grid">
 
-    <article class="depoimento depoimento-destaque">
-      <blockquote>Excelente documentário! Educativo, comovente e muito leve. Neste momento, em que estamos observando com enorme preocupação o aumento de manifestações racistas em diversas áreas, inclusive no futebol, este documentário chega como uma resposta contundente, firme e íntegra.</blockquote>
-      <div class="depoimento-meta">
-        <div class="depoimento-avatar">AQ</div>
-        <div class="depoimento-info">
-          <div class="depoimento-nome">Antonia Quintão</div>
-          <div class="depoimento-papel">Pesquisadora FEA/USP · presidenta do Geledés Instituto da Mulher Negra</div>
-        </div>
-        <div class="depoimento-ano">2025</div>
-      </div>
-    </article>
+ <article class="depoimento depoimento-destaque">
+ <blockquote>Excelente documentário! Educativo, comovente e muito leve. Neste momento, em que estamos observando com enorme preocupação o aumento de manifestações racistas em diversas áreas, inclusive no futebol, este documentário chega como uma resposta contundente, firme e íntegra.</blockquote>
+ <div class="depoimento-meta">
+ <div class="depoimento-avatar">AQ</div>
+ <div class="depoimento-info">
+ <div class="depoimento-nome">Antonia Quintão</div>
+ <div class="depoimento-papel">Pesquisadora FEA/USP · presidenta do Geledés Instituto da Mulher Negra</div>
+ </div>
+ <div class="depoimento-ano">2025</div>
+ </div>
+ </article>
 
-    <div class="depoimentos-grid-dupla">
+ <div class="depoimentos-grid-dupla">
 
-      <article class="depoimento">
-        <blockquote>Embora curto, o documentário é muito amplo nas reflexões e questionamentos a que se propõe. Cativa a atenção dos adolescentes e leva-os a (re)pensar sobre o que a bola ou um registro fotográfico têm de relevância em suas vidas.</blockquote>
-        <div class="depoimento-meta">
-          <div class="depoimento-avatar">MM</div>
-          <div class="depoimento-info">
-            <div class="depoimento-nome">Michel Macedo</div>
-            <div class="depoimento-papel">Professor de Linguagens · Senac Lapa Scipião</div>
-          </div>
-          <div class="depoimento-ano">2022</div>
-        </div>
-      </article>
+ <article class="depoimento">
+ <blockquote>Embora curto, o documentário é muito amplo nas reflexões e questionamentos a que se propõe. Cativa a atenção dos adolescentes e leva-os a (re)pensar sobre o que a bola ou um registro fotográfico têm de relevância em suas vidas.</blockquote>
+ <div class="depoimento-meta">
+ <div class="depoimento-avatar">MM</div>
+ <div class="depoimento-info">
+ <div class="depoimento-nome">Michel Macedo</div>
+ <div class="depoimento-papel">Professor de Linguagens · Senac Lapa Scipião</div>
+ </div>
+ <div class="depoimento-ano">2022</div>
+ </div>
+ </article>
 
-      <article class="depoimento depoimento-jovem">
-        <blockquote>Uma coisa tão simples, tão no nosso dia a dia, e não sabemos de onde vem essa história. A gente entende que tem várias palavras no futebol que vêm de matriz africana e vai trazer a nossa alma pra jogar ali dentro.</blockquote>
-        <div class="depoimento-meta">
-          <div class="depoimento-avatar">MA</div>
-          <div class="depoimento-info">
-            <div class="depoimento-nome">Marina <span class="depoimento-idade">16 anos</span></div>
-            <div class="depoimento-papel">Aluna do Senac Lapa Scipião</div>
-          </div>
-          <div class="depoimento-ano">2022</div>
-        </div>
-      </article>
+ <article class="depoimento depoimento-jovem">
+ <blockquote>Uma coisa tão simples, tão no nosso dia a dia, e não sabemos de onde vem essa história. A gente entende que tem várias palavras no futebol que vêm de matriz africana e vai trazer a nossa alma pra jogar ali dentro.</blockquote>
+ <div class="depoimento-meta">
+ <div class="depoimento-avatar">MA</div>
+ <div class="depoimento-info">
+ <div class="depoimento-nome">Marina <span class="depoimento-idade">16 anos</span></div>
+ <div class="depoimento-papel">Aluna do Senac Lapa Scipião</div>
+ </div>
+ <div class="depoimento-ano">2022</div>
+ </div>
+ </article>
 
-    </div>
+ </div>
 
-  </div>
+ </div>
 </section>
-
 
 <!-- CTA -->
 
 <div class="cta-box">
-  <h3>Como contratar</h3>
-  <p>Atendemos escolas, marcas, fundações, eventos e mídia. Operamos via Da Silva e Vasquez Formação e Consultoria (CNPJ 62.085.700/0001-83).</p>
-  <a href="/metodologia">Ver Metodologia ABC</a>
-  <a href="/contato" class="secundario">Falar conosco</a>
-  <div class="email">contato.gondwana@gmail.com</div>
+ <h3>Como contratar</h3>
+ <p>Atendemos escolas, marcas, fundações, eventos e mídia. Operamos via Da Silva e Vasquez Formação e Consultoria (CNPJ 62.085.700/0001-83).</p>
+ <a href="/metodologia">Ver Metodologia ABC</a>
+ <a href="/contato" class="secundario">Falar conosco</a>
+ <div class="email">contato.gondwana@gmail.com</div>
 
 <!-- NAV INFERIOR -->
 <nav class="nav-inferior" aria-label="Navegação interna">
-  <a href="/">← Voltar para A Bola Conecta</a>
-  <div style="display:flex; gap:18px; flex-wrap:wrap;">
-    <a href="/metodologia">Metodologia</a>
-    <a href="/documentario">Documentário</a>
-    <a href="/copa-2026">Copa 2026</a>
-    <a href="/comunidade">Comunidade</a>
-  </div>
+ <a href="/">← Voltar para A Bola Conecta</a>
+ <div style="display:flex; gap:18px; flex-wrap:wrap;">
+ <a href="/metodologia">Metodologia</a>
+ <a href="/documentario">Documentário</a>
+ <a href="/copa-2026">Copa 2026</a>
+ <a href="/comunidade">Comunidade</a>
+ </div>
 </nav>
 
 </div>
 <footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-grid">
+ <div class="footer-container">
+ <div class="footer-grid">
 
-      <div class="footer-brand">
-        <a href="/" aria-label="A Bola Conecta - página inicial">
-          <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
-        </a>
-        <p class="footer-tagline">Documentário, Metodologia ABC e Fichas Copa 2026.<br/>Livre circulação do conhecimento.</p>
-      </div>
+ <div class="footer-brand">
+ <a href="/" aria-label="A Bola Conecta - página inicial">
+ <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
+ </a>
+ <p class="footer-tagline">Documentário, Metodologia ABC e Fichas Copa 2026.<br/>Livre circulação do conhecimento.</p>
+ </div>
 
-      <div class="footer-col">
-        <h3><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg> Navegação</h3>
-        <ul>
-          <li><a href="/metodologia">Metodologia ABC</a></li>
-          <li><a href="/servicos">Serviços</a></li>
-          <li><a href="/sobre">Sobre</a></li>
-          <li><a href="/contato">Contato</a></li>
-        </ul>
-      </div>
+ <div class="footer-col">
+ <h3> Navegação</h3>
+ <ul>
+ <li><a href="/metodologia">Metodologia ABC</a></li>
+ <li><a href="/servicos">Serviços</a></li>
+ <li><a href="/sobre">Sobre</a></li>
+ <li><a href="/contato">Contato</a></li>
+ </ul>
+ </div>
 
-      <div class="footer-col">
-        <h3><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></svg> Projeto</h3>
-        <ul>
-          <li><a href="/documentario">Documentário</a></li>
-          <li><a href="/copa-2026">Copa 2026</a></li>
-          <li><a href="/sobre">Equipe</a></li>
-          <li><a href="/imprensa">Imprensa</a></li>
-        </ul>
-      </div>
+ <div class="footer-col">
+ <h3> Projeto</h3>
+ <ul>
+ <li><a href="/documentario">Documentário</a></li>
+ <li><a href="/copa-2026">Copa 2026</a></li>
+ <li><a href="/sobre">Equipe</a></li>
+ <li><a href="/imprensa">Imprensa</a></li>
+ </ul>
+ </div>
 
-      <div class="footer-col">
-        <h3><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg> Operador</h3>
-        <p>Da Silva e Vásquez<br/>Formação e Consultoria LTDA</p>
-        <p class="footer-cnpj">CNPJ 62.085.700/0001-83</p>
-        <p class="footer-email"><a href="mailto:contato.gondwana@gmail.com">contato.gondwana@gmail.com</a></p>
-      </div>
+ <div class="footer-col">
+ <h3> Operador</h3>
+ <p>Da Silva e Vásquez<br/>Formação e Consultoria LTDA</p>
+ <p class="footer-cnpj">CNPJ 62.085.700/0001-83</p>
+ <p class="footer-email"><a href="mailto:contato.gondwana@gmail.com">contato.gondwana@gmail.com</a></p>
+ </div>
 
-    </div>
+ </div>
 
-    <div class="footer-bottom">
-      <p class="footer-copy">© 2026 Agência Gondwana FC — Time da Educação</p>
-      <p class="footer-claim">A bola conecta.</p>
-    </div>
-  </div>
+ <div class="footer-bottom">
+ <p class="footer-copy">© 2026 Agência Gondwana FC — Time da Educação</p>
+ <p class="footer-claim">A bola conecta.</p>
+ </div>
+ </div>
 </footer>
 
 </main>

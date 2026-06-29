@@ -55,20 +55,6 @@
   text-transform: uppercase;
   color: hsl(45 96% 58%);
   margin: 0 0 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.site-footer .footer-col h3 svg {
-  width: 14px;
-  height: 14px;
-  stroke: hsl(45 96% 58%);
-  stroke-width: 2;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  flex-shrink: 0;
 }
 
 .site-footer .footer-col ul {
