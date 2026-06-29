@@ -78,10 +78,13 @@ strong { color: var(--fg); font-weight: 600; }
 /* BASE TEÓRICA */
 .base { background: var(--bg-card); padding: 28px; border-radius: 12px; margin: 32px 0; border-left: 4px solid var(--verde); }
 .base h2 { color: var(--verde); margin-top: 0; }
-.base .referencia { margin: 18px 0; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
-.base .referencia:last-child { border-bottom: none; padding-bottom: 0; }
-.base .referencia .nome { font-family: 'Fraunces', serif; font-size: 1.05rem; color: var(--accent); font-weight: 700; margin-bottom: 4px; }
-.base .referencia .aplicacao { font-size: 0.95rem; color: var(--fg); }
+/* TIME DE CRAQUES — mesmo padrão de /metodologia */
+.time { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 28px 0; }
+.craque { background: var(--bg-card); padding: 18px 18px 18px 22px; border-radius: 10px; border-left: 3px solid var(--accent); }
+.craque .nome { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 700; color: var(--fg); margin-bottom: 2px; }
+.craque .vida { font-size: 0.78rem; color: var(--muted); margin-bottom: 8px; font-style: italic; }
+.craque .posicao { font-size: 0.85rem; color: var(--accent); margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.craque .funcao { font-size: 0.92rem; color: var(--fg); line-height: 1.5; }
 
 /* NAV INFERIOR */
 .nav-inferior { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center; }
@@ -340,29 +343,62 @@ strong { color: var(--fg); font-weight: 600; }
     <img src="/assets/time-craques-gondwana-fc.webp" alt="Escalação da Seleção Brasileira de pensadores da Metodologia ABC — Time da Educação Gondwana FC." loading="lazy" style="width: 100%; height: auto; border-radius: 6px; display: block;" />
   </figure>
 
-  <div class="referencia">
-    <div class="nome">Paulo Freire — capitão</div>
-    <div class="aplicacao">Pedagogia libertadora, círculos de cultura, diálogo como condição essencial. Toda oficina parte de uma roda de diálogo onde o educador coordena sem impor.</div>
-  </div>
+  <div class="time">
+    <div class="craque">
+      <div class="nome">Ailton Krenak</div>
+      <div class="vida">Itabirinha de Mantena, MG · 1953</div>
+      <div class="posicao">Goleiro</div>
+      <div class="funcao">Defende a sabedoria ancestral indígena. Lembra que sustentabilidade e respeito às culturas originárias são fundamentais.</div>
+    </div>
 
-  <div class="referencia">
-    <div class="nome">Lélia Gonzalez — atacante</div>
-    <div class="aplicacao">Visão afro-latino-americana, feminismo negro, amefricanidade. Toda sessão referencia a contribuição africana na cultura brasileira — sem tratar como "tema opcional".</div>
-  </div>
+    <div class="craque">
+      <div class="nome">Antonieta de Barros</div>
+      <div class="vida">Florianópolis, SC · 1901–1952</div>
+      <div class="posicao">Craque da educação</div>
+      <div class="funcao">Pioneira na luta pelo direito à educação para todas as pessoas — especialmente mulheres negras. Educação como chave da emancipação.</div>
+    </div>
 
-  <div class="referencia">
-    <div class="nome">Ailton Krenak — goleiro</div>
-    <div class="aplicacao">Sabedoria ancestral indígena, sustentabilidade, respeito às culturas originárias. Toda vivência corporal reconhece que o corpo sabe coisas que a razão desconhece.</div>
-  </div>
+    <div class="craque">
+      <div class="nome">Paulo Freire</div>
+      <div class="vida">Recife, PE · 1921–1997</div>
+      <div class="posicao">Capitão</div>
+      <div class="funcao">Dribla a opressão com a pedagogia libertadora. Educação como ato político e de amor. Diálogo como condição essencial.</div>
+    </div>
 
-  <div class="referencia">
-    <div class="nome">Edgar Morin — estrategista</div>
-    <div class="aplicacao">Pensamento complexo, transdisciplinaridade. Os três eixos (Audiovisual, Bola, Câmera) são método integrado.</div>
-  </div>
+    <div class="craque">
+      <div class="nome">Djamila Ribeiro</div>
+      <div class="vida">Santos, SP · 1980</div>
+      <div class="posicao">Conexão defesa-ataque</div>
+      <div class="funcao">Intersecciona diferentes questões sociais. Dribla o racismo e o patriarcado criando oportunidades para todas as jogadoras brilharem.</div>
+    </div>
 
-  <div class="referencia">
-    <div class="nome">João Batista Freire — pedagogo do corpo</div>
-    <div class="aplicacao">Pedagogia do futebol de rua, "sotaque corporal e intelectual". A prática da bola é vivência pedagógica, não exercício físico.</div>
+    <div class="craque">
+      <div class="nome">Lélia Gonzalez</div>
+      <div class="vida">Belo Horizonte, MG · 1935–1994</div>
+      <div class="posicao">Atacante</div>
+      <div class="funcao">Visão afro-latino-americana. Não deixa passar oportunidade de denunciar injustiças e visibilizar a luta das mulheres negras e indígenas.</div>
+    </div>
+
+    <div class="craque">
+      <div class="nome">Edgar Morin</div>
+      <div class="vida">Paris, França · 1921</div>
+      <div class="posicao">Estrategista (comissão técnica)</div>
+      <div class="funcao">Complexidade e transdisciplinaridade. Educação que integra diferentes saberes e promove visão holística do mundo.</div>
+    </div>
+
+    <div class="craque">
+      <div class="nome">Carolina Maria de Jesus</div>
+      <div class="vida">Sacramento, MG · 1914–1977</div>
+      <div class="posicao">Motivadora (comissão técnica)</div>
+      <div class="funcao">Luta e resistência. Mostra que poesia, música e arte são instrumentos de liberdade e visibilidade das reivindicações sociais.</div>
+    </div>
+
+    <div class="craque">
+      <div class="nome">João Batista Freire</div>
+      <div class="vida">Santos, SP · 1948</div>
+      <div class="posicao">Pedagogo do corpo (comissão técnica)</div>
+      <div class="funcao">Integra o corpo nos processos de alfabetização. Filosofia do futebol de rua como metodologia de ensino — o "sotaque corporal e intelectual".</div>
+    </div>
   </div>
 </section>
 
