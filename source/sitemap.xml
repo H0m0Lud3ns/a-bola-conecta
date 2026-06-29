@@ -395,4 +395,34 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.abolaconecta.com.br/blog/copa-2026/primeira-rodada-pestel-parte-1</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.abolaconecta.com.br/blog/copa-2026/primeira-rodada-pestel-parte-2</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.abolaconecta.com.br/blog/copa-2026/primeira-rodada-pestel-parte-3</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.abolaconecta.com.br/blog/copa-2026/caderneta-de-campo-abertura</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.abolaconecta.com.br/blog/copa-2026/caderneta-de-campo-jogo-01-mexico-africa-do-sul</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
