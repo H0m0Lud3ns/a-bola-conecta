@@ -179,8 +179,11 @@
     @media (max-width: 620px) { .container { width:min(100% - 28px, 1180px); } main { padding-top:72px; } .hero { padding-top:52px; } .hero-actions .btn, .actions .btn { width:100%; } .visual-card { min-height:340px; border-radius:26px; } .visual-logo { top:31%; width:min(72%, 200px); } .visual-text { left:24px; right:24px; bottom:24px; } .cards, .country-grid, .use-grid, .campaign-metrics, .flow-strip, .catalogue-brief, .footer-grid, .guide-form-grid { grid-template-columns:1fr; } .guide-field.full { grid-column:auto; } .guide-form { border-radius:24px; } .footer-grid > :first-child { grid-column:auto; } .mobile-nav.is-open { grid-template-columns:1fr; } .support-btn { padding:0 14px; } .phone-frame { min-height:390px; } .phone-inner { inset:18px; padding:30px 24px; gap:18px; } .phone-inner strong { max-width:8.4ch; font-size:clamp(2.4rem,13vw,3.55rem); line-height:.92; } .phone-inner span { font-size:10px; letter-spacing:.11em; } .experience-panel { padding:22px; } }
   </style>
   <link rel="stylesheet" href="/assets/footer.css">
+  <link rel="stylesheet" href="/assets/a11y.css">
 </head>
 <body>
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="/a-bola-conecta/" aria-label="A Bola Conecta - Portal Gondwana">
@@ -239,7 +242,8 @@
     </section>
 
     <section class="section dark" id="experiencia">
-      <div class="container">
+      <main id="conteudo">
+<div class="container">
         <div class="section-head">
           <div><p class="kicker">Como começar</p><h2>Escolha uma ficha e abra uma conversa.</h2></div>
           <p class="section-copy">Use em 10 minutos: escolha uma seleção, leia a pergunta do card e peça que o grupo conecte bola, mapa e memória. Depois a conversa pode virar pesquisa, mural, cartaz, áudio, vídeo ou roda.</p>
@@ -750,5 +754,6 @@
       });
     });
   </script>
+</main>
 </body>
 </html>

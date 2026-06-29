@@ -374,10 +374,13 @@ body {
 </style>
   <link rel="stylesheet" href="/assets/cta.css">
   <link rel="stylesheet" href="/assets/footer.css">
+  <link rel="stylesheet" href="/assets/a11y.css">
 </head>
 <body>
 
-<nav class="nav">
+<a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
+
+<nav class="nav" aria-label="Menu principal">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
       <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
@@ -400,7 +403,8 @@ body {
 
 <!-- HERO -->
 <header class="hero">
-  <div class="container">
+  <main id="conteudo">
+<div class="container">
     <div class="hero-grid">
       <div>
         <span class="eyebrow">Gondwana</span>
@@ -575,5 +579,6 @@ body {
 <script>
   if (window.lucide) { window.lucide.createIcons(); }
 </script>
+</main>
 </body>
 </html>

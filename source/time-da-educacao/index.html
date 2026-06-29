@@ -17,6 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/cta.css">
   <link rel="stylesheet" href="/assets/footer.css">
+  <link rel="stylesheet" href="/assets/a11y.css">
 <style>
 :root {
   --bg: hsl(28 18% 7%);
@@ -110,6 +111,9 @@ strong { color: var(--fg); font-weight: 600; }
 </head>
 <body>
 
+<a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
+
+<main id="conteudo">
 <div class="container">
 
   <header class="site-header">
@@ -334,7 +338,7 @@ strong { color: var(--fg); font-weight: 600; }
   </div>
 
   <!-- NAV INFERIOR -->
-  <nav class="nav-inferior">
+  <nav class="nav-inferior" aria-label="Navegação interna">
     <a href="/">← Voltar para A Bola Conecta</a>
     <div style="display:flex; gap:18px; flex-wrap:wrap;">
       <a href="/metodologia">Metodologia</a>
@@ -393,5 +397,6 @@ strong { color: var(--fg); font-weight: 600; }
   </div>
 </footer>
 
+</main>
 </body>
 </html>

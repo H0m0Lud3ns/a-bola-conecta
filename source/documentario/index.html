@@ -690,8 +690,11 @@ body::before {
 }]
 </script>
   <link rel="stylesheet" href="/assets/footer.css">
+  <link rel="stylesheet" href="/assets/a11y.css">
 </head>
 <body>
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
 
 <header class="topbar">
   <div class="topbar-inner">
@@ -736,7 +739,8 @@ body::before {
 
 
 <section class="hero">
-  <div class="container">
+  <main id="conteudo">
+<div class="container">
     <div class="hero-grid">
       <div class="hero-text">
         <span class="hero-kicker">Documentário · 2020 – 2021</span>
@@ -1074,5 +1078,6 @@ body::before {
   }
 })();
 </script>
+</main>
 </body>
 </html>

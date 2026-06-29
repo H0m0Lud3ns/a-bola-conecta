@@ -140,8 +140,12 @@ strong { color: var(--fg); font-weight: 600; }
 </style>
   <link rel="stylesheet" href="/assets/cta.css">
   <link rel="stylesheet" href="/assets/footer.css">
+  <link rel="stylesheet" href="/assets/a11y.css">
 </head>
 <body>
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
+<main id="conteudo">
 <div class="container">
 <header class="site-header">
   <a href="/" class="logo-link" aria-label="Voltar para A Bola Conecta">
@@ -377,7 +381,7 @@ strong { color: var(--fg); font-weight: 600; }
 </div>
 
 <!-- NAV INFERIOR -->
-<nav class="nav-inferior">
+<nav class="nav-inferior" aria-label="Navegação interna">
   <a href="/">← Voltar para A Bola Conecta</a>
   <div style="display:flex; gap:18px; flex-wrap:wrap;">
     <a href="/servicos">Serviços</a>
@@ -457,5 +461,6 @@ strong { color: var(--fg); font-weight: 600; }
   </div>
 </footer>
 
+</main>
 </body>
 </html>
