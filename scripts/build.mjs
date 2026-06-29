@@ -155,6 +155,27 @@ const routeSocial = new Map([
     imageAlt: 'Loja A Bola Conecta',
     imageType: 'image/png',
   }],
+  ['imprensa/index.html', {
+    title: 'Imprensa | A Bola Conecta',
+    description: 'Sala de imprensa do A Bola Conecta: releases, fotos oficiais, kit de midia, logomarcas e contatos para jornalistas, marcas e produtores.',
+    image: '/assets/og-card-metodologia.png',
+    imageAlt: 'Imprensa A Bola Conecta',
+    imageType: 'image/png',
+  }],
+  ['festivais/index.html', {
+    title: 'Trajetoria em festivais | A Bola Conecta',
+    description: 'Premiacoes e exibicoes do doc A Bola Conecta em festivais, mostras e espacos academicos no Brasil e no exterior.',
+    image: '/assets/og-card-documentario.png',
+    imageAlt: 'Trajetoria do documentario A Bola Conecta em festivais',
+    imageType: 'image/png',
+  }],
+  ['time-da-educacao/index.html', {
+    title: 'Time da Educacao | Gondwana FC',
+    description: 'O Time da Educacao do Gondwana FC: futebol, ancestralidade africana, cultura afro-brasileira e Lei 10.639 em sala de aula.',
+    image: '/assets/og-card-metodologia.png',
+    imageAlt: 'Time da Educacao Gondwana FC',
+    imageType: 'image/png',
+  }],
   ['contato/index.html', {
     title: 'Contato | A Bola Conecta',
     description: 'Fale com a equipe do A Bola Conecta e do Gondwana FC - Time da Educacao. Imprensa, parcerias, escolas, federacoes e projetos sociais.',

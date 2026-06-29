@@ -1,0 +1,70 @@
+/* ============================================================
+   a11y.css — Acessibilidade global do site A Bola Conecta
+   Compatível com WCAG 2.1 nível AA
+   ============================================================ */
+
+/* --- Foco visível para teclado (Tab) ---
+   Pista visual dourada quando usuário navega com teclado.
+   Não aparece para clique de mouse (:focus-visible só em teclado). */
+*:focus { outline: none; }
+*:focus-visible {
+  outline: 3px solid hsl(45 96% 58%);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* --- Skip link (pular para conteúdo) ---
+   Link invisível até receber foco. Quem usa teclado/lei-
+   tor de tela pula direto pro main sem tabular pelo nav. */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  background: hsl(45 96% 58%);
+  color: hsl(28 18% 7%);
+  padding: 14px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  z-index: 999;
+  transition: top 0.2s ease;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 16px;
+  outline: 3px solid hsl(28 18% 7%);
+  outline-offset: 2px;
+}
+
+/* --- Main landmark (leitor de tela) ---
+   Padding-top mínimo pra não cortar conteúdo quando ancorado */
+main { scroll-margin-top: 80px; }
+
+/* --- Contraste aumentado em seleção de texto --- */
+::selection {
+  background: hsl(45 96% 58% / 0.45);
+  color: hsl(38 30% 96%);
+}
+
+/* --- Modo de alto contraste (preferência do SO) ---
+   Para Windows High Contrast Mode / Safari Increase Contrast */
+@media (prefers-contrast: more) {
+  :root {
+    --fg: hsl(38 30% 100%);
+    --muted: hsl(38 18% 85%);
+    --accent: hsl(45 100% 65%);
+  }
+}
+
+/* --- Movimento reduzido (acessibilidade motora) ---
+   Respeita usuários com prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

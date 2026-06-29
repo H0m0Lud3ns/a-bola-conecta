@@ -1,0 +1,155 @@
+/* Footer unificado - A Bola Conecta / Gondwana FC - Time da Educação
+   Aplicado em todas as páginas do site.
+
+   v2 (2026-06-28): direção de arte adicionada:
+   - Ícones SVG inline em cada h3 de coluna
+   - Glow suave + borda dourada mais viva no bloco do operador
+   - Hover state com sublinhado animado nos links
+   - Hierarquia tipográfica reforçada (h3 com kerning maior)
+*/
+
+.site-footer {
+  background: hsl(28 18% 7%);
+  border-top: 1px solid var(--line, rgba(245, 230, 200, 0.08));
+  padding: 56px 20px 32px;
+  margin-top: 80px;
+  color: hsl(38 30% 88%);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.site-footer .footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.site-footer .footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.site-footer .footer-brand img {
+  height: 44px;
+  width: auto;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.site-footer .footer-brand .footer-tagline {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: hsl(45 96% 58%);
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.site-footer .footer-col h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: hsl(45 96% 58%);
+  margin: 0 0 16px;
+}
+
+.site-footer .footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.site-footer .footer-col a {
+  color: hsl(38 30% 88%);
+  text-decoration: none;
+  transition: color 0.18s ease;
+  position: relative;
+  padding-bottom: 1px;
+  border-bottom: 1px solid transparent;
+}
+
+.site-footer .footer-col a:hover {
+  color: hsl(45 96% 58%);
+  border-bottom-color: hsl(45 96% 58%);
+}
+
+.site-footer .footer-col p {
+  margin: 0 0 8px;
+  color: hsl(38 30% 88%);
+  font-size: 13px;
+}
+
+.site-footer .footer-col .footer-cnpj {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 12px;
+  color: hsl(38 18% 70%);
+  margin-top: 4px;
+  padding: 6px 10px;
+  background: rgba(245, 230, 200, 0.04);
+  border-left: 2px solid hsl(45 96% 58% / 0.4);
+  border-radius: 0 4px 4px 0;
+  display: inline-block;
+}
+
+.site-footer .footer-col .footer-email {
+  font-size: 13px;
+  word-break: break-all;
+}
+
+.site-footer .footer-col .footer-email a {
+  color: hsl(45 96% 58%);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+}
+
+.site-footer .footer-bottom {
+  border-top: 1px solid var(--line, rgba(245, 230, 200, 0.08));
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: hsl(38 18% 70%);
+}
+
+.site-footer .footer-bottom .footer-copy {
+  margin: 0;
+}
+
+.site-footer .footer-bottom .footer-claim {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: hsl(45 96% 58%);
+  margin: 0;
+}
+
+/* Responsivo */
+@media (max-width: 860px) {
+  .site-footer .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-footer {
+    padding: 40px 16px 24px;
+  }
+  .site-footer .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .site-footer .footer-bottom {
+    flex-direction: column;
+    text-align: left;
+  }
+}

@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CB5CLYNX8H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CB5CLYNX8H', { anonymize_ip: true, send_page_view: true });
+</script>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Trajetória | A Bola Conecta</title>
+<meta name="description" content="Premiações e exibições do documentário A Bola Conecta em festivais, mostras e espaços acadêmicos no Brasil e no exterior." />
+<meta name="author" content="Mônica Saraiva da Silva · Sebastián Acevedo Vásquez" />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://www.abolaconecta.com.br/festivais" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="A Bola Conecta" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:title" content="Trajetória | A Bola Conecta" />
+<meta property="og:description" content="Premiações e exibições em festivais, mostras e espaços acadêmicos." />
+<meta property="og:url" content="https://www.abolaconecta.com.br/festivais" />
+<meta property="og:image" content="https://www.abolaconecta.com.br/documentario/assets/festivais/cinefoot-2021.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root { --bg: hsl(28, 18%, 7%); --fg: hsl(38, 30%, 94%); --muted: hsl(38, 18%, 70%); --primary: hsl(14, 72%, 52%); --accent: hsl(45, 96%, 58%); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: 'Inter', sans-serif; line-height: 1.6; padding: 40px 20px 80px; }
+.container { max-width: 1100px; margin: 0 auto; }
+h1 { font-family: 'Fraunces', serif; font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 900; margin-bottom: 12px; line-height: 1.05; color: var(--accent); }
+.lead { font-size: 1.15rem; color: var(--fg); margin-bottom: 40px; max-width: 720px; line-height: 1.55; }
+.back-link { display: inline-block; margin-bottom: 24px; color: var(--accent); text-decoration: none; font-size: 14px; }
+.back-link:hover { text-decoration: underline; }
+.tag { display: inline-block; padding: 4px 12px; background: rgba(245,158,11,0.15); color: var(--accent); border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 20px; }
+
+/* Stats strip */
+.stats { display: flex; flex-wrap: wrap; gap: 32px; margin: 32px 0 48px; padding: 24px 28px; background: rgba(255,255,255,0.03); border-radius: 14px; border: 1px solid rgba(245,158,11,0.18); }
+.stat { display: flex; flex-direction: column; }
+.stat strong { font-family: 'Fraunces', serif; font-size: 2.2rem; color: var(--accent); line-height: 1; }
+.stat span { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 6px; }
+
+/* Galeria principal */
+.festival-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+ gap: 20px;
+ margin-bottom: 48px;
+}
+.festival-card {
+ position: relative;
+ background: #ffffff;
+ border-radius: 14px;
+ padding: 14px;
+ border: 1px solid rgba(245,158,11,0.25);
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ text-align: center;
+}
+.festival-card:hover {
+ transform: translateY(-3px);
+ box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+ border-color: var(--accent);
+}
+.festival-card img {
+ width: 100%;
+ height: auto;
+ aspect-ratio: 1 / 1;
+ object-fit: contain;
+ display: block;
+ margin-bottom: 12px;
+}
+.festival-card .festival-nome {
+ font-size: 0.95rem;
+ font-weight: 700;
+ color: hsl(28, 18%, 10%);
+ line-height: 1.3;
+ margin-bottom: 6px;
+}
+.festival-card .festival-meta {
+ font-size: 0.78rem;
+ color: hsl(28, 12%, 35%);
+ line-height: 1.4;
+ margin-bottom: 8px;
+}
+.festival-card .festival-categoria {
+ display: inline-block;
+ margin-top: 4px;
+ padding: 3px 10px;
+ background: rgba(245,158,11,0.18);
+ color: hsl(28, 70%, 30%);
+ border-radius: 999px;
+ font-size: 0.7rem;
+ font-weight: 700;
+ letter-spacing: 0.04em;
+ text-transform: uppercase;
+}
+.festival-card.premio {
+ border-color: var(--accent);
+ background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(245,158,11,0.02));
+ box-shadow: 0 4px 20px rgba(245,158,11,0.15);
+}
+.festival-card.premio::after {
+ content: "★";
+ position: absolute;
+ top: 10px;
+ right: 12px;
+ color: var(--accent);
+ font-size: 1.3rem;
+ text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+.festival-card .premio-label {
+ position: absolute;
+ top: 10px;
+ left: 12px;
+ background: var(--accent);
+ color: var(--bg);
+ padding: 3px 8px;
+ border-radius: 4px;
+ font-size: 0.66rem;
+ font-weight: 800;
+ letter-spacing: 0.06em;
+ text-transform: uppercase;
+}
+
+/* Timeline narrativa */
+.timeline {
+ margin: 48px 0;
+ padding: 32px 0;
+ border-top: 1px solid rgba(245,158,11,0.18);
+}
+.timeline h2 { font-family: 'Fraunces', serif; font-size: 1.8rem; color: var(--accent); margin-bottom: 24px; }
+.timeline-item {
+ display: grid;
+ grid-template-columns: 80px 1fr;
+ gap: 24px;
+ padding: 16px 0;
+ border-bottom: 1px dashed rgba(245,158,11,0.12);
+}
+.timeline-item:last-child { border-bottom: none; }
+.timeline-ano { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 700; color: var(--accent); }
+.timeline-content h3 { font-size: 1.05rem; color: var(--fg); margin-bottom: 4px; }
+.timeline-content p { font-size: 0.9rem; color: var(--muted); margin: 0; }
+
+@media (max-width: 600px) {
+ body { padding: 24px 16px 60px; }
+ .stats { gap: 20px; padding: 18px; }
+ .stat strong { font-size: 1.6rem; }
+ .festival-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+ .festival-card { padding: 8px; }
+ .festival-card .festival-nome { font-size: 0.78rem; }
+ .festival-card .festival-meta { font-size: 0.66rem; }
+ .timeline-item { grid-template-columns: 50px 1fr; gap: 16px; }
+ .timeline-ano { font-size: 1.1rem; }
+}
+</style>
+ <link rel="stylesheet" href="/assets/cta.css">
+ <link rel="stylesheet" href="/assets/footer.css">
+ <link rel="stylesheet" href="/assets/a11y.css">
+</head>
+<body>
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
+<main id="conteudo">
+<div class="container">
+ <a href="/" class="back-link">← Voltar para A Bola Conecta</a>
+ <span class="tag">Trajetória · 2021 a 2025</span>
+ <h1>Premiações e exibições</h1>
+ <p class="lead">O documentário <strong>A Bola Conecta</strong> circulou em mostras, festivais e espaços acadêmicos no Brasil e fora do país. Esta é a galeria dos reconhecimentos oficiais recebidos até agora. Lista em atualização no press kit.</p>
+
+ <div class="stats">
+ <div class="stat"><strong>7</strong><span>Reconhecimentos oficiais</span></div>
+ <div class="stat"><strong>1</strong><span>Prêmio de júri oficial</span></div>
+ <div class="stat"><strong>2</strong><span>Países (Brasil e Portugal)</span></div>
+ <div class="stat"><strong>23</strong><span>Minutos de Brasil</span></div>
+ </div>
+
+ <div class="festival-grid">
+
+ <div class="festival-card premio" title="Curta-se · 23ª edição · Prêmio de Melhor Trailer · Júri Oficial · Sergipe">
+ <span class="premio-label">Prêmio</span>
+ <img src="../documentario/assets/festivais/web/23-curta-se-festival-sergipe-premio-melhor-trailer.png" alt="Curta-se - Festival Iberoamericano de Cinema de Sergipe - Prêmio de Melhor Trailer" />
+ <div class="festival-nome">Curta-se</div>
+ <div class="festival-meta">23ª edição<br>Sergipe, Brasil</div>
+ <div class="festival-categoria">Melhor Trailer · Júri Oficial</div>
+ </div>
+
+ <div class="festival-card" title="CINEFOOT · 2021 · Seleção Oficial · Rio de Janeiro">
+ <img src="../documentario/assets/festivais/web/cinefoot-2021.png" alt="CINEFOOT - Festival Internacional de Cinema de Futebol" />
+ <div class="festival-nome">CINEFOOT</div>
+ <div class="festival-meta">2021<br>Rio de Janeiro, Brasil</div>
+ <div class="festival-categoria">Seleção Oficial</div>
+ </div>
+
+ <div class="festival-card" title="FIA CINE · 9ª edição · Seleção Oficial · Brasil">
+ <img src="../documentario/assets/festivais/web/9-fiacine-festival-ibero-americano.png" alt="FIA CINE - Festival Ibero Americano de Cinema" />
+ <div class="festival-nome">FIA CINE</div>
+ <div class="festival-meta">9ª edição<br>Brasil</div>
+ <div class="festival-categoria">Seleção Oficial</div>
+ </div>
+
+ <div class="festival-card" title="Lisbon Sport Film Festival · 4ª edição · 2022 · Seleção Oficial · Lisboa, Portugal">
+ <img src="../documentario/assets/festivais/web/4-lisbon-sport-film-festival-2022.png" alt="Lisbon Sport Film Festival" />
+ <div class="festival-nome">Lisbon Sport Film Festival</div>
+ <div class="festival-meta">4ª edição · 2022<br>Lisboa, Portugal</div>
+ <div class="festival-categoria">Seleção Oficial</div>
+ </div>
+
+ <div class="festival-card" title="Festival Ubuntu · 3ª edição · 2022 · Seleção Oficial · Brasil">
+ <img src="../documentario/assets/festivais/web/3-festival-ubuntu-2022.png" alt="Festival Ubuntu" />
+ <div class="festival-nome">Festival Ubuntu</div>
+ <div class="festival-meta">3ª edição · 2022<br>Brasil</div>
+ <div class="festival-categoria">Seleção Oficial</div>
+ </div>
+
+ <div class="festival-card" title="Festival Cinema Negro em Ação · 3ª edição · 2022 · Seleção Oficial · Rio de Janeiro">
+ <img src="../documentario/assets/festivais/web/3-cinema-negro-em-acao-2022.png" alt="Festival Cinema Negro em Ação" />
+ <div class="festival-nome">Cinema Negro em Ação</div>
+ <div class="festival-meta">3ª edição · 2022<br>Rio de Janeiro, Brasil</div>
+ <div class="festival-categoria">Seleção Oficial</div>
+ </div>
+
+ <div class="festival-card" title="Festival Elas nas Telas · 2025 · Belém, Pará">
+ <img src="../documentario/assets/festivais/web/festival-elas-nas-telas-belem-2025.png" alt="Festival Elas nas Telas" />
+ <div class="festival-nome">Elas nas Telas</div>
+ <div class="festival-meta">2025<br>Belém, Pará, Brasil</div>
+ <div class="festival-categoria">Seleção Oficial</div>
+ </div>
+
+ </div>
+
+ <div class="timeline">
+ <h2>Linha do tempo</h2>
+
+ <div class="timeline-item">
+ <div class="timeline-ano">2021</div>
+ <div class="timeline-content">
+ <h3>CINEFOOT — Festival Internacional de Cinema de Futebol</h3>
+ <p>Rio de Janeiro, Brasil. Seleção Oficial entre obras dedicadas ao futebol e cultura.</p>
+ </div>
+ </div>
+
+ <div class="timeline-item">
+ <div class="timeline-ano">2022</div>
+ <div class="timeline-content">
+ <h3>Lisbon Sport Film Festival · 4ª edição</h3>
+ <p>Lisboa, Portugal. Único festival europeo dedicado ao cinema esportivo. A obra circulou em circuito acadêmico, sem operação comercial.</p>
+ </div>
+ </div>
+
+ <div class="timeline-item">
+ <div class="timeline-ano">2022</div>
+ <div class="timeline-content">
+ <h3>Festival Ubuntu · 3ª edição</h3>
+ <p>Festival de temática afrodescendente e cultura popular no Brasil.</p>
+ </div>
+ </div>
+
+ <div class="timeline-item">
+ <div class="timeline-ano">2022</div>
+ <div class="timeline-content">
+ <h3>Festival Cinema Negro em Ação · 3ª edição</h3>
+ <p>Rio de Janeiro. Festival dedicado a produções audiovisuais realizadas por e sobre pessoas negras.</p>
+ </div>
+ </div>
+
+ <div class="timeline-item">
+ <div class="timeline-ano">2023</div>
+ <div class="timeline-content">
+ <h3>Curta-se · Festival Iberoamericano de Cinema de Sergipe · 23ª edição</h3>
+ <p>Aracaju, Sergipe. <strong>Prêmio de Melhor Trailer — Júri Oficial.</strong></p>
+ </div>
+ </div>
+
+ <div class="timeline-item">
+ <div class="timeline-ano">2025</div>
+ <div class="timeline-content">
+ <h3>Festival Elas nas Telas</h3>
+ <p>Belém, Pará. Festival dedicado a obras dirigidas e/ou protagonizadas por mulheres.</p>
+ </div>
+ </div>
+
+ <div class="timeline-item">
+ <div class="timeline-ano">—</div>
+ <div class="timeline-content">
+ <h3>FIA CINE · Festival Ibero Americano de Cinema · 9ª edição</h3>
+ <p>Brasil. Festival ibero-americano de cinema dedicado a obras da comunidade lusófona e hispânica.</p>
+ </div>
+ </div>
+
+ </div>
+
+ <div class="cta-final">
+ <h2>Quer levar o documentário para um festival ou cine-debate?</h2>
+ <p>A circulação aberta é parte do trabalho. Escolas, universidades, cine-debates e mostras no Brasil podem solicitar licença de exibição mediante conversa.</p>
+ <div class="cta-row">
+ <a href="/contato" class="cta">Solicitar exibição</a>
+ <a href="/imprensa" class="cta outline">Material para imprensa</a>
+ </div>
+ </div>
+
+</div>
+<footer class="site-footer">
+ <div class="footer-container">
+ <div class="footer-grid">
+
+ <div class="footer-brand">
+ <a href="/" aria-label="A Bola Conecta - página inicial">
+ <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
+ </a>
+ <p class="footer-tagline">Documentário, Metodologia ABC e Fichas Copa 2026.<br/>Livre circulação do conhecimento.</p>
+ </div>
+
+ <div class="footer-col">
+ <h3> Navegação</h3>
+ <ul>
+ <li><a href="/metodologia">Metodologia ABC</a></li>
+ <li><a href="/servicos">Serviços</a></li>
+ <li><a href="/sobre">Sobre</a></li>
+ <li><a href="/contato">Contato</a></li>
+ </ul>
+ </div>
+
+ <div class="footer-col">
+ <h3> Projeto</h3>
+ <ul>
+ <li><a href="/documentario">Documentário</a></li>
+ <li><a href="/copa-2026">Copa 2026</a></li>
+ <li><a href="/sobre">Equipe</a></li>
+ <li><a href="/imprensa">Imprensa</a></li>
+ </ul>
+ </div>
+
+ <div class="footer-col">
+ <h3> Operador</h3>
+ <p>Da Silva e Vásquez<br/>Formação e Consultoria LTDA</p>
+ <p class="footer-cnpj">CNPJ 62.085.700/0001-83</p>
+ <p class="footer-email"><a href="mailto:contato.gondwana@gmail.com">contato.gondwana@gmail.com</a></p>
+ </div>
+
+ </div>
+
+ <div class="footer-bottom">
+ <p class="footer-copy">© 2026 Agência Gondwana FC — Time da Educação</p>
+ <p class="footer-claim">A bola conecta.</p>
+ </div>
+ </div>
+</footer>
+
+</main>
+</body>
+</html>
