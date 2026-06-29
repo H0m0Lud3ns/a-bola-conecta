@@ -28,6 +28,17 @@ p { margin-bottom: 14px; color: var(--muted); }
 .tag { display: inline-block; padding: 4px 12px; background: rgba(245,158,11,0.15); color: var(--accent); border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 16px; }
 .back-link { display: inline-block; margin-bottom: 24px; color: var(--accent); text-decoration: none; font-size: 14px; }
 .back-link:hover { text-decoration: underline; }
+
+/* HEADER DA PÁGINA — logo A Bola Conecta branco */
+.page-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0 24px; margin-bottom: 32px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.page-header-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.page-header-brand img { height: 32px; width: auto; display: block; }
+.page-header-brand-text { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.page-header-section { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; padding: 4px 10px; background: var(--bg-soft); border-radius: 999px; border: 1px solid var(--line); }
+@media (max-width: 480px) {
+  .page-header-brand-text { font-size: 0.9rem; }
+  .page-header-section { font-size: 0.7rem; }
+}
 .post { background: rgba(255,255,255,0.04); padding: 24px; border-radius: 12px; margin: 16px 0; border-left: 3px solid var(--accent); }
 .post-meta { display: flex; gap: 12px; color: var(--muted); font-size: 0.85rem; margin: 8px 0; }
 .post-tag { background: rgba(245,158,11,0.12); color: var(--accent); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
@@ -40,7 +51,13 @@ p { margin-bottom: 14px; color: var(--muted); }
 </head>
 <body>
 <div class="container">
-<a href="/" class="back-link">&larr; Voltar para A Bola Conecta</a>
+<header class="page-header">
+  <a href="/" class="page-header-brand" aria-label="A Bola Conecta - página inicial">
+    <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
+    <span class="page-header-brand-text">A Bola Conecta</span>
+  </a>
+  <span class="page-header-section">Blog</span>
+</header>
 <span class="tag">BLOG</span>
 <h1>Futebol, Educação e Ancestralidade</h1>
 <p class="lead">Artigos, reflexões e bastidores sobre o projeto A Bola Conecta, Metodologia ABC e a Copa do Mundo 2026 como projeto pedagógico.</p>
