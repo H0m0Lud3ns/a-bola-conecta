@@ -41,6 +41,17 @@ strong { color: var(--fg); font-weight: 600; }
 .back-link { display: inline-block; margin-bottom: 24px; color: var(--accent); text-decoration: none; font-size: 14px; }
 .back-link:hover { text-decoration: underline; }
 
+/* HEADER DA PÁGINA — logo A Bola Conecta branco */
+.page-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0 24px; margin-bottom: 32px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.page-header-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.page-header-brand img { height: 32px; width: auto; display: block; }
+.page-header-brand-text { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.page-header-section { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; padding: 4px 10px; background: var(--bg-soft); border-radius: 999px; border: 1px solid var(--line); }
+@media (max-width: 480px) {
+  .page-header-brand-text { font-size: 0.9rem; }
+  .page-header-section { font-size: 0.7rem; }
+}
+
 /* CATEGORIAS */
 .categoria { margin-top: 56px; }
 .categoria .label { display: inline-block; padding: 4px 12px; background: rgba(14, 72, 52, 0.3); color: var(--verde); border-radius: 999px; font-size: 11px; font-weight: 700; margin-bottom: 14px; letter-spacing: 0.08em; }
@@ -184,7 +195,13 @@ strong { color: var(--fg); font-weight: 600; }
 </head>
 <body>
 <div class="container">
-<a href="/" class="back-link">← Voltar para A Bola Conecta</a>
+<header class="page-header">
+  <a href="/" class="page-header-brand" aria-label="A Bola Conecta - página inicial">
+    <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
+    <span class="page-header-brand-text">A Bola Conecta</span>
+  </a>
+  <span class="page-header-section">Serviços</span>
+</header>
 
 <header>
   <span class="tag">SERVIÇOS EDUCATIVOS</span>
