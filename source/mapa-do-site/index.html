@@ -46,6 +46,17 @@ strong { color: var(--fg); font-weight: 600; }
 .back-link { display: inline-block; margin-bottom: 24px; color: var(--accent); text-decoration: none; font-size: 14px; }
 .back-link:hover { text-decoration: underline; }
 
+/* HEADER DA PÁGINA — logo A Bola Conecta branco */
+.page-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0 24px; margin-bottom: 32px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.page-header-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.page-header-brand img { height: 32px; width: auto; display: block; }
+.page-header-brand-text { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.page-header-section { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; padding: 4px 10px; background: var(--bg-soft); border-radius: 999px; border: 1px solid var(--line); }
+@media (max-width: 480px) {
+  .page-header-brand-text { font-size: 0.9rem; }
+  .page-header-section { font-size: 0.7rem; }
+}
+
 /* SECTIONS */
 .section { background: var(--bg-card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin: 24px 0; }
 .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
@@ -74,7 +85,13 @@ li.page-item .page-badge { font-family: 'Inter', sans-serif; font-size: 10px; co
 </head>
 <body>
 <div class="container">
-<a href="/" class="back-link">&larr; Voltar para A Bola Conecta</a>
+<header class="page-header">
+  <a href="/" class="page-header-brand" aria-label="A Bola Conecta - página inicial">
+    <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
+    <span class="page-header-brand-text">A Bola Conecta</span>
+  </a>
+  <span class="page-header-section">Mapa do site</span>
+</header>
 <span class="tag">ÍNDICE COMPLETO</span>
 <h1>Mapa do Site<span class="sub-accent">Todas as páginas, todas as frentes.</span></h1>
 <p class="lead">A operação de A Bola Conecta se espalha por <strong>cinco frentes</strong>: documentário, Metodologia ABC, Copa 2026, comunidade aberta e Time da Educação. Cada uma tem páginas próprias, todas linkadas aqui. Para a versão em XML, veja o <a href="/sitemap.xml" style="color: var(--accent);">sitemap.xml</a>.</p>

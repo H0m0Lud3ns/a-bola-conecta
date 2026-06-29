@@ -30,6 +30,17 @@ li { margin-bottom: 6px; }
 .tag { display: inline-block; padding: 4px 12px; background: rgba(245,158,11,0.15); color: var(--accent); border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 16px; }
 .back-link { display: inline-block; margin-bottom: 24px; color: var(--accent); text-decoration: none; font-size: 14px; }
 .back-link:hover { text-decoration: underline; }
+
+/* HEADER DA PÁGINA — logo A Bola Conecta branco */
+.page-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0 24px; margin-bottom: 32px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.page-header-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.page-header-brand img { height: 32px; width: auto; display: block; }
+.page-header-brand-text { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.page-header-section { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; padding: 4px 10px; background: var(--bg-soft); border-radius: 999px; border: 1px solid var(--line); }
+@media (max-width: 480px) {
+  .page-header-brand-text { font-size: 0.9rem; }
+  .page-header-section { font-size: 0.7rem; }
+}
 .meta { background: rgba(255,255,255,0.04); padding: 12px 16px; border-radius: 8px; font-size: 0.85rem; margin: 16px 0; color: var(--muted); }
 strong { color: var(--fg); }
 @media (max-width: 600px) { body { padding: 20px 16px; } }
@@ -38,7 +49,13 @@ strong { color: var(--fg); }
 </head>
 <body>
 <div class="container">
-<a href="/" class="back-link">&larr; Voltar para A Bola Conecta</a>
+<header class="page-header">
+  <a href="/" class="page-header-brand" aria-label="A Bola Conecta - página inicial">
+    <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
+    <span class="page-header-brand-text">A Bola Conecta</span>
+  </a>
+  <span class="page-header-section">Privacidade</span>
+</header>
 <span class="tag">PRIVACIDADE E DADOS</span>
 <h1>Politica de Privacidade</h1>
 <p class="lead">Esta politica descreve como A Bola Conecta, projeto da da Silva e Vásquez Formação e Consultoria (CNPJ 62.085.700/0001-83), coleta, usa e protege dados pessoais. Conforme a Lei Geral de Protecao de Dados (LGPD &mdash; Lei 13.709/2018).</p>
