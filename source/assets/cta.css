@@ -1,0 +1,240 @@
+/* CTA compartilhado - A Bola Conecta / Gondwana FC - Time da Educação
+   Aplicado em todas as páginas que tenham bloco de CTA final.
+
+   v1 (2026-06-28): padronização visual entre .cta-box, .cta-final e .cta-section
+   - Glow dourado suave (box-shadow + borda translúcida)
+   - Border-radius generoso (18px)
+   - Tipografia editorial (Fraunces serif no título)
+   - Botão primário (dourado) + botão secundário (outline)
+   - Email em destaque serif italic
+   - Sem dependência JS, sem dependência de Lucide
+*/
+
+/* === .cta-box (3 páginas: /metodologia, /servicos, /time-da-educacao) === */
+.cta-box {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(14, 72, 52, 0.18));
+  padding: 36px 32px;
+  border-radius: 18px;
+  margin: 48px 0 24px;
+  text-align: center;
+  border: 1px solid hsl(45 96% 58% / 0.35);
+  box-shadow: 0 12px 40px rgba(245, 158, 11, 0.08), inset 0 1px 0 rgba(245, 230, 200, 0.05);
+}
+
+.cta-box h3 {
+  color: var(--accent);
+  margin: 0 0 12px;
+  font-family: 'Fraunces', serif;
+  font-size: 1.6rem;
+  line-height: 1.25;
+}
+
+.cta-box p {
+  color: var(--fg);
+  margin: 0 auto 20px;
+  max-width: 600px;
+  font-size: 1rem;
+}
+
+.cta-box a {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  margin: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid var(--accent);
+}
+
+.cta-box a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.25);
+}
+
+.cta-box a.secundario {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.cta-box a.secundario:hover {
+  background: rgba(245, 158, 11, 0.08);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.15);
+}
+
+.cta-box .email,
+.cta-box .cta-email {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--muted);
+  margin-top: 16px;
+  font-size: 0.95rem;
+}
+
+.cta-box .cta-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+/* === .cta-final (/festivais) === */
+.cta-final {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(14, 72, 52, 0.18));
+  padding: 36px 32px;
+  border-radius: 18px;
+  margin: 48px 0 24px;
+  text-align: center;
+  border: 1px solid hsl(45 96% 58% / 0.35);
+  box-shadow: 0 12px 40px rgba(245, 158, 11, 0.08), inset 0 1px 0 rgba(245, 230, 200, 0.05);
+}
+
+.cta-final h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin: 0 0 12px;
+  line-height: 1.25;
+}
+
+.cta-final p {
+  color: var(--fg);
+  max-width: 600px;
+  margin: 0 auto 20px;
+  font-size: 1rem;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.cta-final .cta {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid var(--accent);
+}
+
+.cta-final .cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.25);
+}
+
+.cta-final .cta.outline {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.cta-final .cta.outline:hover {
+  background: rgba(245, 158, 11, 0.08);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.15);
+}
+
+/* === .cta-section (/sobre) === */
+.cta-section {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(14, 72, 52, 0.18));
+  padding: 56px 32px;
+  border-radius: 18px;
+  margin: 48px 0;
+  text-align: center;
+  border: 1px solid hsl(45 96% 58% / 0.35);
+  box-shadow: 0 12px 40px rgba(245, 158, 11, 0.08), inset 0 1px 0 rgba(245, 230, 200, 0.05);
+}
+
+.cta-section .cta-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--accent);
+  margin: 0 0 16px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.2;
+}
+
+.cta-section .cta-subtitle {
+  color: var(--fg);
+  font-size: 1.05rem;
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+
+.cta-section .cta-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-section .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-section .btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+  border: 1px solid var(--accent);
+}
+
+.cta-section .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.25);
+}
+
+.cta-section .btn-secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.cta-section .btn-secondary:hover {
+  background: rgba(245, 158, 11, 0.08);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.15);
+}
+
+/* === Mobile (responsivo) === */
+@media (max-width: 600px) {
+  .cta-box,
+  .cta-final,
+  .cta-section {
+    padding: 28px 20px;
+    margin: 36px 0 20px;
+  }
+
+  .cta-box h3,
+  .cta-final h2 {
+    font-size: 1.35rem;
+  }
+
+  .cta-section .cta-title {
+    font-size: 1.5rem;
+  }
+
+  .cta-box a,
+  .cta-final .cta,
+  .cta-section .btn {
+    width: 100%;
+    text-align: center;
+    margin: 4px 0;
+  }
+}
