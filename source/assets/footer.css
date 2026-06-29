@@ -1,5 +1,12 @@
 /* Footer unificado - A Bola Conecta / Gondwana FC - Time da Educação
-   Aplicado em todas as páginas do site. */
+   Aplicado em todas as páginas do site.
+
+   v2 (2026-06-28): direção de arte adicionada:
+   - Ícones SVG inline em cada h3 de coluna
+   - Glow suave + borda dourada mais viva no bloco do operador
+   - Hover state com sublinhado animado nos links
+   - Hierarquia tipográfica reforçada (h3 com kerning maior)
+*/
 
 .site-footer {
   background: hsl(28 18% 7%);
@@ -44,10 +51,24 @@
   font-family: 'Inter', sans-serif;
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: hsl(45 96% 58%);
-  margin: 0 0 14px;
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-footer .footer-col h3 svg {
+  width: 14px;
+  height: 14px;
+  stroke: hsl(45 96% 58%);
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
 }
 
 .site-footer .footer-col ul {
@@ -62,11 +83,15 @@
 .site-footer .footer-col a {
   color: hsl(38 30% 88%);
   text-decoration: none;
-  transition: color 0.15s ease;
+  transition: color 0.18s ease;
+  position: relative;
+  padding-bottom: 1px;
+  border-bottom: 1px solid transparent;
 }
 
 .site-footer .footer-col a:hover {
   color: hsl(45 96% 58%);
+  border-bottom-color: hsl(45 96% 58%);
 }
 
 .site-footer .footer-col p {
@@ -80,11 +105,22 @@
   font-size: 12px;
   color: hsl(38 18% 70%);
   margin-top: 4px;
+  padding: 6px 10px;
+  background: rgba(245, 230, 200, 0.04);
+  border-left: 2px solid hsl(45 96% 58% / 0.4);
+  border-radius: 0 4px 4px 0;
+  display: inline-block;
 }
 
 .site-footer .footer-col .footer-email {
   font-size: 13px;
   word-break: break-all;
+}
+
+.site-footer .footer-col .footer-email a {
+  color: hsl(45 96% 58%);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
 }
 
 .site-footer .footer-bottom {
