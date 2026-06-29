@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pagina nao encontrada | A Bola Conecta</title>
+<meta name="description" content="A pagina que voce procura nao existe ou foi movida. Veja os caminhos principais do site." />
+<meta name="robots" content="noindex, follow" />
+<meta name="author" content="Mônica Saraiva da Silva · Sebastián Acevedo Vásquez" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Pagina nao encontrada | A Bola Conecta" />
+<meta property="og:description" content="A pagina que voce procura nao existe ou foi movida." />
+<meta property="og:url" content="https://www.abolaconecta.com.br/404" />
+<meta property="og:image" content="https://www.abolaconecta.com.br/assets/a-bola-conecta-logo.png" />
+<link rel="canonical" href="https://www.abolaconecta.com.br/404" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/footer.css">
+<link rel="stylesheet" href="/assets/a11y.css">
+<style>
+:root {
+  --bg: hsl(28 18% 7%);
+  --fg: hsl(38 30% 94%);
+  --muted: hsl(38 18% 70%);
+  --primary: hsl(14 72% 52%);
+  --accent: hsl(45 96% 58%);
+  --line: rgba(245, 230, 200, 0.08);
+  --bg-card: rgba(245, 230, 200, 0.03);
+  --bg-soft: rgba(245, 230, 200, 0.05);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+
+main { flex: 1; padding: 60px 20px 80px; }
+.container { max-width: 800px; margin: 0 auto; }
+
+.page-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0 24px; margin-bottom: 32px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.page-header-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.page-header-brand img { height: 32px; width: auto; display: block; }
+.page-header-brand-text { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+
+.error-code { font-family: 'Fraunces', serif; font-size: clamp(5rem, 15vw, 9rem); font-weight: 900; line-height: 1; color: var(--accent); margin: 0 0 16px; letter-spacing: -0.04em; }
+.error-title { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; line-height: 1.15; margin: 0 0 16px; color: var(--fg); }
+.error-lead { font-size: 1.1rem; color: var(--muted); margin: 0 0 40px; max-width: 600px; }
+
+.paths { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 40px; }
+.path { background: var(--bg-card); padding: 18px; border-radius: 10px; border-left: 3px solid var(--accent); text-decoration: none; transition: background 0.2s ease, transform 0.2s ease; display: block; }
+.path:hover { background: var(--bg-soft); transform: translateY(-2px); }
+.path-title { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 700; color: var(--fg); margin-bottom: 4px; }
+.path-desc { font-size: 0.85rem; color: var(--muted); }
+
+.help { padding: 24px; background: var(--bg-soft); border-radius: 10px; border: 1px solid var(--line); }
+.help p { color: var(--muted); margin: 0; }
+.help a { color: var(--accent); text-decoration: none; font-family: 'Fraunces', serif; font-style: italic; }
+.help a:hover { text-decoration: underline; }
+
+@media (max-width: 480px) {
+  .page-header-brand-text { font-size: 0.9rem; }
+  main { padding: 40px 16px 60px; }
+}
+</style>
+</head>
+<body>
+<a href="#conteudo" class="skip-link">Pular para o conteudo principal</a>
+
+<header class="page-header">
+  <a href="/" class="page-header-brand" aria-label="A Bola Conecta - pagina inicial">
+    <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
+    <span class="page-header-brand-text">A Bola Conecta</span>
+  </a>
+</header>
+
+<main id="conteudo">
+<div class="container">
+
+<p class="error-code">404</p>
+<h1 class="error-title">Essa pagina nao esta em campo.</h1>
+<p class="error-lead">O link que voce abriu nao existe mais ou mudou de endereco. Mas o jogo continua. Escolha por onde quer voltar:</p>
+
+<div class="paths">
+  <a href="/" class="path">
+    <div class="path-title">Inicio</div>
+    <div class="path-desc">O ponto de partida do projeto.</div>
+  </a>
+  <a href="/metodologia" class="path">
+    <div class="path-title">Metodologia ABC</div>
+    <div class="path-desc">Como o trabalho pedagogico funciona.</div>
+  </a>
+  <a href="/documentario" class="path">
+    <div class="path-title">Documentario</div>
+    <div class="path-desc">O filme que conecta ancestralidade, futebol e educacao.</div>
+  </a>
+  <a href="/copa-2026" class="path">
+    <div class="path-title">Copa 2026</div>
+    <div class="path-desc">Fichas pedagogicas das selecoes Gondwana.</div>
+  </a>
+  <a href="/blog" class="path">
+    <div class="path-title">Blog</div>
+    <div class="path-desc">Analises, bastidores e cronicas.</div>
+  </a>
+  <a href="/sobre" class="path">
+    <div class="path-title">Sobre</div>
+    <div class="path-desc">As pessoas por tras do projeto.</div>
+  </a>
+  <a href="/contato" class="path">
+    <div class="path-title">Contato</div>
+    <div class="path-desc">Falar com a equipe.</div>
+  </a>
+  <a href="/servicos" class="path">
+    <div class="path-title">Servicos</div>
+    <div class="path-desc">Para escolas, marcas e comunidades.</div>
+  </a>
+</div>
+
+<div class="help">
+  <p>Se voce chegou aqui por um link nosso que estava funcionando, avisa a gente por <a href="mailto:contato.gondwana@gmail.com">contato.gondwana@gmail.com</a> &mdash; corrigimos rapidinho.</p>
+</div>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
+        <p class="footer-tagline">Documentario, Metodologia ABC e Fichas Copa 2026. Livre circulacao do conhecimento.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Navegacao</h3>
+        <ul>
+          <li><a href="/metodologia">Metodologia ABC</a></li>
+          <li><a href="/servicos">Servicos</a></li>
+          <li><a href="/sobre">Sobre</a></li>
+          <li><a href="/contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Projeto</h3>
+        <ul>
+          <li><a href="/documentario">Documentario</a></li>
+          <li><a href="/copa-2026">Copa 2026</a></li>
+          <li><a href="/sobre">Equipe</a></li>
+          <li><a href="/imprensa">Imprensa</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Operador</h3>
+        <p>Da Silva e Vasquez<br/>Formacao e Consultoria LTDA</p>
+        <p class="footer-cnpj">CNPJ 62.085.700/0001-83</p>
+        <p class="footer-email"><a href="mailto:contato.gondwana@gmail.com">contato.gondwana@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Agencia Gondwana FC &mdash; Time da Educacao</p>
+      <p class="footer-claim">Gondwana, a bola conecta.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
