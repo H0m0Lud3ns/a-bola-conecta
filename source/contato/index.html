@@ -27,6 +27,17 @@ p { margin-bottom: 16px; color: var(--muted); }
 .tag { display: inline-block; padding: 4px 12px; background: rgba(245,158,11,0.15); color: var(--accent); border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 16px; }
 .back-link { display: inline-block; margin-bottom: 24px; color: var(--accent); text-decoration: none; font-size: 14px; }
 .back-link:hover { text-decoration: underline; }
+
+/* HEADER DA PÁGINA — logo A Bola Conecta branco */
+.page-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0 24px; margin-bottom: 32px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.page-header-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.page-header-brand img { height: 32px; width: auto; display: block; }
+.page-header-brand-text { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
+.page-header-section { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; padding: 4px 10px; background: var(--bg-soft); border-radius: 999px; border: 1px solid var(--line); }
+@media (max-width: 480px) {
+  .page-header-brand-text { font-size: 0.9rem; }
+  .page-header-section { font-size: 0.7rem; }
+}
 .email-box { background: linear-gradient(135deg, rgba(245,158,11,0.18), rgba(245,158,11,0.06)); padding: 28px; border-radius: 14px; border-left: 4px solid var(--accent); margin: 24px 0; text-align: center; }
 .email-box .label { color: var(--muted); font-size: 0.95rem; margin-bottom: 8px; }
 .email-box .email { font-family: "Fraunces", serif; font-size: clamp(1.4rem, 4vw, 1.9rem); color: var(--accent); font-weight: 700; user-select: all; word-break: break-all; }
@@ -52,7 +63,13 @@ button:hover { opacity: 0.85; }
 </head>
 <body>
 <div class="container">
-<a href="/" class="back-link">&larr; Voltar para A Bola Conecta</a>
+<header class="page-header">
+  <a href="/" class="page-header-brand" aria-label="A Bola Conecta - página inicial">
+    <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
+    <span class="page-header-brand-text">A Bola Conecta</span>
+  </a>
+  <span class="page-header-section">Contato</span>
+</header>
 <span class="tag">CONTATO</span>
 <h1>Fale com a gente</h1>
 <p class="lead">Monica e Sebastian respondem em até 48h úteis.</p>
