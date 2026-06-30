@@ -28,7 +28,6 @@ const routeCanonicals = new Map([
   ['blog/index.html', `${siteDomain}/blog/`],
   ['contato/index.html', `${siteDomain}/contato/`],
   ['apoie/index.html', `${siteDomain}/apoie/`],
-  ['la-pelota-conecta/index.html', `${siteDomain}/la-pelota-conecta/`],
   ['faq/index.html', `${siteDomain}/faq/`],
   ['mapa-do-site/index.html', `${siteDomain}/mapa-do-site/`],
   ['privacidade/index.html', `${siteDomain}/privacidade/`],
@@ -77,9 +76,9 @@ const routeSocial = new Map([
   ['sobre/index.html', {
     title: 'Sobre A Bola Conecta | Metodologia ABC',
     description: 'Conheca a proposta que une áudiovisual, bola e camera para transformar futebol em línguagem educativa, cultural e territorial.',
-    image: '/assets/og-card-metodologia.png',
+    image: '/assets/social-preview/og-a-bola-conecta.jpg',
     imageAlt: 'Sobre A Bola Conecta e a Metodologia ABC',
-    imageType: 'image/png',
+    imageType: 'image/jpeg',
   }],
   ['servicos/index.html', {
     title: 'Serviços educativos | A Bola Conecta',
@@ -108,13 +107,6 @@ const routeSocial = new Map([
     image: '/assets/og-card-metodologia.png',
     imageAlt: 'Contribuir para a circulação educativa A Bola Conecta',
     imageType: 'image/png',
-  }],
-  ['la-pelota-conecta/index.html', {
-    title: 'La Pelota Conecta | Documental, fútbol y educación latinoamericana',
-    description: 'Versión en español latinoamericano para ver el documental, explorar fichas de la Copa 2026 y usar el fútbol como lectura de território, memória y cultura.',
-    image: '/assets/social-preview/og-a-bola-conecta.jpg',
-    imageAlt: 'La Pelota Conecta - documental, fútbol y educación latinoamericana',
-    locale: 'es_419',
   }],
   ['copa-2026/index.html', {
     title: 'Gondwana na Copa 2026 | A Bola Conecta',
@@ -151,16 +143,16 @@ const routeSocial = new Map([
   ['loja/index.html', {
     title: 'Loja | A Bola Conecta',
     description: 'Peças pedagógicas e culturais do Time da Educação: camiseta Abya Yala, guias, materiais e livros.',
-    image: '/assets/og-card-metodologia.png',
+    image: '/assets/social-preview/og-servicos.jpg',
     imageAlt: 'Loja A Bola Conecta',
-    imageType: 'image/png',
+    imageType: 'image/jpeg',
   }],
   ['imprensa/index.html', {
     title: 'Imprensa | A Bola Conecta',
     description: 'Sala de imprensa do A Bola Conecta: releases, fotos oficiais, kit de midia, logomarcas e contatos para jornalistas, marcas e produtores.',
-    image: '/assets/og-card-metodologia.png',
+    image: '/assets/social-preview/og-servicos.jpg',
     imageAlt: 'Imprensa A Bola Conecta',
-    imageType: 'image/png',
+    imageType: 'image/jpeg',
   }],
   ['festivais/index.html', {
     title: 'Trajetoria em festivais | A Bola Conecta',
@@ -182,14 +174,6 @@ const routeSocial = new Map([
     image: '/assets/og-card-metodologia.png',
     imageAlt: 'FAQ A Bola Conecta',
     imageType: 'image/png',
-  }],
-  ['la-pelota-conecta/index.html', {
-    title: 'La Pelota Conecta | Documental, futbol y educacion',
-    description: 'Version en espanol latinoamericano para ver el documental, explorar fichas de la Copa 2026 y usar el futbol como lectura de territorio, memoria y cultura.',
-    image: '/assets/og-card-metodologia.png',
-    imageAlt: 'La Pelota Conecta - documental, futbol y educacion',
-    imageType: 'image/png',
-    locale: 'es_419',
   }],
   ['mapa-do-site/index.html', {
     title: 'Mapa do site | A Bola Conecta',
