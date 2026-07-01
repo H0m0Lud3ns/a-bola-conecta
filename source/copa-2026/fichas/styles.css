@@ -127,6 +127,14 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-.04em;margin:0}
   .nav-left,.nav-right{display:none}
 }
 
+/* === Breadcrumb === */
+.breadcrumb{padding:10px 14px;background:rgba(7,11,20,.4);border-bottom:1px solid var(--line);font:600 12px/1.4 var(--sans)}
+.breadcrumb ol{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0;padding:0;list-style:none;color:var(--muted)}
+.breadcrumb li[aria-current="page"]{color:var(--ouro)}
+.breadcrumb a{color:var(--areia);text-decoration:none;transition:color .15s}
+.breadcrumb a:hover{color:var(--ouro)}
+.breadcrumb li[aria-hidden="true"]{opacity:.5}
+
 /* === Card content === */
 .content{position:relative;z-index:3;min-height:100%;padding:52px 20px 120px;display:flex;flex-direction:column}
 @media(max-width:600px){.content{padding:56px 16px 130px}}
