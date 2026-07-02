@@ -1,72 +1,48 @@
 // Service Worker do A Bola Conecta
-// Versao sincronizada com build hash. Quando o build muda, forca limpeza do cache antigo.
+// Estrategia: network-first TOTAL, sin cache persistente.
+// Solo sirve como registro de instalacion para re-validar caches anteriores.
 
-const SW_VERSION = 'abolaconecta-v2';
-const STATIC_CACHE = `static-${SW_VERSION}`;
-const HTML_CACHE = `html-${SW_VERSION}`;
+const SW_VERSION = 'abolaconecta-v4';
 
 self.addEventListener('install', (event) => {
+  // Forzar activacion inmediata sin esperar a que cierren tabs
   self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
+  // Borrar TODOS los caches anteriores (v1, v2, v3, etc)
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames
-          .filter((name) => name !== STATIC_CACHE && name !== HTML_CACHE)
-          .map((name) => caches.delete(name))
-      );
-    }).then(() => self.clients.claim())
+    caches.keys()
+      .then((cacheNames) => Promise.all(
+        cacheNames.map((name) => caches.delete(name))
+      ))
+      .then(() => self.clients.claim())
   );
 });
 
 self.addEventListener('fetch', (event) => {
   const { request } = event;
-  const url = new URL(request.url);
-
-  // Ignora requisicoes que nao sao GET
   if (request.method !== 'GET') return;
 
-  // Ignora dominios externos (analytics, youtube, etc)
+  const url = new URL(request.url);
+
+  // Solo interceptar mismo origen
   if (url.origin !== self.location.origin) return;
 
-  // Assets com hash no nome sao imutaveis - cache direto
-  if (url.pathname.startsWith('/assets/')) {
-    event.respondWith(
-      caches.match(request).then((cached) => {
-        if (cached) return cached;
-        return fetch(request).then((response) => {
-          if (response.ok) {
-            const clone = response.clone();
-            caches.open(STATIC_CACHE).then((cache) => cache.put(request, clone));
-          }
-          return response;
-        });
+  // Network first: siempre ir a la red primero, cache como fallback solo offline
+  event.respondWith(
+    fetch(request)
+      .then((response) => {
+        // Solo cachear respuestas exitosas para fallback offline
+        if (response.ok) {
+          const clone = response.clone();
+          caches.open(SW_VERSION).then((cache) => cache.put(request, clone));
+        }
+        return response;
       })
-    );
-    return;
-  }
-
-  // HTML, sitemap, robots - network first, cache fallback
-  if (
-    request.headers.get('accept')?.includes('text/html') ||
-    url.pathname.endsWith('.html') ||
-    url.pathname === '/' ||
-    url.pathname.endsWith('/sitemap.xml') ||
-    url.pathname.endsWith('/robots.txt')
-  ) {
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          if (response.ok) {
-            const clone = response.clone();
-            caches.open(HTML_CACHE).then((cache) => cache.put(request, clone));
-          }
-          return response;
-        })
-        .catch(() => caches.match(request).then((cached) => cached || caches.match('/')))
-    );
-    return;
-  }
+      .catch(() => {
+        // Solo si la red falla (offline), usar cache
+        return caches.match(request).then((cached) => cached || Response.error());
+      })
+  );
 });

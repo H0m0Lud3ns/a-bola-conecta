@@ -636,6 +636,9 @@ function setupShare(){
   shNative.addEventListener('click',nativeShare);
   shCancel.addEventListener('click',closeShareMenu);
   shOverlay.addEventListener('click',closeShareMenu);
+
+  var dockShare=document.getElementById('dock-share');
+  if(dockShare){dockShare.addEventListener('click',openShareMenu);}
 }
 
 function openShareMenu(){shMenu.classList.add('open');shOverlay.classList.add('open');}
