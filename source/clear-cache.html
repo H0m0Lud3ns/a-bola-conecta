@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Atualizar Cache | A Bola Conecta</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0a0f1e; color: #f8edd2; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+.box { max-width: 520px; text-align: center; }
+h1 { font-size: 28px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 12px; color: #f2c230; }
+p { font-size: 16px; line-height: 1.6; margin-bottom: 24px; opacity: 0.9; }
+button.cta { display: inline-block; background: #f2c230; color: #121611; padding: 14px 28px; border-radius: 999px; border: none; cursor: pointer; font-weight: 800; font-size: 15px; margin-top: 8px; font-family: inherit; }
+button.cta:hover { background: #f5d34d; }
+button.cta:disabled { opacity: 0.5; cursor: wait; }
+.log { background: rgba(255,255,255,0.06); border-radius: 8px; padding: 12px; margin: 16px 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-align: left; min-height: 60px; }
+.log.ok { color: #4ade80; }
+.log.err { color: #f87171; }
+a.link { display: inline-block; margin-top: 16px; color: #f2c230; font-size: 14px; }
+</style>
+</head>
+<body>
+<main class="box">
+  <h1>Atualizar cache do site</h1>
+  <p>Use esta página quando o site A Bola Conecta mostrar conteúdo antigo ou desatualizado. Ela apaga todo o cache local, desinstala o Service Worker e força o navegador a baixar a versão atual.</p>
+  <button id="btn-clear" class="cta">Limpar cache e atualizar agora</button>
+  <pre id="log" class="log">Aguardando ação...</pre>
+  <a href="/" class="link">Voltar ao site</a>
+</main>
+<script>
+(function(){
+  var btn = document.getElementById('btn-clear');
+  var log = document.getElementById('log');
+
+  function out(msg, cls) {
+    var line = '[' + new Date().toLocaleTimeString('pt-BR') + '] ' + msg + '\n';
+    log.textContent = log.textContent.replace('Aguardando ação...', '') + line;
+    log.className = 'log ' + (cls || '');
+  }
+
+  btn.addEventListener('click', async function(){
+    btn.disabled = true;
+    out('Iniciando limpeza...');
+    try {
+      // 1. Apagar todos os caches do Service Worker
+      var cacheNames = await caches.keys();
+      out('Caches encontrados: ' + cacheNames.length);
+      await Promise.all(cacheNames.map(function(name){
+        out('Apagando cache: ' + name);
+        return caches.delete(name);
+      }));
+
+      // 2. Desinstalar todos os Service Workers
+      if ('serviceWorker' in navigator) {
+        var regs = await navigator.serviceWorker.getRegistrations();
+        out('Service Workers registrados: ' + regs.length);
+        await Promise.all(regs.map(function(reg){
+          out('Desinstalando SW...');
+          return reg.unregister();
+        }));
+      }
+
+      out('Limpeza concluída! Recarregando o site...', 'ok');
+      // 3. Forçar reload completo bypassando HTTP cache
+      setTimeout(function(){
+        window.location.href = '/?cb=' + Date.now();
+      }, 800);
+    } catch (e) {
+      out('Erro: ' + e.message, 'err');
+      btn.disabled = false;
+    }
+  });
+})();
+</script>
+</body>
+</html>

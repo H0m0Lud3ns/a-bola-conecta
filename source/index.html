@@ -150,27 +150,48 @@
  else{applyIgStyle()}
  setTimeout(applyIgStyle,1500);
  })();
- // Inject Copa 2026 into nav menus
+ // Inject nav highlights into the React-rendered header nav.
+ // Adds highlight pills for time-sensitive CTAs (Copa 2026, Loja, Blog, Festivais).
+ // Non-pill links (Documentario, Sobre, Contato, Metodologia, etc.) are kept where
+ // they are in the React nav — we only ADD, never remove or reorder existing items.
  (function(){
- function injectCopaNav(){
- var links=document.querySelectorAll('header nav a, header nav a[href]');
- // Target both desktop and mobile nav
+ var NAV_PILLS = [
+   { href: '/copa-2026', label: 'Copa 2026', highlight: true, order: 90 },
+   { href: '/loja', label: 'Loja', highlight: false, order: 91 },
+   { href: '/blog', label: 'Blog', highlight: false, order: 92 },
+   { href: '/festivais', label: 'Festivais', highlight: false, order: 93 },
+   { href: '/time-da-educacao', label: 'Time da Educação', highlight: false, order: 94 },
+   { href: '/faq', label: 'FAQ', highlight: false, order: 95 }
+ ];
+ function pillStyle(highlight){
+   if(highlight){
+     return 'order:90!important;color:#121611!important;background:#d9ff6f!important;border:1px solid rgba(217,255,111,.75)!important;box-shadow:0 0 22px rgba(217,255,111,.28)!important;font-weight:900!important;border-radius:999px;padding:8px 14px!important;text-decoration:none!important;font-size:14px!important;display:inline-flex!important;align-items:center!important';
+   }
+   return 'order:' + arguments[0] + '!important;color:inherit!important;font-weight:700!important;text-decoration:none!important;padding:8px 12px!important;font-size:14px!important;display:inline-flex!important;align-items:center!important';
+ }
+ function injectNavPills(){
  var navs=document.querySelectorAll('header nav');
  navs.forEach(function(nav){
- if(nav.querySelector('a[href*="copa-2026"]')) return; // already injected
- var cont=nav.querySelector('a[href*="/contato"]');
+ // Detect React Router interception and force window.location nav
+ NAV_PILLS.forEach(function(p){
+ if(nav.querySelector('a[href="' + p.href + '"]')) return; // already there
  var a=document.createElement('a');
- a.href='/copa-2026';
- a.textContent='Copa 2026';
- a.style.cssText='order:99!important;color:#121611!important;background:#d9ff6f!important;border:1px solid rgba(217,255,111,.75)!important;box-shadow:0 0 22px rgba(217,255,111,.28)!important;font-weight:900!important;border-radius:999px;padding:8px 14px!important;text-decoration:none!important;font-size:14px!important;display:inline-flex!important;align-items:center!important';
- if(cont){cont.parentNode.insertBefore(a,cont.nextSibling);}
+ a.href=p.href;
+ a.textContent=p.label;
+ a.setAttribute('data-nav-pill', '1');
+ a.style.cssText = pillStyle(p.highlight, p.order);
+ // Insert after contato (or at end if contato not found)
+ var cont=nav.querySelector('a[href*="/contato"]');
+ if(cont && cont.nextSibling){cont.parentNode.insertBefore(a,cont.nextSibling);}
+ else if(cont){cont.parentNode.appendChild(a);}
  else{nav.appendChild(a);}
  });
+ });
  }
- if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(injectCopaNav,800)})}
- else{setTimeout(injectCopaNav,800)}
- setTimeout(injectCopaNav,2000);
- setTimeout(injectCopaNav,3500);
+ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(injectNavPills,800)})}
+ else{setTimeout(injectNavPills,800)}
+ setTimeout(injectNavPills,2000);
+ setTimeout(injectNavPills,3500);
  })();
  </script>
 
