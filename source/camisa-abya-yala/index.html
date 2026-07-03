@@ -326,38 +326,64 @@ footer .grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
 }
 
 /* ===================== */
-/* PEDIDO DA CAMISA v2   */
+/* ===================== */
+/* PEDIDO DA CAMISA v3   */
+/* PALETA PAPEL           */
+/* Coerente com a camisa  */
 /* ===================== */
 
+/* Secao ganha tratamento visual proprio pra destacar */
+.pedido-camisa {
+  background: #fbf3dc;
+  position: relative;
+}
+.pedido-camisa::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+    #d31a1c 0% 14%,     /* vermelho Wiphala */
+    #f2c230 14% 28%,    /* amarelo Wiphala */
+    #109648 28% 42%,    /* verde Wiphala */
+    #ffffff 42% 56%,
+    #6d2981 56% 70%,    /* violeta Wiphala */
+    #28246e 70% 84%,    /* azul profundo da camisa */
+    #c8902b 84% 100%);  /* dourado mostaza CTA */
+  opacity: 0.35;
+}
+
+/* TIMELINE - como paginas de um manual */
 .pedido-timeline {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
+  gap: 0;
   list-style: none;
-  margin: 32px 0 40px;
+  margin: 40px 0 48px;
   padding: 0;
+  border-top: 1px solid #e8ddb8;
+  border-bottom: 1px solid #e8ddb8;
 }
 .pedido-timeline__step {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px;
-  padding: 14px 12px;
+  padding: 18px 14px;
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 12.5px;
-  line-height: 1.4;
-  color: rgba(246,237,215,0.65);
-  transition: all .2s;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #5c5246;
+  border-right: 1px dashed #e8ddb8;
+  background: transparent;
 }
+.pedido-timeline__step:last-child { border-right: 0; }
 .pedido-timeline__step--active {
-  background: rgba(242,194,48,0.12);
-  border-color: rgba(242,194,48,0.45);
-  color: #f6edd7;
+  background: #fff;
+  color: #1a1a1a;
+  box-shadow: inset 0 -3px 0 #c8902b;
 }
 .pedido-timeline__num {
-  background: rgba(242,194,48,0.18);
-  color: #f2c230;
+  background: #1a1a1a;
+  color: #fbf3dc;
   border-radius: 999px;
   min-width: 22px;
   height: 22px;
@@ -370,16 +396,19 @@ footer .grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
   flex-shrink: 0;
 }
 .pedido-timeline__step--active .pedido-timeline__num {
-  background: #f2c230;
-  color: #121611;
+  background: #c8902b;
+  color: #1a1a1a;
 }
 
+/* CARD RESUMO - como uma etiqueta de preco colada no papel */
 .pedido-resumo {
-  background: linear-gradient(135deg, rgba(242,194,48,0.10) 0%, rgba(242,194,48,0.04) 100%);
-  border: 1px solid rgba(242,194,48,0.30);
-  border-radius: 14px;
-  padding: 20px 24px;
+  background: #fff;
+  border: 1px solid #e8ddb8;
+  border-left: 4px solid #c8902b;
+  border-radius: 4px;
+  padding: 24px 28px;
   margin: 0 0 40px;
+  box-shadow: 0 2px 0 #e8ddb8;
 }
 .pedido-resumo__row {
   display: flex;
@@ -387,297 +416,402 @@ footer .grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
   align-items: baseline;
   padding: 6px 0;
   font-size: 15px;
-  color: #f6edd7;
+  color: #1a1a1a;
 }
-.pedido-resumo__row--small { font-size: 13px; color: rgba(246,237,215,0.7); }
+.pedido-resumo__row--small {
+  font-size: 13px;
+  color: #5c5246;
+  font-style: italic;
+}
 .pedido-resumo__row--total {
-  border-top: 1px solid rgba(242,194,48,0.25);
-  margin-top: 6px;
-  padding-top: 14px;
+  border-top: 1px solid #e8ddb8;
+  margin-top: 8px;
+  padding-top: 16px;
   font-weight: 800;
-  font-size: 18px;
+  font-size: 22px;
   font-family: 'Fraunces', serif;
 }
-.pedido-resumo__row--total .pedido-resumo__price { color: #f2c230; }
+.pedido-resumo__row--total .pedido-resumo__price {
+  color: #c8902b;
+  font-size: 26px;
+}
 .pedido-resumo__note {
-  margin: 12px 0 0;
+  margin: 14px 0 0;
   font-size: 12px;
-  color: rgba(246,237,215,0.55);
+  color: #5c5246;
   font-style: italic;
   line-height: 1.5;
+  border-top: 1px dotted #e8ddb8;
+  padding-top: 12px;
 }
 
+/* FIELDSET - como topicos numerados de um capitulo */
 .pedido-fieldset {
-  background: rgba(255,255,255,0.025);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 14px;
-  padding: 28px 28px 24px;
-  margin: 0 0 24px;
+  background: #fff;
+  border: 1px solid #e8ddb8;
+  border-radius: 4px;
+  padding: 32px 32px 28px;
+  margin: 0 0 28px;
+  box-shadow: 0 2px 0 #e8ddb8;
 }
 .pedido-fieldset legend {
   font-family: 'Fraunces', serif;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
-  color: #f2c230;
+  color: #1a1a1a;
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 0 12px;
-  margin-left: -12px;
+  padding: 0 8px;
+  margin-left: -8px;
+  background: #fbf3dc;
 }
 .pedido-fieldset__num {
-  background: #f2c230;
-  color: #121611;
-  border-radius: 999px;
-  width: 28px;
-  height: 28px;
+  background: #1a1a1a;
+  color: #f2c230;
+  border-radius: 2px;
+  width: 32px;
+  height: 32px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 14px;
+  font-size: 15px;
   font-family: 'Inter', sans-serif;
+  transform: rotate(-2deg);
 }
 .pedido-fieldset__hint {
-  font-size: 13.5px;
-  color: rgba(246,237,215,0.65);
-  margin: 0 0 20px;
-  line-height: 1.5;
+  font-size: 14px;
+  color: #5c5246;
+  margin: 4px 0 24px;
+  line-height: 1.55;
+  font-style: italic;
 }
 
+/* GRID 2 colunas */
 .pedido-grid-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-bottom: 14px;
+  gap: 18px;
+  margin-bottom: 18px;
 }
 
+/* CAMPOS - como linhas de um formulario em papel */
 .pedido-field {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 .pedido-field label {
-  font-size: 12px;
-  font-weight: 700;
-  color: rgba(246,237,215,0.85);
-  letter-spacing: 0.02em;
+  font-size: 11px;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .pedido-field label em {
-  color: #f2c230;
+  color: #c8902b;
   font-style: normal;
   margin-left: 2px;
+  font-size: 14px;
+  vertical-align: -2px;
 }
 .pedido-field__optional {
   font-weight: 400;
-  color: rgba(246,237,215,0.5);
-  font-size: 11px;
+  color: #5c5246;
+  font-size: 10px;
   margin-left: 4px;
+  text-transform: none;
+  letter-spacing: 0;
 }
 .pedido-field input,
 .pedido-field select,
 .pedido-field textarea {
-  background: rgba(0,0,0,0.25);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 10px;
-  padding: 12px 14px;
-  color: #f6edd7;
-  font-family: inherit;
-  font-size: 15px;
-  transition: border-color .18s, background .18s;
+  background: #fff;
+  border: 0;
+  border-bottom: 1.5px solid #1a1a1a;
+  border-radius: 0;
+  padding: 10px 0;
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  transition: border-color .18s;
   width: 100%;
 }
 .pedido-field input::placeholder,
-.pedido-field textarea::placeholder { color: rgba(246,237,215,0.35); }
+.pedido-field textarea::placeholder {
+  color: #b8ae9c;
+  font-style: italic;
+  font-weight: 400;
+}
 .pedido-field input:focus,
 .pedido-field select:focus,
 .pedido-field textarea:focus {
   outline: 0;
-  border-color: #f2c230;
-  background: rgba(0,0,0,0.4);
+  border-bottom-color: #c8902b;
+  border-bottom-width: 2.5px;
 }
 .pedido-field input.invalid {
-  border-color: #e74c3c;
-  background: rgba(231,76,60,0.08);
+  border-bottom-color: #d31a1c;
+  background: #fdf2e9;
 }
 .pedido-field textarea {
   min-height: 90px;
   resize: vertical;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 2px;
+  padding: 10px 12px;
+}
+.pedido-field textarea:focus {
+  border-color: #c8902b;
 }
 .pedido-field__hint {
   font-size: 11.5px;
-  color: rgba(246,237,215,0.55);
+  color: #5c5246;
   margin-top: 2px;
+  font-style: italic;
 }
 
+/* CARD DE CADA CAMISA - como cupom fiscal numerado */
 .pedido-shirt {
-  background: rgba(0,0,0,0.18);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
-  padding: 18px 20px 14px;
-  margin-bottom: 12px;
+  background: #fbf3dc;
+  border: 1px dashed #c8902b;
+  border-radius: 4px;
+  padding: 18px 22px 16px;
+  margin-bottom: 14px;
   position: relative;
 }
 .pedido-shirt__head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #c8902b;
 }
 .pedido-shirt__num {
-  font-size: 12px;
+  font-family: 'Fraunces', serif;
+  font-size: 14px;
   font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #f2c230;
+  font-style: italic;
+  color: #c8902b;
+  letter-spacing: 0.02em;
 }
 .pedido-shirt__remove {
   background: transparent;
   border: 0;
-  color: rgba(246,237,215,0.5);
-  font-size: 20px;
+  color: #5c5246;
+  font-size: 18px;
   cursor: pointer;
   padding: 4px 10px;
-  border-radius: 6px;
+  border-radius: 2px;
   transition: all .18s;
+  font-family: 'Inter', sans-serif;
+  text-decoration: underline;
 }
-.pedido-shirt__remove:hover { color: #e74c3c; background: rgba(231,76,60,0.08); }
+.pedido-shirt__remove:hover {
+  color: #d31a1c;
+}
 
+/* BOTAO ADICIONAR CAMISA - "selo" de mais opcoes */
 .pedido-add {
   background: transparent;
-  border: 1.5px dashed rgba(242,194,48,0.4);
-  color: #f2c230;
-  border-radius: 10px;
-  padding: 12px 16px;
+  border: 1.5px dashed #1a1a1a;
+  color: #1a1a1a;
+  border-radius: 4px;
+  padding: 14px 16px;
   font-size: 13.5px;
   font-weight: 700;
   cursor: pointer;
   width: 100%;
   transition: all .18s;
-  font-family: inherit;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.02em;
 }
-.pedido-add:hover { background: rgba(242,194,48,0.08); border-style: solid; }
+.pedido-add:hover {
+  background: #1a1a1a;
+  color: #fbf3dc;
+  border-style: solid;
+}
 
+/* AVISO DE PRIVACIDADE - como nota de rodape de jornal */
 .pedido-privacy {
-  background: rgba(255,255,255,0.03);
-  border-left: 3px solid rgba(242,194,48,0.5);
-  border-radius: 0 8px 8px 0;
-  padding: 14px 18px;
-  margin: 28px 0 20px;
+  background: #fff;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  padding: 18px 0;
+  margin: 36px 0 24px;
   font-size: 13px;
-  color: rgba(246,237,215,0.75);
+  color: #1a1a1a;
   line-height: 1.55;
+  text-align: center;
 }
-.pedido-privacy strong { color: #f6edd7; }
+.pedido-privacy strong {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: #1a1a1a;
+}
 
+/* CTA PRINCIPAL - como botao de um manual impresso */
 .pedido-cta { margin-top: 12px; }
 .pedido-submit {
-  background: #f2c230;
-  color: #121611;
+  background: #1a1a1a;
+  color: #fbf3dc;
   border: 0;
-  border-radius: 14px;
-  padding: 18px 32px;
+  border-radius: 4px;
+  padding: 20px 32px;
   font-family: 'Fraunces', serif;
   font-weight: 800;
-  font-size: 18px;
+  font-size: 19px;
   cursor: pointer;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   transition: all .2s;
-  box-shadow: 0 6px 20px rgba(242,194,48,0.25);
+  position: relative;
+  overflow: hidden;
+}
+.pedido-submit::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 4px;
+  background: #c8902b;
 }
 .pedido-submit:hover:not(:disabled) {
-  background: #f5d34d;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(242,194,48,0.35);
+  background: #c8902b;
+  color: #1a1a1a;
+  transform: translateY(-1px);
 }
-.pedido-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.pedido-submit:disabled { opacity: 0.5; cursor: not-allowed; }
 .pedido-submit__sub {
   font-family: 'Inter', sans-serif;
-  font-size: 12.5px;
-  font-weight: 600;
-  color: rgba(18,22,17,0.7);
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.75;
   letter-spacing: 0;
 }
-
-.pedido-success {
-  background: linear-gradient(135deg, rgba(46,204,113,0.18) 0%, rgba(46,204,113,0.06) 100%);
-  border: 1px solid rgba(46,204,113,0.45);
-  border-radius: 14px;
-  padding: 32px 28px;
-  margin-top: 24px;
-  text-align: center;
+.pedido-submit:hover .pedido-submit__sub {
+  color: #1a1a1a;
+  opacity: 0.7;
 }
-.pedido-success__icon {
-  display: inline-block;
-  width: 56px;
-  height: 56px;
-  background: #2ecc71;
-  color: #0a2417;
+
+/* CONFIRMACAO DE SUCESSO - como um carimbo verde sobre o papel */
+.pedido-success {
+  background: #f4f7eb;
+  border: 2px solid #2d5016;
+  border-radius: 4px;
+  padding: 36px 32px;
+  margin-top: 28px;
+  text-align: center;
+  position: relative;
+}
+.pedido-success::before {
+  content: "✓";
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  background: #2d5016;
+  color: #fbf3dc;
   border-radius: 999px;
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 900;
-  line-height: 56px;
-  margin-bottom: 14px;
+  line-height: 44px;
+  font-family: 'Fraunces', serif;
+  box-shadow: 0 2px 0 rgba(45, 80, 22, 0.3);
 }
 .pedido-success h3 {
   font-family: 'Fraunces', serif;
-  color: #2ecc71;
-  margin: 0 0 10px;
-  font-size: 22px;
+  color: #2d5016;
+  margin: 14px 0 12px;
+  font-size: 26px;
+  font-style: italic;
 }
-.pedido-success p { color: rgba(246,237,215,0.85); margin: 0 0 8px; font-size: 15px; }
-.pedido-success a { color: #f2c230; font-weight: 700; text-decoration: none; border-bottom: 1px solid #f2c230; }
+.pedido-success p {
+  color: #1a1a1a;
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+.pedido-success a {
+  color: #c8902b;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1.5px solid #c8902b;
+}
 
+/* TROCAS - secao editorial */
 .pedido-trocas {
-  margin-top: 64px;
-  padding-top: 32px;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid #1a1a1a;
   font-size: 14.5px;
-  color: rgba(246,237,215,0.78);
+  color: #1a1a1a;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .pedido-trocas h2 {
   font-family: 'Fraunces', serif;
-  font-size: 22px;
-  color: #f2c230;
-  margin-bottom: 14px;
+  font-size: 24px;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  font-style: italic;
 }
-.pedido-trocas p { margin: 0 0 10px; }
+.pedido-trocas p { margin: 0 0 12px; line-height: 1.6; }
 .pedido-trocas code {
-  background: rgba(255,255,255,0.08);
-  padding: 2px 8px;
-  border-radius: 4px;
+  background: #fff;
+  padding: 3px 10px;
+  border: 1px solid #e8ddb8;
+  border-radius: 2px;
   font-size: 13px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* EYEBROW + TITULOS da secao pedido */
+.pedido-camisa .eyebrow {
+  color: #c8902b;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.pedido-camisa h2 {
+  color: #1a1a1a;
+  font-family: 'Fraunces', serif;
+  font-size: 36px;
+  margin: 0 0 16px;
+  font-weight: 800;
+}
+.pedido-camisa .lead {
+  color: #1a1a1a;
+  font-size: 17px;
+  line-height: 1.55;
+  max-width: 640px;
+  margin: 0 0 24px;
 }
 
 @media (max-width: 720px) {
-  .pedido-timeline { grid-template-columns: 1fr 1fr; gap: 6px; }
-  .pedido-timeline__step { font-size: 11.5px; padding: 10px 8px; }
+  .pedido-timeline { grid-template-columns: 1fr 1fr; }
+  .pedido-timeline__step { border-right: 0; border-bottom: 1px dashed #e8ddb8; }
   .pedido-grid-2 { grid-template-columns: 1fr; }
-  .pedido-fieldset { padding: 22px 18px 18px; }
-  .pedido-fieldset legend { font-size: 18px; }
-  .pedido-submit { font-size: 16px; padding: 16px 20px; }
+  .pedido-fieldset { padding: 24px 20px 20px; }
+  .pedido-fieldset legend { font-size: 19px; }
+  .pedido-camisa h2 { font-size: 28px; }
+  .pedido-submit { font-size: 17px; padding: 18px 20px; }
+  .pedido-resumo { padding: 20px; }
+  .pedido-resumo__row--total { font-size: 18px; }
+  .pedido-resumo__row--total .pedido-resumo__price { font-size: 22px; }
 }
-
-@media (max-width: 720px) {
-  footer .grid { grid-template-columns: 1fr 1fr; }
-  .reading-card { grid-template-columns: 1fr; }
-  .reading-card .cover { width: 100px; height: 130px; }
-  .camisa-img-wrap img { border-radius: 10px; }
-  .symbol-h3 { font-size: 18px; margin-top: 40px; }
-  .glossary dt { font-size: 15px; }
-  .glossary dd { font-size: 14px; }
-}
-footer h4 { color: #f2c230; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; font-weight: 800; }
-footer ul { list-style: none; }
-footer li { margin-bottom: 8px; }
-footer a { color: rgba(246,237,215,0.7); text-decoration: none; }
-footer a:hover { color: #f2c230; }
-footer .bottom { border-top: 1px solid rgba(246,237,215,0.1); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-
 @media (max-width: 720px) {
   .hero { padding: 110px 16px 60px; }
   .section { padding: 60px 16px; }
