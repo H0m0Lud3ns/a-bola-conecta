@@ -57,6 +57,19 @@
   margin: 0 0 16px;
 }
 
+/* SVG inline nos titulos das colunas: limitar tamanho e alinhar */
+.site-footer .footer-col h3 svg {
+  width: 16px;
+  height: 16px;
+  vertical-align: -3px;
+  margin-right: 8px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
 .site-footer .footer-col ul {
   list-style: none;
   padding: 0;
