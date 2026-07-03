@@ -25,6 +25,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/cta.css">
+ <link rel="stylesheet" href="/assets/site-header.css">
  <link rel="stylesheet" href="/assets/footer.css">
  <link rel="stylesheet" href="/assets/a11y.css">
 <style>
@@ -54,9 +55,7 @@ strong { color: var(--fg); font-weight: 600; }
 .tag { display: inline-block; padding: 5px 14px; background: rgba(245, 158, 11, 0.15); color: var(--accent); border-radius: 999px; font-size: 11px; font-weight: 700; margin-bottom: 20px; letter-spacing: 0.08em; }
 .epigrafe { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.05rem; color: var(--muted); border-left: 3px solid var(--accent); padding: 8px 0 8px 20px; margin: 24px 0; line-height: 1.55; }
 .epigrafe strong { color: var(--accent); font-weight: 600; }
-.site-header { display: flex; justify-content: flex-start; align-items: center; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
-.logo-link { display: inline-block; line-height: 0; transition: opacity 0.2s; }
-.logo-link:hover { opacity: 0.75; }
+
 .site-logo { height: 44px; width: auto; display: block; }
 .back-link { display: inline-block; margin-bottom: 24px; color: var(--accent); text-decoration: none; font-size: 14px; }
 .back-link:hover { text-decoration: underline; }
@@ -126,10 +125,38 @@ strong { color: var(--fg); font-weight: 600; }
 <div class="container">
 
  <header class="site-header">
- <a class="logo-link" href="/" aria-label="A Bola Conecta — página inicial">
- <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" class="site-logo" />
+ <div class="container header-inner">
+ <a class="brand" href="/" aria-label="A Bola Conecta - página inicial">
+ <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta">
  </a>
- </header>
+ <nav class="nav" aria-label="Menu principal">
+ <a href="/">Início</a>
+ <a href="/documentario/">O Filme</a>
+ <a href="/sobre/">Sobre</a>
+ <a href="/servicos/">Serviços</a>
+ <a href="/comunidade/">Comunidade</a>
+ <a href="/loja/">Loja</a>
+ <a href="/blog/">Blog</a>
+ <a href="/contato/">Contato</a>
+ <a class="copa-nav-link" href="/copa-2026/">Copa 2026</a>
+ </nav>
+ <div class="header-actions">
+ <button class="menu-toggle" type="button" aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menu">Menu</button>
+ <a class="support-btn" href="/comunidade/#apoio">Apoie</a>
+ </div>
+ </div>
+ <nav class="container mobile-nav" id="mobileMenu" aria-label="Menu mobile">
+ <a href="/">Início</a>
+ <a href="/documentario/">O Filme</a>
+ <a href="/sobre/">Sobre</a>
+ <a href="/servicos/">Serviços</a>
+ <a href="/comunidade/">Comunidade</a>
+ <a href="/loja/">Loja</a>
+ <a href="/blog/">Blog</a>
+ <a href="/contato/">Contato</a>
+ <a class="copa-nav-link" href="/copa-2026/">Copa 2026</a>
+ </nav>
+</header>
 
  <a class="back-link" href="/">← Voltar para A Bola Conecta</a>
 
@@ -407,5 +434,20 @@ strong { color: var(--fg); font-weight: 600; }
 </footer>
 
 </main>
+
+<script>
+ const menuToggle = document.querySelector('.menu-toggle');
+ const mobileMenu = document.getElementById('mobileMenu');
+ menuToggle?.addEventListener('click', () => {
+ const isOpen = mobileMenu.classList.toggle('is-open');
+ menuToggle.setAttribute('aria-expanded', String(isOpen));
+ });
+ mobileMenu?.querySelectorAll('a').forEach((link) => {
+ link.addEventListener('click', () => {
+ mobileMenu.classList.remove('is-open');
+ menuToggle?.setAttribute('aria-expanded', 'false');
+ });
+ });
+</script>
 </body>
 </html>
