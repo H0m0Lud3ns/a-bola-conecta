@@ -683,184 +683,6 @@ footer .bottom { border-top: 1px solid rgba(246,237,215,0.1); padding-top: 24px;
   .section { padding: 60px 16px; }
 }
 </style>
-
-<script>
-(function () {
-  'use strict';
-
-  const PRICE = 149;
-
-  // --------- Mascaras ---------
-  function maskCEP(v) {
-    v = v.replace(/\D/g, '').slice(0, 8);
-    if (v.length > 5) return v.slice(0, 5) + '-' + v.slice(5);
-    return v;
-  }
-  function maskCPF(v) {
-    v = v.replace(/\D/g, '').slice(0, 11);
-    if (v.length > 9) return v.slice(0,3)+'.'+v.slice(3,6)+'.'+v.slice(6,9)+'-'+v.slice(9);
-    if (v.length > 6) return v.slice(0,3)+'.'+v.slice(3,6)+'.'+v.slice(6);
-    if (v.length > 3) return v.slice(0,3)+'.'+v.slice(3);
-    return v;
-  }
-  function maskPhone(v) {
-    v = v.replace(/\D/g, '').slice(0, 11);
-    if (v.length > 6) return '('+v.slice(0,2)+') '+v.slice(2,7)+'-'+v.slice(7);
-    if (v.length > 2) return '('+v.slice(0,2)+') '+v.slice(2);
-    if (v.length > 0) return '('+v;
-    return v;
-  }
-  function maskUF(v) {
-    return v.toUpperCase().replace(/[^A-Z]/g, '').slice(0, 2);
-  }
-
-  const cep = document.getElementById('cep');
-  const cpf = document.getElementById('cpf');
-  const phone = document.getElementById('phone');
-  const state = document.getElementById('state');
-
-  if (cep) cep.addEventListener('input', e => { e.target.value = maskCEP(e.target.value); });
-  if (cpf) cpf.addEventListener('input', e => { e.target.value = maskCPF(e.target.value); });
-  if (phone) phone.addEventListener('input', e => { e.target.value = maskPhone(e.target.value); });
-  if (state) state.addEventListener('input', e => { e.target.value = maskUF(e.target.value); });
-
-  // --------- Calculo de preco em tempo real ---------
-  const shirtsContainer = document.getElementById('pedido-shirts');
-  const priceUnit = document.getElementById('price-unit');
-  const priceQty = document.getElementById('price-qty');
-  const priceSubtotal = document.getElementById('price-subtotal');
-
-  function updateResumo() {
-    if (!shirtsContainer) return;
-    const selects = shirtsContainer.querySelectorAll('select[name="shirt_qty[]"]');
-    let total = 0;
-    let totalPieces = 0;
-    selects.forEach(s => {
-      const q = parseInt(s.value || '1', 10);
-      total += q;
-      totalPieces += q;
-    });
-    if (priceQty) {
-      priceQty.textContent = total + (total === 1 ? ' unidade' : ' unidades');
-    }
-    if (priceSubtotal) {
-      const subtotal = total * PRICE;
-      priceSubtotal.textContent = 'R$ ' + subtotal.toLocaleString('pt-BR');
-    }
-  }
-
-  // --------- Adicionar / remover camisa ---------
-  const addBtn = document.getElementById('add-shirt');
-  const template = shirtsContainer ? shirtsContainer.querySelector('.pedido-shirt--template') : null;
-  let shirtCount = 1;
-
-  function renumberShirts() {
-    if (!shirtsContainer) return;
-    const items = shirtsContainer.querySelectorAll('.pedido-shirt:not(.pedido-shirt--template)');
-    items.forEach((item, idx) => {
-      const num = item.querySelector('.pedido-shirt__num');
-      if (num) num.textContent = 'Camisa ' + (idx + 1);
-    });
-    updateRemoveButtons();
-  }
-
-  function updateRemoveButtons() {
-    if (!shirtsContainer) return;
-    const items = shirtsContainer.querySelectorAll('.pedido-shirt:not(.pedido-shirt--template)');
-    items.forEach(item => {
-      const btn = item.querySelector('.pedido-shirt__remove');
-      if (btn) btn.hidden = items.length <= 1;
-    });
-  }
-
-  if (addBtn && template && shirtsContainer) {
-    addBtn.addEventListener('click', () => {
-      shirtCount++;
-      const clone = template.cloneNode(true);
-      clone.classList.remove('pedido-shirt--template');
-      clone.dataset.shirtId = shirtCount;
-      clone.querySelectorAll('select').forEach(s => {
-        s.value = s.querySelector('option').value;
-      });
-      shirtsContainer.appendChild(clone);
-      renumberShirts();
-      updateResumo();
-      clone.querySelector('select').focus();
-    });
-    shirtsContainer.addEventListener('click', (e) => {
-      if (e.target.classList.contains('pedido-shirt__remove')) {
-        const item = e.target.closest('.pedido-shirt');
-        if (item) {
-          item.remove();
-          renumberShirts();
-          updateResumo();
-        }
-      }
-    });
-    shirtsContainer.addEventListener('change', (e) => {
-      if (e.target.name === 'shirt_qty[]' || e.target.name === 'shirt_size[]') updateResumo();
-    });
-    updateResumo();
-    updateRemoveButtons();
-  }
-
-  // --------- Submissao do form ---------
-  const form = document.getElementById('pedido-form');
-  const submitBtn = document.getElementById('pedido-submit');
-  const successBox = document.getElementById('pedido-success');
-
-  if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      // Validacao minima
-      let ok = true;
-      form.querySelectorAll('input[required], select[required]').forEach(el => {
-        if (!el.value || (el.value + '').trim() === '') {
-          el.classList.add('invalid');
-          if (ok) el.focus();
-          ok = false;
-        } else {
-          el.classList.remove('invalid');
-        }
-      });
-      if (!ok) return;
-
-      submitBtn.disabled = true;
-      submitBtn.querySelector('.pedido-submit__label').textContent = 'Enviando…';
-
-      try {
-        const fd = new FormData(form);
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: fd,
-          headers: { 'Accept': 'application/json' }
-        });
-        // mesmo se der erro no backend, mostra confirmacao local
-        // (o endpoint /api/leads e tolerante a falhas)
-      } catch (err) {
-        // continua para a confirmacao
-      }
-
-      // Esconde o CTA, mostra sucesso
-      submitBtn.style.display = 'none';
-      if (successBox) {
-        successBox.hidden = false;
-        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-      // Rola ate a secao de pedido
-      document.getElementById('pedido').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-
-    // limpa 'invalid' conforme usuario digita
-    form.addEventListener('input', (e) => {
-      if (e.target.classList.contains('invalid') && e.target.value) {
-        e.target.classList.remove('invalid');
-      }
-    });
-  }
-})();
-</script>
 </head>
 <body>
 
@@ -1270,8 +1092,185 @@ footer .bottom { border-top: 1px solid rgba(246,237,215,0.1); padding-top: 24px;
   </div>
 </footer>
 
-<script src="/assets/site-header.js">
-  <script defer src="/assets/pix-copy.js"></script>
-  <script defer src="/assets/pix-copy.js"></script>></script>
+<script>
+(function () {
+  'use strict';
+
+  const PRICE = 149;
+
+  // --------- Mascaras ---------
+  function maskCEP(v) {
+    v = v.replace(/\D/g, '').slice(0, 8);
+    if (v.length > 5) return v.slice(0, 5) + '-' + v.slice(5);
+    return v;
+  }
+  function maskCPF(v) {
+    v = v.replace(/\D/g, '').slice(0, 11);
+    if (v.length > 9) return v.slice(0,3)+'.'+v.slice(3,6)+'.'+v.slice(6,9)+'-'+v.slice(9);
+    if (v.length > 6) return v.slice(0,3)+'.'+v.slice(3,6)+'.'+v.slice(6);
+    if (v.length > 3) return v.slice(0,3)+'.'+v.slice(3);
+    return v;
+  }
+  function maskPhone(v) {
+    v = v.replace(/\D/g, '').slice(0, 11);
+    if (v.length > 6) return '('+v.slice(0,2)+') '+v.slice(2,7)+'-'+v.slice(7);
+    if (v.length > 2) return '('+v.slice(0,2)+') '+v.slice(2);
+    if (v.length > 0) return '('+v;
+    return v;
+  }
+  function maskUF(v) {
+    return v.toUpperCase().replace(/[^A-Z]/g, '').slice(0, 2);
+  }
+
+  const cep = document.getElementById('cep');
+  const cpf = document.getElementById('cpf');
+  const phone = document.getElementById('phone');
+  const state = document.getElementById('state');
+
+  if (cep) cep.addEventListener('input', e => { e.target.value = maskCEP(e.target.value); });
+  if (cpf) cpf.addEventListener('input', e => { e.target.value = maskCPF(e.target.value); });
+  if (phone) phone.addEventListener('input', e => { e.target.value = maskPhone(e.target.value); });
+  if (state) state.addEventListener('input', e => { e.target.value = maskUF(e.target.value); });
+
+  // --------- Calculo de preco em tempo real ---------
+  const shirtsContainer = document.getElementById('pedido-shirts');
+  const priceUnit = document.getElementById('price-unit');
+  const priceQty = document.getElementById('price-qty');
+  const priceSubtotal = document.getElementById('price-subtotal');
+
+  function updateResumo() {
+    if (!shirtsContainer) return;
+    const selects = shirtsContainer.querySelectorAll('select[name="shirt_qty[]"]');
+    let total = 0;
+    let totalPieces = 0;
+    selects.forEach(s => {
+      const q = parseInt(s.value || '1', 10);
+      total += q;
+      totalPieces += q;
+    });
+    if (priceQty) {
+      priceQty.textContent = total + (total === 1 ? ' unidade' : ' unidades');
+    }
+    if (priceSubtotal) {
+      const subtotal = total * PRICE;
+      priceSubtotal.textContent = 'R$ ' + subtotal.toLocaleString('pt-BR');
+    }
+  }
+
+  // --------- Adicionar / remover camisa ---------
+  const addBtn = document.getElementById('add-shirt');
+  const template = shirtsContainer ? shirtsContainer.querySelector('.pedido-shirt--template') : null;
+  let shirtCount = 1;
+
+  function renumberShirts() {
+    if (!shirtsContainer) return;
+    const items = shirtsContainer.querySelectorAll('.pedido-shirt:not(.pedido-shirt--template)');
+    items.forEach((item, idx) => {
+      const num = item.querySelector('.pedido-shirt__num');
+      if (num) num.textContent = 'Camisa ' + (idx + 1);
+    });
+    updateRemoveButtons();
+  }
+
+  function updateRemoveButtons() {
+    if (!shirtsContainer) return;
+    const items = shirtsContainer.querySelectorAll('.pedido-shirt:not(.pedido-shirt--template)');
+    items.forEach(item => {
+      const btn = item.querySelector('.pedido-shirt__remove');
+      if (btn) btn.hidden = items.length <= 1;
+    });
+  }
+
+  if (addBtn && template && shirtsContainer) {
+    addBtn.addEventListener('click', () => {
+      shirtCount++;
+      const clone = template.cloneNode(true);
+      clone.classList.remove('pedido-shirt--template');
+      clone.dataset.shirtId = shirtCount;
+      clone.querySelectorAll('select').forEach(s => {
+        s.value = s.querySelector('option').value;
+      });
+      shirtsContainer.appendChild(clone);
+      renumberShirts();
+      updateResumo();
+      clone.querySelector('select').focus();
+    });
+    shirtsContainer.addEventListener('click', (e) => {
+      if (e.target.classList.contains('pedido-shirt__remove')) {
+        const item = e.target.closest('.pedido-shirt');
+        if (item) {
+          item.remove();
+          renumberShirts();
+          updateResumo();
+        }
+      }
+    });
+    shirtsContainer.addEventListener('change', (e) => {
+      if (e.target.name === 'shirt_qty[]' || e.target.name === 'shirt_size[]') updateResumo();
+    });
+    updateResumo();
+    updateRemoveButtons();
+  }
+
+  // --------- Submissao do form ---------
+  const form = document.getElementById('pedido-form');
+  const submitBtn = document.getElementById('pedido-submit');
+  const successBox = document.getElementById('pedido-success');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Validacao minima
+      let ok = true;
+      form.querySelectorAll('input[required], select[required]').forEach(el => {
+        if (!el.value || (el.value + '').trim() === '') {
+          el.classList.add('invalid');
+          if (ok) el.focus();
+          ok = false;
+        } else {
+          el.classList.remove('invalid');
+        }
+      });
+      if (!ok) return;
+
+      submitBtn.disabled = true;
+      submitBtn.querySelector('.pedido-submit__label').textContent = 'Enviando…';
+
+      try {
+        const fd = new FormData(form);
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: fd,
+          headers: { 'Accept': 'application/json' }
+        });
+        // mesmo se der erro no backend, mostra confirmacao local
+        // (o endpoint /api/leads e tolerante a falhas)
+      } catch (err) {
+        // continua para a confirmacao
+      }
+
+      // Esconde o CTA, mostra sucesso
+      submitBtn.style.display = 'none';
+      if (successBox) {
+        successBox.hidden = false;
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      // Rola ate a secao de pedido
+      document.getElementById('pedido').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // limpa 'invalid' conforme usuario digita
+    form.addEventListener('input', (e) => {
+      if (e.target.classList.contains('invalid') && e.target.value) {
+        e.target.classList.remove('invalid');
+      }
+    });
+  }
+})();
+</script>
+
+<script src="/assets/site-header.js"></script>
+<script defer src="/assets/pix-copy.js"></script>
 </body>
 </html>
