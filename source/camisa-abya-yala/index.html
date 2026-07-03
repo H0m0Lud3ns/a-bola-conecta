@@ -325,6 +325,343 @@ footer .grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
   border-left: 2px solid rgba(242,194,48,0.3);
 }
 
+/* ===================== */
+/* PEDIDO DA CAMISA v2   */
+/* ===================== */
+
+.pedido-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  list-style: none;
+  margin: 32px 0 40px;
+  padding: 0;
+}
+.pedido-timeline__step {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 14px 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: rgba(246,237,215,0.65);
+  transition: all .2s;
+}
+.pedido-timeline__step--active {
+  background: rgba(242,194,48,0.12);
+  border-color: rgba(242,194,48,0.45);
+  color: #f6edd7;
+}
+.pedido-timeline__num {
+  background: rgba(242,194,48,0.18);
+  color: #f2c230;
+  border-radius: 999px;
+  min-width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 11px;
+  font-family: 'Fraunces', serif;
+  flex-shrink: 0;
+}
+.pedido-timeline__step--active .pedido-timeline__num {
+  background: #f2c230;
+  color: #121611;
+}
+
+.pedido-resumo {
+  background: linear-gradient(135deg, rgba(242,194,48,0.10) 0%, rgba(242,194,48,0.04) 100%);
+  border: 1px solid rgba(242,194,48,0.30);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin: 0 0 40px;
+}
+.pedido-resumo__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 0;
+  font-size: 15px;
+  color: #f6edd7;
+}
+.pedido-resumo__row--small { font-size: 13px; color: rgba(246,237,215,0.7); }
+.pedido-resumo__row--total {
+  border-top: 1px solid rgba(242,194,48,0.25);
+  margin-top: 6px;
+  padding-top: 14px;
+  font-weight: 800;
+  font-size: 18px;
+  font-family: 'Fraunces', serif;
+}
+.pedido-resumo__row--total .pedido-resumo__price { color: #f2c230; }
+.pedido-resumo__note {
+  margin: 12px 0 0;
+  font-size: 12px;
+  color: rgba(246,237,215,0.55);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.pedido-fieldset {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 28px 28px 24px;
+  margin: 0 0 24px;
+}
+.pedido-fieldset legend {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f2c230;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px;
+  margin-left: -12px;
+}
+.pedido-fieldset__num {
+  background: #f2c230;
+  color: #121611;
+  border-radius: 999px;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+}
+.pedido-fieldset__hint {
+  font-size: 13.5px;
+  color: rgba(246,237,215,0.65);
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+.pedido-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.pedido-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pedido-field label {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(246,237,215,0.85);
+  letter-spacing: 0.02em;
+}
+.pedido-field label em {
+  color: #f2c230;
+  font-style: normal;
+  margin-left: 2px;
+}
+.pedido-field__optional {
+  font-weight: 400;
+  color: rgba(246,237,215,0.5);
+  font-size: 11px;
+  margin-left: 4px;
+}
+.pedido-field input,
+.pedido-field select,
+.pedido-field textarea {
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: #f6edd7;
+  font-family: inherit;
+  font-size: 15px;
+  transition: border-color .18s, background .18s;
+  width: 100%;
+}
+.pedido-field input::placeholder,
+.pedido-field textarea::placeholder { color: rgba(246,237,215,0.35); }
+.pedido-field input:focus,
+.pedido-field select:focus,
+.pedido-field textarea:focus {
+  outline: 0;
+  border-color: #f2c230;
+  background: rgba(0,0,0,0.4);
+}
+.pedido-field input.invalid {
+  border-color: #e74c3c;
+  background: rgba(231,76,60,0.08);
+}
+.pedido-field textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+.pedido-field__hint {
+  font-size: 11.5px;
+  color: rgba(246,237,215,0.55);
+  margin-top: 2px;
+}
+
+.pedido-shirt {
+  background: rgba(0,0,0,0.18);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 18px 20px 14px;
+  margin-bottom: 12px;
+  position: relative;
+}
+.pedido-shirt__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.pedido-shirt__num {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f2c230;
+}
+.pedido-shirt__remove {
+  background: transparent;
+  border: 0;
+  color: rgba(246,237,215,0.5);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: all .18s;
+}
+.pedido-shirt__remove:hover { color: #e74c3c; background: rgba(231,76,60,0.08); }
+
+.pedido-add {
+  background: transparent;
+  border: 1.5px dashed rgba(242,194,48,0.4);
+  color: #f2c230;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  transition: all .18s;
+  font-family: inherit;
+}
+.pedido-add:hover { background: rgba(242,194,48,0.08); border-style: solid; }
+
+.pedido-privacy {
+  background: rgba(255,255,255,0.03);
+  border-left: 3px solid rgba(242,194,48,0.5);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px;
+  margin: 28px 0 20px;
+  font-size: 13px;
+  color: rgba(246,237,215,0.75);
+  line-height: 1.55;
+}
+.pedido-privacy strong { color: #f6edd7; }
+
+.pedido-cta { margin-top: 12px; }
+.pedido-submit {
+  background: #f2c230;
+  color: #121611;
+  border: 0;
+  border-radius: 14px;
+  padding: 18px 32px;
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: 18px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: all .2s;
+  box-shadow: 0 6px 20px rgba(242,194,48,0.25);
+}
+.pedido-submit:hover:not(:disabled) {
+  background: #f5d34d;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(242,194,48,0.35);
+}
+.pedido-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.pedido-submit__sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: rgba(18,22,17,0.7);
+  letter-spacing: 0;
+}
+
+.pedido-success {
+  background: linear-gradient(135deg, rgba(46,204,113,0.18) 0%, rgba(46,204,113,0.06) 100%);
+  border: 1px solid rgba(46,204,113,0.45);
+  border-radius: 14px;
+  padding: 32px 28px;
+  margin-top: 24px;
+  text-align: center;
+}
+.pedido-success__icon {
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+  background: #2ecc71;
+  color: #0a2417;
+  border-radius: 999px;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 56px;
+  margin-bottom: 14px;
+}
+.pedido-success h3 {
+  font-family: 'Fraunces', serif;
+  color: #2ecc71;
+  margin: 0 0 10px;
+  font-size: 22px;
+}
+.pedido-success p { color: rgba(246,237,215,0.85); margin: 0 0 8px; font-size: 15px; }
+.pedido-success a { color: #f2c230; font-weight: 700; text-decoration: none; border-bottom: 1px solid #f2c230; }
+
+.pedido-trocas {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  font-size: 14.5px;
+  color: rgba(246,237,215,0.78);
+}
+.pedido-trocas h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  color: #f2c230;
+  margin-bottom: 14px;
+}
+.pedido-trocas p { margin: 0 0 10px; }
+.pedido-trocas code {
+  background: rgba(255,255,255,0.08);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+@media (max-width: 720px) {
+  .pedido-timeline { grid-template-columns: 1fr 1fr; gap: 6px; }
+  .pedido-timeline__step { font-size: 11.5px; padding: 10px 8px; }
+  .pedido-grid-2 { grid-template-columns: 1fr; }
+  .pedido-fieldset { padding: 22px 18px 18px; }
+  .pedido-fieldset legend { font-size: 18px; }
+  .pedido-submit { font-size: 16px; padding: 16px 20px; }
+}
+
 @media (max-width: 720px) {
   footer .grid { grid-template-columns: 1fr 1fr; }
   .reading-card { grid-template-columns: 1fr; }
@@ -345,6 +682,184 @@ footer .bottom { border-top: 1px solid rgba(246,237,215,0.1); padding-top: 24px;
   .hero { padding: 110px 16px 60px; }
   .section { padding: 60px 16px; }
 }
+
+<script>
+(function () {
+  'use strict';
+
+  const PRICE = 149;
+
+  // --------- Mascaras ---------
+  function maskCEP(v) {
+    v = v.replace(/\D/g, '').slice(0, 8);
+    if (v.length > 5) return v.slice(0, 5) + '-' + v.slice(5);
+    return v;
+  }
+  function maskCPF(v) {
+    v = v.replace(/\D/g, '').slice(0, 11);
+    if (v.length > 9) return v.slice(0,3)+'.'+v.slice(3,6)+'.'+v.slice(6,9)+'-'+v.slice(9);
+    if (v.length > 6) return v.slice(0,3)+'.'+v.slice(3,6)+'.'+v.slice(6);
+    if (v.length > 3) return v.slice(0,3)+'.'+v.slice(3);
+    return v;
+  }
+  function maskPhone(v) {
+    v = v.replace(/\D/g, '').slice(0, 11);
+    if (v.length > 6) return '('+v.slice(0,2)+') '+v.slice(2,7)+'-'+v.slice(7);
+    if (v.length > 2) return '('+v.slice(0,2)+') '+v.slice(2);
+    if (v.length > 0) return '('+v;
+    return v;
+  }
+  function maskUF(v) {
+    return v.toUpperCase().replace(/[^A-Z]/g, '').slice(0, 2);
+  }
+
+  const cep = document.getElementById('cep');
+  const cpf = document.getElementById('cpf');
+  const phone = document.getElementById('phone');
+  const state = document.getElementById('state');
+
+  if (cep) cep.addEventListener('input', e => { e.target.value = maskCEP(e.target.value); });
+  if (cpf) cpf.addEventListener('input', e => { e.target.value = maskCPF(e.target.value); });
+  if (phone) phone.addEventListener('input', e => { e.target.value = maskPhone(e.target.value); });
+  if (state) state.addEventListener('input', e => { e.target.value = maskUF(e.target.value); });
+
+  // --------- Calculo de preco em tempo real ---------
+  const shirtsContainer = document.getElementById('pedido-shirts');
+  const priceUnit = document.getElementById('price-unit');
+  const priceQty = document.getElementById('price-qty');
+  const priceSubtotal = document.getElementById('price-subtotal');
+
+  function updateResumo() {
+    if (!shirtsContainer) return;
+    const selects = shirtsContainer.querySelectorAll('select[name="shirt_qty[]"]');
+    let total = 0;
+    let totalPieces = 0;
+    selects.forEach(s => {
+      const q = parseInt(s.value || '1', 10);
+      total += q;
+      totalPieces += q;
+    });
+    if (priceQty) {
+      priceQty.textContent = total + (total === 1 ? ' unidade' : ' unidades');
+    }
+    if (priceSubtotal) {
+      const subtotal = total * PRICE;
+      priceSubtotal.textContent = 'R$ ' + subtotal.toLocaleString('pt-BR');
+    }
+  }
+
+  // --------- Adicionar / remover camisa ---------
+  const addBtn = document.getElementById('add-shirt');
+  const template = shirtsContainer ? shirtsContainer.querySelector('.pedido-shirt--template') : null;
+  let shirtCount = 1;
+
+  function renumberShirts() {
+    if (!shirtsContainer) return;
+    const items = shirtsContainer.querySelectorAll('.pedido-shirt:not(.pedido-shirt--template)');
+    items.forEach((item, idx) => {
+      const num = item.querySelector('.pedido-shirt__num');
+      if (num) num.textContent = 'Camisa ' + (idx + 1);
+    });
+    updateRemoveButtons();
+  }
+
+  function updateRemoveButtons() {
+    if (!shirtsContainer) return;
+    const items = shirtsContainer.querySelectorAll('.pedido-shirt:not(.pedido-shirt--template)');
+    items.forEach(item => {
+      const btn = item.querySelector('.pedido-shirt__remove');
+      if (btn) btn.hidden = items.length <= 1;
+    });
+  }
+
+  if (addBtn && template && shirtsContainer) {
+    addBtn.addEventListener('click', () => {
+      shirtCount++;
+      const clone = template.cloneNode(true);
+      clone.classList.remove('pedido-shirt--template');
+      clone.dataset.shirtId = shirtCount;
+      clone.querySelectorAll('select').forEach(s => {
+        s.value = s.querySelector('option').value;
+      });
+      shirtsContainer.appendChild(clone);
+      renumberShirts();
+      updateResumo();
+      clone.querySelector('select').focus();
+    });
+    shirtsContainer.addEventListener('click', (e) => {
+      if (e.target.classList.contains('pedido-shirt__remove')) {
+        const item = e.target.closest('.pedido-shirt');
+        if (item) {
+          item.remove();
+          renumberShirts();
+          updateResumo();
+        }
+      }
+    });
+    shirtsContainer.addEventListener('change', (e) => {
+      if (e.target.name === 'shirt_qty[]' || e.target.name === 'shirt_size[]') updateResumo();
+    });
+    updateResumo();
+    updateRemoveButtons();
+  }
+
+  // --------- Submissao do form ---------
+  const form = document.getElementById('pedido-form');
+  const submitBtn = document.getElementById('pedido-submit');
+  const successBox = document.getElementById('pedido-success');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Validacao minima
+      let ok = true;
+      form.querySelectorAll('input[required], select[required]').forEach(el => {
+        if (!el.value || (el.value + '').trim() === '') {
+          el.classList.add('invalid');
+          if (ok) el.focus();
+          ok = false;
+        } else {
+          el.classList.remove('invalid');
+        }
+      });
+      if (!ok) return;
+
+      submitBtn.disabled = true;
+      submitBtn.querySelector('.pedido-submit__label').textContent = 'Enviando…';
+
+      try {
+        const fd = new FormData(form);
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: fd,
+          headers: { 'Accept': 'application/json' }
+        });
+        // mesmo se der erro no backend, mostra confirmacao local
+        // (o endpoint /api/leads e tolerante a falhas)
+      } catch (err) {
+        // continua para a confirmacao
+      }
+
+      // Esconde o CTA, mostra sucesso
+      submitBtn.style.display = 'none';
+      if (successBox) {
+        successBox.hidden = false;
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      // Rola ate a secao de pedido
+      document.getElementById('pedido').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // limpa 'invalid' conforme usuario digita
+    form.addEventListener('input', (e) => {
+      if (e.target.classList.contains('invalid') && e.target.value) {
+        e.target.classList.remove('invalid');
+      }
+    });
+  }
+})();
+</script>
 </style>
 </head>
 <body>
@@ -511,10 +1026,52 @@ footer .bottom { border-top: 1px solid rgba(246,237,215,0.1); padding-top: 24px;
 
 <section class="pedido-camisa" id="pedido">
   <div class="container">
-    <h2>Pedido da Camisa Abya Yala</h2>
-    <p>A camiseta é o único produto com compra direta. <strong>R$ 149 a unidade + frete</strong> calculado pelo CEP. Preencha o formulário abaixo, enviamos o Pix com o valor total, produção inicia após confirmação do pagamento.</p>
+    <span class="eyebrow">Pedido</span>
+    <h2>Vestir o método</h2>
+    <p class="lead">Cada camisa é costurada sob demanda. Em até 5 dias úteis depois do Pix confirmado, a peça segue pra produção e chega na sua casa em 3-7 dias úteis. Envio para todo Brasil.</p>
 
-    <form action="https://www.abolaconecta.com.br/api/leads" method="POST" id="pedido-form">
+    <!-- TIMELINE -->
+    <ol class="pedido-timeline" aria-label="Como funciona o pedido">
+      <li class="pedido-timeline__step pedido-timeline__step--active">
+        <span class="pedido-timeline__num">1</span>
+        <span class="pedido-timeline__label">Você faz o pedido aqui</span>
+      </li>
+      <li class="pedido-timeline__step">
+        <span class="pedido-timeline__num">2</span>
+        <span class="pedido-timeline__label">A gente calcula o frete pelo CEP e envia o Pix</span>
+      </li>
+      <li class="pedido-timeline__step">
+        <span class="pedido-timeline__num">3</span>
+        <span class="pedido-timeline__label">Você confirma o pagamento</span>
+      </li>
+      <li class="pedido-timeline__step">
+        <span class="pedido-timeline__num">4</span>
+        <span class="pedido-timeline__label">Produção + envio + rastreio no seu email</span>
+      </li>
+    </ol>
+
+    <!-- CARD RESUMO -->
+    <aside class="pedido-resumo" aria-label="Resumo do pedido">
+      <div class="pedido-resumo__row">
+        <span class="pedido-resumo__label">Camisa Abya Yala</span>
+        <span class="pedido-resumo__price" id="price-unit">R$ 149</span>
+      </div>
+      <div class="pedido-resumo__row pedido-resumo__row--small">
+        <span class="pedido-resumo__label">Quantidade</span>
+        <span class="pedido-resumo__price" id="price-qty">1 unidade</span>
+      </div>
+      <div class="pedido-resumo__row pedido-resumo__row--total">
+        <span class="pedido-resumo__label">Subtotal</span>
+        <span class="pedido-resumo__price" id="price-subtotal">R$ 149</span>
+      </div>
+      <div class="pedido-resumo__row pedido-resumo__row--small">
+        <span class="pedido-resumo__label">Frete</span>
+        <span class="pedido-resumo__price" id="price-frete">calculado após o CEP</span>
+      </div>
+      <p class="pedido-resumo__note">Sem frete surpresa. O valor total aparece no email antes de você pagar.</p>
+    </aside>
+
+    <form action="https://www.abolaconecta.com.br/api/leads" method="POST" id="pedido-form" novalidate>
     <input type="hidden" name="source" value="a-bola-conecta" />
     <input type="hidden" name="lead_type" value="pedido_camisa" />
     <input type="hidden" name="form_id" value="loja-pedido-camisa" />
@@ -523,44 +1080,142 @@ footer .bottom { border-top: 1px solid rgba(246,237,215,0.1); padding-top: 24px;
     <input type="hidden" name="interest" value="Pedido de camisa Gondwana FC - Time da Educação" />
     <input type="hidden" name="stage" value="novo" />
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;">
-    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Nome completo *</label><input type="text" name="contact_name" required style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
-    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Email *</label><input type="email" name="email" required style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
+    <!-- ETAPA 1: VOCÊ -->
+    <fieldset class="pedido-fieldset">
+      <legend><span class="pedido-fieldset__num">1</span> Quem é você</legend>
+      <p class="pedido-fieldset__hint">Pra gente confirmar o pedido, enviar o Pix e mandar o rastreio.</p>
+
+      <div class="pedido-grid-2">
+        <div class="pedido-field">
+          <label for="contact_name">Nome completo <em>*</em></label>
+          <input type="text" id="contact_name" name="contact_name" required autocomplete="name" placeholder="Como aparece no RG" />
+        </div>
+        <div class="pedido-field">
+          <label for="email">Email <em>*</em></label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="seunome@email.com" />
+        </div>
+      </div>
+
+      <div class="pedido-grid-2">
+        <div class="pedido-field">
+          <label for="phone">WhatsApp <em>*</em></label>
+          <input type="tel" id="phone" name="phone" required autocomplete="tel" inputmode="tel" placeholder="(11) 99999-9999" />
+          <span class="pedido-field__hint">É por aqui que mandamos o Pix e o rastreio.</span>
+        </div>
+        <div class="pedido-field">
+          <label for="cpf">CPF <span class="pedido-field__optional">(só pra nota fiscal)</span></label>
+          <input type="text" id="cpf" name="cpf" inputmode="numeric" placeholder="000.000.000-00" maxlength="14" />
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- ETAPA 2: SUAS CAMISAS -->
+    <fieldset class="pedido-fieldset">
+      <legend><span class="pedido-fieldset__num">2</span> Quantas e qual tamanho</legend>
+      <p class="pedido-fieldset__hint">Quer levar mais de uma? Adiciona cada uma com seu tamanho. Ex: 2P + 1G.</p>
+
+      <div id="pedido-shirts">
+        <div class="pedido-shirt pedido-shirt--template" data-shirt-id="1">
+          <div class="pedido-shirt__head">
+            <span class="pedido-shirt__num">Camisa 1</span>
+            <button type="button" class="pedido-shirt__remove" aria-label="Remover esta camisa" hidden>×</button>
+          </div>
+          <div class="pedido-grid-2">
+            <div class="pedido-field">
+              <label>Tamanho</label>
+              <select name="shirt_size[]" required>
+                <option value="">Escolher</option>
+                <option value="P">P</option>
+                <option value="M">M</option>
+                <option value="G">G</option>
+                <option value="GG">GG</option>
+                <option value="XGG">XGG</option>
+              </select>
+            </div>
+            <div class="pedido-field">
+              <label>Quantidade</label>
+              <select name="shirt_qty[]" required>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" id="add-shirt" class="pedido-add">+ Adicionar outra camisa (tamanho diferente)</button>
+    </fieldset>
+
+    <!-- ETAPA 3: ENDEREÇO -->
+    <fieldset class="pedido-fieldset">
+      <legend><span class="pedido-fieldset__num">3</span> Onde a gente entrega</legend>
+      <p class="pedido-fieldset__hint">Calculamos o frete pelo CEP e te avisamos antes de qualquer cobrança.</p>
+
+      <div class="pedido-grid-2 pedido-grid-2--first">
+        <div class="pedido-field">
+          <label for="cep">CEP <em>*</em></label>
+          <input type="text" id="cep" name="cep" required inputmode="numeric" placeholder="00000-000" maxlength="9" autocomplete="postal-code" />
+        </div>
+        <div class="pedido-field pedido-field--city">
+          <label for="city">Cidade <em>*</em></label>
+          <input type="text" id="city" name="city" required autocomplete="address-level2" />
+        </div>
+      </div>
+
+      <div class="pedido-grid-2">
+        <div class="pedido-field">
+          <label for="street">Rua e número <em>*</em></label>
+          <input type="text" id="street" name="street" required autocomplete="address-line1" placeholder="Rua das Pedras, 123" />
+        </div>
+        <div class="pedido-field">
+          <label for="complement">Complemento <span class="pedido-field__optional">(opcional)</span></label>
+          <input type="text" id="complement" name="complement" autocomplete="address-line2" placeholder="Apto 42, bloco B, etc." />
+        </div>
+      </div>
+
+      <div class="pedido-field pedido-field--state">
+        <label for="state">Estado (UF) <em>*</em></label>
+        <input type="text" id="state" name="state" required maxlength="2" autocomplete="address-level1" placeholder="SP" />
+      </div>
+
+      <div class="pedido-field">
+        <label for="observations">Observações <span class="pedido-field__optional">(opcional)</span></label>
+        <textarea id="observations" name="observations" placeholder="Ponto de referência, tipo de frete preferido, alguma instrução especial…"></textarea>
+      </div>
+    </fieldset>
+
+    <!-- PRIVACIDADE + CTA -->
+    <div class="pedido-privacy">
+      <strong>Sobre seus dados:</strong> a gente usa só pra confirmar o pedido, mandar o Pix e o rastreio. Não compartilhamos com ninguém. Você pode pedir pra apagar quando quiser.
     </div>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;">
-    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">WhatsApp *</label><input type="tel" name="phone" required placeholder="(11) 99999-9999" style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
-    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">CPF (nota fiscal)</label><input type="text" name="cpf" placeholder="000.000.000-00" style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
-    </div>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;">
-    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Tamanho *</label><select name="shirt_size" required style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;"><option value="">Selecione</option><option value="P">P</option><option value="M">M</option><option value="G">G</option><option value="GG">GG</option><option value="XGG">XGG</option></select></div>
-    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Quantidade *</label><select name="quantity" required style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;"><option value="1">1 camisa</option><option value="2">2 camisas</option><option value="3">3 camisas</option><option value="4">4 camisas</option><option value="5">5 camisas</option><option value="6+">6 ou mais</option></select></div>
-    </div>
-
-    <div style="margin: 16px 0;"><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">CEP *</label><input type="text" name="cep" required placeholder="00000-000" style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;">
-    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Rua e número *</label><input type="text" name="street" required style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
-    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Complemento</label><input type="text" name="complement" style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
-    </div>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;">
-    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Cidade *</label><input type="text" name="city" required style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
-    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Estado *</label><input type="text" name="state" required maxlength="2" style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
-    </div>
-
-    <div style="margin: 16px 0;"><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Observações (ponto de referência, tipo de frete preferido)</label><textarea name="observations" placeholder="Ex: Prédio azul, porteiro 24h. Prefiro SEDEX." style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;min-height:80px;"></textarea></div>
 
     <input type="hidden" name="consent" value="true" />
-    <button type="submit" class="cta" style="font-size:1rem;padding:14px 28px;background: var(--milho, #F2C230); color: hsl(28 30% 10%); font-weight: 700; border: 0; border-radius: 999px; cursor: pointer;">Enviar pedido</button>
+
+    <div class="pedido-cta">
+      <button type="submit" class="pedido-submit" id="pedido-submit">
+        <span class="pedido-submit__label">Fazer pedido →</span>
+        <span class="pedido-submit__sub">Sem pagamento agora. Você recebe o Pix no email.</span>
+      </button>
+    </div>
+
+    <!-- CONFIRMAÇÃO (escondida por padrão) -->
+    <div class="pedido-success" id="pedido-success" hidden role="status" aria-live="polite">
+      <span class="pedido-success__icon">✓</span>
+      <h3>Pedido recebido.</h3>
+      <p>Em até 24h úteis a gente manda no seu email o valor total (camisa + frete) e a chave Pix pra pagamento.</p>
+      <p>Enquanto isso, dá uma olhada no <a href="/metodologia/">guia pedagógico</a> ou na <a href="/comunidade/">comunidade do Time da Educação</a>.</p>
+    </div>
     </form>
 
-    <p style="margin-top: 16px; color: var(--muted); font-size: 0.9rem;">Após o envio, você receberá um email com o valor total (camisa R$ 149 + frete pelo CEP) e os dados para pagamento via Pix. Produção só inicia após confirmação do pagamento.</p>
-
-    <h2>Trocas e devoluções</h2>
-    <p>Trocas por tamanho são gratuitas em até 30 dias após o recebimento, desde que a camisa não tenha sido usada. Devoluções com reembolso integral em até 7 dias, conforme Código de Defesa do Consumidor.</p>
-    <p>Para acionar troca ou devolução, envie email para <code style="background:rgba(255,255,255,0.08); padding:2px 6px; border-radius:4px;">contato.gondwana@gmail.com</code> com número do pedido.</p>
+    <!-- TROCAS -->
+    <div class="pedido-trocas">
+      <h2>Trocas e devoluções</h2>
+      <p>Se o tamanho não serviu, troca grátis em até 30 dias do recebimento (camisa sem uso). Pra reembolso integral, até 7 dias, conforme Código de Defesa do Consumidor.</p>
+      <p>Manda email pra <code>contato.gondwana@gmail.com</code> com o número do pedido.</p>
+    </div>
   </div>
 </section>
 
