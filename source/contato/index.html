@@ -68,6 +68,7 @@ button:hover { opacity: 0.85; }
 .local { color: var(--muted); font-size: 0.95rem; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); }
 @media (max-width: 600px) { .team { grid-template-columns: 1fr; } .row { grid-template-columns: 1fr; } body { padding: 20px 16px; } }
 </style>
+ <link rel="stylesheet" href="/assets/site-header.css">
  <link rel="stylesheet" href="/assets/footer.css">
  <link rel="stylesheet" href="/assets/a11y.css">
 <script type="application/ld+json">
@@ -112,12 +113,38 @@ button:hover { opacity: 0.85; }
 <a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
 <main id="conteudo">
 <div class="container">
-<header class="page-header">
- <a href="/" class="page-header-brand" aria-label="A Bola Conecta - página inicial">
- <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
- <span class="page-header-brand-text">A Bola Conecta</span>
+<header class="site-header">
+ <div class="container header-inner">
+ <a class="brand" href="/" aria-label="A Bola Conecta - página inicial">
+ <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta">
  </a>
- <span class="page-header-section">Contato</span>
+ <nav class="nav" aria-label="Menu principal">
+ <a href="/">Início</a>
+ <a href="/documentario/">O Filme</a>
+ <a href="/sobre/">Sobre</a>
+ <a href="/servicos/">Serviços</a>
+ <a href="/comunidade/">Comunidade</a>
+ <a href="/loja/">Loja</a>
+ <a href="/blog/">Blog</a>
+ <a class="active" href="/contato/">Contato</a>
+ <a class="copa-nav-link" href="/copa-2026/">Copa 2026</a>
+ </nav>
+ <div class="header-actions">
+ <button class="menu-toggle" type="button" aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menu">Menu</button>
+ <a class="support-btn" href="/comunidade/#apoio">Apoie</a>
+ </div>
+ </div>
+ <nav class="container mobile-nav" id="mobileMenu" aria-label="Menu mobile">
+ <a href="/">Início</a>
+ <a href="/documentario/">O Filme</a>
+ <a href="/sobre/">Sobre</a>
+ <a href="/servicos/">Serviços</a>
+ <a href="/comunidade/">Comunidade</a>
+ <a href="/loja/">Loja</a>
+ <a href="/blog/">Blog</a>
+ <a class="active" href="/contato/">Contato</a>
+ <a class="copa-nav-link" href="/copa-2026/">Copa 2026</a>
+ </nav>
 </header>
 <span class="tag">CONTATO</span>
 <h1>Fale com a gente</h1>
@@ -255,5 +282,20 @@ button:hover { opacity: 0.85; }
 </footer>
 
 </main>
+
+<script>
+ const menuToggle = document.querySelector('.menu-toggle');
+ const mobileMenu = document.getElementById('mobileMenu');
+ menuToggle?.addEventListener('click', () => {
+ const isOpen = mobileMenu.classList.toggle('is-open');
+ menuToggle.setAttribute('aria-expanded', String(isOpen));
+ });
+ mobileMenu?.querySelectorAll('a').forEach((link) => {
+ link.addEventListener('click', () => {
+ mobileMenu.classList.remove('is-open');
+ menuToggle?.setAttribute('aria-expanded', 'false');
+ });
+ });
+</script>
 </body>
 </html>

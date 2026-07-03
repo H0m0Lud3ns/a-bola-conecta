@@ -72,33 +72,10 @@ body::before {
 }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
 
-.topbar {
- position: sticky;
- top: 0;
- z-index: 50;
- background: rgba(17,19,15,0.92);
- backdrop-filter: blur(12px);
- -webkit-backdrop-filter: blur(12px);
- border-bottom: 1px solid rgba(242,194,48,0.14);
-}
-.topbar-inner {
- display: flex;
- align-items: center;
- justify-content: space-between;
- padding: 14px 24px;
- max-width: 1200px;
- margin: 0 auto;
-}
+
+
 .topbar-logo img { height: 38px; width: auto; display: block; }
-.topbar-nav {
- display: flex;
- gap: 22px;
- align-items: center;
- font-family: 'Manrope', sans-serif;
- font-weight: 600;
- font-size: 14px;
- letter-spacing: 0.02em;
-}
+
 .topbar-nav a {
  color: var(--areia);
  text-decoration: none;
@@ -107,13 +84,7 @@ body::before {
  transition: color 0.2s;
 }
 .topbar-nav a:hover { color: var(--ouro); }
-.topbar-nav a.cta-nav {
- background: var(--ouro);
- color: var(--grafite);
- padding: 8px 16px;
- border-radius: 6px;
- font-weight: 800;
-}
+.topbar-nav a
 .topbar-nav a.cta-nav:hover { color: var(--grafite); background: #ffce3d; }
 
 .hero {
@@ -630,7 +601,7 @@ body::before {
  .creditos-grid { grid-template-columns: repeat(2, 1fr); }
  .ficha-grid { grid-template-columns: 1fr; }
  .apoie-inner { grid-template-columns: 1fr; }
- .topbar-nav { display: none; }
+ 
  .section { padding: 64px 0; }
  .footer-grid { flex-direction: column; text-align: center; }
  .footer-nav { flex-wrap: wrap; justify-content: center; }
@@ -698,6 +669,7 @@ body::before {
  ]
 }]
 </script>
+ <link rel="stylesheet" href="/assets/site-header.css">
  <link rel="stylesheet" href="/assets/footer.css">
  <link rel="stylesheet" href="/assets/a11y.css">
 </head>
@@ -705,34 +677,39 @@ body::before {
 
 <a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
 
-<header class="topbar">
- <div class="topbar-inner">
- <a href="/" class="topbar-logo" aria-label="A Bola Conecta — início">
- <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
+<header class="site-header">
+ <div class="container header-inner">
+ <a class="brand" href="/" aria-label="A Bola Conecta - página inicial">
+ <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta">
  </a>
- <nav class="topbar-nav" aria-label="Navegação principal">
+ <nav class="nav" aria-label="Menu principal">
  <a href="/">Início</a>
- <a href="/metodologia">Metodologia ABC</a>
- <a href="/copa-2026/fichas">Fichas Copa 2026</a>
- <a href="/contato">Contato</a>
- <a href="/apoie" class="cta-nav">Apoiar</a>
+ <a class="active" href="/documentario/">O Filme</a>
+ <a href="/sobre/">Sobre</a>
+ <a href="/servicos/">Serviços</a>
+ <a href="/comunidade/">Comunidade</a>
+ <a href="/loja/">Loja</a>
+ <a href="/blog/">Blog</a>
+ <a href="/contato/">Contato</a>
+ <a class="copa-nav-link" href="/copa-2026/">Copa 2026</a>
  </nav>
+ <div class="header-actions">
+ <button class="menu-toggle" type="button" aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menu">Menu</button>
+ <a class="support-btn" href="/comunidade/#apoio">Apoie</a>
  </div>
+ </div>
+ <nav class="container mobile-nav" id="mobileMenu" aria-label="Menu mobile">
+ <a href="/">Início</a>
+ <a class="active" href="/documentario/">O Filme</a>
+ <a href="/sobre/">Sobre</a>
+ <a href="/servicos/">Serviços</a>
+ <a href="/comunidade/">Comunidade</a>
+ <a href="/loja/">Loja</a>
+ <a href="/blog/">Blog</a>
+ <a href="/contato/">Contato</a>
+ <a class="copa-nav-link" href="/copa-2026/">Copa 2026</a>
+ </nav>
 </header>
-
-<nav class="page-breadcrumb" aria-label="Trilha de navegação">
- <ol>
- <li><a href="/">A Bola Conecta</a></li>
- <li class="bc-sep" aria-hidden="true">›</li>
- <li><a href="/">Início</a></li>
- <li class="bc-sep" aria-hidden="true">›</li>
- <li aria-current="page"><b>Documentário</b></li>
- </ol>
- <a href="/" class="bc-back-link" aria-label="Voltar para Início">
- <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
- <span>Voltar</span>
- </a>
-</nav>
 <style>
 .page-breadcrumb{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;margin:0 auto;width:min(1120px,92vw);font-family:Manrope,Arial,sans-serif;font-size:13px;color:rgba(246,232,213,.7);flex-wrap:wrap}
 .page-breadcrumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
@@ -1087,5 +1064,20 @@ body::before {
 })();
 </script>
 </main>
+
+<script>
+ const menuToggle = document.querySelector('.menu-toggle');
+ const mobileMenu = document.getElementById('mobileMenu');
+ menuToggle?.addEventListener('click', () => {
+ const isOpen = mobileMenu.classList.toggle('is-open');
+ menuToggle.setAttribute('aria-expanded', String(isOpen));
+ });
+ mobileMenu?.querySelectorAll('a').forEach((link) => {
+ link.addEventListener('click', () => {
+ mobileMenu.classList.remove('is-open');
+ menuToggle?.setAttribute('aria-expanded', 'false');
+ });
+ });
+</script>
 </body>
 </html>
