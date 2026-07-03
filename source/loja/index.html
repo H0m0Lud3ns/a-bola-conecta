@@ -217,7 +217,7 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
  <p class="product-price-detail">+ frete calculado pelo CEP no formulário</p>
 
  <div class="product-actions">
- <a href="#pedido-camisa" class="cta">Fazer pedido</a>
+ <a href="/camisa-abya-yala/#pedido" class="cta">Fazer pedido</a>
  <a href="/camisa-abya-yala/" class="cta outline">Ver detalhes</a>
  <button type="button" class="cta contrib pix-trigger">Apoiar a circulação aberta via Pix</button>
  </div>
@@ -375,7 +375,7 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
  <li>Entrada na comunidade do Time</li>
  </ul>
  <p class="circulação-como">Cada camiseta financia a impressão e distribuição de materiais abertos para a comunidade educativa. Quem veste também abre conversa: o manual que vem junto transforma o torcedor em educador informal.</p>
- <a href="#pedido-camisa" class="cta outline">Fazer pedido</a>
+ <a href="/camisa-abya-yala/#pedido" class="cta outline">Fazer pedido</a>
  </div>
 
  <div class="circulação-card destaque">
@@ -425,58 +425,11 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
 <p style="margin-top: 12px; font-size: 0.85rem; color: var(--muted);">A Associação Cultural e Desportiva Gondwana (CNPJ 56.225.225/0001-09) é uma entidade sem fins lucrativos separada, que opera programas próprios — não confundir com este trabalho.</p>
 </div>
 
-<h2 id="pedido-camisa">Pedido da Camisa Abya Yala</h2>
-<p>A camiseta é o único produto com compra direta. <strong>R$ 149 a unidade + frete</strong> calculado pelo CEP. Preencha o formulário abaixo, enviamos o Pix com o valor total, produção inicia após confirmação do pagamento.</p>
-
-<form action="https://www.abolaconecta.com.br/api/leads" method="POST" id="pedido-form">
-<input type="hidden" name="source" value="a-bola-conecta" />
-<input type="hidden" name="lead_type" value="support_pix" />
-<input type="hidden" name="form_id" value="loja-pedido-camisa" />
-<input type="hidden" name="campaign" value="a-bola-conecta-catalogo" />
-<input type="hidden" name="page" value="https://www.abolaconecta.com.br/loja" />
-<input type="hidden" name="interest" value="Pedido de camisa Gondwana FC - Time da Educação" />
-<input type="hidden" name="stage" value="novo" />
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;">
-<div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Nome completo *</label><input type="text" name="contact_name" required style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
-<div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Email *</label><input type="email" name="email" required style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
+<div class="cta-pedido-camisa" style="background: rgba(245, 211, 77, 0.08); border: 1px solid rgba(245, 211, 77, 0.32); border-radius: 12px; padding: 24px 28px; margin: 24px 0; text-align: center;">
+  <p style="margin: 0 0 14px; font-size: 1rem;">A camiseta é o único produto com compra direta. <strong>R$ 149 a unidade + frete</strong> calculado pelo CEP.</p>
+  <a href="/camisa-abya-yala/#pedido" class="cta" style="background: var(--milho, #F2C230); color: hsl(28 30% 10%); font-weight: 700; padding: 12px 24px; border-radius: 999px; text-decoration: none; display: inline-block;">Fazer pedido na página da camisa →</a>
+  <p style="margin: 14px 0 0; color: var(--muted); font-size: 0.85rem;">Trocas e devoluções também na página da camisa.</p>
 </div>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;">
-<div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">WhatsApp *</label><input type="tel" name="phone" required placeholder="(11) 99999-9999" style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
-<div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">CPF (nota fiscal)</label><input type="text" name="cpf" placeholder="000.000.000-00" style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
-</div>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;">
-<div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Tamanho *</label><select name="shirt_size" required style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;"><option value="">Selecione</option><option value="P">P</option><option value="M">M</option><option value="G">G</option><option value="GG">GG</option><option value="XGG">XGG</option></select></div>
-<div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Quantidade *</label><select name="quantity" required style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;"><option value="1">1 camisa</option><option value="2">2 camisas</option><option value="3">3 camisas</option><option value="4">4 camisas</option><option value="5">5 camisas</option><option value="6+">6 ou mais</option></select></div>
-</div>
-
-<div style="margin: 16px 0;"><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">CEP *</label><input type="text" name="cep" required placeholder="00000-000" style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;">
-<div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Rua e número *</label><input type="text" name="street" required style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
-<div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Complemento</label><input type="text" name="complement" style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
-</div>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;">
-<div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Cidade *</label><input type="text" name="city" required style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
-<div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Estado *</label><input type="text" name="state" required maxlength="2" style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
-</div>
-
-<div style="margin: 16px 0;"><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Observações (ponto de referência, tipo de frete preferido)</label><textarea name="observations" placeholder="Ex: Prédio azul, porteiro 24h. Prefiro SEDEX." style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;min-height:80px;"></textarea></div>
-
-<input type="hidden" name="consent" value="true" />
-<button type="submit" class="cta" style="font-size:1rem;padding:14px 28px;">Enviar pedido</button>
-</form>
-
-<p style="margin-top: 16px; color: var(--muted); font-size: 0.9rem;">Após o envio, você receberá um email com o valor total (camisa R$ 149 + frete pelo CEP) e os dados para pagamento via Pix. Produção só inicia após confirmação do pagamento.</p>
-
-<h2>Trocas e devoluções</h2>
-<p>Trocas por tamanho são gratuitas em até 30 dias após o recebimento, desde que a camisa não tenha sido usada. Devoluções com reembolso integral em até 7 dias, conforme Código de Defesa do Consumidor.</p>
-<p>Para acionar troca ou devolução, envie email para <code style="background:rgba(255,255,255,0.08); padding:2px 6px; border-radius:4px;">contato.gondwana@gmail.com</code> com número do pedido.</p>
-
-<p class="legal">Dúvidas sobre algum produto específico? <a href="/contato/">Fale com a equipe do Time da Educação</a>. Para entender o modelo de negócio completo, veja a <a href="/sobre/">página sobre</a> ou o.</p>
 
 </div>
 <footer class="site-footer">
