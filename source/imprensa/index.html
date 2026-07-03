@@ -118,6 +118,11 @@ p { margin-bottom: 16px; color: var(--muted); }
  .festivais-card .festival-nome { font-size: 0.7rem; }
  .festivais-card .festival-meta { font-size: 0.62rem; }
 }
+
+.page-header { display: flex; align-items: center; justify-content: space-between; padding: 24px 0 16px; border-bottom: 1px solid rgba(245, 158, 11, 0.25); margin-bottom: 24px; gap: 16px; flex-wrap: wrap; }
+.page-header img { height: 32px; width: auto; display: block; }
+.page-badge { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); padding: 4px 10px; border: 1px solid rgba(245, 158, 11, 0.4); border-radius: 999px; }
+@media (max-width: 600px) { .page-header img { height: 26px; } .page-badge { font-size: 10px; } }
 </style>
  <link rel="stylesheet" href="/assets/footer.css">
  <link rel="stylesheet" href="/assets/a11y.css">
@@ -127,7 +132,13 @@ p { margin-bottom: 16px; color: var(--muted); }
 <a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
 <main id="conteudo">
 <div class="container">
-<a href="/" class="back-link">← Voltar para A Bola Conecta</a>
+<header class="page-header">
+  <a href="/" aria-label="A Bola Conecta - página inicial">
+   <img src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta" />
+  </a>
+  <span class="page-badge">Imprensa</span>
+ </header>
+ <a href="/" class="back-link">← Voltar para A Bola Conecta</a>
 <span class="tag">PRESS KIT</span>
 <h1>Imprensa &amp; Mídia</h1>
 <p class="lead">Material oficial para jornalistas, marcas, parceiros institucionais e veículos de comunicação. Operadora: Da Silva e Vásquez Formação e Consultoria LTDA (CNPJ 62.085.700/0001-83).</p>
