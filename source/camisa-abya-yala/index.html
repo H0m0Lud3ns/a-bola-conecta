@@ -292,10 +292,47 @@ footer.site-footer {
 }
 footer .container { max-width: 1200px; margin: 0 auto; }
 footer .grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+
+.camisa-img-wrap { margin: 40px 0; text-align: center; }
+.camisa-img-wrap img { max-width: 100%; height: auto; border-radius: 14px; border: 1px solid rgba(242,194,48,0.25); box-shadow: 0 12px 40px rgba(0,0,0,0.35); }
+.camisa-img-caption { margin-top: 12px; font-size: 12px; color: rgba(246,237,215,0.6); font-style: italic; }
+
+.symbol-h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f2c230;
+  margin: 56px 0 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(242,194,48,0.2);
+}
+
+.glossary { margin-top: 16px; }
+.glossary dt {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 800;
+  color: #f2c230;
+  margin-top: 24px;
+}
+.glossary dt:first-child { margin-top: 0; }
+.glossary dd {
+  font-size: 15px;
+  color: rgba(246,237,215,0.85);
+  line-height: 1.6;
+  margin-left: 0;
+  padding-left: 16px;
+  border-left: 2px solid rgba(242,194,48,0.3);
+}
+
 @media (max-width: 720px) {
   footer .grid { grid-template-columns: 1fr 1fr; }
   .reading-card { grid-template-columns: 1fr; }
   .reading-card .cover { width: 100px; height: 130px; }
+  .camisa-img-wrap img { border-radius: 10px; }
+  .symbol-h3 { font-size: 18px; margin-top: 40px; }
+  .glossary dt { font-size: 15px; }
+  .glossary dd { font-size: 14px; }
 }
 footer h4 { color: #f2c230; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; font-weight: 800; }
 footer ul { list-style: none; }
@@ -349,7 +386,8 @@ footer .bottom { border-top: 1px solid rgba(246,237,215,0.1); padding-top: 24px;
 <section class="section">
   <span class="eyebrow">Capítulo 01</span>
   <h2>Por que Abya Yala</h2>
-  <p class="lead">"Abya Yala" significa <strong>"terra em plena maturidade"</strong> ou "terra de sangue vital" na língua do povo Kuna, do Panamá e da Colômbia. É o nome que diversos povos originários das Américas dão ao continente desde antes da chegada colonial.</p>
+  <p class="lead">"Abya Yala" significa <strong>"terra madura"</strong>, <strong>"terra viva"</strong> ou <strong>"terra em florescimento"</strong> na língua do povo Kuna, do Panamá e da Colômbia. É o nome que diversos povos originários das Américas dão ao continente desde antes da chegada colonial.</p>
+  <p>O nome é utilizado cada vez mais em busca da construção de um sentimento de unidade e pertencimento. É símbolo de identidade e respeito pela terra que habitamos.</p>
   <p>Nomear Abya Yala desloca o ponto de partida. A educação deixa de ser algo que chegou com a escola colonial e passa a ser entendida como prática ancestral, comunitária, corporal, oral, territorial e espiritual.</p>
   <p>A terra é professora: ensina tempo, ciclo, limite, cuidado, pertencimento, leitura de sinais, relação entre espécies e vida em comunidade.</p>
   <p>Chamar a camiseta de <em>Abya Yala</em> é afirmar que o Time da Educação não começa pela colonização. Começa pela terra habitada e ensinada, pelos povos que já tinham educação antes da escola europeia, e por tudo que segue vivo nos territórios.</p>
@@ -358,8 +396,8 @@ footer .bottom { border-top: 1px solid rgba(246,237,215,0.1); padding-top: 24px;
     <div class="cover">Abya Yala</div>
     <div>
       <h3>Leitura recomendada</h3>
-      <div class="meta">Abya Yala: una visión indígena · Colectivo de autores · Prensa Latina / Instituto Nacional (México) · 2012</div>
-      <p>Compêndio de reportagens, crónicas e entrevistas cobrindo 30+ países da América Latina, com prefácio de Evo Morales. A obra reúne vozes dos povos Kuna, Aymara, Quechua, Guaraní, Mapuche, Wayúu, Taíno, Charrúa, Miskito, Quiché e muitos outros, mapeando as lutas contemporâneas por território, identidade e educação intercultural. É referência para entender por que "Abya Yala" não é uma escolha estética — é uma posição política, pedagógica e continental.</p>
+      <div class="meta">Abya Yala: una visión indígena · Coletivo de autores · Edición Rolando de la Ribera · Prensa Latina / Instituto Nacional (México) · Partido de la Revolución Democrática · 2012</div>
+      <p>Compêndio de reportagens, crónicas e entrevistas cobrindo 30+ países da América Latina. A obra reúne vozes dos povos Kuna, Aymara, Quechua, Guaraní, Mapuche, Wayúu, Taíno, Charrúa, Miskito, Quiché e muitos outros, mapeando as lutas contemporâneas por território, identidade e educação intercultural. É referência para entender por que "Abya Yala" não é uma escolha estética — é uma posição política, pedagógica e continental.</p>
       <a class="btn-link" href="/assets/Abya_Yala_vision_indigena.pdf" target="_blank" rel="noopener">Baixar livro em PDF (1.1 MB) →</a>
     </div>
   </div>
@@ -371,40 +409,65 @@ footer .bottom { border-top: 1px solid rgba(246,237,215,0.1); padding-top: 24px;
     <h2>Símbolos da peça</h2>
     <p class="lead">Cada elemento da camiseta foi pensado para abrir conversa em sala, na roda, na arquibancada. Nada está ali por estética isolada.</p>
 
+    <div class="camisa-img-wrap">
+      <img src="/assets/camisa-gondwana-fc-abya-yala-frente-costas.png" alt="Camiseta pedagógica Gondwana FC Abya Yala: frente com mapa invertido de Joaquín Torres García e costas com as palavras IDENTIDAD, GAMBETA, ABYA YALA e o número 12" />
+      <p class="camisa-img-caption">Frente e costas da peça. Fonte: LWGA + Gondwana FC.</p>
+    </div>
+
+    <h3 class="symbol-h3">Na frente</h3>
     <div class="symbol-grid">
       <div class="symbol-card">
-        <div class="swatch" style="background:#122a4f;"></div>
-        <h3>Azul royal</h3>
-        <p>Cor do manto de Nossa Senhora Aparecida, padroeira do Brasil. Para o Time da Educação, conecta fé popular e identidade brasileira numa só peça.</p>
+        <div class="swatch" style="background:#28246e;"></div>
+        <h3>Azul Profundo</h3>
+        <p>Homenagem aos nossos oceanos. Cobrem 71% da superfície terrestre, regulam o clima e geram a maior parte do oxigênio do planeta. Reconhece a interdependência entre a vida humana e a saúde do mar.</p>
       </div>
       <div class="symbol-card">
-        <div class="swatch" style="background:#c0392b;"></div>
-        <h3>Gola e punhos vermelhos</h3>
-        <p>Vermelho da Wiphala, bandeira quadrada dos povos andinos que representa os quatro elementos e a comunidade. Também remete ao uniforme da Seleção Brasileira.</p>
+        <div class="swatch" style="background:#db1a1c;"></div>
+        <h3>Vermelho do mapa</h3>
+        <p>América invertida, traçada em vermelho. O vermelho conecta-se à Wiphala (D.S. 241/2009, art. 28º): planeta Terra, mundo material visível, expressão intelectual das pessoas. Devolver o continente à sua posição geográfica real também é devolver o vermelho à própria terra.</p>
       </div>
       <div class="symbol-card">
-        <div class="swatch" style="background:repeating-linear-gradient(45deg,#f2c230 0,#f2c230 8px,#c0392b 8px,#c0392b 16px,#122a4f 16px,#122a4f 24px);"></div>
-        <h3>Padrão Wiphala</h3>
-        <p>Faixa têxtil em padrão xadrez que representa a matriz dos povos andinos. Está presente nas golas como assinatura pedagógica.</p>
+        <div class="swatch" style="background:linear-gradient(135deg,#1a1a1a 0%,#28246e 100%);color:#f2c230;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;text-align:center;padding:8px;font-family:Fraunces,serif;">NUESTRO NORTE<br>ES EL SUR</div>
+        <h3>Citação de Joaquín Torres García</h3>
+        <p>Na base do mapa, a frase do artista uruguaio Joaquín Torres García, de 1935: "He dicho Escuela del Sur porque, en realidad, nuestro norte es el Sur. No debe haber norte, para nosotros, sino por oposición a nuestro Sur."</p>
       </div>
       <div class="symbol-card">
-        <div class="swatch" style="background:#f6edd7;color:#122a4f;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:24px;font-family:Fraunces,serif;">12</div>
-        <h3>Número 12 nas costas</h3>
-        <p>O jogador número 12 é a torcida. Quem veste a camisa soma à equipe. A torcida é parte do time, não plateia.</p>
+        <div class="swatch" style="background:radial-gradient(circle at 30% 70%,#f2c230 0%,#f2c230 30%,transparent 31%);"></div>
+        <h3>Cruzeiro do Sul, Polo Sul, Equador</h3>
+        <p>Ao redor do mapa, à mão: sol, barco, peixe, estrelas e a constelação do Cruzeiro do Sul, com a marca "Polo S" e a linha do "Ecuador". Coordenadas S. 34°41' / W 56°9' apontam Montevidéu. Assinatura do autor no canto: JTG 43 (1943).</p>
       </div>
       <div class="symbol-card">
-        <div class="swatch" style="background:#0d8050;color:#f6edd7;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;text-align:center;padding:8px;">América do Sul invertida</div>
-        <h3>Mapa no peito</h3>
-        <p>O continente americano aparece invertido no peito direito. É o ponto de partida Abya Yala: olhar o mapa a partir do sul, não a partir de quem chegou de fora.</p>
-      </div>
-      <div class="symbol-card">
-        <div class="swatch" style="background:#f2c230;color:#121611;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;text-align:center;padding:8px;">Time da Educação</div>
-        <h3>Selo Time da Educação</h3>
-        <p>Identifica a peça como instrumento da Metodologia ABC. Quem usa está dentro do time, não é só cliente.</p>
+        <div class="swatch" style="background:#f2c230;color:#28246e;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;text-align:center;padding:8px;font-family:'Inter',sans-serif;letter-spacing:0.06em;">GONDWANA FC</div>
+        <h3>Escudo Gondwana FC · Time da Educação</h3>
+        <p>No peito, o escudo identifica a peça como instrumento da Metodologia Gondwana ABC (Audiovisual, Balón y Cámara). Quem usa entra no time, não é só cliente.</p>
       </div>
     </div>
 
-    <blockquote class="quote">"O uniforme é parte do método. Quando o educador veste a camisa, ele está dizendo que entrou em campo com o time, não de fora."<cite>— Princípio pedagógico do Time da Educação</cite></blockquote>
+    <h3 class="symbol-h3">Nas costas</h3>
+    <div class="symbol-grid">
+      <div class="symbol-card">
+        <div class="swatch" style="background:#28246e;color:#f2c230;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;text-align:center;padding:8px;font-family:'Inter',sans-serif;letter-spacing:0.06em;">IDENTIDAD<br>GAMBETA<br>ABYA YALA</div>
+        <h3>Identidad · Gambeta · Abya Yala</h3>
+        <p>Três palavras que carregam a essência cultural: <em>Identidad</em> é o compromisso ativo com os espaços onde habitamos. <em>Gambeta</em> é a criatividade para decidir em contextos de alta incerteza. <em>Abya Yala</em> dá nome à coleção, a denominação do nosso território a partir de outras narrativas.</p>
+      </div>
+      <div class="symbol-card">
+        <div class="swatch" style="background:#f6edd7;color:#28246e;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:32px;font-family:Fraunces,serif;">12</div>
+        <h3>Número 12</h3>
+        <p>No futebol, é o número característico para representar a hinchada. No futsal, é usado pelo jogador mais relevante da história. É um número carregado de simbolismos: a torcida como parte do time, não plateia.</p>
+      </div>
+      <div class="symbol-card">
+        <div class="swatch" style="background:conic-gradient(from 45deg,#db1a1c 0deg 45deg,#f2c230 45deg 90deg,#109648 90deg 135deg,#feef00 135deg 180deg,#6d2981 180deg 225deg,#28246e 225deg 270deg,#ffffff 270deg 315deg,#109648 315deg 360deg);"></div>
+        <h3>Wiphala na nuca e no 12</h3>
+        <p>Emblema quadrangular de sete cores, inicialmente usado pelos povos andinos e posteriormente adotado por outros povos indígenas. Aparece na etiqueta da nuca e preenche o número 12 nas costas. Cada cor tem significado oficial (D.S. 241/2009, art. 28º): vermelho = planeta Terra; laranja = sociedade e cultura; amarelo = energia e força; branco = tempo e dialética; verde = economia e produção; azul = espaço cósmico; violeta = política e ideologia comunitária.</p>
+      </div>
+      <div class="symbol-card">
+        <div class="swatch" style="background:linear-gradient(180deg,#28246e 0%,#28246e 50%,#0d8050 50%,#0d8050 100%);"></div>
+        <h3>Araucária</h3>
+        <p>O Pehuén é considerado a árvore sagrada dos povos originários do centro e sul do Chile e da Argentina, mas tem significado para todo o território do nosso continente. O objetivo é promover a conscientização sobre a exploração e o desmatamento. O fruto da Araucária é o Piñón.</p>
+      </div>
+    </div>
+
+    <blockquote class="quote">"He dicho Escuela del Sur porque, en realidad, nuestro norte es el Sur. No debe haber norte, para nosotros, sino por oposición a nuestro Sur. Por eso, ahora colocamos el mapa al revés."<cite>— Joaquín Torres García, 1935</cite></blockquote>
   </div>
 </section>
 
@@ -424,16 +487,87 @@ footer .bottom { border-top: 1px solid rgba(246,237,215,0.1); padding-top: 24px;
   <div class="inner">
     <span class="eyebrow">Capítulo 04</span>
     <h2>Conexão com o Time da Educação</h2>
-    <p>A Camisa Abya Yala é uma das quatro peças do Time da Educação. As outras três são o <strong>Documentário A Bola Conecta</strong>, a <strong>Metodologia ABC</strong> e o <strong>Guia Copa 2026</strong>. Cada peça abre uma porta diferente para o mesmo projeto pedagógico.</p>
-    <p>O Time da Educação é um programa da Gondwana FC · Time da Educação, conduzido por Sebastián Acevedo e Mônica Villas Boas. O programa usa o futebol como pretexto para discutir território, ancestralidade, gênero, raça, classe e direito à educação.</p>
+    <p>A Camisa Abya Yala é uma das quatro peças do Time da Educação. As outras três são o <strong>Documentário A Bola Conecta</strong>, a <strong>Metodologia Gondwana ABC</strong> e o <strong>Guia Copa 2026</strong>. Cada peça abre uma porta diferente para o mesmo projeto pedagógico.</p>
+    <p>O Time da Educação é um programa da <strong>Gondwana FC</strong>, marca que conecta cultura latino-americana e africana (e o Sul Global) por meio de narrativas criativas, críticas e decoloniais. A peça foi produzida em colaboração com a marca esportiva brasileira <strong>LWGA</strong>, com o propósito de usar o poder e a cultura do futebol para que as pessoas levem a história na pele.</p>
+    <p>Atualmente o programa trabalha na intersecção entre educação, cultura e esporte em distintos lugares da América Latina, por meio da <strong>Metodologia Gondwana ABC</strong> (Audiovisual, Balón y Cámara como herramientas alfabetizadoras en habilidades socioemocionales), promovendo a democratização do acesso ao conhecimento, a tomada de consciência e a participação social.</p>
     <p>Adquirir a camiseta é vestir o método. É dizer, com o corpo, que aquela pessoa também entrou em campo.</p>
+
+    <h3 class="symbol-h3">Glossário pedagógico</h3>
+    <dl class="glossary">
+      <dt>Gondwana (supercontinente)</dt>
+      <dd>Nome geológico do supercontinente que existiu ao sul da linha do equador há cerca de 200 milhões de anos, durante o período triásico. Reuniu terras dos atuais continentes da Antártida, América do Sul, África, Índia, Austrália, Nova Zelândia, Madagascar, Nova Guiné, Nova Caledônia e Ilhas Seychelles.</dd>
+
+      <dt>Sur Global</dt>
+      <dd>Expressão que se refere a países com características compartilhadas, geralmente associadas a nações em desenvolvimento ou emergentes. Os países do Sul Global incluem muitas nações da América Latina, África, Ásia e Oceania.</dd>
+
+      <dt>Wiphala</dt>
+      <dd>Emblema quadrangular de sete cores, inicialmente usado pelos povos andinos e posteriormente adotado por outros povos indígenas. Na Bolívia, o Decreto Supremo Nº 241 (5 de agosto de 2009), artigo 28º, definiu oficialmente o significado de cada cor.</dd>
+
+      <dt>Metodologia Gondwana ABC</dt>
+      <dd>Audiovisual, Balón y Cámara como herramientas alfabetizadoras en habilidades socioemocionales. Tecnologia social baseada no uso pedagógico do audiovisual, da bola e da câmera para desenvolvimento de habilidades humanas e alfabetização socioeducativa.</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="pedido-camisa" id="pedido">
+  <div class="container">
+    <h2>Pedido da Camisa Abya Yala</h2>
+    <p>A camiseta é o único produto com compra direta. <strong>R$ 149 a unidade + frete</strong> calculado pelo CEP. Preencha o formulário abaixo, enviamos o Pix com o valor total, produção inicia após confirmação do pagamento.</p>
+
+    <form action="https://www.abolaconecta.com.br/api/leads" method="POST" id="pedido-form">
+    <input type="hidden" name="source" value="a-bola-conecta" />
+    <input type="hidden" name="lead_type" value="pedido_camisa" />
+    <input type="hidden" name="form_id" value="loja-pedido-camisa" />
+    <input type="hidden" name="campaign" value="a-bola-conecta-catalogo" />
+    <input type="hidden" name="page" value="https://www.abolaconecta.com.br/camisa-abya-yala" />
+    <input type="hidden" name="interest" value="Pedido de camisa Gondwana FC - Time da Educação" />
+    <input type="hidden" name="stage" value="novo" />
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;">
+    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Nome completo *</label><input type="text" name="contact_name" required style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
+    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Email *</label><input type="email" name="email" required style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;">
+    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">WhatsApp *</label><input type="tel" name="phone" required placeholder="(11) 99999-9999" style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
+    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">CPF (nota fiscal)</label><input type="text" name="cpf" placeholder="000.000.000-00" style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;">
+    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Tamanho *</label><select name="shirt_size" required style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;"><option value="">Selecione</option><option value="P">P</option><option value="M">M</option><option value="G">G</option><option value="GG">GG</option><option value="XGG">XGG</option></select></div>
+    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Quantidade *</label><select name="quantity" required style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;"><option value="1">1 camisa</option><option value="2">2 camisas</option><option value="3">3 camisas</option><option value="4">4 camisas</option><option value="5">5 camisas</option><option value="6+">6 ou mais</option></select></div>
+    </div>
+
+    <div style="margin: 16px 0;"><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">CEP *</label><input type="text" name="cep" required placeholder="00000-000" style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;">
+    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Rua e número *</label><input type="text" name="street" required style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
+    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Complemento</label><input type="text" name="complement" style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;">
+    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Cidade *</label><input type="text" name="city" required style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
+    <div><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Estado *</label><input type="text" name="state" required maxlength="2" style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;" /></div>
+    </div>
+
+    <div style="margin: 16px 0;"><label style="display:block;margin-bottom:4px;color:var(--fg);font-weight:500;font-size:0.9rem;">Observações (ponto de referência, tipo de frete preferido)</label><textarea name="observations" placeholder="Ex: Prédio azul, porteiro 24h. Prefiro SEDEX." style="width:100%;padding:10px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:6px;color:var(--fg);font-family:inherit;font-size:14px;min-height:80px;"></textarea></div>
+
+    <input type="hidden" name="consent" value="true" />
+    <button type="submit" class="cta" style="font-size:1rem;padding:14px 28px;background: var(--milho, #F2C230); color: hsl(28 30% 10%); font-weight: 700; border: 0; border-radius: 999px; cursor: pointer;">Enviar pedido</button>
+    </form>
+
+    <p style="margin-top: 16px; color: var(--muted); font-size: 0.9rem;">Após o envio, você receberá um email com o valor total (camisa R$ 149 + frete pelo CEP) e os dados para pagamento via Pix. Produção só inicia após confirmação do pagamento.</p>
+
+    <h2>Trocas e devoluções</h2>
+    <p>Trocas por tamanho são gratuitas em até 30 dias após o recebimento, desde que a camisa não tenha sido usada. Devoluções com reembolso integral em até 7 dias, conforme Código de Defesa do Consumidor.</p>
+    <p>Para acionar troca ou devolução, envie email para <code style="background:rgba(255,255,255,0.08); padding:2px 6px; border-radius:4px;">contato.gondwana@gmail.com</code> com número do pedido.</p>
   </div>
 </section>
 
 <section class="cta-final">
   <h2>Vista o método. Entre em campo.</h2>
   <p>Camiseta pedagógica do Time da Educação. Envio para todo Brasil. Manual pedagógico incluso.</p>
-  <a href="/loja/#pedido-camisa" class="btn btn-primary">Fazer pedido · R$ 149</a>
+  <a href="#pedido" class="btn btn-primary">Fazer pedido · R$ 149</a>
   <button type="button" class="btn btn-secondary pix-trigger">Apoiar a circulação aberta</button>
 </section>
 
