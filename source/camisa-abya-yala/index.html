@@ -3,28 +3,483 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="refresh" content="3; url=/loja">
 <title>Camisa Abya Yala | A Bola Conecta</title>
-<meta name="robots" content="noindex,nofollow">
-<meta name="description" content="Camiseta Abya Yala A Bola Conecta - R$ 149 - Envio para todo Brasil. Edição especial do documentário.">
-<link rel="canonical" href="https://www.abolaconecta.com.br/loja">
+<meta name="description" content="A camiseta pedagógica do Time da Educação. Por que o nome Abya Yala, o que cada símbolo carrega, como usar em sala.">
+<link rel="canonical" href="https://www.abolaconecta.com.br/camisa-abya-yala/">
+<meta property="og:title" content="Camisa Abya Yala | A Bola Conecta" />
+<meta property="og:description" content="A camiseta pedagógica do Time da Educação. Por que o nome Abya Yala, o que cada símbolo carrega, como usar em sala." />
+<meta property="og:url" content="https://www.abolaconecta.com.br/camisa-abya-yala/" />
+<meta property="og:image" content="https://www.abolaconecta.com.br/assets/camisa-abya-yala.jpg" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Camisa Abya Yala | A Bola Conecta" />
+<meta name="twitter:description" content="A camiseta pedagógica do Time da Educação. Por que o nome Abya Yala, o que cada símbolo carrega, como usar em sala." />
+<meta name="twitter:image" content="https://www.abolaconecta.com.br/assets/camisa-abya-yala.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="/assets/site-header.css">
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #0a0f1e; color: #f8edd2; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
-.box { max-width: 520px; text-align: center; }
-h1 { font-size: 28px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 12px; color: #f2c230; }
-p { font-size: 16px; line-height: 1.6; margin-bottom: 24px; opacity: 0.9; }
-a.cta { display: inline-block; background: #f2c230; color: #121611; padding: 14px 28px; border-radius: 999px; text-decoration: none; font-weight: 800; font-size: 15px; margin-top: 8px; }
-a.cta:hover { background: #f5d34d; }
-.note { font-size: 13px; opacity: 0.6; margin-top: 16px; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #fbf3dc; color: #1a1a1a; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; }
+.hero {
+  background: linear-gradient(135deg, #122a4f 0%, #1f3a6e 50%, #2a4a85 100%);
+  color: #f6edd7;
+  padding: 140px 24px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(242,194,48,0.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-inner { max-width: 880px; margin: 0 auto; position: relative; }
+.hero .tag {
+  display: inline-block;
+  background: rgba(242,194,48,0.18);
+  color: #f2c230;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-size: clamp(40px, 7vw, 72px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: #f6edd7;
+  margin-bottom: 16px;
+  font-family: 'Fraunces', serif;
+}
+.hero .subtitle {
+  font-size: clamp(18px, 2.2vw, 22px);
+  color: rgba(246,237,215,0.85);
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+.hero .price {
+  display: inline-block;
+  background: #f2c230;
+  color: #121611;
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background .2s;
+}
+.hero .price:hover { background: #f5d34d; }
+
+.section {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+.section.dark {
+  background: #122a4f;
+  color: #f6edd7;
+  max-width: none;
+}
+.section.dark .inner { max-width: 880px; margin: 0 auto; }
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f2c230;
+  margin-bottom: 12px;
+}
+.section h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin-bottom: 24px;
+  font-family: 'Fraunces', serif;
+}
+.section.dark h2 { color: #f6edd7; }
+.section .lead {
+  font-size: clamp(17px, 2vw, 19px);
+  color: #444;
+  margin-bottom: 20px;
+}
+.section.dark .lead { color: rgba(246,237,215,0.85); }
+.section p {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.section.dark p { color: rgba(246,237,215,0.78); }
+.section.dark .quote {
+  border-left: 3px solid #f2c230;
+  padding-left: 20px;
+  font-style: italic;
+  margin: 32px 0;
+  color: #f6edd7;
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+}
+.section.dark .quote cite {
+  display: block;
+  font-style: normal;
+  font-size: 13px;
+  color: rgba(246,237,215,0.6);
+  margin-top: 8px;
+  font-family: 'Inter', sans-serif;
+}
+
+.symbol-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.symbol-card {
+  background: rgba(242,194,48,0.06);
+  border: 1px solid rgba(242,194,48,0.2);
+  border-radius: 12px;
+  padding: 24px;
+}
+.symbol-card .swatch {
+  width: 100%;
+  height: 60px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.symbol-card h3 {
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #f2c230;
+}
+.symbol-card p {
+  font-size: 14px;
+  color: rgba(246,237,215,0.75);
+  margin: 0;
+}
+
+.kit-list {
+  list-style: none;
+  margin-top: 32px;
+  counter-reset: kit;
+}
+.kit-list li {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 16px;
+  align-items: start;
+  counter-increment: kit;
+}
+.section.dark .kit-list li {
+  border-bottom-color: rgba(246,237,215,0.15);
+}
+.kit-list li::before {
+  content: counter(kit, decimal-leading-zero);
+  font-weight: 800;
+  color: #f2c230;
+  font-size: 18px;
+  font-family: 'Fraunces', serif;
+}
+
+.reading-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-left: 4px solid #f2c230;
+  border-radius: 12px;
+  padding: 32px;
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.reading-card .cover {
+  width: 120px;
+  height: 160px;
+  background: linear-gradient(135deg, #1a3a5f 0%, #2a4a7a 100%);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  font-family: 'Fraunces', serif;
+  color: #f2c230;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.reading-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  font-family: 'Fraunces', serif;
+}
+.reading-card .meta {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+.reading-card p {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 16px;
+}
+.reading-card .btn-link {
+  display: inline-block;
+  color: #c0392b;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 14px;
+}
+.reading-card .btn-link:hover { text-decoration: underline; }
+
+.cta-final {
+  background: #122a4f;
+  color: #f6edd7;
+  padding: 80px 24px;
+  text-align: center;
+}
+.cta-final h2 {
+  color: #f6edd7;
+  font-size: clamp(28px, 4vw, 38px);
+  margin-bottom: 16px;
+  font-family: 'Fraunces', serif;
+}
+.cta-final p {
+  color: rgba(246,237,215,0.8);
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+.btn {
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background .2s, transform .2s;
+  margin: 6px;
+}
+.btn-primary { background: #f2c230; color: #121611; }
+.btn-primary:hover { background: #f5d34d; transform: translateY(-1px); }
+.btn-secondary {
+  background: transparent;
+  color: #f6edd7;
+  border: 2px solid #f2c230;
+}
+.btn-secondary:hover { background: rgba(242,194,48,0.1); transform: translateY(-1px); }
+
+footer.site-footer {
+  background: #0a1828;
+  color: rgba(246,237,215,0.7);
+  padding: 60px 24px 24px;
+  font-size: 14px;
+}
+footer .container { max-width: 1200px; margin: 0 auto; }
+footer .grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+@media (max-width: 720px) {
+  footer .grid { grid-template-columns: 1fr 1fr; }
+  .reading-card { grid-template-columns: 1fr; }
+  .reading-card .cover { width: 100px; height: 130px; }
+}
+footer h4 { color: #f2c230; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; font-weight: 800; }
+footer ul { list-style: none; }
+footer li { margin-bottom: 8px; }
+footer a { color: rgba(246,237,215,0.7); text-decoration: none; }
+footer a:hover { color: #f2c230; }
+footer .bottom { border-top: 1px solid rgba(246,237,215,0.1); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+
+@media (max-width: 720px) {
+  .hero { padding: 110px 16px 60px; }
+  .section { padding: 60px 16px; }
+}
 </style>
 </head>
 <body>
-<main class="box">
-  <h1>Camisa Abya Yala</h1>
-  <p>A camiseta do documentário A Bola Conecta agora vive na nossa loja. Você será redirecionado em 3 segundos.</p>
-  <a href="/loja" class="cta">Ir para a loja →</a>
-  <p class="note">Ou continue manualmente pelo botão acima. A página /camisa-abya-yala foi unificada à loja para facilitar a navegação.</p>
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      <img class="logo" src="/assets/a-bola-conecta-logo.png" alt="A Bola Conecta">
+    </a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="/">Início</a>
+      <a href="/documentario/">O Filme</a>
+      <a href="/sobre/">Sobre</a>
+      <a href="/servicos/">Serviços</a>
+      <a href="/comunidade/">Comunidade</a>
+      <a href="/loja/" class="active">Loja</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contato/">Contato</a>
+      <a href="/copa-2026/" class="copa-nav-link">Copa 2026</a>
+    </nav>
+    <a class="support-btn" href="/comunidade/#apoio">Apoie</a>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="tag">Camiseta pedagógica · Time da Educação</span>
+    <h1>Camisa Abya Yala</h1>
+    <p class="subtitle">A peça carrega um continente. Cada símbolo é uma escolha pedagógica para usar em sala, na quadra, no corpo e na conversa.</p>
+    <a href="/loja/#pedido-camisa" class="price">Fazer pedido · R$ 149</a>
+  </div>
+</section>
+
+<section class="section">
+  <span class="eyebrow">Capítulo 01</span>
+  <h2>Por que Abya Yala</h2>
+  <p class="lead">"Abya Yala" significa <strong>"terra em plena maturidade"</strong> ou "terra de sangue vital" na língua do povo Kuna, do Panamá e da Colômbia. É o nome que diversos povos originários das Américas dão ao continente desde antes da chegada colonial.</p>
+  <p>Nomear Abya Yala desloca o ponto de partida. A educação deixa de ser algo que chegou com a escola colonial e passa a ser entendida como prática ancestral, comunitária, corporal, oral, territorial e espiritual.</p>
+  <p>A terra é professora: ensina tempo, ciclo, limite, cuidado, pertencimento, leitura de sinais, relação entre espécies e vida em comunidade.</p>
+  <p>Chamar a camiseta de <em>Abya Yala</em> é afirmar que o Time da Educação não começa pela colonização. Começa pela terra habitada e ensinada, pelos povos que já tinham educação antes da escola europeia, e por tudo que segue vivo nos territórios.</p>
+
+  <div class="reading-card">
+    <div class="cover">Abya Yala</div>
+    <div>
+      <h3>Leitura recomendada</h3>
+      <div class="meta">Abya Yala: una visión indígena · Colectivo de autores · Prensa Latina / Instituto Nacional (México) · 2012</div>
+      <p>Compêndio de reportagens, crónicas e entrevistas cobrindo 30+ países da América Latina, com prefácio de Evo Morales. A obra reúne vozes dos povos Kuna, Aymara, Quechua, Guaraní, Mapuche, Wayúu, Taíno, Charrúa, Miskito, Quiché e muitos outros, mapeando as lutas contemporâneas por território, identidade e educação intercultural. É referência para entender por que "Abya Yala" não é uma escolha estética — é uma posição política, pedagógica e continental.</p>
+      <a class="btn-link" href="/assets/Abya_Yala_vision_indigena.pdf" target="_blank" rel="noopener">Baixar livro em PDF (1.1 MB) →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="inner">
+    <span class="eyebrow">Capítulo 02</span>
+    <h2>Símbolos da peça</h2>
+    <p class="lead">Cada elemento da camiseta foi pensado para abrir conversa em sala, na roda, na arquibancada. Nada está ali por estética isolada.</p>
+
+    <div class="symbol-grid">
+      <div class="symbol-card">
+        <div class="swatch" style="background:#122a4f;"></div>
+        <h3>Azul royal</h3>
+        <p>Cor do manto de Nossa Senhora Aparecida, padroeira do Brasil. Para o Time da Educação, conecta fé popular e identidade brasileira numa só peça.</p>
+      </div>
+      <div class="symbol-card">
+        <div class="swatch" style="background:#c0392b;"></div>
+        <h3>Gola e punhos vermelhos</h3>
+        <p>Vermelho da Wiphala, bandeira quadrada dos povos andinos que representa os quatro elementos e a comunidade. Também remete ao uniforme da Seleção Brasileira.</p>
+      </div>
+      <div class="symbol-card">
+        <div class="swatch" style="background:repeating-linear-gradient(45deg,#f2c230 0,#f2c230 8px,#c0392b 8px,#c0392b 16px,#122a4f 16px,#122a4f 24px);"></div>
+        <h3>Padrão Wiphala</h3>
+        <p>Faixa têxtil em padrão xadrez que representa a matriz dos povos andinos. Está presente nas golas como assinatura pedagógica.</p>
+      </div>
+      <div class="symbol-card">
+        <div class="swatch" style="background:#f6edd7;color:#122a4f;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:24px;font-family:Fraunces,serif;">12</div>
+        <h3>Número 12 nas costas</h3>
+        <p>O jogador número 12 é a torcida. Quem veste a camisa soma à equipe. A torcida é parte do time, não plateia.</p>
+      </div>
+      <div class="symbol-card">
+        <div class="swatch" style="background:#0d8050;color:#f6edd7;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;text-align:center;padding:8px;">América do Sul invertida</div>
+        <h3>Mapa no peito</h3>
+        <p>O continente americano aparece invertido no peito direito. É o ponto de partida Abya Yala: olhar o mapa a partir do sul, não a partir de quem chegou de fora.</p>
+      </div>
+      <div class="symbol-card">
+        <div class="swatch" style="background:#f2c230;color:#121611;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;text-align:center;padding:8px;">Time da Educação</div>
+        <h3>Selo Time da Educação</h3>
+        <p>Identifica a peça como instrumento da Metodologia ABC. Quem usa está dentro do time, não é só cliente.</p>
+      </div>
+    </div>
+
+    <blockquote class="quote">"O uniforme é parte do método. Quando o educador veste a camisa, ele está dizendo que entrou em campo com o time, não de fora."<cite>— Princípio pedagógico do Time da Educação</cite></blockquote>
+  </div>
+</section>
+
+<section class="section">
+  <span class="eyebrow">Capítulo 03</span>
+  <h2>Manual pedagógico incluso</h2>
+  <p class="lead">A camiseta não vem sozinha. Junto com cada peça vai um guia curto com três entradas de uso em sala, pensado para professor, mediador ou treinador comunitário.</p>
+
+  <ol class="kit-list">
+    <li><div><strong>Leitura dos símbolos</strong><br>Texto curto explicando cada elemento da peça e como abrir conversa em aula sobre pertencimento, ancestralidade e educação intercultural.</div></li>
+    <li><div><strong>Roda de conversa Abya Yala</strong><br>Roteiro de 30 minutos para conduzir roda com jovens a partir da pergunta: "o que esta terra ensina antes da escola?".</div></li>
+    <li><div><strong>Conexão com a Metodologia ABC</strong><br>Indicação de quais Fichas Pedagógicas do Time da Educação dialogam com cada símbolo da camiseta, para uso em sequência didática.</div></li>
+  </ol>
+</section>
+
+<section class="section dark">
+  <div class="inner">
+    <span class="eyebrow">Capítulo 04</span>
+    <h2>Conexão com o Time da Educação</h2>
+    <p>A Camisa Abya Yala é uma das quatro peças do Time da Educação. As outras três são o <strong>Documentário A Bola Conecta</strong>, a <strong>Metodologia ABC</strong> e o <strong>Guia Copa 2026</strong>. Cada peça abre uma porta diferente para o mesmo projeto pedagógico.</p>
+    <p>O Time da Educação é um programa da Gondwana FC · Time da Educação, conduzido por Sebastián Acevedo e Mônica Villas Boas. O programa usa o futebol como pretexto para discutir território, ancestralidade, gênero, raça, classe e direito à educação.</p>
+    <p>Adquirir a camiseta é vestir o método. É dizer, com o corpo, que aquela pessoa também entrou em campo.</p>
+  </div>
+</section>
+
+<section class="cta-final">
+  <h2>Vista o método. Entre em campo.</h2>
+  <p>Camiseta pedagógica do Time da Educação. Envio para todo Brasil. Manual pedagógico incluso.</p>
+  <a href="/loja/#pedido-camisa" class="btn btn-primary">Fazer pedido · R$ 149</a>
+  <a href="/comunidade/#apoio" class="btn btn-secondary">Apoiar a circulação aberta</a>
+</section>
+
 </main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="grid">
+      <div>
+        <h4>A Bola Conecta</h4>
+        <p>Documentário, loja pedagógica e comunidade de educação pelo futebol. Um programa da Gondwana FC · Time da Educação.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="/metodologia/">Metodologia ABC</a></li>
+          <li><a href="/servicos/">Serviços</a></li>
+          <li><a href="/sobre/">Sobre</a></li>
+          <li><a href="/contato/">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Projeto</h4>
+        <ul>
+          <li><a href="/documentario/">Documentário</a></li>
+          <li><a href="/copa-2026/">Copa 2026</a></li>
+          <li><a href="/festivais/">Festivais e exibição</a></li>
+          <li><a href="/sobre/#equipe">Equipe</a></li>
+          <li><a href="/imprensa/">Imprensa</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Operador</h4>
+        <ul>
+          <li>Da Silva e Vásquez Formação e Consultoria</li>
+          <li>CNPJ 62.085.700/0001-83</li>
+          <li><a href="mailto:contato.gondwana@gmail.com">contato.gondwana@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 A Bola Conecta · Gondwana FC · Time da Educação</span>
+      <span><a href="/privacidade/">Privacidade</a> · <a href="/mapa-do-site/">Mapa do site</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site-header.js"></script>
 </body>
 </html>
