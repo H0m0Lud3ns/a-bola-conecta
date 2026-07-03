@@ -1,0 +1,148 @@
+/* pix-copy.css
+   Botao "Apoie" vira gatilho de dropdown com chave PIX + botao copiar.
+   Sem QR code, sem pagina nova. 1 clique resolve.
+   Autor: Agente Sebas-Acevedo-AI | 2026-07-02
+*/
+
+.pix-trigger {
+  cursor: pointer;
+  font: inherit;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Painel flutuante */
+.pix-panel {
+  position: absolute;
+  z-index: 10000;
+  width: min(360px, calc(100vw - 32px));
+  background: hsl(28 18% 7%);
+  color: hsl(38 30% 94%);
+  border: 1px solid hsla(38, 30%, 94%, .18);
+  border-radius: 14px;
+  padding: 18px 18px 16px;
+  box-shadow: 0 22px 70px rgba(0, 0, 0, .55);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity .14s ease, transform .14s ease;
+}
+
+.pix-panel.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.pix-panel__context {
+  margin: 0 0 14px;
+  color: hsla(38, 30%, 94%, .82);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.pix-panel__context strong {
+  color: hsl(45 96% 58%);
+  font-weight: 700;
+}
+
+.pix-panel__key-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: hsla(38, 30%, 94%, .62);
+  margin-bottom: 6px;
+}
+
+.pix-panel__key-wrap {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+  background: hsla(38, 30%, 94%, .06);
+  border: 1px solid hsla(38, 30%, 94%, .18);
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.pix-panel__key {
+  flex: 1;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  font-size: 13px;
+  letter-spacing: .01em;
+  background: transparent;
+  border: 0;
+  color: hsl(38 30% 94%);
+  padding: 10px 10px;
+  border-radius: 7px;
+  user-select: all;
+  -webkit-user-select: all;
+  outline: 0;
+  cursor: text;
+}
+
+.pix-panel__copy {
+  border: 0;
+  background: hsl(45 96% 58%);
+  color: hsl(28 30% 10%);
+  font-weight: 800;
+  font-size: 13px;
+  padding: 0 14px;
+  border-radius: 7px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .12s ease, transform .08s ease;
+}
+
+.pix-panel__copy:hover {
+  background: hsl(45 96% 68%);
+}
+
+.pix-panel__copy:active {
+  transform: scale(.97);
+}
+
+.pix-panel__copy.is-copied {
+  background: hsl(138 42% 42%);
+  color: hsl(38 30% 96%);
+}
+
+.pix-panel__legal {
+  margin: 12px 0 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: hsla(38, 30%, 94%, .55);
+}
+
+.pix-panel__close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: 0;
+  color: hsla(38, 30%, 94%, .55);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.pix-panel__close:hover {
+  color: hsl(38 30% 94%);
+  background: hsla(38, 30%, 94%, .08);
+}
+
+/* Mobile: panel ocupa largura quase total */
+@media (max-width: 480px) {
+  .pix-panel {
+    width: calc(100vw - 24px);
+    padding: 16px;
+  }
+}

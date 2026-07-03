@@ -55,6 +55,7 @@ strong { color: var(--fg); }
 @media (max-width: 600px) { body { padding: 20px 16px; } }
 </style>
  <link rel="stylesheet" href="/assets/site-header.css">
+  <link rel="stylesheet" href="/assets/pix-copy.css">
  <link rel="stylesheet" href="/assets/footer.css">
  <link rel="stylesheet" href="/assets/a11y.css">
 </head>
@@ -81,7 +82,7 @@ strong { color: var(--fg); }
  </nav>
  <div class="header-actions">
  <button class="menu-toggle" type="button" aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menu">Menu</button>
- <a class="support-btn" href="/comunidade/#apoio">Apoie</a>
+ <button type="button" class="support-btn pix-trigger">Apoie</button>
  </div>
  </div>
  <nav class="container mobile-nav" id="mobileMenu" aria-label="Menu mobile">
@@ -240,5 +241,6 @@ strong { color: var(--fg); }
  });
  });
 </script>
+  <script defer src="/assets/pix-copy.js"></script>
 </body>
 </html>

@@ -670,6 +670,7 @@ body::before {
 }]
 </script>
  <link rel="stylesheet" href="/assets/site-header.css">
+  <link rel="stylesheet" href="/assets/pix-copy.css">
  <link rel="stylesheet" href="/assets/footer.css">
  <link rel="stylesheet" href="/assets/a11y.css">
 </head>
@@ -695,7 +696,7 @@ body::before {
  </nav>
  <div class="header-actions">
  <button class="menu-toggle" type="button" aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menu">Menu</button>
- <a class="support-btn" href="/comunidade/#apoio">Apoie</a>
+ <button type="button" class="support-btn pix-trigger">Apoie</button>
  </div>
  </div>
  <nav class="container mobile-nav" id="mobileMenu" aria-label="Menu mobile">
@@ -971,7 +972,7 @@ body::before {
  <span class="section-kicker" style="color: var(--ouro);">Contribua</span>
  <h2 class="apoie-claim">A livre circulação<br/>começa com você.</h2>
  <p class="apoie-desc">Se o documentário, a Metodologia ABC ou as fichas da Copa foram valiosos pra você, contribua. Sua contribuição reconhece o valor recebido da pesquisa, produção científica e cultural, e sustenta a circulação aberta dos conteúdos e a democratização do acesso ao conhecimento. Cada contribuição via Pix é registrada com nota fiscal e recibo formal pela Da Silva e Vasquez Formação e Consultoria LTDA (CNPJ 62.085.700/0001-83).</p>
- <a href="/comunidade/#apoio" class="btn btn-primary">Contribuir com Pix</a>
+ <button type="button" class="btn btn-primary pix-trigger">Contribuir com Pix</button>
  </div>
 
  <div class="apoie-info">
@@ -1080,5 +1081,6 @@ body::before {
  });
  });
 </script>
+  <script defer src="/assets/pix-copy.js"></script>
 </body>
 </html>

@@ -133,6 +133,7 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
 }
 </style>
  <link rel="stylesheet" href="/assets/site-header.css">
+  <link rel="stylesheet" href="/assets/pix-copy.css">
   <link rel="stylesheet" href="/assets/footer.css">
  <link rel="stylesheet" href="/assets/a11y.css">
 </head>
@@ -159,7 +160,7 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
  </nav>
  <div class="header-actions">
  <button class="menu-toggle" type="button" aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menu">Menu</button>
- <a class="support-btn" href="/comunidade/#apoio">Apoie</a>
+ <button type="button" class="support-btn pix-trigger">Apoie</button>
  </div>
  </div>
  <nav class="container mobile-nav" id="mobileMenu" aria-label="Menu mobile">
@@ -543,5 +544,6 @@ h2 .count { color: var(--muted); font-size: 0.7em; font-family: 'Inter', sans-se
     });
   });
 </script>
+  <script defer src="/assets/pix-copy.js"></script>
 </body>
 </html>
