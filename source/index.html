@@ -147,7 +147,27 @@ h1, h2, h3, h4 { font-family: Fraunces, Georgia, serif; font-weight: 700; line-h
 .home-mapa { padding: 96px 0; text-align: center; }
 .home-mapa__eyebrow { display: block; font-size: 11px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: var(--mata); margin-bottom: 14px; }
 .home-mapa h2 { font-size: clamp(28px, 3.4vw, 38px); margin: 0 0 24px; }
-.home-mapa p { max-width: 720px; margin: 0 auto; color: var(--muted); font-size: 15px; }
+.home-mapa p { max-width: 720px; margin: 0 auto 32px; color: var(--muted); font-size: 15px; }
+.home-mapa__figure { margin: 0 auto; max-width: 1080px; padding: 0 16px; }
+.home-mapa__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid var(--linha);
+  box-shadow: 0 12px 48px rgba(0,0,0,0.32);
+  background: #1a1410;
+}
+.home-mapa__caption {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* CTA */
 .home-cta { padding: 80px 0 96px; background: linear-gradient(180deg, hsl(28 18% 9%), hsl(28 18% 7%)); text-align: center; }
@@ -442,7 +462,11 @@ h1, h2, h3, h4 { font-family: Fraunces, Georgia, serif; font-weight: 700; line-h
   <div class="container">
    <span class="home-mapa__eyebrow">— O mapa do supercontinente</span>
    <h2 id="mapa-title">O Gondwana que habitava em nós</h2>
-   <p>Novo mapa geológico do Gondwana. Este supercontinente reuniu por 350 milhões de anos os continentes atuais da América do Sul, África, Antártica, Austrália e Índia. O ponto vermelho mostra o local onde fica a tribo dos Gonds. Gerado pela equipe do Centro Digital de Geoprocessamento Gondwana — Departamento de Geologia (CDGG UFRJ). Schmitt e Silva/Reprodução.</p>
+   <p>Há 350 milhões de anos, os continentes atuais da América do Sul, África, Antártica, Austrália e Índia estavam reunidos num único bloco. O ponto vermelho mostra onde ficava a tribo dos Gonds, no centro da Índia. O documentário parte deste mapa para reconectar Brasil e África pela bola, pela câmera e pela memória.</p>
+   <figure class="home-mapa__figure">
+    <img class="home-mapa__img" src="/assets/mapa-supercontinente-gondwana.jpg" alt="Mapa geológico do supercontinente Gondwana reunindo América do Sul, África, Antártica, Austrália e Índia" loading="lazy">
+    <figcaption class="home-mapa__caption">Mapa geológico do Gondwana · Schmitt e Silva/Reprodução · Centro Digital de Geoprocessamento Gondwana — Departamento de Geologia (CDGG UFRJ)</figcaption>
+   </figure>
   </div>
  </section>
 
