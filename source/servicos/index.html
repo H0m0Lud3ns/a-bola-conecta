@@ -12,12 +12,12 @@
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Serviços educativos | A Bola Conecta</title>
-<meta name="description" content="Oficinas, cine-debates, palestras e licenciamento do documentário Gondwana para escolas, empresas e eventos - Metodologia ABC e Lei 10.639." />
+<title>Serviços educativos para escolas, empresas e eventos | A Bola Conecta</title>
+<meta name="description" content="Oficinas, cine-debates, formação docente, palestras e licenciamento do documentário A Bola Conecta para escolas, empresas, fundações e eventos - Metodologia ABC, Lei 10.639 e Lei 11.645." />
 <meta name="author" content="Mônica Saraiva da Silva · Sebastián Acevedo Vásquez" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Serviços educativos | A Bola Conecta" />
-<meta property="og:description" content="Oficinas, cine-debates, palestras e licenciamento do documentário Gondwana para escolas, empresas e eventos - Metodologia ABC e Lei 10.639." />
+<meta property="og:title" content="Serviços educativos para escolas, empresas e eventos | A Bola Conecta" />
+<meta property="og:description" content="Oficinas, cine-debates, formação docente, palestras e licenciamento do documentário A Bola Conecta para escolas, empresas, fundações e eventos - Metodologia ABC, Lei 10.639 e Lei 11.645." />
 <meta property="og:url" content="https://www.abolaconecta.com.br/servicos" />
 <meta property="og:image" content="https://www.abolaconecta.com.br/assets/og-servicos.jpg" />
 <meta property="og:image:width" content="1200" />
@@ -53,7 +53,7 @@ strong { color: var(--fg); font-weight: 600; }
 .back-link { display: inline-block; margin-bottom: 24px; color: var(--accent); text-decoration: none; font-size: 14px; }
 .back-link:hover { text-decoration: underline; }
 
-/* HEADER DA PÁGINA — logo A Bola Conecta branco */
+/* HEADER DA PÁGINA - logo A Bola Conecta branco */
 .page-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0 24px; margin-bottom: 32px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
 .page-header-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .page-header-brand img { height: 32px; width: auto; display: block; }
@@ -83,14 +83,23 @@ strong { color: var(--fg); font-weight: 600; }
 .servico .metodologia-link:hover { text-decoration: underline; }
 .servico .metodologia-link::after { content: ' →'; }
 
-.cta-box a:hover { transform: translateY(-2px); }
+.pathways { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 28px 0 34px; }
+.pathway { background: linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025)); border: 1px solid var(--line); border-radius: 14px; padding: 18px; text-decoration: none; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; transition: transform .2s ease, border-color .2s ease; }
+.pathway:hover { transform: translateY(-2px); border-color: rgba(245,158,11,.55); }
+.pathway b { color: var(--accent); font-family: 'Fraunces', serif; font-size: 1.12rem; line-height: 1.15; }
+.pathway span { color: var(--muted); font-size: .88rem; margin-top: 10px; }
+.pathway em { color: var(--fg); font-style: normal; font-size: .8rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin-top: 18px; }
+.action-strip { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0 10px; }
+.action-strip a, .servico .service-cta, .cta-box a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; border-radius: 999px; background: var(--accent); color: #1d1309; text-decoration: none; font-weight: 800; font-size: .9rem; transition: transform .2s ease; }
+.action-strip a.secundario, .servico .service-cta.secundario { background: transparent; color: var(--accent); border: 1px solid rgba(245,158,11,.58); }
+.cta-box a:hover, .action-strip a:hover, .servico .service-cta:hover { transform: translateY(-2px); }
 .cta-box a.secundario { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
 .cta-box .email { font-family: 'Fraunces', serif; font-style: italic; color: var(--muted); margin-top: 16px; font-size: 0.95rem; }
 
 /* BASE TEÓRICA */
 .base { background: var(--bg-card); padding: 28px; border-radius: 12px; margin: 32px 0; border-left: 4px solid var(--verde); }
 .base h2 { color: var(--verde); margin-top: 0; }
-/* TIME DE CRAQUES — mesmo padrão de /metodologia */
+/* TIME DE CRAQUES - mesmo padrão de /metodologia */
 .time { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 28px 0; }
 .craque { background: var(--bg-card); padding: 18px 18px 18px 22px; border-radius: 10px; border-left: 3px solid var(--accent); }
 .craque .nome { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 700; color: var(--fg); margin-bottom: 2px; }
@@ -103,7 +112,7 @@ strong { color: var(--fg); font-weight: 600; }
 .nav-inferior a { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
 .nav-inferior a:hover { text-decoration: underline; }
 
-/* DEPOIMENTOS — Quem passou por isso, diz */
+/* DEPOIMENTOS - Quem passou por isso, diz */
 .depoimentos-section { margin-top: 64px; }
 .depoimentos-section h2 { margin-bottom: 8px; }
 .depoimentos-eyebrow { font-size: 0.85rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 32px; }
@@ -280,8 +289,8 @@ strong { color: var(--fg); font-weight: 600; }
 }
 </script>
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Serviços educativos | A Bola Conecta" />
-    <meta name="twitter:description" content="Oficinas, cine-debates, palestras e licenciamento do documentário Gondwana para escolas, empresas e eventos - Metodologia ABC e Lei 10.639." />
+    <meta name="twitter:title" content="Serviços educativos para escolas, empresas e eventos | A Bola Conecta" />
+    <meta name="twitter:description" content="Oficinas, cine-debates, formação docente, palestras e licenciamento do documentário A Bola Conecta para escolas, empresas, fundações e eventos - Metodologia ABC, Lei 10.639 e Lei 11.645." />
     <meta name="twitter:image" content="https://www.abolaconecta.com.br/assets/og-servicos.jpg" />
   </head>
 <body>
@@ -325,20 +334,31 @@ strong { color: var(--fg); font-weight: 600; }
 
 <header>
  <span class="tag">SERVIÇOS EDUCATIVOS</span>
- <h1>O que oferecemos</h1>
- <p class="lead">Soluções pedagógicas, culturais e corporativas construídas a partir de 9 anos de trabalho em escolas, comunidades e eventos.</p>
+ <h1>Escolha o caminho certo para levar A Bola Conecta ao seu território.</h1>
+ <p class="lead">Oficinas, cine-debates, formação docente, palestras e licenciamento para escolas, marcas, fundações, festivais e projetos culturais.</p>
+ <div class="action-strip" aria-label="Ações principais">
+  <a href="/contato?perfil=escola&assunto=Levar%20A%20Bola%20Conecta%20para%20uma%20escola">Levar para uma escola</a>
+  <a class="secundario" href="/contato?perfil=empresa&assunto=Contratar%20A%20Bola%20Conecta%20para%20uma%20instituicao">Contratar para instituição</a>
+ </div>
 </header>
+
+<section class="pathways" aria-label="Caminhos por perfil">
+ <a class="pathway" href="#escolas"><b>Escolas e educadores</b><span>Cine-debate, oficinas, piloto institucional e formação docente.</span><em>Ver formatos</em></a>
+ <a class="pathway" href="#marcas"><b>Marcas e instituições</b><span>Patrocínio, coprodução, licenciamento e vivências para equipes.</span><em>Ver possibilidades</em></a>
+ <a class="pathway" href="#eventos"><b>Eventos e mídia</b><span>Palestras, mesas, exibição mediada e assessoria editorial.</span><em>Ver agendas</em></a>
+ <a class="pathway" href="/copa-2026"><b>Copa 2026</b><span>Fichas, guia educativo e experiências para sala de aula.</span><em>Baixar guia</em></a>
+</section>
 
 <!-- METODOLOGIA ÂNCORA -->
 <section style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(14, 72, 52, 0.08)); padding: 28px; border-radius: 14px; margin: 32px 0; border: 1px solid var(--line);">
  <span class="tag">METODOLOGIA ABC</span>
  <h3 style="color: var(--accent); margin-top: 8px; font-size: 1.4rem;">Tudo passa pela Metodologia ABC</h3>
- <p style="color: var(--fg); margin-top: 12px;">Cada serviço abaixo aplica, em formato diferente, a Metodologia ABC — Audiovisual, Bola, Câmera — testada em rede pública desde 2021 e publicada oficialmente pelo <strong>SESC São Paulo</strong> em 2025.</p>
+ <p style="color: var(--fg); margin-top: 12px;">Cada serviço abaixo aplica, em formato diferente, a Metodologia ABC - Audiovisual, Bola, Câmera - testada em rede pública desde 2021 e publicada oficialmente pelo <strong>SESC São Paulo</strong> em 2025.</p>
  <a href="/metodologia" class="metodologia-link" style="margin-top: 16px; display: inline-block;">Conhecer a Metodologia ABC completa</a>
 </section>
 
 <!-- ESCOLAS E EDUCADORES -->
-<section class="categoria">
+<section class="categoria" id="escolas">
  <span class="label">PARA ESCOLAS E EDUCADORES</span>
  <h2>Levar a Metodologia ABC para dentro da escola</h2>
  <p class="intro">Três formatos escaláveis, do mais pontual ao mais profundo. Todos cumprem a Lei 10.639/2003 e 11.645/2008 com caminho didático testado em rede pública.</p>
@@ -348,8 +368,9 @@ strong { color: var(--fg); font-weight: 600; }
  <h3>Cine-debate A Bola Conecta</h3>
  <span class="duracao">90 min</span>
  </div>
- <p class="promessa">A turma sai falando sobre ancestralidade africana no futebol — de forma espontânea</p>
+ <p class="promessa">A turma sai falando sobre ancestralidade africana no futebol - de forma espontânea</p>
  <p class="descricao">Exibição do documentário de 23 minutos seguida de mediação pedagógica. Funciona para introduzir o tema com qualquer turma do Fundamental II ao Médio, como atividade única ou porta de entrada para projetos mais longos.</p>
+ <a class="service-cta" href="/contato?perfil=escola&assunto=Cine-debate%20A%20Bola%20Conecta">Pedir proposta</a>
  </div>
 
  <div class="servico">
@@ -357,7 +378,7 @@ strong { color: var(--fg); font-weight: 600; }
  <h3>Oficina Metodologia ABC</h3>
  <span class="duracao">4 a 8 encontros</span>
  </div>
- <p class="promessa">O aluno sai autor da própria narrativa — com filme, fotos e decisão corporal feitas por ele.</p>
+ <p class="promessa">O aluno sai autor da própria narrativa - com filme, fotos e decisão corporal feitas por ele.</p>
  <p class="descricao">Sessões estruturadas com prática corporal (bola/freestyle), roda de diálogo, produção audiovisual autoral (câmera de celular) e exposição final. Usa as fichas pedagógicas da Copa 2026 como material de apoio opcional.</p>
  <a href="/metodologia" class="metodologia-link">Ver como funciona a Metodologia ABC</a>
  </div>
@@ -369,6 +390,7 @@ strong { color: var(--fg); font-weight: 600; }
  </div>
  <p class="promessa">A escola integra a Metodologia ABC ao currículo e termina com evento de compartilhamento com a comunidade.</p>
  <p class="descricao">Projeto completo com formação docente, planejamento curricular conjunto, acompanhamento semanal e evento final de apresentação dos trabalhos dos alunos para famílias e comunidade escolar.</p>
+ <a class="service-cta secundario" href="/contato?perfil=escola&assunto=Piloto%20institucional%20Metodologia%20ABC">Desenhar piloto</a>
  </div>
 
  <div class="servico">
@@ -382,7 +404,7 @@ strong { color: var(--fg); font-weight: 600; }
 </section>
 
 <!-- MARCAS E INSTITUIÇÕES -->
-<section class="categoria">
+<section class="categoria" id="marcas">
  <span class="label">PARA MARCAS E INSTITUIÇÕES</span>
  <h2>Usar futebol e educação como estratégia cultural</h2>
  <p class="intro">Três caminhos pra empresas, fundações e instituições que querem ir além do patrocínio esportivo tradicional e gerar conexão real com território, educação e Leis 10.639/2003 e 11.645/2008.</p>
@@ -392,7 +414,7 @@ strong { color: var(--fg); font-weight: 600; }
  <h3>Patrocínio e coprodução</h3>
  <span class="duracao">projeto</span>
  </div>
- <p class="promessa">A marca entra como produtora cultural — não como logomarca em camisa.</p>
+ <p class="promessa">A marca entra como produtora cultural - como produtora cultural com narrativa, território e presença editorial.</p>
  <p class="descricao">Apoio financeiro ou operacional a projetos como a Copa de Gondwana, exibição do documentário em circuito cultural, ou produção de novas edições da Metodologia ABC. Retorno de marca via narrativa editorial (não mídia tradicional).</p>
  </div>
 
@@ -401,8 +423,8 @@ strong { color: var(--fg); font-weight: 600; }
  <h3>Team building educativo</h3>
  <span class="duracao">1 dia</span>
  </div>
- <p class="promessa">O time sai sabendo decidir em situação de incerteza — e entendendo o porquê.</p>
- <p class="descricao">Vivência corporativa de meio período usando Bola, Câmera e Audiovisual como ferramentas de integração. Não é "dinâmica de grupo" — é a Metodologia ABC adaptada pra times que querem trabalhar decisão, escuta e protagonismo.</p>
+ <p class="promessa">O time sai sabendo decidir em situação de incerteza - e entendendo o porquê.</p>
+ <p class="descricao">Vivência corporativa de meio período usando Bola, Câmera e Audiovisual como ferramentas de integração. A Metodologia ABC entra como prática de decisão, escuta e protagonismo para times.</p>
  </div>
 
  <div class="servico">
@@ -412,11 +434,12 @@ strong { color: var(--fg); font-weight: 600; }
  </div>
  <p class="promessa">A instituição aplica a Metodologia ABC com marca própria, suporte pedagógico e material testado.</p>
  <p class="descricao">Licenciamento do documentário, fichas pedagógicas e guia do educador para uso institucional. Inclui mentoria de implementação e adaptação ao contexto da organização. Modelo para fundações educacionais, secretarias e ONGs.</p>
+ <a class="service-cta" href="/contato?perfil=empresa&assunto=Licenciamento%20A%20Bola%20Conecta">Consultar licenciamento</a>
  </div>
 </section>
 
 <!-- EVENTOS E MÍDIA -->
-<section class="categoria">
+<section class="categoria" id="eventos">
  <span class="label">PARA EVENTOS E MÍDIA</span>
  <h2>Levar a narrativa para palcos, telas e mídia</h2>
  <p class="intro">Três formatos pra festivais, eventos corporativos, programas de TV e mídia cultural.</p>
@@ -426,7 +449,7 @@ strong { color: var(--fg); font-weight: 600; }
  <h3>Palestras e mesas</h3>
  <span class="duracao">30 a 90 min</span>
  </div>
- <p class="promessa">A audiência sai entendendo que futebol, educação e ancestralidade são o mesmo campo — não três temas separados.</p>
+ <p class="promessa">A audiência sai entendendo que futebol, educação e ancestralidade são o mesmo campo - não três temas separados.</p>
  <p class="descricao">Apresentações sobre Metodologia ABC, educação via Leis 10.639 e 11.645, futebol como tecnologia social, ou documentário Gondwana A Bola Conecta. Mônica Saraiva e Sebastián Acevedo Vásquez ministram em dupla ou separados.</p>
  </div>
 
@@ -435,8 +458,9 @@ strong { color: var(--fg); font-weight: 600; }
  <h3>Exibição + debate</h3>
  <span class="duracao">90 a 120 min</span>
  </div>
- <p class="promessa">A sala sai em roda de conversa sobre cor da pele, jeito do cabelo e território — começando pelo futebol.</p>
- <p class="descricao">Exibição do documentário seguida de mediação ao vivo por Mônica ou Sebastián. Inclui material de apoio opcional (fichas pedagógicas da Copa 2026). Diferente de uma sessão comum: o documentário funciona como disparador, não como produto.</p>
+ <p class="promessa">A sala sai em roda de conversa sobre cor da pele, jeito do cabelo e território - começando pelo futebol.</p>
+ <p class="descricao">Exibição do documentário seguida de mediação ao vivo por Mônica ou Sebastián. Inclui material de apoio opcional com fichas pedagógicas da Copa 2026. O documentário funciona como disparador de conversa e criação.</p>
+ <a class="service-cta" href="/contato?perfil=evento&assunto=Exibicao%20com%20debate">Agendar exibição</a>
  </div>
 
  <div class="servico">
@@ -457,7 +481,7 @@ strong { color: var(--fg); font-weight: 600; }
  <p style="color: var(--muted); margin-bottom: 20px;">Os serviços acima são sustentados por uma base teórico-metodológica explicitamente declarada, mobilizada como "time de craques" da educação. Cinco referências centrais:</p>
 
  <figure style="margin: 20px 0; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 10px;">
- <img src="/assets/time-craques-gondwana-fc.webp" alt="Escalação da Seleção Brasileira de pensadores da Metodologia ABC — Time da Educação Gondwana FC." loading="lazy" style="width: 100%; height: auto; border-radius: 6px; display: block;" />
+ <img src="/assets/time-craques-gondwana-fc.webp" alt="Escalação da Seleção Brasileira de pensadores da Metodologia ABC - Time da Educação Gondwana FC." loading="lazy" style="width: 100%; height: auto; border-radius: 6px; display: block;" />
  </figure>
 
  <div class="time">
@@ -470,14 +494,14 @@ strong { color: var(--fg); font-weight: 600; }
 
  <div class="craque">
  <div class="nome">Antonieta de Barros</div>
- <div class="vida">Florianópolis, SC · 1901–1952</div>
+ <div class="vida">Florianópolis, SC · 1901-1952</div>
  <div class="posicao">Craque da educação</div>
- <div class="funcao">Pioneira na luta pelo direito à educação para todas as pessoas — especialmente mulheres negras. Educação como chave da emancipação.</div>
+ <div class="funcao">Pioneira na luta pelo direito à educação para todas as pessoas - especialmente mulheres negras. Educação como chave da emancipação.</div>
  </div>
 
  <div class="craque">
  <div class="nome">Paulo Freire</div>
- <div class="vida">Recife, PE · 1921–1997</div>
+ <div class="vida">Recife, PE · 1921-1997</div>
  <div class="posicao">Capitão</div>
  <div class="funcao">Dribla a opressão com a pedagogia libertadora. Educação como ato político e de amor. Diálogo como condição essencial.</div>
  </div>
@@ -491,7 +515,7 @@ strong { color: var(--fg); font-weight: 600; }
 
  <div class="craque">
  <div class="nome">Lélia Gonzalez</div>
- <div class="vida">Belo Horizonte, MG · 1935–1994</div>
+ <div class="vida">Belo Horizonte, MG · 1935-1994</div>
  <div class="posicao">Atacante</div>
  <div class="funcao">Visão afro-latino-americana. Não deixa passar oportunidade de denunciar injustiças e visibilizar a luta das mulheres negras e indígenas.</div>
  </div>
@@ -505,7 +529,7 @@ strong { color: var(--fg); font-weight: 600; }
 
  <div class="craque">
  <div class="nome">Carolina Maria de Jesus</div>
- <div class="vida">Sacramento, MG · 1914–1977</div>
+ <div class="vida">Sacramento, MG · 1914-1977</div>
  <div class="posicao">Motivadora (comissão técnica)</div>
  <div class="funcao">Luta e resistência. Mostra que poesia, música e arte são instrumentos de liberdade e visibilidade das reivindicações sociais.</div>
  </div>
@@ -514,7 +538,7 @@ strong { color: var(--fg); font-weight: 600; }
  <div class="nome">João Batista Freire</div>
  <div class="vida">Santos, SP · 1948</div>
  <div class="posicao">Pedagogo do corpo (comissão técnica)</div>
- <div class="funcao">Integra o corpo nos processos de alfabetização. Filosofia do futebol de rua como metodologia de ensino — o "sotaque corporal e intelectual".</div>
+ <div class="funcao">Integra o corpo nos processos de alfabetização. Filosofia do futebol de rua como metodologia de ensino - o "sotaque corporal e intelectual".</div>
  </div>
  </div>
 </section>
@@ -522,7 +546,7 @@ strong { color: var(--fg); font-weight: 600; }
 <!-- DEPOIMENTOS -->
 <section class="depoimentos-section">
  <h2>Quem passou por isso, diz</h2>
- <p class="depoimentos-eyebrow">3 vozes · Educadores, jovens e pesquisadoras · 2022–2026</p>
+ <p class="depoimentos-eyebrow">3 vozes · Educadores, jovens e pesquisadoras · 2022-2026</p>
 
  <div class="depoimentos-grid">
 
@@ -574,9 +598,10 @@ strong { color: var(--fg); font-weight: 600; }
 <div class="cta-box">
  <h3>Como contratar</h3>
  <p>Atendemos escolas, marcas, fundações, eventos e mídia. Operamos via Da Silva e Vasquez Formação e Consultoria (CNPJ 62.085.700/0001-83).</p>
- <a href="/metodologia">Ver Metodologia ABC</a>
- <a href="/contato" class="secundario">Falar conosco</a>
+ <a href="/contato?assunto=Solicitar%20proposta%20A%20Bola%20Conecta">Solicitar proposta</a>
+ <a href="/metodologia" class="secundario">Ver Metodologia ABC</a>
  <div class="email">contato.gondwana@gmail.com</div>
+</div>
 
 <!-- NAV INFERIOR -->
 <nav class="nav-inferior" aria-label="Navegação interna">
@@ -632,7 +657,7 @@ strong { color: var(--fg); font-weight: 600; }
  </div>
 
  <div class="footer-bottom">
- <p class="footer-copy">© 2026 Agência Gondwana FC — Time da Educação</p>
+ <p class="footer-copy">© 2026 Agência Gondwana FC - Time da Educação</p>
  <p class="footer-claim">A bola conecta.</p>
  </div>
  </div>

@@ -38,11 +38,12 @@
   const validateForm = (form) => {
     clearFieldErrors(form);
     let firstInvalid = null;
-    const nome = form.querySelector('[name="nome"]');
+    const nome = form.querySelector('[name="nome"], [name="contact_name"], [name="name"]');
     const email = form.querySelector('[name="email"]');
     const consent = form.querySelector('[name="consent"]');
+    const message = form.querySelector('[name="interest"], [name="interesse"], [name="mensagem"], [name="message"]');
     if (nome && !nome.value.trim()) {
-      showFieldError(nome, 'Diz teu nome pra gente saber quem recebeu o guia.');
+      showFieldError(nome, form.dataset.nameError || 'Diz teu nome pra gente saber quem está falando.');
       firstInvalid = firstInvalid || nome;
     }
     if (email) {
@@ -54,7 +55,11 @@
         firstInvalid = firstInvalid || email;
       }
     }
-    if (consent && !consent.checked) {
+    if (message && message.hasAttribute('required') && !message.value.trim()) {
+      showFieldError(message, form.dataset.messageError || 'Conta em poucas linhas o que você precisa.');
+      firstInvalid = firstInvalid || message;
+    }
+    if (consent && consent.type === 'checkbox' && !consent.checked) {
       const consentLabel = consent.closest('label');
       const consentErr = document.getElementById('err-guideConsent');
       if (consentErr) {
@@ -139,7 +144,6 @@
   };
 
   document.querySelectorAll('form[data-abc-lead]').forEach((form) => {
-    const submit = form.querySelector('button[type="submit"], #copaGuideSubmit') || form.querySelector('button');
     const onSubmit = async (event) => {
       if (event) {
         event.preventDefault();
@@ -183,7 +187,6 @@
       }
     };
     form.addEventListener('submit', onSubmit);
-    if (submit) submit.addEventListener('click', onSubmit);
   });
 
   // Reprocessa fila salva quando a rede volta, mesmo sem submit.

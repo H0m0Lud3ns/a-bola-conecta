@@ -1,4 +1,9 @@
 const DEFAULT_NOTIFY_EMAIL = 'contato.gondwana@gmail.com';
+const MAX_BODY_BYTES = 64 * 1024;
+const RATE_LIMIT_WINDOW_MS = 60 * 1000;
+const RATE_LIMIT_MAX = 12;
+const rateLimitHits = new Map();
+
 const ALLOWED_ORIGINS = new Set([
   'https://abolaconecta.com.br',
   'https://www.abolaconecta.com.br',
@@ -16,7 +21,13 @@ const env = (name, max = 1000) => clean(process.env[name], max);
 
 const readBody = async (req) => {
   const chunks = [];
-  for await (const chunk of req) chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(String(chunk)));
+  let size = 0;
+  for await (const chunk of req) {
+    const buffer = Buffer.isBuffer(chunk) ? chunk : Buffer.from(String(chunk));
+    size += buffer.length;
+    if (size > MAX_BODY_BYTES) throw new Error('payload_too_large');
+    chunks.push(buffer);
+  }
   const raw = Buffer.concat(chunks).toString('utf8');
   if (!raw) return {};
   try {
@@ -27,6 +38,28 @@ const readBody = async (req) => {
 };
 
 const isEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || '').trim());
+
+const clientIp = (req) => clean(
+  req.headers['x-forwarded-for']?.split(',')[0]
+  || req.headers['x-real-ip']
+  || req.socket?.remoteAddress
+  || 'unknown',
+  120,
+);
+
+const rateLimitKey = (req) => `${clientIp(req)}:${clean(req.headers.origin || 'same-origin', 120)}`;
+
+const rateLimited = (req, now = Date.now()) => {
+  const key = rateLimitKey(req);
+  const current = rateLimitHits.get(key) || { count: 0, resetAt: now + RATE_LIMIT_WINDOW_MS };
+  if (current.resetAt <= now) {
+    rateLimitHits.set(key, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+  current.count += 1;
+  rateLimitHits.set(key, current);
+  return current.count > RATE_LIMIT_MAX;
+};
 
 const getFields = (body) => (body.fields && typeof body.fields === 'object' ? body.fields : body);
 
@@ -386,6 +419,8 @@ module.exports = async (req, res) => {
   if (req.method !== 'POST') return json(res, 405, { ok: false, error: 'method_not_allowed' });
 
   try {
+    if (rateLimited(req)) return json(res, 429, { ok: false, error: 'rate_limited' });
+
     const body = await readBody(req);
     if (clean(body.website, 120)) return json(res, 202, { ok: true, ignored: true });
 
@@ -398,15 +433,22 @@ module.exports = async (req, res) => {
       return json(res, 200, {
         ok: true,
         dry_run: true,
-        lead,
+        lead: { form_id: lead.form_id, lead_type: lead.lead_type, created_at: lead.created_at },
         destinations: activeDestinations(),
         notification: { skipped: true, reason: 'dry_run_or_no_destinations', to: lead.internal_notify_email },
       });
     }
 
     const destinations = await runDestinations(lead);
-    return json(res, 200, { ok: true, dry_run: false, lead, destinations });
+    return json(res, 200, {
+      ok: true,
+      dry_run: false,
+      lead: { form_id: lead.form_id, lead_type: lead.lead_type, created_at: lead.created_at },
+      destinations,
+    });
   } catch (error) {
-    return json(res, 500, { ok: false, error: 'lead_handler_failed', detail: String(error.message || error).slice(0, 700) });
+    const message = String(error.message || error);
+    if (message === 'payload_too_large') return json(res, 413, { ok: false, error: 'payload_too_large' });
+    return json(res, 500, { ok: false, error: 'lead_handler_failed', detail: message.slice(0, 700) });
   }
 };

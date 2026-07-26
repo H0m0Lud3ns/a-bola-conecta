@@ -31,11 +31,11 @@ const routeCanonicals = new Map([
   ['privacidade/index.html', `${siteDomain}/privacidade`],
   ['imprensa/index.html', `${siteDomain}/imprensa`],
   ['metodologia/index.html', `${siteDomain}/metodologia`],
-  ['copa-2026/index.html', `${siteDomain}/copa-2026/`],
-  ['copa-2026/fichas/index.html', `${siteDomain}/copa-2026/fichas/`],
-  ['copa-2026/baixar/index.html', `${siteDomain}/copa-2026/baixar/`],
-  ['copa-2026/ebook-consolidado/index.html', `${siteDomain}/copa-2026/ebook-consolidado/`],
-  ['copa-2026/ebook-educadores-v1/index.html', `${siteDomain}/copa-2026/ebook-educadores-v1/`],
+  ['copa-2026/index.html', `${siteDomain}/copa-2026`],
+  ['copa-2026/fichas/index.html', `${siteDomain}/copa-2026/fichas`],
+  ['copa-2026/baixar/index.html', `${siteDomain}/copa-2026/baixar`],
+  ['copa-2026/ebook-consolidado/index.html', `${siteDomain}/copa-2026/ebook-consolidado`],
+  ['copa-2026/ebook-educadores-v1/index.html', `${siteDomain}/copa-2026/ebook-educadores-v1`],
 ]);
 
 const referencedAssets = new Set();
@@ -60,7 +60,7 @@ function canonicalFor(relativePath) {
   if (routeCanonicals.has(relativePath)) return routeCanonicals.get(relativePath);
   if (relativePath === 'index.html') return `${siteDomain}/`;
   if (!relativePath.endsWith('/index.html')) return null;
-  return `${siteDomain}/${relativePath.replace(/\/index\.html$/, '/')}`;
+  return `${siteDomain}/${relativePath.replace(/\/index\.html$/, '')}`;
 }
 
 function trackReferencedAssets(html) {

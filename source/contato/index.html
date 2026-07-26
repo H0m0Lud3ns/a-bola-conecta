@@ -12,12 +12,12 @@
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contato | A Bola Conecta</title>
-<meta name="description" content="Fale com a equipe A Bola Conecta. Escreva para contato@abolaconecta.com.br e converse com Mônica e Sebastián sobre escolas, eventos, comunidade e parcerias." />
+<title>Contato para escolas, empresas, imprensa e comunidade | A Bola Conecta</title>
+<meta name="description" content="Fale com a equipe A Bola Conecta sobre escolas, formações, eventos, imprensa, comunidade, licenciamento e parcerias institucionais." />
 <meta name="author" content="Mônica Saraiva da Silva · Sebastián Acevedo Vásquez" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Contato | A Bola Conecta" />
-<meta property="og:description" content="Fale com a equipe A Bola Conecta. Escreva para contato@abolaconecta.com.br e converse com Mônica e Sebastián sobre escolas, eventos, comunidade e parcerias." />
+<meta property="og:title" content="Contato para escolas, empresas, imprensa e comunidade | A Bola Conecta" />
+<meta property="og:description" content="Fale com a equipe A Bola Conecta sobre escolas, formações, eventos, imprensa, comunidade, licenciamento e parcerias institucionais." />
 <meta property="og:url" content="https://www.abolaconecta.com.br/contato" />
 <meta property="og:image" content="https://www.abolaconecta.com.br/assets/og-contato.jpg" />
 <meta property="og:image:width" content="1200" />
@@ -40,7 +40,7 @@ p { margin-bottom: 16px; color: var(--muted); }
 .back-link { display: inline-block; margin-bottom: 24px; color: var(--accent); text-decoration: none; font-size: 14px; }
 .back-link:hover { text-decoration: underline; }
 
-/* HEADER DA PÁGINA — logo A Bola Conecta branco */
+/* HEADER DA PÁGINA - logo A Bola Conecta branco */
 .page-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0 24px; margin-bottom: 32px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
 .page-header-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .page-header-brand img { height: 32px; width: auto; display: block; }
@@ -60,16 +60,26 @@ p { margin-bottom: 16px; color: var(--muted); }
 .person-card p { margin: 0; font-size: 0.95rem; }
 .person-card .role { color: var(--muted); margin-bottom: 8px; font-size: 0.9rem; }
 .person-card .focus { color: var(--fg); }
+.contact-routes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 26px 0 34px; }
+.contact-route { background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08); border-left: 3px solid var(--accent); border-radius: 12px; padding: 16px; text-decoration: none; color: var(--fg); transition: transform .2s ease, border-color .2s ease; }
+.contact-route:hover { transform: translateY(-2px); border-color: rgba(245,158,11,.55); }
+.contact-route b { display: block; color: var(--accent); font-family: "Fraunces", serif; font-size: 1.05rem; margin-bottom: 6px; }
+.contact-route span { display: block; color: var(--muted); font-size: .88rem; line-height: 1.45; }
 form { background: rgba(255,255,255,0.04); padding: 24px; border-radius: 12px; margin: 24px 0; }
 label { display: block; margin-bottom: 4px; color: var(--fg); font-weight: 500; font-size: 0.9rem; }
 input, textarea, select { width: 100%; padding: 10px; margin-bottom: 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: var(--fg); font-family: inherit; font-size: 14px; }
 input:focus, textarea:focus, select:focus { outline: none; border-color: var(--accent); }
 textarea { min-height: 100px; resize: vertical; }
-button { background: var(--primary); color: var(--fg); padding: 12px 24px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; }
+button { background: var(--primary); color: var(--fg); padding: 12px 24px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; min-height: 44px; }
 button:hover { opacity: 0.85; }
+.form-status { min-height: 22px; margin-top: 14px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.form-status.ok { color: var(--accent); }
+.form-status.error { color: hsl(14 72% 64%); }
+.is-invalid { outline: 2px solid hsl(14 72% 52%); outline-offset: 1px; }
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .local { color: var(--muted); font-size: 0.95rem; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); }
-@media (max-width: 600px) { .team { grid-template-columns: 1fr; } .row { grid-template-columns: 1fr; } body { padding: 20px 16px; } }
+@media (max-width: 800px) { .contact-routes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .team, .contact-routes { grid-template-columns: 1fr; } .row { grid-template-columns: 1fr; } body { padding: 20px 16px; } }
 </style>
  <link rel="stylesheet" href="/assets/site-header.css">
   <link rel="stylesheet" href="/assets/pix-copy.css">
@@ -113,8 +123,8 @@ button:hover { opacity: 0.85; }
 </script>
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://www.abolaconecta.com.br/assets/og-contato.jpg" />
-    <meta name="twitter:description" content="Fale com a equipe A Bola Conecta. Escreva para contato@abolaconecta.com.br e converse com Mônica e Sebastián sobre escolas, eventos, comunidade e parcerias." />
-    <meta name="twitter:title" content="Contato | A Bola Conecta" />
+    <meta name="twitter:description" content="Fale com a equipe A Bola Conecta sobre escolas, formações, eventos, imprensa, comunidade, licenciamento e parcerias institucionais." />
+    <meta name="twitter:title" content="Contato para escolas, empresas, imprensa e comunidade | A Bola Conecta" />
 </head>
 <body>
 
@@ -155,8 +165,15 @@ button:hover { opacity: 0.85; }
  </nav>
 </header>
 <span class="tag">CONTATO</span>
-<h1>Fale com a gente</h1>
-<p class="lead">Monica e Sebastian respondem em até 48h úteis.</p>
+<h1>Fale com a equipe A Bola Conecta.</h1>
+<p class="lead">Escolha o caminho, conte o contexto e a equipe responde com o próximo passo em até 48h úteis.</p>
+
+<div class="contact-routes" aria-label="Caminhos de contato">
+ <a class="contact-route" href="#contact-form" data-contact-preset="escola"><b>Escola ou universidade</b><span>Cine-debate, oficina, formação docente ou piloto institucional.</span></a>
+ <a class="contact-route" href="#contact-form" data-contact-preset="empresa"><b>Empresa ou fundação</b><span>Patrocínio, licenciamento, ESG, DEI e ação cultural.</span></a>
+ <a class="contact-route" href="#contact-form" data-contact-preset="evento"><b>Evento ou imprensa</b><span>Palestra, mesa, exibição mediada, entrevista ou pauta editorial.</span></a>
+ <a class="contact-route" href="#contact-form" data-contact-preset="comunidade"><b>Comunidade</b><span>Apoio, circulação do cartaz, rede Gondwana FC e colaboração.</span></a>
+</div>
 
 <div class="email-box">
  <p class="label">Email</p>
@@ -178,12 +195,13 @@ button:hover { opacity: 0.85; }
 </div>
 
 <h2>Formulário</h2>
-<form action="https://www.abolaconecta.com.br/api/leads" method="POST" id="contact-form">
+<form action="https://www.abolaconecta.com.br/api/leads" method="POST" id="contact-form" data-abc-lead data-form-id="contato-site" data-campaign="a-bola-conecta-contato" data-success-message="Mensagem recebida. A equipe Gondwana responde pelo email informado." data-error-message="Não conseguimos enviar agora. Tente novamente ou escreva para contato.gondwana@gmail.com." data-name-error="Diz teu nome pra equipe saber com quem fala." data-message-error="Conta o assunto, o contexto e o melhor próximo passo.">
 <input type="hidden" name="source" value="a-bola-conecta" />
 <input type="hidden" name="lead_type" value="contact" />
 <input type="hidden" name="form_id" value="contato-site" />
 <input type="hidden" name="campaign" value="a-bola-conecta" />
 <input type="hidden" name="page" value="https://www.abolaconecta.com.br/contato" />
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:1px;width:1px" />
 
 <div class="row">
  <div>
@@ -222,21 +240,23 @@ button:hover { opacity: 0.85; }
  <label for="profile">Você é...</label>
  <select id="profile" name="profile">
  <option value="">Selecione</option>
- <option value="educator">Educador(a) / Pesquisador(a)</option>
- <option value="company">Empresa / Marca</option>
- <option value="supporter">Apoiador(a) / Comunidade</option>
+ <option value="educator">Escola / Universidade / Educador(a)</option>
+ <option value="company">Empresa / Fundação / Marca</option>
+ <option value="event">Evento / Festival</option>
  <option value="press">Imprensa / Mídia</option>
+ <option value="supporter">Apoiador(a) / Comunidade</option>
  <option value="other">Outro</option>
  </select>
 </div>
 
 <div>
  <label for="interest">Assunto / Mensagem *</label>
- <textarea id="interest" name="interest" required placeholder="Conte o que você precisa. Inclua cidade, país e prazo se possível."></textarea>
+ <textarea id="interest" name="interest" required placeholder="Conte o que você precisa: escola, evento, formação, licenciamento, imprensa, apoio ou parceria. Inclua cidade, país, prazo e público estimado se possível."></textarea>
 </div>
 
 <input type="hidden" name="consent" value="true" />
 <button type="submit">Enviar mensagem</button>
+<div class="form-status" data-form-status role="status" aria-live="polite"></div>
 </form>
 
 <p class="local">Base operacional em São Paulo, Brasil. Atuação em rede pela América Latina.</p>
@@ -284,7 +304,7 @@ button:hover { opacity: 0.85; }
  </div>
 
  <div class="footer-bottom">
- <p class="footer-copy">© 2026 Agência Gondwana FC — Time da Educação</p>
+ <p class="footer-copy">© 2026 Agência Gondwana FC - Time da Educação</p>
  <p class="footer-claim">A bola conecta.</p>
  </div>
  </div>
@@ -306,6 +326,34 @@ button:hover { opacity: 0.85; }
  });
  });
 </script>
+  <script>
+  (() => {
+    const params = new URLSearchParams(window.location.search);
+    const profile = document.getElementById('profile');
+    const interest = document.getElementById('interest');
+    const presets = {
+      escola: ['educator', 'Quero levar A Bola Conecta para uma escola/universidade. Contexto: '],
+      empresa: ['company', 'Quero conversar sobre contratação, patrocínio ou licenciamento. Contexto: '],
+      evento: ['event', 'Quero propor uma palestra, mesa ou exibição mediada. Contexto: '],
+      comunidade: ['supporter', 'Quero falar sobre comunidade, apoio ou colaboração. Contexto: ']
+    };
+    const applyPreset = (key) => {
+      const preset = presets[key];
+      if (!preset) return;
+      if (profile) profile.value = preset[0];
+      if (interest && !interest.value.trim()) interest.value = preset[1];
+      setTimeout(() => interest?.focus(), 80);
+    };
+    document.querySelectorAll('[data-contact-preset]').forEach((link) => {
+      link.addEventListener('click', () => applyPreset(link.dataset.contactPreset));
+    });
+    const queryProfile = params.get('perfil');
+    if (queryProfile) applyPreset(queryProfile);
+    const assunto = params.get('assunto');
+    if (assunto && interest && !interest.value.trim()) interest.value = assunto;
+  })();
+  </script>
+  <script defer src="/assets/forms.js?v=20260726"></script>
   <script defer src="/assets/pix-copy.js"></script>
 </body>
 </html>
