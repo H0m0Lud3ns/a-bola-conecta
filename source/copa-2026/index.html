@@ -189,7 +189,92 @@
  @media (min-width: 760px) { .nav { display:flex; } .menu-toggle { display:none; } .hero-grid { grid-template-columns: minmax(0,1.05fr) minmax(330px,.95fr); } .section-head { grid-template-columns: .86fr 1.14fr; align-items:start; } }
  @media (max-width: 980px) { .cards, .country-grid, .use-grid, .flow-strip, .catalogue-brief, .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .bridge-box, .experience-card { grid-template-columns:1fr; } .footer-grid > :first-child { grid-column:1/-1; } }
  @media (max-width: 620px) { .container { width:min(100% - 28px, 1180px); } main { padding-top:72px; } .hero { padding-top:52px; } .hero-actions .btn, .actions .btn { width:100%; } .visual-card { min-height:340px; border-radius:26px; } .visual-logo { top:31%; width:min(72%, 200px); } .visual-text { left:24px; right:24px; bottom:24px; } .cards, .country-grid, .use-grid, .campaign-metrics, .flow-strip, .catalogue-brief, .footer-grid, .guide-form-grid { grid-template-columns:1fr; } .guide-field.full { grid-column:auto; } .guide-form { border-radius:24px; } .footer-grid > :first-child { grid-column:auto; } .mobile-nav.is-open { grid-template-columns:1fr; } .support-btn { padding:0 14px; } .phone-frame { min-height:390px; } .phone-inner { inset:18px; padding:30px 24px; gap:18px; } .phone-inner strong { max-width:8.4ch; font-size:clamp(2.4rem,13vw,3.55rem); line-height:.92; } .phone-inner span { font-size:10px; letter-spacing:.11em; } .experience-panel { padding:22px; } }
- </style>
+ 
+.atlas-shell { position: relative; border: 1px solid hsla(38,30%,94%,.14); border-radius: 34px; background: linear-gradient(145deg, hsla(38,30%,94%,.08), hsla(38,30%,94%,.028)); box-shadow: 0 28px 90px hsla(0,0%,0%,.34); overflow: hidden; }
+.atlas-layout { display: grid; grid-template-columns: minmax(0,1fr) 390px; min-height: 640px; }
+.atlas-map-wrap { position: relative; min-height: 640px; padding: 26px; display: flex; flex-direction: column; gap: 18px; }
+.atlas-map-head { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0,1fr) minmax(220px,330px); gap: 18px; align-items: start; }
+.atlas-map-head h3 { margin: 0; color: var(--primary); font-size: clamp(1.45rem,2.4vw,2.15rem); line-height: 1; letter-spacing: -.035em; }
+.atlas-map-head p { max-width: 320px; margin: 0; text-align: left; color: hsl(28 20% 26%); font-size: 13px; line-height: 1.55; font-weight: 650; }
+.atlas-controls { position: relative; z-index: 5; display: grid; gap: 14px; max-width: none; padding: 16px; border: 1px solid hsla(28,20%,10%,.18); border-radius: 24px; background: hsla(38,30%,97%,.92); box-shadow: 0 18px 44px hsla(28,20%,10%,.1); }
+.atlas-search { position: relative; max-width: 520px; }
+.atlas-search label { display: block; color: hsl(28 24% 22%); font-size: 12px; font-weight: 950; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 8px; }
+.atlas-search input { width: 100%; min-height: 50px; border: 1px solid hsla(28,20%,10%,.22); border-radius: 999px; padding: 0 18px; background: hsl(38 30% 99%); color: #21160f; font: inherit; font-weight: 800; box-shadow: 0 12px 34px hsla(28,20%,10%,.1); }
+.atlas-search input::placeholder { color: hsl(28 14% 44%); opacity: 1; }
+.atlas-search input:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+.atlas-search-results { position: absolute; left: 0; right: 0; top: calc(100% + 8px); display: none; max-height: 240px; overflow: auto; border: 1px solid hsla(28,20%,10%,.14); border-radius: 18px; background: hsla(38,30%,96%,.96); box-shadow: 0 18px 46px hsla(28,20%,10%,.18); padding: 6px; }
+.atlas-search-results.is-open { display: grid; gap: 4px; }
+.atlas-search-results button { width: 100%; border: 0; border-radius: 12px; background: transparent; color: #2b1f17; padding: 10px 12px; text-align: left; font: inherit; cursor: pointer; }
+.atlas-search-results button:hover, .atlas-search-results button:focus { background: hsla(45,96%,58%,.24); outline: none; }
+.atlas-search-results strong { display: block; color: #2b1f17; }
+.atlas-search-results span { display: block; color: hsl(28 18% 38%); font-size: 12px; margin-top: 2px; }
+.atlas-filter-group { display: grid; gap: 8px; }
+.atlas-filter-group-label { color: hsl(28 24% 22%); font-size: 10px; font-weight: 950; letter-spacing: .12em; text-transform: uppercase; }
+.atlas-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.atlas-filter { min-height: 38px; border: 1.5px solid hsla(28,20%,10%,.32); border-radius: 999px; padding: 0 13px; background: hsl(38 28% 99%); color: #20150d; font: inherit; font-size: 11px; font-weight: 950; letter-spacing: .035em; text-transform: uppercase; cursor: pointer; box-shadow: 0 8px 18px hsla(28,20%,10%,.07); }
+.atlas-filter.is-active { background: hsl(43 96% 50%); border-color: hsl(43 96% 40%); color: #1d1209; box-shadow: 0 10px 26px hsla(43,96%,36%,.24); }
+.atlas-filter-sub { border-style: dashed; background: hsl(38 26% 94%); }
+.atlas-filter:hover, .atlas-filter:focus { outline: 2px solid hsla(45,96%,58%,.45); outline-offset: 2px; }
+.atlas-map { position: relative; min-height: 460px; flex: 1; border: 1px solid hsla(28,20%,10%,.12); border-radius: 28px; background: radial-gradient(circle at 50% 42%, hsla(199,42%,24%,.18), transparent 54%), linear-gradient(180deg, hsl(190 36% 8%), hsl(170 34% 9%)); overflow: hidden; touch-action: none; }
+.atlas-map svg { width: 100%; height: 100%; display: block; cursor: grab; }
+.atlas-map svg:active { cursor: grabbing; }
+.atlas-zoom-controls { position: absolute; top: 16px; right: 16px; z-index: 6; display: grid; gap: 7px; }
+.atlas-zoom-controls button { width: 42px; min-height: 42px; border: 1.5px solid hsla(38,30%,94%,.42); border-radius: 999px; background: hsla(28,25%,10%,.9); color: hsl(38 30% 98%); font: inherit; font-size: 18px; font-weight: 950; line-height: 1; cursor: pointer; box-shadow: 0 12px 30px hsla(0,0%,0%,.34); display: grid; place-items: center; }
+.atlas-zoom-controls button:hover, .atlas-zoom-controls button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+.atlas-zoom-hint { position: absolute; left: 16px; top: 16px; z-index: 6; max-width: 245px; border: 1px solid hsla(38,30%,94%,.24); border-radius: 999px; background: hsla(28,25%,10%,.82); color: hsla(38,30%,96%,.9); padding: 8px 11px; font-size: 11px; font-weight: 700; line-height: 1.25; pointer-events: none; transition: opacity .2s ease; }
+.atlas-map.has-interacted .atlas-zoom-hint { opacity: 0; }
+
+.atlas-country { fill: hsla(38,30%,60%,.54); stroke: hsla(38,30%,96%,.28); stroke-width: .45; vector-effect: non-scaling-stroke; }
+.atlas-country.is-active { fill: hsla(45,96%,58%,.48); stroke: hsla(45,96%,70%,1); stroke-width: 1.1; cursor: pointer; }
+.atlas-country.is-hot { fill: hsla(20,76%,54%,.66); stroke: hsla(45,96%,70%,1); }
+.atlas-country.is-muted { opacity: .18; }
+.atlas-route { display: none; fill: none; stroke: url(#atlasRouteGradient); stroke-width: 1.2; stroke-dasharray: 5 9; opacity: .36; vector-effect: non-scaling-stroke; }
+.atlas-pin { cursor: pointer; outline: none; }
+.atlas-pin.is-muted { opacity: .18; }
+.atlas-pin-ring { display: none; fill: none; stroke: hsla(45,96%,62%,.68); stroke-width: 2; animation: atlasPulse 2.2s infinite; transform-box: fill-box; transform-origin: center; }
+.atlas-pin.is-hot .atlas-pin-ring, .atlas-pin.is-selected .atlas-pin-ring { display: block; }
+.atlas-pin-dot { fill: hsl(43 96% 56%); stroke: hsl(38 30% 98%); stroke-width: 2.2; filter: drop-shadow(0 0 6px hsla(45,96%,58%,.62)) drop-shadow(0 2px 4px hsla(0,0%,0%,.45)); }
+.atlas-pin.is-hot .atlas-pin-dot, .atlas-pin.is-selected .atlas-pin-dot { fill: hsl(18 86% 58%); stroke: hsl(38 30% 98%); stroke-width: 3.2; filter: drop-shadow(0 0 13px hsla(18,86%,58%,.72)) drop-shadow(0 2px 5px hsla(0,0%,0%,.55)); }
+.atlas-pin-label { display: none; fill: hsl(38 30% 99%); font-size: 16px; font-weight: 950; letter-spacing: -.01em; paint-order: stroke; stroke: hsla(28,25%,6%,1); stroke-width: 7px; stroke-linejoin: round; pointer-events: none; filter: drop-shadow(0 6px 12px hsla(0,0%,0%,.5)); }
+.atlas-pin.is-selected .atlas-pin-label { display: block; }
+.atlas-map.is-deep-zoom .atlas-pin-label { font-size: 12px; }
+.atlas-panel { border-left: 1px solid hsla(28,20%,10%,.12); background: radial-gradient(circle at 20% 6%, hsla(43,96%,48%,.14), transparent 34%), linear-gradient(180deg, hsl(28 30% 8%), hsl(28 24% 13%)); padding: 28px; display: flex; flex-direction: column; justify-content: space-between; color: var(--light); }
+.atlas-panel .badge { display: inline-flex; width: max-content; border: 1px solid hsla(45,96%,58%,.68); border-radius: 999px; background: hsla(45,96%,58%,.1); color: hsl(45 96% 68%); font-size: 11px; font-weight: 950; letter-spacing: .12em; text-transform: uppercase; padding: 7px 10px; }
+.atlas-panel h3 { color: hsl(38 30% 98%); margin: 16px 0 12px; font-size: clamp(2.2rem,4vw,3rem); line-height: .92; letter-spacing: -.045em; text-shadow: 0 2px 0 hsla(28,25%,6%,.9), 0 18px 38px hsla(0,0%,0%,.38); }
+.atlas-panel p { color: hsla(38,30%,94%,.88); line-height: 1.65; }
+.atlas-panel p strong { display: inline-flex; width: max-content; border-radius: 999px; background: hsla(38,30%,94%,.1); border: 1px solid hsla(38,30%,94%,.2); color: hsl(45 96% 68%); padding: 5px 9px; font-size: 12px; font-weight: 950; letter-spacing: .08em; text-transform: uppercase; }
+.atlas-question { margin-top: 20px; padding: 18px; border-radius: 18px; background: hsla(45,96%,58%,.16); border: 1px solid hsla(45,96%,58%,.38); color: hsl(38 30% 98%); font-family: 'Fraunces', serif; font-size: 1.2rem; line-height: 1.3; box-shadow: inset 4px 0 0 hsl(43 96% 54%); }
+.atlas-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 22px 0; }
+.atlas-stat { border: 1px solid hsla(38,30%,94%,.22); border-radius: 16px; padding: 13px 12px; background: hsla(38,30%,94%,.07); min-width: 0; }
+.atlas-stat b { display: block; color: hsl(45 96% 68%); font-family: 'Fraunces', serif; font-size: 1.85rem; line-height: 1; margin-bottom: 7px; }
+.atlas-stat span { display: block; color: hsla(38,30%,94%,.82); font-size: 9.5px; text-transform: uppercase; letter-spacing: .08em; line-height: 1.25; }
+.atlas-actions { display: grid; gap: 10px; }
+.atlas-actions .btn { width: 100%; }
+.atlas-legend { position: relative; z-index: 3; display: flex; flex-wrap: wrap; gap: 8px; }
+.atlas-legend span { display: inline-flex; align-items: center; gap: 7px; border: 1px solid hsla(28,20%,10%,.16); border-radius: 999px; background: hsla(38,30%,96%,.9); padding: 8px 10px; color: hsl(28 24% 20%); font-size: 12px; font-weight: 800; }
+.atlas-legend b { color: hsl(18 82% 34%); }
+.atlas-swatch { width: 9px; height: 9px; border-radius: 999px; background: hsl(43 96% 54%); box-shadow: 0 0 0 2px hsla(43,96%,54%,.18); }
+.atlas-swatch-hot { background: hsl(18 86% 58%); }
+.atlas-swatch-america { background: hsl(154 44% 46%); }
+.atlas-swatch-panel { background: hsl(28 24% 18%); }
+.atlas-source { color: hsl(28 18% 30%); font-size: 11px; font-weight: 650; margin-top: -6px; }
+.atlas-error { padding: 24px; color: var(--light); }
+.atlas-error strong { display: block; color: hsl(45 96% 68%); margin-bottom: 6px; }
+.atlas-error span { color: hsla(38,30%,94%,.86); }
+
+.atlas-sphere { fill: hsla(185,42%,8%,.72); }
+.atlas-graticule { fill: none; stroke: hsla(38,30%,94%,.14); stroke-width: .55; stroke-dasharray: 1.5 5; vector-effect: non-scaling-stroke; }
+
+.atlas-reference { position: absolute; left: 16px; right: 72px; bottom: 16px; z-index: 5; display: flex; align-items: center; gap: 10px; pointer-events: none; color: hsla(38,30%,96%,.82); font-size: 11px; font-weight: 800; }
+.atlas-reference-note { border: 1px solid hsla(38,30%,94%,.18); border-radius: 999px; background: hsla(28,25%,10%,.7); padding: 7px 10px; }
+.atlas-equator-line { fill: none; stroke: hsla(43,96%,62%,.72); stroke-width: .9; stroke-dasharray: 5 6; vector-effect: non-scaling-stroke; }
+.atlas-greenwich-line { fill: none; stroke: hsla(38,30%,96%,.52); stroke-width: .8; stroke-dasharray: 2 7; vector-effect: non-scaling-stroke; }
+.atlas-reference-label { fill: hsla(38,30%,98%,.88); font-size: 10px; font-weight: 900; paint-order: stroke; stroke: hsla(28,25%,6%,.88); stroke-width: 3px; stroke-linejoin: round; pointer-events: none; }
+@keyframes atlasPulse { 0% { r: 8; opacity: .85; } 100% { r: 24; opacity: 0; } }
+@media (max-width: 980px) { .atlas-layout { grid-template-columns: 1fr; min-height: auto; } .atlas-map-wrap { min-height: 560px; } .atlas-panel { border-left: 0; border-top: 1px solid hsla(38,30%,94%,.14); } .atlas-map-head { display: block; } .atlas-map-head p { max-width: none; margin-top: 8px; text-align: left; } }
+@media (max-width: 620px) { .atlas-map-wrap { min-height: 720px; padding: 18px; } .atlas-search { max-width: none; } .atlas-map { min-height: 430px; border-radius: 22px; } .atlas-zoom-hint { max-width: 180px; font-size: 10px; } .atlas-pin-label { display: none !important; } .atlas-stats { grid-template-columns: 1fr; } }
+
+</style>
 <style>
 .guide-form .req{color:var(--barro);font-weight:900;margin-left:4px}
 .guide-form .guide-required-hint{margin:8px 0 0;font-size:12px;font-weight:700;color:var(--barro);letter-spacing:.04em}
@@ -318,7 +403,7 @@
  </div>
  <div class="flow-strip" aria-label="Caminhos para usar Seleções Gondwana">
  <article class="flow-item"><small>01</small><h3>Escolha uma seleção</h3><p>Comece por um país que o grupo conhece, torce, estranha ou quer localizar no mapa.</p></article>
- <article class="flow-item"><small>02</small><h3>Abra uma pergunta</h3><p>Use o card como provocação. O objetivo não é entregar resposta pronta, é acender investigação.</p></article>
+ <article class="flow-item"><small>02</small><h3>Abra uma pergunta</h3><p>Use o card como provocação. O objetivo e acender investigacao com pergunta, mapa e conversa.</p></article>
  <article class="flow-item"><small>03</small><h3>Produza uma devolução</h3><p>Transforme a conversa em mapa, mural, mini podcast, cartaz, vídeo curto ou apresentação coletiva.</p></article>
  </div>
  <div class="experience-card">
@@ -352,6 +437,75 @@
  <article class="feature-card"><div class="card-kicker">Território</div><h3>Mapas que contam histórias</h3><p>As fichas ajudam a sair da bandeira e entrar no território: continentes, fronteiras, povos, deslocamentos e paisagens.</p></article>
  <article class="feature-card"><div class="card-kicker">Memória</div><h3>Futebol com contexto</h3><p>O uniforme de uma seleção pode abrir conversas sobre diáspora africana, povos originários, independências e culturas populares.</p></article>
  <article class="feature-card"><div class="card-kicker">Prática</div><h3>Material para ativar</h3><p>Professores podem usar as perguntas como disparadores de roda, pesquisa, cartografia afetiva, debate e produção audiovisual.</p></article>
+ </div>
+ </div>
+ </section>
+
+
+ <section class="section paper" id="atlas">
+ <div class="container">
+ <div class="section-head">
+ <div><p class="kicker">Atlas Gondwana</p><h2>Um atlas para ler a Copa pelo território.</h2></div>
+ <p class="section-copy">Um mapa real, baseado em Natural Earth, organiza as selecoes por territorio e transforma cada pin em porta de entrada para pergunta, ficha e uso educativo.</p>
+ </div>
+ <div class="atlas-shell">
+ <div class="atlas-layout">
+ <div class="atlas-map-wrap">
+ <div class="atlas-map-head">
+ <h3>Escolha um territorio para comecar</h3>
+ <p>Cada pin abre uma ficha educativa por pais, regiao e camada de leitura: Abya Yala, Latinoamerica, Americas, Africa, Europa, Asia, Oceania e Territorio Gondwana.</p>
+ </div>
+ <div class="atlas-controls" aria-label="Busca e filtros do atlas">
+ <div class="atlas-search" role="search">
+ <label for="atlasCountrySearch">Buscar pais ou regiao</label>
+ <input id="atlasCountrySearch" type="search" autocomplete="off" placeholder="Brasil, Gana, Latinoamerica, Abya Yala..." aria-controls="atlasSearchResults" />
+ <div class="atlas-search-results" id="atlasSearchResults" role="listbox" aria-label="Resultados de paises"></div>
+ </div>
+ <div class="atlas-filter-group">
+ <span class="atlas-filter-group-label">Camadas de leitura</span>
+ <div class="atlas-filters" aria-label="Filtrar fichas por camada de leitura">
+ <button class="atlas-filter is-active" type="button" data-atlas-filter="Todos">Todos</button>
+ <button class="atlas-filter" type="button" data-atlas-filter="Gondwana">Territorio Gondwana</button>
+ <button class="atlas-filter" type="button" data-atlas-filter="Abya Yala">Abya Yala</button>
+ <button class="atlas-filter" type="button" data-atlas-filter="Latinoamerica">Latinoamerica</button>
+ </div>
+ </div>
+ <div class="atlas-filter-group">
+ <span class="atlas-filter-group-label">Regioes geograficas</span>
+ <div class="atlas-filters" aria-label="Filtrar fichas por regiao geografica">
+ <button class="atlas-filter atlas-filter-sub" type="button" data-atlas-filter="America do Sul">America do Sul</button>
+ <button class="atlas-filter atlas-filter-sub" type="button" data-atlas-filter="America Central e Caribe">America Central e Caribe</button>
+ <button class="atlas-filter atlas-filter-sub" type="button" data-atlas-filter="America do Norte">America do Norte</button>
+ <button class="atlas-filter" type="button" data-atlas-filter="Africa">Africa</button>
+ <button class="atlas-filter" type="button" data-atlas-filter="Europa">Europa</button>
+ <button class="atlas-filter" type="button" data-atlas-filter="Asia">Asia</button>
+ <button class="atlas-filter" type="button" data-atlas-filter="Oceania">Oceania</button>
+ </div>
+ </div>
+ </div>
+ <div class="atlas-map" id="copaAtlasMap" data-fichas-url="/copa-2026/assets/fichas-map.json" data-map-url="https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json" aria-label="Mapa mundial com fichas da Copa 2026"></div>
+ <div class="atlas-legend" aria-label="Legenda do atlas"><span><i class="atlas-swatch"></i><b>Dourado</b> ficha ativa</span><span><i class="atlas-swatch atlas-swatch-hot"></i><b>Barro</b> destaque pedagogico</span><span><i class="atlas-swatch atlas-swatch-america"></i><b>Americas</b> Sul, Norte, Central e Caribe</span><span><i class="atlas-swatch atlas-swatch-panel"></i><b>Painel</b> mostra a ficha ativa</span></div>
+ </div>
+ <aside class="atlas-panel" id="copaAtlasCard" aria-live="polite">
+ <div>
+ <span class="badge" data-atlas-status>Ficha ativa</span>
+ <h3 data-atlas-name>Gana</h3>
+ <p><strong data-atlas-region>Africa</strong></p>
+ <p data-atlas-desc>A selecao como porta de entrada para falar de diaspora africana, independencia, musica, territorio e futebol como cultura viva.</p>
+ <div class="atlas-question" data-atlas-question>Como Gana ajuda a transformar memoria da diaspora africana em pertencimento?</div>
+ <div class="atlas-stats">
+ <div class="atlas-stat"><b data-atlas-count>48</b><span>fichas no atlas</span></div>
+ <div class="atlas-stat"><b>6</b><span>camadas territoriais</span></div>
+ <div class="atlas-stat"><b>1</b><span>guia PDF</span></div>
+ </div>
+ </div>
+ <div class="atlas-actions">
+ <a class="btn btn-accent" data-atlas-cta href="/copa-2026/fichas/15-gana">Ver ficha de Gana</a>
+ <a class="btn btn-ghost" href="#baixar">Baixar guia educativo</a>
+ </div>
+ </aside>
+ <div class="atlas-source">Base cartografica: Natural Earth via topojson/world-atlas</div>
+ </div>
  </div>
  </div>
  </section>
@@ -802,7 +956,7 @@
  </div>
 
  <div class="footer-bottom">
- <p class="footer-copy">© 2026 Agência Gondwana FC — Time da Educação</p>
+ <p class="footer-copy">© 2026 Agência Gondwana FC - Time da Educação</p>
  <p class="footer-claim">A bola conecta.</p>
  </div>
  </div>
@@ -811,6 +965,9 @@
  <script>
  window.GONDWANA_CONFIG = { leadsEndpoint: 'https://www.abolaconecta.com.br/api/leads' };
  </script>
+ <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
+ <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js" defer></script>
+ <script src="/assets/copa-atlas.js?v=20260726" defer></script>
  <script src="/assets/forms.js?v=20260702" defer></script>
 
  <script>
