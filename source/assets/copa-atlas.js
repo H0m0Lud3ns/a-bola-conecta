@@ -65,6 +65,12 @@
     setText('[data-atlas-desc]', item.desc);
     setText('[data-atlas-question]', item.question);
     setText('[data-atlas-status]', item.status || 'Ficha ativa');
+    const flag = card.querySelector('[data-atlas-flag]');
+    if (flag && item.flagCode) {
+      flag.src = `https://flagcdn.com/w80/${item.flagCode}.png`;
+      flag.srcset = `https://flagcdn.com/w160/${item.flagCode}.png 2x`;
+      flag.alt = `Bandeira de ${item.name}`;
+    }
     if (searchResults) searchResults.classList.remove('is-open');
     const cta = card.querySelector('[data-atlas-cta]');
     if (cta) {
