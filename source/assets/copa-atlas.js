@@ -10,7 +10,7 @@
   const filterButtons = Array.from(document.querySelectorAll('[data-atlas-filter]'));
   const normalize = (value) => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
   const countryId = (value) => String(value || '').padStart(3, '0');
-  const state = { fichas: [], world: null, filter: 'Todos', selectedSlug: null, zoomTransform: null };
+  const state = { fichas: [], world: null, filter: 'Todos', selectedSlug: null, zoomTransform: null, lockedSlug: null };
   const zoomLimits = [1, 7];
 
   const isAmerica = (item) => {
@@ -29,7 +29,7 @@
       || name === 'mexico';
   };
 
-  const isCentralAmericaAndCaribbean = (item) => {
+  const isCentralAméricaAndCaribbean = (item) => {
     const region = normalize(item.region);
     return region.includes('america central') || region.includes('caribe');
   };
@@ -46,8 +46,8 @@
   const matchesFilter = (item) => {
     if (!item || state.filter === 'Todos') return true;
     if (state.filter === 'Abya Yala') return isAbyaYala(item);
-    if (state.filter === 'Latinoamerica') return isLatinAmerica(item);
-    if (state.filter === 'America Central e Caribe') return isCentralAmericaAndCaribbean(item);
+    if (state.filter === 'América Latina') return isLatinAmerica(item);
+    if (state.filter === 'América Central e Caribe') return isCentralAméricaAndCaribbean(item);
     if (state.filter === 'Gondwana') return isGondwanaTerritory(item);
     return normalize(item.region).includes(normalize(state.filter));
   };
@@ -57,8 +57,9 @@
     if (el) el.textContent = value || '';
   };
 
-  const activate = (item) => {
+  const activate = (item, options = {}) => {
     if (!item) return;
+    if (options.lock) state.lockedSlug = item.slug;
     setText('[data-atlas-name]', item.name);
     setText('[data-atlas-region]', item.region);
     setText('[data-atlas-desc]', item.desc);
@@ -86,7 +87,7 @@
     const svg = d3.select(root).append('svg')
       .attr('viewBox', `0 0 ${width} ${height}`)
       .attr('role', 'img')
-      .attr('aria-label', 'Mapa mundial com pines das fichas da Copa 2026');
+      .attr('aria-label', 'Mapa mundial com marcadores das fichas da Copa 2026');
 
     const defs = svg.append('defs');
     const clipId = `atlasClip-${Math.round(Math.random() * 100000)}`;
@@ -131,19 +132,24 @@
         return `atlas-country ${activeIds.has(id) ? 'is-active' : ''} ${hotIds.has(id) ? 'is-hot' : ''} ${item && !matchesFilter(item) ? 'is-muted' : ''}`;
       })
       .attr('d', path)
-      .on('pointerenter click', (event, d) => {
+      .on('pointerenter', (event, d) => {
+        const item = byId.get(countryId(d.id));
+        if (!item || state.lockedSlug) return;
+        activate(item);
+      })
+      .on('click', (event, d) => {
         const item = byId.get(countryId(d.id));
         if (!item) return;
-        activate(item);
+        activate(item, { lock: true });
       });
 
     const hint = document.createElement('div');
     hint.className = 'atlas-zoom-hint';
-    hint.textContent = 'Use scroll ou pince para aproximar. Arraste para explorar.';
+    hint.textContent = 'Use scroll ou pinça para aproximar. Arraste para explorar.';
     root.appendChild(hint);
     const reference = document.createElement('div');
     reference.className = 'atlas-reference';
-    reference.innerHTML = '<span class="atlas-reference-note">Projecao Natural Earth 1. Grade geografica em graus. Escala varia por latitude e zoom.</span>';
+    reference.innerHTML = '<span class="atlas-reference-note">Projeção Natural Earth 1. Grade geográfica em graus. A escala varia por latitude e zoom.</span>';
     root.appendChild(reference);
     const controls = document.createElement('div');
     controls.className = 'atlas-zoom-controls';
@@ -159,11 +165,13 @@
       .attr('role', 'button')
       .attr('aria-label', (d) => `Ver resumo da ficha ${d.name}`)
       .attr('transform', (d) => `translate(${projection([d.lon, d.lat])})`)
-      .on('pointerenter click focus', (event, d) => activate(d))
+      .on('pointerenter', (event, d) => { if (!state.lockedSlug) activate(d); })
+      .on('focus', (event, d) => { if (!state.lockedSlug) activate(d); })
+      .on('click', (event, d) => activate(d, { lock: true }))
       .on('keydown', (event, d) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
-          activate(d);
+          activate(d, { lock: true });
         }
       });
 
@@ -212,14 +220,14 @@
     }
     const matches = state.fichas
       .filter((item) => matchesFilter(item))
-      .filter((item) => normalize(`${item.name} ${item.region} ${isAbyaYala(item) ? 'Abya Yala America Americas' : ''} ${isLatinAmerica(item) ? 'Latinoamerica America Latina' : ''} ${isGondwanaTerritory(item) ? 'Territorio Gondwana Gondwana' : ''}`).includes(term))
+      .filter((item) => normalize(`${item.name} ${item.region} ${isAbyaYala(item) ? 'Abya Yala América Américas' : ''} ${isLatinAmerica(item) ? 'América Latina América Latina' : ''} ${isGondwanaTerritory(item) ? 'Território Gondwana Gondwana' : ''}`).includes(term))
       .slice(0, 8);
     searchResults.innerHTML = '';
     if (!matches.length) {
       const empty = document.createElement('button');
       empty.type = 'button';
       empty.disabled = true;
-      empty.innerHTML = '<strong>Nenhum pais encontrado</strong><span>Teste outro nome ou abra o catalogo completo.</span>';
+      empty.innerHTML = '<strong>Nenhum país encontrado</strong><span>Teste outro nome ou abra o catálogo completo.</span>';
       searchResults.appendChild(empty);
       searchResults.classList.add('is-open');
       return;
@@ -228,8 +236,8 @@
       const button = document.createElement('button');
       button.type = 'button';
       button.setAttribute('role', 'option');
-      button.innerHTML = `<strong>${item.name}</strong><span>${item.region}${isLatinAmerica(item) ? ' - Latinoamerica' : isAbyaYala(item) ? ' - Abya Yala' : ''} - ${item.status || 'Ficha ativa'}</span>`;
-      button.addEventListener('click', () => activate(item));
+      button.innerHTML = `<strong>${item.name}</strong><span>${item.region}${isLatinAmerica(item) ? ' - América Latina' : isAbyaYala(item) ? ' - Abya Yala' : ''} - ${item.status || 'Ficha ativa'}</span>`;
+      button.addEventListener('click', () => activate(item, { lock: true }));
       searchResults.appendChild(button);
     });
     searchResults.classList.add('is-open');
@@ -254,6 +262,7 @@
   const applyFilter = (filter) => {
     state.filter = filter || 'Todos';
     state.zoomTransform = null;
+    state.lockedSlug = null;
     filterButtons.forEach((button) => {
       const active = button.dataset.atlasFilter === state.filter;
       button.classList.toggle('is-active', active);
@@ -293,8 +302,8 @@
       draw();
     })
     .catch((error) => {
-      console.error('[copa-atlas] mapa nao carregou', error);
-      root.innerHTML = '<p class="atlas-error"><strong>Mapa em recarga.</strong><span>Nao foi possivel carregar o atlas neste momento. Atualize a pagina ou use o catalogo de fichas.</span></p>';
+      console.error('[copa-atlas] mapa não carregou', error);
+      root.innerHTML = '<p class="atlas-error"><strong>Mapa em recarga.</strong><span>Não foi possível carregar o atlas neste momento. Atualize a página ou use o catálogo de fichas.</span></p>';
     });
 
   window.addEventListener('resize', () => {
