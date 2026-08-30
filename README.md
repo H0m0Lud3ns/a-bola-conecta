@@ -147,4 +147,3 @@ NO-GO para DNS ate fechar:
 - SEO final por rota;
 - plano de rollback com Lovable vivo por 72h.
 
-
