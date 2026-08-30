@@ -145,4 +145,4 @@ NO-GO para DNS ate fechar:
 - decisao sobre Supabase novo/proprio para A Bola Conecta;
 - decisao de loja: vitrine, pre-venda ou checkout;
 - SEO final por rota;
-- plano de rollback com Lovable vivo por 72h.
+- plano de rollback com Lovable vivo por 72h. 
