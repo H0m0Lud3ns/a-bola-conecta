@@ -2,7 +2,7 @@
 
 Este pacote prepara o site A Bola Conecta para um projeto Vercel separado de `gondwana-social`.
 
-## Regra
+## Regra 
 
 Nao usar login global de Vercel.
 Nao executar `vercel login`, `vercel link`, `vercel switch` ou `vercel logout`.
